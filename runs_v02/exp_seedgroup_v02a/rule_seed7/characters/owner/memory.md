@@ -1,0 +1,25 @@
+# owner 的私人记忆（其他 Agent 不可见）
+- [t2][experienced] 环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。
+- [t2][inferred] 隔墙隐约听到 soldier,merchant 在tables说话，听不清内容。
+- [t2][inferred] 隔墙隐约听到 merchant,soldier 在tables说话，听不清内容。
+- [t3][experienced] soldier 来到了/去到了 bar。
+- [t4][experienced] soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t5][experienced] soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？
+- [t5][experienced] merchant 来到了/去到了 bar。
+- [t6][experienced] soldier 说：凯尔：老板，你越是不说，我越得查清楚。
+- [t6][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t6][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t7][experienced] soldier 说：凯尔：晚上好，雨夜里酒馆可是个好去处。
+- [t7][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t8][experienced] merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t8][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t9][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t10][experienced] soldier 来到了/去到了 bar。
+- [t12][experienced] soldier 来到了/去到了 bar。
+- [t12][experienced] merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。
+- [t14][experienced] soldier 来到了/去到了 bar。
+- [t14][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t15][experienced] merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。
+- [t16][experienced] merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t16][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t20][experienced] soldier 来到了/去到了 bar。

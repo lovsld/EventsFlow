@@ -1,0 +1,308 @@
+{
+  "kind": "seed_group",
+  "mode": "rule",
+  "ticks": 20,
+  "seeds": [
+    42,
+    7,
+    101,
+    2024,
+    555
+  ],
+  "runs": [
+    {
+      "run_id": "rule_seed42",
+      "seed": 42,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 85,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "bar"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": {
+        "confidence": 0.7,
+        "kind": "heard"
+      },
+      "owner_letter_known_by_others": {
+        "confidence": 0.9,
+        "kind": "inferred"
+      },
+      "soldier_mayor_embezzled": {
+        "confidence": 0.8,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 16,
+      "belief_changes": 44,
+      "long_term_promotions": 4,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp_seedgroup_v02a/rule_seed42"
+    },
+    {
+      "run_id": "rule_seed7",
+      "seed": 7,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 91,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "bar"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": null,
+      "owner_letter_known_by_others": null,
+      "soldier_mayor_embezzled": {
+        "confidence": 0.6,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 17,
+      "belief_changes": 22,
+      "long_term_promotions": 4,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp_seedgroup_v02a/rule_seed7"
+    },
+    {
+      "run_id": "rule_seed101",
+      "seed": 101,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 83,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "tables"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": {
+        "confidence": 0.7,
+        "kind": "heard"
+      },
+      "owner_letter_known_by_others": {
+        "confidence": 0.9,
+        "kind": "inferred"
+      },
+      "soldier_mayor_embezzled": {
+        "confidence": 0.8,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 15,
+      "belief_changes": 38,
+      "long_term_promotions": 1,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp_seedgroup_v02a/rule_seed101"
+    },
+    {
+      "run_id": "rule_seed2024",
+      "seed": 2024,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 80,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "bar"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": {
+        "confidence": 0.7,
+        "kind": "heard"
+      },
+      "owner_letter_known_by_others": {
+        "confidence": 0.9,
+        "kind": "inferred"
+      },
+      "soldier_mayor_embezzled": {
+        "confidence": 0.8,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 11,
+      "belief_changes": 40,
+      "long_term_promotions": 0,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp_seedgroup_v02a/rule_seed2024"
+    },
+    {
+      "run_id": "rule_seed555",
+      "seed": 555,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 85,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "bar"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": {
+        "confidence": 0.7,
+        "kind": "heard"
+      },
+      "owner_letter_known_by_others": {
+        "confidence": 0.9,
+        "kind": "inferred"
+      },
+      "soldier_mayor_embezzled": {
+        "confidence": 0.8,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 23,
+      "belief_changes": 31,
+      "long_term_promotions": 3,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp_seedgroup_v02a/rule_seed555"
+    }
+  ],
+  "metrics": {
+    "trajectory_diversity_mean_jaccard": {
+      "mean": 0.7232,
+      "pairs": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "distance": 0.7059
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "distance": 0.8
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "distance": 0.5897
+        },
+        {
+          "pair": [
+            0,
+            4
+          ],
+          "distance": 0.6923
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "distance": 0.766
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "distance": 0.7239
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "distance": 0.7606
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "distance": 0.7557
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "distance": 0.6977
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "distance": 0.7405
+        }
+      ]
+    },
+    "soldier_read_letter_consistency": {
+      "outcome": "soldier_read_letter",
+      "hits": 5,
+      "runs": 5,
+      "rate": 1.0
+    },
+    "total_events": {
+      "values": [
+        85,
+        91,
+        83,
+        80,
+        85
+      ],
+      "min": 80,
+      "max": 91,
+      "mean": 84.8
+    },
+    "belief_confidence_by_seed": {
+      "soldier_letter": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "merchant_letter": [
+        0.7,
+        null,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "owner_letter_known_by_others": [
+        0.9,
+        null,
+        0.9,
+        0.9,
+        0.9
+      ],
+      "soldier_mayor_embezzled": [
+        0.8,
+        0.6,
+        0.8,
+        0.8,
+        0.8
+      ]
+    }
+  }
+}

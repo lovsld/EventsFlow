@@ -1,0 +1,535 @@
+{
+  "character_id": "owner",
+  "location": "bar",
+  "personality": {
+    "caution": 0.9,
+    "curiosity": 0.6,
+    "honesty": 0.6,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "不主动伤害无辜者",
+    "不轻易信任陌生人",
+    "保护自己的利益"
+  ],
+  "goals": [
+    {
+      "key": "protect_tavern",
+      "desc": "保护自己的酒馆",
+      "weight": 1.0,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "find_letter_source",
+      "desc": "搞清楚匿名信的来源",
+      "weight": 0.8,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "avoid_politics",
+      "desc": "避免卷入政治冲突",
+      "weight": 0.9,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.9,
+      "created_at": 0,
+      "deadline": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "三天前收到一封匿名信",
+      "evidence": [
+        {
+          "source_event_id": "seed:anonymous_letter_exists",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "mayor_embezzled",
+      "confidence": 0.725,
+      "kind": "heard",
+      "desc": "匿名信称镇长私吞了公共资金（未证实）",
+      "evidence": [
+        {
+          "source_event_id": "seed:mayor_embezzled",
+          "source_type": "testimony",
+          "reliability": 0.45,
+          "observed_at": 0,
+          "source": null
+        },
+        {
+          "source_event_id": "E0061",
+          "source_type": "testimony",
+          "reliability": 0.5,
+          "observed_at": 14,
+          "source": "merchant"
+        }
+      ]
+    },
+    {
+      "key": "being_investigated",
+      "confidence": 0.8,
+      "kind": "inferred",
+      "desc": "镇长的卫兵在查我，可能和那封信有关",
+      "evidence": [
+        {
+          "source_event_id": "E0010",
+          "source_type": "inference",
+          "reliability": 0.8,
+          "observed_at": 3,
+          "source": null
+        },
+        {
+          "source_event_id": "E0014",
+          "source_type": "inference",
+          "reliability": 0.8,
+          "observed_at": 4,
+          "source": null
+        },
+        {
+          "source_event_id": "E0056",
+          "source_type": "inference",
+          "reliability": 0.8,
+          "observed_at": 13,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "business_opportunity",
+      "confidence": 0.5,
+      "kind": "heard",
+      "desc": "商人想谈一笔合作",
+      "evidence": [
+        {
+          "source_event_id": "E0021",
+          "source_type": "testimony",
+          "reliability": 0.5,
+          "observed_at": 5,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0025",
+          "source_type": "testimony",
+          "reliability": 0.5,
+          "observed_at": 6,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0028",
+          "source_type": "testimony",
+          "reliability": 0.5,
+          "observed_at": 7,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0057",
+          "source_type": "testimony",
+          "reliability": 0.5,
+          "observed_at": 13,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0073",
+          "source_type": "testimony",
+          "reliability": 0.5,
+          "observed_at": 17,
+          "source": "merchant"
+        }
+      ]
+    },
+    {
+      "key": "rumor_spreading",
+      "confidence": 0.55,
+      "kind": "inferred",
+      "desc": "关于镇长资金的风声可能正在扩散",
+      "evidence": [
+        {
+          "source_event_id": "E0061",
+          "source_type": "inference",
+          "reliability": 0.55,
+          "observed_at": 14,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "speaker_knows_secret",
+      "confidence": 0.48,
+      "kind": "inferred",
+      "desc": "merchant 暗示自己知道镇上的秘密（真假未知）",
+      "evidence": [
+        {
+          "source_event_id": "E0076",
+          "source_type": "inference",
+          "reliability": 0.48,
+          "observed_at": 18,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "letter_known_by_others",
+      "confidence": 0.9,
+      "kind": "inferred",
+      "desc": "对方已经亲眼看过那封信了",
+      "evidence": [
+        {
+          "source_event_id": "E0083",
+          "source_type": "inference",
+          "reliability": 0.9,
+          "observed_at": 20,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.9583333333333335,
+    "suspicion": 0.9666666666666666
+  },
+  "current_plan": {
+    "plan_id": "plan_048",
+    "goal": "assess_damage",
+    "steps": [
+      "assess_damage",
+      "protect_tavern"
+    ],
+    "current_step": 0,
+    "commitment": 0.8,
+    "status": "active",
+    "step_failures": 0,
+    "interruption_conditions": [
+      "target_leaves",
+      "new_critical_information",
+      "immediate_danger"
+    ],
+    "interrupt_log": [],
+    "step_history": [],
+    "last_progress_tick": 20,
+    "commitment_updated_tick": 20
+  },
+  "short_term_memory": [
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+      "event_id": "E0010"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+      "event_id": "E0014"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "merchant 来到了/去到了 bar。",
+      "event_id": "E0015"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0020"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。",
+      "event_id": "E0021"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0023"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+      "event_id": "E0025"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0027"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+      "event_id": "E0028"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0030"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0032"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0040"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0051"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0052"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：老板，你越是不说，我越得查清楚。",
+      "event_id": "E0056"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。",
+      "event_id": "E0057"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。",
+      "event_id": "E0061"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+      "event_id": "E0073"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0076"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0078"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？",
+      "event_id": "E0083"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0084"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "merchant": {
+      "trust": 0.427,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.24,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0005",
+    "E0010",
+    "E0014",
+    "E0015",
+    "E0020",
+    "E0021",
+    "E0023",
+    "E0025",
+    "E0027",
+    "E0028",
+    "E0030",
+    "E0032",
+    "E0040",
+    "E0051",
+    "E0052",
+    "E0056",
+    "E0057",
+    "E0061",
+    "E0073",
+    "E0076",
+    "E0078",
+    "E0083",
+    "E0084"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 3,
+      "from": "soldier",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 4,
+      "from": "soldier",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "soldier",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 5,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "soldier",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "merchant",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 12,
+      "from": "merchant",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 13,
+      "from": "soldier",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 13,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "merchant",
+      "topic": "answer_mayor",
+      "claim": "answer_mayor",
+      "kind": "speak"
+    },
+    {
+      "tick": 17,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 18,
+      "from": "merchant",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 20,
+      "from": "soldier",
+      "topic": "letter_discussion",
+      "claim": "letter_discussion",
+      "kind": "confront"
+    },
+    {
+      "tick": 20,
+      "from": "merchant",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    }
+  ],
+  "pending_question": {
+    "from": "soldier",
+    "topic": "letter_discussion",
+    "tick": 20
+  },
+  "action_counts": {
+    "observe::": 2,
+    "observe:soldier:": 1,
+    "speak:soldier:denial": 2,
+    "work::tend_bar": 5,
+    "observe:merchant:": 7,
+    "speak:soldier:greeting": 1,
+    "refuse:soldier:investigation_probe": 1,
+    "speak:merchant:greeting": 1
+  }
+}

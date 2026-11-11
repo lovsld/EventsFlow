@@ -1,0 +1,27 @@
+# owner 的私人记忆（其他 Agent 不可见）
+- [t2][experienced] soldier 来到了/去到了 bar。
+- [t2][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t3][experienced] soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t3][experienced] merchant 来到了/去到了 bar。
+- [t4][experienced] soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？
+- [t4][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t5][experienced] soldier 说：凯尔：晚上好，雨夜里酒馆可是个好去处。
+- [t5][experienced] merchant 说：米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。
+- [t6][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t7][experienced] merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t8][experienced] merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。
+- [t9][experienced] 环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。
+- [t10][experienced] soldier 来到了/去到了 bar。
+- [t11][experienced] soldier 说：凯尔：别绕弯子了！镇长是不是吞了那笔钱？你是不是知道什么？
+- [t11][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t12][experienced] soldier 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？
+- [t12][experienced] merchant 说：米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。
+- [t13][experienced] soldier 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？
+- [t13][experienced] merchant 说：米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。
+- [t15][experienced] soldier 来到了/去到了 bar。
+- [t15][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t16][experienced] soldier 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？
+- [t16][experienced] merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t18][experienced] soldier 来到了/去到了 bar。
+- [t18][experienced] merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t19][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。

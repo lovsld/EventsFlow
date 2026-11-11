@@ -1,0 +1,18 @@
+# merchant 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] soldier 来到了/去到了 tables。
+- [t1][experienced] 环境：一只野猫碰倒了桌边的空杯子，碎在地上。
+- [t2][experienced] soldier 说：凯尔：晚上好，雨夜里酒馆可是个好去处。
+- [t4][inferred] 隔墙隐约听到 soldier,owner 在bar说话，听不清内容。
+- [t5][experienced] soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？
+- [t5][experienced] owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。
+- [t6][experienced] soldier 说：凯尔：老板，你越是不说，我越得查清楚。
+- [t6][experienced] owner 说：奥伦：问几遍都一样，我什么都不知道。
+- [t6][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t7][experienced] soldier 说：凯尔：晚上好，雨夜里酒馆可是个好去处。
+- [t8][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t10][experienced] soldier 来到了/去到了 bar。
+- [t12][experienced] soldier 来到了/去到了 bar。
+- [t14][experienced] soldier 来到了/去到了 bar。
+- [t15][experienced] owner 说：奥伦：晚上好，雨夜里酒馆可是个好去处。
+- [t16][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t20][experienced] soldier 来到了/去到了 bar。

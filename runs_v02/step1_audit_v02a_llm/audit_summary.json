@@ -1,0 +1,183 @@
+{
+  "kind": "step1_consistency_audit",
+  "runs": [
+    {
+      "run_id": "llm_full20_planlayer_seed42",
+      "seed": 42,
+      "run_dir": "/tmp/llm_hist_copy",
+      "decisions": 60,
+      "events": 81,
+      "m1_plan_alignment": {
+        "decisions": 60,
+        "with_active_plan": 3,
+        "plan_coverage": 0.05,
+        "judgeable": 0,
+        "excluded_moot_or_unmeasurable": 3,
+        "m1a_current_step": {
+          "consistent": 0,
+          "judged": 0,
+          "rate": null
+        },
+        "m1b_any_plan_step": {
+          "consistent": 0,
+          "judged": 0,
+          "rate": null
+        },
+        "step_index_distribution": {
+          "0": 2,
+          "1": 1
+        },
+        "plan_update_status_distribution": {
+          "none": 52,
+          "advance": 5,
+          "continue": 1,
+          "replace": 2
+        },
+        "unknown_step_labels": {
+          "询问酒馆老板关于异常行为的解释": 1,
+          "走到吧台": 1,
+          "观察或询问交谈内容": 1
+        },
+        "per_step": {
+          "观察或询问交谈内容": {
+            "excluded": 1
+          },
+          "询问酒馆老板关于异常行为的解释": {
+            "excluded": 1
+          },
+          "走到吧台": {
+            "excluded": 1
+          }
+        }
+      },
+      "m2_knowledge_grounding": {
+        "asserting_actions": 0,
+        "supported": 0,
+        "rate": null,
+        "violations": [],
+        "observational": {},
+        "reverse_check": {
+          "agents_checked": [],
+          "violations": []
+        }
+      },
+      "m3_refusal_adaptation": {
+        "unexpected_refusal_cases": [],
+        "case_count": 0,
+        "cases_with_exact_repeat": 0,
+        "total_exact_repeats": 0,
+        "repeats_refused_again": 0,
+        "expected_refusal_but_engaged_cases": 0
+      },
+      "m4_legality": {
+        "submissions": 60,
+        "rejected": 1,
+        "rejection_rate": 0.0167,
+        "rejection_reasons": {
+          "target_left": 1
+        },
+        "provider_error_rows": 0,
+        "available_action_check": {
+          "checked": 60,
+          "member": 60,
+          "rate": 1.0
+        },
+        "committed_legality": {
+          "events_replayed": 81,
+          "violations": []
+        }
+      },
+      "m5_plan_changes": {
+        "plan_transitions_rows": 63,
+        "transition_kinds": {
+          "none": 52,
+          "advance": 5,
+          "continue": 1,
+          "set": 2,
+          "commitment_decay": 3
+        },
+        "abandon_or_replace_rows": 0,
+        "with_reason": 0,
+        "rate": null,
+        "reconstruction": {
+          "distinct_plan_ids_in_contexts": 2,
+          "plan_id_switches_between_decisions": 4,
+          "set_or_replace_rows_in_table": 2,
+          "distinct_plan_ids_in_table": 2
+        }
+      },
+      "m6_basis_truth": {
+        "predictions_checked": 60,
+        "per_field": {
+          "location": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "colocated": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "trust": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "perceived_ids": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "all_fields": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          }
+        },
+        "mismatch_examples": []
+      }
+    }
+  ],
+  "aggregate": {
+    "runs": 1,
+    "decisions": 60,
+    "m1a": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "m1b": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "m1_judgeable": 0,
+    "m1_with_plan": 3,
+    "m2": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "m2_violations": 0,
+    "m2_reverse_violations": 0,
+    "m3_cases": 0,
+    "m3_cases_with_repeat": 0,
+    "m3_total_repeats": 0,
+    "m3_repeats_refused_again": 0,
+    "m4": {
+      "numerator": 1,
+      "denominator": 60,
+      "rate": 0.0167
+    },
+    "m4_committed_violations": 0,
+    "m5_abandon_replace_rows": 0,
+    "m5_plans_in_contexts": 2,
+    "m5_set_replace_rows": 2,
+    "m6": {
+      "numerator": 60,
+      "denominator": 60,
+      "rate": 1.0
+    }
+  }
+}

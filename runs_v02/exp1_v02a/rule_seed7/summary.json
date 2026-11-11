@@ -1,0 +1,116 @@
+{
+  "run_id": "rule_seed7",
+  "mode": "rule",
+  "seed": 7,
+  "ticks": 20,
+  "world_tick": 20,
+  "resumed_from_tick": null,
+  "quota_stopped": false,
+  "quota_waits": 0,
+  "total_events": 91,
+  "final_positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+  },
+  "objects_seen_by": {
+    "anonymous_letter": [
+      "owner",
+      "soldier"
+    ]
+  },
+  "letter_seen_by_objective": [
+    "owner",
+    "soldier"
+  ],
+  "final_beliefs": {
+    "owner": {
+      "anonymous_letter_exists": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "三天前收到一封匿名信"
+      },
+      "mayor_embezzled": {
+        "confidence": 0.45,
+        "kind": "heard",
+        "desc": "匿名信称镇长私吞了公共资金（未证实）"
+      },
+      "being_investigated": {
+        "confidence": 0.8,
+        "kind": "inferred",
+        "desc": "镇长的卫兵在查我，可能和那封信有关"
+      },
+      "business_opportunity": {
+        "confidence": 0.5,
+        "kind": "heard",
+        "desc": "商人想谈一笔合作"
+      },
+      "speaker_knows_secret": {
+        "confidence": 0.48,
+        "kind": "inferred",
+        "desc": "merchant 暗示自己知道镇上的秘密（真假未知）"
+      }
+    },
+    "merchant": {
+      "mayor_business_deal": {
+        "confidence": 0.9,
+        "kind": "experienced",
+        "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）"
+      },
+      "owner_cautious": {
+        "confidence": 0.7,
+        "kind": "inferred",
+        "desc": "老板口风很紧，是个谨慎人"
+      }
+    },
+    "soldier": {
+      "investigation_order": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "今天接到命令，调查酒馆老板最近的异常行为"
+      },
+      "mayor_suspicious": {
+        "confidence": 0.35,
+        "kind": "inferred",
+        "desc": "最近觉得镇长的一些做法不太对劲（直觉，无证据）"
+      },
+      "speaker_knows_secret": {
+        "confidence": 0.51,
+        "kind": "inferred",
+        "desc": "merchant 暗示自己知道镇上的秘密（真假未知）"
+      },
+      "anonymous_letter_exists": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "匿名信真实存在（我亲眼读到）"
+      },
+      "mayor_embezzled": {
+        "confidence": 0.6,
+        "kind": "heard",
+        "desc": "信中称镇长私吞公共资金"
+      }
+    }
+  },
+  "memory_entries": {
+    "owner": 24,
+    "merchant": 17,
+    "soldier": 16
+  },
+  "db_counts": {
+    "decisions": 60,
+    "events": 91,
+    "deliveries": 60,
+    "dedup_drops": 0,
+    "predictions": 60,
+    "belief_changes": 22,
+    "plan_transitions": 69,
+    "goal_changes": 0,
+    "consolidations": 60,
+    "counterfactual_suppressions": 0
+  },
+  "llm_repairs_total": 0,
+  "suppression_rules": [],
+  "provider": "rule",
+  "llm_backend": null,
+  "note": "rule mode: no external model calls"
+}

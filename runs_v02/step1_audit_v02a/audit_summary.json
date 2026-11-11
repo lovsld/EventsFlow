@@ -1,0 +1,876 @@
+{
+  "kind": "step1_consistency_audit",
+  "runs": [
+    {
+      "run_id": "rule_seed101",
+      "seed": 101,
+      "run_dir": "runs_v02/exp_seedgroup_v02a/rule_seed101",
+      "decisions": 60,
+      "events": 83,
+      "m1_plan_alignment": {
+        "decisions": 60,
+        "with_active_plan": 26,
+        "plan_coverage": 0.4333,
+        "judgeable": 25,
+        "excluded_moot_or_unmeasurable": 1,
+        "m1a_current_step": {
+          "consistent": 16,
+          "judged": 25,
+          "rate": 0.64
+        },
+        "m1b_any_plan_step": {
+          "consistent": 18,
+          "judged": 25,
+          "rate": 0.72
+        },
+        "step_index_distribution": {
+          "0": 12,
+          "1": 5,
+          "2": 8,
+          "3": 1
+        },
+        "plan_update_status_distribution": {
+          "continue": 60
+        },
+        "unknown_step_labels": {},
+        "per_step": {
+          "assess_damage": {
+            "judged": 3,
+            "m1a_consistent": 3,
+            "m1b_consistent": 3
+          },
+          "assess_letter_rumor_value": {
+            "judged": 3,
+            "m1a_consistent": 2,
+            "m1b_consistent": 2
+          },
+          "confront_owner": {
+            "judged": 2,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "decide_next_action": {
+            "excluded": 1
+          },
+          "deny_and_observe": {
+            "judged": 2,
+            "m1a_consistent": 2,
+            "m1b_consistent": 2
+          },
+          "find_letter_source": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "observe_response": {
+            "judged": 8,
+            "m1a_consistent": 1,
+            "m1b_consistent": 3
+          },
+          "press_for_evidence": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "probe_more_mayor_news": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "protect_tavern": {
+            "judged": 3,
+            "m1a_consistent": 3,
+            "m1b_consistent": 3
+          },
+          "return_to_front": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          }
+        }
+      },
+      "m2_knowledge_grounding": {
+        "asserting_actions": 5,
+        "supported": 5,
+        "rate": 1.0,
+        "violations": [],
+        "observational": {
+          "answer_mayor speaker mayor_business_deal=True mayor_embezzled=False": 1,
+          "bluff_hint with letter belief absent": 1,
+          "answer_mayor speaker mayor_business_deal=True mayor_embezzled=True": 2
+        },
+        "reverse_check": {
+          "agents_checked": [
+            "soldier"
+          ],
+          "violations": []
+        }
+      },
+      "m3_refusal_adaptation": {
+        "unexpected_refusal_cases": [],
+        "case_count": 0,
+        "cases_with_exact_repeat": 0,
+        "total_exact_repeats": 0,
+        "repeats_refused_again": 0,
+        "expected_refusal_but_engaged_cases": 0
+      },
+      "m4_legality": {
+        "submissions": 60,
+        "rejected": 2,
+        "rejection_rate": 0.0333,
+        "rejection_reasons": {
+          "target_left": 2
+        },
+        "provider_error_rows": 0,
+        "available_action_check": {
+          "checked": 60,
+          "member": 60,
+          "rate": 1.0
+        },
+        "committed_legality": {
+          "events_replayed": 83,
+          "violations": []
+        }
+      },
+      "m5_plan_changes": {
+        "plan_transitions_rows": 101,
+        "transition_kinds": {
+          "continue": 60,
+          "set": 7,
+          "advance": 16,
+          "replace": 5,
+          "replace_blocked_by_commitment": 5,
+          "commitment_decay": 8
+        },
+        "abandon_or_replace_rows": 5,
+        "with_reason": 5,
+        "rate": 1.0,
+        "reconstruction": {
+          "distinct_plan_ids_in_contexts": 12,
+          "plan_id_switches_between_decisions": 18,
+          "set_or_replace_rows_in_table": 12,
+          "distinct_plan_ids_in_table": 12
+        }
+      },
+      "m6_basis_truth": {
+        "predictions_checked": 60,
+        "per_field": {
+          "location": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "colocated": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "trust": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "perceived_ids": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "all_fields": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          }
+        },
+        "mismatch_examples": []
+      }
+    },
+    {
+      "run_id": "rule_seed2024",
+      "seed": 2024,
+      "run_dir": "runs_v02/exp_seedgroup_v02a/rule_seed2024",
+      "decisions": 60,
+      "events": 80,
+      "m1_plan_alignment": {
+        "decisions": 60,
+        "with_active_plan": 26,
+        "plan_coverage": 0.4333,
+        "judgeable": 26,
+        "excluded_moot_or_unmeasurable": 0,
+        "m1a_current_step": {
+          "consistent": 19,
+          "judged": 26,
+          "rate": 0.7308
+        },
+        "m1b_any_plan_step": {
+          "consistent": 22,
+          "judged": 26,
+          "rate": 0.8462
+        },
+        "step_index_distribution": {
+          "0": 13,
+          "1": 6,
+          "2": 7
+        },
+        "plan_update_status_distribution": {
+          "continue": 60
+        },
+        "unknown_step_labels": {},
+        "per_step": {
+          "assess_damage": {
+            "judged": 3,
+            "m1a_consistent": 3,
+            "m1b_consistent": 3
+          },
+          "assess_letter_rumor_value": {
+            "judged": 3,
+            "m1a_consistent": 3,
+            "m1b_consistent": 3
+          },
+          "confront_owner": {
+            "judged": 2,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "deny_and_observe": {
+            "judged": 3,
+            "m1a_consistent": 3,
+            "m1b_consistent": 3
+          },
+          "observe_response": {
+            "judged": 7,
+            "m1a_consistent": 1,
+            "m1b_consistent": 4
+          },
+          "press_for_evidence": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "probe_more_mayor_news": {
+            "judged": 2,
+            "m1a_consistent": 2,
+            "m1b_consistent": 2
+          },
+          "protect_tavern": {
+            "judged": 4,
+            "m1a_consistent": 4,
+            "m1b_consistent": 4
+          },
+          "return_to_front": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          }
+        }
+      },
+      "m2_knowledge_grounding": {
+        "asserting_actions": 5,
+        "supported": 5,
+        "rate": 1.0,
+        "violations": [],
+        "observational": {
+          "answer_mayor speaker mayor_business_deal=True mayor_embezzled=False": 1,
+          "bluff_hint with letter belief absent": 1,
+          "answer_mayor speaker mayor_business_deal=True mayor_embezzled=True": 1
+        },
+        "reverse_check": {
+          "agents_checked": [
+            "soldier"
+          ],
+          "violations": []
+        }
+      },
+      "m3_refusal_adaptation": {
+        "unexpected_refusal_cases": [],
+        "case_count": 0,
+        "cases_with_exact_repeat": 0,
+        "total_exact_repeats": 0,
+        "repeats_refused_again": 0,
+        "expected_refusal_but_engaged_cases": 0
+      },
+      "m4_legality": {
+        "submissions": 60,
+        "rejected": 0,
+        "rejection_rate": 0.0,
+        "rejection_reasons": {},
+        "provider_error_rows": 0,
+        "available_action_check": {
+          "checked": 60,
+          "member": 60,
+          "rate": 1.0
+        },
+        "committed_legality": {
+          "events_replayed": 80,
+          "violations": []
+        }
+      },
+      "m5_plan_changes": {
+        "plan_transitions_rows": 104,
+        "transition_kinds": {
+          "continue": 60,
+          "set": 10,
+          "advance": 19,
+          "replace": 3,
+          "replace_blocked_by_commitment": 5,
+          "commitment_decay": 7
+        },
+        "abandon_or_replace_rows": 3,
+        "with_reason": 3,
+        "rate": 1.0,
+        "reconstruction": {
+          "distinct_plan_ids_in_contexts": 13,
+          "plan_id_switches_between_decisions": 17,
+          "set_or_replace_rows_in_table": 13,
+          "distinct_plan_ids_in_table": 13
+        }
+      },
+      "m6_basis_truth": {
+        "predictions_checked": 60,
+        "per_field": {
+          "location": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "colocated": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "trust": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "perceived_ids": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "all_fields": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          }
+        },
+        "mismatch_examples": []
+      }
+    },
+    {
+      "run_id": "rule_seed42",
+      "seed": 42,
+      "run_dir": "runs_v02/exp_seedgroup_v02a/rule_seed42",
+      "decisions": 60,
+      "events": 85,
+      "m1_plan_alignment": {
+        "decisions": 60,
+        "with_active_plan": 22,
+        "plan_coverage": 0.3667,
+        "judgeable": 22,
+        "excluded_moot_or_unmeasurable": 0,
+        "m1a_current_step": {
+          "consistent": 13,
+          "judged": 22,
+          "rate": 0.5909
+        },
+        "m1b_any_plan_step": {
+          "consistent": 15,
+          "judged": 22,
+          "rate": 0.6818
+        },
+        "step_index_distribution": {
+          "0": 11,
+          "1": 4,
+          "2": 7
+        },
+        "plan_update_status_distribution": {
+          "continue": 60
+        },
+        "unknown_step_labels": {},
+        "per_step": {
+          "assess_damage": {
+            "judged": 2,
+            "m1a_consistent": 2,
+            "m1b_consistent": 2
+          },
+          "assess_letter_rumor_value": {
+            "judged": 2,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "confront_owner": {
+            "judged": 2,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "deny_and_observe": {
+            "judged": 3,
+            "m1a_consistent": 3,
+            "m1b_consistent": 3
+          },
+          "find_letter_source": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "observe_response": {
+            "judged": 7,
+            "m1a_consistent": 0,
+            "m1b_consistent": 2
+          },
+          "press_for_evidence": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "probe_more_mayor_news": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "protect_tavern": {
+            "judged": 2,
+            "m1a_consistent": 2,
+            "m1b_consistent": 2
+          },
+          "return_to_front": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          }
+        }
+      },
+      "m2_knowledge_grounding": {
+        "asserting_actions": 5,
+        "supported": 5,
+        "rate": 1.0,
+        "violations": [],
+        "observational": {
+          "answer_mayor speaker mayor_business_deal=True mayor_embezzled=False": 1,
+          "bluff_hint with letter belief absent": 1,
+          "answer_mayor speaker mayor_business_deal=True mayor_embezzled=True": 2
+        },
+        "reverse_check": {
+          "agents_checked": [
+            "soldier"
+          ],
+          "violations": []
+        }
+      },
+      "m3_refusal_adaptation": {
+        "unexpected_refusal_cases": [],
+        "case_count": 0,
+        "cases_with_exact_repeat": 0,
+        "total_exact_repeats": 0,
+        "repeats_refused_again": 0,
+        "expected_refusal_but_engaged_cases": 0
+      },
+      "m4_legality": {
+        "submissions": 60,
+        "rejected": 2,
+        "rejection_rate": 0.0333,
+        "rejection_reasons": {
+          "target_left": 2
+        },
+        "provider_error_rows": 0,
+        "available_action_check": {
+          "checked": 60,
+          "member": 60,
+          "rate": 1.0
+        },
+        "committed_legality": {
+          "events_replayed": 85,
+          "violations": []
+        }
+      },
+      "m5_plan_changes": {
+        "plan_transitions_rows": 98,
+        "transition_kinds": {
+          "continue": 60,
+          "set": 7,
+          "advance": 13,
+          "replace": 6,
+          "replace_blocked_by_commitment": 5,
+          "commitment_decay": 7
+        },
+        "abandon_or_replace_rows": 6,
+        "with_reason": 6,
+        "rate": 1.0,
+        "reconstruction": {
+          "distinct_plan_ids_in_contexts": 11,
+          "plan_id_switches_between_decisions": 15,
+          "set_or_replace_rows_in_table": 13,
+          "distinct_plan_ids_in_table": 13
+        }
+      },
+      "m6_basis_truth": {
+        "predictions_checked": 60,
+        "per_field": {
+          "location": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "colocated": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "trust": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "perceived_ids": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "all_fields": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          }
+        },
+        "mismatch_examples": []
+      }
+    },
+    {
+      "run_id": "rule_seed555",
+      "seed": 555,
+      "run_dir": "runs_v02/exp_seedgroup_v02a/rule_seed555",
+      "decisions": 60,
+      "events": 85,
+      "m1_plan_alignment": {
+        "decisions": 60,
+        "with_active_plan": 9,
+        "plan_coverage": 0.15,
+        "judgeable": 9,
+        "excluded_moot_or_unmeasurable": 0,
+        "m1a_current_step": {
+          "consistent": 8,
+          "judged": 9,
+          "rate": 0.8889
+        },
+        "m1b_any_plan_step": {
+          "consistent": 8,
+          "judged": 9,
+          "rate": 0.8889
+        },
+        "step_index_distribution": {
+          "0": 5,
+          "1": 4
+        },
+        "plan_update_status_distribution": {
+          "continue": 60
+        },
+        "unknown_step_labels": {},
+        "per_step": {
+          "confront_owner": {
+            "judged": 2,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "deny_and_observe": {
+            "judged": 3,
+            "m1a_consistent": 3,
+            "m1b_consistent": 3
+          },
+          "press_for_evidence": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "protect_tavern": {
+            "judged": 2,
+            "m1a_consistent": 2,
+            "m1b_consistent": 2
+          },
+          "return_to_front": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          }
+        }
+      },
+      "m2_knowledge_grounding": {
+        "asserting_actions": 1,
+        "supported": 1,
+        "rate": 1.0,
+        "violations": [],
+        "observational": {
+          "answer_mayor speaker mayor_business_deal=True mayor_embezzled=False": 1,
+          "bluff_hint with letter belief absent": 2
+        },
+        "reverse_check": {
+          "agents_checked": [
+            "soldier"
+          ],
+          "violations": []
+        }
+      },
+      "m3_refusal_adaptation": {
+        "unexpected_refusal_cases": [],
+        "case_count": 0,
+        "cases_with_exact_repeat": 0,
+        "total_exact_repeats": 0,
+        "repeats_refused_again": 0,
+        "expected_refusal_but_engaged_cases": 0
+      },
+      "m4_legality": {
+        "submissions": 60,
+        "rejected": 3,
+        "rejection_rate": 0.05,
+        "rejection_reasons": {
+          "target_left": 3
+        },
+        "provider_error_rows": 0,
+        "available_action_check": {
+          "checked": 60,
+          "member": 60,
+          "rate": 1.0
+        },
+        "committed_legality": {
+          "events_replayed": 85,
+          "violations": []
+        }
+      },
+      "m5_plan_changes": {
+        "plan_transitions_rows": 77,
+        "transition_kinds": {
+          "continue": 60,
+          "set": 6,
+          "advance": 8,
+          "replace": 1,
+          "replace_blocked_by_commitment": 1,
+          "commitment_decay": 1
+        },
+        "abandon_or_replace_rows": 1,
+        "with_reason": 1,
+        "rate": 1.0,
+        "reconstruction": {
+          "distinct_plan_ids_in_contexts": 5,
+          "plan_id_switches_between_decisions": 8,
+          "set_or_replace_rows_in_table": 7,
+          "distinct_plan_ids_in_table": 7
+        }
+      },
+      "m6_basis_truth": {
+        "predictions_checked": 60,
+        "per_field": {
+          "location": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "colocated": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "trust": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "perceived_ids": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "all_fields": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          }
+        },
+        "mismatch_examples": []
+      }
+    },
+    {
+      "run_id": "rule_seed7",
+      "seed": 7,
+      "run_dir": "runs_v02/exp_seedgroup_v02a/rule_seed7",
+      "decisions": 60,
+      "events": 91,
+      "m1_plan_alignment": {
+        "decisions": 60,
+        "with_active_plan": 6,
+        "plan_coverage": 0.1,
+        "judgeable": 6,
+        "excluded_moot_or_unmeasurable": 0,
+        "m1a_current_step": {
+          "consistent": 5,
+          "judged": 6,
+          "rate": 0.8333
+        },
+        "m1b_any_plan_step": {
+          "consistent": 5,
+          "judged": 6,
+          "rate": 0.8333
+        },
+        "step_index_distribution": {
+          "0": 4,
+          "1": 2
+        },
+        "plan_update_status_distribution": {
+          "continue": 60
+        },
+        "unknown_step_labels": {},
+        "per_step": {
+          "confront_owner": {
+            "judged": 1,
+            "m1a_consistent": 0,
+            "m1b_consistent": 0
+          },
+          "deny_and_observe": {
+            "judged": 3,
+            "m1a_consistent": 3,
+            "m1b_consistent": 3
+          },
+          "protect_tavern": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          },
+          "return_to_front": {
+            "judged": 1,
+            "m1a_consistent": 1,
+            "m1b_consistent": 1
+          }
+        }
+      },
+      "m2_knowledge_grounding": {
+        "asserting_actions": 0,
+        "supported": 0,
+        "rate": null,
+        "violations": [],
+        "observational": {
+          "bluff_hint with letter belief absent": 2
+        },
+        "reverse_check": {
+          "agents_checked": [
+            "soldier"
+          ],
+          "violations": []
+        }
+      },
+      "m3_refusal_adaptation": {
+        "unexpected_refusal_cases": [],
+        "case_count": 0,
+        "cases_with_exact_repeat": 0,
+        "total_exact_repeats": 0,
+        "repeats_refused_again": 0,
+        "expected_refusal_but_engaged_cases": 0
+      },
+      "m4_legality": {
+        "submissions": 60,
+        "rejected": 4,
+        "rejection_rate": 0.0667,
+        "rejection_reasons": {
+          "target_left": 4
+        },
+        "provider_error_rows": 0,
+        "available_action_check": {
+          "checked": 60,
+          "member": 60,
+          "rate": 1.0
+        },
+        "committed_legality": {
+          "events_replayed": 91,
+          "violations": []
+        }
+      },
+      "m5_plan_changes": {
+        "plan_transitions_rows": 69,
+        "transition_kinds": {
+          "continue": 60,
+          "set": 2,
+          "advance": 5,
+          "replace": 2
+        },
+        "abandon_or_replace_rows": 2,
+        "with_reason": 2,
+        "rate": 1.0,
+        "reconstruction": {
+          "distinct_plan_ids_in_contexts": 4,
+          "plan_id_switches_between_decisions": 5,
+          "set_or_replace_rows_in_table": 4,
+          "distinct_plan_ids_in_table": 4
+        }
+      },
+      "m6_basis_truth": {
+        "predictions_checked": 60,
+        "per_field": {
+          "location": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "colocated": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "trust": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "perceived_ids": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "all_fields": {
+            "match": 60,
+            "total": 60,
+            "rate": 1.0
+          }
+        },
+        "mismatch_examples": []
+      }
+    }
+  ],
+  "aggregate": {
+    "runs": 5,
+    "decisions": 300,
+    "m1a": {
+      "numerator": 61,
+      "denominator": 88,
+      "rate": 0.6932
+    },
+    "m1b": {
+      "numerator": 68,
+      "denominator": 88,
+      "rate": 0.7727
+    },
+    "m1_judgeable": 88,
+    "m1_with_plan": 89,
+    "m2": {
+      "numerator": 16,
+      "denominator": 16,
+      "rate": 1.0
+    },
+    "m2_violations": 0,
+    "m2_reverse_violations": 0,
+    "m3_cases": 0,
+    "m3_cases_with_repeat": 0,
+    "m3_total_repeats": 0,
+    "m3_repeats_refused_again": 0,
+    "m4": {
+      "numerator": 11,
+      "denominator": 300,
+      "rate": 0.0367
+    },
+    "m4_committed_violations": 0,
+    "m5_abandon_replace_rows": 17,
+    "m5_plans_in_contexts": 45,
+    "m5_set_replace_rows": 49,
+    "m6": {
+      "numerator": 300,
+      "denominator": 300,
+      "rate": 1.0
+    }
+  }
+}

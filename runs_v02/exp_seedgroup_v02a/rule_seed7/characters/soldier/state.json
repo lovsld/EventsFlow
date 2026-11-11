@@ -1,0 +1,384 @@
+{
+  "character_id": "soldier",
+  "location": "bar",
+  "personality": {
+    "caution": 0.35,
+    "curiosity": 0.7,
+    "honesty": 0.9,
+    "impulsiveness": 0.85,
+    "sociability": 0.55
+  },
+  "principles": [
+    "不主动欺骗无辜者",
+    "不背叛自己的职责",
+    "不接受明显不公正的命令"
+  ],
+  "goals": [
+    {
+      "key": "complete_investigation",
+      "desc": "完成调查任务",
+      "weight": 1.0,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "keep_honor",
+      "desc": "维护自己的荣誉",
+      "weight": 0.9,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.9,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "learn_mayor_truth",
+      "desc": "搞清楚镇长是否真的存在问题",
+      "weight": 0.75,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.75,
+      "created_at": 0,
+      "deadline": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "investigation_order",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "今天接到命令，调查酒馆老板最近的异常行为",
+      "evidence": [
+        {
+          "source_event_id": "seed:investigation_order",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "mayor_suspicious",
+      "confidence": 0.35,
+      "kind": "inferred",
+      "desc": "最近觉得镇长的一些做法不太对劲（直觉，无证据）",
+      "evidence": [
+        {
+          "source_event_id": "seed:mayor_suspicious",
+          "source_type": "inference",
+          "reliability": 0.35,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "speaker_knows_secret",
+      "confidence": 0.51,
+      "kind": "inferred",
+      "desc": "merchant 暗示自己知道镇上的秘密（真假未知）",
+      "evidence": [
+        {
+          "source_event_id": "E0052",
+          "source_type": "inference",
+          "reliability": 0.51,
+          "observed_at": 12,
+          "source": null
+        },
+        {
+          "source_event_id": "E0068",
+          "source_type": "inference",
+          "reliability": 0.51,
+          "observed_at": 15,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "匿名信真实存在（我亲眼读到）",
+      "evidence": [
+        {
+          "source_event_id": "search_result@18",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 18,
+          "source": "anonymous_letter"
+        }
+      ]
+    },
+    {
+      "key": "mayor_embezzled",
+      "confidence": 0.6,
+      "kind": "heard",
+      "desc": "信中称镇长私吞公共资金",
+      "evidence": [
+        {
+          "source_event_id": "search_result@18",
+          "source_type": "testimony",
+          "reliability": 0.6,
+          "observed_at": 18,
+          "source": "anonymous_letter"
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "suspicion": 0.85
+  },
+  "current_plan": {
+    "plan_id": "plan_017",
+    "goal": "decide_what_to_do_about_letter",
+    "steps": [
+      "return_to_front",
+      "confront_owner",
+      "observe_response",
+      "decide_next_action"
+    ],
+    "current_step": 1,
+    "commitment": 0.85,
+    "status": "active",
+    "step_failures": 0,
+    "interruption_conditions": [
+      "target_leaves",
+      "new_critical_information",
+      "immediate_danger"
+    ],
+    "interrupt_log": [],
+    "step_history": [
+      {
+        "tick": 19,
+        "step_index": 0,
+        "step": "return_to_front",
+        "action_sig": "move:tables:",
+        "counted": true
+      }
+    ],
+    "last_progress_tick": 19,
+    "commitment_updated_tick": 19
+  },
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：一只野猫碰倒了桌边的空杯子，碎在地上。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+      "event_id": "E0007"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 来到了/去到了 bar。",
+      "event_id": "E0019"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+      "event_id": "E0020"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。",
+      "event_id": "E0024"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：问几遍都一样，我什么都不知道。",
+      "event_id": "E0025"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0026"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+      "event_id": "E0028"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0032"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0034"
+    },
+    {
+      "tick": 9,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 merchant,owner 在bar说话，听不清内容。",
+      "event_id": "E0036"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0052"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+      "event_id": "E0063"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0068"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0069"
+    },
+    {
+      "tick": 16,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 merchant,owner 在bar说话，听不清内容。",
+      "event_id": "E0071"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "我在后屋的抽屉里发现并读到一封匿名信，信中称镇长私吞了公共资金。",
+      "event_id": null
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "merchant": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "owner": {
+      "trust": 0.38,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0005",
+    "E0007",
+    "E0019",
+    "E0020",
+    "E0024",
+    "E0025",
+    "E0026",
+    "E0028",
+    "E0032",
+    "E0034",
+    "E0036",
+    "E0052",
+    "E0063",
+    "E0068",
+    "E0069",
+    "E0071"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 5,
+      "from": "owner",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "owner",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "merchant",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 12,
+      "from": "merchant",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 15,
+      "from": "merchant",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 15,
+      "from": "owner",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    }
+  ],
+  "pending_question": null,
+  "action_counts": {
+    "move:tables:": 6,
+    "speak:merchant:greeting": 1,
+    "move:bar:": 5,
+    "ask:owner:investigation_probe": 3,
+    "speak:owner:greeting": 1,
+    "observe:merchant:": 2,
+    "move:back_room:": 1,
+    "search:back_room:": 1
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "kind": "seed_group",
+  "mode": "rule",
+  "ticks": 20,
+  "seeds": [
+    42,
+    7,
+    123
+  ],
+  "runs": [
+    {
+      "run_id": "rule_seed42",
+      "seed": 42,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 85,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "bar"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": {
+        "confidence": 0.7,
+        "kind": "heard"
+      },
+      "owner_letter_known_by_others": {
+        "confidence": 0.9,
+        "kind": "inferred"
+      },
+      "soldier_mayor_embezzled": {
+        "confidence": 0.8,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 16,
+      "belief_changes": 44,
+      "long_term_promotions": 4,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp1_v02a/rule_seed42",
+      "v02a": {
+        "dialogue_by_type": {
+          "speak": 19,
+          "ask": 4,
+          "confront": 3
+        },
+        "dialogue_count": 26,
+        "letter_knowledge_coverage": {
+          "agents": 3,
+          "know": 3,
+          "experienced": 2,
+          "heard_or_inferred_only": 1
+        },
+        "goals_by_status": {
+          "active": 8,
+          "paused": 1
+        },
+        "goal_completion_rate": 0.0,
+        "decisions_recorded": 60,
+        "action_success_rate": 0.967,
+        "repeat_action_rate": 0.133,
+        "fallback_decisions": 0,
+        "plans_total": 14,
+        "plan_persistence_rate": 0.357,
+        "llm": {
+          "calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "repairs_total": 0,
+          "json_repair_rate": null,
+          "latency_ms": null,
+          "latency_note": "not recorded in persisted artefacts"
+        }
+      }
+    },
+    {
+      "run_id": "rule_seed7",
+      "seed": 7,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 91,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "bar"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": null,
+      "owner_letter_known_by_others": null,
+      "soldier_mayor_embezzled": {
+        "confidence": 0.6,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 17,
+      "belief_changes": 22,
+      "long_term_promotions": 4,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp1_v02a/rule_seed7",
+      "v02a": {
+        "dialogue_by_type": {
+          "speak": 14,
+          "ask": 3,
+          "confront": 0
+        },
+        "dialogue_count": 17,
+        "letter_knowledge_coverage": {
+          "agents": 3,
+          "know": 2,
+          "experienced": 2,
+          "heard_or_inferred_only": 0
+        },
+        "goals_by_status": {
+          "active": 9
+        },
+        "goal_completion_rate": 0.0,
+        "decisions_recorded": 60,
+        "action_success_rate": 0.933,
+        "repeat_action_rate": 0.183,
+        "fallback_decisions": 0,
+        "plans_total": 5,
+        "plan_persistence_rate": 0.2,
+        "llm": {
+          "calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "repairs_total": 0,
+          "json_repair_rate": null,
+          "latency_ms": null,
+          "latency_note": "not recorded in persisted artefacts"
+        }
+      }
+    },
+    {
+      "run_id": "rule_seed123",
+      "seed": 123,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 84,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "bar"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": {
+        "confidence": 0.7,
+        "kind": "heard"
+      },
+      "owner_letter_known_by_others": {
+        "confidence": 0.9,
+        "kind": "inferred"
+      },
+      "soldier_mayor_embezzled": {
+        "confidence": 0.8,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 17,
+      "belief_changes": 37,
+      "long_term_promotions": 7,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp1_v02a/rule_seed123",
+      "v02a": {
+        "dialogue_by_type": {
+          "speak": 14,
+          "ask": 2,
+          "confront": 4
+        },
+        "dialogue_count": 20,
+        "letter_knowledge_coverage": {
+          "agents": 3,
+          "know": 3,
+          "experienced": 2,
+          "heard_or_inferred_only": 1
+        },
+        "goals_by_status": {
+          "active": 9
+        },
+        "goal_completion_rate": 0.0,
+        "decisions_recorded": 60,
+        "action_success_rate": 0.933,
+        "repeat_action_rate": 0.167,
+        "fallback_decisions": 0,
+        "plans_total": 13,
+        "plan_persistence_rate": 0.692,
+        "llm": {
+          "calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "repairs_total": 0,
+          "json_repair_rate": null,
+          "latency_ms": null,
+          "latency_note": "not recorded in persisted artefacts"
+        }
+      }
+    }
+  ],
+  "metrics": {
+    "trajectory_diversity_mean_jaccard": {
+      "mean": 0.7348,
+      "pairs": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "distance": 0.7059
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "distance": 0.7574
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "distance": 0.741
+        }
+      ]
+    },
+    "soldier_read_letter_consistency": {
+      "outcome": "soldier_read_letter",
+      "hits": 3,
+      "runs": 3,
+      "rate": 1.0
+    },
+    "total_events": {
+      "values": [
+        85,
+        91,
+        84
+      ],
+      "min": 84,
+      "max": 91,
+      "mean": 86.67
+    },
+    "belief_confidence_by_seed": {
+      "soldier_letter": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "merchant_letter": [
+        0.7,
+        null,
+        0.7
+      ],
+      "owner_letter_known_by_others": [
+        0.9,
+        null,
+        0.9
+      ],
+      "soldier_mayor_embezzled": [
+        0.8,
+        0.6,
+        0.8
+      ]
+    }
+  }
+}

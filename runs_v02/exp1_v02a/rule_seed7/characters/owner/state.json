@@ -1,0 +1,462 @@
+{
+  "character_id": "owner",
+  "location": "bar",
+  "personality": {
+    "caution": 0.9,
+    "curiosity": 0.6,
+    "honesty": 0.6,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "不主动伤害无辜者",
+    "不轻易信任陌生人",
+    "保护自己的利益"
+  ],
+  "goals": [
+    {
+      "key": "protect_tavern",
+      "desc": "保护自己的酒馆",
+      "weight": 1.0,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "find_letter_source",
+      "desc": "搞清楚匿名信的来源",
+      "weight": 0.8,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "avoid_politics",
+      "desc": "避免卷入政治冲突",
+      "weight": 0.9,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.9,
+      "created_at": 0,
+      "deadline": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "三天前收到一封匿名信",
+      "evidence": [
+        {
+          "source_event_id": "seed:anonymous_letter_exists",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "mayor_embezzled",
+      "confidence": 0.45,
+      "kind": "heard",
+      "desc": "匿名信称镇长私吞了公共资金（未证实）",
+      "evidence": [
+        {
+          "source_event_id": "seed:mayor_embezzled",
+          "source_type": "testimony",
+          "reliability": 0.45,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "being_investigated",
+      "confidence": 0.8,
+      "kind": "inferred",
+      "desc": "镇长的卫兵在查我，可能和那封信有关",
+      "evidence": [
+        {
+          "source_event_id": "E0015",
+          "source_type": "inference",
+          "reliability": 0.8,
+          "observed_at": 4,
+          "source": null
+        },
+        {
+          "source_event_id": "E0018",
+          "source_type": "inference",
+          "reliability": 0.8,
+          "observed_at": 5,
+          "source": null
+        },
+        {
+          "source_event_id": "E0023",
+          "source_type": "inference",
+          "reliability": 0.8,
+          "observed_at": 6,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "business_opportunity",
+      "confidence": 0.5,
+      "kind": "heard",
+      "desc": "商人想谈一笔合作",
+      "evidence": [
+        {
+          "source_event_id": "E0024",
+          "source_type": "testimony",
+          "reliability": 0.5,
+          "observed_at": 6,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0028",
+          "source_type": "testimony",
+          "reliability": 0.5,
+          "observed_at": 7,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0036",
+          "source_type": "testimony",
+          "reliability": 0.5,
+          "observed_at": 9,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0063",
+          "source_type": "testimony",
+          "reliability": 0.5,
+          "observed_at": 14,
+          "source": "merchant"
+        }
+      ]
+    },
+    {
+      "key": "speaker_knows_secret",
+      "confidence": 0.48,
+      "kind": "inferred",
+      "desc": "merchant 暗示自己知道镇上的秘密（真假未知）",
+      "evidence": [
+        {
+          "source_event_id": "E0052",
+          "source_type": "inference",
+          "reliability": 0.48,
+          "observed_at": 12,
+          "source": null
+        },
+        {
+          "source_event_id": "E0068",
+          "source_type": "inference",
+          "reliability": 0.48,
+          "observed_at": 15,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.7583333333333334,
+    "suspicion": 0.817
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+      "event_id": "E0009"
+    },
+    {
+      "tick": 2,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 soldier,merchant 在tables说话，听不清内容。",
+      "event_id": "E0006"
+    },
+    {
+      "tick": 2,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 merchant,soldier 在tables说话，听不清内容。",
+      "event_id": "E0007"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0010"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+      "event_id": "E0015"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+      "event_id": "E0018"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 来到了/去到了 bar。",
+      "event_id": "E0019"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：老板，你越是不说，我越得查清楚。",
+      "event_id": "E0023"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。",
+      "event_id": "E0024"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0026"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0027"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+      "event_id": "E0028"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0032"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0034"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+      "event_id": "E0036"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0040"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0051"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0052"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0062"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+      "event_id": "E0063"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0068"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0071"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0075"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0086"
+    }
+  ],
+  "long_term_memory": [
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0068",
+      "importance": 1.0,
+      "consolidated_at_tick": 16
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "merchant": {
+      "trust": 0.405,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.19,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0009",
+    "E0006",
+    "E0007",
+    "E0010",
+    "E0015",
+    "E0018",
+    "E0019",
+    "E0023",
+    "E0024",
+    "E0026",
+    "E0027",
+    "E0028",
+    "E0032",
+    "E0034",
+    "E0036",
+    "E0040",
+    "E0051",
+    "E0052",
+    "E0062",
+    "E0063",
+    "E0068",
+    "E0071",
+    "E0075",
+    "E0086"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 4,
+      "from": "soldier",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "soldier",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "soldier",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "soldier",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "merchant",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 9,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 12,
+      "from": "merchant",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 15,
+      "from": "merchant",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 16,
+      "from": "merchant",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    }
+  ],
+  "pending_question": null,
+  "action_counts": {
+    "observe::": 2,
+    "work::tend_bar": 5,
+    "observe:soldier:": 1,
+    "speak:soldier:denial": 2,
+    "observe:merchant:": 7,
+    "speak:merchant:greeting": 1,
+    "speak:soldier:greeting": 1,
+    "listen::": 1
+  }
+}

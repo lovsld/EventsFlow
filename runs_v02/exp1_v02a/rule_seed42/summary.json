@@ -1,0 +1,161 @@
+{
+  "run_id": "rule_seed42",
+  "mode": "rule",
+  "seed": 42,
+  "ticks": 20,
+  "world_tick": 20,
+  "resumed_from_tick": null,
+  "quota_stopped": false,
+  "quota_waits": 0,
+  "total_events": 85,
+  "final_positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+  },
+  "objects_seen_by": {
+    "anonymous_letter": [
+      "owner",
+      "soldier"
+    ]
+  },
+  "letter_seen_by_objective": [
+    "owner",
+    "soldier"
+  ],
+  "final_beliefs": {
+    "owner": {
+      "anonymous_letter_exists": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "三天前收到一封匿名信"
+      },
+      "mayor_embezzled": {
+        "confidence": 0.849,
+        "kind": "heard",
+        "desc": "匿名信称镇长私吞了公共资金（未证实）"
+      },
+      "business_opportunity": {
+        "confidence": 0.5,
+        "kind": "heard",
+        "desc": "商人想谈一笔合作"
+      },
+      "being_investigated": {
+        "confidence": 0.8,
+        "kind": "inferred",
+        "desc": "镇长的卫兵在查我，可能和那封信有关"
+      },
+      "rumor_spreading": {
+        "confidence": 0.55,
+        "kind": "inferred",
+        "desc": "关于镇长资金的风声可能正在扩散"
+      },
+      "speaker_knows_secret": {
+        "confidence": 0.48,
+        "kind": "inferred",
+        "desc": "merchant 暗示自己知道镇上的秘密（真假未知）"
+      },
+      "letter_known_by_others": {
+        "confidence": 0.9,
+        "kind": "inferred",
+        "desc": "对方已经亲眼看过那封信了"
+      }
+    },
+    "merchant": {
+      "mayor_business_deal": {
+        "confidence": 0.9,
+        "kind": "experienced",
+        "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）"
+      },
+      "owner_cautious": {
+        "confidence": 0.7,
+        "kind": "inferred",
+        "desc": "老板口风很紧，是个谨慎人"
+      },
+      "mayor_embezzled": {
+        "confidence": 0.45,
+        "kind": "heard",
+        "desc": "soldier 的话暗示镇长财务有问题"
+      },
+      "mayor_deal_risky": {
+        "confidence": 0.65,
+        "kind": "inferred",
+        "desc": "和镇长做生意可能有回款风险，但消息本身值钱"
+      },
+      "anonymous_letter_exists": {
+        "confidence": 0.7,
+        "kind": "heard",
+        "desc": "soldier 当众说他已经看过一封关于镇长的信"
+      },
+      "letter_with_owner": {
+        "confidence": 0.5,
+        "kind": "inferred",
+        "desc": "信可能在老板手里"
+      }
+    },
+    "soldier": {
+      "investigation_order": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "今天接到命令，调查酒馆老板最近的异常行为"
+      },
+      "mayor_suspicious": {
+        "confidence": 0.35,
+        "kind": "inferred",
+        "desc": "最近觉得镇长的一些做法不太对劲（直觉，无证据）"
+      },
+      "mayor_embezzled": {
+        "confidence": 0.8,
+        "kind": "heard",
+        "desc": "merchant 的话暗示镇长财务有问题"
+      },
+      "investigation_widening": {
+        "confidence": 0.6,
+        "kind": "inferred",
+        "desc": "事情可能不止酒馆老板，镇长本人也值得查"
+      },
+      "owner_hiding_something": {
+        "confidence": 0.65,
+        "kind": "inferred",
+        "desc": "老板的否认和已知线索对不上，他在藏事"
+      },
+      "anonymous_letter_exists": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "匿名信真实存在（我亲眼读到）"
+      },
+      "speaker_knows_secret": {
+        "confidence": 0.51,
+        "kind": "inferred",
+        "desc": "merchant 暗示自己知道镇上的秘密（真假未知）"
+      },
+      "letter_with_owner": {
+        "confidence": 0.5,
+        "kind": "inferred",
+        "desc": "信可能在老板手里"
+      }
+    }
+  },
+  "memory_entries": {
+    "owner": 31,
+    "merchant": 23,
+    "soldier": 23
+  },
+  "db_counts": {
+    "decisions": 60,
+    "events": 85,
+    "deliveries": 60,
+    "dedup_drops": 0,
+    "predictions": 60,
+    "belief_changes": 44,
+    "plan_transitions": 98,
+    "goal_changes": 2,
+    "consolidations": 60,
+    "counterfactual_suppressions": 0
+  },
+  "llm_repairs_total": 0,
+  "suppression_rules": [],
+  "provider": "rule",
+  "llm_backend": null,
+  "note": "rule mode: no external model calls"
+}
