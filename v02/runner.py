@@ -34,26 +34,30 @@ RUNS_DIR = PROJECT_ROOT / "runs_v02"
 _intent_from_decision = intent_from_decision
 
 
-def preflight(mode: str) -> None:
+def preflight(mode: str, provider: str | None = None) -> None:
     """Fail fast and honestly: llm mode without a credential must not
-    silently degrade into fake behaviour."""
+    silently degrade into fake behaviour. The check is per selected
+    backend, and the error names the exact env vars that would fix it."""
     if mode != "llm":
         return
-    import os as _os
-    backend = _os.environ.get("ACP_LLM_PROVIDER", "gemini")
-    if backend == "openai":
-        if not _os.environ.get("OPENAI_API_KEY"):
-            raise RuntimeError(
-                "llm mode (openai backend) requires OPENAI_API_KEY in the "
-                "environment. No key is set, so no LLM run was started "
-                "(rule/mock modes work).")
-    else:
+    from .providers import resolve_backend
+    backend = resolve_backend(provider)
+    if backend == "gemini":
         from .providers.gemini_provider import credential_available
         if not credential_available():
             raise RuntimeError(
                 "llm mode (gemini backend) requires the custom.gemini "
                 "connector credential or GEMINI_API_KEY. Neither is "
                 "available, so no LLM run was started (rule/mock modes work).")
+    else:
+        from .providers.openai_provider import PRESETS, keys_available
+        if not keys_available(backend):
+            preset = PRESETS[backend]
+            raise RuntimeError(
+                f"llm mode ({backend} backend) requires "
+                f"{preset.keys_env} (comma-separated key pool) or "
+                f"{preset.single_key_env} in the environment. Neither is "
+                "set, so no LLM run was started (rule/mock modes work).")
 
 
 def render_narrative(tick_records: list[dict], names: dict[str, str]) -> str:
@@ -95,7 +99,8 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
                          suppression_rules: list[dict] | None = None,
                          trace_beliefs: bool = False,
                          resume_from: str | None = None,
-                         loop: bool = False) -> Path:
+                         loop: bool = False,
+                         provider: str | None = None) -> Path:
     """suppression_rules (Phase D): counterfactual delivery rules handed
     to the Event Broker — see broker.match_suppression. trace_beliefs:
     also write beliefs_trace.json (per-tick subjective-state snapshots),
@@ -105,12 +110,18 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
     plus a per-tick checkpoint.json (and world_log.json incrementally),
     so resume_from=<run name> continues an interrupted run for `ticks`
     MORE ticks in the same directory and database; loop=True makes a
-    quota-exhausted tick pause and retry instead of degrading."""
+    quota-exhausted tick pause and retry instead of degrading.
+
+    provider selects the llm backend (gemini default; deepseek / kimi /
+    qwen / openai are the OpenAI-compatible pools). It is recorded in
+    run_meta.json, and resuming with a different explicitly requested
+    backend is rejected, like a mode mismatch."""
     resume = resume_from is not None
     configs = load_all()
     root = Path(out_root) if out_root else RUNS_DIR
     checkpoint = None
     resumed_from_tick = None
+    backend = None
     if resume:
         run_id = resume_from
         run_dir = root / run_id
@@ -125,6 +136,17 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
                 f"cannot resume {run_id!r}: the run was created with "
                 f"mode={meta.get('mode')!r} but mode={mode!r} was "
                 "requested; resume with the run's own mode")
+        if mode == "llm":
+            from .providers import requested_backend
+            explicit = requested_backend(provider)
+            meta_backend = meta.get("backend")
+            if meta_backend and explicit and explicit != meta_backend:
+                raise ValueError(
+                    f"cannot resume {run_id!r}: the run was created "
+                    f"with backend={meta_backend!r} but "
+                    f"backend={explicit!r} was requested; resume with "
+                    "the run's own backend")
+            backend = explicit or meta_backend or "gemini"
         # The run's own seed wins: every RNG state is restored from the
         # checkpoint anyway, so the seed only labels the run.
         seed = int(meta.get("seed", seed))
@@ -138,7 +160,10 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
     else:
         run_id = run_name or f"{mode}_seed{seed}"
         run_dir = root / run_id
-    preflight(mode)
+        if mode == "llm":
+            from .providers import resolve_backend
+            backend = resolve_backend(provider)
+    preflight(mode, provider=backend)
     (run_dir / "characters").mkdir(parents=True, exist_ok=True)
 
     from .persistence import Store
@@ -151,8 +176,10 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
     world = WorldEngine(configs, seed=seed)
     agents: dict[str, CharacterAgent] = {}
     for cid in ALL_IDS:
-        provider = make_provider(mode, configs[cid], seed=seed)
-        agents[cid] = CharacterAgent(configs[cid], provider,
+        agent_provider = make_provider(mode, configs[cid], seed=seed,
+                                       provider=backend) \
+            if mode == "llm" else make_provider(mode, configs[cid], seed=seed)
+        agents[cid] = CharacterAgent(configs[cid], agent_provider,
                                      run_char_dir=run_dir / "characters" / cid,
                                      resume_dir=resume)
     broker = EventBroker(ALL_IDS, suppression_rules=suppression_rules)
@@ -166,6 +193,7 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
     else:
         (run_dir / META_FILE).write_text(
             json.dumps({"run_id": run_id, "mode": mode, "seed": seed,
+                        "backend": backend,
                         "characters": list(ALL_IDS),
                         "created_at": datetime.now(timezone.utc).isoformat(),
                         "checkpoint_format": 1},
@@ -210,7 +238,8 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
         "db_counts": store.counts(),
         "suppression_rules": suppression_rules or [],
         "provider": mode,
-        "note": (f"llm mode: real {os.environ.get('ACP_LLM_PROVIDER', 'gemini')} calls"
+        "llm_backend": backend,
+        "note": (f"llm mode: real {backend} calls"
                  if mode == "llm" else f"{mode} mode: no external model calls"),
     }
     (run_dir / "summary.json").write_text(
@@ -221,9 +250,11 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
 def run(mode: str, ticks: int, seed: int, run_name: str | None = None,
         suppression_rules: list[dict] | None = None,
         trace_beliefs: bool = False,
-        resume_from: str | None = None, loop: bool = False) -> Path:
+        resume_from: str | None = None, loop: bool = False,
+        provider: str | None = None) -> Path:
     return asyncio.run(run_simulation(mode=mode, ticks=ticks, seed=seed,
                                       run_name=run_name,
                                       suppression_rules=suppression_rules,
                                       trace_beliefs=trace_beliefs,
-                                      resume_from=resume_from, loop=loop))
+                                      resume_from=resume_from, loop=loop,
+                                      provider=provider))

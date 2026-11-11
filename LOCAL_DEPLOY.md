@@ -20,7 +20,8 @@ python3.12 -m venv .venv
 .venv/bin/python main.py --mode mock --ticks 20 --seed 42
 ```
 
-- llm 模式需要 Gemini Key（见下节），运行产物落在 `runs_v02/<run 名>/`：
+- llm 模式需要所选后端的 Key（Gemini 见第 2 节；DeepSeek / Kimi /
+  Qwen / OpenAI 见第 6 节），运行产物落在 `runs_v02/<run 名>/`：
   `world_log.json`（客观事件日志）、`narrative.md`、`summary.json`、
   `acp.sqlite3`（全审计链）、`characters/<角色>/`（各角色私有记忆与信念）、
   以及三件套新增的 `run_meta.json` 与逐 tick 更新的 `checkpoint.json`。
@@ -151,3 +152,68 @@ export ACP_GEMINI_KEYS='Key一,Key二,Key三'
 # 中途停机/被杀后，随时从检查点续跑（仍可带 --loop）
 .venv/bin/python main.py --resume long_night --ticks 20 --loop
 ```
+
+## 6. 多后端：DeepSeek / Kimi / Qwen / OpenAI
+
+除 Gemini 外，llm 模式还支持四家 OpenAI 兼容接口的后端（共用同一套
+chat-completions 代码，各自一个预设 + 各自的 Key 池）。DeepSeek 的
+价格明显低于 Gemini 付费档，长篇本地跑常从它开始。
+
+### 6.1 预设一览
+
+| 后端 | base_url | 默认模型（便宜档） | Key 池环境变量 | 单 Key 环境变量 | 拿 Key 入口 |
+|---|---|---|---|---|---|
+| deepseek | `https://api.deepseek.com/v1` | `deepseek-chat` | `ACP_DEEPSEEK_KEYS` | `DEEPSEEK_API_KEY` | [platform.deepseek.com](https://platform.deepseek.com) → API keys |
+| kimi | `https://api.moonshot.cn/v1` | `moonshot-v1-8k` | `ACP_KIMI_KEYS` | `MOONSHOT_API_KEY` | [platform.moonshot.cn](https://platform.moonshot.cn) → API Key 管理 |
+| qwen | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-turbo` | `ACP_QWEN_KEYS` | `DASHSCOPE_API_KEY` | [阿里云百炼控制台](https://bailian.console.aliyun.com) → API-KEY |
+| openai | `https://api.openai.com/v1` | `gpt-4o-mini` | `ACP_OPENAI_KEYS` | `OPENAI_API_KEY` | [platform.openai.com](https://platform.openai.com) → API keys |
+
+### 6.2 选择后端
+
+优先级：`--provider` 命令行 > `ACP_PROVIDER` 环境变量 >
+`ACP_LLM_PROVIDER`（旧别名，仍可用）> 默认 `gemini`。
+
+```bash
+export ACP_DEEPSEEK_KEYS='Key一,Key二'
+.venv/bin/python main.py --mode llm --provider deepseek --ticks 60 --run-name ds_night --loop
+```
+
+- 模型覆盖与 Gemini 相同：`ACP_MODEL` 是全后端共享回退，
+  `ACP_MODEL_OWNER` / `ACP_MODEL_MERCHANT` / `ACP_MODEL_SOLDIER`
+  按角色覆盖，对四家新后端同样生效。
+- 接代理/中转：`ACP_<后端大写>_BASE_URL` 覆盖预设端点，如
+  `ACP_DEEPSEEK_BASE_URL=http://127.0.0.1:端口/v1`。
+- 节奏：`ACP_<后端大写>_MIN_INTERVAL` 是该后端两次调用的最小间隔
+  （秒，默认 0），被限流的档位可以调大。
+- 所选后端会写进 `run_meta.json` 的 `backend` 字段；`--resume` 时
+  显式指定了不同后端会被拒绝（省略时自动沿用该 run 的后端）。
+- 启动前检查（preflight）按所选后端查它自己的 Key，缺失时报错会
+  点名缺哪个变量，不会泛泛失败。
+
+### 6.3 池语义（与 Gemini 池对齐）
+
+- 某个 Key 返回 429/401/403 → 标记本进程内耗尽、轮换下一个；
+  **全池因 429 耗尽 → 结构化额度错误**，`--loop` 的额度暂停对四家
+  新后端同样生效（不烧 tick、等 `ACP_QUOTA_SLEEP_MINUTES` 后重试
+  同一个 tick）；全池都是 401/403（Key 本身无效）则是普通错误——
+  等待解决不了坏 Key，不触发暂停。
+- 安全约定相同：Key 只以序号（`key#1`、`key#2`…）出现在日志、异常
+  与审计记录中，原文只进 `Authorization: Bearer` 请求头，绝不落盘
+  （有哨兵 Key 端到端扫描测试断言）。
+- 四家都是付费按量计费、没有 Gemini 那种免费日额度；池的作用是
+  摊开单个 Key 的限流与余额风险。额度在各家平台按 Key/账号计，
+  具体限额以各平台控制台为准。
+
+### 6.4 各家的接口注意点
+
+- 四家都用 `response_format: {"type": "json_object"}` 拿 JSON 决策，
+  决策提示、枚举清洗与校验路径和 Gemini 后端完全一致。
+- DeepSeek：json_object 模式要求提示里出现 “JSON” 字样（本项目的
+  决策契约已满足）；`deepseek-reasoner` 可用 `ACP_MODEL` 切换，但
+  会多返回 reasoning_content，本项目只解析 content。
+- Kimi：`moonshot-v1` 系列支持 json_object；`kimi-k2` 系列在国内
+  端点暂不接受 `response_format`，先不要用 ACP_MODEL 切到 k2。
+- Qwen：走 DashScope 的 OpenAI 兼容模式端点（如上表），不是原生
+  DashScope 端点；`qwen-turbo` 支持 json_object。
+- OpenAI：`gpt-4o-mini` 支持 json_object；本项目为四家共用一条
+  代码路径，没有用 OpenAI 独有的 json_schema strict 模式。

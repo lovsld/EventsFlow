@@ -2,9 +2,13 @@
 """ACP Story Simulator V0.2 entry point (task book section 13).
 
 Usage:
-  python main.py --mode llm  --ticks 20 --seed 42   # Gemini via connector (ACP_LLM_PROVIDER=openai + OPENAI_API_KEY for OpenAI)
+  python main.py --mode llm  --ticks 20 --seed 42   # Gemini via connector (default llm backend)
+  python main.py --mode llm --provider deepseek --ticks 20   # DeepSeek pool (ACP_DEEPSEEK_KEYS / DEEPSEEK_API_KEY)
   python main.py --mode rule --ticks 20 --seed 42   # V0.1 rule control group
   python main.py --mode mock --ticks 20 --seed 42   # deterministic test mode
+
+  llm backends (--provider / ACP_PROVIDER): gemini (default), deepseek,
+  kimi, qwen, openai — each with its own key pool; see LOCAL_DEPLOY.md.
 
 Local runtime trio (see LOCAL_DEPLOY.md):
   python main.py --mode rule --ticks 20 --run-name night1
@@ -31,8 +35,12 @@ def main() -> int:
     ap.add_argument("--resume", default=None, metavar="RUN_NAME",
                     help="resume the named run from its per-tick checkpoint, "
                          "appending --ticks more ticks to the same run directory and database")
+    ap.add_argument("--provider", default=None,
+                    choices=["gemini", "deepseek", "kimi", "qwen", "openai"],
+                    help="llm backend (default: ACP_PROVIDER env, else "
+                         "gemini); each backend uses its own key pool")
     ap.add_argument("--loop", action="store_true",
-                    help="quota-aware continuous loop: when the whole Gemini "
+                    help="quota-aware continuous loop: when the whole "
                          "key pool is exhausted, save the checkpoint, wait "
                          "ACP_QUOTA_SLEEP_MINUTES and retry the same tick "
                          "(total wait capped by ACP_QUOTA_MAX_WAIT_HOURS)")
@@ -48,11 +56,12 @@ def main() -> int:
                     return 2
                 mode = json.loads(meta_path.read_text(encoding="utf-8"))["mode"]
             run_dir = run(mode=mode, ticks=args.ticks, seed=args.seed,
-                          resume_from=args.resume, loop=args.loop)
+                          resume_from=args.resume, loop=args.loop,
+                          provider=args.provider)
         else:
             run_dir = run(mode=args.mode or "rule", ticks=args.ticks,
                           seed=args.seed, run_name=args.run_name,
-                          loop=args.loop)
+                          loop=args.loop, provider=args.provider)
     except (RuntimeError, ValueError, FileNotFoundError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 2
@@ -61,7 +70,7 @@ def main() -> int:
     if summary_path.exists():
         summary = json.loads(summary_path.read_text(encoding="utf-8"))
         if summary.get("quota_stopped"):
-            print("note: stopped early — Gemini quota wait budget exhausted; "
+            print("note: stopped early — LLM quota wait budget exhausted; "
                   "the blocked tick was NOT committed. Resume later with: "
                   f"python main.py --resume {run_dir.name} --ticks <more>")
     return 0
