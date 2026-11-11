@@ -199,9 +199,15 @@ def test_scheduler_rule_run_deterministic_across_hash_seeds(tmp_path):
     # seeded RNG's jitter land on different destinations per process
     # (see PHASE_B_REPORT.md); the historical 91-event Phase A baseline
     # was one of the two hash-dependent branches. The deterministic
-    # trajectory is the 85-event branch, with the same emergent chain:
+    # trajectory was the 85-event branch, with the same emergent chain:
     # the soldier reads the letter (1.0, experienced) and the merchant
     # hears of it (0.7, heard).
+    # Plan-layer update (2026-11-11): result-driven step advancement
+    # and the owner's probe candidates intentionally changed the
+    # trajectory again — the canonical run is now the 87-event
+    # rule_planlayer_seed42, with the same emergent chain (the chain
+    # assertions below are unchanged). The 85-event branch remains as
+    # the pre-upgrade baseline; see PLAN_LAYER_REPORT.md.
     import os
     import subprocess
     import sys
@@ -225,7 +231,7 @@ def test_scheduler_rule_run_deterministic_across_hash_seeds(tmp_path):
                                      .read_text(encoding="utf-8")))
     assert logs[0] == logs[1] == logs[2]
     s = summaries[0]
-    assert s["total_events"] == 85
+    assert s["total_events"] == 87   # plan-layer canonical (was 85 pre-upgrade)
     assert s["db_counts"]["dedup_drops"] == 0   # nothing to suppress in a clean run
     soldier = s["final_beliefs"]["soldier"]["anonymous_letter_exists"]
     assert soldier["confidence"] == 1.0 and soldier["kind"] == "experienced"

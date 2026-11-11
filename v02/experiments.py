@@ -354,7 +354,10 @@ def _counterfactual_markdown(comp: dict) -> str:
         lines.append(f"| {t['event_id']}（{t['claim']}） | {t['tick']} | {fmt(t['deliveries'])} |")
     v = comp["verification"]
     lines += ["",
-              f"- 对照组每次出现士兵均完整听到：{v['control_targets_all_heard_by_recipient']}；"
+              f"- 对照组首次出现士兵完整听到："
+              f"{v['control_first_target_heard_by_recipient']}；"
+              f"对照组全部出现中士兵的投递分布："
+              f"{v['control_target_deliveries_to_recipient']}；"
               f"实验组每次出现均被抑制且有审计："
               f"{v['treatment_targets_all_suppressed_for_recipient']}",
               f"- 客观事件前缀一致到 tick {v['objective_prefix_identical_through_tick']}"
@@ -438,8 +441,26 @@ def run_counterfactual(seed: int = 42, ticks: int = 20, rule: dict | None = None
         t["event_id"] in suppressed_ids and recipient not in t["deliveries"]
         for t in target_treatment) and \
         suppressed_ids == {t["event_id"] for t in target_treatment}
-    control_targets_heard = all(
-        t["deliveries"].get(recipient) == "full" for t in target_control)
+    # What makes the pair a valid hearing-vs-not-hearing contrast is
+    # the FIRST occurrence: it is the same pre-divergence event in
+    # both runs, and in the control it must actually reach the
+    # recipient in full. Later occurrences are post-divergence (not
+    # even the same events across runs) and perception physics decides
+    # what reaches him — since the plan-layer upgrade the claim class
+    # also occurs in conversations he takes no part in (the merchant
+    # answering the owner's probe questions), which reach him in full
+    # when he happens to be co-located, muffled from next door, or
+    # not at all. The old all-occurrences-must-be-full check encoded
+    # the old trajectories, where the class only ever occurred in
+    # conversations addressed to him; the delivery breakdown is
+    # therefore reported descriptively instead of asserted.
+    control_first_heard = bool(target_control) and \
+        target_control[0]["deliveries"].get(recipient) == "full"
+    delivery_breakdown = {"full": 0, "muffled": 0, "absent": 0}
+    for t in target_control:
+        delivery_breakdown[t["deliveries"].get(recipient, "absent")] = \
+            delivery_breakdown.get(
+                t["deliveries"].get(recipient, "absent"), 0) + 1
 
     soldier_keys = ["mayor_embezzled", "investigation_widening",
                     "anonymous_letter_exists", "owner_hiding_something"]
@@ -459,7 +480,8 @@ def run_counterfactual(seed: int = 42, ticks: int = 20, rule: dict | None = None
             "first_objective_divergence_tick": first_divergence,
             "first_target_event_tick":
                 target_control[0]["tick"] if target_control else None,
-            "control_targets_all_heard_by_recipient": control_targets_heard,
+            "control_first_target_heard_by_recipient": control_first_heard,
+            "control_target_deliveries_to_recipient": delivery_breakdown,
             "treatment_targets_all_suppressed_for_recipient":
                 treatment_targets_suppressed,
         },

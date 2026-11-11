@@ -77,11 +77,19 @@ def test_interpretation_transitions_reach_the_db(fixed_run):
     assert n > 0
 
 
-def test_trajectory_unchanged_by_fix(fixed_run):
-    """The fix touches only audit recording: the canonical seed-42
-    trajectory must be reproduced exactly."""
+def test_trajectory_matches_current_canonical(fixed_run):
+    """Trajectory pin against the canonical seed-42 run.
+
+    Originally this asserted equality with runs_v02/rule_fixed_seed42
+    to prove the audit-chain fix changed no behaviour (verified at fix
+    time: identical md5). The plan-layer upgrade then INTENTIONALLY
+    changed behaviour — result-driven step advancement and the owner's
+    probe candidates — and rule_planlayer_seed42 became the canonical
+    trajectory (87 events; the 85-event run stays as the pre-upgrade
+    baseline). The pin now guards determinism against the new
+    canonical; see PLAN_LAYER_REPORT.md."""
     log = json.loads((fixed_run / "world_log.json").read_text())
     canonical = json.loads(
-        (ROOT / "runs_v02" / "rule_fixed_seed42" / "world_log.json")
+        (ROOT / "runs_v02" / "rule_planlayer_seed42" / "world_log.json")
         .read_text())
     assert log == canonical

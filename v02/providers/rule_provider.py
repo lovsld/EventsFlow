@@ -249,6 +249,34 @@ class RuleProvider(LLMProvider):
             add(0.45, {"verb": "refuse", "target": pending.get("from"),
                        "topic": pending.get("topic")}, "我不想再继续这个话题")
 
+        # ---- plan-step alignment bonus (selection side of the upgrade) ----
+        # The pointer is advanced by the agent from action RESULTS (a
+        # fact about the world); this is the matching selection-side
+        # half: a candidate the shared predicate (plan_steps.py — the
+        # same table the audit scores with) judges consistent with the
+        # plan's current step gets a fixed utility bonus, so the choice
+        # itself leans into the step the plan is waiting for. Steps the
+        # predicate cannot judge here (None) earn nothing. Applied to
+        # the finished candidate list, before the final sort; the bonus
+        # is a pure function of context, so determinism is untouched.
+        if plan_step and plan_step.get("step"):
+            owner_loc = owner_location_from_perception(
+                context.perception, loc)
+            bumped: list[tuple[float, dict, str]] = []
+            for score, intent, why in cands:
+                action = {"type": intent.get("verb"),
+                          "target": intent.get("target"),
+                          "target_location": intent.get("target_location"),
+                          "object": intent.get("object"),
+                          "topic": intent.get("topic"),
+                          "claim": intent.get("claim")}
+                if step_consistent(plan_step["step"], action,
+                                   agent_loc=loc,
+                                   owner_loc=owner_loc) is True:
+                    score += STEP_ALIGNMENT_BONUS
+                bumped.append((score, intent, why))
+            cands = bumped
+
         cands.sort(key=lambda x: -x[0])
         score, intent, why = cands[0]
         verb = intent["verb"]

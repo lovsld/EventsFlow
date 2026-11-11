@@ -147,8 +147,10 @@ def test_seed_group_complete_and_reproducible(tmp_path):
     group42 = next(m for m in summary["runs"] if m["seed"] == 42)
     assert (again / "world_log.json").read_bytes() == \
         (Path(group42["run_dir"]) / "world_log.json").read_bytes()
-    # seed 42 is the canonical trajectory
-    assert group42["total_events"] == 85
+    # seed 42 is the canonical trajectory — 87 events since the
+    # plan-layer upgrade (was 85 on the pre-upgrade baseline, which
+    # this test asserted until 2026-11-11; see PLAN_LAYER_REPORT.md)
+    assert group42["total_events"] == 87
     assert group42["soldier_read_letter"] is True
 
 
@@ -158,11 +160,22 @@ def test_counterfactual_pair_seed42(tmp_path):
     comp = run_counterfactual(seed=42, ticks=20, rule=RULE, out_root=tmp_path)
     recipient = RULE["recipient"]
 
-    # the target utterance occurs in the control run and the soldier
-    # hears every occurrence in full; in the treatment the same class of
-    # utterance still occurs objectively, but never reaches the soldier
+    # the target utterance occurs in the control run and its FIRST
+    # occurrence — the same pre-divergence event in both runs — reaches
+    # the soldier in full; in the treatment the same class of utterance
+    # still occurs objectively, but never reaches the soldier.
+    # (Plan-layer update: the old all-occurrences-full check encoded
+    # the old trajectories, where the claim class only ever occurred
+    # in conversations addressed to the soldier. It now also occurs in
+    # merchant–owner conversations, which reach him by ordinary
+    # perception physics — full when co-located, muffled or not at
+    # all otherwise — so the verification asserts the first occurrence
+    # and reports the delivery breakdown descriptively. The pair's
+    # substantive profile below is asserted as before.)
     assert comp["target_events_control"], "utterance must occur in control"
-    assert comp["verification"]["control_targets_all_heard_by_recipient"]
+    assert comp["verification"]["control_first_target_heard_by_recipient"]
+    assert comp["verification"][
+        "control_target_deliveries_to_recipient"]["full"] >= 1
     assert comp["verification"]["treatment_targets_all_suppressed_for_recipient"]
     assert comp["target_events_treatment"], "utterance still occurs in treatment"
     for t in comp["target_events_treatment"]:
