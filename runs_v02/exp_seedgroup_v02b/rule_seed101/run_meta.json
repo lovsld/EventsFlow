@@ -1,0 +1,276 @@
+{
+  "run_id": "rule_seed101",
+  "mode": "rule",
+  "seed": 101,
+  "backend": null,
+  "characters": [
+    "owner",
+    "merchant",
+    "soldier"
+  ],
+  "created_at": "2026-11-11T17:55:58.111606+00:00",
+  "checkpoint_format": 1,
+  "engine_version": "v0.2-b",
+  "scenario_id": "tavern_letter",
+  "scenario": {
+    "scenario_id": "tavern_letter",
+    "version": 1,
+    "comment": null,
+    "locations": [
+      "bar",
+      "tables",
+      "door",
+      "back_room",
+      "outside"
+    ],
+    "adjacency": {
+      "bar": [
+        "tables"
+      ],
+      "tables": [
+        "bar",
+        "door",
+        "back_room"
+      ],
+      "door": [
+        "tables",
+        "outside"
+      ],
+      "back_room": [
+        "tables"
+      ],
+      "outside": [
+        "door"
+      ]
+    },
+    "scenery": {
+      "bar": [
+        "counter",
+        "candle",
+        "wine_shelf"
+      ],
+      "tables": [
+        "oak_table",
+        "empty_glasses"
+      ],
+      "door": [
+        "door_bell"
+      ],
+      "back_room": [
+        {
+          "id": "drawer",
+          "searchable": true
+        },
+        "ledger_shelf"
+      ],
+      "outside": [
+        "street_lamp"
+      ]
+    },
+    "objects": {
+      "anonymous_letter": {
+        "location": "back_room",
+        "holder": "owner",
+        "seen_by": [
+          "owner"
+        ],
+        "searchable": true,
+        "movable": true,
+        "displayable": true,
+        "on_found": "inspect",
+        "fact_belief": "anonymous_letter_exists",
+        "reveals": [
+          {
+            "belief": "mayor_embezzled",
+            "reliability": 0.6
+          }
+        ]
+      }
+    },
+    "claims": {
+      "greeting": {
+        "proposition": null,
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": false,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "smalltalk": {
+        "proposition": null,
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": false,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "business_proposal": {
+        "proposition": "business_opportunity",
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": false,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "mayor_hint": {
+        "proposition": "mayor_embezzled",
+        "stance": "assert",
+        "base_reliability": 0.45,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.45,
+        "speaker_kind": null
+      },
+      "mayor_late_payment": {
+        "proposition": "mayor_embezzled",
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": "mayor_business_deal",
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "answer_mayor": {
+        "proposition": "mayor_embezzled",
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": "mayor_business_deal",
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "investigation_probe": {
+        "proposition": "mayor_embezzled",
+        "stance": "inquire",
+        "base_reliability": 0.5,
+        "sensitive": true,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "letter_question": {
+        "proposition": "anonymous_letter_exists",
+        "stance": "inquire",
+        "base_reliability": 0.5,
+        "sensitive": true,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.1,
+        "speaker_kind": null
+      },
+      "letter_discussion": {
+        "proposition": "anonymous_letter_exists",
+        "stance": "assert",
+        "base_reliability": 1.0,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.9,
+        "speaker_kind": "experienced"
+      },
+      "letter_origin_inquiry": {
+        "proposition": "letter_source_identified",
+        "stance": "inquire",
+        "base_reliability": 0.5,
+        "sensitive": true,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "letter_origin_report": {
+        "proposition": "letter_source_identified",
+        "stance": "assert",
+        "base_reliability": 0.85,
+        "sensitive": false,
+        "speaker_belief": "anonymous_letter_exists",
+        "basis_required": true,
+        "speaker_min_confidence": 0.9,
+        "speaker_kind": "experienced"
+      },
+      "bluff_hint": {
+        "proposition": "speaker_knows_secret",
+        "stance": "assert",
+        "base_reliability": 0.45,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": false,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "denial": {
+        "proposition": null,
+        "stance": "deny",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      }
+    },
+    "speech_lines": {
+      "greeting": "{name}：晚上好，雨夜里酒馆可是个好去处。",
+      "business_proposal": [
+        "{name}：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+        "{name}：那批货的事，老板真不考虑？价格好商量。",
+        "{name}：我也不绕了——货压在手里，镇上只有你这儿能走量。"
+      ],
+      "mayor_late_payment": "{name}：说句实在话，镇长那笔粮食生意，钱拖了我两个月才结清。",
+      "mayor_hint": "{name}：（压低声音）镇上那笔公共资金……数目好像对不上。",
+      "investigation_probe": [
+        "{name}：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+        "{name}：再问一次，这几天后屋那边，有人动过什么吗？",
+        "{name}：老板，你越是不说，我越得查清楚。"
+      ],
+      "letter_question": "{name}：我听说……有一封信？一封关于镇长的信，是不是在你这儿？",
+      "letter_discussion": "{name}：那封信，我已经看过了。信里说的事，你打算怎么办？",
+      "letter_origin_inquiry": "{name}：我把话问明白——这封信，到底是谁写、从哪儿来的？",
+      "letter_origin_report": "{name}：信是在后屋抽屉里放着的，纸和字迹都不像镇上熟人的。",
+      "denial": [
+        "{name}：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+        "{name}：问几遍都一样，我什么都不知道。"
+      ],
+      "bluff_hint": "{name}：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "answer_mayor": "{name}：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。",
+      "smalltalk": "{name}：这雨下得，路都不好走了。"
+    },
+    "ambient": [
+      [
+        "rain_starts",
+        null,
+        "窗外下起雨来，酒馆里的人今晚大概走不了太早。"
+      ],
+      [
+        "bell_rings",
+        "door",
+        "酒馆门口的铃铛响了一声，又没有人进来。"
+      ],
+      [
+        "candle_flickers",
+        "bar",
+        "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+      ],
+      [
+        "distant_shout",
+        "outside",
+        "街上远处有人喊了一嗓子，很快没了声音。"
+      ],
+      [
+        "cat_knocks_glass",
+        "tables",
+        "一只野猫碰倒了桌边的空杯子，碎在地上。"
+      ]
+    ]
+  }
+}

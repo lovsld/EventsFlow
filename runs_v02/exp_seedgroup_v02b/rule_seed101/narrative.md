@@ -1,0 +1,106 @@
+# 酒馆之夜 — 客观叙事（Narrator，仅依据世界日志）
+
+## 周期 1 · 21:05
+- 凯尔 移动：door → tables
+- 米拉 移动：tables → door
+- 奥伦 在 bar observe
+
+## 周期 2 · 21:10
+- 凯尔 移动：tables → back_room
+- 米拉 移动：door → tables
+- 奥伦 在 bar observe
+- 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+
+## 周期 3 · 21:15
+- 凯尔 在 back_room 搜查，发现：anonymous_letter
+- 米拉 移动：tables → back_room
+- 奥伦 在 bar observe
+- 交互 S1 开始（back_room：merchant,soldier）
+
+## 周期 4 · 21:20
+- [back_room] 凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [back_room] 米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。（打断）
+- 奥伦 在 bar observe
+
+## 周期 5 · 21:25
+- [back_room] 凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [back_room] 米拉：那批货的事，老板真不考虑？价格好商量。（打断）
+- 奥伦 在 bar listen
+
+## 周期 6 · 21:30
+- [back_room] 凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [back_room] 米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。（打断）
+- 奥伦 在 bar listen
+- 环境：一只野猫碰倒了桌边的空杯子，碎在地上。
+
+## 周期 7 · 21:35
+- [back_room] 凯尔：再问一次，这几天后屋那边，有人动过什么吗？
+- [back_room] 米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。（打断）
+- 奥伦 在 bar observe
+
+## 周期 8 · 21:40
+- [back_room] 凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [back_room] 米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。（打断）
+- 奥伦 在 bar listen
+
+## 周期 9 · 21:45
+- [back_room] 凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- 米拉 在 back_room listen
+- 奥伦 在 bar observe
+- 环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。
+
+## 周期 10 · 21:50
+- [back_room] 凯尔：老板，你越是不说，我越得查清楚。
+- 米拉 在 back_room observe
+- 奥伦 在 bar work
+
+## 周期 11 · 21:55
+- [back_room] 凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- 米拉 在 back_room observe
+- 奥伦 在 bar listen
+
+## 周期 12 · 22:00
+- [back_room] 凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- 米拉 在 back_room listen
+- 奥伦 在 bar observe
+
+## 周期 13 · 22:05
+- 凯尔 在 back_room listen
+- 米拉 在 back_room listen
+- 奥伦 在 bar work
+
+## 周期 14 · 22:10
+- [back_room] 凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [back_room] 米拉：那批货的事，老板真不考虑？价格好商量。（打断）
+- 奥伦 在 bar observe
+
+## 周期 15 · 22:15
+- [back_room] 凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [back_room] 米拉：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。（打断）
+- 奥伦 在 bar work
+
+## 周期 16 · 22:20
+- 凯尔 在 back_room observe
+- 米拉 在 back_room listen
+- 奥伦 在 bar work
+
+## 周期 17 · 22:25
+- [back_room] 凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- 米拉 在 back_room listen
+- 奥伦 在 bar observe
+
+## 周期 18 · 22:30
+- 凯尔 在 back_room listen
+- 米拉 在 back_room observe
+- 奥伦 在 bar work
+
+## 周期 19 · 22:35
+- 凯尔 在 back_room listen
+- 米拉 在 back_room observe
+- 奥伦 在 bar listen
+- 环境：酒馆门口的铃铛响了一声，又没有人进来。
+
+## 周期 20 · 22:40
+- 凯尔 在 back_room observe
+- 米拉 在 back_room observe
+- 奥伦 在 bar observe
