@@ -1,1 +1,1 @@
-{"verb": "move", "target_location": "bar"}
+{"verb": "ask", "target": "A", "topic": "investigation_probe", "claim": "investigation_probe", "text": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？"}

@@ -226,9 +226,23 @@ def test_rule_run_emergent_chain_and_divergent_beliefs(rule_run):
     # merchant never saw it first-hand: at most hearsay
     mb = merchant.get("anonymous_letter_exists")
     assert mb is None or (mb["kind"] != "experienced")
-    # the three subjective worlds differ
-    assert "owner_hiding_something" in soldier
-    assert "being_investigated" in owner
+    # the three subjective worlds differ.
+    # V0.2-B adjudication (parked item P-1): "owner_hiding_something"
+    # and "being_investigated" were products of the old hand-written
+    # _interpret table, which the generic interpretation channels
+    # replaced. The equivalent inference belief this run actually
+    # produces is the OWNER's conceals:merchant — at tick 14 the
+    # merchant denies the mayor proposition, contradicting what the
+    # owner already believes, so the generic contradiction channel
+    # has the owner infer concealment (kind "inferred"). The soldier
+    # forms no conceals:* belief in this trajectory: no denial he
+    # witnesses contradicts a belief he holds.
+    assert owner["conceals:merchant"]["kind"] == "inferred"
+    assert owner["conceals:merchant"]["confidence"] == 0.556
+    assert not any(k.startswith("conceals:") for k in soldier)
+    # "being_investigated" has no generic writer under the new
+    # channels; its assertion is deleted (adjudication P-1), not
+    # re-pinned to a substitute belief.
 
 
 def test_information_isolation_memory_subset_of_deliveries(rule_run):

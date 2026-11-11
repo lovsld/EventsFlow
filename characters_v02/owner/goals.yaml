@@ -2,9 +2,43 @@ goals:
 - desc: 保护自己的酒馆
   key: protect_tavern
   weight: 1.0
+  # V0.2-B 迁移（设计 4.6）：维护型目标。原失败条件
+  # belief_threshold(letter_known_by_others) 在三条通用通道下没有
+  # 写入者，故按事件等价重表达：有人当众讨论那封信（assert 信件
+  # 存在的 claim），即"信已外泄"这一可感知的失败事实。
+  kind: maintenance
+  failure_condition:
+    type: event_occurred
+    event_type: speak
+    claim: letter_discussion
+    actor: any_other
 - desc: 搞清楚匿名信的来源
   key: find_letter_source
   weight: 0.8
+  kind: achievement
+  # 激活：有人当面问起那封信，或当众讨论它（事件等价重表达，
+  # 同上）。成功需要 letter_source_identified 的强信念——该命题
+  # 由场景数据中的 letter_origin_report claim 供给；酒馆里通常
+  # 无人能给出，目标可能永不完成，如实呈现（设计 4.6 ※）。
+  activation_condition:
+    any:
+    - type: event_occurred
+      event_type: ask
+      claim: letter_question
+    - type: event_occurred
+      event_type: speak
+      claim: letter_discussion
+  success_condition:
+    type: belief_threshold
+    belief: letter_source_identified
+    min_confidence: 0.8
 - desc: 避免卷入政治冲突
   key: avoid_politics
   weight: 0.9
+  kind: maintenance
+  # 失败：被调查盘问累计三次（事件计数等价重表达）。
+  failure_condition:
+    type: event_occurred
+    event_type: ask
+    claim: investigation_probe
+    count: 3

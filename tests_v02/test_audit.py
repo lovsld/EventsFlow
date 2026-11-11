@@ -1,10 +1,20 @@
 """Step-1 audit tests for ACP V0.2 (pytest).
 
-Covered: the M1 step predicates against hand-picked cases; every
-metric (M1-M6) against a small SYNTHETIC run whose expected values are
-computed by hand in the comments; and the audit's structural
-invariants on a fresh short rule simulation (prediction bases fully
-truthful, zero committed-legality violations, zero knowledge leaks).
+Covered: the M1 consistency definition against hand-picked cases;
+every metric (M1-M6) against a small SYNTHETIC run whose expected
+values are computed by hand in the comments; and the audit's
+structural invariants on a fresh short rule simulation (prediction
+bases fully truthful, zero committed-legality violations, zero
+knowledge leaks).
+
+V0.2-B B3 (pre-registered disposition #5): the M1 consistency
+definition is now the design's TEMPLATE definition — an action is
+consistent with a step iff it matches one of the step's declared
+action_candidates templates field-for-field (v02/plan_evaluator.py,
+shared with the runtime's StepEvaluator). The hand-picked cases
+below re-express the old label-predicate cases equivalently
+against that definition; the synthetic run's plan fixture carries
+structured steps and its hand-computed expectations are unchanged.
 """
 from __future__ import annotations
 
@@ -12,14 +22,15 @@ import asyncio
 import json
 from pathlib import Path
 
-from v02.audit import audit_run, step_consistent
+from v02.audit import audit_run
 from v02.persistence import Store
+from v02.plan_evaluator import action_matches_templates
 from v02.runner import run_simulation
 
 ROOT = Path(__file__).resolve().parent.parent
 
 
-# ---------- M1 predicates: hand-picked cases ----------
+# ---------- M1 template consistency: hand-picked cases ----------
 
 def _act(type_, target=None, loc=None, claim=None, topic=None, obj=None):
     return {"type": type_, "target": target, "target_location": loc,
@@ -27,48 +38,39 @@ def _act(type_, target=None, loc=None, claim=None, topic=None, obj=None):
 
 
 def test_step_predicates_hand_cases():
-    # return_to_front: from the back room, moving to the tables is a
-    # shortest-path hop toward the front; from the bar it is moot.
-    assert step_consistent("return_to_front", _act("move", loc="tables"),
-                           agent_loc="back_room", owner_loc="bar") is True
-    assert step_consistent("return_to_front", _act("speak", target="owner"),
-                           agent_loc="back_room", owner_loc="bar") is False
-    assert step_consistent("return_to_front", _act("confront", target="owner"),
-                           agent_loc="bar", owner_loc="bar") is None
-    # confront_owner wants a confront/ask aimed at the owner only.
-    assert step_consistent("confront_owner", _act("confront", target="owner"),
-                           agent_loc="bar", owner_loc="bar") is True
-    assert step_consistent("confront_owner", _act("speak", target="owner"),
-                           agent_loc="bar", owner_loc="bar") is False
-    # press_for_evidence: direct pressure, a search, or an approach move
-    # (bar -> tables is on the shortest path to the back room).
-    assert step_consistent("press_for_evidence", _act("search", loc="back_room"),
-                           agent_loc="back_room", owner_loc="bar") is True
-    assert step_consistent("press_for_evidence", _act("move", loc="tables"),
-                           agent_loc="bar", owner_loc="door") is True
-    assert step_consistent("press_for_evidence", _act("speak", target="owner",
-                                                      claim="greeting"),
-                           agent_loc="bar", owner_loc="bar") is False
-    # deny_and_observe: a denial or quiet observation fits; work does not.
-    assert step_consistent("deny_and_observe", _act("speak", claim="denial"),
-                           agent_loc="bar", owner_loc="bar") is True
-    assert step_consistent("deny_and_observe", _act("work"),
-                           agent_loc="bar", owner_loc="bar") is False
-    # probe_more_mayor_news: listening fits; a business pitch does not;
-    # relaying mayor talk does.
-    assert step_consistent("probe_more_mayor_news", _act("listen"),
-                           agent_loc="bar", owner_loc="bar") is True
-    assert step_consistent("probe_more_mayor_news",
-                           _act("speak", claim="business_proposal"),
-                           agent_loc="bar", owner_loc="bar") is False
-    assert step_consistent("probe_more_mayor_news",
-                           _act("speak", claim="answer_mayor"),
-                           agent_loc="bar", owner_loc="bar") is True
-    # placeholders and unknown labels are unmeasurable, never False.
-    assert step_consistent("decide_next_action", _act("wait"),
-                           agent_loc="bar", owner_loc="bar") is None
-    assert step_consistent("some_future_step", _act("wait"),
-                           agent_loc="bar", owner_loc="bar") is None
+    # a "return to the front" step, expressed as data: move templates
+    # naming the front locations — a move to the tables matches, a
+    # speech action does not (the old table's shortest-path subtlety
+    # is now the synthesizer's job when it AUTHORS the templates).
+    front = [{"type": "move", "target_location": "tables"},
+             {"type": "move", "target_location": "bar"}]
+    assert action_matches_templates(_act("move", loc="tables"), front)
+    assert not action_matches_templates(_act("speak", target="owner"), front)
+    # a "confront the owner" step: verb + target pinned.
+    confront_owner = [{"type": "confront", "target": "owner"},
+                      {"type": "ask", "target": "owner"}]
+    assert action_matches_templates(
+        _act("confront", target="owner"), confront_owner)
+    assert not action_matches_templates(
+        _act("speak", target="owner"), confront_owner)
+    # a "press for evidence" step: pressure verbs, search, approach.
+    press = [{"type": "ask", "target": "owner"},
+             {"type": "confront", "target": "owner"},
+             {"type": "search"},
+             {"type": "move", "target_location": "back_room"}]
+    assert action_matches_templates(_act("search", loc="back_room"), press)
+    assert not action_matches_templates(
+        _act("speak", target="owner", claim="greeting"), press)
+    # field-subset semantics: a template pinning only the claim slot
+    # matches any verb carrying that claim (topic aliases claim).
+    denial = [{"claim": "denial"}]
+    assert action_matches_templates(_act("speak", claim="denial"), denial)
+    assert action_matches_templates(_act("speak", topic="denial"), denial)
+    assert not action_matches_templates(_act("work"), denial)
+    # a step with NO templates (a legacy free-text step) matches
+    # nothing — it is unmeasurable under this definition, and the
+    # audit excludes it from the denominators rather than failing it.
+    assert not action_matches_templates(_act("wait"), [])
 
 
 # ---------- synthetic run: every metric hand-computed ----------
@@ -91,11 +93,18 @@ def _decision(action, plan_status="continue"):
 def _build_synthetic_run(run_dir: Path) -> Path:
     run_dir.mkdir(parents=True)
     store = Store("audit_synth", sqlite_path=str(run_dir / "acp.sqlite3"))
+    press_templates = [{"type": "ask", "target": "owner"},
+                       {"type": "confront", "target": "owner"},
+                       {"type": "search"}]
     plan = {"plan_id": "plan_001", "goal": "press_for_evidence",
-            "steps": ["press_for_evidence"], "current_step": 0,
-            "commitment": 0.8, "status": "active"}
+            "steps": [{"step_id": "press", "objective": "press_for_evidence",
+                       "action_candidates": press_templates,
+                       "success_condition": None}],
+            "current_step": 0, "commitment": 0.8, "status": "active"}
     plan_step = {"plan_id": "plan_001", "goal": "press_for_evidence",
                  "step_index": 0, "step": "press_for_evidence",
+                 "step_id": "press",
+                 "action_candidates": press_templates,
                  "steps_total": 1, "commitment": 0.8, "status": "active"}
     mayor = [{"key": "mayor_embezzled", "confidence": 0.6, "kind": "heard",
               "desc": "rumor"}]
@@ -296,8 +305,15 @@ def test_audit_fresh_rule_run_invariants(tmp_path):
     assert rep["m4_legality"]["available_action_check"]["rate"] == 1.0
     assert rep["m2_knowledge_grounding"]["violations"] == []
     assert rep["m2_knowledge_grounding"]["reverse_check"]["violations"] == []
-    # M5 was unmeasurable before the audit-chain fix (interpretation-
-    # driven set/replace records were silently dropped, so the rate
-    # came out None). Post-fix the transitions are recorded and every
-    # abandon/replace in this run carries a reason.
-    assert rep["m5_plan_changes"]["rate"] == 1.0
+    # M5 (V0.2-B adjudication, parked item P-6): the old pin asserted
+    # rate == 1.0, which presupposed that this short run CONTAINS
+    # abandon/replace rows (it did under the old architecture, where
+    # plan churn was largely an artefact of the interpretation layer
+    # setting and replacing plans). Under the current architecture
+    # this fresh 6-tick run produces NO abandon/replace rows at all,
+    # so the honest M5 value is "unmeasurable": zero denominator
+    # rows and a None rate. Asserting a numeric rate here would
+    # fabricate a sample; the measurable-case semantics of M5 are
+    # covered by the synthetic run above (rate 0.5, hand-computed).
+    assert rep["m5_plan_changes"]["abandon_or_replace_rows"] == 0
+    assert rep["m5_plan_changes"]["rate"] is None

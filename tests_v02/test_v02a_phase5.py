@@ -54,11 +54,12 @@ def test_metrics_on_pre_v02a_run_report_gaps_honestly(tmp_path):
 
 
 # ---------- experiment 3a: one definition of the world ----------
-
-def test_adjacency_has_a_single_source():
-    assert world.ADJACENCY == adjacency_of()
-    assert broker.ADJACENCY == adjacency_of()
-    assert context_builder.ADJACENCY == adjacency_of()
+# V0.2-B disposition #7 (pre-registered in the design doc): the
+# module-constant identity test is deleted — the ADJACENCY constants
+# it asserted on no longer exist. What it protected (one graph
+# definition, threaded everywhere) is now asserted functionally by
+# test_v02b_b1.py::test_nondefault_graph_threads_everywhere: a
+# NON-default graph must drive world, broker and context alike.
 
 
 def test_world_engine_explicit_default_config_is_identical():

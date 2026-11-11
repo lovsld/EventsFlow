@@ -8,7 +8,8 @@
   same room/tick is flagged as an interruption (the floor is tracked by
   the Interaction Manager, which the Resolver consults);
 - speech fails if the target already moved away this tick;
-- search finds the letter only if it is objectively in the back room.
+- search finds the searchable objects objectively at the searched
+  place (V0.2-B: capability attributes are scenario data).
 
 Phase B split: perception/delivery live in broker.py, session lifecycle
 in interaction.py, driving/scheduling in scheduler.py. This module keeps
@@ -27,17 +28,30 @@ from .world_config import (DEFAULT_WORLD, adjacency_of, ambient_of,
                            locations_of)
 
 __all__ = ["WorldEngine", "resolve", "InteractionManager",
-           "build_perception", "deliver", "ADJACENCY", "LOCATIONS", "VERBS"]
+           "build_perception", "deliver", "VERBS"]
 
-# V0.2-A Phase 5 (experiment 3a): the world's static structure is
-# data in world_config.DEFAULT_WORLD; these module constants are
-# derived from it (single definition) for existing importers.
-ADJACENCY = adjacency_of()
-LOCATIONS = locations_of()
+# V0.2-B: the module-level ADJACENCY / LOCATIONS constants are gone —
+# every consumer reads the RUN's Scenario Definition instance
+# (design section 3.7). The graph helpers in world_config remain for
+# config-shaped dicts.
 VERBS = {"move", "speak", "ask", "confront", "observe", "listen", "work",
          "search", "refuse", "wait", "give", "show", "take"}
 
 AMBIENT = ambient_of()
+
+
+def _object_attr(cfg: dict, oid: str, key: str, default):
+    """One capability attribute of a declared scenario object
+    (searchable / displayable / on_found). Read from the config's
+    object_attrs (Scenario Definition form) or, for a raw world
+    config, from the object declaration itself. An object the config
+    never declares keeps the pre-B legacy behaviour (the caller's
+    default) — declarations govern, absence is not a capability."""
+    attrs = (cfg.get("object_attrs") or {}).get(oid)
+    if attrs is not None and key in attrs:
+        return attrs[key]
+    decl = (cfg.get("objects") or {}).get(oid) or {}
+    return decl.get(key, default)
 
 
 def resolve(world: dict, intents: dict[str, dict], rng, event_seq: list[int],
@@ -93,15 +107,25 @@ def resolve(world: dict, intents: dict[str, dict], rng, event_seq: list[int],
             results[aid] = {"ok": True, "event_id": ev["event_id"], "interrupted": interrupted}
         elif verb == "search":
             place = intent.get("target_location") or loc
-            # Data-driven (experiment 3a): a search finds every key
-            # object objectively located at the searched place. For
-            # the canonical world this is exactly the old rule — the
-            # letter, only in the back room.
+            # Data-driven (experiment 3a; V0.2-B capability attributes):
+            # a search finds every SEARCHABLE object objectively
+            # located at the searched place. An object declared
+            # on_found="acquire" changes hands to the searcher (the
+            # world-side transfer that makes possession goals
+            # reachable); "inspect" objects stay where they are.
             found = []
             for oid, obj_state in world["objects"].items():
-                if obj_state.get("location") == place:
+                if obj_state.get("location") == place \
+                        and _object_attr(cfg, oid, "searchable", True):
                     found.append(oid)
-                    obj_state.setdefault("seen_by", []).append(aid)
+                    # seen_by records WHO has seen the object — a
+                    # repeat find by the same agent is not a new seer
+                    # (V0.2-B: the list had accumulated duplicates)
+                    if aid not in obj_state.setdefault("seen_by", []):
+                        obj_state["seen_by"].append(aid)
+                    if _object_attr(cfg, oid, "on_found", "inspect") == "acquire":
+                        obj_state["holder"] = aid
+                        obj_state["location"] = None
             events.append(new_event("search", [aid], place, found=found))
             results[aid] = {"ok": True, "found": found}
         elif verb == "show":
@@ -109,8 +133,11 @@ def resolve(world: dict, intents: dict[str, dict], rng, event_seq: list[int],
             target = intent.get("target")
             obj_state = world["objects"].get(obj) if obj else None
             if obj_state is not None and obj_state.get("holder") == aid:
-                if target and world["agents"][target]["location"] == loc:
-                    obj_state.setdefault("seen_by", []).append(target)
+                if not _object_attr(cfg, obj, "displayable", True):
+                    results[aid] = {"ok": False, "reason": "object_not_displayable"}
+                elif target and world["agents"][target]["location"] == loc:
+                    if target not in obj_state.setdefault("seen_by", []):
+                        obj_state["seen_by"].append(target)
                     events.append(new_event("show", [aid, target], loc, object=obj))
                     results[aid] = {"ok": True}
                 else:
@@ -174,7 +201,8 @@ class WorldEngine:
                 self.interactions.record_utterance(self.state, ev["location"], ev,
                                                    bool(ev.get("interrupted")))
         ambient = ambient_of(self.world_config)
-        if self.rng.random() < 0.35:
+        # V0.2-B: a scenario may declare no ambient events at all.
+        if ambient and self.rng.random() < 0.35:
             kind, loc, text = self.rng.choice(ambient)
             if kind == "rain_starts" and self.state["weather"] == "rain":
                 kind, loc, text = "candle_flickers", "bar", ambient[2][2]

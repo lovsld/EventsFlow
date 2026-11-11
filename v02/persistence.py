@@ -48,6 +48,10 @@ class DecisionRow(Base):
     reasoning_summary = Column(Text)
     execution_result = Column(Text)
     error = Column(Text)
+    # V0.2-B: the rule generator's candidate scoring (design 3.6) —
+    # nullable JSON; None for providers that do not score and for
+    # pre-B runs (see the migration guard in Store.__init__).
+    candidate_scores = Column(Text)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
 
@@ -194,6 +198,18 @@ class Store:
             url = f"sqlite:///{sqlite_path}"
         self.engine = create_engine(url)
         Base.metadata.create_all(self.engine)
+        # V0.2-B migration guard: create_all does not ALTER existing
+        # tables, and experiment tooling opens PRE-B run databases
+        # read-mostly through this Store — add the candidate_scores
+        # column to an old agent_decisions table if it is missing.
+        from sqlalchemy import inspect, text as _text
+        cols = [c["name"] for c in
+                inspect(self.engine).get_columns("agent_decisions")]
+        if "candidate_scores" not in cols:
+            with self.engine.begin() as conn:
+                conn.execute(_text(
+                    "ALTER TABLE agent_decisions "
+                    "ADD COLUMN candidate_scores TEXT"))
         self.Session = sessionmaker(bind=self.engine)
 
     def record_decision(self, rec: dict) -> None:
@@ -213,6 +229,8 @@ class Store:
                 reasoning_summary=rec.get("reasoning_summary"),
                 execution_result=json.dumps(rec.get("execution_result"), ensure_ascii=False)
                 if rec.get("execution_result") is not None else None,
+                candidate_scores=json.dumps(rec.get("candidate_scores"), ensure_ascii=False)
+                if rec.get("candidate_scores") is not None else None,
                 error=rec.get("error")))
             s.commit()
 

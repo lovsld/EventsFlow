@@ -2,9 +2,44 @@ goals:
 - desc: 完成调查任务
   key: complete_investigation
   weight: 1.0
+  kind: achievement
+  # V0.2-B 迁移（设计 4.6）：亲见信件（direct 层级的强信念）
+  # 且对镇长问题有定论（贪腐或清白任一达到 0.9）。mayor_cleared
+  # 是保留命题：酒馆无人主张它，该目标在酒馆可能永不完成，
+  # 如实呈现（设计 4.6 ※）。
+  success_condition:
+    all:
+    - type: belief_threshold
+      belief: anonymous_letter_exists
+      min_confidence: 0.9
+      min_source_tier: direct
+    - any:
+      - type: belief_threshold
+        belief: mayor_embezzled
+        min_confidence: 0.9
+      - type: belief_threshold
+        belief: mayor_cleared
+        min_confidence: 0.9
 - desc: 维护自己的荣誉
   key: keep_honor
   weight: 0.9
+  kind: maintenance
+  # 失败：自己的话被他人拒绝累计三次。
+  failure_condition:
+    type: event_occurred
+    event_type: refuse
+    actor: any_other
+    target: self
+    count: 3
 - desc: 搞清楚镇长是否真的存在问题
   key: learn_mayor_truth
   weight: 0.75
+  kind: achievement
+  success_condition:
+    any:
+    - type: belief_threshold
+      belief: mayor_embezzled
+      min_confidence: 0.9
+    - type: belief_threshold
+      belief: mayor_cleared
+      min_confidence: 0.9

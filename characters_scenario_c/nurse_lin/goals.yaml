@@ -1,0 +1,38 @@
+goals:
+- desc: 补齐退烧药，别等病人到了抓瞎
+  key: restock_medicine
+  weight: 1.0
+  kind: achievement
+  # 激活依赖跨角色信息流动：本人得知今夜要收治高烧病人
+  # （听医生说，或亲见入院单）后才确立此目标。
+  activation_condition:
+    type: belief_threshold
+    belief: fever_patient_coming
+    min_confidence: 0.4
+  # 成功：退烧药到本人手中（在药房搜查获得，on_found=acquire）。
+  success_condition:
+    type: object_possession
+    object: fever_medicine
+    holder: self
+- desc: 做完今晚的夜班记录
+  key: finish_chart
+  weight: 0.7
+  kind: achievement
+  # 到值班室并在那里/为记录工作过（沿用既有场景的通用表达）。
+  success_condition:
+    all:
+    - type: agent_at_location
+      agent: self
+      location: oncall
+    - type: event_occurred
+      event_type: work
+      actor: self
+- desc: 守好病房，别出乱子
+  key: guard_ward
+  weight: 0.9
+  kind: maintenance
+  # 失败：被人当面质问（说明病房出了岔子）。
+  failure_condition:
+    type: event_occurred
+    event_type: confront
+    target: self

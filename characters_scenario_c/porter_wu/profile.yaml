@@ -1,0 +1,27 @@
+character_id: porter_wu
+legacy_id: W
+name: 吴大勇
+role: 夜班护工
+identity: 诊所的夜班护工，管大门、分诊台和跑腿。傍晚关药房窗时发现窗扣是坏的，还没顾上修。今晚的事他大半还不知道，就等着听吩咐。
+identity_doc: '# W（吴大勇）· 夜班护工
+
+  诊所夜班护工，管大门、分诊台和跑腿。傍晚发现药房窗扣坏了。
+
+  性格：热心、话多，好奇心重，手脚勤快。
+
+  原则：有活抢着干；听到的消息先核实再传；大门夜里不能离人太久。
+
+  '
+start_location: triage
+routine:
+  verb: work
+  topic: patrol
+possessions:
+- flashlight
+seed_offset: 317
+disclosure_threshold: 0.65
+private_knowledge:
+- confidence: 0.9
+  desc: 傍晚关窗时亲见药房的窗扣是坏的（亲身确认，与今晚收治无关，也没跟谁说过）
+  key: pharmacy_latch_broken
+  kind: experienced

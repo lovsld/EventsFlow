@@ -26,7 +26,7 @@ import urllib.request
 
 from ..protocol import AgentDecision, DecisionContext, ProviderResult
 from .base import LLMProvider, ProviderError, QuotaExhaustedError
-from .openai_provider import SYSTEM_TEMPLATE
+from .openai_provider import SYSTEM_TEMPLATE, _JSON_CONTRACT
 
 API_HOST = "generativelanguage.googleapis.com"
 _CREDENTIAL_NAME = "custom.gemini"
@@ -166,21 +166,14 @@ class GeminiProvider(LLMProvider):
 
     def _system_prompt(self) -> str:
         cfg = self.config
+        # V0.2-B B3: the JSON contract is the ONE shared constant in
+        # openai_provider (previously this method carried a verbatim
+        # copy that could drift); a consistency test asserts both
+        # backends present identical contract text.
         return SYSTEM_TEMPLATE.format(
             identity=cfg.identity, personality=json.dumps(cfg.personality, ensure_ascii=False),
             principles="；".join(cfg.principles),
-            goals="；".join(g["desc"] for g in cfg.goals)) + \
-            "\n输出必须是且仅是一个 JSON 对象，字段为 intent, target, action{type,target," \
-            "target_location,object,content,claim,topic}, reasoning_summary, " \
-            "expected_outcome, confidence, selected_goal_id, " \
-            "plan_update{status,reason,new_goal,new_steps}。" \
-            "\nselected_goal_id 填你本轮决策所服务的目标的 key，必须是你长期目标" \
-            "（active_goals）之一；没有明确对应时填 null，填了不存在的目标会被判无效。" \
-            "\n上下文中的 trust 与 relationships 是你对其他角色的信任与关系记录" \
-            "（0-1，trust 越高越信任），那只是你自己的主观认知，不是客观事实。" \
-            "\n枚举值必须严格照抄：action.type 只能是 speak/ask/confront/move/search/show/" \
-            "refuse/observe/listen/work/wait 之一；plan_update.status 只能是 " \
-            "none/continue/advance/abandon/replace 之一（没有计划变化时用 none）。"
+            goals="；".join(g["desc"] for g in cfg.goals)) + _JSON_CONTRACT
 
     @staticmethod
     def _sanitize(raw: str) -> dict:

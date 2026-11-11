@@ -2,6 +2,22 @@ goals:
 - desc: 赢得师傅的信任
   key: earn_keeper_trust
   weight: 0.9
+  kind: achievement
+  success_condition:
+    type: trust_threshold
+    other: keeper
+    min_trust: 0.5
 - desc: 完成今天的盘点
   key: finish_inventory
   weight: 0.8
+  kind: achievement
+  # 盘点 = 亲自到后屋核查过（到过 back_room 且在那里观察/工作过
+  # ——以"自己在后屋执行过 observe/work"近似表达）。
+  success_condition:
+    all:
+    - type: agent_at_location
+      agent: self
+      location: back_room
+    - type: event_occurred
+      event_type: work
+      actor: self

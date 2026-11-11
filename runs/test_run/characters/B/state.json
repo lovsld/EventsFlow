@@ -10,6 +10,21 @@
       "confidence": 0.7,
       "kind": "inferred",
       "desc": "老板口风很紧，是个谨慎人"
+    },
+    "mayor_embezzled": {
+      "confidence": 0.45,
+      "kind": "heard",
+      "desc": "C 的话暗示镇长财务有问题"
+    },
+    "mayor_deal_risky": {
+      "confidence": 0.65,
+      "kind": "inferred",
+      "desc": "和镇长做生意可能有回款风险，但消息本身值钱"
+    },
+    "anonymous_letter_exists": {
+      "confidence": 0.7,
+      "kind": "heard",
+      "desc": "C 当众说他已经看过一封关于镇长的信"
     }
   },
   "emotions": {
@@ -23,7 +38,7 @@
       "notes": []
     },
     "C": {
-      "trust": 0.24,
+      "trust": 0.288,
       "notes": []
     }
   },
@@ -32,19 +47,27 @@
   ],
   "perceived_event_ids": [
     "E0005",
-    "E0009",
+    "E0006",
+    "E0011",
     "E0015",
-    "E0018",
-    "E0020",
-    "E0022",
-    "E0024",
-    "E0025",
-    "E0026",
-    "E0028",
-    "E0029",
-    "E0041"
+    "E0017",
+    "E0027",
+    "E0031",
+    "E0034",
+    "E0035",
+    "E0040",
+    "E0043",
+    "E0044",
+    "E0046"
   ],
   "utterances_heard": [
+    {
+      "tick": 4,
+      "from": "C",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
     {
       "tick": 5,
       "from": "C",
@@ -53,45 +76,38 @@
       "kind": "ask"
     },
     {
-      "tick": 6,
-      "from": "C",
-      "topic": "investigation_probe",
-      "claim": "investigation_probe",
-      "kind": "ask"
-    },
-    {
-      "tick": 6,
+      "tick": 5,
       "from": "A",
       "topic": "denial",
       "claim": "denial",
       "kind": "speak"
     },
     {
-      "tick": 7,
-      "from": "C",
+      "tick": 9,
+      "from": "A",
       "topic": "greeting",
       "claim": "greeting",
       "kind": "speak"
     },
     {
-      "tick": 7,
+      "tick": 11,
+      "from": "C",
+      "topic": "mayor_hint",
+      "claim": "mayor_hint",
+      "kind": "confront"
+    },
+    {
+      "tick": 12,
+      "from": "C",
+      "topic": "letter_discussion",
+      "claim": "letter_discussion",
+      "kind": "confront"
+    },
+    {
+      "tick": 12,
       "from": "A",
       "topic": "denial",
       "claim": "denial",
-      "kind": "speak"
-    },
-    {
-      "tick": 8,
-      "from": "C",
-      "topic": "investigation_probe",
-      "claim": "investigation_probe",
-      "kind": "ask"
-    },
-    {
-      "tick": 8,
-      "from": "A",
-      "topic": "greeting",
-      "claim": "greeting",
       "kind": "speak"
     }
   ],
@@ -99,11 +115,12 @@
   "tick_now": 12,
   "action_counts": {
     "move:bar:": 1,
-    "speak:A:business_proposal": 2,
-    "speak:A:greeting": 2,
+    "speak:A:business_proposal": 3,
     "speak:C:business_proposal": 2,
     "speak:C:answer_mayor": 1,
-    "speak:C:greeting": 1,
-    "observe:A:": 3
+    "speak:A:greeting": 1,
+    "observe:A:": 2,
+    "speak:A:bluff_hint": 1,
+    "speak:C:greeting": 1
   }
 }

@@ -1,0 +1,6 @@
+{
+  "tests_v02/test_phase_b.py::test_scheduler_rule_run_matches_phase_a_baseline": true,
+  "tests_v02/test_plan_chain_fix.py::test_trajectory_unchanged_by_fix": true,
+  "tests_v02/test_plan_chain_fix.py::test_interpretation_transitions_reach_the_db": true,
+  "tests_v02/test_v02a_phase5.py::test_adjacency_has_a_single_source": true
+}

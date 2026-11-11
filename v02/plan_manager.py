@@ -14,12 +14,16 @@ Owns the full plan lifecycle on a CharacterState:
                     rejected (and the rejection is recorded both in the
                     plan's interrupt_log and as a transition); with a
                     reason they take effect
-  advance_from_result — the plan-layer upgrade's entry point: when the
-                    execution result of the action chosen for the
-                    current step comes back and the runtime judges the
-                    step fulfilled (shared predicates, plan_steps.py),
-                    the agent advances through this — same _advance
-                    machinery, reason "result_driven:<step>"
+  apply_step_evaluation — V0.2-B B3: the StepEvaluator's verdict on
+                    the current step (fulfilled / counted failure /
+                    undecidable), judged from the step's declared
+                    conditions against the action's RESULT; fulfilment
+                    advances through the same _advance machinery with
+                    reason "result_driven:<step_id>", counted failures
+                    fill the step's attempts and can enter blocked
+  execute_recovery — V0.2-B B3: the blocked/suspended recovery state
+                    machine (retry / replan / suspend / abandon /
+                    skip + suspended reactivation), design 5.5
   current_step_view — the "current step" injected into the decision
                     context (design 4.4: Context 注入当前步）
 
@@ -69,9 +73,9 @@ COMMITMENT_GATE = 0.7
 class PlanManager:
     def __init__(self):
         self.transitions: list[dict] = []
-        # V0.2-A Phase 3: goal lifecycle changes driven by plan events
-        # (see _sync_goal); drained by the agent exactly like plan
-        # transitions and persisted to the goal_changes table.
+        # V0.2-B B2: kept as an always-empty compatibility buffer —
+        # goal changes are produced by the GoalEvaluator and drained
+        # by the agent itself, never by this manager.
         self.goal_changes: list[dict] = []
 
     # ---------------- internal ----------------
@@ -86,100 +90,30 @@ class PlanManager:
              "plan_id": plan_id, "kind": kind, "reason": reason,
              "before": before, "after": after})
 
-    # ---------------- goal lifecycle (V0.2-A Phase 3) ----------------
-    # Goals are runtime objects, but their lifecycle is DETERMINISTIC:
-    # it is driven only by plan events for a plan whose goal label
-    # equals the goal's key (plan labels are otherwise a free
-    # namespace — "press_for_evidence" is a plan label, not a goal).
-    #   plan set for goal G        -> G active (a paused G resumes);
-    #                                 the previously pursued different
-    #                                 goal is paused (single-plan
-    #                                 runtime: its pursuit is suspended)
-    #   counted step advance       -> G.progress tracks the plan's
-    #                                 step fraction (monotonic)
-    #   plan completed             -> G completed, progress 1.0
-    #   plan abandoned (provider,
-    #   with reason)               -> G abandoned; setting a new plan
-    #                                 for G reactivates it
-    # Every change is recorded in self.goal_changes with before/after
-    # snapshots. Providers never touch Goal objects directly.
-    @staticmethod
-    def _goal(state, key: str):
-        for g in state.goals:
-            if g.key == key:
-                return g
-        return None
-
-    def _record_goal(self, state, tick: int, goal, kind: str,
-                     reason: str | None, before: dict | None) -> None:
-        self.goal_changes.append(
-            {"tick": tick, "character_id": state.character_id,
-             "goal_key": goal.key, "kind": kind, "reason": reason,
-             "before": before, "after": goal.model_dump()})
-
-    def drain_goal_changes(self) -> list[dict]:
-        changes, self.goal_changes = self.goal_changes, []
-        return changes
-
-    def _sync_goal_on_set(self, state, tick: int,
-                          old_plan: PlanState | None, new_goal: str) -> None:
-        if old_plan is not None and old_plan.goal != new_goal:
-            prev = self._goal(state, old_plan.goal)
-            if prev is not None and prev.status == "active":
-                before = prev.model_dump()
-                prev.status = "paused"
-                self._record_goal(state, tick, prev, "goal_paused",
-                                  f"plan switched to {new_goal}", before)
-        goal = self._goal(state, new_goal)
-        if goal is not None and goal.status in ("paused", "abandoned"):
-            before = goal.model_dump()
-            goal.status = "active"
-            self._record_goal(state, tick, goal, "goal_reactivated",
-                              "new plan set for this goal", before)
-
-    def _sync_goal_on_progress(self, state, tick: int, plan: PlanState) -> None:
-        goal = self._goal(state, plan.goal)
-        if goal is None or not plan.steps:
-            return
-        if plan.status == "completed" \
-                or plan.current_step >= len(plan.steps):
-            if goal.status != "completed":
-                before = goal.model_dump()
-                goal.progress = 1.0
-                goal.status = "completed"
-                self._record_goal(state, tick, goal, "goal_completed",
-                                  "linked plan completed", before)
-            return
-        new_progress = round(plan.current_step / len(plan.steps), 3)
-        if new_progress > goal.progress:
-            before = goal.model_dump()
-            goal.progress = new_progress
-            self._record_goal(state, tick, goal, "goal_progress",
-                              f"plan step {plan.current_step}/{len(plan.steps)}",
-                              before)
-
-    def _sync_goal_on_abandon(self, state, tick: int, plan: PlanState,
-                              reason: str | None) -> None:
-        goal = self._goal(state, plan.goal)
-        if goal is not None and goal.status == "active":
-            before = goal.model_dump()
-            goal.status = "abandoned"
-            self._record_goal(state, tick, goal, "goal_abandoned",
-                              reason, before)
+    # ---------------- goal lifecycle ----------------
+    # V0.2-B B2: the Plan Manager no longer writes goal state AT
+    # ALL. The V0.2-A _sync_goal_* methods (plan events driving goal
+    # status/progress, progress = current_step/len(steps)) are
+    # deleted: goal state is owned by the GoalEvaluator
+    # (v02/goal_engine.py), which judges declared CONDITIONS on the
+    # agent's subjective state. A plan carries a stable goal_id link
+    # (design 4.5); an unlinked plan touches no goal, ever.
 
     # ---------------- creation ----------------
-    def set_plan(self, state, goal: str, steps: list[str], tick: int,
-                 reason: str | None = None) -> PlanState:
+    def set_plan(self, state, goal: str, steps: list, tick: int,
+                 reason: str | None = None,
+                 goal_id: str | None = None) -> PlanState:
         old = state.current_plan
         _PLAN_SEQ[0] += 1
         plan = PlanState(plan_id=f"plan_{_PLAN_SEQ[0]:03d}", goal=goal,
                          steps=list(steps), current_step=0, commitment=0.8,
                          status="active", last_progress_tick=tick,
-                         commitment_updated_tick=tick)
+                         commitment_updated_tick=tick, goal_id=goal_id)
+        if plan.steps:
+            plan.steps[0].status = "active"
         state.current_plan = plan
         self._log(state, tick, "replace" if old else "set", plan.plan_id,
                   reason=reason, before=self._snap(old), after=self._snap(plan))
-        self._sync_goal_on_set(state, tick, old, goal)
         return plan
 
     def note_blocked_replacement(self, state, tick: int,
@@ -198,31 +132,246 @@ class PlanManager:
                          f"{attempted_goal} not critical",
                   before=self._snap(plan), after=self._snap(plan))
 
-    # ---------------- step failure / blocked (V0.2-A Phase 3) ----------
-    def note_step_failure(self, state, tick: int, step: str) -> str:
-        """The action chosen for the plan's current step was judged
-        step-consistent (the agent genuinely tried the step) but its
-        result did not fulfil the step. Consecutive failures reaching
-        BLOCK_THRESHOLD block the plan: it stops decaying, result-
-        driven advancement no longer applies, and only a deliberate
-        provider advance / replace / abandon moves it again."""
+    # ---------------- step evaluation / blocked / recovery (B3) ----
+    def apply_step_evaluation(self, state, tick: int, step_id: str,
+                              evaluation, action_sig: str) -> str:
+        """Consume one StepEvaluation for the plan's CURRENT step
+        (design 5.3/5.4). Fulfilment advances through the same
+        _advance machinery as a provider advance (shared dedup);
+        a counted failure increments the STEP's own attempts, and
+        reaching the step's retry policy — or a terminal failure
+        condition — enters blocked and schedules the policy's
+        default recovery. Every evaluation is logged as a
+        step_evaluated transition whose after-payload carries the
+        full StepEvaluation and the step's attempts."""
         plan = state.current_plan
         if plan is None or plan.status != "active":
             return "no_active_plan"
-        plan.step_failures += 1
-        if plan.step_failures >= BLOCK_THRESHOLD:
+        if plan.current_step >= len(plan.steps):
+            return "no_current_step"
+        step = plan.steps[plan.current_step]
+        if step.step_id != step_id:
+            return "stale_step"
+        after = {**evaluation.to_dict(), "step_id": step.step_id,
+                 "attempts": step.attempts}
+        if evaluation.legacy:
+            self._log(state, tick, "step_evaluated", plan.plan_id,
+                      reason="legacy step: not condition-judged",
+                      before=self._snap(plan), after=after)
+            return "legacy"
+        if evaluation.fulfilled:
+            self._log(state, tick, "step_evaluated", plan.plan_id,
+                      reason=evaluation.reason,
+                      before=self._snap(plan), after=after)
+            return self._advance(state, plan, action_sig, tick,
+                                 reason=f"result_driven:{step.step_id}")
+        if evaluation.failed:
+            step.attempts += 1
+            after["attempts"] = step.attempts
+            self._log(state, tick, "step_evaluated", plan.plan_id,
+                      reason=evaluation.reason,
+                      before=self._snap(plan), after=after)
+            if evaluation.terminal or \
+                    step.attempts >= step.retry_policy.max_attempts:
+                before = self._snap(plan)
+                plan.status = "blocked"
+                plan.blocked_info = {
+                    "reason": evaluation.reason, "since_tick": tick,
+                    "step_id": step.step_id, "attempts": step.attempts}
+                plan.pending_recovery = {
+                    "strategy": step.retry_policy.on_exhausted,
+                    "source": "policy_default"}
+                self._log(state, tick, "blocked", plan.plan_id,
+                          reason=f"step {step.step_id!r}: "
+                                 f"{evaluation.reason} "
+                                 f"(attempts {step.attempts})",
+                          before=before, after=self._snap(plan))
+                return "blocked"
+            return "step_failure"
+        self._log(state, tick, "step_evaluated", plan.plan_id,
+                  reason=evaluation.reason,
+                  before=self._snap(plan), after=after)
+        return "evaluated"
+
+    def reset_attempts_on_environment_change(self, state, tick: int,
+                                             refs: str) -> bool:
+        """Design 5.4: a newly perceived event intersecting the
+        current step condition's reference set resets the step's
+        failure counter (the world the step was failing against has
+        changed) and forces re-evaluation next cycle."""
+        plan = state.current_plan
+        if plan is None or plan.status != "active":
+            return False
+        if plan.current_step >= len(plan.steps):
+            return False
+        step = plan.steps[plan.current_step]
+        if step.attempts <= 0:
+            return False
+        before = self._snap(plan)
+        step.attempts = 0
+        self._log(state, tick, "environment_reset", plan.plan_id,
+                  reason=f"perceived event intersects {refs}",
+                  before=before, after=self._snap(plan))
+        return True
+
+    def execute_recovery(self, state, tick: int, strategy: str,
+                         reason: str | None = None, *,
+                         source: str = "provider",
+                         new_steps: list | None = None,
+                         new_goal_label: str | None = None,
+                         goal_id: str | None = None,
+                         reactivate_when: dict | None = None) -> str:
+        """The blocked/suspended recovery state machine (design
+        5.5). Legal transitions only; an illegal proposal is logged
+        (kind recovery_rejected / recovery_deferred) and changes
+        nothing. Every executed recovery logs kind=recovery with
+        the strategy and source in the reason."""
+        plan = state.current_plan
+        if plan is None:
+            return "no_plan"
+        # suspended reactivation arrives through this entry point
+        # from the GoalEvaluator with strategy "suspend"
+        if plan.status == "suspended":
+            if source == "evaluator":
+                before = self._snap(plan)
+                plan.status = "active"
+                plan.reactivate_when = None
+                self._log(state, tick, "recovery", plan.plan_id,
+                          reason="strategy=reactivate "
+                                 "source=evaluator: "
+                                 "reactivate_condition_met",
+                          before=before, after=self._snap(plan))
+                return "recovered_reactivate"
+            return "not_blocked"
+        if plan.status != "blocked":
+            return "not_blocked"
+        step = plan.steps[plan.current_step] \
+            if plan.current_step < len(plan.steps) else None
+
+        def reject(kind: str, why: str) -> str:
+            self._log(state, tick, kind, plan.plan_id, reason=why,
+                      before=self._snap(plan), after=self._snap(plan))
+            return kind
+
+        if strategy == "retry":
+            if step is None:
+                return reject("recovery_rejected", "retry: no current step")
+            used = plan.retry_recoveries.get(step.step_id, 0)
+            if used >= 2:
+                return reject(
+                    "recovery_rejected",
+                    f"retry cap reached for step {step.step_id!r} "
+                    f"({used} recoveries already)")
             before = self._snap(plan)
-            plan.status = "blocked"
-            self._log(state, tick, "blocked", plan.plan_id,
-                      reason=f"step {step!r} failed "
-                             f"{plan.step_failures} times in a row",
+            plan.retry_recoveries[step.step_id] = used + 1
+            step.attempts = 0
+            plan.status = "active"
+            plan.blocked_info = None
+            plan.pending_recovery = None
+            self._log(state, tick, "recovery", plan.plan_id,
+                      reason=f"strategy=retry source={source}: "
+                             f"{reason or ''}".rstrip(),
                       before=before, after=self._snap(plan))
-            return "blocked"
-        self._log(state, tick, "step_failure", plan.plan_id,
-                  reason=f"step {step!r} attempt "
-                         f"{plan.step_failures} did not fulfil",
-                  before=self._snap(plan), after=self._snap(plan))
-        return "step_failure"
+            return "recovered_retry"
+        if strategy == "skip":
+            if step is None:
+                return reject("recovery_rejected", "skip: no current step")
+            before = self._snap(plan)
+            step.status = "skipped"
+            self._log(state, tick, "step_skipped", plan.plan_id,
+                      reason=f"step {step.step_id!r} skipped by "
+                             f"recovery (source={source})",
+                      before=before, after=self._snap(plan))
+            plan.blocked_info = None
+            plan.pending_recovery = None
+            nxt = next((i for i in range(plan.current_step + 1,
+                                         len(plan.steps))
+                        if plan.steps[i].status in ("pending", "active")),
+                       None)
+            if nxt is None:
+                plan.status = "completed"
+                skipped = sum(1 for s in plan.steps
+                              if s.status == "skipped")
+                state.current_plan = None
+                self._log(state, tick, "recovery", plan.plan_id,
+                          reason=f"strategy=skip source={source}: "
+                                 f"{reason or ''}".rstrip(),
+                          before=before, after=self._snap(plan))
+                self._log(state, tick, "plan_completed", plan.plan_id,
+                          reason=f"all steps fulfilled or skipped "
+                                 f"(skipped={skipped})",
+                          before=before, after=self._snap(plan))
+            else:
+                plan.current_step = nxt
+                plan.steps[nxt].status = "active"
+                plan.status = "active"
+                self._log(state, tick, "recovery", plan.plan_id,
+                          reason=f"strategy=skip source={source}: "
+                                 f"{reason or ''}".rstrip(),
+                          before=before, after=self._snap(plan))
+            return "recovered_skip"
+        if strategy == "suspend":
+            cond = reactivate_when
+            if cond is None and source == "policy_default" \
+                    and step is not None:
+                cond = step.success_condition
+            if cond is None:
+                return reject(
+                    "recovery_rejected",
+                    "suspend requires a reactivate_when condition")
+            before = self._snap(plan)
+            plan.status = "suspended"
+            plan.reactivate_when = cond
+            plan.pending_recovery = None
+            self._log(state, tick, "recovery", plan.plan_id,
+                      reason=f"strategy=suspend source={source}: "
+                             f"{reason or ''}".rstrip(),
+                      before=before, after=self._snap(plan))
+            return "recovered_suspend"
+        if strategy == "abandon":
+            if not reason:
+                return reject("recovery_rejected",
+                              "abandon requires a reason")
+            before = self._snap(plan)
+            plan.status = "abandoned"
+            plan.interrupt_log.append(
+                {"tick": tick, "kind": "abandon", "reason": reason,
+                 "via": "recovery"})
+            plan.pending_recovery = None
+            state.current_plan = None
+            self._log(state, tick, "recovery", plan.plan_id,
+                      reason=f"strategy=abandon source={source}: {reason}",
+                      before=before, after=self._snap(plan))
+            return "recovered_abandon"
+        if strategy == "replan":
+            if not new_steps:
+                # legal but not executable yet: the replacement must
+                # arrive in the same decision (design 5.5)
+                return reject(
+                    "recovery_deferred",
+                    "replan needs replacement steps in the same "
+                    "decision; none were supplied")
+            before = self._snap(plan)
+            old_id, old_goal_id = plan.plan_id, plan.goal_id
+            plan.status = "abandoned"
+            plan.interrupt_log.append(
+                {"tick": tick, "kind": "abandon", "reason": "replanned"})
+            state.current_plan = None
+            self._log(state, tick, "abandon", old_id,
+                      reason="replanned",
+                      before=before, after=self._snap(plan))
+            self._log(state, tick, "recovery", old_id,
+                      reason=f"strategy=replan source={source}: "
+                             f"{reason or ''}".rstrip(),
+                      before=before, after=None)
+            self.set_plan(state,
+                          new_goal_label or plan.goal, list(new_steps),
+                          tick, reason="replanned",
+                          goal_id=goal_id if goal_id is not None
+                          else old_goal_id)
+            return "recovered_replan"
+        return reject("recovery_rejected",
+                      f"unknown recovery strategy {strategy!r}")
 
     # ---------------- context ----------------
     def current_step_view(self, state) -> dict | None:
@@ -231,8 +380,16 @@ class PlanManager:
             return None
         step = plan.steps[plan.current_step] \
             if plan.current_step < len(plan.steps) else None
+        # V0.2-B: "step" stays the step's human-readable objective
+        # text (the shape Phase C tests and the audit read); the
+        # structured fields ride alongside for the generic generator.
         return {"plan_id": plan.plan_id, "goal": plan.goal,
-                "step_index": plan.current_step, "step": step,
+                "goal_id": plan.goal_id,
+                "step_index": plan.current_step,
+                "step": step.objective if step else None,
+                "step_id": step.step_id if step else None,
+                "action_candidates": list(step.action_candidates) if step else [],
+                "success_condition": step.success_condition if step else None,
                 "steps_total": len(plan.steps), "commitment": plan.commitment,
                 "status": plan.status}
 
@@ -256,6 +413,18 @@ class PlanManager:
                      tick: int) -> str:
         """Returns the same note strings the Phase A runtime returned."""
         plan = state.current_plan
+        # V0.2-B (design 4.5): a plan_update naming a goal_id the
+        # agent does not own is invalid — the LINK is rejected and
+        # recorded (the plan update itself proceeds unlinked), the
+        # same ownership discipline as selected_goal_id.
+        if pu.goal_id is not None \
+                and pu.goal_id not in {g.key for g in state.goals}:
+            self._log(state, tick, "plan_update_rejected_invalid_goal_id",
+                      plan.plan_id if plan else None,
+                      reason=f"goal_id {pu.goal_id!r} is not one of "
+                             "this agent's goals",
+                      before=self._snap(plan), after=self._snap(plan))
+            pu = pu.model_copy(update={"goal_id": None})
         if pu.status in ("abandon", "replace") and not pu.reason:
             if plan:
                 plan.interrupt_log.append(
@@ -272,55 +441,61 @@ class PlanManager:
             state.current_plan = None
             self._log(state, tick, "abandon", plan.plan_id, reason=pu.reason,
                       before=self._snap(plan), after=None)
-            self._sync_goal_on_abandon(state, tick, plan, pu.reason)
             return "abandoned"
 
         if pu.status == "replace" and pu.new_steps:
             self.set_plan(state, pu.new_goal or (plan.goal if plan else "new_goal"),
-                          pu.new_steps, tick, reason=pu.reason)
+                          pu.new_steps, tick, reason=pu.reason,
+                          goal_id=pu.goal_id if pu.goal_id is not None
+                          else (plan.goal_id if plan else None))
             return "replaced"
 
-        if pu.status == "advance" and plan and plan.status in ("active", "blocked"):
+        if pu.status == "advance" and plan:
+            # V0.2-B B3 — BREAKING SEMANTICS CHANGE (design 5.5):
+            # provider advance no longer unblocks a blocked plan and
+            # no longer asserts fulfilment of a CONDITIONAL step.
+            # Blocked plans leave blocked only through the recovery
+            # state machine (execute_recovery); conditional steps
+            # advance only through the StepEvaluator. Provider
+            # advance keeps exactly one meaning: "the provider
+            # asserts this LEGACY (condition-free) step is done".
             if plan.status == "blocked":
-                # A deliberate provider advance is the documented way
-                # out of a blocked plan: un-block, clear the failure
-                # count, then advance as usual.
-                before = self._snap(plan)
-                plan.status = "active"
-                plan.step_failures = 0
-                self._log(state, tick, "unblocked", plan.plan_id,
-                          reason="provider advance on blocked plan",
-                          before=before, after=self._snap(plan))
+                self._log(state, tick, "advance_rejected_blocked",
+                          plan.plan_id,
+                          reason="advance on a blocked plan is "
+                                 "illegal in B3; use plan_update."
+                                 "recovery (retry/replan/suspend/"
+                                 "abandon/skip)",
+                          before=self._snap(plan), after=self._snap(plan))
+                return "advance_rejected_blocked"
+            if plan.status != "active":
+                self._log(state, tick, "advance_rejected_not_active",
+                          plan.plan_id, reason=f"plan is {plan.status}",
+                          before=self._snap(plan), after=self._snap(plan))
+                return "advance_rejected_not_active"
+            cur = plan.steps[plan.current_step] \
+                if plan.current_step < len(plan.steps) else None
+            if cur is not None and cur.success_condition is not None:
+                self._log(state, tick,
+                          "advance_rejected_conditional_step",
+                          plan.plan_id,
+                          reason="conditional steps advance only via "
+                                 "the StepEvaluator (result-driven)",
+                          before=self._snap(plan), after=self._snap(plan))
+                return "advance_rejected_conditional_step"
             return self._advance(state, plan, action_sig, tick)
 
         self._log(state, tick, pu.status, plan.plan_id if plan else None,
                   before=self._snap(plan), after=self._snap(plan))
         return pu.status
 
-    def advance_from_result(self, state, action_sig: str, tick: int,
-                            step: str) -> str:
-        """Result-driven step advancement (plan-layer upgrade).
-
-        The agent has received the execution result of the action it
-        chose for the plan's current step, and the runtime — not the
-        provider — judged that action to have fulfilled the step (see
-        v02/plan_steps.py: step completion is a fact about the world,
-        not a provider opinion). Delegates to the same _advance
-        machinery as a provider 'advance' — same signature dedup, same
-        commitment bonus, same completion — so an explicit provider
-        advance and a result-driven one can never double-count the
-        same action. The transition's reason records the provenance
-        and the fulfilled step."""
-        plan = state.current_plan
-        if plan is None or plan.status != "active":
-            return "no_active_plan"
-        return self._advance(state, plan, action_sig, tick,
-                             reason=f"result_driven:{step}")
-
     def _advance(self, state, plan: PlanState, action_sig: str,
                  tick: int, reason: str | None = None) -> str:
         step_idx = plan.current_step
-        step_name = plan.steps[step_idx] if step_idx < len(plan.steps) else None
+        # V0.2-B: steps are PlanStep objects; the history log keeps
+        # the step's objective TEXT (the shape tests/audit read).
+        step_name = plan.steps[step_idx].objective \
+            if step_idx < len(plan.steps) else None
         last_counted = next((h for h in reversed(plan.step_history)
                              if h["counted"]), None)
         if last_counted is not None \
@@ -336,17 +511,32 @@ class PlanManager:
         plan.step_history.append(
             {"tick": tick, "step_index": step_idx, "step": step_name,
              "action_sig": action_sig, "counted": True})
-        plan.current_step = min(step_idx + 1, len(plan.steps))
-        plan.step_failures = 0
+        if step_idx < len(plan.steps):
+            plan.steps[step_idx].status = "fulfilled"
+            plan.steps[step_idx].attempts = \
+                plan.steps[step_idx].attempts  # frozen with the step
+        nxt = next((i for i in range(step_idx + 1, len(plan.steps))
+                    if plan.steps[i].status in ("pending", "active")),
+                   len(plan.steps))
+        plan.current_step = nxt
+        if nxt < len(plan.steps):
+            plan.steps[nxt].status = "active"
         plan.last_progress_tick = tick
         plan.commitment = round(min(MAX_COMMITMENT,
                                     plan.commitment + PROGRESS_BONUS), 3)
         plan.commitment_updated_tick = tick
-        self._sync_goal_on_progress(state, tick, plan)
-        if plan.current_step >= len(plan.steps):
+        if nxt >= len(plan.steps):
             plan.status = "completed"
             state.current_plan = None
+            skipped = sum(1 for s in plan.steps if s.status == "skipped")
             self._log(state, tick, "advance", plan.plan_id, reason=reason,
+                      before=before, after=self._snap(plan))
+            # design 5.6: plan completion is its own record and must
+            # carry the count of skipped steps
+            self._log(state, tick, "plan_completed", plan.plan_id,
+                      reason=f"all steps fulfilled or skipped "
+                             f"(skipped={skipped}); final advance: "
+                             f"{reason or ''}".rstrip(),
                       before=before, after=self._snap(plan))
         else:
             self._log(state, tick, "advance", plan.plan_id, reason=reason,

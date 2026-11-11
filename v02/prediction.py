@@ -40,7 +40,6 @@ Actual-value definitions (fixed, so tests can assert them):
 """
 from __future__ import annotations
 
-from .context_builder import ADJACENCY
 from .protocol import AgentDecision, DecisionContext, Prediction, PredictionError
 
 SPEECH = ("speak", "ask", "confront")
@@ -61,7 +60,11 @@ class PredictionEngine:
         target_present = (target in colocated) if target else None
 
         if a.type == "move":
-            success = a.target_location in ADJACENCY.get(context.location, set())
+            # V0.2-B threading: adjacency from the run's Scenario
+            # Definition instance (carried on the agent), not a
+            # module-level default graph.
+            success = a.target_location in agent.scenario.adjacency.get(
+                context.location, [])
         elif a.type in SPEECH:
             success = bool(target_present) if target else True
         elif a.type == "show":
@@ -79,10 +82,13 @@ class PredictionEngine:
         found = None
         if a.type == "search":
             place = a.target_location or context.location
-            already_read = any(
-                b.key == "anonymous_letter_exists" and b.kind == "experienced"
-                for b in context.beliefs)
-            found = (place == "back_room") and not already_read
+            # V0.2-B: the found expectation is subjective and generic —
+            # the place affords searching (scenario scenery) and this
+            # agent's own searches there have not already come up empty
+            # nor produced its findings. (Pre-B this was hardcoded to
+            # the letter in the back room.)
+            found = agent.scenario.searchable_at(place) \
+                and place not in agent.state.searched_empty_places
 
         return Prediction(
             prediction_id=f"pred_{context.character_id}_{context.tick}",

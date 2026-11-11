@@ -2,9 +2,32 @@ goals:
 - desc: 获得更多商业资源
   key: gain_business
   weight: 1.0
+  kind: achievement
+  # V0.2-B 迁移（设计 4.6）：设计给出的事件子条件（自己的商业
+  # 主张后得到非拒绝回应）在主观谓词下不可靠表达，按设计自带的
+  # 降级条款只保留信念条件。注意 business_opportunity 的信念来自
+  # 他人向商人主张 business_proposal——商人自己通常涨不了，
+  # 目标可能永不完成，如实呈现。
+  success_condition:
+    type: belief_threshold
+    belief: business_opportunity
+    min_confidence: 0.5
 - desc: 建立有价值的人际关系
   key: build_relationships
   weight: 0.8
+  kind: achievement
+  success_condition:
+    type: trust_threshold
+    other: any
+    min_trust: 0.5
 - desc: 避免损失自己的财富
   key: protect_wealth
   weight: 0.85
+  kind: maintenance
+  # 原失败条件 belief_threshold(mayor_deal_risky) 无通用通道写入
+  # 者；等价重表达为：确信镇长贪腐（≥0.9）即意味着与镇长交易的
+  # 财富风险坐实。
+  failure_condition:
+    type: belief_threshold
+    belief: mayor_embezzled
+    min_confidence: 0.9

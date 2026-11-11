@@ -2,9 +2,34 @@ goals:
 - desc: 看好仓库，不出纰漏
   key: guard_storehouse
   weight: 1.0
+  # V0.2-B：维护型。失败 = 别人（非本人）在仓库里翻找。
+  kind: maintenance
+  failure_condition:
+    type: event_occurred
+    event_type: search
+    actor: any_other
 - desc: 找回失踪的仓库钥匙
   key: find_missing_key
   weight: 0.85
+  kind: achievement
+  # 激活：本人确知钥匙今晨失踪（私人知识 0.95 ≥ 0.8，开局即满足，
+  # 由 GoalEvaluator 在 init 求值时激活）。
+  # 成功：钥匙回到本人手中——搜查获得（on_found=acquire）后
+  # object_possession 主观成立。这是设计 4.6 指定的仓库完成路径。
+  activation_condition:
+    type: belief_threshold
+    belief: key_missing_this_morning
+    min_confidence: 0.8
+  success_condition:
+    type: object_possession
+    object: warehouse_key
+    holder: self
 - desc: 避免因丢钥匙被东家责罚
   key: avoid_blame
   weight: 0.8
+  kind: maintenance
+  # 失败：被人当面质问（confront）钥匙的事。
+  failure_condition:
+    type: event_occurred
+    event_type: confront
+    target: self

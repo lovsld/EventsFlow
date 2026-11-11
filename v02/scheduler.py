@@ -258,7 +258,12 @@ class Scheduler:
             elif kind == "plan_transition":
                 self.store.record_plan_transition(upd)
             elif kind == "goal_change":
-                self.store.record_goal_change(upd)
+                # the envelope kind is "goal_change"; the row's kind
+                # is the specific change_kind (activated /
+                # goal_completed / ...) — V0.2-B B2 fix: receive-path
+                # rows previously recorded the envelope kind verbatim
+                self.store.record_goal_change(
+                    {**upd, "kind": upd.get("change_kind", "goal_change")})
             elif kind == "consolidation":
                 self.store.record_consolidation(upd)
 

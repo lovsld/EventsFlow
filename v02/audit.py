@@ -107,9 +107,17 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from .context_builder import ADJACENCY
-from .plan_steps import PLACEHOLDER_STEPS, step_consistent
-from .plan_steps import action_signature as action_sig
+# V0.2-B: the audit is a tavern-scoped analysis tool; it reads the
+# graph from world_config's single definition (the module-level
+# context_builder.ADJACENCY constant no longer exists).
+from .world_config import adjacency_of
+
+ADJACENCY = adjacency_of()
+# V0.2-B B3: plan_steps.py (the tavern step-label predicate table)
+# is deleted; M1's consistency definition is now the design's
+# template definition, shared with the runtime's StepEvaluator.
+from .plan_evaluator import action_matches_templates
+from .plan_evaluator import action_signature as action_sig
 
 AGENTS = ("owner", "merchant", "soldier")
 START_POSITIONS = {"owner": "bar", "merchant": "tables", "soldier": "door"}
@@ -192,19 +200,25 @@ def positions_at(run: dict, tick: int) -> dict:
 
 
 # ---------------------------------------------------------------- M1
-# The step predicate table itself lives in v02/plan_steps.py, shared
-# with the runtime (plan-layer upgrade): the audit scores runs with
-# exactly the definition the runtime used to advance plans.
+# V0.2-B B3 (design 5.2): the consistency definition CHANGED with
+# the architecture, by the design's own instruction. An action is
+# consistent with a step iff it matches one of the step's declared
+# action_candidates templates (field-level — the same match the
+# runtime's StepEvaluator uses). The old label-predicate values
+# (M1a 0.6932 / M1b 0.7727 on the V0.2-A seed group) are NOT
+# recomputed here: plan_steps.py is deleted, and V0.2-B_REPORT.md
+# presents old and new values side by side without mixing them.
+# Steps without templates (legacy free-text steps) are unjudgeable
+# under the template definition and counted separately.
 
 
 def m1_plan_alignment(run: dict) -> dict:
     decs = run["decisions"]
-    with_plan = judgeable = moot_or_unmeasurable = 0
+    with_plan = judgeable = legacy_or_unmeasurable = 0
     a_hits = b_hits = 0
     per_step: dict[str, Counter] = defaultdict(Counter)
     step_index_dist: Counter = Counter()
     plan_update_dist: Counter = Counter()
-    unknown_steps: Counter = Counter()
     for d in decs:
         ctx = d["context"]
         plan_update_dist[(d["decision"].get("plan_update") or {}).get("status")] += 1
@@ -214,30 +228,30 @@ def m1_plan_alignment(run: dict) -> dict:
         with_plan += 1
         step_index_dist[ps.get("step_index")] += 1
         action = (d["decision"] or {}).get("action") or {}
-        owner_loc = positions_at(run, d["tick"]).get("owner")
-        cur = step_consistent(ps["step"], action, agent_loc=ctx.get("location"),
-                              owner_loc=owner_loc)
-        if cur is None:
-            moot_or_unmeasurable += 1
-            if ps["step"] not in PLACEHOLDER_STEPS and ps["step"] != "return_to_front":
-                unknown_steps[ps["step"]] += 1
-            per_step[ps["step"]]["excluded"] += 1
+        templates = ps.get("action_candidates") or []
+        label = ps.get("step_id") or ps.get("step")
+        if not templates:
+            legacy_or_unmeasurable += 1
+            per_step[label]["excluded"] += 1
             continue
         judgeable += 1
+        cur = action_matches_templates(action, templates)
         a_hits += bool(cur)
-        per_step[ps["step"]]["judged"] += 1
-        per_step[ps["step"]]["m1a_consistent"] += bool(cur)
+        per_step[label]["judged"] += 1
+        per_step[label]["m1a_consistent"] += bool(cur)
         plan = ctx.get("current_plan") or {}
-        steps = [s for s in plan.get("steps", []) if s not in PLACEHOLDER_STEPS]
-        any_hit = any(step_consistent(s, action, agent_loc=ctx.get("location"),
-                                      owner_loc=owner_loc) for s in steps)
+        all_templates = [t for s in plan.get("steps", [])
+                         for t in (s.get("action_candidates") or [])]
+        any_hit = action_matches_templates(action, all_templates) \
+            if all_templates else False
         b_hits += bool(any_hit)
-        per_step[ps["step"]]["m1b_consistent"] += bool(any_hit)
+        per_step[label]["m1b_consistent"] += bool(any_hit)
     total = len(decs)
     return {
         "decisions": total, "with_active_plan": with_plan,
         "plan_coverage": round(with_plan / total, 4) if total else 0.0,
-        "judgeable": judgeable, "excluded_moot_or_unmeasurable": moot_or_unmeasurable,
+        "judgeable": judgeable,
+        "excluded_legacy_or_unmeasurable": legacy_or_unmeasurable,
         "m1a_current_step": {"consistent": a_hits, "judged": judgeable,
                              "rate": round(a_hits / judgeable, 4) if judgeable else None},
         "m1b_any_plan_step": {"consistent": b_hits, "judged": judgeable,
@@ -245,7 +259,7 @@ def m1_plan_alignment(run: dict) -> dict:
         "step_index_distribution": {str(k): v for k, v in sorted(
             step_index_dist.items(), key=lambda kv: str(kv[0]))},
         "plan_update_status_distribution": dict(plan_update_dist),
-        "unknown_step_labels": dict(unknown_steps),
+        "unknown_step_labels": {},
         "per_step": {k: dict(v) for k, v in sorted(per_step.items())},
     }
 

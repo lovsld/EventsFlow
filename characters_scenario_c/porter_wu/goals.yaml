@@ -1,0 +1,48 @@
+goals:
+- desc: 弄清今晚到底有没有新病人要来
+  key: learn_admission
+  weight: 0.8
+  kind: achievement
+  # 成功：从别人口中（或亲见入院单）确知有高烧病人要来。
+  success_condition:
+    type: belief_threshold
+    belief: fever_patient_coming
+    min_confidence: 0.6
+- desc: 提前把病房的床位担架备好
+  key: prepare_stretcher
+  weight: 0.85
+  kind: achievement
+  # 激活：先得知有病人要来，才有备床的由头。
+  activation_condition:
+    type: belief_threshold
+    belief: fever_patient_coming
+    min_confidence: 0.4
+  # 成功：到过病房并在那里干过活（备床）。
+  success_condition:
+    all:
+    - type: agent_at_location
+      agent: self
+      location: ward
+    - type: event_occurred
+      event_type: work
+      actor: self
+- desc: 守好大门和分诊台
+  key: keep_gate
+  weight: 0.7
+  kind: maintenance
+  # 失败：自己的话被他人拒绝累计两次（说明配合出了问题）。
+  failure_condition:
+    type: event_occurred
+    event_type: refuse
+    actor: any_other
+    target: self
+    count: 2
+  # 试用契约中的 priority_rules：一旦知道有病人要来，守门
+  # （迎接病人）优先级上调。
+  priority_rules:
+  - when:
+      type: belief_threshold
+      belief: fever_patient_coming
+      min_confidence: 0.4
+    delta: 0.2
+    once: false

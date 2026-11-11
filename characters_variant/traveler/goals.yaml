@@ -2,9 +2,38 @@ goals:
 - desc: 按时开库提走寄存的绸缎
   key: retrieve_goods
   weight: 1.0
+  kind: achievement
+  # V0.2-B（设计 4.6）：主观近似——本人确信"货已备好可提"
+  # （goods_ready 由 goods_inquire 的回答 key_notice 之外的渠道
+  # 供给有限，此目标可能难以完成；近似口径在 B4 报告中注明）。
+  success_condition:
+    type: belief_threshold
+    belief: goods_ready
+    min_confidence: 0.5
 - desc: 保住货物不受损失
   key: protect_goods
   weight: 0.85
+  kind: maintenance
+  # 失败：别人在仓库里翻找（货可能被动过）。
+  failure_condition:
+    type: event_occurred
+    event_type: search
+    actor: any_other
 - desc: 打听仓库钥匙的下落
   key: learn_key_whereabouts
   weight: 0.7
+  kind: achievement
+  # 激活：先得知钥匙失踪这回事（听人说起，≥0.4）。
+  activation_condition:
+    type: belief_threshold
+    belief: key_missing_this_morning
+    min_confidence: 0.4
+  # 成功：亲眼见人持有钥匙，或确知钥匙下落（holds 信念）。
+  success_condition:
+    any:
+    - type: object_possession
+      object: warehouse_key
+      holder: keeper
+    - type: belief_threshold
+      belief: key_missing_this_morning
+      min_confidence: 0.9

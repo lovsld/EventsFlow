@@ -34,13 +34,15 @@ import asyncio
 
 from .world_config import adjacency_of
 
-# V0.2-A Phase 5 (experiment 3a): the location graph's single
-# definition lives in world_config; this name is kept for importers.
-ADJACENCY = adjacency_of()
 
-
-def build_perception(agent_id: str, world: dict, last_events: list[dict]) -> dict:
-    """The perception rules, verbatim from V0.1/Phase A."""
+def build_perception(agent_id: str, world: dict, last_events: list[dict],
+                     adjacency: dict | None = None) -> dict:
+    """The perception rules, verbatim from V0.1/Phase A. V0.2-B: the
+    muffled-adjacency graph comes from the run's Scenario Definition
+    instance (the broker passes its own); the default is the tavern
+    graph for direct callers."""
+    if adjacency is None:
+        adjacency = adjacency_of()
     loc = world["agents"][agent_id]["location"]
     colocated = [{"id": oid, "name": o["name"], "role": o["role"]}
                  for oid, o in world["agents"].items()
@@ -50,7 +52,7 @@ def build_perception(agent_id: str, world: dict, last_events: list[dict]) -> dic
         ev_loc = ev.get("location")
         if ev_loc == loc:
             perceived.append(ev)
-        elif ev_loc in ADJACENCY.get(loc, set()) and ev["type"] in ("speak", "ask", "confront"):
+        elif ev_loc in adjacency.get(loc, set()) and ev["type"] in ("speak", "ask", "confront"):
             muffled.append({"event_id": ev["event_id"], "type": "muffled_voices",
                             "location": ev_loc, "actors": ev.get("actors", [])})
     return {"agent_id": agent_id, "tick": world["tick"], "time": world["time"],
@@ -90,7 +92,8 @@ def match_suppression(rule: dict, agent_id: str, event: dict) -> bool:
 
 class EventBroker:
     def __init__(self, agent_ids: list[str],
-                 suppression_rules: list[dict] | None = None):
+                 suppression_rules: list[dict] | None = None,
+                 scenario=None):
         self.agent_ids = list(agent_ids)
         self.queues: dict[str, asyncio.Queue] = {aid: asyncio.Queue()
                                                  for aid in self.agent_ids}
@@ -99,13 +102,18 @@ class EventBroker:
         self.suppression_rules = list(suppression_rules or [])
         self.counterfactual_suppressions: list[dict] = []
         self._pending: dict[str, dict] = {}
+        # V0.2-B threading: the run's Scenario Definition instance;
+        # its adjacency drives the muffled-perception rule.
+        self.scenario = scenario
+        self._adjacency = scenario.adjacency_sets() if scenario else None
 
     # ---------------- publish: perception + dedup + audit ----------------
     def publish(self, world_snapshot: dict, events: list[dict]) -> list[dict]:
         records = []
         by_id = {e["event_id"]: e for e in events}
         for aid in self.agent_ids:
-            perc = build_perception(aid, world_snapshot, events)
+            perc = build_perception(aid, world_snapshot, events,
+                                    adjacency=self._adjacency)
             perc = self._suppress(aid, perc, by_id, tick=world_snapshot["tick"])
             perc = self._dedup(aid, perc, tick=world_snapshot["tick"])
             self._pending[aid] = perc

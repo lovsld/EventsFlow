@@ -25,44 +25,57 @@
       "confidence": 0.55,
       "kind": "inferred",
       "desc": "关于镇长资金的风声可能正在扩散"
+    },
+    "speaker_knows_secret": {
+      "confidence": 0.48,
+      "kind": "inferred",
+      "desc": "B 暗示自己知道镇上的秘密（真假未知）"
+    },
+    "letter_known_by_others": {
+      "confidence": 0.9,
+      "kind": "inferred",
+      "desc": "对方已经亲眼看过那封信了"
     }
   },
   "emotions": {
-    "arousal": 0.7583333333333334,
+    "arousal": 0.875,
     "valence": 0.0,
-    "suspicion": 0.9666666666666666
+    "suspicion": 1.0
   },
   "relationships": {
     "B": {
-      "trust": 0.417,
+      "trust": 0.427,
       "notes": []
     },
     "C": {
-      "trust": 0.24,
+      "trust": 0.272,
       "notes": []
     }
   },
   "plan": [
-    "work:tend_bar"
+    "speak:greeting"
   ],
   "perceived_event_ids": [
     "E0002",
     "E0005",
+    "E0006",
     "E0007",
-    "E0009",
-    "E0010",
+    "E0011",
+    "E0012",
     "E0015",
     "E0016",
-    "E0018",
     "E0019",
-    "E0022",
-    "E0023",
     "E0025",
-    "E0026",
     "E0027",
-    "E0029",
+    "E0031",
+    "E0033",
+    "E0035",
+    "E0036",
+    "E0040",
     "E0041",
-    "E0043"
+    "E0043",
+    "E0044",
+    "E0045"
   ],
   "utterances_heard": [
     {
@@ -74,72 +87,86 @@
     },
     {
       "tick": 4,
-      "from": "B",
-      "topic": "greeting",
-      "claim": "greeting",
-      "kind": "speak"
-    },
-    {
-      "tick": 5,
       "from": "C",
       "topic": "investigation_probe",
       "claim": "investigation_probe",
       "kind": "ask"
     },
     {
-      "tick": 5,
+      "tick": 4,
       "from": "B",
       "topic": "business_proposal",
       "claim": "business_proposal",
       "kind": "speak"
     },
     {
-      "tick": 6,
+      "tick": 5,
       "from": "C",
       "topic": "investigation_probe",
       "claim": "investigation_probe",
       "kind": "ask"
     },
     {
-      "tick": 6,
+      "tick": 5,
       "from": "B",
       "topic": "answer_mayor",
       "claim": "answer_mayor",
       "kind": "speak"
     },
     {
+      "tick": 6,
+      "from": "B",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
       "tick": 7,
-      "from": "C",
+      "from": "B",
       "topic": "greeting",
       "claim": "greeting",
       "kind": "speak"
     },
     {
-      "tick": 7,
+      "tick": 9,
+      "from": "B",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 10,
       "from": "B",
       "topic": "business_proposal",
       "claim": "business_proposal",
       "kind": "speak"
     },
     {
-      "tick": 8,
+      "tick": 11,
       "from": "C",
-      "topic": "investigation_probe",
-      "claim": "investigation_probe",
-      "kind": "ask"
+      "topic": "mayor_hint",
+      "claim": "mayor_hint",
+      "kind": "confront"
     },
     {
-      "tick": 8,
+      "tick": 11,
       "from": "B",
-      "topic": "business_proposal",
-      "claim": "business_proposal",
+      "topic": "greeting",
+      "claim": "greeting",
       "kind": "speak"
     },
     {
       "tick": 12,
+      "from": "C",
+      "topic": "letter_discussion",
+      "claim": "letter_discussion",
+      "kind": "confront"
+    },
+    {
+      "tick": 12,
       "from": "B",
-      "topic": "greeting",
-      "claim": "greeting",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
       "kind": "speak"
     }
   ],
@@ -147,9 +174,10 @@
   "tick_now": 12,
   "action_counts": {
     "observe::": 1,
-    "observe:B:": 5,
-    "work::tend_bar": 2,
+    "observe:B:": 4,
     "speak:C:denial": 3,
-    "speak:B:greeting": 1
+    "work::tend_bar": 2,
+    "speak:B:greeting": 1,
+    "speak:C:greeting": 1
   }
 }

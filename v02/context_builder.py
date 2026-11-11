@@ -1,18 +1,14 @@
 """Context Builder — assembles the ONLY input a provider may see.
 
 It reads the agent's own private state and the broker-delivered perception,
-nothing else (task book section 6). Available actions are computed from the
-agent's location and co-location, so a provider cannot invent impossible
-actions; the World Engine still re-validates everything.
+nothing else (task book section 6). Available actions come from the
+Capability Registry over the run's Scenario Definition (V0.2-B design
+3.2): what the environment affords here — never from location or
+character names in code, and never from objective object positions.
 """
 from __future__ import annotations
 
 from .protocol import DecisionContext
-from .world_config import adjacency_of
-
-# V0.2-A Phase 5 (experiment 3a): single-sourced from world_config;
-# prediction.py / plan_steps.py / audit.py import ADJACENCY from here.
-ADJACENCY = adjacency_of()
 
 
 def action_is_offered(action: dict, available: list[dict]) -> bool:
@@ -31,24 +27,13 @@ def action_is_offered(action: dict, available: list[dict]) -> bool:
         for o in available)
 
 
-def build_context(agent, perception: dict) -> DecisionContext:
+def build_context(agent, perception: dict, registry=None) -> DecisionContext:
     st = agent.state
     loc = perception["location"]
     colocated = [c["id"] for c in perception.get("colocated", [])]
-    available: list[dict] = []
-    for dest in sorted(ADJACENCY.get(loc, set())):
-        available.append({"type": "move", "target_location": dest})
-    for other in colocated:
-        for verb in ("speak", "ask", "confront"):
-            available.append({"type": verb, "target": other})
-    if loc == "back_room":
-        available.append({"type": "search", "target_location": "back_room"})
-    letter = agent.memory.belief("anonymous_letter_exists")
-    if agent.config.character_id == "owner" and letter and letter.kind == "experienced":
-        for other in colocated:
-            available.append({"type": "show", "object": "anonymous_letter", "target": other})
-    available += [{"type": "observe"}, {"type": "listen"}, {"type": "work"},
-                  {"type": "refuse"}, {"type": "wait"}]
+    registry = registry if registry is not None else agent.registry
+    available = registry.available_actions(
+        location=loc, colocated=colocated, held_objects=list(st.holdings))
 
     perc = dict(perception)
     return DecisionContext(
@@ -57,10 +42,14 @@ def build_context(agent, perception: dict) -> DecisionContext:
         current_time=perception["time"],
         location=loc,
         perception=perc,
-        # V0.2-A: goals are presented priority-first (weight desc,
-        # stable) so "the highest-priority goal comes first" is an
-        # operational property of the context, not just a config note.
-        active_goals=sorted(st.goals, key=lambda g: -g.weight),
+        # Goals are presented priority-first (V0.2-B: priority_current,
+        # ties broken by key for determinism). Inactive goals are NOT
+        # presented as active (B2 Goal Engine); they are summarised in
+        # constraints so a provider knows they exist without pursuing
+        # them.
+        active_goals=sorted(
+            (g for g in st.goals if g.status == "active"),
+            key=lambda g: (-g.priority_current, g.key)),
         current_plan=st.current_plan,
         relevant_memories=st.short_term_memory[-12:],
         beliefs=list(st.beliefs),
@@ -69,7 +58,7 @@ def build_context(agent, perception: dict) -> DecisionContext:
         constraints=list(st.principles) + [
             "只能从 available_actions 中选择行动",
             "不得提及你没有感知到的事件或他人的内心想法",
-        ],
+        ] + _inactive_goal_notes(st),
         # runtime extras (DecisionContext allows extras): used by rule/mock
         trust={o: agent.memory.trust_in(o) for o in agent.state.relationships},
         action_counts=dict(st.action_counts),
@@ -84,4 +73,31 @@ def build_context(agent, perception: dict) -> DecisionContext:
             {"mismatches": agent.last_error.mismatches,
              "surprise": agent.last_error.surprise}
             if getattr(agent, "last_error", None) else None),
+        # V0.2-B extras: the agent's OWN holdings / findings / history
+        # (subjective state the generic generator and the predicate
+        # evaluator read), and the scenario's PUBLIC structure —
+        # place names and the location graph only. Object positions,
+        # holders and claim propositions are NOT public structure and
+        # deliberately stay out of the serialized context: the context
+        # is the LLM prompt, and prompt-level isolation is a pinned
+        # invariant (see the V0.2-B report for this threading choice).
+        holdings=list(st.holdings),
+        found_objects=list(st.found_objects),
+        searched_empty_places=list(st.searched_empty_places),
+        object_sightings=dict(st.object_sightings),
+        perceived_events=list(st.perceived_events[-40:]),
+        own_actions=list(st.own_actions[-40:]),
+        scenario={"locations": list(agent.scenario.locations),
+                  "adjacency": {k: sorted(v) for k, v
+                                in agent.scenario.adjacency.items()}},
     )
+
+
+def _inactive_goal_notes(st) -> list[str]:
+    notes = []
+    for g in st.goals:
+        if g.status == "inactive":
+            notes.append(f"未激活目标（尚不追求）：{g.key}（{g.desc}）")
+        elif g.status in ("completed", "failed", "abandoned"):
+            notes.append(f"目标 {g.key} 已{g.status}，不再追求。")
+    return notes

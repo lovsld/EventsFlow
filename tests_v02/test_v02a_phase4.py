@@ -104,13 +104,17 @@ def test_hearer_prompt_has_testimony_grade_only():
     # the soldier's first-hand experience must NOT bleed into the
     # hearer's prompt: the letter belief is testimony-grade only,
     # and neither the soldier's private memory nor the letter's
-    # content appears anywhere in the prompt text
-    assert shown["anonymous_letter_exists"].confidence == 0.7
+    # content appears anywhere in the prompt text.
+    # V0.2-B adjudication (parked item P-3): the confidence pin is
+    # the design section 3.5 testimony formula value — base 1.0 x
+    # (0.4 + 0.6 x trust 0.3) = 0.58; the old 0.7 pin is
+    # arithmetically unreachable under that formula.
+    assert shown["anonymous_letter_exists"].confidence == 0.58
     assert SOLDIER_PRIVATE_MEMORY not in text
     assert LETTER_CONTENT not in text
     # state cross-check: testimony-grade belief, event on record
     belief = agent.memory.belief("anonymous_letter_exists")
-    assert belief.kind == "heard" and belief.confidence == 0.7
+    assert belief.kind == "heard" and belief.confidence == 0.58
     assert belief.evidence[0].source_type == "testimony"
     assert belief.evidence[0].source == "soldier"
     assert belief.evidence[0].source_event_id == "E500"

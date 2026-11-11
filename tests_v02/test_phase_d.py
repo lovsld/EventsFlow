@@ -4,9 +4,14 @@ Covered: diversity/consistency metric definitions against hand-checked
 values; Broker counterfactual suppression (only the target recipient
 loses the delivery, full and muffled forms, suppression audited, the
 committed event object untouched); seed-group runner completeness and
-per-seed reproducibility; and a full counterfactual pair at seed 42 —
-the design doc's question: does the soldier hear the merchant's
-mayor-payment utterance, and what changes if he does not?
+per-seed reproducibility; and a full counterfactual pair at seed 42.
+
+The pair's question changed with the dynamics (V0.2-B adjudication,
+parked item P-5): the merchant's mayor-payment utterance class no
+longer occurs at all under the generic candidate generator, so the
+suppression rule now targets the mayor-class assertions that DO
+occur — the owner's mayor_hint utterances delivered to the soldier —
+and the test asserts what that experiment actually measures.
 """
 from __future__ import annotations
 
@@ -25,6 +30,17 @@ from v02.runner import run_simulation
 ROOT = Path(__file__).resolve().parent.parent
 RULE = {"recipient": "soldier", "actor": "merchant",
         "claim": ["mayor_late_payment", "answer_mayor"]}
+# V0.2-B adjudication (P-5): the counterfactual pair's rule. The
+# merchant mayor-payment class above never occurs under the current
+# dynamics (the mayor testimony is the owner's), which left the old
+# experiment spinning with nothing to suppress. The rule is
+# re-pinned to the mayor-class assertions that actually occur: the
+# owner's mayor_hint utterances, delivered to the soldier. Measured
+# on the standing evidence run runs_v02/exp_counterfactual_v02b_owner
+# (seed 42, 20 ticks); the assertions in
+# test_counterfactual_pair_seed42 pin those measured facts.
+OWNER_RULE = {"recipient": "soldier", "actor": "owner",
+              "claim": ["mayor_hint"]}
 
 
 # ---------- metrics: hand-checkable small samples ----------
@@ -151,32 +167,45 @@ def test_seed_group_complete_and_reproducible(tmp_path):
     # Phase 3 (evidence-based beliefs + commitment gate; was 87 on
     # the plan-layer canonical asserted until 2026-11-11 — see
     # V02A_PHASE3_REPORT.md)
-    assert group42["total_events"] == 85
+    # V0.2-B B1 (pre-registered disposition #1): re-pinned to the
+    # measured B1 trajectory, 77 events (the generic candidate
+    # generator replaced the ported rule branches wholesale).
+    # V0.2-B B2 (disposition #1): re-pinned to the measured 73.
+    assert group42["total_events"] == 73
     assert group42["soldier_read_letter"] is True
 
 
 # ---------- counterfactual: the design doc's question, full pair ----------
 
 def test_counterfactual_pair_seed42(tmp_path):
-    comp = run_counterfactual(seed=42, ticks=20, rule=RULE, out_root=tmp_path)
-    recipient = RULE["recipient"]
+    """The pair, re-pinned by adjudication P-5 to OWNER_RULE and to
+    measured facts (standing evidence: runs_v02/
+    exp_counterfactual_v02b_owner, seed 42, 20 ticks, rule mode —
+    deterministic, reproduced exactly by this test's fresh pair).
 
-    # the target utterance occurs in the control run and its FIRST
-    # occurrence — the same pre-divergence event in both runs — reaches
-    # the soldier in full; in the treatment the same class of utterance
-    # still occurs objectively, but never reaches the soldier.
-    # (Plan-layer update: the old all-occurrences-full check encoded
-    # the old trajectories, where the claim class only ever occurred
-    # in conversations addressed to the soldier. It now also occurs in
-    # merchant–owner conversations, which reach him by ordinary
-    # perception physics — full when co-located, muffled or not at
-    # all otherwise — so the verification asserts the first occurrence
-    # and reports the delivery breakdown descriptively. The pair's
-    # substantive profile below is asserted as before.)
-    assert comp["target_events_control"], "utterance must occur in control"
+    Measured profile: the owner's mayor_hint occurs 8 times, all 8
+    delivered in full to the soldier in the control; all 8 are
+    suppressed for him in the treatment, and the objective
+    trajectories NEVER diverge (73 events in both arms) — his
+    behaviour is driven by the first-hand letter evidence, and the
+    mayor testimony is corroboration, not a behavioural trigger.
+    The belief layer DOES diverge: both soldiers form
+    mayor_embezzled at 0.6 from the letter's reveals (tick 4); from
+    tick 9 the control soldier's testimony channel corroborates it
+    to 0.704 while the treatment soldier stays at 0.6."""
+    comp = run_counterfactual(seed=42, ticks=20, rule=OWNER_RULE,
+                              out_root=tmp_path)
+    recipient = OWNER_RULE["recipient"]
+
+    # the target utterance class occurs in the control run (8 times,
+    # measured) and every occurrence reaches the soldier in full
+    assert len(comp["target_events_control"]) == 8
     assert comp["verification"]["control_first_target_heard_by_recipient"]
     assert comp["verification"][
-        "control_target_deliveries_to_recipient"]["full"] >= 1
+        "control_target_deliveries_to_recipient"] == \
+        {"full": 8, "muffled": 0, "absent": 0}
+    # in the treatment the same utterances still occur objectively,
+    # but every one is suppressed for the soldier and audited as such
     assert comp["verification"]["treatment_targets_all_suppressed_for_recipient"]
     assert comp["target_events_treatment"], "utterance still occurs in treatment"
     for t in comp["target_events_treatment"]:
@@ -184,38 +213,56 @@ def test_counterfactual_pair_seed42(tmp_path):
     # the first occurrence is the same pre-divergence event in both
     # runs: identical id/tick, and the owner still receives it in full
     c0, t0 = comp["target_events_control"][0], comp["target_events_treatment"][0]
-    assert (c0["event_id"], c0["tick"]) == (t0["event_id"], t0["tick"])
+    assert (c0["event_id"], c0["tick"]) == (t0["event_id"], t0["tick"]) == \
+        ("E0026", 7)
     assert t0["deliveries"].get("owner") == c0["deliveries"].get("owner") == "full"
     assert comp["control_suppressions"] == 0
-    assert comp["suppressions"], "treatment must audit its suppressions"
+    assert len(comp["suppressions"]) == 8
     assert all(s["agent_id"] == recipient for s in comp["suppressions"])
     assert {s["event_id"] for s in comp["suppressions"]} == \
         {t["event_id"] for t in comp["target_events_treatment"]}
 
-    # objective events identical through the first target event's tick;
-    # divergence, when it comes, is downstream of the suppressed delivery
+    # measured finding, asserted as such: NO objective divergence.
+    # The suppressed testimony was corroboration for a belief the
+    # soldier already held from first-hand evidence, so his actions
+    # never change; the prefix is identical through the whole run.
     v = comp["verification"]
-    assert v["objective_prefix_identical_through_tick"] >= \
-        v["first_target_event_tick"]
+    assert v["first_objective_divergence_tick"] is None
+    assert v["objective_prefix_identical_through_tick"] == 20
+    assert comp["control_total_events"] == comp["treatment_total_events"] == 73
 
-    # the hearing itself, at the first snapshot after the first delivery:
-    # control soldier holds mayor_embezzled (heard), treatment does not
-    first_tick = comp["target_events_control"][0]["tick"]
+    # the belief layer, snapshot by snapshot: identical through
+    # tick 8 (0.6 in both arms — the letter's reveals alone, formed
+    # at tick 4, before the first hint could matter), diverging
+    # from tick 9 (post_step): control 0.704 (testimony channel
+    # corroborating), treatment 0.6 (reveals only).
     series_c = belief_series(comp_trace(tmp_path, "control"), recipient,
                              "mayor_embezzled")
     series_t = belief_series(comp_trace(tmp_path, "treatment"), recipient,
                              "mayor_embezzled")
-    snap_c = next(e for e in series_c
-                  if e["tick"] == first_tick + 1 and e["phase"] == "post_step")
-    snap_t = next(e for e in series_t
-                  if e["tick"] == first_tick + 1 and e["phase"] == "post_step")
-    assert snap_c["confidence"] is not None and snap_c["confidence"] >= 0.5
-    assert snap_t["confidence"] is None
 
-    # headline outcome: investigation_widening exists only if he heard it
-    final = comp["soldier_final_beliefs"]["investigation_widening"]
-    assert final["control"] is not None and final["control"]["confidence"] == 0.6
-    assert final["treatment"] is None
+    def snap(series, tick):
+        return next(e for e in series
+                    if e["tick"] == tick and e["phase"] == "post_step")
+    assert snap(series_c, 8)["confidence"] == 0.6
+    assert snap(series_t, 8)["confidence"] == 0.6
+    assert snap(series_c, 9)["confidence"] == 0.704
+    assert snap(series_t, 9)["confidence"] == 0.6
+
+    # headline outcome under the new dynamics: the corroboration gap
+    # IS the measured effect of the suppressed deliveries (finals:
+    # control 0.704 heard vs treatment 0.6 heard).
+    final = comp["soldier_final_beliefs"]["mayor_embezzled"]
+    assert final["control"] == {"confidence": 0.704, "kind": "heard"}
+    assert final["treatment"] == {"confidence": 0.6, "kind": "heard"}
+    # the old headline belief, investigation_widening, was a product
+    # of the deleted _interpret table and has no generic writer;
+    # its assertion is deleted (adjudication P-5). What is asserted
+    # instead is its measured absence in BOTH arms, alongside the
+    # other _interpret-only product, owner_hiding_something.
+    for key in ("investigation_widening", "owner_hiding_something"):
+        assert comp["soldier_final_beliefs"][key] == \
+            {"control": None, "treatment": None}
     assert (tmp_path / "comparison.json").exists()
     assert (tmp_path / "comparison.md").exists()
 

@@ -73,7 +73,7 @@ python3 -m unittest discover -s tests -v       # 全部测试
 
 ---
 
-# V0.2 / V0.2-A 现状（2026-11-11 更新）
+# V0.2 / V0.2-A / V0.2-B 现状（2026-11-12 更新）
 
 V0.1 的三进程实现保留在 `src/` 作对照基线，不再改动。现行系统是
 `v02/` 包：单进程 asyncio 事件驱动、Scheduler 每 tick 统一提交一次
@@ -83,29 +83,48 @@ V0.1 的三进程实现保留在 `src/` 作对照基线，不再改动。现行�
 - **决策**：rule（确定性、零外部依赖）/ mock / 真实 LLM 多后端
   （Gemini 默认；DeepSeek/Kimi/Qwen/OpenAI 同一兼容层，`ACP_*`
   环境变量选后端、模型与密钥池）。LLM 只提意图：协议严格校验、
-  运行时校验目标归属与行动成员资格，世界层最终裁定。
+  运行时校验目标归属与行动成员资格，世界层最终裁定。rule 路径是
+  **通用候选生成器**（V0.2-B）：候选自目标条件叶反向模板 + 计划步
+  模板 + 社交回应 + 基线行动，六因子效用打分且逐候选落盘可审计；
+  代码里没有任何按角色或剧情的分支。
 - **认知**：结构化预测 → 预测误差 → 信念/信任更新的闭环全程落盘
   可复原（SQLite）；信念带证据列表（来源类型/可靠度/事件 id），
-  kind 与置信度由证据派生；任何置信度变化都有审计行。
-- **计划与目标**：计划状态机（active/blocked/completed/abandoned）
-  + 承诺衰减与高承诺替换门控 + 结果驱动步进；Goal 是带生命周期
-  的结构化运行时对象（确定性驱动，无 LLM 自由增删）。
-- **实验工具**：种子组、反事实（投递抑制）、STEP1 一致性审计、
-  指标聚合（根目录 `experiments.py` / `audit.py`）；中断可续跑
-  （`--resume`），LLM 额度耗尽可等待重试（`--loop`）。
-- **场景即数据**：角色目录与世界配置（`v02/world_config.py`）
-  可整组替换（`run_simulation(characters_root=…, world_config=…)`）；
-  变体场景实测结论为「通用性部分成立」，边界见实验报告。
+  kind 与置信度由证据派生；任何置信度变化都有审计行。言语感知走
+  三条通用通道（命题证据 / 言语行为效应 / 矛盾推断），解释层不
+  设立计划。
+- **场景即数据**（V0.2-B）：Scenario Definition（地点图、物品能力
+  位、claims、台词、目标条件）全部声明在场景/角色数据里，经
+  `v02/scenario.py` 校验加载并贯通 World/Broker/Context/Decision/
+  Plan；可用行动由 CapabilityRegistry 派生。仓库变体中 keeper 会
+  目标驱动地找钥匙（移动到可搜查地点并搜查、找到后目标完成）。
+- **目标与计划**（V0.2-B）：四层严格分离——Action 成功 ≠ Step
+  完成 ≠ Plan 完成 ≠ Goal 完成。Goal 由 GoalEvaluator 按声明的
+  激活/成功/失败条件判定（progress = 条件满足度，优先级真实影响
+  效用：交换士兵两目标权重使行为分布整体翻转）；Plan 步由
+  StepEvaluator 按 success_condition 判定，连续失败进入 blocked，
+  五种恢复策略（retry/replan/suspend/abandon/skip）由 PlanManager
+  状态机执行，不再依赖 provider 开口。旧 `plan_steps.py` 标签谓词
+  表已删除。
+- **实验工具**：种子组、反事实（投递抑制）、STEP1 一致性审计
+  （M1 已切换为模板一致性口径）、§6 十五指标聚合
+  （`collect_run_metrics()["v02b"]`）；中断可续跑（`--resume`，
+  校验 engine_version），LLM 额度耗尽可等待重试（`--loop`）。
 
 运行（V0.2）：
 
 ```bash
 .venv/bin/python main.py --mode rule --ticks 20 --seed 42
-.venv/bin/python -m pytest tests_v02 tests -q     # 134 个测试
+.venv/bin/python -m pytest tests_v02 tests -q
+# 173 个测试：166 通过；7 项为预登记停放冲突
+# （钉住已废除旧机制的断言，待裁决，见 V0.2-B 报告 §7）
 ```
 
-文档：`docs/V0.2-A_ARCHITECTURE.md`（实际结构）、
-`docs/V0.2-A_EXPERIMENT_REPORT.md`（三组实验 + §16 复验）、
-`docs/V0.2-A_PHASE1_REVIEW.md`（改造前审查）、`PHASE_*_REPORT.md`
-与 `V02A_PHASE3_REPORT.md`（各阶段报告）、`LOCAL_DEPLOY.md`
-（本地部署与多后端配置）。
+规范轨迹：`runs_v02/rule_v02b_seed42`（73 事件，V0.2-B 规范；
+V0.2-A 的 `rule_v02a_seed42` 只读保留为上一代基线）。
+
+文档：`docs/V0.2-B_REPORT.md`（B1–B3 实施 + B4 场景 A/B 评测与
+决策代码冻结清单）、`docs/V0.2-B_ARCHITECTURE.md`（落地架构与
+数据契约、与设计差异逐条）、`docs/V0.2-B_DESIGN.md`（设计）、
+`docs/V0.2-A_ARCHITECTURE.md`、`docs/V0.2-A_EXPERIMENT_REPORT.md`、
+`docs/V0.2-A_PHASE1_REVIEW.md`、`PHASE_*_REPORT.md`、
+`V02A_PHASE3_REPORT.md`、`LOCAL_DEPLOY.md`（本地部署与多后端）。

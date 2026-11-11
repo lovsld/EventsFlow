@@ -73,7 +73,11 @@ expected_outcome（你预期的结果标签）和 0-1 的 confidence。
 """
 
 # json_object mode carries no schema, so the field/enum contract is
-# spelled out in the prompt — identical wording to the Gemini provider.
+# spelled out in the prompt. V0.2-B B3: this string is THE single
+# shared contract — the Gemini provider imports it verbatim (a test
+# asserts both backends present the identical text), so the B3
+# plan_update clauses (goal_id / recovery / the new advance
+# semantics) exist in exactly one place.
 # V0.2-A: the contract also names selected_goal_id (validated against
 # the agent's own goal set at runtime) and explains the subjective
 # relationship fields of the context (Phase 4 item 4-1).
@@ -81,9 +85,17 @@ _JSON_CONTRACT = (
     "\n输出必须是且仅是一个 JSON 对象，字段为 intent, target, action{type,target,"
     "target_location,object,content,claim,topic}, reasoning_summary, "
     "expected_outcome, confidence, selected_goal_id, "
-    "plan_update{status,reason,new_goal,new_steps}。"
+    "plan_update{status,reason,new_goal,new_steps,goal_id,recovery}。"
     "\nselected_goal_id 填你本轮决策所服务的目标的 key，必须是你长期目标"
     "（active_goals）之一；没有明确对应时填 null，填了不存在的目标会被判无效。"
+    "\nplan_update.goal_id 可填新计划所服务的目标 key（必须是你的目标之一，"
+    "否则链接会被拒绝）；不填则继承当前计划的链接。"
+    "\n【B3 语义变更】plan_update.status=advance 只对无条件的自由文本步骤"
+    "有效：带 success_condition 的步骤只能由行动结果判定推进，你声明 "
+    "advance 也会被忽略；计划进入 blocked 后 advance 一律无效——要走出 "
+    "blocked 必须用 plan_update.recovery{strategy,reason,reactivate_when}，"
+    "strategy 只能是 retry/replan/suspend/abandon/skip 之一（replan 时须在 "
+    "new_steps 给出替代步骤，suspend 时须给出 reactivate_when 条件）。"
     "\n上下文中的 trust 与 relationships 是你对其他角色的信任与关系记录"
     "（0-1，trust 越高越信任），那只是你自己的主观认知，不是客观事实。"
     "\n枚举值必须严格照抄：action.type 只能是 speak/ask/confront/move/search/show/"

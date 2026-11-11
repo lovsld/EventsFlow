@@ -229,6 +229,265 @@ def _v02a_metrics(run_dir: Path, summary: dict) -> dict:
     return out
 
 
+def _v02b_metrics(run_dir: Path, summary: dict) -> dict:
+    """V0.2-B metric family (design section 9 / B-design section 6),
+    computed only from the run's own artefacts. Denominators follow
+    the design exactly; anything a run never recorded is None.
+
+    Goal metrics read final character states (status / progress /
+    conditions) plus the goal_changes table (ever-activated etc.).
+    Plan metrics read plan_transitions kinds — the B3 kinds
+    (step_evaluated / blocked / recovery) simply do not occur in
+    earlier runs, yielding honest zeros/Nones there."""
+    from .persistence import (DecisionRow, GoalChangeRow,
+                              PlanTransitionRow, Store)
+    out: dict = {}
+    states: dict[str, dict] = {}
+    states_dir = run_dir / "characters"
+    if states_dir.exists():
+        for state_path in sorted(states_dir.glob("*/state.json")):
+            state = json.loads(state_path.read_text(encoding="utf-8"))
+            states[state["character_id"]] = state
+
+    db_path = run_dir / "acp.sqlite3"
+    goal_change_kinds: dict[tuple[str, str], set] = {}
+    decisions_by_agent: dict[str, list[dict]] = {}
+    plan_kinds: dict[str, list[str]] = {}
+    step_eval_rows: list[dict] = []
+    recovery_rows: list[dict] = []
+    plan_step_shapes: dict[str, list] = {}
+    if db_path.exists():
+        store = Store(summary["run_id"], sqlite_path=str(db_path))
+        with store.Session() as s:
+            for r in s.query(GoalChangeRow).filter_by(
+                    run_id=summary["run_id"]).all():
+                goal_change_kinds.setdefault(
+                    (r.character_id, r.goal_key), set()).add(r.kind)
+            for r in s.query(DecisionRow).filter_by(
+                    run_id=summary["run_id"]).order_by(
+                    DecisionRow.character_id, DecisionRow.tick).all():
+                if r.error or not r.parsed_output:
+                    continue
+                try:
+                    parsed = json.loads(r.parsed_output)
+                    ctx = json.loads(r.context_json) if r.context_json \
+                        else {}
+                except json.JSONDecodeError:
+                    continue
+                decisions_by_agent.setdefault(r.character_id, []).append(
+                    {"tick": r.tick, "parsed": parsed, "ctx": ctx})
+                plan = ctx.get("current_plan")
+                if plan and plan.get("plan_id"):
+                    plan_step_shapes[plan["plan_id"]] = \
+                        plan.get("steps") or []
+            for r in s.query(PlanTransitionRow).filter_by(
+                    run_id=summary["run_id"]).all():
+                plan_kinds.setdefault(r.plan_id, []).append(r.kind)
+                if r.kind == "step_evaluated":
+                    try:
+                        after = json.loads(r.after_json) \
+                            if r.after_json else {}
+                    except json.JSONDecodeError:
+                        after = {}
+                    step_eval_rows.append(
+                        {"plan_id": r.plan_id, "after": after})
+                elif r.kind == "recovery":
+                    recovery_rows.append(
+                        {"plan_id": r.plan_id, "reason": r.reason or ""})
+
+    # ---------- goal family (metrics 1-5 + standing extras) ----------
+    goals_with_condition = ever_active = pursued = completed = 0
+    conditioned_ever_active = 0
+    failed = abandoned = 0
+    achievement_progress: list[float] = []
+    maintenance_failed = 0
+    linked_goals: set[tuple[str, str]] = set()
+    for (cid, decs) in decisions_by_agent.items():
+        for d in decs:
+            plan = d["ctx"].get("current_plan")
+            if plan and plan.get("goal_id"):
+                linked_goals.add((cid, plan["goal_id"]))
+    for cid, state in states.items():
+        for g in state.get("goals", []):
+            key = (cid, g["key"])
+            kinds = goal_change_kinds.get(key, set())
+            has_condition = g.get("activation_condition") is not None
+            if has_condition:
+                goals_with_condition += 1
+            active_ever = (not has_condition) \
+                or g.get("status") != "inactive" or "activated" in kinds
+            if active_ever:
+                ever_active += 1
+                if has_condition:
+                    conditioned_ever_active += 1
+                was_pursued = key in linked_goals or any(
+                    d["parsed"].get("selected_goal_id") == g["key"]
+                    for d in decisions_by_agent.get(cid, []))
+                if was_pursued:
+                    pursued += 1
+                if g.get("status") == "completed":
+                    completed += 1
+                if g.get("kind") == "achievement" \
+                        and g.get("progress") is not None:
+                    achievement_progress.append(g["progress"])
+            if g.get("status") == "failed":
+                failed += 1
+                if g.get("kind") == "maintenance":
+                    maintenance_failed += 1
+            if g.get("status") == "abandoned":
+                abandoned += 1
+    total_goals = sum(len(st.get("goals", [])) for st in states.values())
+    out["goal_activation_rate"] = (
+        round(conditioned_ever_active / goals_with_condition, 3)
+        if goals_with_condition else None)
+    out["goal_activation_rate_all_goals"] = (
+        round(ever_active / total_goals, 3) if total_goals else None)
+    out["goal_pursuit_rate"] = (
+        round(pursued / ever_active, 3) if ever_active else None)
+    # metric 3: the NEW denominator is activated goals; the V0.2-A
+    # denominator (all goals) is reported alongside, deprecated
+    out["goal_completion_rate"] = (
+        round(completed / ever_active, 3) if ever_active else None)
+    out["goal_completion_rate_deprecated_denominator"] = (
+        round(completed / total_goals, 3) if total_goals else None)
+    out["goal_progress_mean"] = (
+        round(sum(achievement_progress) / len(achievement_progress), 3)
+        if achievement_progress else None)
+    out["maintenance_goal_failures"] = maintenance_failed
+    out["goal_failure_rate"] = (
+        round(failed / ever_active, 3) if ever_active else None)
+    out["goal_abandonment_count"] = abandoned
+    out["unpursued_goal_count"] = ever_active - pursued
+    # metric 5: goal switching per character
+    switches = switch_base = 0
+    for decs in decisions_by_agent.values():
+        seq = [d["parsed"].get("selected_goal_id") for d in decs]
+        for a, b in zip(seq, seq[1:]):
+            switch_base += 1
+            if a != b:
+                switches += 1
+    out["goal_switching_rate"] = (
+        round(switches / switch_base, 3) if switch_base else None)
+
+    # ---------- plan family (metrics 6-10; B3 kinds may be absent) ----------
+    created = {pid for pid, kinds in plan_kinds.items()
+               if "set" in kinds or "replace" in kinds}
+    ever_blocked = {pid for pid, kinds in plan_kinds.items()
+                    if "blocked" in kinds}
+    recovered = {pid for pid, kinds in plan_kinds.items()
+                 if "recovery" in kinds}
+    replanned = {pid for pid, kinds in plan_kinds.items()
+                 if "replaced" in kinds or "replace" in kinds}
+    # B3: a replan recovery closes the old plan with an "abandon"
+    # row (reason "replanned") plus a recovery row — count those too
+    replanned |= {r["plan_id"] for r in recovery_rows
+                  if "strategy=replan" in r["reason"]}
+    out["plan_blocked_rate"] = (
+        round(len(ever_blocked) / len(created), 3) if created else None)
+    out["plan_recovery_rate"] = (
+        round(len(recovered) / len(ever_blocked), 3)
+        if ever_blocked else None)
+    out["plan_recovery_abandon_after_blocked"] = len(
+        {r["plan_id"] for r in recovery_rows
+         if r["plan_id"] in ever_blocked
+         and "strategy=abandon" in r["reason"]})
+    out["replan_rate"] = (
+        round(len(replanned) / len(created), 3) if created else None)
+    out["plans_created"] = len(created)
+    out["plans_ever_blocked"] = len(ever_blocked)
+    # metric 6: step fulfilment over CONDITIONAL-step evaluations
+    # (legacy evaluations are excluded from the denominator)
+    cond_evals = [r for r in step_eval_rows
+                  if not r["after"].get("legacy")]
+    fulfilled_evals = [r for r in cond_evals
+                       if r["after"].get("fulfilled")]
+    out["plan_step_fulfillment_rate"] = (
+        round(len(fulfilled_evals) / len(cond_evals), 3)
+        if cond_evals else None)
+    out["step_evaluations_conditional"] = len(cond_evals)
+    out["step_evaluations_fulfilled"] = len(fulfilled_evals)
+    # metric 9: retry recoveries + repeat evaluations (2nd and later
+    # evaluations of the same (plan, step))
+    retry_recoveries = sum(1 for r in recovery_rows
+                           if "strategy=retry" in r["reason"])
+    seen_steps: dict[tuple, int] = {}
+    repeat_evals = 0
+    for r in cond_evals:
+        key = (r["plan_id"], r["after"].get("step_id"))
+        seen_steps[key] = seen_steps.get(key, 0) + 1
+        if seen_steps[key] >= 2:
+            repeat_evals += 1
+    out["plan_retry_count"] = retry_recoveries + repeat_evals
+    out["recovery_strategies"] = {
+        s: sum(1 for r in recovery_rows if f"strategy={s}" in r["reason"])
+        for s in ("retry", "replan", "suspend", "abandon", "skip",
+                  "reactivate")}
+    # legacy step share over the plans visible in decision contexts
+    total_steps = legacy_steps = 0
+    for steps in plan_step_shapes.values():
+        for stp in steps:
+            total_steps += 1
+            if not isinstance(stp, dict) \
+                    or stp.get("success_condition") is None:
+                legacy_steps += 1
+    out["legacy_step_share"] = (
+        round(legacy_steps / total_steps, 3) if total_steps else None)
+
+    # ---------- metric 12: action-goal alignment (plan-serving arm) ----------
+    aligned = alignable = 0
+    for cid, decs in decisions_by_agent.items():
+        for d in decs:
+            sel = d["parsed"].get("selected_goal_id")
+            plan = d["ctx"].get("current_plan")
+            if not sel or not plan or plan.get("goal_id") != sel:
+                continue
+            steps = plan.get("steps") or []
+            idx = plan.get("current_step", 0)
+            if idx >= len(steps):
+                continue
+            templates = (steps[idx].get("action_candidates")
+                         if isinstance(steps[idx], dict) else None)
+            if not templates:
+                continue
+            alignable += 1
+            action = d["parsed"].get("action", {})
+            for tmpl in templates:
+                if tmpl.get("type") == action.get("type") and all(
+                        action.get(k) == v for k, v in tmpl.items()
+                        if k != "type"):
+                    aligned += 1
+                    break
+    out["action_goal_alignment"] = (
+        round(aligned / alignable, 3) if alignable else None)
+
+    # ---------- metric 13: behavioural diversity ----------
+    sig_sets: dict[str, set] = {}
+    total_decisions = distinct = 0
+    for cid, decs in decisions_by_agent.items():
+        sigs = set()
+        for d in decs:
+            a = d["parsed"].get("action", {})
+            sigs.add("|".join(str(a.get(k)) for k in
+                              ("type", "target", "target_location",
+                               "claim", "topic")))
+        sig_sets[cid] = sigs
+        total_decisions += len(decs)
+        distinct += len(sigs)
+    out["behavioral_diversity"] = (
+        round(distinct / total_decisions, 3) if total_decisions else None)
+    jaccards = []
+    ids = sorted(sig_sets)
+    for i, a in enumerate(ids):
+        for b in ids[i + 1:]:
+            union = sig_sets[a] | sig_sets[b]
+            if union:
+                jaccards.append(1 - len(sig_sets[a] & sig_sets[b])
+                                / len(union))
+    out["behavioral_diversity_jaccard_mean"] = (
+        round(sum(jaccards) / len(jaccards), 3) if jaccards else None)
+    return out
+
+
 def collect_run_metrics(run_dir: Path) -> dict:
     """Per-run outcome row for the comparison table, from the run's own
     artefacts only (summary.json + acp.sqlite3)."""
@@ -269,6 +528,7 @@ def collect_run_metrics(run_dir: Path) -> dict:
         "counterfactual_suppressions": counts.get("counterfactual_suppressions", 0),
         "run_dir": str(run_dir),
         "v02a": _v02a_metrics(run_dir, summary),
+        "v02b": _v02b_metrics(run_dir, summary),
     }
 
 

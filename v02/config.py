@@ -33,6 +33,11 @@ class CharacterConfig:
     seed_offset: int = 0
     disclosure_threshold: float = 0.75
     private_knowledge: list = field(default_factory=list)
+    # V0.2-B: the character's routine work — data for the Generic
+    # Candidate Generator's baseline candidates ({"verb": "work",
+    # "topic": ...}); replaces the role-keyed work topics the old
+    # rule provider hardcoded.
+    routine: dict = field(default_factory=dict)
 
     # V0.2-A: ids of the whole cast, set by load_all() after a
     # directory scan; initial_state() falls back to the canonical
@@ -49,6 +54,14 @@ class CharacterConfig:
             # to the goal's configured priority (weight); status /
             # progress / created_at / deadline default in the model.
             g.setdefault("commitment", g.get("weight", 1.0))
+            # V0.2-B: priority_current starts at the static weight.
+            g.setdefault("priority_current", g.get("weight", 1.0))
+            # V0.2-B B2: a goal WITH an activation condition starts
+            # inactive — the GoalEvaluator activates it when the
+            # condition first holds (design 4.2). Goals without one
+            # are active from the start, as before.
+            if g.get("activation_condition") is not None:
+                g.setdefault("status", "inactive")
             goals.append(Goal(**g))
         return CharacterState(
             character_id=self.character_id,
@@ -69,6 +82,11 @@ def load_config(character_id: str, root: Path = CHARACTERS_ROOT) -> CharacterCon
     personality = yaml.safe_load((d / "personality.yaml").read_text(encoding="utf-8"))["personality"]
     principles = yaml.safe_load((d / "principles.yaml").read_text(encoding="utf-8"))["principles"]
     goals = yaml.safe_load((d / "goals.yaml").read_text(encoding="utf-8"))["goals"]
+    # V0.2-B: goal conditions are decision-path data — they must be
+    # subjective closed-vocabulary conditions (design 3.4). Fail at
+    # load, naming the goal, not mid-run.
+    from .scenario import validate_goal_conditions
+    validate_goal_conditions(goals, f"character {character_id}")
     return CharacterConfig(
         character_id=profile["character_id"], legacy_id=profile.get("legacy_id", ""),
         name=profile["name"], role=profile["role"], identity=profile["identity"],
@@ -78,6 +96,7 @@ def load_config(character_id: str, root: Path = CHARACTERS_ROOT) -> CharacterCon
         seed_offset=profile.get("seed_offset", 0),
         disclosure_threshold=profile.get("disclosure_threshold") or 0.75,
         private_knowledge=profile.get("private_knowledge", []),
+        routine=profile.get("routine", {}) or {},
     )
 
 

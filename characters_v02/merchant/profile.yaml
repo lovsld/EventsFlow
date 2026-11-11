@@ -13,6 +13,9 @@ identity_doc: '# B（米拉）· 旅行商人
 
   '
 start_location: tables
+routine:
+  verb: work
+  topic: count_coins
 possessions:
 - coin_purse
 - trade_ledger

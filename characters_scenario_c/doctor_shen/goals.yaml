@@ -1,0 +1,34 @@
+goals:
+- desc: 确认退烧药已经备好，病人一到就能用
+  key: ensure_readiness
+  weight: 1.0
+  kind: achievement
+  # 成功依赖跨角色信息流动：从护士处得知补药完成（证言达标），
+  # 或亲眼见护士拿着退烧药（对他人的持有以 holds 信念判定）。
+  success_condition:
+    any:
+    - type: belief_threshold
+      belief: fever_medicine_restocked
+      min_confidence: 0.65
+    - type: object_possession
+      object: fever_medicine
+      holder: nurse_lin
+- desc: 把今晚要收治高烧病人的事交代到护士站
+  key: brief_nurse
+  weight: 0.85
+  kind: achievement
+  # 成功：本人亲口发出过 patient_notice（事件账在本人感知内）。
+  success_condition:
+    type: event_occurred
+    event_type: speak
+    actor: self
+    claim: patient_notice
+- desc: 别让夜里出医疗乱子
+  key: keep_calm
+  weight: 0.8
+  kind: maintenance
+  # 失败：被人当面质问。
+  failure_condition:
+    type: event_occurred
+    event_type: confront
+    target: self

@@ -128,11 +128,18 @@ def test_interpretation_belief_change_is_recorded():
             and u["key"] == "anonymous_letter_exists"]
     assert len(rows) == 1
     assert rows[0]["cause"] == "interpretation"
-    assert rows[0]["before"] is None and rows[0]["after"] == 0.7
+    # V0.2-B adjudication (parked item P-3): the pinned value is the
+    # V0.2-B design section 3.5 testimony formula — reliability =
+    # base(1.0 for a declared proposition) x (0.4 + 0.6 x trust),
+    # with the merchant's default trust in the soldier at 0.3:
+    # 1.0 x (0.4 + 0.6 x 0.3) = 0.58. The old 0.7 pin predates the
+    # formula and is arithmetically unreachable under it (the
+    # formula's ceiling at trust 0.3 is exactly 0.58).
+    assert rows[0]["before"] is None and rows[0]["after"] == 0.58
     # the belief itself is testimony-grade only — no leak of the
     # soldier's direct experience
     b = agent.memory.belief("anonymous_letter_exists")
-    assert b.kind == "heard" and b.confidence == 0.7
+    assert b.kind == "heard" and b.confidence == 0.58
 
 
 # ---------- D: structured goals ----------
@@ -148,61 +155,131 @@ def test_goals_start_structured():
 
 
 def test_goal_progress_and_completion_follow_the_plan():
+    """V0.2-B B2 rewrite (pre-registered disposition #3): the V0.2-A
+    version asserted _sync semantics — plan advance writes goal
+    progress (step fraction) and plan completion completes the
+    goal. That coupling is exactly the review's P0 and is deleted:
+    this test now asserts the SEPARATION in the review's own form —
+    a plan can complete while its goal's success condition is unmet,
+    and the goal then stays active with condition-derived progress;
+    the goal completes only when the CONDITION holds."""
     cfg = load_all()["owner"]
     from v02.providers.rule_provider import RuleProvider
     agent = CharacterAgent(cfg, RuleProvider(cfg, seed=42))
     pm = agent.plan_manager
-    pm.set_plan(agent.state, "find_letter_source",
-                [st("find_letter_source"), st("stay_calm")], 1)
-    pm.advance_from_result(agent.state, "a1", 2, "find_letter_source")
+    # find_letter_source starts inactive (it has an activation
+    # condition); activate it through the evaluator by feeding the
+    # activating perception — a letter_question asked of the owner
+    agent.receive(perc(1, "tables", events=[
+        {"event_id": "E1", "tick": 1, "type": "ask",
+         "actors": ["soldier", "owner"], "location": "tables",
+         "claim": "letter_question", "topic": "letter_question",
+         "text": "…"}]), None)
     goal = {g.key: g for g in agent.state.goals}["find_letter_source"]
-    assert goal.status == "active" and goal.progress == 0.5
-    pm.advance_from_result(agent.state, "a2", 3, "stay_calm")
+    assert goal.status == "active"
+    # (the activation change record travelled the receive chain)
+    chain_kinds = [u.get("change_kind") for u in agent.drain_chain_updates()
+                   if u.get("kind") == "goal_change"]
+    assert "activated" in chain_kinds
+    # a linked plan runs to completion — the goal does NOT follow it
+    # (B3 mechanics: these are legacy steps, advanced by explicit
+    # provider advances — the only path legacy steps have)
+    pm.set_plan(agent.state, "find_letter_source",
+                [st("find_letter_source"), st("stay_calm")], 2,
+                goal_id="find_letter_source")
+    pm.apply_update(agent.state, PlanUpdate(status="advance"), "a1", 3)
+    pm.apply_update(agent.state, PlanUpdate(status="advance"), "a2", 4)
+    assert agent.state.current_plan is None      # the plan completed
+    agent.evaluate_goals(5, cause="plan_event")
+    goal = {g.key: g for g in agent.state.goals}["find_letter_source"]
+    assert goal.status == "active"               # the goal did not
+    assert goal.progress is not None and goal.progress < 1.0
+    # the goal completes when its success CONDITION holds: the owner
+    # gains a strong belief about the letter's source
+    agent.memory.update_belief("letter_source_identified", 0.85,
+                               "inferred", "推断出了信的来源",
+                               event_id="E9", tick=6)
+    agent.evaluate_goals(6, cause="perception")
+    goal = {g.key: g for g in agent.state.goals}["find_letter_source"]
     assert goal.status == "completed" and goal.progress == 1.0
-    kinds = [c["kind"] for c in pm.drain_goal_changes()]
-    assert "goal_progress" in kinds and "goal_completed" in kinds
+    kinds = [c["kind"] for c in agent._drain_goal_changes()]
+    assert "goal_completed" in kinds
 
 
 def test_goal_pauses_on_switch_and_reactivates():
+    """V0.2-B B2 rewrite (disposition #3): pausing is the
+    GoalEvaluator's rule over plan LINKAGE (goal_id), not a plan-set
+    side effect. A plan whose label merely equals a goal key no
+    longer touches the goal at all."""
     cfg = load_all()["owner"]
     from v02.providers.rule_provider import RuleProvider
     agent = CharacterAgent(cfg, RuleProvider(cfg, seed=42))
     pm = agent.plan_manager
-    pm.set_plan(agent.state, "find_letter_source",
-                [st("find_letter_source")], 1)
-    pm.set_plan(agent.state, "deny_letter", [st("deny_letter")], 2)
+    # activate find_letter_source through its condition first
+    agent.receive(perc(1, "tables", events=[
+        {"event_id": "E1", "tick": 1, "type": "ask",
+         "actors": ["soldier", "owner"], "location": "tables",
+         "claim": "letter_question", "topic": "letter_question",
+         "text": "…"}]), None)
+    agent._drain_goal_changes()
     by_key = {g.key: g for g in agent.state.goals}
-    assert by_key["find_letter_source"].status == "paused"
-    pm.set_plan(agent.state, "find_letter_source",
-                [st("find_letter_source")], 3)
     assert by_key["find_letter_source"].status == "active"
-    kinds = [c["kind"] for c in pm.drain_goal_changes()]
+    # a plan linked to it, then pursuit switches to another goal's
+    # plan -> the evaluator pauses it at the next evaluation
+    pm.set_plan(agent.state, "chase", [st("find_letter_source")], 2,
+                goal_id="find_letter_source")
+    agent.evaluate_goals(2, cause="plan_event")
+    assert by_key["find_letter_source"].status == "active"
+    pm.set_plan(agent.state, "politics", [st("deny_letter")], 3,
+                goal_id="avoid_politics")
+    agent.evaluate_goals(3, cause="plan_event")
+    assert by_key["find_letter_source"].status == "paused"
+    # pursuit returns -> reactivated
+    pm.set_plan(agent.state, "chase", [st("find_letter_source")], 4,
+                goal_id="find_letter_source")
+    agent.evaluate_goals(4, cause="plan_event")
+    assert by_key["find_letter_source"].status == "active"
+    kinds = [c["kind"] for c in agent._drain_goal_changes()]
     assert "goal_paused" in kinds and "goal_reactivated" in kinds
 
 
 def test_goal_abandoned_by_provider_update():
+    """V0.2-B B2 rewrite (disposition #3): abandoning a PLAN no
+    longer abandons its goal — the four layers are separate. The
+    goal's fate is decided by its own conditions alone (here the
+    maintenance goal's failure condition is unmet, so it simply
+    stays active)."""
     cfg = load_all()["owner"]
     from v02.providers.rule_provider import RuleProvider
     agent = CharacterAgent(cfg, RuleProvider(cfg, seed=42))
     pm = agent.plan_manager
-    pm.set_plan(agent.state, "protect_tavern", [st("protect_tavern")], 1)
+    pm.set_plan(agent.state, "protect_tavern", [st("protect_tavern")], 1,
+                goal_id="protect_tavern")
     pm.apply_update(agent.state,
                     PlanUpdate(status="abandon", reason="不再相关"),
                     "sig", 2)
+    assert agent.state.current_plan is None      # the plan is gone
+    agent.evaluate_goals(3, cause="plan_event")
     by_key = {g.key: g for g in agent.state.goals}
-    assert by_key["protect_tavern"].status == "abandoned"
-    assert "goal_abandoned" in [c["kind"] for c in pm.drain_goal_changes()]
+    assert by_key["protect_tavern"].status == "active"   # goal stands
+    assert "goal_abandoned" not in \
+        [c["kind"] for c in agent._drain_goal_changes()]
 
 
 def test_context_presents_goals_priority_first():
+    """V0.2-B B2: the owner's find_letter_source has an activation
+    condition (design 4.6 migration) that is unmet on a fresh state,
+    so it starts INACTIVE: it is not presented among active_goals,
+    and surfaces as an inactive-goal note in constraints instead.
+    (Flagged in V0.2-B_REPORT.md as a disposition-#3 extension.)"""
     from v02.context_builder import build_context
     cfg = load_all()["owner"]
     from v02.providers.rule_provider import RuleProvider
     agent = CharacterAgent(cfg, RuleProvider(cfg, seed=42))
     ctx = build_context(agent, perc())
     keys = [g.key for g in ctx.active_goals]
-    assert keys == ["protect_tavern", "avoid_politics",
-                    "find_letter_source"]
+    assert keys == ["protect_tavern", "avoid_politics"]
+    assert any("find_letter_source" in c for c in ctx.constraints)
 
 
 # ---------- plan blocked state & commitment gate ----------
@@ -216,38 +293,71 @@ def _owner_agent():
 
 
 def test_plan_blocks_after_repeated_step_failures_and_recovers():
+    """V0.2-B B3 rewrite (pre-registered disposition #4): the V0.2-A
+    version used note_step_failure + a provider advance that
+    unblocked. B3 semantics: per-step attempts counted by the
+    StepEvaluator, blocked entered at the retry policy, provider
+    advance on a blocked plan REJECTED, exit only via the recovery
+    state machine; a conditional step then advances only when its
+    success condition actually holds."""
+    from v02.protocol import PlanStep
     cfg = load_all()["soldier"]
     from v02.providers.rule_provider import RuleProvider
     agent = CharacterAgent(cfg, RuleProvider(cfg, seed=42))
     ask = {"type": "ask", "target": "owner", "target_location": None,
            "object": None, "content": "镇上的钱呢？", "claim": None,
            "topic": "funds"}
+    step = PlanStep(
+        step_id="press", objective="press_for_evidence",
+        action_candidates=[{"type": "ask", "target": "owner"}],
+        success_condition={"type": "belief_threshold",
+                           "belief": "mayor_embezzled",
+                           "min_confidence": 0.9})
     agent.plan_manager.set_plan(
         agent.state, "press_for_evidence",
-        [st("press_for_evidence"), st("observe_response")], 1)
+        [step, st("observe_response")], 1)
     plan = agent.state.current_plan
-    for i in (1, 2):
+
+    def evaluate(result, tick):
         agent._pending_step_check = {
             "plan_id": plan.plan_id, "step_index": 0,
-            "step": plan.steps[0], "action": dict(ask),
-            "agent_loc": "tables", "owner_loc": "tables", "tick": 1}
-        agent._advance_step_from_result({"ok": False}, 1 + i, "soldier:1")
-    assert plan.step_failures == 2 and plan.status == "blocked"
+            "step_id": "press", "action": dict(ask), "tick": tick - 1}
+        agent._evaluate_step_from_result(
+            {"tick": tick, "events": []}, result, tick)
+
+    evaluate({"ok": False}, 2)
+    assert plan.steps[0].attempts == 1 and plan.status == "active"
+    evaluate({"ok": False}, 3)
+    assert plan.steps[0].attempts == 2 and plan.status == "blocked"
+    assert plan.blocked_info["step_id"] == "press"
+    assert plan.pending_recovery == {
+        "strategy": "replan", "source": "policy_default"}
     kinds = [u["transition_kind"] for u in agent.drain_chain_updates()
              if u["kind"] == "plan_transition"]
-    assert "step_failure" in kinds and "blocked" in kinds
+    assert "step_evaluated" in kinds and "blocked" in kinds
     # the result path cannot advance a blocked plan...
-    agent._pending_step_check = {
-        "plan_id": plan.plan_id, "step_index": 0,
-        "step": plan.steps[0], "action": dict(ask),
-        "agent_loc": "tables", "owner_loc": "tables", "tick": 3}
-    agent._advance_step_from_result({"ok": True}, 4, "soldier:3")
-    assert plan.current_step == 0
-    # ...but the provider's explicit advance unblocks it, then advances
-    agent.plan_manager.apply_update(
+    evaluate({"ok": True}, 4)
+    assert plan.current_step == 0 and plan.status == "blocked"
+    # ...and neither can a provider advance (B3 semantics change)
+    note = agent.plan_manager.apply_update(
         agent.state, PlanUpdate(status="advance"), "provider", 5)
-    assert plan.status == "active" and plan.current_step == 1
-    assert plan.step_failures == 0
+    assert note == "advance_rejected_blocked"
+    assert plan.status == "blocked"
+    # the recovery machine is the way out: retry resets the counter
+    note = agent.plan_manager.execute_recovery(
+        agent.state, 6, "retry", "try once more", source="provider")
+    assert note == "recovered_retry"
+    assert plan.status == "active" and plan.steps[0].attempts == 0
+    # a conditional step ignores provider advance even when active...
+    note = agent.plan_manager.apply_update(
+        agent.state, PlanUpdate(status="advance"), "provider", 7)
+    assert note == "advance_rejected_conditional_step"
+    assert plan.current_step == 0
+    # ...and advances when its success condition actually holds
+    agent.memory.update_belief("mayor_embezzled", 0.95, "inferred",
+                               "证据确凿", event_id="E77", tick=8)
+    evaluate({"ok": True}, 8)
+    assert plan.current_step == 1
 
 
 def test_commitment_gate_blocks_ordinary_replacement_only():

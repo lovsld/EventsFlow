@@ -15,6 +15,9 @@ identity_doc: '# A（奥伦）· 酒馆老板
 
   '
 start_location: bar
+routine:
+  verb: work
+  topic: tend_bar
 possessions:
 - anonymous_letter
 seed_offset: 101

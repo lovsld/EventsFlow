@@ -13,6 +13,9 @@ identity_doc: '# K（老赵）· 驿站仓库保管员
 
   '
 start_location: bar
+routine:
+  verb: work
+  topic: check_ledger
 possessions:
 - ledger
 - oil_lamp

@@ -1,0 +1,205 @@
+{
+ "adjacency": {
+  "back_room": [
+   "tables"
+  ],
+  "bar": [
+   "tables"
+  ],
+  "door": [
+   "tables",
+   "outside"
+  ],
+  "outside": [
+   "door"
+  ],
+  "tables": [
+   "bar",
+   "door",
+   "back_room"
+  ]
+ },
+ "ambient": [
+  [
+   "rain_starts",
+   null,
+   "窗外下起雨来，酒馆里的人今晚大概走不了太早。"
+  ],
+  [
+   "bell_rings",
+   "door",
+   "酒馆门口的铃铛响了一声，又没有人进来。"
+  ],
+  [
+   "candle_flickers",
+   "bar",
+   "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+  ],
+  [
+   "distant_shout",
+   "outside",
+   "街上远处有人喊了一嗓子，很快没了声音。"
+  ],
+  [
+   "cat_knocks_glass",
+   "tables",
+   "一只野猫碰倒了桌边的空杯子，碎在地上。"
+  ]
+ ],
+ "claims": {
+  "answer_mayor": {
+   "base_reliability": 0.5,
+   "proposition": "mayor_embezzled",
+   "speaker_belief": "mayor_business_deal",
+   "stance": "assert"
+  },
+  "bluff_hint": {
+   "base_reliability": 0.45,
+   "basis_required": false,
+   "proposition": "speaker_knows_secret",
+   "stance": "assert"
+  },
+  "business_proposal": {
+   "base_reliability": 0.5,
+   "basis_required": false,
+   "proposition": "business_opportunity",
+   "stance": "assert"
+  },
+  "denial": {
+   "stance": "deny"
+  },
+  "greeting": {
+   "basis_required": false,
+   "proposition": null,
+   "stance": "assert"
+  },
+  "investigation_probe": {
+   "proposition": "mayor_embezzled",
+   "sensitive": true,
+   "stance": "inquire"
+  },
+  "letter_discussion": {
+   "base_reliability": 1.0,
+   "proposition": "anonymous_letter_exists",
+   "speaker_kind": "experienced",
+   "speaker_min_confidence": 0.9,
+   "stance": "assert"
+  },
+  "letter_origin_inquiry": {
+   "proposition": "letter_source_identified",
+   "sensitive": true,
+   "stance": "inquire"
+  },
+  "letter_origin_report": {
+   "base_reliability": 0.85,
+   "proposition": "letter_source_identified",
+   "speaker_belief": "anonymous_letter_exists",
+   "speaker_kind": "experienced",
+   "speaker_min_confidence": 0.9,
+   "stance": "assert"
+  },
+  "letter_question": {
+   "proposition": "anonymous_letter_exists",
+   "sensitive": true,
+   "speaker_min_confidence": 0.1,
+   "stance": "inquire"
+  },
+  "mayor_hint": {
+   "base_reliability": 0.45,
+   "proposition": "mayor_embezzled",
+   "speaker_min_confidence": 0.45,
+   "stance": "assert"
+  },
+  "mayor_late_payment": {
+   "base_reliability": 0.5,
+   "proposition": "mayor_embezzled",
+   "speaker_belief": "mayor_business_deal",
+   "stance": "assert"
+  },
+  "smalltalk": {
+   "basis_required": false,
+   "proposition": null,
+   "stance": "assert"
+  }
+ },
+ "comment": "The tavern scenario (anonymous letter) as a Scenario Definition file — a JSON mirror of v02/world_config.DEFAULT_WORLD; a consistency test keeps the two identical.",
+ "locations": [
+  "bar",
+  "tables",
+  "door",
+  "back_room",
+  "outside"
+ ],
+ "objects": {
+  "anonymous_letter": {
+   "displayable": true,
+   "fact_belief": "anonymous_letter_exists",
+   "holder": "owner",
+   "location": "back_room",
+   "movable": true,
+   "on_found": "inspect",
+   "reveals": [
+    {
+     "belief": "mayor_embezzled",
+     "reliability": 0.6
+    }
+   ],
+   "searchable": true,
+   "seen_by": [
+    "owner"
+   ]
+  }
+ },
+ "scenario_id": "tavern_letter",
+ "scenery": {
+  "back_room": [
+   {
+    "id": "drawer",
+    "searchable": true
+   },
+   "ledger_shelf"
+  ],
+  "bar": [
+   "counter",
+   "candle",
+   "wine_shelf"
+  ],
+  "door": [
+   "door_bell"
+  ],
+  "outside": [
+   "street_lamp"
+  ],
+  "tables": [
+   "oak_table",
+   "empty_glasses"
+  ]
+ },
+ "speech_lines": {
+  "answer_mayor": "{name}：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。",
+  "bluff_hint": "{name}：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "business_proposal": [
+   "{name}：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+   "{name}：那批货的事，老板真不考虑？价格好商量。",
+   "{name}：我也不绕了——货压在手里，镇上只有你这儿能走量。"
+  ],
+  "denial": [
+   "{name}：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+   "{name}：问几遍都一样，我什么都不知道。"
+  ],
+  "greeting": "{name}：晚上好，雨夜里酒馆可是个好去处。",
+  "investigation_probe": [
+   "{name}：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+   "{name}：再问一次，这几天后屋那边，有人动过什么吗？",
+   "{name}：老板，你越是不说，我越得查清楚。"
+  ],
+  "letter_discussion": "{name}：那封信，我已经看过了。信里说的事，你打算怎么办？",
+  "letter_origin_inquiry": "{name}：我把话问明白——这封信，到底是谁写、从哪儿来的？",
+  "letter_origin_report": "{name}：信是在后屋抽屉里放着的，纸和字迹都不像镇上熟人的。",
+  "letter_question": "{name}：我听说……有一封信？一封关于镇长的信，是不是在你这儿？",
+  "mayor_hint": "{name}：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "mayor_late_payment": "{name}：说句实在话，镇长那笔粮食生意，钱拖了我两个月才结清。",
+  "smalltalk": "{name}：这雨下得，路都不好走了。"
+ },
+ "version": 1
+}

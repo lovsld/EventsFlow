@@ -30,6 +30,10 @@ from .world import WorldEngine
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RUNS_DIR = PROJECT_ROOT / "runs_v02"
 
+# V0.2-B: state-semantics version of the engine. Recorded in every
+# run's run_meta.json; --resume refuses a mismatch (design risk 3).
+ENGINE_VERSION = "v0.2-b"
+
 # Phase A name, kept importable; the canonical copy lives in scheduler.py
 _intent_from_decision = intent_from_decision
 
@@ -124,6 +128,11 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
     (see v02/world_config.py) run the SAME decision code on a different
     world. Defaults reproduce the canonical tavern exactly."""
     resume = resume_from is not None
+    # V0.2-B: the run's Scenario Definition — one instance, created
+    # here and injected into the World Engine, the Broker, every
+    # agent and the rule provider (design section 3.7).
+    from .scenario import load_scenario
+    meta_scenario = None
     configs = load_all(characters_root)
     # Canonical runs keep the historical cast order; a variant
     # scenario's cast is whatever its character directory defines.
@@ -146,6 +155,17 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
                 f"cannot resume {run_id!r}: the run was created with "
                 f"mode={meta.get('mode')!r} but mode={mode!r} was "
                 "requested; resume with the run's own mode")
+        # V0.2-B (design risk note 3): engine-version pinning. State
+        # semantics changed across engine versions (beliefs, plans,
+        # goals); resuming a run under a different engine version is
+        # refused explicitly rather than silently producing garbage.
+        if meta.get("engine_version") != ENGINE_VERSION:
+            raise ValueError(
+                f"cannot resume {run_id!r}: the run was created with "
+                f"engine_version={meta.get('engine_version')!r} but "
+                f"this code is {ENGINE_VERSION!r}; resume with the "
+                "run's own engine version")
+        meta_scenario = meta.get("scenario")
         if mode == "llm":
             from .providers import requested_backend
             explicit = requested_backend(provider)
@@ -183,16 +203,26 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
         # checkpoint; the replay below rewrites it identically.
         store.rollback_after(resumed_from_tick)
 
-    world = WorldEngine(configs, seed=seed, world_config=world_config)
+    if world_config is not None:
+        scenario = load_scenario(world_config)
+    elif meta_scenario is not None:
+        scenario = load_scenario(meta_scenario)
+    else:
+        scenario = load_scenario(None)
+    world = WorldEngine(configs, seed=seed,
+                        world_config=scenario.to_world_config())
     agents: dict[str, CharacterAgent] = {}
     for cid in ids:
         agent_provider = make_provider(mode, configs[cid], seed=seed,
                                        provider=backend) \
             if mode == "llm" else make_provider(mode, configs[cid], seed=seed)
+        if hasattr(agent_provider, "scenario"):
+            agent_provider.scenario = scenario
         agents[cid] = CharacterAgent(configs[cid], agent_provider,
                                      run_char_dir=run_dir / "characters" / cid,
-                                     resume_dir=resume)
-    broker = EventBroker(ids, suppression_rules=suppression_rules)
+                                     resume_dir=resume, scenario=scenario)
+    broker = EventBroker(ids, suppression_rules=suppression_rules,
+                         scenario=scenario)
     checkpointer = RunCheckpointer(run_dir, world, agents, broker)
     if resume:
         checkpointer.restore(checkpoint)
@@ -206,12 +236,26 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
                         "backend": backend,
                         "characters": list(ids),
                         "created_at": datetime.now(timezone.utc).isoformat(),
-                        "checkpoint_format": 1},
+                        "checkpoint_format": 1,
+                        # V0.2-B: engine version + the full scenario
+                        # definition, so a resume rebuilds the exact
+                        # same world semantics (and refuses a version
+                        # mismatch instead of corrupting state).
+                        "engine_version": ENGINE_VERSION,
+                        "scenario_id": scenario.scenario_id,
+                        "scenario": scenario.model_dump(mode="json")},
                        ensure_ascii=False, indent=2), encoding="utf-8")
         # Tick-0 checkpoint: even a kill during the first tick leaves a
         # resumable run behind.
         checkpointer.write([], {}, [])
         initial_records, initial_deliveries, initial_last_events = [], {}, []
+        # V0.2-B B2 (design 4.2): the GoalEvaluator's init pass —
+        # activation conditions that already hold on private
+        # knowledge (e.g. the keeper's find_missing_key) activate
+        # before the first tick; the change records drain into the
+        # audit chain at the first receive().
+        for a in agents.values():
+            a.evaluate_goals(0, "init")
     waiter = QuotaWaiter() if loop else None
     belief_trace: list[dict] = []
     scheduler = Scheduler(
@@ -234,6 +278,7 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
     (run_dir / "narrative.md").write_text(render_narrative(tick_records, names), encoding="utf-8")
     summary = {
         "run_id": run_id, "mode": mode, "seed": seed, "ticks": ticks,
+        "engine_version": ENGINE_VERSION, "scenario_id": scenario.scenario_id,
         "world_tick": world.state["tick"],
         "resumed_from_tick": resumed_from_tick,
         "quota_stopped": scheduler.quota_stopped,
