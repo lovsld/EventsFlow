@@ -1,0 +1,1663 @@
+{
+  "kind": "counterfactual",
+  "mode": "rule",
+  "seed": 42,
+  "ticks": 20,
+  "rule": {
+    "recipient": "soldier",
+    "actor": "owner",
+    "claim": [
+      "mayor_hint"
+    ]
+  },
+  "control_run": "control",
+  "treatment_run": "treatment",
+  "target_events_control": [
+    {
+      "event_id": "E0026",
+      "tick": 7,
+      "claim": "mayor_hint",
+      "actors": [
+        "soldier",
+        "owner"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full",
+        "soldier": "full"
+      }
+    },
+    {
+      "event_id": "E0032",
+      "tick": 8,
+      "claim": "mayor_hint",
+      "actors": [
+        "owner",
+        "soldier"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full",
+        "soldier": "full"
+      }
+    },
+    {
+      "event_id": "E0040",
+      "tick": 11,
+      "claim": "mayor_hint",
+      "actors": [
+        "soldier",
+        "owner"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full",
+        "soldier": "full"
+      }
+    },
+    {
+      "event_id": "E0045",
+      "tick": 12,
+      "claim": "mayor_hint",
+      "actors": [
+        "owner",
+        "soldier"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full",
+        "soldier": "full"
+      }
+    },
+    {
+      "event_id": "E0050",
+      "tick": 14,
+      "claim": "mayor_hint",
+      "actors": [
+        "soldier",
+        "owner"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full",
+        "soldier": "full"
+      }
+    },
+    {
+      "event_id": "E0058",
+      "tick": 16,
+      "claim": "mayor_hint",
+      "actors": [
+        "soldier",
+        "owner"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full",
+        "soldier": "full"
+      }
+    },
+    {
+      "event_id": "E0063",
+      "tick": 17,
+      "claim": "mayor_hint",
+      "actors": [
+        "owner",
+        "soldier"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full",
+        "soldier": "full"
+      }
+    },
+    {
+      "event_id": "E0071",
+      "tick": 20,
+      "claim": "mayor_hint",
+      "actors": [
+        "soldier",
+        "owner"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full",
+        "soldier": "full"
+      }
+    }
+  ],
+  "target_events_treatment": [
+    {
+      "event_id": "E0026",
+      "tick": 7,
+      "claim": "mayor_hint",
+      "actors": [
+        "soldier",
+        "owner"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full"
+      }
+    },
+    {
+      "event_id": "E0032",
+      "tick": 8,
+      "claim": "mayor_hint",
+      "actors": [
+        "owner",
+        "soldier"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full"
+      }
+    },
+    {
+      "event_id": "E0040",
+      "tick": 11,
+      "claim": "mayor_hint",
+      "actors": [
+        "soldier",
+        "owner"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full"
+      }
+    },
+    {
+      "event_id": "E0045",
+      "tick": 12,
+      "claim": "mayor_hint",
+      "actors": [
+        "owner",
+        "soldier"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full"
+      }
+    },
+    {
+      "event_id": "E0050",
+      "tick": 14,
+      "claim": "mayor_hint",
+      "actors": [
+        "soldier",
+        "owner"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full"
+      }
+    },
+    {
+      "event_id": "E0058",
+      "tick": 16,
+      "claim": "mayor_hint",
+      "actors": [
+        "soldier",
+        "owner"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full"
+      }
+    },
+    {
+      "event_id": "E0063",
+      "tick": 17,
+      "claim": "mayor_hint",
+      "actors": [
+        "owner",
+        "soldier"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full"
+      }
+    },
+    {
+      "event_id": "E0071",
+      "tick": 20,
+      "claim": "mayor_hint",
+      "actors": [
+        "soldier",
+        "owner"
+      ],
+      "deliveries": {
+        "owner": "full",
+        "merchant": "full"
+      }
+    }
+  ],
+  "suppressions": [
+    {
+      "tick": 7,
+      "agent_id": "soldier",
+      "event_id": "E0026",
+      "kind": "full",
+      "rule": {
+        "recipient": "soldier",
+        "actor": "owner",
+        "claim": [
+          "mayor_hint"
+        ]
+      }
+    },
+    {
+      "tick": 8,
+      "agent_id": "soldier",
+      "event_id": "E0032",
+      "kind": "full",
+      "rule": {
+        "recipient": "soldier",
+        "actor": "owner",
+        "claim": [
+          "mayor_hint"
+        ]
+      }
+    },
+    {
+      "tick": 11,
+      "agent_id": "soldier",
+      "event_id": "E0040",
+      "kind": "full",
+      "rule": {
+        "recipient": "soldier",
+        "actor": "owner",
+        "claim": [
+          "mayor_hint"
+        ]
+      }
+    },
+    {
+      "tick": 12,
+      "agent_id": "soldier",
+      "event_id": "E0045",
+      "kind": "full",
+      "rule": {
+        "recipient": "soldier",
+        "actor": "owner",
+        "claim": [
+          "mayor_hint"
+        ]
+      }
+    },
+    {
+      "tick": 14,
+      "agent_id": "soldier",
+      "event_id": "E0050",
+      "kind": "full",
+      "rule": {
+        "recipient": "soldier",
+        "actor": "owner",
+        "claim": [
+          "mayor_hint"
+        ]
+      }
+    },
+    {
+      "tick": 16,
+      "agent_id": "soldier",
+      "event_id": "E0058",
+      "kind": "full",
+      "rule": {
+        "recipient": "soldier",
+        "actor": "owner",
+        "claim": [
+          "mayor_hint"
+        ]
+      }
+    },
+    {
+      "tick": 17,
+      "agent_id": "soldier",
+      "event_id": "E0063",
+      "kind": "full",
+      "rule": {
+        "recipient": "soldier",
+        "actor": "owner",
+        "claim": [
+          "mayor_hint"
+        ]
+      }
+    },
+    {
+      "tick": 20,
+      "agent_id": "soldier",
+      "event_id": "E0071",
+      "kind": "full",
+      "rule": {
+        "recipient": "soldier",
+        "actor": "owner",
+        "claim": [
+          "mayor_hint"
+        ]
+      }
+    }
+  ],
+  "control_suppressions": 0,
+  "verification": {
+    "objective_prefix_identical_through_tick": 20,
+    "first_objective_divergence_tick": null,
+    "first_target_event_tick": 7,
+    "control_first_target_heard_by_recipient": true,
+    "control_target_deliveries_to_recipient": {
+      "full": 8,
+      "muffled": 0,
+      "absent": 0
+    },
+    "treatment_targets_all_suppressed_for_recipient": true
+  },
+  "control_total_events": 73,
+  "treatment_total_events": 73,
+  "total_events_delta": 0,
+  "soldier_actions": {
+    "control": {
+      "ask": 6,
+      "confront": 6,
+      "speak": 3,
+      "search": 1,
+      "move": 4,
+      "confront_mayor_accusation": 6,
+      "first_ask_tick": 8,
+      "first_confront_tick": 6,
+      "first_backroom_search_tick": 3,
+      "first_letter_found_tick": 3
+    },
+    "treatment": {
+      "ask": 6,
+      "confront": 6,
+      "speak": 3,
+      "search": 1,
+      "move": 4,
+      "confront_mayor_accusation": 6,
+      "first_ask_tick": 8,
+      "first_confront_tick": 6,
+      "first_backroom_search_tick": 3,
+      "first_letter_found_tick": 3
+    }
+  },
+  "soldier_belief_series": {
+    "mayor_embezzled": {
+      "control": [
+        {
+          "tick": 1,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 2,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 3,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 4,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 5,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 6,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 7,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 8,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 9,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 10,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 11,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 12,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 13,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 14,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 15,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 16,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 17,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 18,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 19,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 20,
+          "phase": "post_step",
+          "confidence": 0.704,
+          "kind": "heard"
+        },
+        {
+          "tick": 20,
+          "phase": "final",
+          "confidence": 0.704,
+          "kind": "heard"
+        }
+      ],
+      "treatment": [
+        {
+          "tick": 1,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 2,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 3,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 4,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 5,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 6,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 7,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 8,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 9,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 10,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 11,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 12,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 13,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 14,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 15,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 16,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 17,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 18,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 19,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 20,
+          "phase": "post_step",
+          "confidence": 0.6,
+          "kind": "heard"
+        },
+        {
+          "tick": 20,
+          "phase": "final",
+          "confidence": 0.6,
+          "kind": "heard"
+        }
+      ]
+    },
+    "investigation_widening": {
+      "control": [
+        {
+          "tick": 1,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 2,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 3,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 4,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 5,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 6,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 7,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 8,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 9,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 10,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 11,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 12,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 13,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 14,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 15,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 16,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 17,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 18,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 19,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 20,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 20,
+          "phase": "final",
+          "confidence": null,
+          "kind": null
+        }
+      ],
+      "treatment": [
+        {
+          "tick": 1,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 2,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 3,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 4,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 5,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 6,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 7,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 8,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 9,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 10,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 11,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 12,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 13,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 14,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 15,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 16,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 17,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 18,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 19,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 20,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 20,
+          "phase": "final",
+          "confidence": null,
+          "kind": null
+        }
+      ]
+    },
+    "anonymous_letter_exists": {
+      "control": [
+        {
+          "tick": 1,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 2,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 3,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 4,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 5,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 6,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 7,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 8,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 9,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 10,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 11,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 12,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 13,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 14,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 15,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 16,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 17,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 18,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 19,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 20,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 20,
+          "phase": "final",
+          "confidence": 1.0,
+          "kind": "experienced"
+        }
+      ],
+      "treatment": [
+        {
+          "tick": 1,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 2,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 3,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 4,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 5,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 6,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 7,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 8,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 9,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 10,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 11,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 12,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 13,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 14,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 15,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 16,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 17,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 18,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 19,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 20,
+          "phase": "post_step",
+          "confidence": 1.0,
+          "kind": "experienced"
+        },
+        {
+          "tick": 20,
+          "phase": "final",
+          "confidence": 1.0,
+          "kind": "experienced"
+        }
+      ]
+    },
+    "owner_hiding_something": {
+      "control": [
+        {
+          "tick": 1,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 2,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 3,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 4,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 5,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 6,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 7,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 8,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 9,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 10,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 11,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 12,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 13,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 14,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 15,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 16,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 17,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 18,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 19,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 20,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 20,
+          "phase": "final",
+          "confidence": null,
+          "kind": null
+        }
+      ],
+      "treatment": [
+        {
+          "tick": 1,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 2,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 3,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 4,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 5,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 6,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 7,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 8,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 9,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 10,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 11,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 12,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 13,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 14,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 15,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 16,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 17,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 18,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 19,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 20,
+          "phase": "post_step",
+          "confidence": null,
+          "kind": null
+        },
+        {
+          "tick": 20,
+          "phase": "final",
+          "confidence": null,
+          "kind": null
+        }
+      ]
+    }
+  },
+  "soldier_suspicion_series": {
+    "control": [
+      {
+        "tick": 1,
+        "phase": "post_step",
+        "value": 0.3
+      },
+      {
+        "tick": 2,
+        "phase": "post_step",
+        "value": 0.3
+      },
+      {
+        "tick": 3,
+        "phase": "post_step",
+        "value": 0.3
+      },
+      {
+        "tick": 4,
+        "phase": "post_step",
+        "value": 0.44999999999999996
+      },
+      {
+        "tick": 5,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 6,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 7,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 8,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 9,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 10,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 11,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 12,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 13,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 14,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 15,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 16,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 17,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 18,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 19,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 20,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 20,
+        "phase": "final",
+        "value": 0.49999999999999994
+      }
+    ],
+    "treatment": [
+      {
+        "tick": 1,
+        "phase": "post_step",
+        "value": 0.3
+      },
+      {
+        "tick": 2,
+        "phase": "post_step",
+        "value": 0.3
+      },
+      {
+        "tick": 3,
+        "phase": "post_step",
+        "value": 0.3
+      },
+      {
+        "tick": 4,
+        "phase": "post_step",
+        "value": 0.44999999999999996
+      },
+      {
+        "tick": 5,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 6,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 7,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 8,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 9,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 10,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 11,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 12,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 13,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 14,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 15,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 16,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 17,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 18,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 19,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 20,
+        "phase": "post_step",
+        "value": 0.49999999999999994
+      },
+      {
+        "tick": 20,
+        "phase": "final",
+        "value": 0.49999999999999994
+      }
+    ]
+  },
+  "soldier_final_beliefs": {
+    "mayor_embezzled": {
+      "control": {
+        "confidence": 0.704,
+        "kind": "heard"
+      },
+      "treatment": {
+        "confidence": 0.6,
+        "kind": "heard"
+      }
+    },
+    "investigation_widening": {
+      "control": null,
+      "treatment": null
+    },
+    "anonymous_letter_exists": {
+      "control": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "treatment": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      }
+    },
+    "owner_hiding_something": {
+      "control": null,
+      "treatment": null
+    }
+  }
+}

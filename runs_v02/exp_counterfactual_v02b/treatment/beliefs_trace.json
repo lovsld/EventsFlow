@@ -1,0 +1,1794 @@
+[
+ {
+  "tick": 1,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.45,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "back_room",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "tables",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 2,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.45,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "tables",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "back_room",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 3,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.45,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "back_room",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 4,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.45,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "tables",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.44999999999999996
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 5,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.45,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 6,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.45,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.6,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 7,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.525,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.261,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.425,
+     "suspicion": 0.3
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.6,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 8,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.6375000000000001,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.261,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.4875,
+     "suspicion": 0.3
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.6,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 9,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.8625,
+     "suspicion": 0.5
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.6125,
+     "suspicion": 0.5
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 10,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.9750000000000001,
+     "suspicion": 0.6
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.675,
+     "suspicion": 0.6
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 11,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.6
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.7166666666666667,
+     "suspicion": 0.6
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 12,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.6
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.7479166666666667,
+     "suspicion": 0.6
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 13,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.6666666666666666
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.7895833333333333,
+     "suspicion": 0.6666666666666666
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 14,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.7166666666666667
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.8208333333333333,
+     "suspicion": 0.7166666666666667
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 15,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     },
+     "conceals:merchant": {
+      "confidence": 0.556,
+      "kind": "inferred"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.8666666666666667
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.8208333333333333,
+     "suspicion": 0.7166666666666667
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 16,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     },
+     "conceals:merchant": {
+      "confidence": 0.556,
+      "kind": "inferred"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.8666666666666667
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.8416666666666667,
+     "suspicion": 0.7166666666666667
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 17,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     },
+     "conceals:merchant": {
+      "confidence": 0.556,
+      "kind": "inferred"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.8666666666666667
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.8595238095238096,
+     "suspicion": 0.7166666666666667
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 18,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     },
+     "conceals:merchant": {
+      "confidence": 0.556,
+      "kind": "inferred"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.8666666666666667
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.8595238095238096,
+     "suspicion": 0.7166666666666667
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 19,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     },
+     "conceals:merchant": {
+      "confidence": 0.556,
+      "kind": "inferred"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.9066666666666667
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.8845238095238096,
+     "suspicion": 0.7566666666666667
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 20,
+  "phase": "post_step",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     },
+     "conceals:merchant": {
+      "confidence": 0.556,
+      "kind": "inferred"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.9400000000000001
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.905357142857143,
+     "suspicion": 0.79
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ },
+ {
+  "tick": 20,
+  "phase": "final",
+  "agents": {
+   "owner": {
+    "location": "bar",
+    "beliefs": {
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.594,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     },
+     "conceals:merchant": {
+      "confidence": 0.556,
+      "kind": "inferred"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 1.0,
+     "suspicion": 0.9400000000000001
+    },
+    "plan": null
+   },
+   "merchant": {
+    "location": "bar",
+    "beliefs": {
+     "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.454,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "owner": 0.3,
+     "soldier": 0.3
+    },
+    "emotions": {
+     "arousal": 0.905357142857143,
+     "suspicion": 0.79
+    },
+    "plan": "gain_business"
+   },
+   "soldier": {
+    "location": "bar",
+    "beliefs": {
+     "investigation_order": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_suspicious": {
+      "confidence": 0.35,
+      "kind": "inferred"
+     },
+     "anonymous_letter_exists": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     },
+     "mayor_embezzled": {
+      "confidence": 0.704,
+      "kind": "heard"
+     },
+     "business_opportunity": {
+      "confidence": 0.29,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "merchant": 0.3,
+     "owner": 0.25
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "complete_investigation"
+   }
+  }
+ }
+]
