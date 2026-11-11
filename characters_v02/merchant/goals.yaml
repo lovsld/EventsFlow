@@ -1,0 +1,10 @@
+goals:
+- desc: 获得更多商业资源
+  key: gain_business
+  weight: 1.0
+- desc: 建立有价值的人际关系
+  key: build_relationships
+  weight: 0.8
+- desc: 避免损失自己的财富
+  key: protect_wealth
+  weight: 0.85

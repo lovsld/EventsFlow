@@ -1,0 +1,25 @@
+character_id: merchant
+legacy_id: B
+name: 米拉
+role: 旅行商人
+identity: 最近刚来到这个小镇，寻找新的商业机会。曾经与镇长有过商业合作。不知道匿名信的存在。
+identity_doc: '# B（米拉）· 旅行商人
+
+  最近刚来到小镇，寻找商业机会。曾与镇长有过商业合作。不知道匿名信的存在。
+
+  性格：外向、善于交际，精于利益计算，好奇心强。
+
+  原则：合作必须有收益；不轻易透露真实目的；尽量避免正面冲突。
+
+  '
+start_location: tables
+possessions:
+- coin_purse
+- trade_ledger
+seed_offset: 202
+disclosure_threshold: 0.6
+private_knowledge:
+- confidence: 0.9
+  desc: 曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）
+  key: mayor_business_deal
+  kind: experienced

@@ -1,0 +1,10 @@
+goals:
+- desc: 完成调查任务
+  key: complete_investigation
+  weight: 1.0
+- desc: 维护自己的荣誉
+  key: keep_honor
+  weight: 0.9
+- desc: 搞清楚镇长是否真的存在问题
+  key: learn_mayor_truth
+  weight: 0.75

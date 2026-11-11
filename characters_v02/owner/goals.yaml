@@ -1,0 +1,10 @@
+goals:
+- desc: 保护自己的酒馆
+  key: protect_tavern
+  weight: 1.0
+- desc: 搞清楚匿名信的来源
+  key: find_letter_source
+  weight: 0.8
+- desc: 避免卷入政治冲突
+  key: avoid_politics
+  weight: 0.9

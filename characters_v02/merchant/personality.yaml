@@ -1,0 +1,6 @@
+personality:
+  caution: 0.5
+  curiosity: 0.9
+  honesty: 0.45
+  impulsiveness: 0.4
+  sociability: 0.95
