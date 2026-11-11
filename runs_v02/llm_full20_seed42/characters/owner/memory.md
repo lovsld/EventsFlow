@@ -1,0 +1,16 @@
+# owner 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] merchant 来到了/去到了 bar。
+- [t1][experienced] 环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。
+- [t2][experienced] merchant 说：奥伦老板，这镇子最近的生意怎么样啊？我刚来，对这里还不太熟悉。
+- [t3][experienced] merchant 说：这雨下得还真不小，奥伦老板这儿平时生意都怎么样啊？
+- [t4][experienced] merchant 说：嗯，我刚到镇上不久，正想了解一下。奥伦老板觉得，最近镇上什么生意比较好做，或者有什么是大家特别需要的吗？
+- [t6][experienced] merchant 说：哦？镇长最近忙的事情，对镇上的生意有什么具体影响吗？我刚来，想多了解些情况。
+- [t6][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t7][experienced] merchant 说：这些大项目听起来很宏伟，不知道对镇上普通居民的生计和消费习惯会有什么影响呢？
+- [t7][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t8][experienced] merchant 说：哦？铁匠铺？我刚来不久，还没来得及留意到。听起来生意不错，是专门做哪方面的呢？
+- [t10][experienced] merchant 说：哦？新开的铁匠铺？生意还不错？那可真是个好消息。具体在镇子西边什么位置？主营什么呢？
+- [t10][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t12][experienced] merchant 说：铁匠铺？我刚来，还没来得及留意呢。生意不错的话，那倒是值得关注。方便告诉我具体位置吗？
+- [t14][experienced] merchant 说：你之前提到镇子西边新开的铁匠铺，生意怎么样？是做些什么特别的东西吗？
+- [t15][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。

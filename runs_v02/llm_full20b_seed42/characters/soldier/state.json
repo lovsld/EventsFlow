@@ -1,0 +1,173 @@
+{
+  "character_id": "soldier",
+  "location": "bar",
+  "personality": {
+    "caution": 0.35,
+    "curiosity": 0.7,
+    "honesty": 0.9,
+    "impulsiveness": 0.85,
+    "sociability": 0.55
+  },
+  "principles": [
+    "不主动欺骗无辜者",
+    "不背叛自己的职责",
+    "不接受明显不公正的命令"
+  ],
+  "goals": [
+    {
+      "key": "complete_investigation",
+      "desc": "完成调查任务",
+      "weight": 1.0
+    },
+    {
+      "key": "keep_honor",
+      "desc": "维护自己的荣誉",
+      "weight": 0.9
+    },
+    {
+      "key": "learn_mayor_truth",
+      "desc": "搞清楚镇长是否真的存在问题",
+      "weight": 0.75
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "investigation_order",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "今天接到命令，调查酒馆老板最近的异常行为"
+    },
+    {
+      "key": "mayor_suspicious",
+      "confidence": 0.35,
+      "kind": "inferred",
+      "desc": "最近觉得镇长的一些做法不太对劲（直觉，无证据）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦，这雨下得可真不小。看来今晚大家都要在你这儿多待一会儿了，生意兴隆啊。",
+      "event_id": "E0007"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "merchant 说：凯尔，看你这身制服，是镇上的守卫队吗？最近镇上有什么新鲜事吗？",
+      "event_id": "E0012"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦，这镇子最近生意怎么样？看这雨，大家伙儿今晚可都得在这儿多待会儿了。",
+      "event_id": "E0019"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0025"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0029"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0039"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "merchant 说：我最近确实常来这儿。不过要说奥伦老板有什么特别的……我倒是没注意到什么出格的事。凯尔你是发现了什么吗？",
+      "event_id": "E0047"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "owner 说：凯尔，你这么问，是有什么特别的发现吗？我这儿一直都很规矩。",
+      "event_id": "E0052"
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "owner": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "merchant": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0007",
+    "E0012",
+    "E0019",
+    "E0025",
+    "E0029",
+    "E0039",
+    "E0047",
+    "E0052"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "merchant",
+      "topic": "weather",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 3,
+      "from": "merchant",
+      "topic": "town_news",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 13,
+      "from": "merchant",
+      "topic": "owner_behavior",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "owner",
+      "topic": "owner_behavior",
+      "claim": null,
+      "kind": "ask"
+    }
+  ],
+  "pending_question": {
+    "from": "owner",
+    "topic": "owner_behavior",
+    "tick": 14
+  },
+  "action_counts": {
+    "move:tables:": 1,
+    "move:bar:": 1,
+    "ask:owner:unusual_events": 1,
+    "observe::": 1,
+    "ask:merchant:owner_behavior": 2
+  }
+}

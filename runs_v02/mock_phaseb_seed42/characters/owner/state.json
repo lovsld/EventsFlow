@@ -1,0 +1,108 @@
+{
+  "character_id": "owner",
+  "location": "bar",
+  "personality": {
+    "caution": 0.9,
+    "curiosity": 0.6,
+    "honesty": 0.6,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "不主动伤害无辜者",
+    "不轻易信任陌生人",
+    "保护自己的利益"
+  ],
+  "goals": [
+    {
+      "key": "protect_tavern",
+      "desc": "保护自己的酒馆",
+      "weight": 1.0
+    },
+    {
+      "key": "find_letter_source",
+      "desc": "搞清楚匿名信的来源",
+      "weight": 0.8
+    },
+    {
+      "key": "avoid_politics",
+      "desc": "避免卷入政治冲突",
+      "weight": 0.9
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "三天前收到一封匿名信"
+    },
+    {
+      "key": "mayor_embezzled",
+      "confidence": 0.45,
+      "kind": "heard",
+      "desc": "匿名信称镇长私吞了公共资金（未证实）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+      "event_id": "E0004"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0022"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0026"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0036"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0054"
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "merchant": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0004",
+    "E0022",
+    "E0026",
+    "E0036",
+    "E0054"
+  ],
+  "utterances_heard": [],
+  "pending_question": null,
+  "action_counts": {
+    "observe::": 20
+  }
+}

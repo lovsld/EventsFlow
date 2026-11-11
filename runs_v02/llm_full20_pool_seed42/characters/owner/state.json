@@ -1,0 +1,335 @@
+{
+  "character_id": "owner",
+  "location": "bar",
+  "personality": {
+    "caution": 0.9,
+    "curiosity": 0.6,
+    "honesty": 0.6,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "不主动伤害无辜者",
+    "不轻易信任陌生人",
+    "保护自己的利益"
+  ],
+  "goals": [
+    {
+      "key": "protect_tavern",
+      "desc": "保护自己的酒馆",
+      "weight": 1.0
+    },
+    {
+      "key": "find_letter_source",
+      "desc": "搞清楚匿名信的来源",
+      "weight": 0.8
+    },
+    {
+      "key": "avoid_politics",
+      "desc": "避免卷入政治冲突",
+      "weight": 0.9
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "三天前收到一封匿名信"
+    },
+    {
+      "key": "mayor_embezzled",
+      "confidence": 0.45,
+      "kind": "heard",
+      "desc": "匿名信称镇长私吞了公共资金（未证实）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "merchant 来到了/去到了 bar。",
+      "event_id": "E0002"
+    },
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "merchant 说：今晚的雨看来不小，奥伦。这镇子最近生意怎么样？",
+      "event_id": "E0007"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "merchant 说：是啊，看来是这样。奥伦，这镇子最近有什么新鲜事吗？",
+      "event_id": "E0010"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "merchant 说：看来这雨确实留住了不少客人。不过，奥伦，这镇上除了生意，最近有没有什么有趣的故事或值得一聊的人？",
+      "event_id": "E0014"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 说：收获嘛... 还在观察中。不过，奥伦，你在这里经营这么久，肯定对镇上的情况和人脉了如指掌。有没有什么特别的推荐，比如哪里能找到些本地的特色商品，或者什么值得结交的人？",
+      "event_id": "E0017"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "merchant 说：镇长？我刚到这里，还没听到什么确凿的风声呢。奥伦你既然提到了，不妨先说说你听到了什么？说不定我能从你的消息里找到点什么共同点，或者给你一些我刚来镇上的一些粗浅看法？",
+      "event_id": "E0021"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0023"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦，我刚到镇上，确实还没来得及听到什么确切的风声。你说的‘传闻’，哪怕是只言片语，也可能对我这个外来者了解镇情有所帮助。不如你先说说你听到了什么？也许我能从我的角度提供一点点新的看法。",
+      "event_id": "E0025"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0027"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦，那真是太感谢你了，你在这里的消息确实比我灵通得多。既然你愿意帮忙留意，那我就先承你的情了。如果我这边也听到什么零星的、可能对你有用的消息，也会及时告诉你。毕竟，多一份信息总是好的，对吧？",
+      "event_id": "E0029"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "merchant 说：我明白，奥伦。你在这里经营多年，安稳最重要。不过，这些传闻无论真假，对我们这些做生意的来说，多一份了解总是好的。我也会继续留意，有任何消息都会知会你。咱们互通有无，对谁都好。",
+      "event_id": "E0032"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦，你在这里经营多年，经验丰富。你觉得这些传闻，无论真假，最终会对镇上的生意造成什么影响呢？",
+      "event_id": "E0035"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0037"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "merchant 说：是啊，传闻确实让人不安。奥伦，这些传闻对酒馆的生意影响大吗？或者说，你觉得镇上其他生意受影响的情况怎么样？",
+      "event_id": "E0042"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "merchant 说：是啊，传闻对生意影响确实不小。奥伦你在这镇上这么久，除了酒馆，你觉得还有哪些行业受这些传闻影响比较大呢？",
+      "event_id": "E0045"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "merchant 说：您说得是，谨慎是人之常情。不过，像您这样在镇上经营多年的，肯定对各种行业都有了解。除了酒馆，您觉得还有哪些行业，比如那些需要大笔资金周转的，最近会特别受这些风声的影响呢？我只是想多了解些镇上的经济脉络，看看有没有什么新的机会。",
+      "event_id": "E0049"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "merchant 说：原来如此，裁缝和铁匠铺。这确实反映了大家谨慎消费的心态。那么，奥伦老板，您觉得有没有哪些行业，在这种环境下反而比较稳定，或者说受影响相对较小的呢？我是想了解一下，除了必需品，大家在什么方面还是愿意花钱。",
+      "event_id": "E0053"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0055"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "merchant 说：矿业？您提到矿业最近没什么大动静，但又说‘谁知道呢’。这听起来有点意思。是说矿业现在比较平稳，还是说有什么潜在的变数，所以才不好说呢？",
+      "event_id": "E0057"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "merchant 说：确实，这些大项目对我们普通人来说确实比较神秘。不过，奥伦老板您在这儿经验丰富，有没有听过一些，哪怕是零星的、关于这类项目的新动向呢？就当是您这里传闻的一部分，我也挺好奇的。",
+      "event_id": "E0060"
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "merchant": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0002",
+    "E0005",
+    "E0007",
+    "E0010",
+    "E0014",
+    "E0017",
+    "E0021",
+    "E0023",
+    "E0025",
+    "E0027",
+    "E0029",
+    "E0032",
+    "E0035",
+    "E0037",
+    "E0042",
+    "E0045",
+    "E0049",
+    "E0053",
+    "E0055",
+    "E0057",
+    "E0060"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 3,
+      "from": "merchant",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 4,
+      "from": "merchant",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "merchant",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 7,
+      "from": "merchant",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 8,
+      "from": "merchant",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 9,
+      "from": "merchant",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 10,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 12,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 13,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 14,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 15,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 16,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 17,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "ask"
+    }
+  ],
+  "pending_question": {
+    "from": "merchant",
+    "topic": "town_business",
+    "tick": 17
+  },
+  "action_counts": {
+    "observe:bar:": 1,
+    "speak:merchant:weather": 1,
+    "speak:merchant:town_business": 8,
+    "speak:merchant:town_affairs": 3,
+    "ask:merchant:town_affairs": 2,
+    "wait::": 2
+  }
+}

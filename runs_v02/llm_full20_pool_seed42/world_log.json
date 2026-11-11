@@ -1,0 +1,1673 @@
+[
+ {
+  "tick": 1,
+  "time": "21:05",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0001",
+    "tick": 1,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0002",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "from": "tables",
+    "to": "bar"
+   },
+   {
+    "event_id": "E0003",
+    "tick": 1,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": "bar",
+    "topic": null
+   },
+   {
+    "type": "session_start",
+    "session": "S1",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "event_id": "E0004",
+    "tick": 1
+   },
+   {
+    "event_id": "E0005",
+    "tick": 1,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "rain_starts",
+    "text": "窗外下起雨来，酒馆里的人今晚大概走不了太早。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0002",
+     "E0003",
+     "E0004",
+     "E0005"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0002",
+     "E0003",
+     "E0004",
+     "E0005"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0001"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 2,
+  "time": "21:10",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0006",
+    "tick": 2,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0007",
+    "tick": 2,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "今晚的雨看来不小，奥伦。这镇子最近生意怎么样？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0008",
+    "tick": 2,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "weather",
+    "claim": null,
+    "text": "这雨下得真大，看来今晚你得在这儿多待一会儿了。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0007",
+     "E0008"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0007",
+     "E0008"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 3,
+  "time": "21:15",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0009",
+    "tick": 3,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0010",
+    "tick": 3,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "是啊，看来是这样。奥伦，这镇子最近有什么新鲜事吗？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0011",
+    "tick": 3,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "生意嘛，就那样，老样子。不过这雨一下，大家今晚都走不了了，说不定还能多喝几杯。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0012",
+    "tick": 3,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "酒馆门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0010",
+     "E0011"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0010",
+     "E0011"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0009",
+     "E0012"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 4,
+  "time": "21:20",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0013",
+    "tick": 4,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0014",
+    "tick": 4,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "看来这雨确实留住了不少客人。不过，奥伦，这镇上除了生意，最近有没有什么有趣的故事或值得一聊的人？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0015",
+    "tick": 4,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "镇子上的事儿啊... 最近没什么特别的，大家都忙着自己的生计。米拉你呢，这次来镇上有什么收获？",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0014",
+     "E0015"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0014",
+     "E0015"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0013"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 5,
+  "time": "21:25",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0016",
+    "tick": 5,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0017",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "收获嘛... 还在观察中。不过，奥伦，你在这里经营这么久，肯定对镇上的情况和人脉了如指掌。有没有什么特别的推荐，比如哪里能找到些本地的特色商品，或者什么值得结交的人？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0018",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "我最近确实在听一些关于镇长的事情，不过消息还不算确凿。米拉你那边有没有听到什么风声？",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0019",
+    "tick": 5,
+    "type": "ambient",
+    "actors": [],
+    "location": "outside",
+    "topic": "distant_shout",
+    "text": "街上远处有人喊了一嗓子，很快没了声音。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0017",
+     "E0018"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0017",
+     "E0018"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0016"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 6,
+  "time": "21:30",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0020",
+    "tick": 6,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0021",
+    "tick": 6,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "镇长？我刚到这里，还没听到什么确凿的风声呢。奥伦你既然提到了，不妨先说说你听到了什么？说不定我能从你的消息里找到点什么共同点，或者给你一些我刚来镇上的一些粗浅看法？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0022",
+    "tick": 6,
+    "type": "ask",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "镇长的事？嗯，我确实听到了一些传闻，但具体细节我也不清楚。你那边有没有听到什么更具体的消息？",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0023",
+    "tick": 6,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0021",
+     "E0022",
+     "E0023"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0021",
+     "E0022",
+     "E0023"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0020"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 7,
+  "time": "21:35",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0024",
+    "tick": 7,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0025",
+    "tick": 7,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "奥伦，我刚到镇上，确实还没来得及听到什么确切的风声。你说的‘传闻’，哪怕是只言片语，也可能对我这个外来者了解镇情有所帮助。不如你先说说你听到了什么？也许我能从我的角度提供一点点新的看法。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0026",
+    "tick": 7,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "我只是听到一些闲言碎语，具体情况我也不太清楚。不过，既然你刚到镇上，也许我可以帮你留意一下，看看有没有什么有用的信息。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0027",
+    "tick": 7,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0025",
+     "E0026",
+     "E0027"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0025",
+     "E0026",
+     "E0027"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0024"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 8,
+  "time": "21:40",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0028",
+    "tick": 8,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": "door_bell",
+    "topic": null
+   },
+   {
+    "event_id": "E0029",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "奥伦，那真是太感谢你了，你在这里的消息确实比我灵通得多。既然你愿意帮忙留意，那我就先承你的情了。如果我这边也听到什么零星的、可能对你有用的消息，也会及时告诉你。毕竟，多一份信息总是好的，对吧？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0030",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "我确实听到了一些关于镇长挪用公款的传言，但消息来源不明，我也没法证实。我在这儿开了十年的酒馆，只想安安稳稳做生意，这种事我也不想多掺和。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0029",
+     "E0030"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0029",
+     "E0030"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0028"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 9,
+  "time": "21:45",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0031",
+    "tick": 9,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": "door_bell",
+    "topic": null
+   },
+   {
+    "event_id": "E0032",
+    "tick": 9,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_affairs",
+    "claim": null,
+    "text": "我明白，奥伦。你在这里经营多年，安稳最重要。不过，这些传闻无论真假，对我们这些做生意的来说，多一份了解总是好的。我也会继续留意，有任何消息都会知会你。咱们互通有无，对谁都好。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0033",
+    "tick": 9,
+    "type": "wait",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0032",
+     "E0033"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0032",
+     "E0033"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0031"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 10,
+  "time": "21:50",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0034",
+    "tick": 10,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": "door_bell",
+    "topic": null
+   },
+   {
+    "event_id": "E0035",
+    "tick": 10,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "奥伦，你在这里经营多年，经验丰富。你觉得这些传闻，无论真假，最终会对镇上的生意造成什么影响呢？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0036",
+    "tick": 10,
+    "type": "wait",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0037",
+    "tick": 10,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0035",
+     "E0036",
+     "E0037"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0035",
+     "E0036",
+     "E0037"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0034"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 11,
+  "time": "21:55",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0038",
+    "tick": 11,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": "door_bell",
+    "topic": null
+   },
+   {
+    "event_id": "E0039",
+    "tick": 11,
+    "type": "observe",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": "owner",
+    "topic": "owner_reaction"
+   },
+   {
+    "event_id": "E0040",
+    "tick": 11,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "传闻总是会影响生意的，不论真假。大家会变得谨慎，消费也会减少。我希望这些传闻不会持续太久。",
+    "interrupted": false,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0039",
+     "E0040"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0039",
+     "E0040"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0038"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 12,
+  "time": "22:00",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0041",
+    "tick": 12,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": "door_bell",
+    "topic": null
+   },
+   {
+    "event_id": "E0042",
+    "tick": 12,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "是啊，传闻确实让人不安。奥伦，这些传闻对酒馆的生意影响大吗？或者说，你觉得镇上其他生意受影响的情况怎么样？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0043",
+    "tick": 12,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "传闻总是会影响生意的，不论真假。大家会变得谨慎，消费也会减少。我希望这些传闻不会持续太久。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0042",
+     "E0043"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0042",
+     "E0043"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0041"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 13,
+  "time": "22:05",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0044",
+    "tick": 13,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": "door_bell",
+    "topic": null
+   },
+   {
+    "event_id": "E0045",
+    "tick": 13,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "是啊，传闻对生意影响确实不小。奥伦你在这镇上这么久，除了酒馆，你觉得还有哪些行业受这些传闻影响比较大呢？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0046",
+    "tick": 13,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "传闻总是会影响生意的，不论真假。大家会变得谨慎，消费也会减少。我希望这些传闻不会持续太久。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0047",
+    "tick": 13,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "酒馆门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0045",
+     "E0046"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0045",
+     "E0046"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0044",
+     "E0047"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 14,
+  "time": "22:10",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0048",
+    "tick": 14,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": "door_bell",
+    "topic": null
+   },
+   {
+    "event_id": "E0049",
+    "tick": 14,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "您说得是，谨慎是人之常情。不过，像您这样在镇上经营多年的，肯定对各种行业都有了解。除了酒馆，您觉得还有哪些行业，比如那些需要大笔资金周转的，最近会特别受这些风声的影响呢？我只是想多了解些镇上的经济脉络，看看有没有什么新的机会。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0050",
+    "tick": 14,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "除了酒馆，最近镇上的裁缝和铁匠铺生意都有些冷清。大家似乎都更倾向于把钱留着，或者用在必需品上。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0051",
+    "tick": 14,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0049",
+     "E0050"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0049",
+     "E0050"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0048"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 15,
+  "time": "22:15",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0052",
+    "tick": 15,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": "door_bell",
+    "topic": null
+   },
+   {
+    "event_id": "E0053",
+    "tick": 15,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "原来如此，裁缝和铁匠铺。这确实反映了大家谨慎消费的心态。那么，奥伦老板，您觉得有没有哪些行业，在这种环境下反而比较稳定，或者说受影响相对较小的呢？我是想了解一下，除了必需品，大家在什么方面还是愿意花钱。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0054",
+    "tick": 15,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "裁缝和铁匠铺，他们确实需要不少本钱周转。最近大家都不敢轻易花钱，这两家的生意自然就受影响了。至于大笔资金周转的... 矿业最近倒是没什么大动静，但谁知道呢。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0055",
+    "tick": 15,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0053",
+     "E0054",
+     "E0055"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0053",
+     "E0054",
+     "E0055"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0052"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 16,
+  "time": "22:20",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0056",
+    "tick": 16,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": "door_bell",
+    "topic": null
+   },
+   {
+    "event_id": "E0057",
+    "tick": 16,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "矿业？您提到矿业最近没什么大动静，但又说‘谁知道呢’。这听起来有点意思。是说矿业现在比较平稳，还是说有什么潜在的变数，所以才不好说呢？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0058",
+    "tick": 16,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "嗯，这倒是问到点子上了。矿业，或者说一些大型的、需要长期投入的基建项目，这类事情的资金流向往往不太容易被普通人察觉。但具体稳定到什么程度，我也不好说，毕竟这些事情离我们小老百姓太远了。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0057",
+     "E0058"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0057",
+     "E0058"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0056"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 17,
+  "time": "22:25",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0059",
+    "tick": 17,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": "door_bell",
+    "topic": null
+   },
+   {
+    "event_id": "E0060",
+    "tick": 17,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "确实，这些大项目对我们普通人来说确实比较神秘。不过，奥伦老板您在这儿经验丰富，有没有听过一些，哪怕是零星的、关于这类项目的新动向呢？就当是您这里传闻的一部分，我也挺好奇的。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0061",
+    "tick": 17,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "town_business",
+    "claim": null,
+    "text": "矿业？嗯，最近确实没什么大动静。但你也知道，这种需要大笔资金的项目，谁能说得准呢？可能只是暂时平静，也说不定。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0060",
+     "E0061"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0060",
+     "E0061"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0059"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 18,
+  "time": "22:30",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0062",
+    "tick": 18,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0063",
+    "tick": 18,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0064",
+    "tick": 18,
+    "type": "wait",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0065",
+    "tick": 18,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0063",
+     "E0064"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0063",
+     "E0064"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0062"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 19,
+  "time": "22:35",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0066",
+    "tick": 19,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0067",
+    "tick": 19,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0068",
+    "tick": 19,
+    "type": "wait",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0067",
+     "E0068"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0067",
+     "E0068"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0066"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 20,
+  "time": "22:40",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0069",
+    "tick": 20,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0070",
+    "tick": 20,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0071",
+    "tick": 20,
+    "type": "wait",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0070",
+     "E0071"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0070",
+     "E0071"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0069"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ }
+]

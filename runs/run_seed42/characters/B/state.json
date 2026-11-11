@@ -1,0 +1,171 @@
+{
+  "agent_id": "B",
+  "beliefs": {
+    "mayor_business_deal": {
+      "confidence": 0.9,
+      "kind": "experienced",
+      "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）"
+    },
+    "A_cautious": {
+      "confidence": 0.7,
+      "kind": "inferred",
+      "desc": "老板口风很紧，是个谨慎人"
+    },
+    "anonymous_letter_exists": {
+      "confidence": 0.7,
+      "kind": "heard",
+      "desc": "C 当众说他已经看过一封关于镇长的信"
+    },
+    "mayor_embezzled": {
+      "confidence": 0.45,
+      "kind": "heard",
+      "desc": "C 的话暗示镇长财务有问题"
+    },
+    "mayor_deal_risky": {
+      "confidence": 0.65,
+      "kind": "inferred",
+      "desc": "和镇长做生意可能有回款风险，但消息本身值钱"
+    }
+  },
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "relationships": {
+    "A": {
+      "trust": 0.15,
+      "notes": []
+    },
+    "C": {
+      "trust": 0.296,
+      "notes": []
+    }
+  },
+  "plan": [
+    "observe:A"
+  ],
+  "perceived_event_ids": [
+    "E0005",
+    "E0009",
+    "E0015",
+    "E0018",
+    "E0020",
+    "E0022",
+    "E0024",
+    "E0025",
+    "E0026",
+    "E0028",
+    "E0029",
+    "E0041",
+    "E0045",
+    "E0050",
+    "E0052",
+    "E0054",
+    "E0056",
+    "E0058",
+    "E0060",
+    "E0061",
+    "E0067",
+    "E0072",
+    "E0078"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 5,
+      "from": "C",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "C",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "A",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "C",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "A",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "C",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 8,
+      "from": "A",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "C",
+      "topic": "letter_discussion",
+      "claim": "letter_discussion",
+      "kind": "confront"
+    },
+    {
+      "tick": 14,
+      "from": "A",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 15,
+      "from": "C",
+      "topic": "mayor_hint",
+      "claim": "mayor_hint",
+      "kind": "confront"
+    },
+    {
+      "tick": 16,
+      "from": "C",
+      "topic": "letter_discussion",
+      "claim": "letter_discussion",
+      "kind": "speak"
+    },
+    {
+      "tick": 19,
+      "from": "C",
+      "topic": "mayor_hint",
+      "claim": "mayor_hint",
+      "kind": "confront"
+    }
+  ],
+  "location": "bar",
+  "tick_now": 20,
+  "action_counts": {
+    "move:bar:": 1,
+    "speak:A:business_proposal": 3,
+    "speak:A:greeting": 2,
+    "speak:C:business_proposal": 3,
+    "speak:C:answer_mayor": 3,
+    "speak:C:greeting": 2,
+    "observe:A:": 5,
+    "speak:C:bluff_hint": 1
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "character_id": "merchant",
+  "location": "bar",
+  "personality": {
+    "caution": 0.5,
+    "curiosity": 0.9,
+    "honesty": 0.45,
+    "impulsiveness": 0.4,
+    "sociability": 0.95
+  },
+  "principles": [
+    "合作必须有收益",
+    "不轻易透露自己的真实目的",
+    "尽量避免正面冲突"
+  ],
+  "goals": [
+    {
+      "key": "gain_business",
+      "desc": "获得更多商业资源",
+      "weight": 1.0
+    },
+    {
+      "key": "build_relationships",
+      "desc": "建立有价值的人际关系",
+      "weight": 0.8
+    },
+    {
+      "key": "protect_wealth",
+      "desc": "避免损失自己的财富",
+      "weight": 0.85
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "mayor_business_deal",
+      "confidence": 0.9,
+      "kind": "experienced",
+      "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0006"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦，镇长让我来巡查一下，顺便问问你这酒馆最近有没有什么特别的事情发生？生意还好吗？",
+      "event_id": "E0022"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0025"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0029"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "soldier 说：米拉，你最近常来酒馆吗？奥伦老板这里，最近有什么特别的吗？",
+      "event_id": "E0033"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0039"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "soldier 说：我还在观察，米拉。不过，你刚才提到没注意到什么‘出格’的事，那有没有一些不那么显眼，但又让你觉得有点不一样的习惯或举动呢？比如他最近和谁接触比较多，或者言行上有什么细微的变化？",
+      "event_id": "E0050"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "owner 说：凯尔，你这么问，是有什么特别的发现吗？我这儿一直都很规矩。",
+      "event_id": "E0052"
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "owner": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0005",
+    "E0006",
+    "E0022",
+    "E0025",
+    "E0029",
+    "E0033",
+    "E0039",
+    "E0050",
+    "E0052"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 6,
+      "from": "soldier",
+      "topic": "unusual_events",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 9,
+      "from": "soldier",
+      "topic": "owner_behavior",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 14,
+      "from": "soldier",
+      "topic": "owner_behavior",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 14,
+      "from": "owner",
+      "topic": "owner_behavior",
+      "claim": null,
+      "kind": "ask"
+    }
+  ],
+  "pending_question": {
+    "from": "owner",
+    "topic": "owner_behavior",
+    "tick": 14
+  },
+  "action_counts": {
+    "move:bar:": 1,
+    "speak:owner:weather": 1,
+    "ask:soldier:town_news": 1,
+    "ask:owner:town_business": 1,
+    "wait::": 1,
+    "listen::unusual_events": 1,
+    "speak:soldier:owner_behavior": 1
+  }
+}

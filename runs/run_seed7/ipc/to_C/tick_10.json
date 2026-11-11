@@ -1,0 +1,1 @@
+{"perception": {"agent_id": "C", "tick": 10, "time": "21:45", "location": "tables", "colocated": [], "visible_objects": ["oak_table", "empty_glasses"], "events": [{"event_id": "E0037", "tick": 9, "type": "move", "actors": ["C"], "location": "tables", "from": "back_room", "to": "tables"}], "muffled": [], "world_public": {"weather": "rain"}}, "action_result": {"ok": true}}

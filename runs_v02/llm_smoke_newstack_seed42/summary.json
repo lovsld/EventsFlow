@@ -1,0 +1,65 @@
+{
+  "run_id": "llm_smoke_newstack_seed42",
+  "mode": "llm",
+  "seed": 42,
+  "ticks": 6,
+  "total_events": 25,
+  "final_positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+  },
+  "letter_seen_by_objective": [
+    "owner"
+  ],
+  "final_beliefs": {
+    "owner": {
+      "anonymous_letter_exists": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "三天前收到一封匿名信"
+      },
+      "mayor_embezzled": {
+        "confidence": 0.45,
+        "kind": "heard",
+        "desc": "匿名信称镇长私吞了公共资金（未证实）"
+      }
+    },
+    "merchant": {
+      "mayor_business_deal": {
+        "confidence": 0.9,
+        "kind": "experienced",
+        "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）"
+      }
+    },
+    "soldier": {
+      "investigation_order": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "今天接到命令，调查酒馆老板最近的异常行为"
+      },
+      "mayor_suspicious": {
+        "confidence": 0.35,
+        "kind": "inferred",
+        "desc": "最近觉得镇长的一些做法不太对劲（直觉，无证据）"
+      }
+    }
+  },
+  "memory_entries": {
+    "owner": 13,
+    "merchant": 12,
+    "soldier": 11
+  },
+  "db_counts": {
+    "decisions": 18,
+    "events": 25,
+    "deliveries": 18,
+    "dedup_drops": 0,
+    "predictions": 18,
+    "belief_changes": 0,
+    "plan_transitions": 18,
+    "consolidations": 18
+  },
+  "provider": "llm",
+  "note": "llm mode: real gemini calls"
+}

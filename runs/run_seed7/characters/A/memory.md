@@ -1,0 +1,27 @@
+# A 的私人记忆（其他 Agent 不可见）
+- [experienced] 三天前：一封匿名信被塞进酒馆门缝，信中称镇长私吞了公共资金。
+- [t3][experienced] C 来到了/去到了 bar。
+- [t3][experienced] 环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。
+- [t4][experienced] C 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t4][experienced] B 来到了/去到了 bar。
+- [t5][experienced] C 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？
+- [t5][experienced] B 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t6][experienced] C 说：凯尔：晚上好，雨夜里酒馆可是个好去处。
+- [t6][experienced] B 说：米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。
+- [t7][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t8][experienced] B 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t9][experienced] B 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t9][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t11][experienced] C 来到了/去到了 bar。
+- [t12][experienced] C 说：凯尔：别绕弯子了！镇长是不是吞了那笔钱？你是不是知道什么？
+- [t12][experienced] B 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t13][experienced] C 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？
+- [t13][experienced] B 说：米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。
+- [t14][experienced] C 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？
+- [t14][experienced] B 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t16][experienced] C 来到了/去到了 bar。
+- [t17][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t18][experienced] C 来到了/去到了 bar。
+- [t18][experienced] B 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t19][experienced] B 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t20][experienced] C 来到了/去到了 bar。

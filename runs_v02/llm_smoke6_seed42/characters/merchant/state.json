@@ -1,0 +1,124 @@
+{
+  "character_id": "merchant",
+  "location": "tables",
+  "personality": {
+    "caution": 0.5,
+    "curiosity": 0.9,
+    "honesty": 0.45,
+    "impulsiveness": 0.4,
+    "sociability": 0.95
+  },
+  "principles": [
+    "合作必须有收益",
+    "不轻易透露自己的真实目的",
+    "尽量避免正面冲突"
+  ],
+  "goals": [
+    {
+      "key": "gain_business",
+      "desc": "获得更多商业资源",
+      "weight": 1.0
+    },
+    {
+      "key": "build_relationships",
+      "desc": "建立有价值的人际关系",
+      "weight": 0.8
+    },
+    {
+      "key": "protect_wealth",
+      "desc": "避免损失自己的财富",
+      "weight": 0.85
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "mayor_business_deal",
+      "confidence": 0.9,
+      "kind": "experienced",
+      "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 tables。",
+      "event_id": "E0008"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "soldier 说：你在这里等酒馆老板吗？我注意到你似乎在观察他。",
+      "event_id": "E0013"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "soldier 说：晚上好，商人。是的，我刚来。我需要找酒馆老板谈谈。",
+      "event_id": "E0016"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "soldier 说：我对镇长给我的任务有点好奇，所以想找老板了解一下情况。你呢？你似乎对镇上的生意很感兴趣。",
+      "event_id": "E0020"
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "owner": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0008",
+    "E0013",
+    "E0016",
+    "E0020"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 4,
+      "from": "soldier",
+      "topic": "owner_behavior",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "soldier",
+      "topic": "greeting",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "soldier",
+      "topic": "owner_behavior",
+      "claim": null,
+      "kind": "ask"
+    }
+  ],
+  "pending_question": {
+    "from": "soldier",
+    "topic": "owner_behavior",
+    "tick": 6
+  },
+  "action_counts": {
+    "speak:owner:business_opportunity": 1,
+    "wait:owner:": 2,
+    "speak:soldier:greeting": 1,
+    "ask:soldier:owner_behavior": 2
+  }
+}

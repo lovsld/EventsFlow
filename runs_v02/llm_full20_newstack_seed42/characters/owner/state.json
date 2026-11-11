@@ -1,0 +1,258 @@
+{
+  "character_id": "owner",
+  "location": "bar",
+  "personality": {
+    "caution": 0.9,
+    "curiosity": 0.6,
+    "honesty": 0.6,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "不主动伤害无辜者",
+    "不轻易信任陌生人",
+    "保护自己的利益"
+  ],
+  "goals": [
+    {
+      "key": "protect_tavern",
+      "desc": "保护自己的酒馆",
+      "weight": 1.0
+    },
+    {
+      "key": "find_letter_source",
+      "desc": "搞清楚匿名信的来源",
+      "weight": 0.8
+    },
+    {
+      "key": "avoid_politics",
+      "desc": "避免卷入政治冲突",
+      "weight": 0.9
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "三天前收到一封匿名信"
+    },
+    {
+      "key": "mayor_embezzled",
+      "confidence": 0.45,
+      "kind": "heard",
+      "desc": "匿名信称镇长私吞了公共资金（未证实）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "merchant 来到了/去到了 bar。",
+      "event_id": "E0002"
+    },
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0006"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "merchant 说：老板，这雨下得真不是时候，不过正好让我能在这温暖的酒馆里好好歇歇。听闻这镇上的商业氛围不错，不知最近有什么值得关注的买卖吗？",
+      "event_id": "E0007"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "merchant 说：老板，刚才说到这镇上的买卖，不知道最近有没有什么紧俏的货物，或者哪位本地商贾正在寻找合伙人？",
+      "event_id": "E0012"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，刚才听你说酒馆向来不掺和外面的风吹草动。但镇长托我带个话，想了解你最近这几天的营生可有什么异样？",
+      "event_id": "E0015"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "merchant 说：寻常米面布匹虽好，但也得看销路。不知这镇上除了日常嚼用，可有什么稀罕物件或是能上规模的买卖？在下以前也经手过不少大宗交易，若有门路，老板不妨指点一二。",
+      "event_id": "E0016"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，刚才听你说店里只剩寻常酒水。但据我所知，最近镇上有些关于你的传闻。你最近有没有跟什么可疑的人接触过，或者运送过什么不寻常的东西？",
+      "event_id": "E0018"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 说：这位军爷，听闻你是奉镇长之命来办事的。我刚到小镇不久，正打算寻摸点正经买卖。不知镇长最近可有什么急需处理的物资或是项目，说不定在下能帮上忙？",
+      "event_id": "E0019"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "soldier 说：米拉老板，镇长的事务自有公署安排，不便对外透露。我现在正在执行公务，请不要打扰我向奥伦老板了解情况。",
+      "event_id": "E0022"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "merchant 说：凯尔大人，看来镇长最近确实有很多公务要操心。既然连寻常货品都有些紧张，不知镇长或者卫队这边，有没有考虑过拓宽一些日常物资的采购渠道？在下初来乍到，若有这方面的需求，或许可以效劳。",
+      "event_id": "E0023"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0025"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，既然账目都在这儿，那就拿出来让我看看吧。另外，刚才烛火晃动时你好像有些分神，你在看什么？",
+      "event_id": "E0026"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0029"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦，别顾左右而言他。既然账目都在这儿，那就请你当面翻开，让我好好查验一番；同时回答我刚才的问题，你刚才究竟在看什么？",
+      "event_id": "E0030"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "merchant": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0002",
+    "E0005",
+    "E0006",
+    "E0007",
+    "E0012",
+    "E0015",
+    "E0016",
+    "E0018",
+    "E0019",
+    "E0022",
+    "E0023",
+    "E0025",
+    "E0026",
+    "E0029",
+    "E0030"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 3,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "对本地商业机会感兴趣",
+      "kind": "ask"
+    },
+    {
+      "tick": 4,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "奉镇长之命前来调查异常行为",
+      "kind": "ask"
+    },
+    {
+      "tick": 4,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "曾经手大宗交易，寻求规模更大的生意",
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "奉镇长之命调查异常行为",
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": "对镇长的生意感兴趣，想了解是否有大宗采购需求",
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "奉公执行公务，拒绝透露镇长事务",
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "对镇长或卫队的物资采购需求感兴趣，寻找商业合作机会",
+      "kind": "ask"
+    },
+    {
+      "tick": 7,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "需要检查账目并对老板刚才的异常反应进行追问",
+      "kind": "ask"
+    },
+    {
+      "tick": 8,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "要求老板立即展示账目并交代刚才分神的原因",
+      "kind": "ask"
+    }
+  ],
+  "pending_question": {
+    "from": "soldier",
+    "topic": "investigation",
+    "tick": 8
+  },
+  "action_counts": {
+    "work::counter": 1,
+    "observe::": 1,
+    "speak:merchant:business_opportunities": 2,
+    "speak:soldier:investigation": 3,
+    "work::tavern_business": 1
+  }
+}

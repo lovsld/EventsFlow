@@ -1,0 +1,2307 @@
+[
+  {
+    "tick": 1,
+    "time": "21:05",
+    "positions": {
+      "A": "bar",
+      "B": "tables",
+      "C": "tables"
+    },
+    "intents": {
+      "A": {
+        "verb": "observe",
+        "target": null
+      },
+      "B": {
+        "verb": "observe",
+        "target": null
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "tables"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0001",
+        "tick": 1,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "tables",
+        "from": "door",
+        "to": "tables"
+      },
+      {
+        "event_id": "E0002",
+        "tick": 1,
+        "type": "observe",
+        "actors": [
+          "B"
+        ],
+        "location": "tables",
+        "target": null,
+        "topic": null
+      },
+      {
+        "event_id": "E0003",
+        "tick": 1,
+        "type": "observe",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": null,
+        "topic": null
+      },
+      {
+        "type": "session_start",
+        "session": "S1",
+        "location": "tables",
+        "actors": [
+          "B",
+          "C"
+        ],
+        "event_id": "E0004",
+        "tick": 1
+      },
+      {
+        "event_id": "E0005",
+        "tick": 1,
+        "type": "ambient",
+        "actors": [],
+        "location": "tables",
+        "topic": "cat_knocks_glass",
+        "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 1,
+        "delivered_event_ids": [],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 1,
+        "delivered_event_ids": [],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 1,
+        "delivered_event_ids": [],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 2,
+    "time": "21:10",
+    "positions": {
+      "A": "bar",
+      "B": "tables",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "observe",
+        "target": null
+      },
+      "B": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "bar"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0006",
+        "tick": 2,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "bar",
+        "from": "tables",
+        "to": "bar"
+      },
+      {
+        "event_id": "E0007",
+        "tick": 2,
+        "type": "speak_failed",
+        "actors": [
+          "B"
+        ],
+        "location": "tables",
+        "target": "C",
+        "topic": "business_proposal",
+        "reason": "target_left"
+      },
+      {
+        "event_id": "E0008",
+        "tick": 2,
+        "type": "observe",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": null,
+        "topic": null
+      },
+      {
+        "type": "session_start",
+        "session": "S2",
+        "location": "bar",
+        "actors": [
+          "A",
+          "C"
+        ],
+        "event_id": "E0009",
+        "tick": 2
+      },
+      {
+        "type": "session_end",
+        "session": "S1",
+        "location": "tables",
+        "actors": [
+          "B",
+          "C"
+        ],
+        "event_id": "E0010",
+        "tick": 2
+      },
+      {
+        "event_id": "E0011",
+        "tick": 2,
+        "type": "ambient",
+        "actors": [],
+        "location": "bar",
+        "topic": "rain_starts",
+        "text": "窗外下起雨来，酒馆里的人今晚大概走不了太早。"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 2,
+        "delivered_event_ids": [
+          "E0003"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 2,
+        "delivered_event_ids": [
+          "E0001",
+          "E0002",
+          "E0004",
+          "E0005"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 2,
+        "delivered_event_ids": [
+          "E0001",
+          "E0002",
+          "E0004",
+          "E0005"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 3,
+    "time": "21:15",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "work",
+        "topic": "tend_bar"
+      },
+      "B": {
+        "verb": "move",
+        "target_location": "bar"
+      },
+      "C": {
+        "verb": "ask",
+        "target": "A",
+        "topic": "investigation_probe",
+        "claim": "investigation_probe",
+        "text": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0012",
+        "tick": 3,
+        "type": "ask",
+        "actors": [
+          "C",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "investigation_probe",
+        "claim": "investigation_probe",
+        "text": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0013",
+        "tick": 3,
+        "type": "move",
+        "actors": [
+          "B"
+        ],
+        "location": "bar",
+        "from": "tables",
+        "to": "bar"
+      },
+      {
+        "event_id": "E0014",
+        "tick": 3,
+        "type": "work",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": null,
+        "topic": "tend_bar"
+      },
+      {
+        "type": "session_start",
+        "session": "S3",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B",
+          "C"
+        ],
+        "event_id": "E0015",
+        "tick": 3
+      },
+      {
+        "type": "session_end",
+        "session": "S2",
+        "location": "bar",
+        "actors": [
+          "A",
+          "C"
+        ],
+        "event_id": "E0016",
+        "tick": 3
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 3,
+        "delivered_event_ids": [
+          "E0006",
+          "E0008",
+          "E0009",
+          "E0011"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 3,
+        "delivered_event_ids": [
+          "E0007",
+          "E0010"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 3,
+        "delivered_event_ids": [
+          "E0006",
+          "E0008",
+          "E0009",
+          "E0011"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 4,
+    "time": "21:20",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "denial",
+        "claim": "denial",
+        "text": "奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "A",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：那批货的事，老板真不考虑？价格好商量。"
+      },
+      "C": {
+        "verb": "ask",
+        "target": "A",
+        "topic": "investigation_probe",
+        "claim": "investigation_probe",
+        "text": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0017",
+        "tick": 4,
+        "type": "ask",
+        "actors": [
+          "C",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "investigation_probe",
+        "claim": "investigation_probe",
+        "text": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0018",
+        "tick": 4,
+        "type": "speak",
+        "actors": [
+          "B",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：那批货的事，老板真不考虑？价格好商量。",
+        "interrupted": true,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0019",
+        "tick": 4,
+        "type": "speak",
+        "actors": [
+          "A",
+          "C"
+        ],
+        "location": "bar",
+        "topic": "denial",
+        "claim": "denial",
+        "text": "奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+        "interrupted": true,
+        "session_location": "bar"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 4,
+        "delivered_event_ids": [
+          "E0012",
+          "E0013",
+          "E0014",
+          "E0015",
+          "E0016"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 4,
+        "delivered_event_ids": [
+          "E0012",
+          "E0013",
+          "E0014",
+          "E0015",
+          "E0016"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 4,
+        "delivered_event_ids": [
+          "E0012",
+          "E0013",
+          "E0014",
+          "E0015",
+          "E0016"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 5,
+    "time": "21:25",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "denial",
+        "claim": "denial",
+        "text": "奥伦：问几遍都一样，我什么都不知道。"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "answer_mayor",
+        "claim": "answer_mayor",
+        "text": "米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。"
+      },
+      "C": {
+        "verb": "speak",
+        "target": "B",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "凯尔：晚上好，雨夜里酒馆可是个好去处。"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0020",
+        "tick": 5,
+        "type": "speak",
+        "actors": [
+          "C",
+          "B"
+        ],
+        "location": "bar",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "凯尔：晚上好，雨夜里酒馆可是个好去处。",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0021",
+        "tick": 5,
+        "type": "speak",
+        "actors": [
+          "B",
+          "C"
+        ],
+        "location": "bar",
+        "topic": "answer_mayor",
+        "claim": "answer_mayor",
+        "text": "米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。",
+        "interrupted": true,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0022",
+        "tick": 5,
+        "type": "speak",
+        "actors": [
+          "A",
+          "C"
+        ],
+        "location": "bar",
+        "topic": "denial",
+        "claim": "denial",
+        "text": "奥伦：问几遍都一样，我什么都不知道。",
+        "interrupted": true,
+        "session_location": "bar"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 5,
+        "delivered_event_ids": [
+          "E0017",
+          "E0018",
+          "E0019"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 5,
+        "delivered_event_ids": [
+          "E0017",
+          "E0018",
+          "E0019"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 5,
+        "delivered_event_ids": [
+          "E0017",
+          "E0018",
+          "E0019"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 6,
+    "time": "21:30",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "tables"
+    },
+    "intents": {
+      "A": {
+        "verb": "observe",
+        "target": "B"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "tables"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0023",
+        "tick": 6,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "tables",
+        "from": "bar",
+        "to": "tables"
+      },
+      {
+        "event_id": "E0024",
+        "tick": 6,
+        "type": "speak_failed",
+        "actors": [
+          "B"
+        ],
+        "location": "bar",
+        "target": "C",
+        "topic": "business_proposal",
+        "reason": "target_left"
+      },
+      {
+        "event_id": "E0025",
+        "tick": 6,
+        "type": "observe",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": "B",
+        "topic": null
+      },
+      {
+        "type": "session_start",
+        "session": "S4",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B"
+        ],
+        "event_id": "E0026",
+        "tick": 6
+      },
+      {
+        "type": "session_end",
+        "session": "S3",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B",
+          "C"
+        ],
+        "event_id": "E0027",
+        "tick": 6
+      },
+      {
+        "event_id": "E0028",
+        "tick": 6,
+        "type": "ambient",
+        "actors": [],
+        "location": "bar",
+        "topic": "candle_flickers",
+        "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 6,
+        "delivered_event_ids": [
+          "E0020",
+          "E0021",
+          "E0022"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 6,
+        "delivered_event_ids": [
+          "E0020",
+          "E0021",
+          "E0022"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 6,
+        "delivered_event_ids": [
+          "E0020",
+          "E0021",
+          "E0022"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 7,
+    "time": "21:35",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "back_room"
+    },
+    "intents": {
+      "A": {
+        "verb": "observe",
+        "target": "B"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "A",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "back_room"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0029",
+        "tick": 7,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "back_room",
+        "from": "tables",
+        "to": "back_room"
+      },
+      {
+        "event_id": "E0030",
+        "tick": 7,
+        "type": "speak",
+        "actors": [
+          "B",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0031",
+        "tick": 7,
+        "type": "observe",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": "B",
+        "topic": null
+      },
+      {
+        "event_id": "E0032",
+        "tick": 7,
+        "type": "ambient",
+        "actors": [],
+        "location": "tables",
+        "topic": "cat_knocks_glass",
+        "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 7,
+        "delivered_event_ids": [
+          "E0024",
+          "E0025",
+          "E0026",
+          "E0027",
+          "E0028"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 7,
+        "delivered_event_ids": [
+          "E0024",
+          "E0025",
+          "E0026",
+          "E0027",
+          "E0028"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 7,
+        "delivered_event_ids": [
+          "E0023"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 8,
+    "time": "21:40",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "back_room"
+    },
+    "intents": {
+      "A": {
+        "verb": "work",
+        "topic": "tend_bar"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "A",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "米拉：晚上好，雨夜里酒馆可是个好去处。"
+      },
+      "C": {
+        "verb": "search",
+        "target_location": "back_room"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0033",
+        "tick": 8,
+        "type": "search",
+        "actors": [
+          "C"
+        ],
+        "location": "back_room",
+        "found": [
+          "anonymous_letter"
+        ]
+      },
+      {
+        "event_id": "E0034",
+        "tick": 8,
+        "type": "speak",
+        "actors": [
+          "B",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "米拉：晚上好，雨夜里酒馆可是个好去处。",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0035",
+        "tick": 8,
+        "type": "work",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": null,
+        "topic": "tend_bar"
+      },
+      {
+        "event_id": "E0036",
+        "tick": 8,
+        "type": "ambient",
+        "actors": [],
+        "location": "bar",
+        "topic": "candle_flickers",
+        "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 8,
+        "delivered_event_ids": [
+          "E0030",
+          "E0031"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 8,
+        "delivered_event_ids": [
+          "E0030",
+          "E0031"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 8,
+        "delivered_event_ids": [
+          "E0029"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 9,
+    "time": "21:45",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "tables"
+    },
+    "intents": {
+      "A": {
+        "verb": "observe",
+        "target": "B"
+      },
+      "B": {
+        "verb": "observe",
+        "target": "A"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "tables"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0037",
+        "tick": 9,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "tables",
+        "from": "back_room",
+        "to": "tables"
+      },
+      {
+        "event_id": "E0038",
+        "tick": 9,
+        "type": "observe",
+        "actors": [
+          "B"
+        ],
+        "location": "bar",
+        "target": "A",
+        "topic": null
+      },
+      {
+        "event_id": "E0039",
+        "tick": 9,
+        "type": "observe",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": "B",
+        "topic": null
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 9,
+        "delivered_event_ids": [
+          "E0034",
+          "E0035",
+          "E0036"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 9,
+        "delivered_event_ids": [
+          "E0034",
+          "E0035",
+          "E0036"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 9,
+        "delivered_event_ids": [
+          "E0033"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 10,
+    "time": "21:50",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "speak",
+        "target": "B",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "奥伦：晚上好，雨夜里酒馆可是个好去处。"
+      },
+      "B": {
+        "verb": "observe",
+        "target": "A"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "bar"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0040",
+        "tick": 10,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "bar",
+        "from": "tables",
+        "to": "bar"
+      },
+      {
+        "event_id": "E0041",
+        "tick": 10,
+        "type": "observe",
+        "actors": [
+          "B"
+        ],
+        "location": "bar",
+        "target": "A",
+        "topic": null
+      },
+      {
+        "event_id": "E0042",
+        "tick": 10,
+        "type": "speak",
+        "actors": [
+          "A",
+          "B"
+        ],
+        "location": "bar",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "奥伦：晚上好，雨夜里酒馆可是个好去处。",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "type": "session_start",
+        "session": "S5",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B",
+          "C"
+        ],
+        "event_id": "E0043",
+        "tick": 10
+      },
+      {
+        "type": "session_end",
+        "session": "S4",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B"
+        ],
+        "event_id": "E0044",
+        "tick": 10
+      },
+      {
+        "event_id": "E0045",
+        "tick": 10,
+        "type": "ambient",
+        "actors": [],
+        "location": "door",
+        "topic": "bell_rings",
+        "text": "酒馆门口的铃铛响了一声，又没有人进来。"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 10,
+        "delivered_event_ids": [
+          "E0038",
+          "E0039"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 10,
+        "delivered_event_ids": [
+          "E0038",
+          "E0039"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 10,
+        "delivered_event_ids": [
+          "E0037"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 11,
+    "time": "21:55",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "observe",
+        "target": "B"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "米拉：晚上好，雨夜里酒馆可是个好去处。"
+      },
+      "C": {
+        "verb": "confront",
+        "target": "A",
+        "topic": "mayor_hint",
+        "claim": "mayor_hint",
+        "text": "凯尔：别绕弯子了！镇长是不是吞了那笔钱？你是不是知道什么？"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0046",
+        "tick": 11,
+        "type": "confront",
+        "actors": [
+          "C",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "mayor_hint",
+        "claim": "mayor_hint",
+        "text": "凯尔：别绕弯子了！镇长是不是吞了那笔钱？你是不是知道什么？",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0047",
+        "tick": 11,
+        "type": "speak",
+        "actors": [
+          "B",
+          "C"
+        ],
+        "location": "bar",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "米拉：晚上好，雨夜里酒馆可是个好去处。",
+        "interrupted": true,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0048",
+        "tick": 11,
+        "type": "observe",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": "B",
+        "topic": null
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 11,
+        "delivered_event_ids": [
+          "E0040",
+          "E0041",
+          "E0042",
+          "E0043",
+          "E0044"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 11,
+        "delivered_event_ids": [
+          "E0040",
+          "E0041",
+          "E0042",
+          "E0043",
+          "E0044"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 11,
+        "delivered_event_ids": [
+          "E0040",
+          "E0041",
+          "E0042",
+          "E0043",
+          "E0044"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 12,
+    "time": "22:00",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "refuse",
+        "target": "C",
+        "topic": "mayor_hint"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "answer_mayor",
+        "claim": "answer_mayor",
+        "text": "米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。"
+      },
+      "C": {
+        "verb": "confront",
+        "target": "A",
+        "topic": "letter_discussion",
+        "claim": "letter_discussion",
+        "text": "凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0049",
+        "tick": 12,
+        "type": "confront",
+        "actors": [
+          "C",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "letter_discussion",
+        "claim": "letter_discussion",
+        "text": "凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0050",
+        "tick": 12,
+        "type": "speak",
+        "actors": [
+          "B",
+          "C"
+        ],
+        "location": "bar",
+        "topic": "answer_mayor",
+        "claim": "answer_mayor",
+        "text": "米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。",
+        "interrupted": true,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0051",
+        "tick": 12,
+        "type": "refuse",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "topic": "mayor_hint",
+        "target": "C"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 12,
+        "delivered_event_ids": [
+          "E0046",
+          "E0047",
+          "E0048"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 12,
+        "delivered_event_ids": [
+          "E0046",
+          "E0047",
+          "E0048"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 12,
+        "delivered_event_ids": [
+          "E0046",
+          "E0047",
+          "E0048"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 13,
+    "time": "22:05",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "denial",
+        "claim": "denial",
+        "text": "奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "A",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：那批货的事，老板真不考虑？价格好商量。"
+      },
+      "C": {
+        "verb": "speak",
+        "target": "A",
+        "topic": "letter_discussion",
+        "claim": "letter_discussion",
+        "text": "凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0052",
+        "tick": 13,
+        "type": "speak",
+        "actors": [
+          "C",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "letter_discussion",
+        "claim": "letter_discussion",
+        "text": "凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0053",
+        "tick": 13,
+        "type": "speak",
+        "actors": [
+          "B",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：那批货的事，老板真不考虑？价格好商量。",
+        "interrupted": true,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0054",
+        "tick": 13,
+        "type": "speak",
+        "actors": [
+          "A",
+          "C"
+        ],
+        "location": "bar",
+        "topic": "denial",
+        "claim": "denial",
+        "text": "奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+        "interrupted": true,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0055",
+        "tick": 13,
+        "type": "ambient",
+        "actors": [],
+        "location": "outside",
+        "topic": "distant_shout",
+        "text": "街上远处有人喊了一嗓子，很快没了声音。"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 13,
+        "delivered_event_ids": [
+          "E0049",
+          "E0050",
+          "E0051"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 13,
+        "delivered_event_ids": [
+          "E0049",
+          "E0050",
+          "E0051"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 13,
+        "delivered_event_ids": [
+          "E0049",
+          "E0050",
+          "E0051"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 14,
+    "time": "22:10",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "tables"
+    },
+    "intents": {
+      "A": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "奥伦：晚上好，雨夜里酒馆可是个好去处。"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "米拉：晚上好，雨夜里酒馆可是个好去处。"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "tables"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0056",
+        "tick": 14,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "tables",
+        "from": "bar",
+        "to": "tables"
+      },
+      {
+        "event_id": "E0057",
+        "tick": 14,
+        "type": "speak_failed",
+        "actors": [
+          "B"
+        ],
+        "location": "bar",
+        "target": "C",
+        "topic": "greeting",
+        "reason": "target_left"
+      },
+      {
+        "event_id": "E0058",
+        "tick": 14,
+        "type": "speak_failed",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": "C",
+        "topic": "greeting",
+        "reason": "target_left"
+      },
+      {
+        "type": "session_start",
+        "session": "S6",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B"
+        ],
+        "event_id": "E0059",
+        "tick": 14
+      },
+      {
+        "type": "session_end",
+        "session": "S5",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B",
+          "C"
+        ],
+        "event_id": "E0060",
+        "tick": 14
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 14,
+        "delivered_event_ids": [
+          "E0052",
+          "E0053",
+          "E0054"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 14,
+        "delivered_event_ids": [
+          "E0052",
+          "E0053",
+          "E0054"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 14,
+        "delivered_event_ids": [
+          "E0052",
+          "E0053",
+          "E0054"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 15,
+    "time": "22:15",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "observe",
+        "target": "B"
+      },
+      "B": {
+        "verb": "observe",
+        "target": "A"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "bar"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0061",
+        "tick": 15,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "bar",
+        "from": "tables",
+        "to": "bar"
+      },
+      {
+        "event_id": "E0062",
+        "tick": 15,
+        "type": "observe",
+        "actors": [
+          "B"
+        ],
+        "location": "bar",
+        "target": "A",
+        "topic": null
+      },
+      {
+        "event_id": "E0063",
+        "tick": 15,
+        "type": "observe",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": "B",
+        "topic": null
+      },
+      {
+        "type": "session_start",
+        "session": "S7",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B",
+          "C"
+        ],
+        "event_id": "E0064",
+        "tick": 15
+      },
+      {
+        "type": "session_end",
+        "session": "S6",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B"
+        ],
+        "event_id": "E0065",
+        "tick": 15
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 15,
+        "delivered_event_ids": [
+          "E0057",
+          "E0058",
+          "E0059",
+          "E0060"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 15,
+        "delivered_event_ids": [
+          "E0057",
+          "E0058",
+          "E0059",
+          "E0060"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 15,
+        "delivered_event_ids": [
+          "E0056"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 16,
+    "time": "22:20",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "tables"
+    },
+    "intents": {
+      "A": {
+        "verb": "observe",
+        "target": "B"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "C",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "tables"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0066",
+        "tick": 16,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "tables",
+        "from": "bar",
+        "to": "tables"
+      },
+      {
+        "event_id": "E0067",
+        "tick": 16,
+        "type": "speak_failed",
+        "actors": [
+          "B"
+        ],
+        "location": "bar",
+        "target": "C",
+        "topic": "business_proposal",
+        "reason": "target_left"
+      },
+      {
+        "event_id": "E0068",
+        "tick": 16,
+        "type": "observe",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": "B",
+        "topic": null
+      },
+      {
+        "type": "session_start",
+        "session": "S8",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B"
+        ],
+        "event_id": "E0069",
+        "tick": 16
+      },
+      {
+        "type": "session_end",
+        "session": "S7",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B",
+          "C"
+        ],
+        "event_id": "E0070",
+        "tick": 16
+      },
+      {
+        "event_id": "E0071",
+        "tick": 16,
+        "type": "ambient",
+        "actors": [],
+        "location": "bar",
+        "topic": "candle_flickers",
+        "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 16,
+        "delivered_event_ids": [
+          "E0061",
+          "E0062",
+          "E0063",
+          "E0064",
+          "E0065"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 16,
+        "delivered_event_ids": [
+          "E0061",
+          "E0062",
+          "E0063",
+          "E0064",
+          "E0065"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 16,
+        "delivered_event_ids": [
+          "E0061",
+          "E0062",
+          "E0063",
+          "E0064",
+          "E0065"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 17,
+    "time": "22:25",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "work",
+        "topic": "tend_bar"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "A",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "米拉：晚上好，雨夜里酒馆可是个好去处。"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "bar"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0072",
+        "tick": 17,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "bar",
+        "from": "tables",
+        "to": "bar"
+      },
+      {
+        "event_id": "E0073",
+        "tick": 17,
+        "type": "speak",
+        "actors": [
+          "B",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "greeting",
+        "claim": "greeting",
+        "text": "米拉：晚上好，雨夜里酒馆可是个好去处。",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0074",
+        "tick": 17,
+        "type": "work",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": null,
+        "topic": "tend_bar"
+      },
+      {
+        "type": "session_start",
+        "session": "S9",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B",
+          "C"
+        ],
+        "event_id": "E0075",
+        "tick": 17
+      },
+      {
+        "type": "session_end",
+        "session": "S8",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B"
+        ],
+        "event_id": "E0076",
+        "tick": 17
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 17,
+        "delivered_event_ids": [
+          "E0067",
+          "E0068",
+          "E0069",
+          "E0070",
+          "E0071"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 17,
+        "delivered_event_ids": [
+          "E0067",
+          "E0068",
+          "E0069",
+          "E0070",
+          "E0071"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 17,
+        "delivered_event_ids": [
+          "E0066"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 18,
+    "time": "22:30",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "tables"
+    },
+    "intents": {
+      "A": {
+        "verb": "work",
+        "topic": "tend_bar"
+      },
+      "B": {
+        "verb": "speak",
+        "target": "A",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "tables"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0077",
+        "tick": 18,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "tables",
+        "from": "bar",
+        "to": "tables"
+      },
+      {
+        "event_id": "E0078",
+        "tick": 18,
+        "type": "speak",
+        "actors": [
+          "B",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "business_proposal",
+        "claim": "business_proposal",
+        "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0079",
+        "tick": 18,
+        "type": "work",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": null,
+        "topic": "tend_bar"
+      },
+      {
+        "type": "session_start",
+        "session": "S10",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B"
+        ],
+        "event_id": "E0080",
+        "tick": 18
+      },
+      {
+        "type": "session_end",
+        "session": "S9",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B",
+          "C"
+        ],
+        "event_id": "E0081",
+        "tick": 18
+      },
+      {
+        "event_id": "E0082",
+        "tick": 18,
+        "type": "ambient",
+        "actors": [],
+        "location": "outside",
+        "topic": "distant_shout",
+        "text": "街上远处有人喊了一嗓子，很快没了声音。"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 18,
+        "delivered_event_ids": [
+          "E0072",
+          "E0073",
+          "E0074",
+          "E0075",
+          "E0076"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 18,
+        "delivered_event_ids": [
+          "E0072",
+          "E0073",
+          "E0074",
+          "E0075",
+          "E0076"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 18,
+        "delivered_event_ids": [
+          "E0072",
+          "E0073",
+          "E0074",
+          "E0075",
+          "E0076"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  },
+  {
+    "tick": 19,
+    "time": "22:35",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "observe",
+        "target": "B"
+      },
+      "B": {
+        "verb": "listen"
+      },
+      "C": {
+        "verb": "move",
+        "target_location": "bar"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0083",
+        "tick": 19,
+        "type": "move",
+        "actors": [
+          "C"
+        ],
+        "location": "bar",
+        "from": "tables",
+        "to": "bar"
+      },
+      {
+        "event_id": "E0084",
+        "tick": 19,
+        "type": "listen",
+        "actors": [
+          "B"
+        ],
+        "location": "bar",
+        "target": null,
+        "topic": null
+      },
+      {
+        "event_id": "E0085",
+        "tick": 19,
+        "type": "observe",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": "B",
+        "topic": null
+      },
+      {
+        "type": "session_start",
+        "session": "S11",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B",
+          "C"
+        ],
+        "event_id": "E0086",
+        "tick": 19
+      },
+      {
+        "type": "session_end",
+        "session": "S10",
+        "location": "bar",
+        "actors": [
+          "A",
+          "B"
+        ],
+        "event_id": "E0087",
+        "tick": 19
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 19,
+        "delivered_event_ids": [
+          "E0078",
+          "E0079",
+          "E0080",
+          "E0081"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 19,
+        "delivered_event_ids": [
+          "E0078",
+          "E0079",
+          "E0080",
+          "E0081"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 19,
+        "delivered_event_ids": [
+          "E0077"
+        ],
+        "muffled_event_ids": [
+          "E0078"
+        ]
+      }
+    ]
+  },
+  {
+    "tick": 20,
+    "time": "22:40",
+    "positions": {
+      "A": "bar",
+      "B": "bar",
+      "C": "bar"
+    },
+    "intents": {
+      "A": {
+        "verb": "work",
+        "topic": "tend_bar"
+      },
+      "B": {
+        "verb": "listen"
+      },
+      "C": {
+        "verb": "confront",
+        "target": "A",
+        "topic": "mayor_hint",
+        "claim": "mayor_hint",
+        "text": "凯尔：别绕弯子了！镇长是不是吞了那笔钱？你是不是知道什么？"
+      }
+    },
+    "events": [
+      {
+        "event_id": "E0088",
+        "tick": 20,
+        "type": "confront",
+        "actors": [
+          "C",
+          "A"
+        ],
+        "location": "bar",
+        "topic": "mayor_hint",
+        "claim": "mayor_hint",
+        "text": "凯尔：别绕弯子了！镇长是不是吞了那笔钱？你是不是知道什么？",
+        "interrupted": false,
+        "session_location": "bar"
+      },
+      {
+        "event_id": "E0089",
+        "tick": 20,
+        "type": "listen",
+        "actors": [
+          "B"
+        ],
+        "location": "bar",
+        "target": null,
+        "topic": null
+      },
+      {
+        "event_id": "E0090",
+        "tick": 20,
+        "type": "work",
+        "actors": [
+          "A"
+        ],
+        "location": "bar",
+        "target": null,
+        "topic": "tend_bar"
+      },
+      {
+        "event_id": "E0091",
+        "tick": 20,
+        "type": "ambient",
+        "actors": [],
+        "location": "door",
+        "topic": "bell_rings",
+        "text": "酒馆门口的铃铛响了一声，又没有人进来。"
+      }
+    ],
+    "deliveries": [
+      {
+        "agent_id": "A",
+        "tick": 20,
+        "delivered_event_ids": [
+          "E0083",
+          "E0084",
+          "E0085",
+          "E0086",
+          "E0087"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "B",
+        "tick": 20,
+        "delivered_event_ids": [
+          "E0083",
+          "E0084",
+          "E0085",
+          "E0086",
+          "E0087"
+        ],
+        "muffled_event_ids": []
+      },
+      {
+        "agent_id": "C",
+        "tick": 20,
+        "delivered_event_ids": [
+          "E0083",
+          "E0084",
+          "E0085",
+          "E0086",
+          "E0087"
+        ],
+        "muffled_event_ids": []
+      }
+    ]
+  }
+]

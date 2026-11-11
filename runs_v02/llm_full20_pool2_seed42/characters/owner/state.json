@@ -1,0 +1,535 @@
+{
+  "character_id": "owner",
+  "location": "bar",
+  "personality": {
+    "caution": 0.9,
+    "curiosity": 0.6,
+    "honesty": 0.6,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "不主动伤害无辜者",
+    "不轻易信任陌生人",
+    "保护自己的利益"
+  ],
+  "goals": [
+    {
+      "key": "protect_tavern",
+      "desc": "保护自己的酒馆",
+      "weight": 1.0
+    },
+    {
+      "key": "find_letter_source",
+      "desc": "搞清楚匿名信的来源",
+      "weight": 0.8
+    },
+    {
+      "key": "avoid_politics",
+      "desc": "避免卷入政治冲突",
+      "weight": 0.9
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "三天前收到一封匿名信"
+    },
+    {
+      "key": "mayor_embezzled",
+      "confidence": 0.45,
+      "kind": "heard",
+      "desc": "匿名信称镇长私吞了公共资金（未证实）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "merchant 来到了/去到了 bar。",
+      "event_id": "E0002"
+    },
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0006"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "merchant 说：老板，这雨一下看来今晚大家都得在这儿多坐会儿了。给我来一杯你这儿最好的酒，顺便聊聊镇上最近景气如何？",
+      "event_id": "E0007"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，外面雨很大，不过我有公务在身。镇长让我来了解一下你最近店里的情况，有些事想向你打听一下。",
+      "event_id": "E0011"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "merchant 说：好极了，那就来一杯热麦酒暖暖身子！走街串巷最需要这个。老板，看你这儿挺热闹，顺便给我讲讲镇上最近有什么新鲜事或者商机呗？",
+      "event_id": "E0012"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，刚才的话还没说完。镇长提到你最近有些不同寻常的举动，比如深夜运送货物的传言。希望你能如实配合，这对我履行职责很重要。",
+      "event_id": "E0015"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "merchant 说：这位官爷是镇长派来的？这大雨天还在办公务真是不容易。巧了，我之前也和镇长大人做过买卖呢。不知镇上最近是有什么新鲜事需要查问？",
+      "event_id": "E0016"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，热意心领了。但我职责在身，传言说你经常在深夜运送货物，这可不是迎来送往的寻常消遣。请你正面回答，这些深夜出货究竟是怎么回事？",
+      "event_id": "E0018"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 说：凯尔大人提到的‘深夜运货’倒是让在下有些好奇。在下常年经商，对货物流通有些了解，不知镇长大人要查的是哪类货物？说不定我也能提供些线索。",
+      "event_id": "E0019"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "soldier 说：米拉，这是公务，具体查验的内容我不便多透露。不过既然奥伦老板提到明天愿意出示账本，那正好可以省去不少麻烦。",
+      "event_id": "E0022"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板这话说得合情合理，大批货物白天进出确实打扰客人。既然账本清晰，凯尔大人回禀镇长也方便。实不相瞒，在下手中倒有些优质酒水粮油的渠道，若老板以后有需要，咱们不妨聊聊合作？",
+      "event_id": "E0023"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0025"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "merchant 说：那就多谢奥伦老板了。正好尝尝店里的麦酒，等凯尔大人处理完公务，咱们再慢慢聊聊合作的可能。",
+      "event_id": "E0027"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0029"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，既然你刚才提到可以把账本拿出来过目，那现在就把账本拿出来吧，让我核对一下近期的进货记录。",
+      "event_id": "E0030"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "merchant 说：那我就先谢过奥伦老板了。买卖不成仁义在，日后若有新的货物需求，随时可以找我聊聊。你们接着谈正事，我不打扰。",
+      "event_id": "E0031"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，既然你刚才答应要把账本拿出来，现在就请拿出来让我核对吧。",
+      "event_id": "E0033"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，你刚才明明答应了要把进货账本拿出来让我核对，现在怎么又拒绝了？这可不像是问心无愧的样子。配合镇长的调查是你的职责，请立刻把账本拿出来！",
+      "event_id": "E0036"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "merchant 说：凯尔大人，外面雨下得正大，夜也深了，大家犯不着伤了和气，有什么话不妨坐下来慢慢说？",
+      "event_id": "E0037"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0039"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，米拉女士好意打圆场，但你拒绝出示账本的行为实在让人无法忽视。既然你问心无愧，为什么连账本都不敢让我看一眼？如果你继续抗拒执行镇长的政令，我只能怀疑你隐瞒了重大违禁货物！",
+      "event_id": "E0040"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，既然只是一些寻常的酒水粮油账目，给凯尔大人过目扫上一眼又有何妨？早些澄清误会，大伙儿也能早点休息。",
+      "event_id": "E0041"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，外面雨正大，店里也没其他客人。既然你问心无愧，花不上半分钟把账本翻开让我扫一眼就能解决的事，为什么非要拖到明天白天？这很难不让人怀疑你是在趁夜掩盖什么。",
+      "event_id": "E0043"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "merchant 说：凯尔大人，既然奥伦老板已承诺明天白天配合查验，夜深灯暗也容易看漏账目。不如按规矩明天白天核对，既显公正也能查得仔细，您看如何？",
+      "event_id": "E0044"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "soldier 说：米拉女士说得也有道理，夜黑风高确实容易看漏。既然奥伦老板把话说到这个份上，那我就暂且记下。不过明天一早，我会准时来核对账目，希望老板到时不要再找借口。",
+      "event_id": "E0046"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "merchant 说：凯尔大人，雨夜里僵持下去也不是办法。既然奥伦老板已承诺明日配合，不如明早由您第一时间过来核验，既符合章程也能查得稳妥，您意下如何？",
+      "event_id": "E0047"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "soldier 说：既然米拉女士也这样说，奥伦老板也把话撂这了，那今晚我就不多打扰了。不过记住你们的话，明天一早我必定准时过来，告辞。",
+      "event_id": "E0050"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "merchant 说：凯尔大人通情达理，按章办事，真令人佩服。夜深雨大，大人也早些回去歇息吧。",
+      "event_id": "E0051"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0056"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "soldier 说：既然奥伦老板这么说，那今晚就先按规矩办。明早开门后我会第一个过来，希望账目如你所说没有任何问题。告辞。",
+      "event_id": "E0057"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，今晚折腾这一遭大家都不容易。既然凯尔大人明早才来，你也早些休息收拾吧。",
+      "event_id": "E0058"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "soldier 说：既然奥伦老板答应明天一早备好账本恭候，那我今晚就先记下。时间不早了，雨大路滑，两位也早点歇息吧。明天一早我会准时过来。",
+      "event_id": "E0062"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板客气了，举手之劳罢了。既然时间不早了，我就不打扰你打烊休息了，祝你明天一切顺利。咱们改天有空再聊合作。",
+      "event_id": "E0063"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "merchant 说：凯尔大人客气了，雨天夜路湿滑，您路上也多加小心。希望明天核对账目一切顺利。",
+      "event_id": "E0066"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "soldier 说：多谢米拉女士提醒，夜色已深，我也准备回去了。祝你明早路上一切顺利。",
+      "event_id": "E0068"
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "merchant": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0002",
+    "E0005",
+    "E0006",
+    "E0007",
+    "E0011",
+    "E0012",
+    "E0015",
+    "E0016",
+    "E0018",
+    "E0019",
+    "E0022",
+    "E0023",
+    "E0025",
+    "E0027",
+    "E0029",
+    "E0030",
+    "E0031",
+    "E0033",
+    "E0036",
+    "E0037",
+    "E0039",
+    "E0040",
+    "E0041",
+    "E0043",
+    "E0044",
+    "E0046",
+    "E0047",
+    "E0050",
+    "E0051",
+    "E0056",
+    "E0057",
+    "E0058",
+    "E0062",
+    "E0063",
+    "E0066",
+    "E0068"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 3,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 3,
+      "from": "merchant",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 4,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "镇长提到了你最近有深夜运货等不同寻常的举动",
+      "kind": "ask"
+    },
+    {
+      "tick": 4,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 5,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "传言称酒馆老板有深夜运送货物的异常举动",
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "merchant",
+      "topic": "business_talk",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 8,
+      "from": "merchant",
+      "topic": "cooperation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 9,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "需要核对近期进货记录",
+      "kind": "ask"
+    },
+    {
+      "tick": 10,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "老板出尔反尔拒绝出示账本，行为可疑",
+      "kind": "confront"
+    },
+    {
+      "tick": 10,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 11,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "老板拒绝出示账本涉嫌隐瞒秘密",
+      "kind": "confront"
+    },
+    {
+      "tick": 11,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 12,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "深夜拒绝出示账本加重了藏匿违禁货物的嫌疑",
+      "kind": "confront"
+    },
+    {
+      "tick": 12,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": "夜间查账容易疏漏且明天白天核对更合规",
+      "kind": "speak"
+    },
+    {
+      "tick": 13,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "明天白天将按计划重新核查账目",
+      "kind": "speak"
+    },
+    {
+      "tick": 13,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": "建议明日清晨第一时间核对账本更为公允稳妥",
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "明天清晨将准时前来核对账目",
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 16,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 16,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": "建议老板早点休息准备明天的查验",
+      "kind": "speak"
+    },
+    {
+      "tick": 18,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 18,
+      "from": "merchant",
+      "topic": "cooperation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 19,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 20,
+      "from": "soldier",
+      "topic": "cooperation",
+      "claim": null,
+      "kind": "speak"
+    }
+  ],
+  "pending_question": null,
+  "action_counts": {
+    "work::": 3,
+    "speak:merchant:weather_and_drink": 2,
+    "speak:soldier:investigation": 6,
+    "speak:merchant:investigation": 1,
+    "speak:merchant:cooperation": 4,
+    "speak:merchant:business_talk": 1,
+    "refuse:soldier:investigation": 3
+  }
+}

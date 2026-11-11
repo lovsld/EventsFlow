@@ -1,0 +1,1 @@
+{"perception": {"agent_id": "A", "tick": 2, "time": "21:05", "location": "bar", "colocated": [], "visible_objects": ["counter", "candle", "wine_shelf"], "events": [{"event_id": "E0003", "tick": 1, "type": "observe", "actors": ["A"], "location": "bar", "target": null, "topic": null}], "muffled": [], "world_public": {"weather": "clear"}}, "action_result": {"ok": true}}

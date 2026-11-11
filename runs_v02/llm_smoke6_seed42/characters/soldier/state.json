@@ -1,0 +1,123 @@
+{
+  "character_id": "soldier",
+  "location": "tables",
+  "personality": {
+    "caution": 0.35,
+    "curiosity": 0.7,
+    "honesty": 0.9,
+    "impulsiveness": 0.85,
+    "sociability": 0.55
+  },
+  "principles": [
+    "不主动欺骗无辜者",
+    "不背叛自己的职责",
+    "不接受明显不公正的命令"
+  ],
+  "goals": [
+    {
+      "key": "complete_investigation",
+      "desc": "完成调查任务",
+      "weight": 1.0
+    },
+    {
+      "key": "keep_honor",
+      "desc": "维护自己的荣誉",
+      "weight": 0.9
+    },
+    {
+      "key": "learn_mayor_truth",
+      "desc": "搞清楚镇长是否真的存在问题",
+      "weight": 0.75
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "investigation_order",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "今天接到命令，调查酒馆老板最近的异常行为"
+    },
+    {
+      "key": "mayor_suspicious",
+      "confidence": 0.35,
+      "kind": "inferred",
+      "desc": "最近觉得镇长的一些做法不太对劲（直觉，无证据）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "merchant 说：晚上好，士兵。我叫[你的名字]，是新来的商人。我看到你似乎刚进来，有什么事吗？",
+      "event_id": "E0014"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 说：我只是对这个小镇的商业氛围感到好奇。您似乎对酒馆老板很熟悉？",
+      "event_id": "E0017"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "merchant 说：您对酒馆老板很熟悉？或许我可以向您打听一些关于镇上商业机会的信息？",
+      "event_id": "E0021"
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "owner": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "merchant": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0014",
+    "E0017",
+    "E0021"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 4,
+      "from": "merchant",
+      "topic": "greeting",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 5,
+      "from": "merchant",
+      "topic": "owner_behavior",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "merchant",
+      "topic": "owner_behavior",
+      "claim": null,
+      "kind": "ask"
+    }
+  ],
+  "pending_question": {
+    "from": "merchant",
+    "topic": "owner_behavior",
+    "tick": 6
+  },
+  "action_counts": {
+    "observe::": 2,
+    "move:tables:": 1,
+    "ask:merchant:owner_behavior": 2,
+    "speak:merchant:greeting": 1
+  }
+}

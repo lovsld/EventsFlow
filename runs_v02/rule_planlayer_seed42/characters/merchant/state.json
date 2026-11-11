@@ -1,0 +1,350 @@
+{
+  "character_id": "merchant",
+  "location": "bar",
+  "personality": {
+    "caution": 0.5,
+    "curiosity": 0.9,
+    "honesty": 0.45,
+    "impulsiveness": 0.4,
+    "sociability": 0.95
+  },
+  "principles": [
+    "合作必须有收益",
+    "不轻易透露自己的真实目的",
+    "尽量避免正面冲突"
+  ],
+  "goals": [
+    {
+      "key": "gain_business",
+      "desc": "获得更多商业资源",
+      "weight": 1.0
+    },
+    {
+      "key": "build_relationships",
+      "desc": "建立有价值的人际关系",
+      "weight": 0.8
+    },
+    {
+      "key": "protect_wealth",
+      "desc": "避免损失自己的财富",
+      "weight": 0.85
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "mayor_business_deal",
+      "confidence": 0.9,
+      "kind": "experienced",
+      "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）"
+    },
+    {
+      "key": "owner_cautious",
+      "confidence": 0.7,
+      "kind": "inferred",
+      "desc": "老板口风很紧，是个谨慎人"
+    },
+    {
+      "key": "letter_with_owner",
+      "confidence": 0.5,
+      "kind": "inferred",
+      "desc": "信可能在老板手里"
+    },
+    {
+      "key": "anonymous_letter_exists",
+      "confidence": 0.7,
+      "kind": "heard",
+      "desc": "soldier 当众说他已经看过一封关于镇长的信"
+    },
+    {
+      "key": "mayor_embezzled",
+      "confidence": 0.45,
+      "kind": "heard",
+      "desc": "soldier 的话暗示镇长财务有问题"
+    },
+    {
+      "key": "mayor_deal_risky",
+      "confidence": 0.65,
+      "kind": "inferred",
+      "desc": "和镇长做生意可能有回款风险，但消息本身值钱"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.4
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0009"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+      "event_id": "E0015"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+      "event_id": "E0018"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+      "event_id": "E0020"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0027"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：我把话问明白——这两天，谁进过后屋、动过那个抽屉？",
+      "event_id": "E0030"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0031"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0038"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0043"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？",
+      "event_id": "E0044"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：别绕弯子了！镇长是不是吞了那笔钱？你是不是知道什么？",
+      "event_id": "E0047"
+    },
+    {
+      "tick": 12,
+      "kind": "inferred",
+      "text": "镇长若真出事，货款要小心；这条消息也许能换人情。",
+      "event_id": null
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0056"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：我把话问明白——这两天，谁进过后屋、动过那个抽屉？",
+      "event_id": "E0058"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？",
+      "event_id": "E0062"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0065"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0071"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？",
+      "event_id": "E0076"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？",
+      "event_id": "E0080"
+    }
+  ],
+  "long_term_memory": [
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+      "event_id": "E0018",
+      "importance": 1.0,
+      "consolidated_at_tick": 6
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+      "event_id": "E0020",
+      "importance": 1.0,
+      "consolidated_at_tick": 6
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "soldier 说：凯尔：别绕弯子了！镇长是不是吞了那笔钱？你是不是知道什么？",
+      "event_id": "E0047",
+      "importance": 1.0,
+      "consolidated_at_tick": 13
+    },
+    {
+      "tick": 12,
+      "kind": "inferred",
+      "text": "镇长若真出事，货款要小心；这条消息也许能换人情。",
+      "event_id": null,
+      "importance": 0.75,
+      "consolidated_at_tick": 13
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "owner": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.188,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0005",
+    "E0009",
+    "E0015",
+    "E0018",
+    "E0020",
+    "E0027",
+    "E0030",
+    "E0031",
+    "E0038",
+    "E0043",
+    "E0044",
+    "E0047",
+    "E0056",
+    "E0058",
+    "E0062",
+    "E0065",
+    "E0071",
+    "E0076",
+    "E0080"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 4,
+      "from": "soldier",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "soldier",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "owner",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "owner",
+      "topic": "letter_question",
+      "claim": "letter_question",
+      "kind": "ask"
+    },
+    {
+      "tick": 11,
+      "from": "soldier",
+      "topic": "letter_discussion",
+      "claim": "letter_discussion",
+      "kind": "confront"
+    },
+    {
+      "tick": 12,
+      "from": "soldier",
+      "topic": "mayor_hint",
+      "claim": "mayor_hint",
+      "kind": "confront"
+    },
+    {
+      "tick": 14,
+      "from": "owner",
+      "topic": "letter_question",
+      "claim": "letter_question",
+      "kind": "ask"
+    },
+    {
+      "tick": 15,
+      "from": "soldier",
+      "topic": "letter_discussion",
+      "claim": "letter_discussion",
+      "kind": "speak"
+    },
+    {
+      "tick": 18,
+      "from": "soldier",
+      "topic": "letter_discussion",
+      "claim": "letter_discussion",
+      "kind": "confront"
+    },
+    {
+      "tick": 19,
+      "from": "soldier",
+      "topic": "letter_discussion",
+      "claim": "letter_discussion",
+      "kind": "speak"
+    }
+  ],
+  "pending_question": null,
+  "action_counts": {
+    "move:bar:": 1,
+    "speak:owner:business_proposal": 3,
+    "speak:owner:greeting": 2,
+    "speak:soldier:business_proposal": 3,
+    "speak:soldier:answer_mayor": 2,
+    "speak:owner:answer_mayor": 2,
+    "speak:owner:bluff_hint": 1,
+    "speak:soldier:greeting": 1,
+    "observe:owner:": 4,
+    "listen::": 1
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "character_id": "merchant",
+  "location": "bar",
+  "personality": {
+    "caution": 0.5,
+    "curiosity": 0.9,
+    "honesty": 0.45,
+    "impulsiveness": 0.4,
+    "sociability": 0.95
+  },
+  "principles": [
+    "合作必须有收益",
+    "不轻易透露自己的真实目的",
+    "尽量避免正面冲突"
+  ],
+  "goals": [
+    {
+      "key": "gain_business",
+      "desc": "获得更多商业资源",
+      "weight": 1.0
+    },
+    {
+      "key": "build_relationships",
+      "desc": "建立有价值的人际关系",
+      "weight": 0.8
+    },
+    {
+      "key": "protect_wealth",
+      "desc": "避免损失自己的财富",
+      "weight": 0.85
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "mayor_business_deal",
+      "confidence": 0.9,
+      "kind": "experienced",
+      "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "owner 说：这雨下得真大，看来今晚你得在这儿多待一会儿了。",
+      "event_id": "E0008"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "owner 说：生意嘛，就那样，老样子。不过这雨一下，大家今晚都走不了了，说不定还能多喝几杯。",
+      "event_id": "E0011"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "owner 说：镇子上的事儿啊... 最近没什么特别的，大家都忙着自己的生计。米拉你呢，这次来镇上有什么收获？",
+      "event_id": "E0015"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "owner 说：我最近确实在听一些关于镇长的事情，不过消息还不算确凿。米拉你那边有没有听到什么风声？",
+      "event_id": "E0018"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "owner 说：镇长的事？嗯，我确实听到了一些传闻，但具体细节我也不清楚。你那边有没有听到什么更具体的消息？",
+      "event_id": "E0022"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0023"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "owner 说：我只是听到一些闲言碎语，具体情况我也不太清楚。不过，既然你刚到镇上，也许我可以帮你留意一下，看看有没有什么有用的信息。",
+      "event_id": "E0026"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0027"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "owner 说：我确实听到了一些关于镇长挪用公款的传言，但消息来源不明，我也没法证实。我在这儿开了十年的酒馆，只想安安稳稳做生意，这种事我也不想多掺和。",
+      "event_id": "E0030"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0037"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "owner 说：传闻总是会影响生意的，不论真假。大家会变得谨慎，消费也会减少。我希望这些传闻不会持续太久。",
+      "event_id": "E0040"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "owner 说：传闻总是会影响生意的，不论真假。大家会变得谨慎，消费也会减少。我希望这些传闻不会持续太久。",
+      "event_id": "E0043"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "owner 说：传闻总是会影响生意的，不论真假。大家会变得谨慎，消费也会减少。我希望这些传闻不会持续太久。",
+      "event_id": "E0046"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "owner 说：除了酒馆，最近镇上的裁缝和铁匠铺生意都有些冷清。大家似乎都更倾向于把钱留着，或者用在必需品上。",
+      "event_id": "E0050"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "owner 说：裁缝和铁匠铺，他们确实需要不少本钱周转。最近大家都不敢轻易花钱，这两家的生意自然就受影响了。至于大笔资金周转的... 矿业最近倒是没什么大动静，但谁知道呢。",
+      "event_id": "E0054"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0055"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "owner 说：嗯，这倒是问到点子上了。矿业，或者说一些大型的、需要长期投入的基建项目，这类事情的资金流向往往不太容易被普通人察觉。但具体稳定到什么程度，我也不好说，毕竟这些事情离我们小老百姓太远了。",
+      "event_id": "E0058"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "owner 说：矿业？嗯，最近确实没什么大动静。但你也知道，这种需要大笔资金的项目，谁能说得准呢？可能只是暂时平静，也说不定。",
+      "event_id": "E0061"
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "owner": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0005",
+    "E0008",
+    "E0011",
+    "E0015",
+    "E0018",
+    "E0022",
+    "E0023",
+    "E0026",
+    "E0027",
+    "E0030",
+    "E0037",
+    "E0040",
+    "E0043",
+    "E0046",
+    "E0050",
+    "E0054",
+    "E0055",
+    "E0058",
+    "E0061"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "owner",
+      "topic": "weather",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 3,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 4,
+      "from": "owner",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 5,
+      "from": "owner",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "owner",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 7,
+      "from": "owner",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "owner",
+      "topic": "town_affairs",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 11,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 12,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 13,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 15,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 16,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 17,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    }
+  ],
+  "pending_question": null,
+  "action_counts": {
+    "move:bar:": 1,
+    "speak:owner:town_business": 3,
+    "ask:owner:town_affairs": 4,
+    "ask:owner:town_business": 6,
+    "speak:owner:town_affairs": 2,
+    "observe:owner:owner_reaction": 1
+  }
+}

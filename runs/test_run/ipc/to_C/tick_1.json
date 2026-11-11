@@ -1,0 +1,1 @@
+{"perception": {"agent_id": "C", "tick": 1, "time": "21:00", "location": "door", "colocated": [], "visible_objects": ["door_bell"], "events": [], "muffled": [], "world_public": {"weather": "clear"}}, "action_result": null}

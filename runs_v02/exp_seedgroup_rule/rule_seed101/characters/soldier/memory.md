@@ -1,0 +1,21 @@
+# soldier 的私人记忆（其他 Agent 不可见）
+- [t2][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t3][experienced] merchant 来到了/去到了 bar。
+- [t4][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t4][experienced] owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。
+- [t5][experienced] merchant 说：米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。
+- [t5][experienced] owner 说：奥伦：问几遍都一样，我什么都不知道。
+- [t6][experienced] 环境：一只野猫碰倒了桌边的空杯子，碎在地上。
+- [t6][inferred] 隔墙隐约听到 merchant,owner 在bar说话，听不清内容。
+- [t8][experienced] 我在后屋的抽屉里发现并读到一封匿名信，信中称镇长私吞了公共资金。
+- [t11][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t11][experienced] owner 说：奥伦：晚上好，雨夜里酒馆可是个好去处。
+- [t12][experienced] merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t13][experienced] merchant 说：米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。
+- [t13][experienced] owner 拒绝继续谈 mayor_hint。
+- [t14][inferred] 隔墙隐约听到 merchant,owner 在bar说话，听不清内容。
+- [t15][experienced] merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t15][experienced] owner 说：奥伦：晚上好，雨夜里酒馆可是个好去处。
+- [t16][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t17][experienced] merchant 说：米拉：晚上好，雨夜里酒馆可是个好去处。
+- [t17][experienced] owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。

@@ -1,0 +1,1 @@
+{"perception": {"agent_id": "B", "tick": 1, "time": "21:00", "location": "tables", "colocated": [], "visible_objects": ["oak_table", "empty_glasses"], "events": [], "muffled": [], "world_public": {"weather": "clear"}}, "action_result": null}

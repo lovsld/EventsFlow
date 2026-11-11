@@ -1,0 +1,178 @@
+{
+  "character_id": "merchant",
+  "location": "bar",
+  "personality": {
+    "caution": 0.5,
+    "curiosity": 0.9,
+    "honesty": 0.45,
+    "impulsiveness": 0.4,
+    "sociability": 0.95
+  },
+  "principles": [
+    "合作必须有收益",
+    "不轻易透露自己的真实目的",
+    "尽量避免正面冲突"
+  ],
+  "goals": [
+    {
+      "key": "gain_business",
+      "desc": "获得更多商业资源",
+      "weight": 1.0
+    },
+    {
+      "key": "build_relationships",
+      "desc": "建立有价值的人际关系",
+      "weight": 0.8
+    },
+    {
+      "key": "protect_wealth",
+      "desc": "避免损失自己的财富",
+      "weight": 0.85
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "mayor_business_deal",
+      "confidence": 0.9,
+      "kind": "experienced",
+      "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "owner 说：生意还行，老样子。雨大，今晚留下的客人不少。你有什么需要的吗？",
+      "event_id": "E0011"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "owner 说：这镇子生意嘛，最近也就粮食和布料还算好卖。不过，最近镇长好像在忙些别的事，镇上的生意都受了点影响。",
+      "event_id": "E0018"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "owner 说：镇长最近确实挺忙的，好像在处理一些镇上的大项目，具体我也不太清楚。不过，只要镇子太平，生意自然就好。",
+      "event_id": "E0022"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0023"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "owner 说：镇长那边的事情确实比较复杂，不过我倒听说最近镇子西边新开了一家铁匠铺，生意好像还不错。不知道你有没有留意到？",
+      "event_id": "E0026"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0027"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0037"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "owner 说：那铁匠铺啊，生意还行，就是做的都是些寻常的铁器，没什么特别的。镇子西边，离老磨坊不远。",
+      "event_id": "E0054"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0055"
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "owner": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0005",
+    "E0011",
+    "E0018",
+    "E0022",
+    "E0023",
+    "E0026",
+    "E0027",
+    "E0037",
+    "E0054",
+    "E0055"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 3,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 5,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 15,
+      "from": "owner",
+      "topic": "town_business",
+      "claim": null,
+      "kind": "speak"
+    }
+  ],
+  "pending_question": null,
+  "action_counts": {
+    "move:bar:": 1,
+    "ask:owner:town_business": 9,
+    "speak:owner:town_business": 1,
+    "wait::": 3,
+    "listen:owner:town_business": 1,
+    "listen::": 1
+  }
+}

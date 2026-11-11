@@ -1,0 +1,26 @@
+# merchant 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] 环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。
+- [t3][experienced] soldier 来到了/去到了 bar。
+- [t4][experienced] soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t5][experienced] soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？
+- [t5][experienced] owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。
+- [t6][experienced] soldier 说：凯尔：晚上好，雨夜里酒馆可是个好去处。
+- [t6][experienced] owner 说：奥伦：我把话问明白——这两天，谁进过后屋、动过那个抽屉？
+- [t6][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t7][experienced] soldier 说：凯尔：这雨下得，路都不好走了。
+- [t7][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t8][experienced] owner 说：奥伦：我把话问明白——这两天，谁进过后屋、动过那个抽屉？
+- [t9][experienced] soldier 来到了/去到了 bar。
+- [t10][experienced] soldier 说：凯尔：晚上好，雨夜里酒馆可是个好去处。
+- [t10][experienced] owner 说：奥伦：晚上好，雨夜里酒馆可是个好去处。
+- [t10][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t12][experienced] soldier 说：凯尔：老板，你越是不说，我越得查清楚。
+- [t12][experienced] owner 说：奥伦：晚上好，雨夜里酒馆可是个好去处。
+- [t15][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t17][experienced] soldier 来到了/去到了 bar。
+- [t18][experienced] soldier 说：凯尔：别绕弯子了！镇长是不是吞了那笔钱？你是不是知道什么？
+- [t18][inferred] 镇长若真出事，货款要小心；这条消息也许能换人情。
+- [t19][experienced] soldier 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？
+- [t19][experienced] owner 说：奥伦：我把话问明白——这两天，谁进过后屋、动过那个抽屉？
+- [t20][experienced] soldier 说：凯尔：那封信，我已经看过了。信里说的事，你打算怎么办？
+- [t20][experienced] owner 说：奥伦：我把话问明白——这两天，谁进过后屋、动过那个抽屉？

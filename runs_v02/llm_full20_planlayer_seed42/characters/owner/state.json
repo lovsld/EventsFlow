@@ -1,0 +1,587 @@
+{
+  "character_id": "owner",
+  "location": "bar",
+  "personality": {
+    "caution": 0.9,
+    "curiosity": 0.6,
+    "honesty": 0.6,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "不主动伤害无辜者",
+    "不轻易信任陌生人",
+    "保护自己的利益"
+  ],
+  "goals": [
+    {
+      "key": "protect_tavern",
+      "desc": "保护自己的酒馆",
+      "weight": 1.0
+    },
+    {
+      "key": "find_letter_source",
+      "desc": "搞清楚匿名信的来源",
+      "weight": 0.8
+    },
+    {
+      "key": "avoid_politics",
+      "desc": "避免卷入政治冲突",
+      "weight": 0.9
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "三天前收到一封匿名信"
+    },
+    {
+      "key": "mayor_embezzled",
+      "confidence": 0.45,
+      "kind": "heard",
+      "desc": "匿名信称镇长私吞了公共资金（未证实）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.35
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "merchant 来到了/去到了 bar。",
+      "event_id": "E0002"
+    },
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0006"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "merchant 说：老板，这雨下得真不是时候，不过正好让我有时间喝一杯。最近镇上的生意怎么样？",
+      "event_id": "E0007"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，我今天接到上面的一些询问，想了解一下你最近有没有遇到什么不寻常的事情？",
+      "event_id": "E0011"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "merchant 说：好啊，正需要一杯热麦芽酒暖暖身子。谢谢你，奥伦。这位年轻军官也来一杯吗？正好借着雨天听听大家聊聊镇上的新鲜事。",
+      "event_id": "E0012"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "soldier 说：谢谢米拉的好意，酒我就免了，公务在身。奥伦老板，刚才的话还没说完，镇长那边听到了一些关于你这里的传闻，希望你能坦诚回答我的问题。",
+      "event_id": "E0015"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "merchant 说：年轻军官，听你刚才提到奉命调查，难道这小镇最近有什么特别的麻烦吗？我也刚来不久，正想多了解了解情况呢。",
+      "event_id": "E0016"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "soldier 说：米拉女士，这只是例行的公务盘问罢了，小镇平时挺安宁的，没有什么特别的麻烦。我也只是奉命行事。",
+      "event_id": "E0018"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 说：年轻军官，既然是公务，不知这传闻是否会影响到小镇的商业或者过往商旅的安全？我刚来不久，若是有些需要注意的地方，也好提前防范。",
+      "event_id": "E0019"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，镇长只是让我例行了解一下情况，并没有具体的指控。米拉女士，商业和过往商旅的安全目前并没有受到影响，请不用过分担心。",
+      "event_id": "E0022"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "merchant 说：年轻军官，既然连奥伦老板的酒馆都有所耳闻，那不知这传闻是否也涉及镇上其他商业场所？作为刚来不久的商人，我也好心里有数，免得不小心触碰了什么忌讳。",
+      "event_id": "E0023"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0025"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "soldier 说：米拉女士，请放心，这次调查只是一次常规的例行了解，并没有涉及镇上的其他商业场所。大家只要正常做生意，就不会有什么禁忌或危险。",
+      "event_id": "E0026"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "merchant 说：听到年轻军官这么说我就放心了。既然商业安全不受影响，那不知最近镇上是否有其他新项目的规划，或者商会那边有没有什么动向？我刚来这里，正希望能多了解了解。",
+      "event_id": "E0027"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0029"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "soldier 说：米拉女士，镇上的商业规划和商会动向归镇长和商会负责，我只是一名普通的卫兵，并不太清楚这些安排。我今晚来到这里，主要还是履行我的职责，了解一些例行情况。",
+      "event_id": "E0030"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，麦芽酒很合口味，谢谢你。既然这里一切正常，我也就放心品尝了。不知道这雨还要下多久呢。",
+      "event_id": "E0031"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，既然米拉女士的事谈完了，我们还是回到正题吧。虽然你说这里一切正常，但我奉命前来总得有些实质的了解。最近这几天，你店里深夜或者打烊后，有没有什么异常的人出入，或者收到过什么特别的东西？",
+      "event_id": "E0033"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，既然镇中心才是打听商会的好地方，不知这镇上平时有什么懂行的人经常来你这儿坐坐吗？我也好多结识几位朋友。",
+      "event_id": "E0034"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，米拉女士向你打听镇上懂行的人，但我更想听听你的回答。刚才我的问题你还没正面回答呢：深夜或者打烊后，到底有没有什么异常的人来过？",
+      "event_id": "E0036"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0039"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，刚才我提起异常人员时，你吧台上的蜡烛晃了了一下，你的眼神也跟着飘忽不定。你确定你刚才说的都是实话吗？最好别对我有所隐瞒。",
+      "event_id": "E0040"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，既然你坚持自己本分做生意，那最近镇长办公室频繁派人来你这里过问账目，又是为了什么？别急着否认，镇上的情况没你想的那么滴水不漏。",
+      "event_id": "E0043"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，您的麦芽酒确实不错。外面雨下得这样大，大家不如都轻松点，和气生财嘛。",
+      "event_id": "E0044"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，我看这雨一时半会儿停不了，您的麦芽酒确实暖身。镇长那边的事儿咱们外人也不好多问，不过做生意的谁不求个稳当呢？",
+      "event_id": "E0047"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，刚才那位士兵也是尽忠职守。不过说起来，镇上最近各处商户都在看风向，您这儿消息灵通，不知道有没有听说最近有什么适合外地商人的新买卖或者好机会？",
+      "event_id": "E0053"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0056"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，核对账目确实是做生意的基本功。看您这么仔细，莫非最近镇上的大宗物资流通或者商会账目上有什么新的变化？如果有需要帮忙或者合伙的地方，您不妨跟我透露透露。",
+      "event_id": "E0057"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0061"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，我刚刚听到你们在聊账目的事情。既然最近风头紧，不如把账目也让我看看，好证明你确实是在本分做生意。",
+      "event_id": "E0062"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "merchant 说：凯尔士兵，既然您提到镇长办公室最近频繁派人来过问账目，这背后莫非有什么政策上的变动或者新的商业规划？如果真有什么大项目要落户，大家提前有个准备也是好的。",
+      "event_id": "E0063"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "soldier 说：米拉女士，镇长办公室的公务不是我这个做卫兵的能随意议论的。我只是奉命来核查酒馆的账目，确认没有异常情况。至于有没有新政策或大项目，等镇长那边有公文下来自然会知道。",
+      "event_id": "E0065"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，我看凯尔士兵也是公事公办。既然外面雨这么大，大家不如都放轻松点，喝杯热饮暖暖身子。做生意嘛，本来就是求个和气生财。",
+      "event_id": "E0066"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，既然账目要慢慢核对，那我不妨顺便打听一下，最近镇上的日常物资进货还顺畅吗？不知道有没有什么比较稳定的货源渠道可以推荐的？",
+      "event_id": "E0069"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "soldier 来到了/去到了 bar。",
+      "event_id": "E0074"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板说得对，做生意确实以和为贵、平平安安最重要。我刚到镇上不久，正想找几个靠谱的长期合作伙伴。如果您以后有稳定的物资需求或者进货渠道，不妨考虑一下我这边。",
+      "event_id": "E0075"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，米拉女士在跟你谈生意上的事，但我这里还有公事没办完。关于我刚才提到的调查，你真的没有什么需要补充的吗？",
+      "event_id": "E0079"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "merchant 说：凯尔长官，既然奥伦老板说这雨天不适合谈远事，那我就不打扰他核对账目了。不过我想向您打听一下，除了酒馆这边的日常经营，镇上最近有没有其他什么值得关注的商业项目或者公开招商的消息？",
+      "event_id": "E0080"
+    }
+  ],
+  "long_term_memory": [
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "soldier 说：奥伦老板，既然你坚持自己本分做生意，那最近镇长办公室频繁派人来你这里过问账目，又是为了什么？别急着否认，镇上的情况没你想的那么滴水不漏。",
+      "event_id": "E0043",
+      "importance": 1.0,
+      "consolidated_at_tick": 13
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "merchant 说：奥伦老板，您的麦芽酒确实不错。外面雨下得这样大，大家不如都轻松点，和气生财嘛。",
+      "event_id": "E0044",
+      "importance": 1.0,
+      "consolidated_at_tick": 13
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "merchant": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.25,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0002",
+    "E0005",
+    "E0006",
+    "E0007",
+    "E0011",
+    "E0012",
+    "E0015",
+    "E0016",
+    "E0018",
+    "E0019",
+    "E0022",
+    "E0023",
+    "E0025",
+    "E0026",
+    "E0027",
+    "E0029",
+    "E0030",
+    "E0031",
+    "E0033",
+    "E0034",
+    "E0036",
+    "E0039",
+    "E0040",
+    "E0043",
+    "E0044",
+    "E0047",
+    "E0053",
+    "E0056",
+    "E0057",
+    "E0061",
+    "E0062",
+    "E0063",
+    "E0065",
+    "E0066",
+    "E0069",
+    "E0074",
+    "E0075",
+    "E0079",
+    "E0080"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "merchant",
+      "topic": "weather_and_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 3,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "奉命调查",
+      "kind": "ask"
+    },
+    {
+      "tick": 3,
+      "from": "merchant",
+      "topic": "drink_and_town_news",
+      "claim": "",
+      "kind": "speak"
+    },
+    {
+      "tick": 4,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "奉镇长之命调查传闻",
+      "kind": "ask"
+    },
+    {
+      "tick": 4,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": "对小镇情况感到好奇",
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "例行公务，没有特别麻烦",
+      "kind": "speak"
+    },
+    {
+      "tick": 5,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": "关心小镇商业与安全环境",
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "调查只是例行公事，没有具体指控，商业安全未受影响",
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "merchant",
+      "topic": "investigation",
+      "claim": "了解小镇商业环境与传闻范围",
+      "kind": "ask"
+    },
+    {
+      "tick": 7,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "调查仅针对酒馆，不涉及其他商业场所",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "询问镇上新项目规划与商会动向以寻找商业机会",
+      "kind": "ask"
+    },
+    {
+      "tick": 8,
+      "from": "soldier",
+      "topic": "business_opportunities",
+      "claim": "卫兵职责在于例行调查而非商业规划，不了解商会动向",
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "merchant",
+      "topic": "drink_and_weather",
+      "claim": "麦芽酒合口味，顺便附和老板并询问天气",
+      "kind": "speak"
+    },
+    {
+      "tick": 9,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "奉命调查需要了解更具体的异常细节",
+      "kind": "ask"
+    },
+    {
+      "tick": 9,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "询问镇上有哪些消息灵通或懂行的人可以结识",
+      "kind": "ask"
+    },
+    {
+      "tick": 10,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "要求酒馆老板正面回答关于深夜异常人员的调查问题",
+      "kind": "ask"
+    },
+    {
+      "tick": 11,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "酒馆老板在被问及异常人员时神色慌张、目光闪烁，可能在撒谎",
+      "kind": "confront"
+    },
+    {
+      "tick": 12,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "镇长办公室频繁派人过问酒馆账目",
+      "kind": "ask"
+    },
+    {
+      "tick": 12,
+      "from": "merchant",
+      "topic": "drink_and_weather",
+      "claim": "酒馆的麦芽酒不错，应当和气生财",
+      "kind": "speak"
+    },
+    {
+      "tick": 13,
+      "from": "merchant",
+      "topic": "drink_and_weather",
+      "claim": "雨还在下，麦芽酒暖身，做生意求稳",
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "询问镇上是否有适合外地商人的商业机会",
+      "kind": "speak"
+    },
+    {
+      "tick": 15,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "询问账目变动背后的商业机会",
+      "kind": "ask"
+    },
+    {
+      "tick": 16,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "调查账目以确认是否有异常流动",
+      "kind": "ask"
+    },
+    {
+      "tick": 16,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "询问镇长查账背后的政策或商业规划",
+      "kind": "ask"
+    },
+    {
+      "tick": 17,
+      "from": "soldier",
+      "topic": "business_opportunities",
+      "claim": "澄清自己作为卫兵不便透露镇长办公室的政策，重申职责是例行查账",
+      "kind": "speak"
+    },
+    {
+      "tick": 17,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "做生意讲究和气生财，建议放轻松并喝杯热饮",
+      "kind": "speak"
+    },
+    {
+      "tick": 18,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "询问日常物资进货和稳定货源渠道",
+      "kind": "ask"
+    },
+    {
+      "tick": 19,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "自己刚到镇上寻找长期合作，表达寻求稳定物资渠道的意愿",
+      "kind": "speak"
+    },
+    {
+      "tick": 20,
+      "from": "soldier",
+      "topic": "investigation",
+      "claim": "催促酒馆老板继续配合调查",
+      "kind": "ask"
+    },
+    {
+      "tick": 20,
+      "from": "merchant",
+      "topic": "business_opportunities",
+      "claim": "向士兵打听镇上其他商业项目和招商消息",
+      "kind": "ask"
+    }
+  ],
+  "pending_question": {
+    "from": "merchant",
+    "topic": "business_opportunities",
+    "tick": 20
+  },
+  "action_counts": {
+    "work::counter": 1,
+    "speak:merchant:weather_and_drink": 2,
+    "speak:soldier:investigation": 6,
+    "work::": 1,
+    "speak:merchant:investigation": 1,
+    "speak:merchant:business_opportunities": 6,
+    "speak:merchant:drink_and_weather": 1,
+    "speak:merchant:business_and_weather": 1,
+    "refuse:soldier:investigation": 1
+  }
+}

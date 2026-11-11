@@ -1,0 +1,1959 @@
+[
+ {
+  "tick": 1,
+  "time": "21:05",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0001",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "tables",
+    "from": "door",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0002",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "from": "tables",
+    "to": "bar"
+   },
+   {
+    "event_id": "E0003",
+    "tick": 1,
+    "type": "work",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_start",
+    "session": "S1",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "event_id": "E0004",
+    "tick": 1
+   },
+   {
+    "event_id": "E0005",
+    "tick": 1,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "rain_starts",
+    "text": "窗外下起雨来，酒馆里的人今晚大概走不了太早。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0002",
+     "E0003",
+     "E0004",
+     "E0005"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0002",
+     "E0003",
+     "E0004",
+     "E0005"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0001"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 2,
+  "time": "21:10",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0006",
+    "tick": 2,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "from": "tables",
+    "to": "bar"
+   },
+   {
+    "event_id": "E0007",
+    "tick": 2,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "weather_and_business",
+    "claim": null,
+    "text": "老板，这雨下得真不是时候，不过正好让我有时间喝一杯。最近镇上的生意怎么样？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0008",
+    "tick": 2,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "weather_and_drink",
+    "claim": null,
+    "text": "外面下雨了，米拉。看来今晚得在这多喝一杯了，要来点热麦芽酒吗？",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "type": "session_start",
+    "session": "S2",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner",
+     "soldier"
+    ],
+    "event_id": "E0009",
+    "tick": 2
+   },
+   {
+    "type": "session_end",
+    "session": "S1",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "event_id": "E0010",
+    "tick": 2
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006",
+     "E0007",
+     "E0008",
+     "E0009",
+     "E0010"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006",
+     "E0007",
+     "E0008",
+     "E0009",
+     "E0010"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006",
+     "E0007",
+     "E0008",
+     "E0009",
+     "E0010"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 3,
+  "time": "21:15",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0011",
+    "tick": 3,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "奉命调查",
+    "text": "奥伦老板，我今天接到上面的一些询问，想了解一下你最近有没有遇到什么不寻常的事情？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0012",
+    "tick": 3,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "drink_and_town_news",
+    "claim": "",
+    "text": "好啊，正需要一杯热麦芽酒暖暖身子。谢谢你，奥伦。这位年轻军官也来一杯吗？正好借着雨天听听大家聊聊镇上的新鲜事。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0013",
+    "tick": 3,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "weather_and_drink",
+    "claim": null,
+    "text": "热麦芽酒马上就来。这天气生意也就一般，大家都躲雨呢，希望雨早点停吧。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0014",
+    "tick": 3,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "酒馆门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0011",
+     "E0012",
+     "E0013"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0011",
+     "E0012",
+     "E0013"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0011",
+     "E0012",
+     "E0013"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 4,
+  "time": "21:20",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0015",
+    "tick": 4,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "奉镇长之命调查传闻",
+    "text": "谢谢米拉的好意，酒我就免了，公务在身。奥伦老板，刚才的话还没说完，镇长那边听到了一些关于你这里的传闻，希望你能坦诚回答我的问题。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0016",
+    "tick": 4,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "对小镇情况感到好奇",
+    "text": "年轻军官，听你刚才提到奉命调查，难道这小镇最近有什么特别的麻烦吗？我也刚来不久，正想多了解了解情况呢。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0017",
+    "tick": 4,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "酒馆很平静，没有遇到不寻常的事",
+    "text": "年轻人，我这小酒馆每天来来往往都是些过路人和避雨的镇民，没听过什么特别的事。硬要说的话，也就是这雨下得让人生意清淡罢了。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0015",
+     "E0016",
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0015",
+     "E0016",
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0015",
+     "E0016",
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 5,
+  "time": "21:25",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0018",
+    "tick": 5,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "例行公务，没有特别麻烦",
+    "text": "米拉女士，这只是例行的公务盘问罢了，小镇平时挺安宁的，没有什么特别的麻烦。我也只是奉命行事。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0019",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "关心小镇商业与安全环境",
+    "text": "年轻军官，既然是公务，不知这传闻是否会影响到小镇的商业或者过往商旅的安全？我刚来不久，若是有些需要注意的地方，也好提前防范。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0020",
+    "tick": 5,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "酒馆合法经营，对传闻表示不解",
+    "text": "长官，我经营这家酒馆十年向来奉公守法，镇长若真听到什么谣言，大可以直接来问我。不知这传闻具体是指什么？",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0021",
+    "tick": 5,
+    "type": "ambient",
+    "actors": [],
+    "location": "outside",
+    "topic": "distant_shout",
+    "text": "街上远处有人喊了一嗓子，很快没了声音。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0018",
+     "E0019",
+     "E0020"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0018",
+     "E0019",
+     "E0020"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0018",
+     "E0019",
+     "E0020"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 6,
+  "time": "21:30",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0022",
+    "tick": 6,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "调查只是例行公事，没有具体指控，商业安全未受影响",
+    "text": "奥伦老板，镇长只是让我例行了解一下情况，并没有具体的指控。米拉女士，商业和过往商旅的安全目前并没有受到影响，请不用过分担心。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0023",
+    "tick": 6,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "了解小镇商业环境与传闻范围",
+    "text": "年轻军官，既然连奥伦老板的酒馆都有所耳闻，那不知这传闻是否也涉及镇上其他商业场所？作为刚来不久的商人，我也好心里有数，免得不小心触碰了什么忌讳。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0024",
+    "tick": 6,
+    "type": "work",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0025",
+    "tick": 6,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0022",
+     "E0023",
+     "E0024",
+     "E0025"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0022",
+     "E0023",
+     "E0024",
+     "E0025"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0022",
+     "E0023",
+     "E0024",
+     "E0025"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 7,
+  "time": "21:35",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0026",
+    "tick": 7,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "调查仅针对酒馆，不涉及其他商业场所",
+    "text": "米拉女士，请放心，这次调查只是一次常规的例行了解，并没有涉及镇上的其他商业场所。大家只要正常做生意，就不会有什么禁忌或危险。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0027",
+    "tick": 7,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "询问镇上新项目规划与商会动向以寻找商业机会",
+    "text": "听到年轻军官这么说我就放心了。既然商业安全不受影响，那不知最近镇上是否有其他新项目的规划，或者商会那边有没有什么动向？我刚来这里，正希望能多了解了解。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0028",
+    "tick": 7,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "酒馆只是人多嘴杂有传闻，无需过分在意",
+    "text": "米拉女士，凯尔士兵也说了只是例行了解。我这小酒馆开门做生意，平时人多嘴杂难免有些风言风语，当不得真。您的麦芽酒还合口味吧？",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0029",
+    "tick": 7,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0026",
+     "E0027",
+     "E0028",
+     "E0029"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0026",
+     "E0027",
+     "E0028",
+     "E0029"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0026",
+     "E0027",
+     "E0028",
+     "E0029"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 8,
+  "time": "21:40",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0030",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "卫兵职责在于例行调查而非商业规划，不了解商会动向",
+    "text": "米拉女士，镇上的商业规划和商会动向归镇长和商会负责，我只是一名普通的卫兵，并不太清楚这些安排。我今晚来到这里，主要还是履行我的职责，了解一些例行情况。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0031",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "drink_and_weather",
+    "claim": "麦芽酒合口味，顺便附和老板并询问天气",
+    "text": "奥伦老板，麦芽酒很合口味，谢谢你。既然这里一切正常，我也就放心品尝了。不知道这雨还要下多久呢。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0032",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "酒馆老板不清楚镇上新项目规划和商会动向",
+    "text": "米拉女士，我这小酒馆也就是个喝酒歇脚的地方，镇上有没有新项目规划我这粗人可不太清楚。商会的事您可能得去镇中心打听打听了。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0030",
+     "E0031",
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0030",
+     "E0031",
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0030",
+     "E0031",
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 9,
+  "time": "21:45",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0033",
+    "tick": 9,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "奉命调查需要了解更具体的异常细节",
+    "text": "奥伦老板，既然米拉女士的事谈完了，我们还是回到正题吧。虽然你说这里一切正常，但我奉命前来总得有些实质的了解。最近这几天，你店里深夜或者打烊后，有没有什么异常的人出入，或者收到过什么特别的东西？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0034",
+    "tick": 9,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "询问镇上有哪些消息灵通或懂行的人可以结识",
+    "text": "奥伦老板，既然镇中心才是打听商会的好地方，不知这镇上平时有什么懂行的人经常来你这儿坐坐吗？我也好多结识几位朋友。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0035",
+    "tick": 9,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "drink_and_weather",
+    "claim": "外面的雨还要下一阵子，在酒馆里很安全",
+    "text": "米拉女士，这雨看样子还得下一阵子呢，不过只要在屋里烤着炉火喝着麦芽酒，外面的雨大也碍不着咱们。您慢用。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0033",
+     "E0034",
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0033",
+     "E0034",
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0033",
+     "E0034",
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 10,
+  "time": "21:50",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0036",
+    "tick": 10,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "要求酒馆老板正面回答关于深夜异常人员的调查问题",
+    "text": "奥伦老板，米拉女士向你打听镇上懂行的人，但我更想听听你的回答。刚才我的问题你还没正面回答呢：深夜或者打烊后，到底有没有什么异常的人来过？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0037",
+    "tick": 10,
+    "type": "listen",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": "soldier",
+    "topic": "investigation"
+   },
+   {
+    "event_id": "E0038",
+    "tick": 10,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "酒馆里没有异常的人出入或收到特别的东西",
+    "text": "凯尔士兵，我这小酒馆每天开门做生意，来的都是过往的商旅和镇上的老面孔，真没什么异常的人，也没有收到过什么奇怪的东西。大家都是本分人，您就别多心了。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0039",
+    "tick": 10,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0036",
+     "E0037",
+     "E0038",
+     "E0039"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0036",
+     "E0037",
+     "E0038",
+     "E0039"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0036",
+     "E0037",
+     "E0038",
+     "E0039"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 11,
+  "time": "21:55",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0040",
+    "tick": 11,
+    "type": "confront",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "酒馆老板在被问及异常人员时神色慌张、目光闪烁，可能在撒谎",
+    "text": "奥伦老板，刚才我提起异常人员时，你吧台上的蜡烛晃了了一下，你的眼神也跟着飘忽不定。你确定你刚才说的都是实话吗？最好别对我有所隐瞒。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0041",
+    "tick": 11,
+    "type": "observe",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0042",
+    "tick": 11,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "重申酒馆里没有异常人员出入或收到特别物品，自己一直本分做生意",
+    "text": "凯尔士兵，我刚才已经说得很清楚了。我这把老骨头每天起早贪黑就是为了维持生计，真没见过什么可疑的人，也没收过什么见不得光的东西。您要是不信，大可以问问周围的老主顾，我奥伦做生意向来本本分分。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0040",
+     "E0041",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0040",
+     "E0041",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0040",
+     "E0041",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 12,
+  "time": "22:00",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0043",
+    "tick": 12,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "镇长办公室频繁派人过问酒馆账目",
+    "text": "奥伦老板，既然你坚持自己本分做生意，那最近镇长办公室频繁派人来你这里过问账目，又是为了什么？别急着否认，镇上的情况没你想的那么滴水不漏。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0044",
+    "tick": 12,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "drink_and_weather",
+    "claim": "酒馆的麦芽酒不错，应当和气生财",
+    "text": "奥伦老板，您的麦芽酒确实不错。外面雨下得这样大，大家不如都轻松点，和气生财嘛。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0045",
+    "tick": 12,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "蜡烛晃动和眼神飘忽是因为风吹和眼花，店内绝对没有异常人员",
+    "text": "凯尔士兵，您真爱开玩笑。这吧台的蜡烛本来就有些受风晃动，加上我上了年纪眼睛确实不太好使，怎么到了您嘴里就成了心里有鬼呢？我每天开门做生意，真没见过什么可疑的人，您要是实在不放心，尽管在店里四处看看就是了。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0043",
+     "E0044",
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0043",
+     "E0044",
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0043",
+     "E0044",
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 13,
+  "time": "22:05",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0046",
+    "tick": 13,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "tables",
+    "from": "bar",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0047",
+    "tick": 13,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "drink_and_weather",
+    "claim": "雨还在下，麦芽酒暖身，做生意求稳",
+    "text": "奥伦老板，我看这雨一时半会儿停不了，您的麦芽酒确实暖身。镇长那边的事儿咱们外人也不好多问，不过做生意的谁不求个稳当呢？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0048",
+    "tick": 13,
+    "type": "speak_failed",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": "soldier",
+    "topic": "investigation",
+    "reason": "target_left"
+   },
+   {
+    "type": "session_start",
+    "session": "S3",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "event_id": "E0049",
+    "tick": 13
+   },
+   {
+    "type": "session_end",
+    "session": "S2",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner",
+     "soldier"
+    ],
+    "event_id": "E0050",
+    "tick": 13
+   },
+   {
+    "event_id": "E0051",
+    "tick": 13,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "酒馆门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0047",
+     "E0048",
+     "E0049",
+     "E0050"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0047",
+     "E0048",
+     "E0049",
+     "E0050"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0046"
+    ],
+    "muffled_event_ids": [
+     "E0047"
+    ]
+   }
+  ]
+ },
+ {
+  "tick": 14,
+  "time": "22:10",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0052",
+    "tick": 14,
+    "type": "listen",
+    "actors": [
+     "soldier"
+    ],
+    "location": "tables",
+    "target": "bar",
+    "topic": null
+   },
+   {
+    "event_id": "E0053",
+    "tick": 14,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "询问镇上是否有适合外地商人的商业机会",
+    "text": "奥伦老板，刚才那位士兵也是尽忠职守。不过说起来，镇上最近各处商户都在看风向，您这儿消息灵通，不知道有没有听说最近有什么适合外地商人的新买卖或者好机会？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0054",
+    "tick": 14,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "business_and_weather",
+    "claim": "做生意求稳，目前正在核对账目",
+    "text": "米拉女士说得对，做生意的确求个稳当。外面的雨下得这么大，您慢慢喝，我把账目再核对一下。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0055",
+    "tick": 14,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0053",
+     "E0054"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0053",
+     "E0054"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0052",
+     "E0055"
+    ],
+    "muffled_event_ids": [
+     "E0053",
+     "E0054"
+    ]
+   }
+  ]
+ },
+ {
+  "tick": 15,
+  "time": "22:15",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0056",
+    "tick": 15,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "from": "tables",
+    "to": "bar"
+   },
+   {
+    "event_id": "E0057",
+    "tick": 15,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "询问账目变动背后的商业机会",
+    "text": "奥伦老板，核对账目确实是做生意的基本功。看您这么仔细，莫非最近镇上的大宗物资流通或者商会账目上有什么新的变化？如果有需要帮忙或者合伙的地方，您不妨跟我透露透露。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0058",
+    "tick": 15,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "镇上都是小本经营，自己没有听到什么外地商人的大买卖机会",
+    "text": "米拉女士，这镇上的买卖无非是些寻常的小本经营，最近风头紧，我这小酒馆也就是勉强维持生计，没什么特别的门路或大买卖可言。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "type": "session_start",
+    "session": "S4",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner",
+     "soldier"
+    ],
+    "event_id": "E0059",
+    "tick": 15
+   },
+   {
+    "type": "session_end",
+    "session": "S3",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "event_id": "E0060",
+    "tick": 15
+   },
+   {
+    "event_id": "E0061",
+    "tick": 15,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0056",
+     "E0057",
+     "E0058",
+     "E0059",
+     "E0060",
+     "E0061"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0056",
+     "E0057",
+     "E0058",
+     "E0059",
+     "E0060",
+     "E0061"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0056",
+     "E0057",
+     "E0058",
+     "E0059",
+     "E0060",
+     "E0061"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 16,
+  "time": "22:20",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0062",
+    "tick": 16,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "调查账目以确认是否有异常流动",
+    "text": "奥伦老板，我刚刚听到你们在聊账目的事情。既然最近风头紧，不如把账目也让我看看，好证明你确实是在本分做生意。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0063",
+    "tick": 16,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "询问镇长查账背后的政策或商业规划",
+    "text": "凯尔士兵，既然您提到镇长办公室最近频繁派人来过问账目，这背后莫非有什么政策上的变动或者新的商业规划？如果真有什么大项目要落户，大家提前有个准备也是好的。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0064",
+    "tick": 16,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "否认账目变动背后有重大商业机会或内幕",
+    "text": "米拉女士，您太高看我了。我这小酒馆天天对着账本，不过是为了应付进货和日常开销罢了，哪有什么大宗物资或商会账目的内幕。要是真有什么发财的好路子，我早就自己去做了，哪会藏着掖着。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0062",
+     "E0063",
+     "E0064"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0062",
+     "E0063",
+     "E0064"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0062",
+     "E0063",
+     "E0064"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 17,
+  "time": "22:25",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0065",
+    "tick": 17,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "澄清自己作为卫兵不便透露镇长办公室的政策，重申职责是例行查账",
+    "text": "米拉女士，镇长办公室的公务不是我这个做卫兵的能随意议论的。我只是奉命来核查酒馆的账目，确认没有异常情况。至于有没有新政策或大项目，等镇长那边有公文下来自然会知道。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0066",
+    "tick": 17,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "做生意讲究和气生财，建议放轻松并喝杯热饮",
+    "text": "奥伦老板，我看凯尔士兵也是公事公办。既然外面雨这么大，大家不如都放轻松点，喝杯热饮暖暖身子。做生意嘛，本来就是求个和气生财。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0067",
+    "tick": 17,
+    "type": "refuse",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "target": "soldier"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0065",
+     "E0066",
+     "E0067"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0065",
+     "E0066",
+     "E0067"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0065",
+     "E0066",
+     "E0067"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 18,
+  "time": "22:30",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0068",
+    "tick": 18,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "tables",
+    "from": "bar",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0069",
+    "tick": 18,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "询问日常物资进货和稳定货源渠道",
+    "text": "奥伦老板，既然账目要慢慢核对，那我不妨顺便打听一下，最近镇上的日常物资进货还顺畅吗？不知道有没有什么比较稳定的货源渠道可以推荐的？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0070",
+    "tick": 18,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "酒馆本分做生意，主张和气与安全",
+    "text": "多谢米拉女士的好意。这雨确实下得大，酒馆里能备着热饮招待大家也是本分。至于生意，只要大家平平安安、按规矩来，就是最好的买卖。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "type": "session_start",
+    "session": "S5",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "event_id": "E0071",
+    "tick": 18
+   },
+   {
+    "type": "session_end",
+    "session": "S4",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner",
+     "soldier"
+    ],
+    "event_id": "E0072",
+    "tick": 18
+   },
+   {
+    "event_id": "E0073",
+    "tick": 18,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0069",
+     "E0070",
+     "E0071",
+     "E0072"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0069",
+     "E0070",
+     "E0071",
+     "E0072"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0068",
+     "E0073"
+    ],
+    "muffled_event_ids": [
+     "E0069",
+     "E0070"
+    ]
+   }
+  ]
+ },
+ {
+  "tick": 19,
+  "time": "22:35",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0074",
+    "tick": 19,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "from": "tables",
+    "to": "bar"
+   },
+   {
+    "event_id": "E0075",
+    "tick": 19,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "自己刚到镇上寻找长期合作，表达寻求稳定物资渠道的意愿",
+    "text": "奥伦老板说得对，做生意确实以和为贵、平平安安最重要。我刚到镇上不久，正想找几个靠谱的长期合作伙伴。如果您以后有稳定的物资需求或者进货渠道，不妨考虑一下我这边。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0076",
+    "tick": 19,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "日常进货走老渠道，雨天不谈远事",
+    "text": "米拉女士，镇上的日常物资进货一直都是老渠道，没什么特别的。这雨天路不好走，大家还是多喝点热饮，谈这些远水解不了近渴。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "type": "session_start",
+    "session": "S6",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner",
+     "soldier"
+    ],
+    "event_id": "E0077",
+    "tick": 19
+   },
+   {
+    "type": "session_end",
+    "session": "S5",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "event_id": "E0078",
+    "tick": 19
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0074",
+     "E0075",
+     "E0076",
+     "E0077",
+     "E0078"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0074",
+     "E0075",
+     "E0076",
+     "E0077",
+     "E0078"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0074",
+     "E0075",
+     "E0076",
+     "E0077",
+     "E0078"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 20,
+  "time": "22:40",
+  "positions": {
+   "owner": "bar",
+   "merchant": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0079",
+    "tick": 20,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "investigation",
+    "claim": "催促酒馆老板继续配合调查",
+    "text": "奥伦老板，米拉女士在跟你谈生意上的事，但我这里还有公事没办完。关于我刚才提到的调查，你真的没有什么需要补充的吗？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0080",
+    "tick": 20,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "向士兵打听镇上其他商业项目和招商消息",
+    "text": "凯尔长官，既然奥伦老板说这雨天不适合谈远事，那我就不打扰他核对账目了。不过我想向您打听一下，除了酒馆这边的日常经营，镇上最近有没有其他什么值得关注的商业项目或者公开招商的消息？",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0081",
+    "tick": 20,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "business_opportunities",
+    "claim": "酒馆货源固定，暂时不需要新渠道",
+    "text": "米拉女士，多谢您的好意。不过我这小酒馆做的是街坊生意，货源一直有固定老主顾照应，暂时不需要扩展新渠道。夜深了，两位慢用，我去看看炉火。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0079",
+     "E0080",
+     "E0081"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0079",
+     "E0080",
+     "E0081"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0079",
+     "E0080",
+     "E0081"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ }
+]

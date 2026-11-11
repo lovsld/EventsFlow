@@ -1,0 +1,516 @@
+[
+ {
+  "tick": 1,
+  "time": "21:05",
+  "positions": {
+   "owner": "bar",
+   "merchant": "tables",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0001",
+    "tick": 1,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0002",
+    "tick": 1,
+    "type": "speak_failed",
+    "actors": [
+     "merchant"
+    ],
+    "location": "tables",
+    "target": "owner",
+    "topic": "business_opportunity",
+    "reason": "target_left"
+   },
+   {
+    "event_id": "E0003",
+    "tick": 1,
+    "type": "wait",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0004",
+    "tick": 1,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "rain_starts",
+    "text": "窗外下起雨来，酒馆里的人今晚大概走不了太早。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0003",
+     "E0004"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0002"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0001"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 2,
+  "time": "21:10",
+  "positions": {
+   "owner": "bar",
+   "merchant": "tables",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0005",
+    "tick": 2,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0006",
+    "tick": 2,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "tables",
+    "target": "owner",
+    "topic": null
+   },
+   {
+    "event_id": "E0007",
+    "tick": 2,
+    "type": "wait",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0007"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0005"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 3,
+  "time": "21:15",
+  "positions": {
+   "owner": "bar",
+   "merchant": "tables",
+   "soldier": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0008",
+    "tick": 3,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "tables",
+    "from": "door",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0009",
+    "tick": 3,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "tables",
+    "target": "owner",
+    "topic": null
+   },
+   {
+    "event_id": "E0010",
+    "tick": 3,
+    "type": "wait",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_start",
+    "session": "S1",
+    "location": "tables",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "event_id": "E0011",
+    "tick": 3
+   },
+   {
+    "event_id": "E0012",
+    "tick": 3,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "酒馆门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0010"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0008",
+     "E0009",
+     "E0011"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0008",
+     "E0009",
+     "E0011"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 4,
+  "time": "21:20",
+  "positions": {
+   "owner": "bar",
+   "merchant": "tables",
+   "soldier": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0013",
+    "tick": 4,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "tables",
+    "topic": "owner_behavior",
+    "claim": null,
+    "text": "你在这里等酒馆老板吗？我注意到你似乎在观察他。",
+    "interrupted": false,
+    "session_location": "tables"
+   },
+   {
+    "event_id": "E0014",
+    "tick": 4,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "tables",
+    "topic": "greeting",
+    "claim": null,
+    "text": "晚上好，士兵。我叫[你的名字]，是新来的商人。我看到你似乎刚进来，有什么事吗？",
+    "interrupted": true,
+    "session_location": "tables"
+   },
+   {
+    "event_id": "E0015",
+    "tick": 4,
+    "type": "wait",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0015"
+    ],
+    "muffled_event_ids": [
+     "E0013",
+     "E0014"
+    ]
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0013",
+     "E0014"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0013",
+     "E0014"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 5,
+  "time": "21:25",
+  "positions": {
+   "owner": "bar",
+   "merchant": "tables",
+   "soldier": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0016",
+    "tick": 5,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "tables",
+    "topic": "greeting",
+    "claim": null,
+    "text": "晚上好，商人。是的，我刚来。我需要找酒馆老板谈谈。",
+    "interrupted": false,
+    "session_location": "tables"
+   },
+   {
+    "event_id": "E0017",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "tables",
+    "topic": "owner_behavior",
+    "claim": null,
+    "text": "我只是对这个小镇的商业氛围感到好奇。您似乎对酒馆老板很熟悉？",
+    "interrupted": true,
+    "session_location": "tables"
+   },
+   {
+    "event_id": "E0018",
+    "tick": 5,
+    "type": "listen",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": "tables",
+    "topic": null
+   },
+   {
+    "event_id": "E0019",
+    "tick": 5,
+    "type": "ambient",
+    "actors": [],
+    "location": "outside",
+    "topic": "distant_shout",
+    "text": "街上远处有人喊了一嗓子，很快没了声音。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0018"
+    ],
+    "muffled_event_ids": [
+     "E0016",
+     "E0017"
+    ]
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0016",
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0016",
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 6,
+  "time": "21:30",
+  "positions": {
+   "owner": "bar",
+   "merchant": "tables",
+   "soldier": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0020",
+    "tick": 6,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "tables",
+    "topic": "owner_behavior",
+    "claim": null,
+    "text": "我对镇长给我的任务有点好奇，所以想找老板了解一下情况。你呢？你似乎对镇上的生意很感兴趣。",
+    "interrupted": false,
+    "session_location": "tables"
+   },
+   {
+    "event_id": "E0021",
+    "tick": 6,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "tables",
+    "topic": "owner_behavior",
+    "claim": null,
+    "text": "您对酒馆老板很熟悉？或许我可以向您打听一些关于镇上商业机会的信息？",
+    "interrupted": true,
+    "session_location": "tables"
+   },
+   {
+    "event_id": "E0022",
+    "tick": 6,
+    "type": "speak_failed",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": "merchant",
+    "topic": "muffled_voices",
+    "reason": "target_left"
+   },
+   {
+    "event_id": "E0023",
+    "tick": 6,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0022",
+     "E0023"
+    ],
+    "muffled_event_ids": [
+     "E0020",
+     "E0021"
+    ]
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0020",
+     "E0021"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0020",
+     "E0021"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ }
+]

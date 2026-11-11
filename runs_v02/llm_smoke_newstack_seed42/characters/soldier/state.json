@@ -1,0 +1,230 @@
+{
+  "character_id": "soldier",
+  "location": "bar",
+  "personality": {
+    "caution": 0.35,
+    "curiosity": 0.7,
+    "honesty": 0.9,
+    "impulsiveness": 0.85,
+    "sociability": 0.55
+  },
+  "principles": [
+    "不主动欺骗无辜者",
+    "不背叛自己的职责",
+    "不接受明显不公正的命令"
+  ],
+  "goals": [
+    {
+      "key": "complete_investigation",
+      "desc": "完成调查任务",
+      "weight": 1.0
+    },
+    {
+      "key": "keep_honor",
+      "desc": "维护自己的荣誉",
+      "weight": 0.9
+    },
+    {
+      "key": "learn_mayor_truth",
+      "desc": "搞清楚镇长是否真的存在问题",
+      "weight": 0.75
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "investigation_order",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "今天接到命令，调查酒馆老板最近的异常行为"
+    },
+    {
+      "key": "mayor_suspicious",
+      "confidence": 0.35,
+      "kind": "inferred",
+      "desc": "最近觉得镇长的一些做法不太对劲（直觉，无证据）"
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "valence": 0.0,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "merchant 说：老板，这雨下得真不是时候，不过正好让我有时间尝尝这里的招牌酒。最近镇上的生意还好吗？",
+      "event_id": "E0007"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "owner 说：外面下雨了，米拉。要来杯热麦酒暖暖身子吗？",
+      "event_id": "E0008"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "merchant 说：好啊，来一杯热麦酒正合适。谢谢你，奥伦。顺便问一句，这位年轻的军官先生也来一杯吗？这雨看起来一时半会儿停不了。",
+      "event_id": "E0012"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "owner 说：生意也就那样，老样子。热麦酒马上就来，你稍等一下。",
+      "event_id": "E0013"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "merchant 说：军官先生，这雨夜巡查辛苦了。我看你似乎在向奥伦老板询问镇上的情况，是有什么公务上的难处吗？或许我也能听听看。",
+      "event_id": "E0016"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "owner 说：长官，我这小酒馆天天开门迎客，能有什么异常？不过是老样子做点小本买卖罢了。您要是累了，也来碗热麦酒暖暖身子？",
+      "event_id": "E0017"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 说：年轻人，看你这么晚还在盘问奥伦老板，镇上是不是出了什么让人头疼的案子？如果有需要帮忙的地方，说不定我能出点力。",
+      "event_id": "E0019"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "owner 说：长官，小店一向本分经营。米拉小姐也是过路客，咱们镇上向来安宁，真没什么好操心的。",
+      "event_id": "E0020"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "merchant 说：年轻人，既然镇长和治安似乎有了些新情况，作为外来做生意的商人，我也希望能多了解一点镇上的规矩和安全状况，免得不小心碰了钉子。不知道这是否方便透露一二？",
+      "event_id": "E0023"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "owner 说：长官，真是有劳你跑这一趟了。不过这夜里风雨交加，我一个开酒馆的能有什么反常举动？多半是哪个喝醉的客人胡乱嚼舌头罢了。如果您不介意，喝杯热饮暖和暖和，别把这些无稽之谈放在心上。",
+      "event_id": "E0024"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0025"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "owner": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "merchant": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0007",
+    "E0008",
+    "E0012",
+    "E0013",
+    "E0016",
+    "E0017",
+    "E0019",
+    "E0020",
+    "E0023",
+    "E0024",
+    "E0025"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "merchant",
+      "topic": "weather_and_business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 2,
+      "from": "owner",
+      "topic": "weather",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 3,
+      "from": "merchant",
+      "topic": "social_and_weather",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 3,
+      "from": "owner",
+      "topic": "business",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 4,
+      "from": "merchant",
+      "topic": "investigation_business",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 4,
+      "from": "owner",
+      "topic": "investigation_business",
+      "claim": "经营正常，没有异常",
+      "kind": "speak"
+    },
+    {
+      "tick": 5,
+      "from": "merchant",
+      "topic": "investigation_business",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "owner",
+      "topic": "investigation_business",
+      "claim": "经营正常，没有异常",
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "merchant",
+      "topic": "investigation_business",
+      "claim": "外来商人希望了解镇上的安全和商业环境",
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "owner",
+      "topic": "investigation_business",
+      "claim": "夜间举动反常是谣言或酒后胡言",
+      "kind": "speak"
+    }
+  ],
+  "pending_question": {
+    "from": "merchant",
+    "topic": "investigation_business",
+    "tick": 6
+  },
+  "action_counts": {
+    "move:tables:": 1,
+    "move:bar:": 1,
+    "ask:owner:investigation_business": 2,
+    "speak:merchant:social": 1,
+    "speak:merchant:investigation_business": 1
+  }
+}
