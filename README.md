@@ -70,3 +70,42 @@ python3 -m unittest discover -s tests -v       # 全部测试
 `src/agent_brain.py` 中的 `LLMProvider` 是预留的同接口插槽：接入模型时，
 每个 Agent 进程各持一个独立会话/密钥，输入仍只有自己的感知与私人状态，
 其余机制（世界、投递、解决）无需改动。V0.2 的首要工作就是接这一层。
+
+---
+
+# V0.2 / V0.2-A 现状（2026-11-11 更新）
+
+V0.1 的三进程实现保留在 `src/` 作对照基线，不再改动。现行系统是
+`v02/` 包：单进程 asyncio 事件驱动、Scheduler 每 tick 统一提交一次
+世界步进，角色仍各自持有私有状态与记忆、只能感知被投递的事件——
+独立性约束与 V0.1 相同，机制全部换代。
+
+- **决策**：rule（确定性、零外部依赖）/ mock / 真实 LLM 多后端
+  （Gemini 默认；DeepSeek/Kimi/Qwen/OpenAI 同一兼容层，`ACP_*`
+  环境变量选后端、模型与密钥池）。LLM 只提意图：协议严格校验、
+  运行时校验目标归属与行动成员资格，世界层最终裁定。
+- **认知**：结构化预测 → 预测误差 → 信念/信任更新的闭环全程落盘
+  可复原（SQLite）；信念带证据列表（来源类型/可靠度/事件 id），
+  kind 与置信度由证据派生；任何置信度变化都有审计行。
+- **计划与目标**：计划状态机（active/blocked/completed/abandoned）
+  + 承诺衰减与高承诺替换门控 + 结果驱动步进；Goal 是带生命周期
+  的结构化运行时对象（确定性驱动，无 LLM 自由增删）。
+- **实验工具**：种子组、反事实（投递抑制）、STEP1 一致性审计、
+  指标聚合（根目录 `experiments.py` / `audit.py`）；中断可续跑
+  （`--resume`），LLM 额度耗尽可等待重试（`--loop`）。
+- **场景即数据**：角色目录与世界配置（`v02/world_config.py`）
+  可整组替换（`run_simulation(characters_root=…, world_config=…)`）；
+  变体场景实测结论为「通用性部分成立」，边界见实验报告。
+
+运行（V0.2）：
+
+```bash
+.venv/bin/python main.py --mode rule --ticks 20 --seed 42
+.venv/bin/python -m pytest tests_v02 tests -q     # 134 个测试
+```
+
+文档：`docs/V0.2-A_ARCHITECTURE.md`（实际结构）、
+`docs/V0.2-A_EXPERIMENT_REPORT.md`（三组实验 + §16 复验）、
+`docs/V0.2-A_PHASE1_REVIEW.md`（改造前审查）、`PHASE_*_REPORT.md`
+与 `V02A_PHASE3_REPORT.md`（各阶段报告）、`LOCAL_DEPLOY.md`
+（本地部署与多后端配置）。

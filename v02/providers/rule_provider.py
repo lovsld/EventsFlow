@@ -281,6 +281,20 @@ class RuleProvider(LLMProvider):
         score, intent, why = cands[0]
         verb = intent["verb"]
         claim = intent.get("claim")
+        # V0.2-A: report the goal this decision serves — the active
+        # plan's goal when it is one of the character's configured
+        # goals, else the highest-priority active goal (the context
+        # presents goals priority-first). Always a real goal key, so
+        # the runtime's ownership validation passes by construction.
+        goal_keys = {g.key for g in context.active_goals}
+        selected_goal = None
+        if plan_step and plan_step.get("goal") in goal_keys:
+            selected_goal = plan_step["goal"]
+        else:
+            for g in context.active_goals:
+                if g.status == "active":
+                    selected_goal = g.key
+                    break
         decision = AgentDecision(
             intent=f"{verb}:{claim or intent.get('topic') or intent.get('target_location') or intent.get('target') or ''}",
             target=intent.get("target"),
@@ -292,6 +306,7 @@ class RuleProvider(LLMProvider):
             expected_outcome=EXPECTED.get(claim or "", "situation_develops"),
             confidence=round(min(0.95, max(0.05, score)), 2),
             plan_update=PlanUpdate(status="continue"),
+            selected_goal_id=selected_goal,
         )
         return ProviderResult(decision=decision, provider=self.name, model=self.model,
                               raw_output=decision.model_dump_json())

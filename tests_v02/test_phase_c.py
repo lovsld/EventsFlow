@@ -194,7 +194,15 @@ def test_prediction_error_unexpected_refusal_creates_belief():
     # the prediction-error rule fired on the chain record: -0.08, and a
     # new inferred belief about the owner's cooperativeness was created
     ups = agent.drain_chain_updates()
-    changes = {(u["key"]): u for u in ups if u["kind"] == "belief_change"}
+    # V0.2-A adjustment (documented in V02A_PHASE3_REPORT.md): since
+    # Phase 3 the interpretation path's trust movement is ALSO recorded
+    # in belief_changes (history completion), so this scenario now
+    # yields two trust:owner rows; the assertions below select the
+    # prediction-error row (the one carrying a prediction_id), which
+    # is what this test is about. The interpretation row is asserted
+    # separately at the end.
+    changes = {(u["key"]): u for u in ups
+               if u["kind"] == "belief_change" and u.get("prediction_id")}
     assert changes["trust:owner"]["before"] == 0.3
     assert changes["trust:owner"]["after"] == 0.22
     assert changes["owner_cooperative"]["before"] is None
@@ -204,6 +212,14 @@ def test_prediction_error_unexpected_refusal_creates_belief():
     assert belief.kind == "inferred"
     # (perceiving the refusal itself additionally costs the V0.1 -0.05)
     assert agent.memory.trust_in("owner") == 0.17
+    # ...and that perception-side -0.05 is now itself an auditable
+    # belief_changes row (V0.2-A history completion, cause
+    # "interpretation", no prediction attached)
+    interp = [u for u in ups if u["kind"] == "belief_change"
+              and u.get("cause") == "interpretation"
+              and u["key"] == "trust:owner"]
+    assert len(interp) == 1
+    assert interp[0]["before"] == 0.22 and interp[0]["after"] == 0.17
 
 
 def test_prediction_hit_changes_nothing():

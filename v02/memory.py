@@ -6,6 +6,14 @@ Epistemic kinds stay separated exactly as in V0.1:
   heard       — content another agent claimed (may be a lie)
   inferred    — the agent's own speculation
 
+V0.2-A Phase 3 (task book section 5.3): beliefs are evidence-backed.
+Every update appends an Evidence entry (deduplicated by
+source_event_id); the belief's confidence is then RECOMPUTED from the
+whole evidence set and its legacy `kind` label is DERIVED from the
+highest-tier evidence — so a rumour heard first can no longer trap or
+drag down later first-hand evidence (the pre-V0.2-A merge blended
+0.6*old + 0.4*new across kinds and never upgraded the label).
+
 Persistence to the run folder (state.json / memory.md / beliefs.md) happens
 only when a run directory is attached; the authoritative store for V0.2
 experiments is the SQLite database (see persistence.py).
@@ -15,7 +23,44 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from .protocol import Belief, CharacterState
+from .protocol import (SOURCE_TIER, SOURCE_TO_KIND, Belief, CharacterState,
+                       Evidence)
+
+
+def _source_group(ev: Evidence) -> str:
+    """The independence group of one evidence entry. Corroboration is
+    only credited ACROSS groups: repeated testimony from the same
+    speaker, or repeated inferences of one's own, are the same channel
+    saying it again — not independent confirmation."""
+    if ev.source_type == "testimony" and ev.source:
+        return f"testimony:{ev.source}"
+    if ev.source_type in ("direct_observation", "direct_interaction") \
+            and ev.source:
+        return f"{ev.source_type}:{ev.source}"
+    return f"self:{ev.source_type}"
+
+
+def recompute_confidence(evidence: list[Evidence]) -> float:
+    """Confidence from an evidence set: within each independence
+    group only the strongest entry counts; groups combine by noisy-OR
+    (1 - prod(1 - r)). Consequences, by construction: a single direct
+    evidence (r = 1.0) pins confidence at 1.0 and later weak testimony
+    cannot drag it down; independent corroboration raises confidence
+    with diminishing returns; the result is always in [0, 1]."""
+    best: dict[str, float] = {}
+    for ev in evidence:
+        g = _source_group(ev)
+        best[g] = max(best.get(g, 0.0), ev.reliability)
+    miss = 1.0
+    for r in best.values():
+        miss *= (1.0 - r)
+    return round(1.0 - miss, 3)
+
+
+def derived_kind(evidence: list[Evidence]) -> str:
+    """The legacy kind label of the strongest evidence tier present."""
+    top = max(evidence, key=lambda e: SOURCE_TIER[e.source_type])
+    return SOURCE_TO_KIND[top.source_type]
 
 
 class AgentMemory:
@@ -65,16 +110,39 @@ class AgentMemory:
                 return b
         return None
 
-    def update_belief(self, key: str, confidence: float, kind: str, desc: str) -> None:
+    def update_belief(self, key: str, confidence: float, kind: str, desc: str,
+                      *, source_type: str | None = None,
+                      reliability: float | None = None,
+                      event_id: str | None = None, tick: int = 0,
+                      source: str | None = None) -> None:
+        """Record one piece of evidence for a belief and recompute.
+
+        The positional arguments are the pre-V0.2-A call shape:
+        `confidence` is the strength of THIS evidence (it becomes the
+        entry's reliability unless `reliability` is given), `kind` the
+        legacy epistemic label (mapped to a source_type unless
+        `source_type` is given). `event_id` deduplicates: the same
+        event can never add its evidence twice. Callers that have no
+        world event id pass a stable synthesized one (e.g. a search
+        result or a prediction id)."""
+        from .protocol import KIND_TO_SOURCE
+        ev = Evidence(
+            source_event_id=event_id or f"auto:{tick}:{key}",
+            source_type=source_type or KIND_TO_SOURCE[kind],
+            reliability=confidence if reliability is None else reliability,
+            observed_at=tick, source=source)
         old = self._find(key)
-        if old:
-            # Same V0.1 merge rule: never blindly overwrite a stronger source.
-            merged = max(old.confidence, confidence) if kind == old.kind else \
-                round(0.6 * old.confidence + 0.4 * confidence, 3)
-            old.confidence = merged
-        else:
-            self.state.beliefs.append(Belief(key=key, confidence=confidence,
-                                             kind=kind, desc=desc))
+        if old is None:
+            self.state.beliefs.append(Belief(
+                key=key, confidence=recompute_confidence([ev]),
+                kind=derived_kind([ev]), desc=desc, evidence=[ev]))
+            return
+        if any(e.source_event_id == ev.source_event_id
+               for e in old.evidence):
+            return                      # same event: never counted twice
+        old.evidence.append(ev)
+        old.confidence = recompute_confidence(old.evidence)
+        old.kind = derived_kind(old.evidence)
 
     def belief(self, key: str) -> Belief | None:
         return self._find(key)
@@ -95,5 +163,8 @@ class AgentMemory:
             json.dumps(self.state.model_dump(), ensure_ascii=False, indent=2), encoding="utf-8")
         lines = [f"# {self.state.character_id} 当前相信的事情（自动生成，可能与事实不符）", ""]
         for b in sorted(self.state.beliefs, key=lambda x: x.key):
-            lines.append(f"- {b.key} (confidence {b.confidence:.2f}, {b.kind}): {b.desc}")
+            prov = ", ".join(f"{e.source_type}@{e.source_event_id}"
+                             for e in b.evidence)
+            lines.append(f"- {b.key} (confidence {b.confidence:.2f}, {b.kind}): "
+                         f"{b.desc}（证据：{prov}）")
         (self.dir / "beliefs.md").write_text("\n".join(lines) + "\n", encoding="utf-8")

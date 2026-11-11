@@ -1,0 +1,10 @@
+goals:
+- desc: 看好仓库，不出纰漏
+  key: guard_storehouse
+  weight: 1.0
+- desc: 找回失踪的仓库钥匙
+  key: find_missing_key
+  weight: 0.85
+- desc: 避免因丢钥匙被东家责罚
+  key: avoid_blame
+  weight: 0.8

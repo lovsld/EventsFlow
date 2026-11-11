@@ -147,10 +147,11 @@ def test_seed_group_complete_and_reproducible(tmp_path):
     group42 = next(m for m in summary["runs"] if m["seed"] == 42)
     assert (again / "world_log.json").read_bytes() == \
         (Path(group42["run_dir"]) / "world_log.json").read_bytes()
-    # seed 42 is the canonical trajectory — 87 events since the
-    # plan-layer upgrade (was 85 on the pre-upgrade baseline, which
-    # this test asserted until 2026-11-11; see PLAN_LAYER_REPORT.md)
-    assert group42["total_events"] == 87
+    # seed 42 is the canonical trajectory — 85 events since V0.2-A
+    # Phase 3 (evidence-based beliefs + commitment gate; was 87 on
+    # the plan-layer canonical asserted until 2026-11-11 — see
+    # V02A_PHASE3_REPORT.md)
+    assert group42["total_events"] == 85
     assert group42["soldier_read_letter"] is True
 
 

@@ -1,0 +1,10 @@
+goals:
+- desc: 按时开库提走寄存的绸缎
+  key: retrieve_goods
+  weight: 1.0
+- desc: 保住货物不受损失
+  key: protect_goods
+  weight: 0.85
+- desc: 打听仓库钥匙的下落
+  key: learn_key_whereabouts
+  weight: 0.7

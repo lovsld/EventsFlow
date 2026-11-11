@@ -1,0 +1,117 @@
+{
+  "character_id": "traveler",
+  "location": "door",
+  "personality": {
+    "caution": 0.6,
+    "curiosity": 0.7,
+    "honesty": 0.5,
+    "impulsiveness": 0.4,
+    "sociability": 0.8
+  },
+  "principles": [
+    "货期不能误",
+    "和气生财",
+    "先礼后兵"
+  ],
+  "goals": [
+    {
+      "key": "retrieve_goods",
+      "desc": "按时开库提走寄存的绸缎",
+      "weight": 1.0,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "protect_goods",
+      "desc": "保住货物不受损失",
+      "weight": 0.85,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.85,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "learn_key_whereabouts",
+      "desc": "打听仓库钥匙的下落",
+      "weight": 0.7,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.7,
+      "created_at": 0,
+      "deadline": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "goods_stored_here",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "有一批绸缎寄存在这间仓库，凭单提货，赶明天的船（私人经历）",
+      "evidence": [
+        {
+          "source_event_id": "seed:goods_stored_here",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "suspicion": 0.35
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "环境：河边远处有人喊了一嗓子，很快没了声音。",
+      "event_id": "E0018"
+    },
+    {
+      "tick": 19,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 keeper,apprentice 在bar说话，听不清内容。",
+      "event_id": "E0068"
+    },
+    {
+      "tick": 21,
+      "kind": "experienced",
+      "text": "环境：河边远处有人喊了一嗓子，很快没了声音。",
+      "event_id": "E0075"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "apprentice": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "keeper": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0018",
+    "E0068",
+    "E0075"
+  ],
+  "utterances_heard": [],
+  "pending_question": null,
+  "action_counts": {
+    "observe::": 10,
+    "listen::": 4,
+    "move:door:": 4,
+    "move:outside:": 2,
+    "wait::": 3,
+    "move:tables:": 1
+  }
+}

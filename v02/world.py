@@ -22,29 +22,30 @@ import random
 
 from .broker import build_perception, deliver
 from .interaction import InteractionManager
+from .world_config import (DEFAULT_WORLD, adjacency_of, ambient_of,
+                           initial_locations_state, initial_objects_state,
+                           locations_of)
 
 __all__ = ["WorldEngine", "resolve", "InteractionManager",
            "build_perception", "deliver", "ADJACENCY", "LOCATIONS", "VERBS"]
 
-ADJACENCY = {
-    "bar": {"tables"}, "tables": {"bar", "door", "back_room"},
-    "door": {"tables", "outside"}, "back_room": {"tables"}, "outside": {"door"},
-}
-LOCATIONS = ["bar", "tables", "door", "back_room", "outside"]
+# V0.2-A Phase 5 (experiment 3a): the world's static structure is
+# data in world_config.DEFAULT_WORLD; these module constants are
+# derived from it (single definition) for existing importers.
+ADJACENCY = adjacency_of()
+LOCATIONS = locations_of()
 VERBS = {"move", "speak", "ask", "confront", "observe", "listen", "work",
          "search", "refuse", "wait", "give", "show", "take"}
 
-AMBIENT = [
-    ("rain_starts", None, "窗外下起雨来，酒馆里的人今晚大概走不了太早。"),
-    ("bell_rings", "door", "酒馆门口的铃铛响了一声，又没有人进来。"),
-    ("candle_flickers", "bar", "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"),
-    ("distant_shout", "outside", "街上远处有人喊了一嗓子，很快没了声音。"),
-    ("cat_knocks_glass", "tables", "一只野猫碰倒了桌边的空杯子，碎在地上。"),
-]
+AMBIENT = ambient_of()
 
 
 def resolve(world: dict, intents: dict[str, dict], rng, event_seq: list[int],
-            interactions: InteractionManager) -> list[dict]:
+            interactions: InteractionManager,
+            world_config: dict | None = None) -> list[dict]:
+    cfg = world_config or DEFAULT_WORLD
+    adjacency = adjacency_of(cfg)
+    locations = locations_of(cfg)
     def new_event(type_, actors, location, **kw):
         event_seq[0] += 1
         ev = {"event_id": f"E{event_seq[0]:04d}", "tick": world["tick"], "type": type_,
@@ -67,10 +68,10 @@ def resolve(world: dict, intents: dict[str, dict], rng, event_seq: list[int],
             continue
         if verb == "move":
             dest = intent.get("target_location")
-            if dest not in LOCATIONS:
+            if dest not in locations:
                 results[aid] = {"ok": False, "reason": "no such location"}
                 continue
-            if dest != loc and dest not in ADJACENCY.get(loc, set()):
+            if dest != loc and dest not in adjacency.get(loc, set()):
                 results[aid] = {"ok": False, "reason": f"cannot reach {dest} from {loc} in one tick"}
                 continue
             me["location"] = dest
@@ -92,18 +93,24 @@ def resolve(world: dict, intents: dict[str, dict], rng, event_seq: list[int],
             results[aid] = {"ok": True, "event_id": ev["event_id"], "interrupted": interrupted}
         elif verb == "search":
             place = intent.get("target_location") or loc
+            # Data-driven (experiment 3a): a search finds every key
+            # object objectively located at the searched place. For
+            # the canonical world this is exactly the old rule — the
+            # letter, only in the back room.
             found = []
-            if place == "back_room" and world["objects"]["anonymous_letter"]["location"] == "back_room":
-                found.append("anonymous_letter")
-                world["objects"]["anonymous_letter"]["seen_by"].append(aid)
+            for oid, obj_state in world["objects"].items():
+                if obj_state.get("location") == place:
+                    found.append(oid)
+                    obj_state.setdefault("seen_by", []).append(aid)
             events.append(new_event("search", [aid], place, found=found))
             results[aid] = {"ok": True, "found": found}
         elif verb == "show":
             obj = intent.get("object")
             target = intent.get("target")
-            if obj == "anonymous_letter" and aid == world["objects"]["anonymous_letter"]["holder"]:
+            obj_state = world["objects"].get(obj) if obj else None
+            if obj_state is not None and obj_state.get("holder") == aid:
                 if target and world["agents"][target]["location"] == loc:
-                    world["objects"]["anonymous_letter"]["seen_by"].append(target)
+                    obj_state.setdefault("seen_by", []).append(target)
                     events.append(new_event("show", [aid, target], loc, object=obj))
                     results[aid] = {"ok": True}
                 else:
@@ -128,7 +135,9 @@ def resolve(world: dict, intents: dict[str, dict], rng, event_seq: list[int],
 
 
 class WorldEngine:
-    def __init__(self, configs: dict, seed: int = 42):
+    def __init__(self, configs: dict, seed: int = 42,
+                 world_config: dict | None = None):
+        self.world_config = world_config or DEFAULT_WORLD
         self.rng = random.Random(seed)
         self.tick_no = 0
         self.event_seq = [0]
@@ -141,15 +150,8 @@ class WorldEngine:
                            "initiative": 0.5 + cfg.personality["impulsiveness"]}
         self.state = {
             "tick": 0, "time": "21:00", "weather": "clear", "agents": agents,
-            "locations": {
-                "bar": {"objects": ["counter", "candle", "wine_shelf"]},
-                "tables": {"objects": ["oak_table", "empty_glasses"]},
-                "door": {"objects": ["door_bell"]},
-                "back_room": {"objects": ["drawer", "ledger_shelf"]},
-                "outside": {"objects": ["street_lamp"]},
-            },
-            "objects": {"anonymous_letter": {"holder": "owner", "location": "back_room",
-                                             "seen_by": ["owner"]}},
+            "locations": initial_locations_state(self.world_config),
+            "objects": initial_objects_state(self.world_config),
             "last_action_results": {},
         }
 
@@ -162,7 +164,7 @@ class WorldEngine:
         minutes = 21 * 60 + self.tick_no * 5
         self.state["time"] = f"{minutes // 60:02d}:{minutes % 60:02d}"
         events = resolve(self.state, intents, self.rng, self.event_seq,
-                         self.interactions)
+                         self.interactions, self.world_config)
         for sev in self.interactions.sync(self.state, self.tick_no):
             self.event_seq[0] += 1
             sev.update({"event_id": f"E{self.event_seq[0]:04d}", "tick": self.tick_no})
@@ -171,10 +173,11 @@ class WorldEngine:
             if ev["type"] in ("speak", "ask", "confront") and ev.get("ok", True):
                 self.interactions.record_utterance(self.state, ev["location"], ev,
                                                    bool(ev.get("interrupted")))
+        ambient = ambient_of(self.world_config)
         if self.rng.random() < 0.35:
-            kind, loc, text = self.rng.choice(AMBIENT)
+            kind, loc, text = self.rng.choice(ambient)
             if kind == "rain_starts" and self.state["weather"] == "rain":
-                kind, loc, text = "candle_flickers", "bar", AMBIENT[2][2]
+                kind, loc, text = "candle_flickers", "bar", ambient[2][2]
             if kind == "rain_starts":
                 self.state["weather"] = "rain"
             self.event_seq[0] += 1

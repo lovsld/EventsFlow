@@ -38,12 +38,12 @@ from pathlib import Path
 
 from .belief_manager import BeliefManager
 from .config import CharacterConfig
-from .context_builder import build_context
+from .context_builder import action_is_offered, build_context
 from .memory import AgentMemory
 from .memory_manager import MemoryManager
-from .plan_manager import PlanManager
+from .plan_manager import COMMITMENT_GATE, PlanManager
 from .plan_steps import (action_signature, owner_location_from_perception,
-                         step_fulfilled)
+                         step_consistent, step_fulfilled)
 from .prediction import PredictionEngine
 from .protocol import AgentDecision
 from .providers.base import LLMProvider, ProviderError, QuotaExhaustedError
@@ -72,7 +72,22 @@ class CharacterAgent:
         self._cons_from = 0                # consolidation cursor into STM
 
     # ---------------- plan helpers (PlanManager-backed) ----------------
-    def _set_plan(self, goal: str, steps: list[str]) -> None:
+    def _set_plan(self, goal: str, steps: list[str],
+                  critical: bool = False) -> None:
+        """Interpretation-driven plan setting, with the V0.2-A
+        commitment gate: a plan at or above COMMITMENT_GATE commitment
+        is NOT displaced by ordinary (non-critical) information — the
+        attempted replacement is recorded and the plan stands. Only
+        critical information (first-hand discovery, or an interlocutor
+        directly revealing something about the agent's own situation)
+        or a same-goal refresh replaces a high-commitment plan."""
+        plan = self.state.current_plan
+        if plan is not None and plan.status in ("active", "blocked") \
+                and plan.goal != goal \
+                and plan.commitment >= COMMITMENT_GATE and not critical:
+            self.plan_manager.note_blocked_replacement(
+                self.state, getattr(self, "_tick", 0), goal)
+            return
         self.plan_manager.set_plan(self.state, goal, steps,
                                    tick=getattr(self, "_tick", 0),
                                    reason="interpretation")
@@ -164,6 +179,22 @@ class CharacterAgent:
                               bool(action_result.get("ok")),
                               agent_loc=chk["agent_loc"],
                               owner_loc=chk["owner_loc"]):
+            # V0.2-A: a genuinely attempted step (the shared predicate
+            # judges the action consistent with the step) whose result
+            # did not fulfil it counts as a step failure; enough
+            # consecutive failures block the plan. An action that was
+            # not even aimed at the step is off-plan behaviour, not a
+            # step failure, and counts nothing here.
+            if step_consistent(chk["step"], chk["action"],
+                               agent_loc=chk["agent_loc"],
+                               owner_loc=chk["owner_loc"]) is True:
+                self.plan_manager.note_step_failure(
+                    self.state, tick, chk["step"])
+                for tr in self._drain_plan_transitions():
+                    self._chain_updates.append(
+                        {**tr, "kind": "plan_transition",
+                         "transition_kind": tr.get("kind"),
+                         "decision_key": decision_key})
             return
         note = self.plan_manager.advance_from_result(
             self.state, action_signature(chk["action"]), tick, chk["step"])
@@ -172,6 +203,11 @@ class CharacterAgent:
                 self._chain_updates.append(
                     {**tr, "kind": "plan_transition",
                      "transition_kind": tr.get("kind"),
+                     "decision_key": decision_key})
+            for gc in self.plan_manager.drain_goal_changes():
+                self._chain_updates.append(
+                    {**gc, "kind": "goal_change",
+                     "change_kind": gc.get("kind"),
                      "decision_key": decision_key})
 
     # ---------------- perception -> subjective updates ----------------
@@ -183,20 +219,36 @@ class CharacterAgent:
         # before anything new is interpreted.
         self._evaluate_pending(perception, action_result)
         st.location = perception["location"]
+        # V0.2-A (belief-history completion): snapshot beliefs/trust
+        # AFTER the prediction-error path has run, so the diff below
+        # captures exactly the interpretation path's changes — the
+        # belief_changes table then covers every belief change, not
+        # only prediction-error ones (review item P-2).
+        beliefs_before = {b.key: (b.confidence, b.kind) for b in st.beliefs}
+        trust_before = {o: rel.get("trust", 0.3)
+                        for o, rel in st.relationships.items()}
 
         if action_result and action_result.get("found"):
             for obj in action_result["found"]:
                 if obj == "anonymous_letter" and self.config.character_id != "owner":
                     self.memory.remember(tick, "experienced",
                                          "我在后屋的抽屉里发现并读到一封匿名信，信中称镇长私吞了公共资金。", None)
-                    self.memory.update_belief("anonymous_letter_exists", 1.0, "experienced",
-                                              "匿名信真实存在（我亲眼读到）")
-                    self.memory.update_belief("mayor_embezzled", 0.6, "heard",
-                                              "信中称镇长私吞公共资金")
+                    self.memory.update_belief(
+                        "anonymous_letter_exists", 1.0, "experienced",
+                        "匿名信真实存在（我亲眼读到）",
+                        source_type="direct_observation",
+                        event_id=f"search_result@{tick}", tick=tick,
+                        source="anonymous_letter")
+                    self.memory.update_belief(
+                        "mayor_embezzled", 0.6, "heard",
+                        "信中称镇长私吞公共资金",
+                        source_type="testimony",
+                        event_id=f"search_result@{tick}", tick=tick,
+                        source="anonymous_letter")
                     st.emotions["suspicion"] = min(1.0, st.emotions["suspicion"] + 0.25)
                     self._set_plan("decide_what_to_do_about_letter",
                                    ["return_to_front", "confront_owner", "observe_response",
-                                    "decide_next_action"])
+                                    "decide_next_action"], critical=True)
                 elif obj == "anonymous_letter":
                     self.memory.remember(tick, "experienced", "我检查了抽屉，匿名信还在原处。", None)
 
@@ -218,6 +270,31 @@ class CharacterAgent:
             self._chain_updates.append(
                 {**tr, "kind": "plan_transition",
                  "transition_kind": tr.get("kind"), "decision_key": None})
+        for gc in self.plan_manager.drain_goal_changes():
+            self._chain_updates.append(
+                {**gc, "kind": "goal_change",
+                 "change_kind": gc.get("kind"), "decision_key": None})
+        # interpretation-path belief/trust changes join the audit table
+        for b in st.beliefs:
+            old = beliefs_before.get(b.key)
+            if old is None or old != (b.confidence, b.kind):
+                self._chain_updates.append(
+                    {"kind": "belief_change", "tick": tick,
+                     "character_id": self.config.character_id,
+                     "decision_key": None, "prediction_id": None,
+                     "key": b.key, "change_kind": b.kind,
+                     "before": old[0] if old else None,
+                     "after": b.confidence, "cause": "interpretation"})
+        for other, rel in st.relationships.items():
+            old_t = trust_before.get(other, 0.3)
+            if rel.get("trust", 0.3) != old_t:
+                self._chain_updates.append(
+                    {"kind": "belief_change", "tick": tick,
+                     "character_id": self.config.character_id,
+                     "decision_key": None, "prediction_id": None,
+                     "key": f"trust:{other}", "change_kind": "trust",
+                     "before": old_t, "after": rel.get("trust", 0.3),
+                     "cause": "interpretation"})
         self.memory.save_state()
 
     def _perceive_event(self, ev: dict, tick: int) -> None:
@@ -238,8 +315,14 @@ class CharacterAgent:
             self._interpret(ev)
         elif etype == "show" and ev.get("object") == "anonymous_letter":
             self.memory.remember(tick, "experienced", f"{actor} 把一封匿名信拿给我看了。", ev["event_id"])
-            self.memory.update_belief("anonymous_letter_exists", 1.0, "experienced", "我亲眼见到了匿名信")
-            self.memory.update_belief("mayor_embezzled", 0.55, "heard", "信中称镇长私吞公共资金")
+            self.memory.update_belief(
+                "anonymous_letter_exists", 1.0, "experienced", "我亲眼见到了匿名信",
+                source_type="direct_interaction", event_id=ev["event_id"],
+                tick=tick, source=actor)
+            self.memory.update_belief(
+                "mayor_embezzled", 0.55, "heard", "信中称镇长私吞公共资金",
+                source_type="testimony", event_id=ev["event_id"],
+                tick=tick, source="anonymous_letter")
             self.memory.adjust_trust(actor, +0.1)
         elif etype == "search":
             self.memory.remember(tick, "experienced", f"{actor} 在 {ev.get('location')} 翻找着什么。", ev["event_id"])
@@ -259,22 +342,27 @@ class CharacterAgent:
         if claim in ("mayor_hint", "mayor_late_payment", "answer_mayor"):
             base = 0.5 if claim != "mayor_hint" else 0.45
             self.memory.update_belief("mayor_embezzled", base, "heard",
-                                      f"{speaker} 的话暗示镇长财务有问题")
+                                      f"{speaker} 的话暗示镇长财务有问题",
+                                      event_id=ev["event_id"], tick=self._tick,
+                                      source=speaker)
             if me == "merchant":
                 self.memory.update_belief("mayor_deal_risky", 0.65, "inferred",
-                                          "和镇长做生意可能有回款风险，但消息本身值钱")
+                                          "和镇长做生意可能有回款风险，但消息本身值钱",
+                                          event_id=ev["event_id"], tick=self._tick)
                 self._set_plan("probe_more_mayor_news", ["probe_more_mayor_news", "protect_wealth"])
                 self.memory.remember(st.short_term_memory[-1]["tick"] if st.short_term_memory else 0,
                                      "inferred", "镇长若真出事，货款要小心；这条消息也许能换人情。", None)
             elif me == "soldier":
                 st.emotions["suspicion"] = min(1.0, st.emotions["suspicion"] + 0.2)
                 self.memory.update_belief("investigation_widening", 0.6, "inferred",
-                                          "事情可能不止酒馆老板，镇长本人也值得查")
+                                          "事情可能不止酒馆老板，镇长本人也值得查",
+                                          event_id=ev["event_id"], tick=self._tick)
                 self._set_plan("press_for_evidence", ["press_for_evidence"])
             elif me == "owner":
                 st.emotions["suspicion"] = min(1.0, st.emotions["suspicion"] + 0.3)
                 self.memory.update_belief("rumor_spreading", 0.55, "inferred",
-                                          "关于镇长资金的风声可能正在扩散")
+                                          "关于镇长资金的风声可能正在扩散",
+                                          event_id=ev["event_id"], tick=self._tick)
                 self._set_plan("find_letter_source", ["find_letter_source", "stay_calm"])
             self.memory.adjust_trust(speaker, +0.03 * P["sociability"])
         elif claim == "investigation_probe":
@@ -285,23 +373,30 @@ class CharacterAgent:
                 st.emotions["arousal"] = min(1.0, st.emotions["arousal"] + 0.25 * scale)
                 st.emotions["suspicion"] = min(1.0, st.emotions["suspicion"] + 0.2 * scale)
                 self.memory.update_belief("being_investigated", 0.8, "inferred",
-                                          "镇长的卫兵在查我，可能和那封信有关")
-                self._set_plan("deny_and_observe", ["deny_and_observe", "protect_tavern"])
+                                          "镇长的卫兵在查我，可能和那封信有关",
+                                          event_id=ev["event_id"], tick=self._tick)
+                self._set_plan("deny_and_observe", ["deny_and_observe", "protect_tavern"],
+                               critical=True)
             self.memory.adjust_trust(speaker, -0.02)
         elif claim == "letter_question":
             if me == "owner":
                 st.emotions["arousal"] = min(1.0, st.emotions["arousal"] + 0.35)
                 self.memory.update_belief("letter_known_by_others", 0.85, "inferred",
-                                          "已经有人知道信在我这里（或在诈我）")
-                self._set_plan("deny_letter", ["deny_letter", "find_who_talked"])
+                                          "已经有人知道信在我这里（或在诈我）",
+                                          event_id=ev["event_id"], tick=self._tick)
+                self._set_plan("deny_letter", ["deny_letter", "find_who_talked"],
+                               critical=True)
             else:
-                self.memory.update_belief("letter_with_owner", 0.5, "inferred", "信可能在老板手里")
+                self.memory.update_belief("letter_with_owner", 0.5, "inferred", "信可能在老板手里",
+                                          event_id=ev["event_id"], tick=self._tick)
         elif claim == "business_proposal":
             if me == "owner":
                 n = sum(1 for u in st.utterances_heard
                         if u["from"] == speaker and u["claim"] == claim)
                 self.memory.adjust_trust(speaker, +0.05 / max(1, n))
-                self.memory.update_belief("business_opportunity", 0.5, "heard", "商人想谈一笔合作")
+                self.memory.update_belief("business_opportunity", 0.5, "heard", "商人想谈一笔合作",
+                                          event_id=ev["event_id"], tick=self._tick,
+                                          source=speaker)
             elif me == "soldier":
                 st.emotions["suspicion"] = min(1.0, st.emotions["suspicion"] + 0.05)
         elif claim == "denial":
@@ -310,27 +405,50 @@ class CharacterAgent:
                 if ev_belief and ev_belief.confidence >= 0.5:
                     st.emotions["suspicion"] = min(1.0, st.emotions["suspicion"] + 0.2)
                     self.memory.update_belief("owner_hiding_something", 0.65, "inferred",
-                                              "老板的否认和已知线索对不上，他在藏事")
+                                              "老板的否认和已知线索对不上，他在藏事",
+                                              event_id=ev["event_id"], tick=self._tick)
                 else:
                     self.memory.adjust_trust(speaker, +0.04)
             elif me == "merchant":
-                self.memory.update_belief("owner_cautious", 0.7, "inferred", "老板口风很紧，是个谨慎人")
+                self.memory.update_belief("owner_cautious", 0.7, "inferred", "老板口风很紧，是个谨慎人",
+                                          event_id=ev["event_id"], tick=self._tick)
         elif claim == "letter_discussion":
             if me == "merchant":
                 self.memory.update_belief("anonymous_letter_exists", 0.7, "heard",
-                                          f"{speaker} 当众说他已经看过一封关于镇长的信")
-                self._set_plan("assess_letter_rumor_value", ["assess_letter_rumor_value"])
+                                          f"{speaker} 当众说他已经看过一封关于镇长的信",
+                                          event_id=ev["event_id"], tick=self._tick,
+                                          source=speaker)
+                self._set_plan("assess_letter_rumor_value", ["assess_letter_rumor_value"],
+                               critical=True)
             if me == "owner":
                 st.emotions["arousal"] = min(1.0, st.emotions["arousal"] + 0.2)
                 self.memory.update_belief("letter_known_by_others", 0.9, "inferred",
-                                          "对方已经亲眼看过那封信了")
-                self._set_plan("assess_damage", ["assess_damage", "protect_tavern"])
+                                          "对方已经亲眼看过那封信了",
+                                          event_id=ev["event_id"], tick=self._tick)
+                self._set_plan("assess_damage", ["assess_damage", "protect_tavern"],
+                               critical=True)
         elif claim == "bluff_hint":
             conf = 0.3 + 0.3 * P["curiosity"]
             self.memory.update_belief("speaker_knows_secret", round(conf, 2), "inferred",
-                                      f"{speaker} 暗示自己知道镇上的秘密（真假未知）")
+                                      f"{speaker} 暗示自己知道镇上的秘密（真假未知）",
+                                      event_id=ev["event_id"], tick=self._tick)
 
     # ---------------- decision ----------------
+    def _fail_decision(self, record: dict, error: str,
+                       quota: bool = False) -> tuple[None, dict]:
+        """The single failure exit of decide(): the error is recorded
+        on the decision's audit record, no prediction is made, and the
+        scheduler substitutes a 'wait' intent — a failed or invalid
+        decision never reaches the world."""
+        record["error"] = error
+        if quota:
+            record["quota_exhausted"] = True
+        self._pending_step_check = None
+        record["plan_transitions"] = self._drain_plan_transitions()
+        record["goal_changes"] = self.plan_manager.drain_goal_changes()
+        self.decision_records.append(record)
+        return None, record
+
     @staticmethod
     def _sig(decision: AgentDecision) -> str:
         a = decision.action
@@ -366,17 +484,36 @@ class CharacterAgent:
         try:
             result = await self.provider.generate_decision(context)
         except ProviderError as e:
-            record["error"] = str(e)
             # Structured quota flag (from the exception TYPE, never the
             # message text): the scheduler's --loop mode retries this
             # same tick after a wait when this is set, instead of letting
             # the degraded wait stand as the tick's decision.
-            record["quota_exhausted"] = isinstance(e, QuotaExhaustedError)
-            self._pending_step_check = None
-            record["plan_transitions"] = self._drain_plan_transitions()
-            self.decision_records.append(record)
-            return None, record
+            return self._fail_decision(
+                record, str(e), quota=isinstance(e, QuotaExhaustedError))
         decision = result.decision
+        # ---- V0.2-A Phase 2: runtime intent validation ----
+        # selected_goal_id ownership (task book section 8 item 5): a
+        # decision naming a goal the agent does not have is invalid,
+        # whoever produced it. Checked whenever the field is present.
+        if decision.selected_goal_id is not None \
+                and decision.selected_goal_id not in \
+                {g.key for g in self.state.goals}:
+            return self._fail_decision(
+                record, f"validation: selected_goal_id "
+                        f"{decision.selected_goal_id!r} is not one of "
+                        f"this agent's goals")
+        # available_actions membership for LLM decisions (the step-1
+        # audit's M4c check, moved from after-the-fact to runtime):
+        # an LLM may only choose among the actions its context
+        # offered. Rule/mock providers are exempt — their candidates
+        # are generated from the world rules directly, and their
+        # behaviour must stay bit-identical.
+        if getattr(self.provider, "validates_membership", False) \
+                and not action_is_offered(decision.action.model_dump(),
+                                          context.available_actions):
+            return self._fail_decision(
+                record, f"validation: action {self._sig(decision)} is "
+                        f"not in this tick's available_actions")
         # consume pending question exactly as V0.1 did (it is answered or dropped now)
         self.state.pending_question = None
         plan_note = self._apply_plan_update(decision)
@@ -406,9 +543,11 @@ class CharacterAgent:
             "input_tokens": result.input_tokens, "output_tokens": result.output_tokens,
             "raw_output": result.raw_output, "parsed_output": decision.model_dump(),
             "reasoning_summary": decision.reasoning_summary, "latency_ms": result.latency_ms,
+            "repair_count": result.repair_count,
             "plan_update_result": plan_note,
             "prediction": prediction.model_dump(),
             "plan_transitions": self._drain_plan_transitions(),
+            "goal_changes": self.plan_manager.drain_goal_changes(),
         })
         self.decision_records.append(record)
         self.memory.save_state()

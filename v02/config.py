@@ -34,14 +34,28 @@ class CharacterConfig:
     disclosure_threshold: float = 0.75
     private_knowledge: list = field(default_factory=list)
 
+    # V0.2-A: ids of the whole cast, set by load_all() after a
+    # directory scan; initial_state() falls back to the canonical
+    # ALL_IDS when a config is loaded standalone.
+    all_ids: list = field(default_factory=list)
+
     def initial_state(self) -> CharacterState:
-        others = [x for x in ALL_IDS if x != self.character_id]
+        others = [x for x in (self.all_ids or ALL_IDS)
+                  if x != self.character_id]
+        goals = []
+        for g in self.goals:
+            g = dict(g)
+            # V0.2-A Goal lifecycle: an unspecified commitment defaults
+            # to the goal's configured priority (weight); status /
+            # progress / created_at / deadline default in the model.
+            g.setdefault("commitment", g.get("weight", 1.0))
+            goals.append(Goal(**g))
         return CharacterState(
             character_id=self.character_id,
             location=self.start_location,
             personality=dict(self.personality),
             principles=list(self.principles),
-            goals=[Goal(**g) for g in self.goals],
+            goals=goals,
             beliefs=[{"key": k["key"], "confidence": k["confidence"],
                       "kind": k["kind"], "desc": k["desc"]}
                      for k in self.private_knowledge],
@@ -68,4 +82,16 @@ def load_config(character_id: str, root: Path = CHARACTERS_ROOT) -> CharacterCon
 
 
 def load_all(root: Path = CHARACTERS_ROOT) -> dict[str, CharacterConfig]:
-    return {cid: load_config(cid, root) for cid in ALL_IDS}
+    """Load every character under `root`. V0.2-A (experiment 3): the
+    cast is discovered by scanning the directory for profile.yaml
+    files (sorted, so ordering is deterministic) instead of the
+    hardcoded ALL_IDS list — a variant scenario is a new directory of
+    character data, no code change. The canonical directory contains
+    exactly the ALL_IDS cast, so behaviour there is unchanged."""
+    root = Path(root) if root else CHARACTERS_ROOT
+    ids = sorted(d.name for d in root.iterdir()
+                 if d.is_dir() and (d / "profile.yaml").exists())
+    configs = {cid: load_config(cid, root) for cid in ids}
+    for cfg in configs.values():
+        cfg.all_ids = ids
+    return configs

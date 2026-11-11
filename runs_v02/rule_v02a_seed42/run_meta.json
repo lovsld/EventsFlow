@@ -1,0 +1,13 @@
+{
+  "run_id": "rule_v02a_seed42",
+  "mode": "rule",
+  "seed": 42,
+  "backend": null,
+  "characters": [
+    "owner",
+    "merchant",
+    "soldier"
+  ],
+  "created_at": "2026-11-11T13:46:44.590322+00:00",
+  "checkpoint_format": 1
+}

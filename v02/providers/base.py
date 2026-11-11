@@ -28,6 +28,12 @@ class QuotaExhaustedError(ProviderError):
 class LLMProvider:
     name: str = "base"
     model: str | None = None
+    # V0.2-A Phase 2: real-LLM providers set this — their decisions
+    # are validated at runtime against the context's available_actions
+    # (the audit's M4c check, moved upstream). Rule/mock stay False:
+    # their candidates come from the world rules / test fixtures
+    # directly and their behaviour must not change.
+    validates_membership: bool = False
 
     def __init__(self, config: CharacterConfig, seed: int = 42):
         self.config = config

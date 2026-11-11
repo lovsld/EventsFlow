@@ -100,7 +100,9 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
                          trace_beliefs: bool = False,
                          resume_from: str | None = None,
                          loop: bool = False,
-                         provider: str | None = None) -> Path:
+                         provider: str | None = None,
+                         characters_root: Path | None = None,
+                         world_config: dict | None = None) -> Path:
     """suppression_rules (Phase D): counterfactual delivery rules handed
     to the Event Broker — see broker.match_suppression. trace_beliefs:
     also write beliefs_trace.json (per-tick subjective-state snapshots),
@@ -115,9 +117,17 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
     provider selects the llm backend (gemini default; deepseek / kimi /
     qwen / openai are the OpenAI-compatible pools). It is recorded in
     run_meta.json, and resuming with a different explicitly requested
-    backend is rejected, like a mode mismatch."""
+    backend is rejected, like a mode mismatch.
+
+    characters_root / world_config (V0.2-A experiment 3): a scenario is
+    data — an alternative character directory and/or world-config dict
+    (see v02/world_config.py) run the SAME decision code on a different
+    world. Defaults reproduce the canonical tavern exactly."""
     resume = resume_from is not None
-    configs = load_all()
+    configs = load_all(characters_root)
+    # Canonical runs keep the historical cast order; a variant
+    # scenario's cast is whatever its character directory defines.
+    ids = list(ALL_IDS) if characters_root is None else list(configs)
     root = Path(out_root) if out_root else RUNS_DIR
     checkpoint = None
     resumed_from_tick = None
@@ -173,16 +183,16 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
         # checkpoint; the replay below rewrites it identically.
         store.rollback_after(resumed_from_tick)
 
-    world = WorldEngine(configs, seed=seed)
+    world = WorldEngine(configs, seed=seed, world_config=world_config)
     agents: dict[str, CharacterAgent] = {}
-    for cid in ALL_IDS:
+    for cid in ids:
         agent_provider = make_provider(mode, configs[cid], seed=seed,
                                        provider=backend) \
             if mode == "llm" else make_provider(mode, configs[cid], seed=seed)
         agents[cid] = CharacterAgent(configs[cid], agent_provider,
                                      run_char_dir=run_dir / "characters" / cid,
                                      resume_dir=resume)
-    broker = EventBroker(ALL_IDS, suppression_rules=suppression_rules)
+    broker = EventBroker(ids, suppression_rules=suppression_rules)
     checkpointer = RunCheckpointer(run_dir, world, agents, broker)
     if resume:
         checkpointer.restore(checkpoint)
@@ -194,7 +204,7 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
         (run_dir / META_FILE).write_text(
             json.dumps({"run_id": run_id, "mode": mode, "seed": seed,
                         "backend": backend,
-                        "characters": list(ALL_IDS),
+                        "characters": list(ids),
                         "created_at": datetime.now(timezone.utc).isoformat(),
                         "checkpoint_format": 1},
                        ensure_ascii=False, indent=2), encoding="utf-8")
@@ -205,7 +215,7 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
     waiter = QuotaWaiter() if loop else None
     belief_trace: list[dict] = []
     scheduler = Scheduler(
-        world, broker, agents, store, ALL_IDS,
+        world, broker, agents, store, ids,
         on_tick_end=belief_trace.append if trace_beliefs else None,
         on_tick_committed=checkpointer.write,
         on_quota_pause=checkpointer.flush_pause if loop else None,
@@ -218,7 +228,7 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
         (run_dir / "beliefs_trace.json").write_text(
             json.dumps(belief_trace, ensure_ascii=False, indent=1), encoding="utf-8")
 
-    names = {cid: configs[cid].name for cid in ALL_IDS}
+    names = {cid: configs[cid].name for cid in ids}
     (run_dir / "world_log.json").write_text(
         json.dumps(tick_records, ensure_ascii=False, indent=1), encoding="utf-8")
     (run_dir / "narrative.md").write_text(render_narrative(tick_records, names), encoding="utf-8")
@@ -229,13 +239,25 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
         "quota_stopped": scheduler.quota_stopped,
         "quota_waits": waiter.waits if waiter is not None else 0,
         "total_events": sum(len(r["events"]) for r in tick_records),
-        "final_positions": {a: world.state["agents"][a]["location"] for a in ALL_IDS},
-        "letter_seen_by_objective": world.state["objects"]["anonymous_letter"]["seen_by"],
+        "final_positions": {a: world.state["agents"][a]["location"] for a in ids},
+        # generalized in V0.2-A: every key object's objective access
+        "objects_seen_by": {oid: list(o.get("seen_by", []))
+                            for oid, o in world.state["objects"].items()},
+        # historical field, kept when the tavern's letter exists
+        **({"letter_seen_by_objective":
+            world.state["objects"]["anonymous_letter"]["seen_by"]}
+           if "anonymous_letter" in world.state["objects"] else {}),
         "final_beliefs": {cid: {b.key: {"confidence": b.confidence, "kind": b.kind,
                                         "desc": b.desc}
-                                for b in agents[cid].state.beliefs} for cid in ALL_IDS},
-        "memory_entries": {cid: len(agents[cid].state.perceived_event_ids) for cid in ALL_IDS},
+                                for b in agents[cid].state.beliefs} for cid in ids},
+        "memory_entries": {cid: len(agents[cid].state.perceived_event_ids) for cid in ids},
         "db_counts": store.counts(),
+        # V0.2-A: total validation-repair retries across all decisions
+        # (LLM providers count them; rule/mock are always 0). Read by
+        # the experiment metrics for the JSON-failure accounting.
+        "llm_repairs_total": sum(
+            r.get("repair_count", 0)
+            for a in agents.values() for r in a.decision_records),
         "suppression_rules": suppression_rules or [],
         "provider": mode,
         "llm_backend": backend,

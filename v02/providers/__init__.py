@@ -42,6 +42,15 @@ def resolve_backend(provider: str | None = None) -> str:
     return backend
 
 
+def _timeout_for(backend: str) -> float | None:
+    """V0.2-A Phase 2: the LLM call timeout is configurable —
+    ACP_<BACKEND>_TIMEOUT wins, then the shared ACP_LLM_TIMEOUT;
+    unset keeps each provider's built-in default (60s)."""
+    raw = os.environ.get(f"ACP_{backend.upper()}_TIMEOUT") \
+        or os.environ.get("ACP_LLM_TIMEOUT")
+    return float(raw) if raw else None
+
+
 def make_provider(mode: str, config, seed: int = 42,
                   provider: str | None = None) -> LLMProvider:
     if mode == "llm":
@@ -57,6 +66,12 @@ def make_provider(mode: str, config, seed: int = 42,
         # with the multi-backend pool.)
         model = (os.environ.get(f"ACP_MODEL_{config.character_id.upper()}")
                  or os.environ.get("ACP_MODEL"))
+        kwargs: dict = {}
         if model:
-            return PROVIDERS[mode](config, seed=seed, model=model)
+            kwargs["model"] = model
+        timeout = _timeout_for(mode)
+        if timeout is not None:
+            kwargs["timeout"] = timeout
+        if kwargs:
+            return PROVIDERS[mode](config, seed=seed, **kwargs)
     return PROVIDERS[mode](config, seed=seed)

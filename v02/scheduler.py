@@ -257,6 +257,8 @@ class Scheduler:
                 self.store.record_belief_change(upd)
             elif kind == "plan_transition":
                 self.store.record_plan_transition(upd)
+            elif kind == "goal_change":
+                self.store.record_goal_change(upd)
             elif kind == "consolidation":
                 self.store.record_consolidation(upd)
 
@@ -310,6 +312,9 @@ class Scheduler:
                     for tr in record.get("plan_transitions", []):
                         self.store.record_plan_transition(
                             {**tr, "decision_key": record["decision_key"]})
+                    for gc in record.get("goal_changes", []):
+                        self.store.record_goal_change(
+                            {**gc, "decision_key": record["decision_key"]})
                 self.store.record_events(events)
                 tick_records.append({
                     "tick": self.world.state["tick"], "time": self.world.state["time"],

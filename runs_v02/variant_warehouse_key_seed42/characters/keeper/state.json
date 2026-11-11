@@ -1,0 +1,168 @@
+{
+  "character_id": "keeper",
+  "location": "bar",
+  "personality": {
+    "caution": 0.8,
+    "curiosity": 0.4,
+    "honesty": 0.7,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "仓库安全第一",
+    "没查清之前不惊动客人",
+    "不冤枉学徒"
+  ],
+  "goals": [
+    {
+      "key": "guard_storehouse",
+      "desc": "看好仓库，不出纰漏",
+      "weight": 1.0,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "find_missing_key",
+      "desc": "找回失踪的仓库钥匙",
+      "weight": 0.85,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.85,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "avoid_blame",
+      "desc": "避免因丢钥匙被东家责罚",
+      "weight": 0.8,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "key_missing_this_morning",
+      "confidence": 0.95,
+      "kind": "experienced",
+      "desc": "今晨开库时发现门边挂钩上的仓库钥匙不见了（亲身确认）",
+      "evidence": [
+        {
+          "source_event_id": "seed:key_missing_this_morning",
+          "source_type": "direct_observation",
+          "reliability": 0.95,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，河面上的船今晚大概都泊住了。",
+      "event_id": "E0004"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：柜台上的油灯晃了晃，老赵的目光跟着晃了一下。",
+      "event_id": "E0022"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：柜台上的油灯晃了晃，老赵的目光跟着晃了一下。",
+      "event_id": "E0026"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：柜台上的油灯晃了晃，老赵的目光跟着晃了一下。",
+      "event_id": "E0036"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "apprentice 来到了/去到了 bar。",
+      "event_id": "E0051"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "环境：柜台上的油灯晃了晃，老赵的目光跟着晃了一下。",
+      "event_id": "E0055"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "apprentice 说：小六：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0056"
+    },
+    {
+      "tick": 23,
+      "kind": "experienced",
+      "text": "apprentice 说：小六：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0079"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "apprentice": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "traveler": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0004",
+    "E0022",
+    "E0026",
+    "E0036",
+    "E0051",
+    "E0055",
+    "E0056",
+    "E0079"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 16,
+      "from": "apprentice",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 23,
+      "from": "apprentice",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    }
+  ],
+  "pending_question": null,
+  "action_counts": {
+    "observe::": 10,
+    "listen::": 3,
+    "move:tables:": 1,
+    "move:bar:": 1,
+    "wait::": 1,
+    "observe:apprentice:": 7,
+    "speak:apprentice:greeting": 1
+  }
+}

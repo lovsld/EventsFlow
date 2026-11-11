@@ -1,0 +1,116 @@
+{
+  "character_id": "apprentice",
+  "location": "bar",
+  "personality": {
+    "caution": 0.5,
+    "curiosity": 0.8,
+    "honesty": 0.6,
+    "impulsiveness": 0.6,
+    "sociability": 0.7
+  },
+  "principles": [
+    "听师傅的话",
+    "不确定的事不乱说",
+    "手脚要勤快"
+  ],
+  "goals": [
+    {
+      "key": "earn_keeper_trust",
+      "desc": "赢得师傅的信任",
+      "weight": 0.9,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.9,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "finish_inventory",
+      "desc": "完成今天的盘点",
+      "weight": 0.8,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "heard_movement_last_night",
+      "confidence": 0.6,
+      "kind": "heard",
+      "desc": "昨夜好像听见后屋有翻东西的动静，没敢声张（听见的动静，真假未定）",
+      "evidence": [
+        {
+          "source_event_id": "seed:heard_movement_last_night",
+          "source_type": "testimony",
+          "reliability": 0.6,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "环境：一只野猫碰倒了条凳边的茶碗，碎在地上。",
+      "event_id": "E0050"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "环境：柜台上的油灯晃了晃，老赵的目光跟着晃了一下。",
+      "event_id": "E0055"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "keeper 说：老赵：晚上好，雨夜里酒馆可是个好去处。",
+      "event_id": "E0068"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "keeper": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "traveler": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0050",
+    "E0055",
+    "E0068"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 19,
+      "from": "keeper",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    }
+  ],
+  "pending_question": null,
+  "action_counts": {
+    "observe::": 7,
+    "move:back_room:": 2,
+    "listen::": 4,
+    "move:tables:": 2,
+    "move:bar:": 1,
+    "speak:keeper:greeting": 2,
+    "observe:keeper:": 6
+  }
+}

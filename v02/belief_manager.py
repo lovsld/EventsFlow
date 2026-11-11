@@ -61,7 +61,14 @@ class BeliefManager:
         def belief_set(key: str, confidence: float, desc: str, cause: str) -> None:
             old = memory.belief(key)
             before = old.confidence if old else None
-            memory.update_belief(key, confidence, "inferred", desc)
+            # V0.2-A: the adjustment is an inference drawn from THIS
+            # prediction's outcome — one evidence entry, keyed to the
+            # prediction so a replay can never double-count it.
+            memory.update_belief(
+                key, confidence, "inferred", desc,
+                source_type="inference",
+                event_id=f"pred:{prediction.prediction_id}",
+                tick=getattr(agent, "_tick", prediction.tick))
             error.belief_effects.append(
                 {"key": key, "before": before,
                  "after": memory.belief(key).confidence,

@@ -8,11 +8,27 @@ actions; the World Engine still re-validates everything.
 from __future__ import annotations
 
 from .protocol import DecisionContext
+from .world_config import adjacency_of
 
-ADJACENCY = {
-    "bar": {"tables"}, "tables": {"bar", "door", "back_room"},
-    "door": {"tables", "outside"}, "back_room": {"tables"}, "outside": {"door"},
-}
+# V0.2-A Phase 5 (experiment 3a): single-sourced from world_config;
+# prediction.py / plan_steps.py / audit.py import ADJACENCY from here.
+ADJACENCY = adjacency_of()
+
+
+def action_is_offered(action: dict, available: list[dict]) -> bool:
+    """Membership test used by the runtime's intent validation
+    (V0.2-A Phase 2): is this action among the ones the context
+    offered? Same compatibility semantics as the step-1 audit's M4c
+    check — an offered entry matches when the verb is equal and every
+    field the entry specifies (target / target_location / object)
+    equals the action's."""
+    return any(
+        o.get("type") == action.get("type")
+        and ("target" not in o or o.get("target") == action.get("target"))
+        and ("target_location" not in o
+             or o.get("target_location") == action.get("target_location"))
+        and ("object" not in o or o.get("object") == action.get("object"))
+        for o in available)
 
 
 def build_context(agent, perception: dict) -> DecisionContext:
@@ -41,7 +57,10 @@ def build_context(agent, perception: dict) -> DecisionContext:
         current_time=perception["time"],
         location=loc,
         perception=perc,
-        active_goals=st.goals,
+        # V0.2-A: goals are presented priority-first (weight desc,
+        # stable) so "the highest-priority goal comes first" is an
+        # operational property of the context, not just a config note.
+        active_goals=sorted(st.goals, key=lambda g: -g.weight),
         current_plan=st.current_plan,
         relevant_memories=st.short_term_memory[-12:],
         beliefs=list(st.beliefs),

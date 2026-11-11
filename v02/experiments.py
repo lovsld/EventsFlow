@@ -91,6 +91,144 @@ def _belief(final_beliefs: dict, agent: str, key: str) -> dict | None:
     return {"confidence": b["confidence"], "kind": b["kind"]} if b else None
 
 
+DIALOGUE_TYPES = ("speak", "ask", "confront")
+
+
+def _v02a_metrics(run_dir: Path, summary: dict) -> dict:
+    """V0.2-A experiment metrics (task book section 14), computed only
+    from artefacts the run itself persisted. Anything a historical run
+    never recorded is reported as None — never reconstructed or
+    invented (latency, pre-V0.2-A repair counts)."""
+    from .persistence import (DecisionRow, PlanTransitionRow, Store)
+    out: dict = {}
+    # ---- world-log level: dialogue volume ----
+    dialogue = {t: 0 for t in DIALOGUE_TYPES}
+    world_log_path = run_dir / "world_log.json"
+    if world_log_path.exists():
+        for snap in json.loads(world_log_path.read_text(encoding="utf-8")):
+            for ev in snap.get("events", []):
+                if ev.get("type") in dialogue:
+                    dialogue[ev["type"]] += 1
+    out["dialogue_by_type"] = dialogue
+    out["dialogue_count"] = sum(dialogue.values())
+    # ---- information propagation coverage (tavern key object) ----
+    fb = summary.get("final_beliefs", {})
+    know = experienced = 0
+    for beliefs in fb.values():
+        b = (beliefs or {}).get("anonymous_letter_exists")
+        if b:
+            know += 1
+            if b["kind"] == "experienced":
+                experienced += 1
+    out["letter_knowledge_coverage"] = {
+        "agents": len(fb), "know": know, "experienced": experienced,
+        "heard_or_inferred_only": know - experienced}
+    # ---- goal completion (final character states) ----
+    goals_by_status: dict[str, int] = {}
+    states_dir = run_dir / "characters"
+    if states_dir.exists():
+        for state_path in sorted(states_dir.glob("*/state.json")):
+            state = json.loads(state_path.read_text(encoding="utf-8"))
+            for g in state.get("goals", []):
+                status = g.get("status", "unspecified_pre_lifecycle")
+                goals_by_status[status] = goals_by_status.get(status, 0) + 1
+    total_goals = sum(goals_by_status.values())
+    out["goals_by_status"] = goals_by_status
+    # pre-V0.2-A artefacts carry no lifecycle status at all: the rate
+    # is then not measurable (None), not zero
+    out["goal_completion_rate"] = (
+        round(goals_by_status.get("completed", 0) / total_goals, 3)
+        if total_goals and "unspecified_pre_lifecycle" not in goals_by_status
+        else None)
+    # ---- decision / plan level (the run's DB) ----
+    db_path = run_dir / "acp.sqlite3"
+    decisions = successes = fallbacks = 0
+    tokens_in = tokens_out = 0
+    llm_calls = 0
+    sigs_by_agent: dict[str, list[str]] = {}
+    plan_advances: dict[str, int] = {}
+    plan_completed: set[str] = set()
+    plans_seen: set[str] = set()
+    if db_path.exists():
+        store = Store(summary["run_id"], sqlite_path=str(db_path))
+        with store.Session() as s:
+            rows = s.query(DecisionRow).filter_by(
+                run_id=summary["run_id"]).order_by(
+                DecisionRow.character_id, DecisionRow.tick).all()
+            for r in rows:
+                if r.provider not in ("rule", "mock"):
+                    llm_calls += 1
+                    tokens_in += r.input_tokens or 0
+                    tokens_out += r.output_tokens or 0
+                if r.error:
+                    fallbacks += 1
+                    continue
+                if not r.parsed_output:
+                    continue
+                decisions += 1
+                try:
+                    result = json.loads(r.execution_result) \
+                        if r.execution_result else {}
+                except json.JSONDecodeError:
+                    result = {}
+                if result.get("ok"):
+                    successes += 1
+                try:
+                    action = json.loads(r.parsed_output).get("action", {})
+                except json.JSONDecodeError:
+                    action = {}
+                sig = "|".join(str(action.get(k)) for k in
+                               ("type", "target", "target_location",
+                                "claim", "topic"))
+                sigs_by_agent.setdefault(r.character_id, []).append(sig)
+            for plan_id, kind, after_json in s.query(
+                    PlanTransitionRow.plan_id, PlanTransitionRow.kind,
+                    PlanTransitionRow.after_json).filter_by(
+                    run_id=summary["run_id"]).all():
+                plans_seen.add(plan_id)
+                if kind == "advance":
+                    plan_advances[plan_id] = \
+                        plan_advances.get(plan_id, 0) + 1
+                # some transition kinds snapshot a scalar (commitment
+                # decay stores the float), not a plan dict
+                after = json.loads(after_json) if after_json else None
+                if isinstance(after, dict) \
+                        and after.get("status") == "completed":
+                    plan_completed.add(plan_id)
+    total_actions = sum(len(v) for v in sigs_by_agent.values())
+    repeats = sum(1 for sigs in sigs_by_agent.values()
+                  for a, b in zip(sigs, sigs[1:]) if a == b)
+    persistent = {p for p in plans_seen
+                  if plan_advances.get(p, 0) >= 2 or p in plan_completed}
+    out.update({
+        "decisions_recorded": decisions,
+        "action_success_rate": (round(successes / decisions, 3)
+                                if decisions else None),
+        "repeat_action_rate": (round(repeats / total_actions, 3)
+                               if total_actions else None),
+        "fallback_decisions": fallbacks,
+        "plans_total": len(plans_seen),
+        "plan_persistence_rate": (round(len(persistent) / len(plans_seen), 3)
+                                  if plans_seen else None),
+        "llm": {
+            "calls": llm_calls,
+            "input_tokens": tokens_in, "output_tokens": tokens_out,
+            # repair retries were only counted from V0.2-A runs on;
+            # older summaries simply lack the aggregate
+            "repairs_total": summary.get("llm_repairs_total"),
+            "json_repair_rate": (
+                round(summary["llm_repairs_total"] / llm_calls, 3)
+                if summary.get("llm_repairs_total") is not None
+                and llm_calls else None),
+            # DecisionRow never persisted per-call latency; historical
+            # runs cannot yield it and it is reported missing, not faked
+            "latency_ms": None,
+            "latency_note": "not recorded in persisted artefacts",
+        },
+    })
+    return out
+
+
 def collect_run_metrics(run_dir: Path) -> dict:
     """Per-run outcome row for the comparison table, from the run's own
     artefacts only (summary.json + acp.sqlite3)."""
@@ -130,6 +268,7 @@ def collect_run_metrics(run_dir: Path) -> dict:
         "long_term_promotions": promotions,
         "counterfactual_suppressions": counts.get("counterfactual_suppressions", 0),
         "run_dir": str(run_dir),
+        "v02a": _v02a_metrics(run_dir, summary),
     }
 
 

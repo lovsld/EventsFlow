@@ -153,6 +153,24 @@ class PlanTransitionRow(Base):
     after_json = Column(Text)
 
 
+class GoalChangeRow(Base):
+    """V0.2-A Phase 3: one row per deterministic goal lifecycle
+    change driven by a plan event (goal_paused / goal_reactivated /
+    goal_progress / goal_completed / goal_abandoned), with before /
+    after snapshots of the Goal object."""
+    __tablename__ = "goal_changes"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    run_id = Column(String, index=True)
+    tick = Column(Integer)
+    character_id = Column(String, index=True)
+    decision_key = Column(String, index=True)
+    goal_key = Column(String, index=True)
+    kind = Column(String)
+    reason = Column(Text)
+    before_json = Column(Text)
+    after_json = Column(Text)
+
+
 class ConsolidationRow(Base):
     """Phase C: one row per memory consolidation (i.e. per evaluated
     prediction), with every scored entry and the promoted subset."""
@@ -280,6 +298,20 @@ class Store:
                 if rec.get("after") is not None else None))
             s.commit()
 
+    def record_goal_change(self, rec: dict) -> None:
+        with self.Session() as s:
+            s.add(GoalChangeRow(
+                run_id=self.run_id, tick=rec.get("tick"),
+                character_id=rec.get("character_id"),
+                decision_key=rec.get("decision_key"),
+                goal_key=rec.get("goal_key"),
+                kind=rec.get("kind"), reason=rec.get("reason"),
+                before_json=json.dumps(rec["before"], ensure_ascii=False)
+                if rec.get("before") is not None else None,
+                after_json=json.dumps(rec["after"], ensure_ascii=False)
+                if rec.get("after") is not None else None))
+            s.commit()
+
     def record_consolidation(self, rec: dict) -> None:
         with self.Session() as s:
             s.add(ConsolidationRow(
@@ -330,6 +362,7 @@ class Store:
             wipe(PredictionRow, PredictionRow.tick >= tick)
             wipe(BeliefChangeRow, BeliefChangeRow.tick >= tick)
             wipe(PlanTransitionRow, PlanTransitionRow.tick >= tick)
+            wipe(GoalChangeRow, GoalChangeRow.tick >= tick)
             wipe(ConsolidationRow, ConsolidationRow.tick >= tick)
             for row in s.query(PredictionRow).filter(
                     PredictionRow.run_id == self.run_id,
@@ -394,5 +427,6 @@ class Store:
                     "predictions": s.query(PredictionRow).filter_by(run_id=self.run_id).count(),
                     "belief_changes": s.query(BeliefChangeRow).filter_by(run_id=self.run_id).count(),
                     "plan_transitions": s.query(PlanTransitionRow).filter_by(run_id=self.run_id).count(),
+                    "goal_changes": s.query(GoalChangeRow).filter_by(run_id=self.run_id).count(),
                     "consolidations": s.query(ConsolidationRow).filter_by(run_id=self.run_id).count(),
                     "counterfactual_suppressions": s.query(CounterfactualSuppressionRow).filter_by(run_id=self.run_id).count()}

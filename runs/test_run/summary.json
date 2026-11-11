@@ -37,16 +37,6 @@
         "confidence": 0.55,
         "kind": "inferred",
         "desc": "关于镇长资金的风声可能正在扩散"
-      },
-      "speaker_knows_secret": {
-        "confidence": 0.48,
-        "kind": "inferred",
-        "desc": "B 暗示自己知道镇上的秘密（真假未知）"
-      },
-      "letter_known_by_others": {
-        "confidence": 0.9,
-        "kind": "inferred",
-        "desc": "对方已经亲眼看过那封信了"
       }
     },
     "B": {
@@ -59,21 +49,6 @@
         "confidence": 0.7,
         "kind": "inferred",
         "desc": "老板口风很紧，是个谨慎人"
-      },
-      "mayor_embezzled": {
-        "confidence": 0.45,
-        "kind": "heard",
-        "desc": "C 的话暗示镇长财务有问题"
-      },
-      "mayor_deal_risky": {
-        "confidence": 0.65,
-        "kind": "inferred",
-        "desc": "和镇长做生意可能有回款风险，但消息本身值钱"
-      },
-      "anonymous_letter_exists": {
-        "confidence": 0.7,
-        "kind": "heard",
-        "desc": "C 当众说他已经看过一封关于镇长的信"
       }
     },
     "C": {
@@ -109,7 +84,7 @@
       }
     }
   },
-  "memory_entries_A": 20,
-  "memory_entries_B": 13,
+  "memory_entries_A": 17,
+  "memory_entries_B": 12,
   "memory_entries_C": 12
 }

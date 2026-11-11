@@ -74,10 +74,18 @@ expected_outcome（你预期的结果标签）和 0-1 的 confidence。
 
 # json_object mode carries no schema, so the field/enum contract is
 # spelled out in the prompt — identical wording to the Gemini provider.
+# V0.2-A: the contract also names selected_goal_id (validated against
+# the agent's own goal set at runtime) and explains the subjective
+# relationship fields of the context (Phase 4 item 4-1).
 _JSON_CONTRACT = (
     "\n输出必须是且仅是一个 JSON 对象，字段为 intent, target, action{type,target,"
     "target_location,object,content,claim,topic}, reasoning_summary, "
-    "expected_outcome, confidence, plan_update{status,reason,new_goal,new_steps}。"
+    "expected_outcome, confidence, selected_goal_id, "
+    "plan_update{status,reason,new_goal,new_steps}。"
+    "\nselected_goal_id 填你本轮决策所服务的目标的 key，必须是你长期目标"
+    "（active_goals）之一；没有明确对应时填 null，填了不存在的目标会被判无效。"
+    "\n上下文中的 trust 与 relationships 是你对其他角色的信任与关系记录"
+    "（0-1，trust 越高越信任），那只是你自己的主观认知，不是客观事实。"
     "\n枚举值必须严格照抄：action.type 只能是 speak/ask/confront/move/search/show/"
     "refuse/observe/listen/work/wait 之一；plan_update.status 只能是 "
     "none/continue/advance/abandon/replace 之一（没有计划变化时用 none）。")
@@ -187,6 +195,7 @@ class OpenAICompatibleProvider(LLMProvider):
     instantiated it behaves as the openai preset (historical default)."""
     PRESET = PRESETS["openai"]
     name = "openai"
+    validates_membership = True
 
     def __init__(self, config, seed: int = 42, model: str | None = None,
                  temperature: float | None = None, timeout: float = 60.0,
@@ -311,7 +320,7 @@ class OpenAICompatibleProvider(LLMProvider):
                     decision=decision, provider=self.name, model=self.model,
                     input_tokens=usage.get("prompt_tokens", 0) or 0,
                     output_tokens=usage.get("completion_tokens", 0) or 0,
-                    raw_output=raw,
+                    raw_output=raw, repair_count=repairs,
                     latency_ms=int((time.monotonic() - started) * 1000))
             except Exception as e:
                 status = _status_of(e)

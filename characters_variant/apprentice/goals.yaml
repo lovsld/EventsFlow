@@ -1,0 +1,7 @@
+goals:
+- desc: 赢得师傅的信任
+  key: earn_keeper_trust
+  weight: 0.9
+- desc: 完成今天的盘点
+  key: finish_inventory
+  weight: 0.8

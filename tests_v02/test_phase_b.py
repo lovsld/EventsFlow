@@ -231,7 +231,12 @@ def test_scheduler_rule_run_deterministic_across_hash_seeds(tmp_path):
                                      .read_text(encoding="utf-8")))
     assert logs[0] == logs[1] == logs[2]
     s = summaries[0]
-    assert s["total_events"] == 87   # plan-layer canonical (was 85 pre-upgrade)
+    # V0.2-A Phase 3: 85 events on the new canonical (evidence-based
+    # belief recomputation + commitment gate moved the trajectory;
+    # was 87 on the plan-layer canonical, 85 pre-upgrade — see
+    # V02A_PHASE3_REPORT.md). The hash-seed determinism assertion
+    # above is unchanged and still holds.
+    assert s["total_events"] == 85
     assert s["db_counts"]["dedup_drops"] == 0   # nothing to suppress in a clean run
     soldier = s["final_beliefs"]["soldier"]["anonymous_letter_exists"]
     assert soldier["confidence"] == 1.0 and soldier["kind"] == "experienced"

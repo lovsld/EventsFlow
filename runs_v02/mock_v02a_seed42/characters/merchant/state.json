@@ -1,0 +1,105 @@
+{
+  "character_id": "merchant",
+  "location": "tables",
+  "personality": {
+    "caution": 0.5,
+    "curiosity": 0.9,
+    "honesty": 0.45,
+    "impulsiveness": 0.4,
+    "sociability": 0.95
+  },
+  "principles": [
+    "合作必须有收益",
+    "不轻易透露自己的真实目的",
+    "尽量避免正面冲突"
+  ],
+  "goals": [
+    {
+      "key": "gain_business",
+      "desc": "获得更多商业资源",
+      "weight": 1.0,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "build_relationships",
+      "desc": "建立有价值的人际关系",
+      "weight": 0.8,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "protect_wealth",
+      "desc": "避免损失自己的财富",
+      "weight": 0.85,
+      "status": "active",
+      "progress": 0.0,
+      "commitment": 0.85,
+      "created_at": 0,
+      "deadline": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "mayor_business_deal",
+      "confidence": 0.9,
+      "kind": "experienced",
+      "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）",
+      "evidence": [
+        {
+          "source_event_id": "seed:mayor_business_deal",
+          "source_type": "direct_observation",
+          "reliability": 0.9,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "环境：一只野猫碰倒了桌边的空杯子，碎在地上。",
+      "event_id": "E0050"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "环境：一只野猫碰倒了桌边的空杯子，碎在地上。",
+      "event_id": "E0064"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "owner": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "soldier": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0050",
+    "E0064"
+  ],
+  "utterances_heard": [],
+  "pending_question": null,
+  "action_counts": {
+    "observe::": 20
+  }
+}

@@ -96,7 +96,15 @@ def test_unfulfilled_or_failed_result_advances_nothing():
     _stash(agent, plan, 0, ASK_OWNER)
     agent._advance_step_from_result({"ok": False}, 6, "soldier:5")
     assert agent.state.current_plan.current_step == 0
-    assert _plan_updates(agent) == []
+    # V0.2-A adjustment (documented in V02A_PHASE3_REPORT.md): the
+    # pointer still advances nothing, but the refused on-step attempt
+    # is now RECORDED as a step_failure (Phase 3 blocked-plan
+    # accounting) — the old assertion of a totally empty update list
+    # encoded the pre-V0.2-A "failures leave no plan-level trace"
+    # behaviour that Phase 3 explicitly replaces.
+    ups = _plan_updates(agent)
+    assert [u["transition_kind"] for u in ups] == ["step_failure"]
+    assert agent.state.current_plan.step_failures == 1
 
 
 def test_same_signature_never_counts_twice():

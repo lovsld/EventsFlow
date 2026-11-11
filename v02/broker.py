@@ -32,10 +32,11 @@ from __future__ import annotations
 
 import asyncio
 
-ADJACENCY = {
-    "bar": {"tables"}, "tables": {"bar", "door", "back_room"},
-    "door": {"tables", "outside"}, "back_room": {"tables"}, "outside": {"door"},
-}
+from .world_config import adjacency_of
+
+# V0.2-A Phase 5 (experiment 3a): the location graph's single
+# definition lives in world_config; this name is kept for importers.
+ADJACENCY = adjacency_of()
 
 
 def build_perception(agent_id: str, world: dict, last_events: list[dict]) -> dict:
