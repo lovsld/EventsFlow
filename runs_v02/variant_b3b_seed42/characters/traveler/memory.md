@@ -1,0 +1,12 @@
+# traveler 的私人记忆（其他 Agent 不可见）
+- [t3][experienced] 环境：驿站门口的铃铛响了一声，又没有人进来。
+- [t5][experienced] 环境：河边远处有人喊了一嗓子，很快没了声音。
+- [t12][experienced] apprentice 说：小六：来了？先坐，雨大，路不好走。
+- [t13][experienced] apprentice 说：小六：钥匙的事没什么，我这儿都妥当。
+- [t14][experienced] apprentice 说：小六：来了？先坐，雨大，路不好走。
+- [t15][experienced] apprentice 说：小六：问这个做什么？库里一切正常。
+- [t15][experienced] 环境：柜台上的油灯晃了晃，老赵的目光跟着晃了一下。
+- [t16][experienced] apprentice 说：小六：来了？先坐，雨大，路不好走。
+- [t17][experienced] apprentice 说：小六：钥匙的事没什么，我这儿都妥当。
+- [t18][experienced] apprentice 说：小六：来了？先坐，雨大，路不好走。
+- [t24][experienced] apprentice 说：小六：问这个做什么？库里一切正常。

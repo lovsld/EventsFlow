@@ -1,0 +1,15 @@
+# nurse_lin 的私人记忆（其他 Agent 不可见）
+- [t9][inferred] 隔墙隐约听到 porter_wu,doctor_shen 在ward说话，听不清内容。
+- [t9][inferred] 隔墙隐约听到 doctor_shen,porter_wu 在ward说话，听不清内容。
+- [t11][inferred] 隔墙隐约听到 porter_wu,doctor_shen 在ward说话，听不清内容。
+- [t11][inferred] 隔墙隐约听到 doctor_shen,porter_wu 在ward说话，听不清内容。
+- [t12][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t13][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t13][experienced] doctor_shen 说：沈默：退烧药补上了没有？我这边等着确认。
+- [t14][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t14][experienced] doctor_shen 说：沈默：退烧药补上了没有？我这边等着确认。
+- [t15][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t16][inferred] 隔墙隐约听到 porter_wu,nurse_lin 在ward说话，听不清内容。
+- [t22][inferred] 隔墙隐约听到 porter_wu,nurse_lin 在ward说话，听不清内容。
+- [t23][experienced] 环境：值班室的电话响了一声就断了，大概是打错了。
+- [t24][experienced] 环境：值班室的电话响了一声就断了，大概是打错了。

@@ -1,0 +1,9 @@
+# keeper 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] 环境：一只野猫碰倒了条凳边的茶碗，碎在地上。
+- [t2][experienced] apprentice 说：小六：来了？先坐，雨大，路不好走。
+- [t2][experienced] traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t3][experienced] apprentice 说：小六：来了？先坐，雨大，路不好走。
+- [t3][experienced] traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t4][inferred] 隔墙隐约听到 apprentice,keeper 在door说话，听不清内容。
+- [t4][inferred] 隔墙隐约听到 traveler,keeper 在door说话，听不清内容。
+- [t6][experienced] 我在back_room找到了 warehouse_key。

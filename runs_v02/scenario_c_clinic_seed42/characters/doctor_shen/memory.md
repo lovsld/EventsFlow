@@ -1,0 +1,22 @@
+# doctor_shen 的私人记忆（其他 Agent 不可见）
+- [t3][experienced] nurse_lin 来到了/去到了 yard。
+- [t4][experienced] porter_wu 来到了/去到了 yard。
+- [t5][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t5][experienced] nurse_lin 来到了/去到了 yard。
+- [t6][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t7][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t8][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t9][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t10][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t10][experienced] 环境：后院的窗棂被风吹得咯咯作响。
+- [t11][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t11][experienced] nurse_lin 来到了/去到了 yard。
+- [t12][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t13][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t13][experienced] nurse_lin 说：林小满：这事我不清楚，别问我。
+- [t14][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t15][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t18][experienced] nurse_lin 来到了/去到了 yard。
+- [t18][experienced] 环境：后院的窗棂被风吹得咯咯作响。
+- [t19][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t20][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？

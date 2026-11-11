@@ -1,0 +1,573 @@
+{
+  "character_id": "keeper",
+  "location": "back_room",
+  "personality": {
+    "caution": 0.8,
+    "curiosity": 0.4,
+    "honesty": 0.7,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "仓库安全第一",
+    "没查清之前不惊动客人",
+    "不冤枉学徒"
+  ],
+  "goals": [
+    {
+      "key": "guard_storehouse",
+      "desc": "看好仓库，不出纰漏",
+      "weight": 1.0,
+      "kind": "maintenance",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "search",
+        "actor": "any_other"
+      },
+      "priority_current": 1.0,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "find_missing_key",
+      "desc": "找回失踪的仓库钥匙",
+      "weight": 0.85,
+      "kind": "achievement",
+      "status": "completed",
+      "activation_condition": {
+        "type": "belief_threshold",
+        "belief": "key_missing_this_morning",
+        "min_confidence": 0.8
+      },
+      "success_condition": {
+        "type": "object_possession",
+        "object": "warehouse_key",
+        "holder": "self"
+      },
+      "failure_condition": null,
+      "priority_current": 0.85,
+      "priority_rules": [],
+      "progress": 1.0,
+      "commitment": 0.85,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "avoid_blame",
+      "desc": "避免因丢钥匙被东家责罚",
+      "weight": 0.8,
+      "kind": "maintenance",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "confront",
+        "target": "self"
+      },
+      "priority_current": 0.8,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "key_missing_this_morning",
+      "confidence": 0.95,
+      "kind": "experienced",
+      "desc": "今晨开库时发现门边挂钩上的仓库钥匙不见了（亲身确认）",
+      "evidence": [
+        {
+          "source_event_id": "seed:key_missing_this_morning",
+          "source_type": "direct_observation",
+          "reliability": 0.95,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.6,
+    "suspicion": 0.39999999999999997
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：一只野猫碰倒了条凳边的茶碗，碎在地上。",
+      "event_id": "E0005"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "apprentice 说：小六：来了？先坐，雨大，路不好走。",
+      "event_id": "E0006"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0007"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "apprentice 说：小六：来了？先坐，雨大，路不好走。",
+      "event_id": "E0012"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0013"
+    },
+    {
+      "tick": 4,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 apprentice,keeper 在door说话，听不清内容。",
+      "event_id": "E0015"
+    },
+    {
+      "tick": 4,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 traveler,keeper 在door说话，听不清内容。",
+      "event_id": "E0016"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "我在back_room找到了 warehouse_key。",
+      "event_id": null
+    }
+  ],
+  "long_term_memory": [
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "apprentice 说：小六：来了？先坐，雨大，路不好走。",
+      "event_id": "E0006",
+      "importance": 0.812,
+      "consolidated_at_tick": 3
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0007",
+      "importance": 0.812,
+      "consolidated_at_tick": 3
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "apprentice": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "traveler": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0005",
+    "E0006",
+    "E0007",
+    "E0012",
+    "E0013",
+    "E0015",
+    "E0016"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "apprentice",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 2,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 3,
+      "from": "apprentice",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
+    },
+    {
+      "tick": 3,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    }
+  ],
+  "pending_question": null,
+  "action_counts": {
+    "move:tables:": 2,
+    "move:door:": 1,
+    "search:door:": 1,
+    "move:back_room:": 1,
+    "search:back_room:": 1,
+    "observe::": 9,
+    "work::check_ledger": 4,
+    "listen::": 5
+  },
+  "holdings": [
+    "warehouse_key"
+  ],
+  "found_objects": [
+    "warehouse_key"
+  ],
+  "object_sightings": {
+    "warehouse_key": "back_room"
+  },
+  "searched_empty_places": [
+    "door"
+  ],
+  "perceived_events": [
+    {
+      "tick": 1,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "cat_knocks_glass",
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 2,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": "greeting",
+      "topic": "greeting",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 2,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "apprentice",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 2,
+      "type": "session_start",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 2,
+      "type": "session_end",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 3,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": "greeting",
+      "topic": "greeting",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 3,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "keeper",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    }
+  ],
+  "own_actions": [
+    {
+      "tick": 0,
+      "type": "move",
+      "target": null,
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 1,
+      "type": "move",
+      "target": null,
+      "target_location": "door",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 2,
+      "type": "search",
+      "target": null,
+      "target_location": "door",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 3,
+      "type": "move",
+      "target": null,
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 4,
+      "type": "move",
+      "target": null,
+      "target_location": "back_room",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 5,
+      "type": "search",
+      "target": null,
+      "target_location": "back_room",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 6,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 7,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 8,
+      "type": "work",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": "check_ledger",
+      "ok": true
+    },
+    {
+      "tick": 9,
+      "type": "listen",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 10,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 11,
+      "type": "listen",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 12,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 13,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 14,
+      "type": "listen",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 15,
+      "type": "listen",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 16,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 17,
+      "type": "work",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": "check_ledger",
+      "ok": true
+    },
+    {
+      "tick": 18,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 19,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 20,
+      "type": "work",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": "check_ledger",
+      "ok": true
+    },
+    {
+      "tick": 21,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 22,
+      "type": "listen",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 23,
+      "type": "work",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": "check_ledger",
+      "ok": true
+    }
+  ]
+}

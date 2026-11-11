@@ -1,0 +1,931 @@
+{
+  "character_id": "apprentice",
+  "location": "door",
+  "personality": {
+    "caution": 0.5,
+    "curiosity": 0.8,
+    "honesty": 0.6,
+    "impulsiveness": 0.6,
+    "sociability": 0.7
+  },
+  "principles": [
+    "听师傅的话",
+    "不确定的事不乱说",
+    "手脚要勤快"
+  ],
+  "goals": [
+    {
+      "key": "earn_keeper_trust",
+      "desc": "赢得师傅的信任",
+      "weight": 0.9,
+      "kind": "achievement",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": {
+        "type": "trust_threshold",
+        "other": "keeper",
+        "min_trust": 0.5
+      },
+      "failure_condition": null,
+      "priority_current": 0.9,
+      "priority_rules": [],
+      "progress": 0.6,
+      "commitment": 0.9,
+      "created_at": 0,
+      "deadline": null
+    },
+    {
+      "key": "finish_inventory",
+      "desc": "完成今天的盘点",
+      "weight": 0.8,
+      "kind": "achievement",
+      "status": "paused",
+      "activation_condition": null,
+      "success_condition": {
+        "all": [
+          {
+            "type": "agent_at_location",
+            "agent": "self",
+            "location": "back_room"
+          },
+          {
+            "type": "event_occurred",
+            "event_type": "work",
+            "actor": "self"
+          }
+        ]
+      },
+      "failure_condition": null,
+      "priority_current": 0.8,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "heard_movement_last_night",
+      "confidence": 0.6,
+      "kind": "heard",
+      "desc": "昨夜好像听见后屋有翻东西的动静，没敢声张（听见的动静，真假未定）",
+      "evidence": [
+        {
+          "source_event_id": "seed:heard_movement_last_night",
+          "source_type": "testimony",
+          "reliability": 0.6,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.6536210317460318,
+    "suspicion": 0.4
+  },
+  "current_plan": {
+    "plan_id": "plan_009",
+    "goal": "earn_keeper_trust",
+    "goal_id": "earn_keeper_trust",
+    "steps": [
+      {
+        "step_id": "advance:0:trust_threshold",
+        "objective": "advance: trust_threshold",
+        "action_candidates": [
+          {
+            "type": "speak"
+          },
+          {
+            "type": "ask"
+          },
+          {
+            "type": "observe"
+          }
+        ],
+        "success_condition": {
+          "type": "trust_threshold",
+          "other": "keeper",
+          "min_trust": 0.5
+        },
+        "failure_condition": null,
+        "retry_policy": {
+          "max_attempts": 2,
+          "on_exhausted": "replan",
+          "reactivate_when": null
+        },
+        "status": "active",
+        "attempts": 0
+      }
+    ],
+    "current_step": 0,
+    "commitment": 0.34,
+    "status": "active",
+    "step_failures": 0,
+    "blocked_info": null,
+    "reactivate_when": null,
+    "pending_recovery": null,
+    "retry_recoveries": {},
+    "interruption_conditions": [
+      "target_leaves",
+      "new_critical_information",
+      "immediate_danger"
+    ],
+    "interrupt_log": [],
+    "step_history": [],
+    "last_progress_tick": 0,
+    "commitment_updated_tick": 23
+  },
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "traveler 来到了/去到了 door。",
+      "event_id": "E0002"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0007"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "keeper 来到了/去到了 door。",
+      "event_id": "E0008"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0013"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "keeper 在 door 翻找着什么。",
+      "event_id": "E0014"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0016"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0021"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0024"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0028"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0032"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0039"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：驿站门口的铃铛响了一声，又没有人进来。",
+      "event_id": "E0041"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0070"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "环境：驿站门口的铃铛响了一声，又没有人进来。",
+      "event_id": "E0075"
+    },
+    {
+      "tick": 24,
+      "kind": "experienced",
+      "text": "环境：驿站门口的铃铛响了一声，又没有人进来。",
+      "event_id": "E0089"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "keeper": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "traveler": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0002",
+    "E0007",
+    "E0008",
+    "E0013",
+    "E0014",
+    "E0016",
+    "E0021",
+    "E0024",
+    "E0028",
+    "E0032",
+    "E0039",
+    "E0041",
+    "E0070",
+    "E0075",
+    "E0089"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 3,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 4,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 7,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 8,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 10,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 19,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    }
+  ],
+  "pending_question": null,
+  "action_counts": {
+    "move:door:": 1,
+    "speak:traveler:greeting": 4,
+    "speak:keeper:greeting": 2,
+    "observe::": 13,
+    "speak:traveler:denial": 3,
+    "listen::": 1
+  },
+  "holdings": [],
+  "found_objects": [],
+  "object_sightings": {},
+  "searched_empty_places": [],
+  "perceived_events": [
+    {
+      "tick": 1,
+      "type": "move",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": "door",
+      "found": []
+    },
+    {
+      "tick": 2,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "apprentice",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 2,
+      "type": "move",
+      "actor": "keeper",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": "door",
+      "found": []
+    },
+    {
+      "tick": 3,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "keeper",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 3,
+      "type": "search",
+      "actor": "keeper",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 4,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "keeper",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 5,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "apprentice",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 6,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "apprentice",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 7,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "apprentice",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 8,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "apprentice",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 9,
+      "type": "observe",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 10,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "apprentice",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 10,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "bell_rings",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 11,
+      "type": "listen",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 12,
+      "type": "listen",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 13,
+      "type": "observe",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 14,
+      "type": "listen",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 15,
+      "type": "listen",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 16,
+      "type": "observe",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 17,
+      "type": "listen",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 18,
+      "type": "listen",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 19,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "apprentice",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 20,
+      "type": "observe",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 20,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "bell_rings",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 21,
+      "type": "listen",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 22,
+      "type": "observe",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 23,
+      "type": "listen",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 24,
+      "type": "observe",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 24,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "bell_rings",
+      "object": null,
+      "location": "door",
+      "to": null,
+      "found": []
+    }
+  ],
+  "own_actions": [
+    {
+      "tick": 0,
+      "type": "move",
+      "target": null,
+      "target_location": "door",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 1,
+      "type": "speak",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "greeting",
+      "topic": "greeting",
+      "ok": true
+    },
+    {
+      "tick": 2,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": null,
+      "object": null,
+      "claim": "greeting",
+      "topic": "greeting",
+      "ok": true
+    },
+    {
+      "tick": 3,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": null,
+      "object": null,
+      "claim": "greeting",
+      "topic": "greeting",
+      "ok": true
+    },
+    {
+      "tick": 4,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 5,
+      "type": "speak",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "denial",
+      "topic": "denial",
+      "ok": true
+    },
+    {
+      "tick": 6,
+      "type": "speak",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "greeting",
+      "topic": "greeting",
+      "ok": true
+    },
+    {
+      "tick": 7,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 8,
+      "type": "speak",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "denial",
+      "topic": "denial",
+      "ok": true
+    },
+    {
+      "tick": 9,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 10,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 11,
+      "type": "speak",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "greeting",
+      "topic": "greeting",
+      "ok": true
+    },
+    {
+      "tick": 12,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 13,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 14,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 15,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 16,
+      "type": "speak",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "greeting",
+      "topic": "greeting",
+      "ok": true
+    },
+    {
+      "tick": 17,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 18,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 19,
+      "type": "speak",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "denial",
+      "topic": "denial",
+      "ok": true
+    },
+    {
+      "tick": 20,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 21,
+      "type": "listen",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 22,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 23,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    }
+  ]
+}
