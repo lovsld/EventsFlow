@@ -16,6 +16,15 @@ class ProviderError(Exception):
     modified by a failed call."""
 
 
+class QuotaExhaustedError(ProviderError):
+    """Structured quota signal: the provider's whole credential pool is
+    exhausted (every key answered 429). The scheduler's --loop mode keys
+    off this TYPE — never off message text — to pause and retry the same
+    tick instead of burning it on a degraded wait. Ordinary failures
+    (500s, timeouts, parse errors) stay plain ProviderError and keep the
+    existing degrade-to-wait semantics."""
+
+
 class LLMProvider:
     name: str = "base"
     model: str | None = None

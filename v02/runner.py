@@ -15,17 +15,20 @@ from __future__ import annotations
 import asyncio
 import json
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 
 from .agent import CharacterAgent
 from .broker import EventBroker
+from .checkpoint import META_FILE, RunCheckpointer, load_checkpoint
 from .config import ALL_IDS, load_all
 from .providers import make_provider
 from .providers.base import ProviderError
-from .scheduler import Scheduler, intent_from_decision
+from .scheduler import QuotaWaiter, Scheduler, intent_from_decision
 from .world import WorldEngine
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+RUNS_DIR = PROJECT_ROOT / "runs_v02"
 
 # Phase A name, kept importable; the canonical copy lives in scheduler.py
 _intent_from_decision = intent_from_decision
@@ -90,31 +93,98 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
                          run_name: str | None = None,
                          out_root: Path | None = None,
                          suppression_rules: list[dict] | None = None,
-                         trace_beliefs: bool = False) -> Path:
+                         trace_beliefs: bool = False,
+                         resume_from: str | None = None,
+                         loop: bool = False) -> Path:
     """suppression_rules (Phase D): counterfactual delivery rules handed
     to the Event Broker — see broker.match_suppression. trace_beliefs:
     also write beliefs_trace.json (per-tick subjective-state snapshots),
-    the raw material for experiment comparisons."""
-    preflight(mode)
+    the raw material for experiment comparisons.
+
+    Local runtime trio (LOCAL_DEPLOY.md): every run writes run_meta.json
+    plus a per-tick checkpoint.json (and world_log.json incrementally),
+    so resume_from=<run name> continues an interrupted run for `ticks`
+    MORE ticks in the same directory and database; loop=True makes a
+    quota-exhausted tick pause and retry instead of degrading."""
+    resume = resume_from is not None
     configs = load_all()
-    run_id = run_name or f"{mode}_seed{seed}"
-    root = Path(out_root) if out_root else PROJECT_ROOT / "runs_v02"
-    run_dir = root / run_id
+    root = Path(out_root) if out_root else RUNS_DIR
+    checkpoint = None
+    resumed_from_tick = None
+    if resume:
+        run_id = resume_from
+        run_dir = root / run_id
+        meta_path = run_dir / META_FILE
+        if not meta_path.exists():
+            raise FileNotFoundError(
+                f"cannot resume {run_id!r}: {meta_path} not found — "
+                "not a resumable run directory")
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        if meta.get("mode") != mode:
+            raise ValueError(
+                f"cannot resume {run_id!r}: the run was created with "
+                f"mode={meta.get('mode')!r} but mode={mode!r} was "
+                "requested; resume with the run's own mode")
+        # The run's own seed wins: every RNG state is restored from the
+        # checkpoint anyway, so the seed only labels the run.
+        seed = int(meta.get("seed", seed))
+        checkpoint = load_checkpoint(run_dir)
+        if checkpoint is None:
+            raise FileNotFoundError(
+                f"cannot resume {run_id!r}: no checkpoint.json in "
+                f"{run_dir} (the run predates checkpointing or never "
+                "committed a tick)")
+        resumed_from_tick = int(checkpoint["world_tick"])
+    else:
+        run_id = run_name or f"{mode}_seed{seed}"
+        run_dir = root / run_id
+    preflight(mode)
     (run_dir / "characters").mkdir(parents=True, exist_ok=True)
 
     from .persistence import Store
     store = Store(run_id, sqlite_path=str(run_dir / "acp.sqlite3"))
+    if resume:
+        # Drop everything the interrupted process wrote after the
+        # checkpoint; the replay below rewrites it identically.
+        store.rollback_after(resumed_from_tick)
 
     world = WorldEngine(configs, seed=seed)
     agents: dict[str, CharacterAgent] = {}
     for cid in ALL_IDS:
         provider = make_provider(mode, configs[cid], seed=seed)
         agents[cid] = CharacterAgent(configs[cid], provider,
-                                     run_char_dir=run_dir / "characters" / cid)
+                                     run_char_dir=run_dir / "characters" / cid,
+                                     resume_dir=resume)
     broker = EventBroker(ALL_IDS, suppression_rules=suppression_rules)
+    checkpointer = RunCheckpointer(run_dir, world, agents, broker)
+    if resume:
+        checkpointer.restore(checkpoint)
+        initial_records = checkpoint["tick_records"]
+        initial_deliveries = {int(t): d for t, d in
+                              checkpoint["deliveries_by_tick"].items()}
+        initial_last_events = checkpoint["last_events"]
+    else:
+        (run_dir / META_FILE).write_text(
+            json.dumps({"run_id": run_id, "mode": mode, "seed": seed,
+                        "characters": list(ALL_IDS),
+                        "created_at": datetime.now(timezone.utc).isoformat(),
+                        "checkpoint_format": 1},
+                       ensure_ascii=False, indent=2), encoding="utf-8")
+        # Tick-0 checkpoint: even a kill during the first tick leaves a
+        # resumable run behind.
+        checkpointer.write([], {}, [])
+        initial_records, initial_deliveries, initial_last_events = [], {}, []
+    waiter = QuotaWaiter() if loop else None
     belief_trace: list[dict] = []
-    scheduler = Scheduler(world, broker, agents, store, ALL_IDS,
-                          on_tick_end=belief_trace.append if trace_beliefs else None)
+    scheduler = Scheduler(
+        world, broker, agents, store, ALL_IDS,
+        on_tick_end=belief_trace.append if trace_beliefs else None,
+        on_tick_committed=checkpointer.write,
+        on_quota_pause=checkpointer.flush_pause if loop else None,
+        quota_waiter=waiter,
+        initial_tick_records=initial_records,
+        initial_deliveries_by_tick=initial_deliveries,
+        initial_last_events=initial_last_events)
     tick_records = await scheduler.run(ticks)
     if trace_beliefs:
         (run_dir / "beliefs_trace.json").write_text(
@@ -126,6 +196,10 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
     (run_dir / "narrative.md").write_text(render_narrative(tick_records, names), encoding="utf-8")
     summary = {
         "run_id": run_id, "mode": mode, "seed": seed, "ticks": ticks,
+        "world_tick": world.state["tick"],
+        "resumed_from_tick": resumed_from_tick,
+        "quota_stopped": scheduler.quota_stopped,
+        "quota_waits": waiter.waits if waiter is not None else 0,
         "total_events": sum(len(r["events"]) for r in tick_records),
         "final_positions": {a: world.state["agents"][a]["location"] for a in ALL_IDS},
         "letter_seen_by_objective": world.state["objects"]["anonymous_letter"]["seen_by"],
@@ -146,8 +220,10 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
 
 def run(mode: str, ticks: int, seed: int, run_name: str | None = None,
         suppression_rules: list[dict] | None = None,
-        trace_beliefs: bool = False) -> Path:
+        trace_beliefs: bool = False,
+        resume_from: str | None = None, loop: bool = False) -> Path:
     return asyncio.run(run_simulation(mode=mode, ticks=ticks, seed=seed,
                                       run_name=run_name,
                                       suppression_rules=suppression_rules,
-                                      trace_beliefs=trace_beliefs))
+                                      trace_beliefs=trace_beliefs,
+                                      resume_from=resume_from, loop=loop))

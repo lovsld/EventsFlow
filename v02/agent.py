@@ -46,16 +46,16 @@ from .plan_steps import (action_signature, owner_location_from_perception,
                          step_fulfilled)
 from .prediction import PredictionEngine
 from .protocol import AgentDecision
-from .providers.base import LLMProvider, ProviderError
+from .providers.base import LLMProvider, ProviderError, QuotaExhaustedError
 
 
 class CharacterAgent:
     def __init__(self, config: CharacterConfig, provider: LLMProvider,
-                 run_char_dir: Path | None = None):
+                 run_char_dir: Path | None = None, resume_dir: bool = False):
         self.config = config
         self.provider = provider
         self.state = config.initial_state()
-        self.memory = AgentMemory(self.state, run_char_dir)
+        self.memory = AgentMemory(self.state, run_char_dir, resume=resume_dir)
         self.last_context = None
         self.decision_records: list[dict] = []
         # Phase C cognitive components
@@ -367,6 +367,11 @@ class CharacterAgent:
             result = await self.provider.generate_decision(context)
         except ProviderError as e:
             record["error"] = str(e)
+            # Structured quota flag (from the exception TYPE, never the
+            # message text): the scheduler's --loop mode retries this
+            # same tick after a wait when this is set, instead of letting
+            # the degraded wait stand as the tick's decision.
+            record["quota_exhausted"] = isinstance(e, QuotaExhaustedError)
             self._pending_step_check = None
             record["plan_transitions"] = self._drain_plan_transitions()
             self.decision_records.append(record)

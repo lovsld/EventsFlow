@@ -293,6 +293,52 @@ class Store:
                                              ensure_ascii=False)))
             s.commit()
 
+    def rollback_after(self, tick: int) -> None:
+        """--resume support: delete every row this run wrote AFTER the
+        checkpoint taken at world tick `tick`, so the resumed process
+        replays exactly the segment the interrupted one may already
+        have persisted (including a completed run's final perception
+        pass), with no duplicates and no overwrites.
+
+        Boundary rules follow each table's tick semantics:
+          - decisions / predictions(created) / belief_changes /
+            plan_transitions / consolidations / deliveries /
+            dedup_drops / counterfactual_suppressions carry a
+            PERCEPTION or delivery tick: rows at tick >= checkpoint are
+            post-checkpoint (the final pass writes at tick == final
+            world tick, and post-checkpoint ticks start at the
+            checkpoint tick);
+          - world_events carry the tick of the step that produced them:
+            the checkpoint tick's own events are pre-checkpoint and are
+            kept, so only tick > checkpoint is deleted;
+          - predictions evaluated at tick >= checkpoint are
+            un-evaluated (their error is cleared; the resumed final /
+            next perception pass re-evaluates them against the same
+            restored pending prediction)."""
+        with self.Session() as s:
+            def wipe(model, cond):
+                s.query(model).filter(
+                    model.run_id == self.run_id, cond).delete(
+                    synchronize_session=False)
+
+            wipe(DecisionRow, DecisionRow.tick >= tick)
+            wipe(EventRow, EventRow.tick > tick)
+            wipe(DeliveryRow, DeliveryRow.tick >= tick)
+            wipe(DedupDropRow, DedupDropRow.tick >= tick)
+            wipe(CounterfactualSuppressionRow,
+                 CounterfactualSuppressionRow.tick >= tick)
+            wipe(PredictionRow, PredictionRow.tick >= tick)
+            wipe(BeliefChangeRow, BeliefChangeRow.tick >= tick)
+            wipe(PlanTransitionRow, PlanTransitionRow.tick >= tick)
+            wipe(ConsolidationRow, ConsolidationRow.tick >= tick)
+            for row in s.query(PredictionRow).filter(
+                    PredictionRow.run_id == self.run_id,
+                    PredictionRow.evaluated_tick >= tick).all():
+                row.error_json = None
+                row.surprise = None
+                row.evaluated_tick = None
+            s.commit()
+
     def chain_for(self, decision_id: int) -> dict:
         """Rebuild ONE decision's complete cognitive chain from the DB
         alone: context snapshot -> prediction -> decision -> execution

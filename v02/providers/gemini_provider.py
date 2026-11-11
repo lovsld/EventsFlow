@@ -25,7 +25,7 @@ import urllib.error
 import urllib.request
 
 from ..protocol import AgentDecision, DecisionContext, ProviderResult
-from .base import LLMProvider, ProviderError
+from .base import LLMProvider, ProviderError, QuotaExhaustedError
 from .openai_provider import SYSTEM_TEMPLATE
 
 API_HOST = "generativelanguage.googleapis.com"
@@ -65,8 +65,21 @@ async def _pace(model: str = "") -> None:
         _PACE_LAST[model] = time.monotonic()
 
 
+def _parse_raw_keys() -> list[str]:
+    """ACP_GEMINI_KEYS: comma-separated RAW Gemini API keys for running
+    fully locally (see LOCAL_DEPLOY.md). The keys themselves are held
+    only in the provider instance's private map; everywhere else —
+    rotation bookkeeping, logs, error text, the audit DB — a key is
+    referred to strictly by its ordinal label ("key#1", "key#2", ...).
+    Raw key text must never be printed or persisted."""
+    return [k.strip() for k in os.environ.get("ACP_GEMINI_KEYS", "").split(",")
+            if k.strip()]
+
+
 def credential_available() -> bool:
     """True if a Gemini credential is reachable (env var or connector)."""
+    if _parse_raw_keys():
+        return True
     if os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY"):
         return True
     try:
@@ -102,9 +115,26 @@ class GeminiProvider(LLMProvider):
                                                 if temperature is not None else 0.7))
         self.timeout = timeout
         self.max_retries = max_retries
-        pool = os.environ.get("ACP_GEMINI_CREDENTIALS", "")
-        self.credentials = [c.strip() for c in pool.split(",") if c.strip()] \
-            or [_CREDENTIAL_NAME]
+        # Credential source priority (LOCAL_DEPLOY.md):
+        #   1. ACP_GEMINI_KEYS        — raw local key pool; entries are
+        #      labelled key#1, key#2, ... and the raw text lives only in
+        #      self._raw_keys (never logged, never persisted);
+        #   2. ACP_GEMINI_CREDENTIALS — Muse connector credential names
+        #      (behaviour unchanged from before);
+        #   3. GEMINI_API_KEY single key (handled in _post_generate);
+        #   4. the connector default credential.
+        self._raw_keys: dict[str, str] = {}
+        raw_keys = _parse_raw_keys()
+        if raw_keys:
+            self.credentials = []
+            for i, key in enumerate(raw_keys):
+                label = f"key#{i + 1}"
+                self.credentials.append(label)
+                self._raw_keys[label] = key
+        else:
+            pool = os.environ.get("ACP_GEMINI_CREDENTIALS", "")
+            self.credentials = [c.strip() for c in pool.split(",") if c.strip()] \
+                or [_CREDENTIAL_NAME]
 
     # ---------- transport (sync; run in a thread by the async wrapper) ----------
     def _post_generate(self, payload: dict, credential: str | None = None) -> dict:
@@ -112,14 +142,19 @@ class GeminiProvider(LLMProvider):
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         req = urllib.request.Request(url, data=body, method="POST",
                                      headers={"Content-Type": "application/json"})
+        label = credential or (self.credentials[0] if self.credentials
+                               else _CREDENTIAL_NAME)
         env_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
-        if env_key:
+        if label in self._raw_keys:
+            # Raw local pool wins over every other source; the key text
+            # goes only into this request's header, nowhere else.
+            req.add_header("x-goog-api-key", self._raw_keys[label])
+        elif env_key:
             req.add_header("x-goog-api-key", env_key)
         else:
             sys.path.insert(0, _SKILL_BIN)
             from dynamic_credentials import add_surrogate_to_request
-            add_surrogate_to_request(req, credential or _CREDENTIAL_NAME,
-                                     allowed_hosts=[API_HOST])
+            add_surrogate_to_request(req, label, allowed_hosts=[API_HOST])
         opener = urllib.request.build_opener(_NoRedirect())
         try:
             with opener.open(req, timeout=self.timeout) as resp:
@@ -220,8 +255,12 @@ class GeminiProvider(LLMProvider):
                 if "429" in str(e):
                     # Quota exhaustion on the last credential: at most ONE
                     # long retry, then fail — hammering a cap burns time.
+                    # The failure is raised as the structured
+                    # QuotaExhaustedError so the scheduler's --loop mode
+                    # can pause on the TYPE instead of guessing from text.
                     if rate_limit_retries >= 1 or attempt >= self.max_retries:
-                        raise ProviderError(f"Gemini quota exhausted (429): {e}") from e
+                        raise QuotaExhaustedError(
+                            f"Gemini quota exhausted (429): {e}") from e
                     rate_limit_retries += 1
                     await asyncio.sleep(40)
                     continue

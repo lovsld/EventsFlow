@@ -19,13 +19,33 @@ from .protocol import Belief, CharacterState
 
 
 class AgentMemory:
-    def __init__(self, state: CharacterState, run_char_dir: Path | None = None):
+    def __init__(self, state: CharacterState, run_char_dir: Path | None = None,
+                 resume: bool = False):
         self.state = state
         self.dir = Path(run_char_dir) if run_char_dir else None
         if self.dir:
             self.dir.mkdir(parents=True, exist_ok=True)
-            (self.dir / "memory.md").write_text(
-                f"# {state.character_id} 的私人记忆（其他 Agent 不可见）\n", encoding="utf-8")
+            # On --resume the existing memory.md belongs to the restored
+            # state and must not be truncated; resync_files() rewrites
+            # it from the checkpointed short-term memory instead.
+            if not (resume and (self.dir / "memory.md").exists()):
+                (self.dir / "memory.md").write_text(
+                    f"# {state.character_id} 的私人记忆（其他 Agent 不可见）\n",
+                    encoding="utf-8")
+
+    def resync_files(self) -> None:
+        """--resume support: rewrite memory.md from the restored
+        short-term memory (same line format as remember()) and refresh
+        state.json / beliefs.md, so post-interruption appends continue
+        the file instead of duplicating pre-interruption lines."""
+        if not self.dir:
+            return
+        lines = [f"# {self.state.character_id} 的私人记忆（其他 Agent 不可见）"]
+        for e in self.state.short_term_memory:
+            lines.append(f"- [t{e['tick']}][{e['kind']}] {e['text']}")
+        (self.dir / "memory.md").write_text("\n".join(lines) + "\n",
+                                            encoding="utf-8")
+        self.save_state()
 
     # ---------- episodic ----------
     def remember(self, tick: int, kind: str, text: str, event_id: str | None = None) -> None:

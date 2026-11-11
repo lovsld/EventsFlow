@@ -41,6 +41,17 @@ from .protocol import PlanState, PlanUpdate
 
 _PLAN_SEQ = [0]
 
+
+def plan_seq() -> int:
+    """Current plan-id counter value. Checkpointed (checkpoint.py) so a
+    resumed process keeps issuing fresh, non-colliding plan ids exactly
+    as the uninterrupted process would have."""
+    return _PLAN_SEQ[0]
+
+
+def restore_plan_seq(value: int) -> None:
+    _PLAN_SEQ[0] = int(value)
+
 DECAY_PER_TICK = 0.02
 MIN_COMMITMENT = 0.1
 MAX_COMMITMENT = 0.95
