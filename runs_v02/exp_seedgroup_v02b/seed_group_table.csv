@@ -1,0 +1,6 @@
+run_id,seed,mode,ticks,total_events,soldier_letter_confidence,soldier_letter_kind,merchant_letter_confidence,merchant_letter_kind,owner_letter_known_confidence,soldier_mayor_embezzled_confidence,predictions,predictions_falsified,belief_changes,long_term_promotions,counterfactual_suppressions,final_positions
+rule_seed42,42,rule,20,73,1.0,experienced,,,,0.704,60,14,10,0,0,merchant@bar;owner@bar;soldier@bar
+rule_seed7,7,rule,20,73,1.0,experienced,,,,0.704,60,9,9,0,0,merchant@bar;owner@bar;soldier@bar
+rule_seed101,101,rule,20,65,1.0,experienced,,,,0.716,60,25,6,0,0,merchant@back_room;owner@bar;soldier@back_room
+rule_seed2024,2024,rule,20,72,1.0,experienced,,,,0.704,60,15,10,0,0,merchant@bar;owner@bar;soldier@bar
+rule_seed555,555,rule,20,69,1.0,experienced,,,,0.716,60,32,6,0,0,merchant@back_room;owner@bar;soldier@back_room

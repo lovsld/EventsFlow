@@ -1,0 +1,29 @@
+# soldier 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] owner 来到了/去到了 tables。
+- [t2][experienced] merchant 来到了/去到了 tables。
+- [t2][experienced] owner 说：奥伦：我把话问明白——这封信，到底是谁写、从哪儿来的？
+- [t3][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t3][experienced] owner 说：奥伦：我把话问明白——这封信，到底是谁写、从哪儿来的？
+- [t4][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t4][experienced] owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t5][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t5][experienced] owner 说：奥伦：我把话问明白——这封信，到底是谁写、从哪儿来的？
+- [t6][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t6][experienced] owner 说：奥伦：我把话问明白——这封信，到底是谁写、从哪儿来的？
+- [t7][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t7][experienced] owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。
+- [t8][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t9][experienced] owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t12][inferred] 隔墙隐约听到 merchant,owner 在tables说话，听不清内容。
+- [t13][experienced] 我在back_room找到了 anonymous_letter。
+- [t13][inferred] 隔墙隐约听到 owner,merchant 在tables说话，听不清内容。
+- [t14][experienced] merchant 说：米拉：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。
+- [t14][experienced] 环境：一只野猫碰倒了桌边的空杯子，碎在地上。
+- [t15][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t15][experienced] owner 说：奥伦：我把话问明白——这封信，到底是谁写、从哪儿来的？
+- [t17][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t17][experienced] owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t18][experienced] merchant 说：米拉：问几遍都一样，我什么都不知道。
+- [t18][experienced] 环境：一只野猫碰倒了桌边的空杯子，碎在地上。
+- [t19][experienced] owner 说：奥伦：问几遍都一样，我什么都不知道。
+- [t20][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。

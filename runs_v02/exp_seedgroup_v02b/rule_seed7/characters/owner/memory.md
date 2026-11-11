@@ -1,0 +1,21 @@
+# owner 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] merchant 来到了/去到了 bar。
+- [t2][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t2][experienced] 环境：窗外下起雨来，酒馆里的人今晚大概走不了太早。
+- [t3][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t4][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t6][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t7][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t8][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t15][experienced] soldier 来到了/去到了 bar。
+- [t16][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t16][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t16][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t17][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t17][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t18][experienced] soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t18][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t19][experienced] soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？
+- [t19][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t20][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t20][experienced] merchant 说：米拉：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。

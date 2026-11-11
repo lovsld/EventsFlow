@@ -1,0 +1,636 @@
+{
+  "kind": "seed_group",
+  "mode": "rule",
+  "ticks": 20,
+  "seeds": [
+    42,
+    7,
+    101,
+    2024,
+    555
+  ],
+  "runs": [
+    {
+      "run_id": "rule_seed42",
+      "seed": 42,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 73,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "bar"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": null,
+      "owner_letter_known_by_others": null,
+      "soldier_mayor_embezzled": {
+        "confidence": 0.704,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 14,
+      "belief_changes": 10,
+      "long_term_promotions": 0,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp_seedgroup_v02b/rule_seed42",
+      "v02a": {
+        "dialogue_by_type": {
+          "speak": 18,
+          "ask": 6,
+          "confront": 6
+        },
+        "dialogue_count": 30,
+        "letter_knowledge_coverage": {
+          "agents": 3,
+          "know": 2,
+          "experienced": 2,
+          "heard_or_inferred_only": 0
+        },
+        "goals_by_status": {
+          "active": 5,
+          "paused": 2,
+          "inactive": 1,
+          "failed": 1
+        },
+        "goal_completion_rate": 0.0,
+        "decisions_recorded": 60,
+        "action_success_rate": 1.0,
+        "repeat_action_rate": 0.167,
+        "fallback_decisions": 0,
+        "plans_total": 5,
+        "plan_persistence_rate": 0.0,
+        "llm": {
+          "calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "repairs_total": 0,
+          "json_repair_rate": null,
+          "latency_ms": null,
+          "latency_note": "not recorded in persisted artefacts"
+        }
+      },
+      "v02b": {
+        "goal_activation_rate": 0.0,
+        "goal_activation_rate_all_goals": 0.889,
+        "goal_pursuit_rate": 0.25,
+        "goal_completion_rate": 0.0,
+        "goal_completion_rate_deprecated_denominator": 0.0,
+        "goal_progress_mean": 0.568,
+        "maintenance_goal_failures": 1,
+        "goal_failure_rate": 0.125,
+        "goal_abandonment_count": 0,
+        "unpursued_goal_count": 6,
+        "goal_switching_rate": 0.035,
+        "plan_blocked_rate": 0.75,
+        "plan_recovery_rate": 0.667,
+        "plan_recovery_abandon_after_blocked": 0,
+        "replan_rate": 0.0,
+        "plans_created": 4,
+        "plans_ever_blocked": 3,
+        "plan_step_fulfillment_rate": 0.028,
+        "step_evaluations_conditional": 36,
+        "step_evaluations_fulfilled": 1,
+        "plan_retry_count": 31,
+        "recovery_strategies": {
+          "retry": 0,
+          "replan": 2,
+          "suspend": 0,
+          "abandon": 0,
+          "skip": 0,
+          "reactivate": 0
+        },
+        "legacy_step_share": 0.0,
+        "action_goal_alignment": 0.541,
+        "behavioral_diversity": 0.4,
+        "behavioral_diversity_jaccard_mean": 0.842
+      }
+    },
+    {
+      "run_id": "rule_seed7",
+      "seed": 7,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 73,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "bar"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": null,
+      "owner_letter_known_by_others": null,
+      "soldier_mayor_embezzled": {
+        "confidence": 0.704,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 9,
+      "belief_changes": 9,
+      "long_term_promotions": 0,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp_seedgroup_v02b/rule_seed7",
+      "v02a": {
+        "dialogue_by_type": {
+          "speak": 11,
+          "ask": 2,
+          "confront": 3
+        },
+        "dialogue_count": 16,
+        "letter_knowledge_coverage": {
+          "agents": 3,
+          "know": 2,
+          "experienced": 2,
+          "heard_or_inferred_only": 0
+        },
+        "goals_by_status": {
+          "active": 6,
+          "paused": 2,
+          "inactive": 1
+        },
+        "goal_completion_rate": 0.0,
+        "decisions_recorded": 60,
+        "action_success_rate": 1.0,
+        "repeat_action_rate": 0.217,
+        "fallback_decisions": 0,
+        "plans_total": 7,
+        "plan_persistence_rate": 0.0,
+        "llm": {
+          "calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "repairs_total": 0,
+          "json_repair_rate": null,
+          "latency_ms": null,
+          "latency_note": "not recorded in persisted artefacts"
+        }
+      },
+      "v02b": {
+        "goal_activation_rate": 0.0,
+        "goal_activation_rate_all_goals": 0.889,
+        "goal_pursuit_rate": 0.25,
+        "goal_completion_rate": 0.0,
+        "goal_completion_rate_deprecated_denominator": 0.0,
+        "goal_progress_mean": 0.568,
+        "maintenance_goal_failures": 0,
+        "goal_failure_rate": 0.0,
+        "goal_abandonment_count": 0,
+        "unpursued_goal_count": 6,
+        "goal_switching_rate": 0.018,
+        "plan_blocked_rate": 0.667,
+        "plan_recovery_rate": 1.0,
+        "plan_recovery_abandon_after_blocked": 0,
+        "replan_rate": 0.0,
+        "plans_created": 6,
+        "plans_ever_blocked": 4,
+        "plan_step_fulfillment_rate": 0.029,
+        "step_evaluations_conditional": 34,
+        "step_evaluations_fulfilled": 1,
+        "plan_retry_count": 27,
+        "recovery_strategies": {
+          "retry": 0,
+          "replan": 4,
+          "suspend": 0,
+          "abandon": 0,
+          "skip": 0,
+          "reactivate": 0
+        },
+        "legacy_step_share": 0.0,
+        "action_goal_alignment": 0.432,
+        "behavioral_diversity": 0.35,
+        "behavioral_diversity_jaccard_mean": 0.853
+      }
+    },
+    {
+      "run_id": "rule_seed101",
+      "seed": 101,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 65,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "back_room",
+        "soldier": "back_room"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": null,
+      "owner_letter_known_by_others": null,
+      "soldier_mayor_embezzled": {
+        "confidence": 0.716,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 25,
+      "belief_changes": 6,
+      "long_term_promotions": 0,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp_seedgroup_v02b/rule_seed101",
+      "v02a": {
+        "dialogue_by_type": {
+          "speak": 10,
+          "ask": 4,
+          "confront": 5
+        },
+        "dialogue_count": 19,
+        "letter_knowledge_coverage": {
+          "agents": 3,
+          "know": 2,
+          "experienced": 2,
+          "heard_or_inferred_only": 0
+        },
+        "goals_by_status": {
+          "active": 6,
+          "paused": 2,
+          "inactive": 1
+        },
+        "goal_completion_rate": 0.0,
+        "decisions_recorded": 60,
+        "action_success_rate": 1.0,
+        "repeat_action_rate": 0.233,
+        "fallback_decisions": 0,
+        "plans_total": 6,
+        "plan_persistence_rate": 0.0,
+        "llm": {
+          "calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "repairs_total": 0,
+          "json_repair_rate": null,
+          "latency_ms": null,
+          "latency_note": "not recorded in persisted artefacts"
+        }
+      },
+      "v02b": {
+        "goal_activation_rate": 0.0,
+        "goal_activation_rate_all_goals": 0.889,
+        "goal_pursuit_rate": 0.25,
+        "goal_completion_rate": 0.0,
+        "goal_completion_rate_deprecated_denominator": 0.0,
+        "goal_progress_mean": 0.573,
+        "maintenance_goal_failures": 0,
+        "goal_failure_rate": 0.0,
+        "goal_abandonment_count": 0,
+        "unpursued_goal_count": 6,
+        "goal_switching_rate": 0.07,
+        "plan_blocked_rate": 0.8,
+        "plan_recovery_rate": 0.75,
+        "plan_recovery_abandon_after_blocked": 0,
+        "replan_rate": 0.0,
+        "plans_created": 5,
+        "plans_ever_blocked": 4,
+        "plan_step_fulfillment_rate": 0.029,
+        "step_evaluations_conditional": 35,
+        "step_evaluations_fulfilled": 1,
+        "plan_retry_count": 29,
+        "recovery_strategies": {
+          "retry": 0,
+          "replan": 3,
+          "suspend": 0,
+          "abandon": 0,
+          "skip": 0,
+          "reactivate": 0
+        },
+        "legacy_step_share": 0.0,
+        "action_goal_alignment": 0.694,
+        "behavioral_diversity": 0.317,
+        "behavioral_diversity_jaccard_mean": 0.741
+      }
+    },
+    {
+      "run_id": "rule_seed2024",
+      "seed": 2024,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 72,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "bar",
+        "soldier": "bar"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": null,
+      "owner_letter_known_by_others": null,
+      "soldier_mayor_embezzled": {
+        "confidence": 0.704,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 15,
+      "belief_changes": 10,
+      "long_term_promotions": 0,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp_seedgroup_v02b/rule_seed2024",
+      "v02a": {
+        "dialogue_by_type": {
+          "speak": 17,
+          "ask": 6,
+          "confront": 6
+        },
+        "dialogue_count": 29,
+        "letter_knowledge_coverage": {
+          "agents": 3,
+          "know": 2,
+          "experienced": 2,
+          "heard_or_inferred_only": 0
+        },
+        "goals_by_status": {
+          "active": 5,
+          "paused": 2,
+          "inactive": 1,
+          "failed": 1
+        },
+        "goal_completion_rate": 0.0,
+        "decisions_recorded": 60,
+        "action_success_rate": 1.0,
+        "repeat_action_rate": 0.15,
+        "fallback_decisions": 0,
+        "plans_total": 4,
+        "plan_persistence_rate": 0.0,
+        "llm": {
+          "calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "repairs_total": 0,
+          "json_repair_rate": null,
+          "latency_ms": null,
+          "latency_note": "not recorded in persisted artefacts"
+        }
+      },
+      "v02b": {
+        "goal_activation_rate": 0.0,
+        "goal_activation_rate_all_goals": 0.889,
+        "goal_pursuit_rate": 0.25,
+        "goal_completion_rate": 0.0,
+        "goal_completion_rate_deprecated_denominator": 0.0,
+        "goal_progress_mean": 0.568,
+        "maintenance_goal_failures": 1,
+        "goal_failure_rate": 0.125,
+        "goal_abandonment_count": 0,
+        "unpursued_goal_count": 6,
+        "goal_switching_rate": 0.035,
+        "plan_blocked_rate": 0.333,
+        "plan_recovery_rate": 1.0,
+        "plan_recovery_abandon_after_blocked": 0,
+        "replan_rate": 0.0,
+        "plans_created": 3,
+        "plans_ever_blocked": 1,
+        "plan_step_fulfillment_rate": 0.027,
+        "step_evaluations_conditional": 37,
+        "step_evaluations_fulfilled": 1,
+        "plan_retry_count": 33,
+        "recovery_strategies": {
+          "retry": 0,
+          "replan": 1,
+          "suspend": 0,
+          "abandon": 0,
+          "skip": 0,
+          "reactivate": 0
+        },
+        "legacy_step_share": 0.0,
+        "action_goal_alignment": 0.459,
+        "behavioral_diversity": 0.417,
+        "behavioral_diversity_jaccard_mean": 0.886
+      }
+    },
+    {
+      "run_id": "rule_seed555",
+      "seed": 555,
+      "mode": "rule",
+      "ticks": 20,
+      "total_events": 69,
+      "final_positions": {
+        "owner": "bar",
+        "merchant": "back_room",
+        "soldier": "back_room"
+      },
+      "soldier_letter": {
+        "confidence": 1.0,
+        "kind": "experienced"
+      },
+      "soldier_read_letter": true,
+      "merchant_letter": null,
+      "owner_letter_known_by_others": null,
+      "soldier_mayor_embezzled": {
+        "confidence": 0.716,
+        "kind": "heard"
+      },
+      "predictions": 60,
+      "predictions_falsified": 32,
+      "belief_changes": 6,
+      "long_term_promotions": 0,
+      "counterfactual_suppressions": 0,
+      "run_dir": "runs_v02/exp_seedgroup_v02b/rule_seed555",
+      "v02a": {
+        "dialogue_by_type": {
+          "speak": 10,
+          "ask": 5,
+          "confront": 5
+        },
+        "dialogue_count": 20,
+        "letter_knowledge_coverage": {
+          "agents": 3,
+          "know": 2,
+          "experienced": 2,
+          "heard_or_inferred_only": 0
+        },
+        "goals_by_status": {
+          "active": 6,
+          "paused": 2,
+          "inactive": 1
+        },
+        "goal_completion_rate": 0.0,
+        "decisions_recorded": 60,
+        "action_success_rate": 1.0,
+        "repeat_action_rate": 0.167,
+        "fallback_decisions": 0,
+        "plans_total": 6,
+        "plan_persistence_rate": 0.0,
+        "llm": {
+          "calls": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "repairs_total": 0,
+          "json_repair_rate": null,
+          "latency_ms": null,
+          "latency_note": "not recorded in persisted artefacts"
+        }
+      },
+      "v02b": {
+        "goal_activation_rate": 0.0,
+        "goal_activation_rate_all_goals": 0.889,
+        "goal_pursuit_rate": 0.25,
+        "goal_completion_rate": 0.0,
+        "goal_completion_rate_deprecated_denominator": 0.0,
+        "goal_progress_mean": 0.573,
+        "maintenance_goal_failures": 0,
+        "goal_failure_rate": 0.0,
+        "goal_abandonment_count": 0,
+        "unpursued_goal_count": 6,
+        "goal_switching_rate": 0.035,
+        "plan_blocked_rate": 0.6,
+        "plan_recovery_rate": 1.0,
+        "plan_recovery_abandon_after_blocked": 0,
+        "replan_rate": 0.0,
+        "plans_created": 5,
+        "plans_ever_blocked": 3,
+        "plan_step_fulfillment_rate": 0.029,
+        "step_evaluations_conditional": 35,
+        "step_evaluations_fulfilled": 1,
+        "plan_retry_count": 30,
+        "recovery_strategies": {
+          "retry": 0,
+          "replan": 3,
+          "suspend": 0,
+          "abandon": 0,
+          "skip": 0,
+          "reactivate": 0
+        },
+        "legacy_step_share": 0.0,
+        "action_goal_alignment": 0.694,
+        "behavioral_diversity": 0.317,
+        "behavioral_diversity_jaccard_mean": 0.741
+      }
+    }
+  ],
+  "metrics": {
+    "trajectory_diversity_mean_jaccard": {
+      "mean": 0.7658,
+      "pairs": [
+        {
+          "pair": [
+            0,
+            1
+          ],
+          "distance": 0.7934
+        },
+        {
+          "pair": [
+            0,
+            2
+          ],
+          "distance": 0.7455
+        },
+        {
+          "pair": [
+            0,
+            3
+          ],
+          "distance": 0.6449
+        },
+        {
+          "pair": [
+            0,
+            4
+          ],
+          "distance": 0.7652
+        },
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "distance": 0.8403
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "distance": 0.7712
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "distance": 0.8167
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "distance": 0.819
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "distance": 0.699
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "distance": 0.7632
+        }
+      ]
+    },
+    "soldier_read_letter_consistency": {
+      "outcome": "soldier_read_letter",
+      "hits": 5,
+      "runs": 5,
+      "rate": 1.0
+    },
+    "total_events": {
+      "values": [
+        73,
+        73,
+        65,
+        72,
+        69
+      ],
+      "min": 65,
+      "max": 73,
+      "mean": 70.4
+    },
+    "belief_confidence_by_seed": {
+      "soldier_letter": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "merchant_letter": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "owner_letter_known_by_others": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "soldier_mayor_embezzled": [
+        0.704,
+        0.704,
+        0.716,
+        0.704,
+        0.716
+      ]
+    }
+  }
+}
