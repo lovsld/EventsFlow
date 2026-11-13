@@ -1,0 +1,51 @@
+goals:
+- desc: 确认雾笛在渔船到之前能响起来
+  key: ensure_fog_signal
+  weight: 1.0
+  kind: achievement
+  # 同角色调度依赖：先把船要来的消息亲口交代出去（spread_word），
+  # 才谈得上确认雾笛。跨角色部分不走 depends_on——雾笛能不能响
+  # 取决于维修工，靠下面的成功条件读本人信念/感知表达。
+  depends_on:
+  - spread_word
+  # C 轮契约行使：关键保障目标不许被调度暂停掉。
+  scheduling:
+    pausable: false
+    starvation_protection: true
+  # 成功：从维修工处得知雾笛可恢复（证言信念达标），或亲耳
+  # 听见维修工当面回报（断言事件，本人感知内）。两条都是
+  # 「信息经他人传递而闭合」的契约写法。
+  success_condition:
+    any:
+    - type: belief_threshold
+      belief: fog_horn_ready
+      min_confidence: 0.5
+    - type: event_occurred
+      event_type: speak
+      actor: any_other
+      claim: horn_report
+      stance: assert
+- desc: 把今晚有渔船回港的事亲口交代出去
+  key: spread_word
+  weight: 0.85
+  kind: achievement
+  # C1 契约行使：交代目标可暂停，但最多 6 tick（缺省 8）。
+  scheduling:
+    max_pause_ticks: 6
+  # 成功：本人亲口发出过 ship_notice 断言（提问不算送达，
+  # 失败的发言不算发出——传讯真实性契约）。
+  success_condition:
+    type: event_occurred
+    event_type: speak
+    actor: self
+    claim: ship_notice
+    stance: assert
+- desc: 守好这座塔，别让夜里出乱子
+  key: keep_light
+  weight: 0.8
+  kind: maintenance
+  # 失败：被人当面质问（说明塔上出了岔子）。
+  failure_condition:
+    type: event_occurred
+    event_type: confront
+    target: self

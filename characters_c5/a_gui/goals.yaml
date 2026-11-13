@@ -1,0 +1,51 @@
+goals:
+- desc: 弄清今晚到底有没有船要回港
+  key: learn_ship_news
+  weight: 0.8
+  kind: achievement
+  # 成功：从别人口中确知今晚有船要来（本人信念达标）。
+  success_condition:
+    type: belief_threshold
+    belief: ship_passing_tonight
+    min_confidence: 0.6
+- desc: 把接船的系缆和信号都备好
+  key: ready_mooring
+  weight: 0.85
+  kind: achievement
+  # 激活：先得知有船要来，才有连夜备缆的由头。
+  activation_condition:
+    type: belief_threshold
+    belief: ship_passing_tonight
+    min_confidence: 0.4
+  # 成功：信号灯笼到本人手中（栈桥信号灯已灭，备用灯笼在
+  # 船坞工具架上，去取必然要在船坞搜查一次），人回到栈
+  # 桥，并在那里干过活（备缆）。
+  success_condition:
+    all:
+    - type: object_possession
+      object: signal_lantern
+      holder: self
+    - type: agent_at_location
+      agent: self
+      location: jetty
+    - type: event_occurred
+      event_type: work
+      actor: self
+- desc: 守好栈桥，别出岔子
+  key: keep_jetty
+  weight: 0.7
+  kind: maintenance
+  # 失败：被人当面质问。
+  failure_condition:
+    type: event_occurred
+    event_type: confront
+    target: self
+  # 契约试用（沿护工 porter_wu 先例）：一旦知道有船要来，
+  # 守桥（迎船）优先级上调。
+  priority_rules:
+  - when:
+      type: belief_threshold
+      belief: ship_passing_tonight
+      min_confidence: 0.4
+    delta: 0.2
+    once: false

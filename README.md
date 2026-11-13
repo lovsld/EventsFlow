@@ -73,7 +73,7 @@ python3 -m unittest discover -s tests -v       # 全部测试
 
 ---
 
-# V0.2 / V0.2-A / V0.2-B 现状（2026-11-12 更新）
+# V0.2 / V0.2-A / V0.2-B / V0.2-C 现状（2026-11-13 更新）
 
 V0.1 的三进程实现保留在 `src/` 作对照基线，不再改动。现行系统是
 `v02/` 包：单进程 asyncio 事件驱动、Scheduler 每 tick 统一提交一次
@@ -109,22 +109,52 @@ V0.1 的三进程实现保留在 `src/` 作对照基线，不再改动。现行�
   （M1 已切换为模板一致性口径）、§6 十五指标聚合
   （`collect_run_metrics()["v02b"]`）；中断可续跑（`--resume`，
   校验 engine_version），LLM 额度耗尽可等待重试（`--loop`）。
+- **决策动力学**（V0.2-C）：Goal Scheduler（目标依赖
+  depends_on、暂停保护与公平效用，系数由预注册校准定版）；
+  Communication Generator（待答队列 + Answer 生成义务、
+  Assert 按受方无知估价、披露职责入角色数据）；统一
+  Information Value（`v02/info_value.py` 单点定义，含目标
+  驱动探索）；Plan 粒度与循环控制（步履约每 receive 判定、
+  局部性契约、语义 Plan Fingerprint + replan 门槛把「同计划
+  同世界」的重提改派 suspend）；传讯真实性（自身未送达的
+  行动不算发生、event_occurred 可带 stance 谓词）与职责
+  寻求（未送达职责驱动朝向义务对象的移动）。诊所场景全链
+  判据经五轮逐环修复后**登记为未达成**（剩余两环为已知
+  问题 P-FIX-1/P-FIX-2，定案见 V0.2-C 架构文档 §8）。
+- **真实 LLM 证据**（V0.2-C §十一 #10，部分达成）：仓库
+  场景在 DeepSeek（deepseek-flash）下双 seed 跑满 20 tick，
+  结构化计划产生并被步评估判 fulfilled、目标经计划+搜查
+  完成（seed 42）；blocked→恢复在 LLM 侧未采样。DeepSeek
+  后端可直接用 Muse 连接器凭证（vault surrogate，无需
+  本地放钥；原始钥池仍可用且优先）。
 
 运行（V0.2）：
 
 ```bash
 .venv/bin/python main.py --mode rule --ticks 20 --seed 42
 .venv/bin/python -m pytest tests_v02 tests -q
-# 173 个测试：166 通过；7 项为预登记停放冲突
-# （钉住已废除旧机制的断言，待裁决，见 V0.2-B 报告 §7）
+# 243 个测试：242 通过；1 项为停放的 P-C4-1（反事实断言待裁决，
+# 见 V0.2-C 实施报告与架构文档 §8.2）
+
+# LLM 模式（DeepSeek，连接器已连接时无需任何本地钥）：
+ACP_MODEL=deepseek-flash .venv/bin/python main.py --mode llm \
+  --provider deepseek --ticks 20 --seed 42
+# 模型对齐靠 ACP_MODEL（账号模型名为 deepseek-flash /
+# deepseek-v4-pro）；preset 默认 deepseek-chat 不适用于该账号。
+# 也可改用原始钥池：ACP_DEEPSEEK_KEYS=<key>[,<key>...]（优先于 vault）。
 ```
 
-规范轨迹：`runs_v02/rule_v02b_seed42`（73 事件，V0.2-B 规范；
-V0.2-A 的 `rule_v02a_seed42` 只读保留为上一代基线）。
+规范轨迹：`runs_v02/rule_v02c4_seed42`（73 事件，V0.2-C 规范，
+修复轮后逐字节不变；V0.2-B 的 `rule_v02b_seed42` 与 V0.2-A 的
+`rule_v02a_seed42` 只读保留为上一代基线）。
 
-文档：`docs/V0.2-B_REPORT.md`（B1–B3 实施 + B4 场景 A/B 评测与
-决策代码冻结清单）、`docs/V0.2-B_ARCHITECTURE.md`（落地架构与
-数据契约、与设计差异逐条）、`docs/V0.2-B_DESIGN.md`（设计）、
-`docs/V0.2-A_ARCHITECTURE.md`、`docs/V0.2-A_EXPERIMENT_REPORT.md`、
-`docs/V0.2-A_PHASE1_REVIEW.md`、`PHASE_*_REPORT.md`、
-`V02A_PHASE3_REPORT.md`、`LOCAL_DEPLOY.md`（本地部署与多后端）。
+文档：`docs/V0.2-C_IMPLEMENTATION_REPORT.md`（C1–C4 + 修复轮 +
+收尾包实施全录，含 §十一 #10 实验与 32 文件冻结清单）、
+`docs/V0.2-C_ARCHITECTURE.md`（C 轮落地架构、作者契约、偏离
+与已知问题）、`docs/V0.2-C_DESIGN.md`（设计）、
+`docs/V0.2-C_FIX_DESIGN.md`（修复轮设计）、
+`docs/V0.2-B_REPORT.md`、`docs/V0.2-B_ARCHITECTURE.md`、
+`docs/V0.2-B_DESIGN.md`、`docs/V0.2-A_ARCHITECTURE.md`、
+`docs/V0.2-A_EXPERIMENT_REPORT.md`、`docs/V0.2-A_PHASE1_REVIEW.md`、
+`PHASE_*_REPORT.md`、`V02A_PHASE3_REPORT.md`、
+`LOCAL_DEPLOY.md`（本地部署与多后端）。

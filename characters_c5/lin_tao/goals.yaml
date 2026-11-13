@@ -1,0 +1,37 @@
+goals:
+- desc: 赶在渔船到之前把雾笛修好
+  key: repair_fog_horn
+  weight: 1.0
+  kind: achievement
+  # 激活依赖跨角色信息流动：先得知今晚有渔船要贴礁回港，
+  # 断皮带才从「明日再修的例行故障」变成「今夜必须抢修」。
+  # 该命题开局只有守塔人持有。
+  activation_condition:
+    type: belief_threshold
+    belief: ship_passing_tonight
+    min_confidence: 0.4
+  # 成功：备用皮带到本人手中（在值班室搜查取得），人回到
+  # 船坞（雾笛所在），并在那里动过手（work 事件）。
+  success_condition:
+    all:
+    - type: object_possession
+      object: spare_belt
+      holder: self
+    - type: agent_at_location
+      agent: self
+      location: boathouse
+    - type: event_occurred
+      event_type: work
+      actor: self
+- desc: 看好船坞，别让人乱翻机器
+  key: guard_boathouse
+  weight: 0.9
+  kind: maintenance
+  # 可失败目标（预注册 K8）：失败 = 本人感知到别人在船坞
+  # 里搜查。而接船船员取信号灯的正当路径正要在船坞的工
+  # 具架上搜查——若被维修工撞见，此目标即失败。风险由数
+  # 据内生制造，不靠任何代码安排。
+  failure_condition:
+    type: event_occurred
+    event_type: search
+    actor: any_other

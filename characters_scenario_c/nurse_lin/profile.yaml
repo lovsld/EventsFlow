@@ -26,3 +26,20 @@ private_knowledge:
   desc: 今晚清点时亲见病房药柜里的退烧药只剩个底儿（亲身确认）
   key: fever_med_low
   kind: experienced
+# V0.2-C 定向修复轮（与 C2 给医生加 duty 同例）：一条以数据
+# 声明的披露职责——管药柜的夜班护士补齐退烧药后，必须向值
+# 班医生回报。契约的正当数据使用：机制全通用（在场则生成
+# disclose 候选，不在场则职责驱动寻求移动），诊所只是行使
+# 它。此前护士无此职责，回流只能靠医生来问或偶遇，是数据
+# 缺口而非机制缺口。`when` 是对护士自身信念的主观条件（搜
+# 中药后该信念 0.95 入账）；targets 指向医生。
+disclosure_duties:
+- when:
+    all:
+    - type: belief_threshold
+      belief: fever_medicine_restocked
+      min_confidence: 0.9
+  proposition: fever_medicine_restocked
+  targets:
+  - doctor_shen
+  urgency: normal

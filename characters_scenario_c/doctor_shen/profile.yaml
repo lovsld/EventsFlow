@@ -25,3 +25,20 @@ private_knowledge:
   desc: 刚接电话得知：后半夜要送来一名高烧病人（亲耳听见）
   key: fever_patient_coming
   kind: experienced
+# V0.2-C C2 (design decision 5's sibling, section 3.5): a
+# disclosure duty declared as DATA — the night-shift doctor who
+# privately knows a fever patient is coming is obliged to inform
+# the nurse. This is the contract's intended use, not a scenario
+# special case: the mechanism is generic, the clinic merely
+# exercises it. `when` is a subjective condition over the doctor's
+# own belief (already 1.0 at start); targets name the nurse.
+disclosure_duties:
+- when:
+    all:
+    - type: belief_threshold
+      belief: fever_patient_coming
+      min_confidence: 0.9
+  proposition: fever_patient_coming
+  targets:
+  - nurse_lin
+  urgency: normal

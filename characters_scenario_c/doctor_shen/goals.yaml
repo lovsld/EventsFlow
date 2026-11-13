@@ -3,6 +3,12 @@ goals:
   key: ensure_readiness
   weight: 1.0
   kind: achievement
+  # V0.2-C C1（设计 2.2，Hu 批准的决策 #5）：同角色调度依赖——
+  # 先把病人要来的事交代到护士站（brief_nurse），才谈得上确认
+  # 备药。语义 = 追求门控 + 依赖牵引，不是跨角色依赖：护士的
+  # restock 目标由她自己的激活条件（读到本人信念）驱动。
+  depends_on:
+  - brief_nurse
   # 成功依赖跨角色信息流动：从护士处得知补药完成（证言达标），
   # 或亲眼见护士拿着退烧药（对他人的持有以 holds 信念判定）。
   success_condition:
@@ -18,11 +24,16 @@ goals:
   weight: 0.85
   kind: achievement
   # 成功：本人亲口发出过 patient_notice（事件账在本人感知内）。
+  # V0.2-C 定向修复轮：叶加 stance: assert——"交代"须是断言式
+  # 告知；提问类言语不算送达。且事件求值只认世界确认成功的
+  # 自身行动（失败的发言不算发出过），均为通用契约，数据只是
+  # 把意图写精确。
   success_condition:
     type: event_occurred
     event_type: speak
     actor: self
     claim: patient_notice
+    stance: assert
 - desc: 别让夜里出医疗乱子
   key: keep_calm
   weight: 0.8
