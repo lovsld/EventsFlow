@@ -1,0 +1,24 @@
+# doctor_shen 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] 我在oncall找到了 admission_form。
+- [t3][experienced] 环境：值班室的电话响了一声就断了，大概是打错了。
+- [t7][experienced] nurse_lin 来到了/去到了 triage。
+- [t8][experienced] porter_wu 来到了/去到了 triage。
+- [t9][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t9][experienced] nurse_lin 来到了/去到了 triage。
+- [t10][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t11][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t12][experienced] porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。
+- [t12][experienced] nurse_lin 来到了/去到了 triage。
+- [t13][experienced] porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。
+- [t16][experienced] 我在pharmacy找到了 fever_medicine。
+- [t16][experienced] porter_wu 来到了/去到了 pharmacy。
+- [t17][experienced] porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。
+- [t18][experienced] porter_wu 来到了/去到了 triage。
+- [t19][experienced] nurse_lin 来到了/去到了 triage。
+- [t20][experienced] porter_wu 来到了/去到了 triage。
+- [t21][experienced] porter_wu 说：吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。
+- [t21][experienced] nurse_lin 来到了/去到了 triage。
+- [t22][experienced] porter_wu 说：吴大勇：跟你说一声，后半夜有个发高烧的要送来。
+- [t22][experienced] nurse_lin 在 triage 翻找着什么。
+- [t23][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t24][experienced] porter_wu 说：吴大勇：这事我不清楚，别问我。

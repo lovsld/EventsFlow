@@ -1,0 +1,24 @@
+# doctor_shen 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] 我在oncall找到了 admission_form。
+- [t5][experienced] porter_wu 来到了/去到了 oncall。
+- [t6][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t7][experienced] porter_wu 说：吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。
+- [t8][experienced] porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。
+- [t8][experienced] nurse_lin 来到了/去到了 oncall。
+- [t9][experienced] porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。
+- [t10][experienced] nurse_lin 说：林小满：退烧药补上了没有？我这边等着确认。
+- [t11][experienced] nurse_lin 说：林小满：退烧药补上了没有？我这边等着确认。
+- [t12][experienced] nurse_lin 说：林小满：退烧药补上了没有？我这边等着确认。
+- [t13][experienced] nurse_lin 说：林小满：这事我不清楚，别问我。
+- [t14][experienced] nurse_lin 说：林小满：退烧药补上了没有？我这边等着确认。
+- [t15][experienced] porter_wu 来到了/去到了 oncall。
+- [t15][experienced] nurse_lin 说：林小满：我这儿没什么可说的。
+- [t16][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t17][experienced] porter_wu 说：吴大勇：跟你说一声，后半夜有个发高烧的要送来。
+- [t17][experienced] nurse_lin 说：林小满：听说今晚要来个高烧的病人？消息准吗？
+- [t18][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t18][experienced] nurse_lin 在 oncall 翻找着什么。
+- [t19][experienced] porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。
+- [t19][experienced] 环境：值班室的电话响了一声就断了，大概是打错了。
+- [t21][experienced] porter_wu 说：吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。
+- [t24][inferred] 隔墙隐约听到 porter_wu,nurse_lin 在triage说话，听不清内容。

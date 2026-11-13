@@ -1,0 +1,20 @@
+# doctor_shen 的私人记忆（其他 Agent 不可见）
+- [t4][experienced] nurse_lin 来到了/去到了 ward。
+- [t6][experienced] porter_wu 来到了/去到了 triage。
+- [t7][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t7][experienced] nurse_lin 来到了/去到了 triage。
+- [t8][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t9][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t10][experienced] nurse_lin 来到了/去到了 triage。
+- [t16][experienced] porter_wu 来到了/去到了 oncall。
+- [t16][experienced] nurse_lin 说：林小满：这事我不清楚，别问我。
+- [t17][experienced] porter_wu 说：吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。
+- [t18][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t18][experienced] nurse_lin 在 oncall 翻找着什么。
+- [t19][experienced] porter_wu 说：吴大勇：跟你说一声，后半夜有个发高烧的要送来。
+- [t19][experienced] 环境：值班室的电话响了一声就断了，大概是打错了。
+- [t20][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t21][experienced] porter_wu 说：吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。
+- [t22][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t23][experienced] 环境：值班室的电话响了一声就断了，大概是打错了。
+- [t24][experienced] 环境：值班室的电话响了一声就断了，大概是打错了。

@@ -1,0 +1,1198 @@
+{
+  "character_id": "doctor_shen",
+  "location": "triage",
+  "personality": {
+    "caution": 0.7,
+    "curiosity": 0.6,
+    "honesty": 0.8,
+    "impulsiveness": 0.25,
+    "sociability": 0.5
+  },
+  "principles": [
+    "收治准备做在前面",
+    "用药剂量亲自核对",
+    "不确定的消息不下结论"
+  ],
+  "goals": [
+    {
+      "key": "ensure_readiness",
+      "desc": "确认退烧药已经备好，病人一到就能用",
+      "weight": 1.0,
+      "kind": "achievement",
+      "status": "completed",
+      "activation_condition": null,
+      "success_condition": {
+        "any": [
+          {
+            "type": "belief_threshold",
+            "belief": "fever_medicine_restocked",
+            "min_confidence": 0.65
+          },
+          {
+            "type": "object_possession",
+            "object": "fever_medicine",
+            "holder": "nurse_lin"
+          }
+        ]
+      },
+      "failure_condition": null,
+      "priority_current": 1.0,
+      "priority_rules": [],
+      "progress": 1.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [
+        "brief_nurse"
+      ],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": 15,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "brief_nurse",
+      "desc": "把今晚要收治高烧病人的事交代到护士站",
+      "weight": 0.85,
+      "kind": "achievement",
+      "status": "completed",
+      "activation_condition": null,
+      "success_condition": {
+        "type": "event_occurred",
+        "event_type": "speak",
+        "actor": "self",
+        "claim": "patient_notice",
+        "stance": "assert"
+      },
+      "failure_condition": null,
+      "priority_current": 0.85,
+      "priority_rules": [],
+      "progress": 1.0,
+      "commitment": 0.85,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": 10,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "keep_calm",
+      "desc": "别让夜里出医疗乱子",
+      "weight": 0.8,
+      "kind": "maintenance",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "confront",
+        "target": "self"
+      },
+      "priority_current": 0.8,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "fever_patient_coming",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "刚接电话得知：后半夜要送来一名高烧病人（亲耳听见）",
+      "evidence": [
+        {
+          "source_event_id": "seed:fever_patient_coming",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 0,
+          "source": null
+        },
+        {
+          "source_event_id": "search_result:admission_form@1",
+          "source_type": "testimony",
+          "reliability": 0.9,
+          "observed_at": 1,
+          "source": "admission_form"
+        },
+        {
+          "source_event_id": "E0092",
+          "source_type": "testimony",
+          "reliability": 0.416,
+          "observed_at": 21,
+          "source": "porter_wu"
+        },
+        {
+          "source_event_id": "E0097",
+          "source_type": "testimony",
+          "reliability": 0.416,
+          "observed_at": 22,
+          "source": "porter_wu"
+        }
+      ]
+    },
+    {
+      "key": "nurse_lin_cooperative",
+      "confidence": 0.65,
+      "kind": "inferred",
+      "desc": "nurse_lin 愿意继续沟通",
+      "evidence": [
+        {
+          "source_event_id": "pred:pred_doctor_shen_12",
+          "source_type": "inference",
+          "reliability": 0.65,
+          "observed_at": 13,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "fever_medicine_restocked",
+      "confidence": 0.95,
+      "kind": "heard",
+      "desc": "fever_medicine 的内容表明：fever_medicine_restocked",
+      "evidence": [
+        {
+          "source_event_id": "search_result:fever_medicine@16",
+          "source_type": "testimony",
+          "reliability": 0.95,
+          "observed_at": 16,
+          "source": "fever_medicine"
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.9854166666666667,
+    "suspicion": 1.0
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "我在oncall找到了 admission_form。",
+      "event_id": null
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "环境：值班室的电话响了一声就断了，大概是打错了。",
+      "event_id": "E0011"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "nurse_lin 来到了/去到了 triage。",
+      "event_id": "E0024"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "porter_wu 来到了/去到了 triage。",
+      "event_id": "E0028"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+      "event_id": "E0033"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "nurse_lin 来到了/去到了 triage。",
+      "event_id": "E0034"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+      "event_id": "E0038"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+      "event_id": "E0044"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。",
+      "event_id": "E0047"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "nurse_lin 来到了/去到了 triage。",
+      "event_id": "E0048"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。",
+      "event_id": "E0052"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "我在pharmacy找到了 fever_medicine。",
+      "event_id": null
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "porter_wu 来到了/去到了 pharmacy。",
+      "event_id": "E0069"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。",
+      "event_id": "E0073"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "porter_wu 来到了/去到了 triage。",
+      "event_id": "E0076"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "nurse_lin 来到了/去到了 triage。",
+      "event_id": "E0084"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "porter_wu 来到了/去到了 triage。",
+      "event_id": "E0087"
+    },
+    {
+      "tick": 21,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。",
+      "event_id": "E0092"
+    },
+    {
+      "tick": 21,
+      "kind": "experienced",
+      "text": "nurse_lin 来到了/去到了 triage。",
+      "event_id": "E0094"
+    },
+    {
+      "tick": 22,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：跟你说一声，后半夜有个发高烧的要送来。",
+      "event_id": "E0097"
+    },
+    {
+      "tick": 22,
+      "kind": "experienced",
+      "text": "nurse_lin 在 triage 翻找着什么。",
+      "event_id": "E0098"
+    },
+    {
+      "tick": 23,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+      "event_id": "E0100"
+    },
+    {
+      "tick": 24,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：这事我不清楚，别问我。",
+      "event_id": "E0105"
+    }
+  ],
+  "long_term_memory": [
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "nurse_lin 来到了/去到了 triage。",
+      "event_id": "E0024",
+      "importance": 0.9,
+      "consolidated_at_tick": 8
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+      "event_id": "E0033",
+      "importance": 1.0,
+      "consolidated_at_tick": 10
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "nurse_lin 来到了/去到了 triage。",
+      "event_id": "E0034",
+      "importance": 1.0,
+      "consolidated_at_tick": 10
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+      "event_id": "E0044",
+      "importance": 0.812,
+      "consolidated_at_tick": 12
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。",
+      "event_id": "E0047",
+      "importance": 1.0,
+      "consolidated_at_tick": 13
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "nurse_lin 来到了/去到了 triage。",
+      "event_id": "E0048",
+      "importance": 1.0,
+      "consolidated_at_tick": 13
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "porter_wu 说：吴大勇：退烧药补上了没有？我这边等着确认。",
+      "event_id": "E0052",
+      "importance": 0.9,
+      "consolidated_at_tick": 14
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "porter_wu 来到了/去到了 triage。",
+      "event_id": "E0076",
+      "importance": 1.0,
+      "consolidated_at_tick": 19
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "nurse_lin": {
+      "trust": 0.19,
+      "notes": []
+    },
+    "porter_wu": {
+      "trust": 0.2,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0011",
+    "E0024",
+    "E0028",
+    "E0033",
+    "E0034",
+    "E0038",
+    "E0044",
+    "E0047",
+    "E0048",
+    "E0052",
+    "E0069",
+    "E0073",
+    "E0076",
+    "E0084",
+    "E0087",
+    "E0092",
+    "E0094",
+    "E0097",
+    "E0098",
+    "E0100",
+    "E0105"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 9,
+      "from": "porter_wu",
+      "topic": "patient_inquire",
+      "claim": "patient_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 10,
+      "from": "porter_wu",
+      "topic": "patient_inquire",
+      "claim": "patient_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 11,
+      "from": "porter_wu",
+      "topic": "patient_inquire",
+      "claim": "patient_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 12,
+      "from": "porter_wu",
+      "topic": "restock_inquire",
+      "claim": "restock_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 13,
+      "from": "porter_wu",
+      "topic": "restock_inquire",
+      "claim": "restock_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 17,
+      "from": "porter_wu",
+      "topic": "restock_inquire",
+      "claim": "restock_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 21,
+      "from": "porter_wu",
+      "topic": "patient_notice",
+      "claim": "patient_notice",
+      "kind": "speak"
+    },
+    {
+      "tick": 22,
+      "from": "porter_wu",
+      "topic": "patient_notice",
+      "claim": "patient_notice",
+      "kind": "speak"
+    },
+    {
+      "tick": 23,
+      "from": "porter_wu",
+      "topic": "patient_inquire",
+      "claim": "patient_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 24,
+      "from": "porter_wu",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    }
+  ],
+  "pending_question": {
+    "from": "porter_wu",
+    "topic": "patient_inquire",
+    "claim": "patient_inquire",
+    "tick": 23,
+    "addressed_to_me": false
+  },
+  "pending_questions": [],
+  "action_counts": {
+    "search:oncall:": 1,
+    "observe::": 5,
+    "move:triage:": 2,
+    "ask:nurse_lin:restock_inquire": 2,
+    "ask:porter_wu:restock_inquire": 2,
+    "speak:nurse_lin:patient_notice": 1,
+    "speak:porter_wu:patient_notice": 1,
+    "search:triage:": 1,
+    "move:pharmacy:": 1,
+    "search:pharmacy:": 1,
+    "speak:porter_wu:restock_report": 4,
+    "listen::": 2,
+    "speak:porter_wu:denial": 1
+  },
+  "holdings": [
+    "fever_medicine"
+  ],
+  "found_objects": [
+    "admission_form",
+    "fever_medicine"
+  ],
+  "object_sightings": {
+    "admission_form": "oncall",
+    "fever_medicine": "pharmacy"
+  },
+  "searched_empty_places": [
+    "triage"
+  ],
+  "perceived_events": [
+    {
+      "tick": 3,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "phone_rings",
+      "stance": null,
+      "object": null,
+      "location": "oncall",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 7,
+      "type": "move",
+      "actor": "nurse_lin",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "triage",
+      "to": "triage",
+      "found": []
+    },
+    {
+      "tick": 8,
+      "type": "move",
+      "actor": "porter_wu",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "triage",
+      "to": "triage",
+      "found": []
+    },
+    {
+      "tick": 9,
+      "type": "ask",
+      "actor": "porter_wu",
+      "target": "doctor_shen",
+      "claim": "patient_inquire",
+      "topic": "patient_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "triage",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 9,
+      "type": "move",
+      "actor": "nurse_lin",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "triage",
+      "to": "triage",
+      "found": []
+    },
+    {
+      "tick": 10,
+      "type": "ask",
+      "actor": "porter_wu",
+      "target": "nurse_lin",
+      "claim": "patient_inquire",
+      "topic": "patient_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "triage",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 11,
+      "type": "ask",
+      "actor": "porter_wu",
+      "target": "doctor_shen",
+      "claim": "patient_inquire",
+      "topic": "patient_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "triage",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 12,
+      "type": "ask",
+      "actor": "porter_wu",
+      "target": "doctor_shen",
+      "claim": "restock_inquire",
+      "topic": "restock_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "triage",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 12,
+      "type": "move",
+      "actor": "nurse_lin",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "triage",
+      "to": "triage",
+      "found": []
+    },
+    {
+      "tick": 13,
+      "type": "ask",
+      "actor": "porter_wu",
+      "target": "doctor_shen",
+      "claim": "restock_inquire",
+      "topic": "restock_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "triage",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 16,
+      "type": "move",
+      "actor": "porter_wu",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "pharmacy",
+      "to": "pharmacy",
+      "found": []
+    },
+    {
+      "tick": 17,
+      "type": "ask",
+      "actor": "porter_wu",
+      "target": "doctor_shen",
+      "claim": "restock_inquire",
+      "topic": "restock_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "pharmacy",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 18,
+      "type": "move",
+      "actor": "porter_wu",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "triage",
+      "to": "triage",
+      "found": []
+    },
+    {
+      "tick": 19,
+      "type": "move",
+      "actor": "nurse_lin",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "triage",
+      "to": "triage",
+      "found": []
+    },
+    {
+      "tick": 20,
+      "type": "move",
+      "actor": "porter_wu",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "triage",
+      "to": "triage",
+      "found": []
+    },
+    {
+      "tick": 21,
+      "type": "speak",
+      "actor": "porter_wu",
+      "target": "doctor_shen",
+      "claim": "patient_notice",
+      "topic": "patient_notice",
+      "stance": "assert",
+      "object": null,
+      "location": "triage",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 21,
+      "type": "move",
+      "actor": "nurse_lin",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "triage",
+      "to": "triage",
+      "found": []
+    },
+    {
+      "tick": 22,
+      "type": "speak",
+      "actor": "porter_wu",
+      "target": "nurse_lin",
+      "claim": "patient_notice",
+      "topic": "patient_notice",
+      "stance": "assert",
+      "object": null,
+      "location": "triage",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 22,
+      "type": "search",
+      "actor": "nurse_lin",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "triage",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 23,
+      "type": "ask",
+      "actor": "porter_wu",
+      "target": "nurse_lin",
+      "claim": "patient_inquire",
+      "topic": "patient_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "triage",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 24,
+      "type": "speak",
+      "actor": "porter_wu",
+      "target": "doctor_shen",
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "object": null,
+      "location": "triage",
+      "to": null,
+      "found": []
+    }
+  ],
+  "own_actions": [
+    {
+      "tick": 0,
+      "type": "search",
+      "target": null,
+      "target_location": "oncall",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 1,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 2,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 3,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 4,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 5,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 6,
+      "type": "move",
+      "target": null,
+      "target_location": "triage",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 7,
+      "type": "ask",
+      "target": "nurse_lin",
+      "target_location": null,
+      "object": null,
+      "claim": "restock_inquire",
+      "topic": "restock_inquire",
+      "stance": "inquire",
+      "ok": false
+    },
+    {
+      "tick": 8,
+      "type": "ask",
+      "target": "porter_wu",
+      "target_location": null,
+      "object": null,
+      "claim": "restock_inquire",
+      "topic": "restock_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 9,
+      "type": "speak",
+      "target": "nurse_lin",
+      "target_location": null,
+      "object": null,
+      "claim": "patient_notice",
+      "topic": "patient_notice",
+      "stance": "assert",
+      "ok": false
+    },
+    {
+      "tick": 10,
+      "type": "speak",
+      "target": "porter_wu",
+      "target_location": null,
+      "object": null,
+      "claim": "patient_notice",
+      "topic": "patient_notice",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 11,
+      "type": "search",
+      "target": null,
+      "target_location": "triage",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 12,
+      "type": "ask",
+      "target": "nurse_lin",
+      "target_location": null,
+      "object": null,
+      "claim": "restock_inquire",
+      "topic": "restock_inquire",
+      "stance": "inquire",
+      "ok": false
+    },
+    {
+      "tick": 13,
+      "type": "ask",
+      "target": "porter_wu",
+      "target_location": null,
+      "object": null,
+      "claim": "restock_inquire",
+      "topic": "restock_inquire",
+      "stance": "inquire",
+      "ok": false
+    },
+    {
+      "tick": 14,
+      "type": "move",
+      "target": null,
+      "target_location": "pharmacy",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 15,
+      "type": "search",
+      "target": null,
+      "target_location": "pharmacy",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 16,
+      "type": "speak",
+      "target": "porter_wu",
+      "target_location": null,
+      "object": null,
+      "claim": "restock_report",
+      "topic": "restock_report",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 17,
+      "type": "move",
+      "target": null,
+      "target_location": "triage",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 18,
+      "type": "speak",
+      "target": "porter_wu",
+      "target_location": null,
+      "object": null,
+      "claim": "restock_report",
+      "topic": "restock_report",
+      "stance": "assert",
+      "ok": false
+    },
+    {
+      "tick": 19,
+      "type": "listen",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 20,
+      "type": "speak",
+      "target": "porter_wu",
+      "target_location": null,
+      "object": null,
+      "claim": "restock_report",
+      "topic": "restock_report",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 21,
+      "type": "speak",
+      "target": "porter_wu",
+      "target_location": null,
+      "object": null,
+      "claim": "restock_report",
+      "topic": "restock_report",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 22,
+      "type": "speak",
+      "target": "porter_wu",
+      "target_location": null,
+      "object": null,
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "ok": true
+    },
+    {
+      "tick": 23,
+      "type": "listen",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    }
+  ],
+  "scheduler_memory": {
+    "pursuit": null,
+    "since": 16
+  },
+  "plan_failure_memory": [
+    {
+      "plan_id": "plan_001",
+      "goal_id": "brief_nurse",
+      "fingerprint": {
+        "goal_id": "brief_nurse",
+        "steps": [
+          [
+            [
+              [
+                [
+                  "event_occurred",
+                  "speak",
+                  "self",
+                  "-",
+                  "patient_notice",
+                  null,
+                  null,
+                  null,
+                  1
+                ]
+              ],
+              [
+                "ask",
+                "observe",
+                "speak"
+              ]
+            ],
+            1
+          ]
+        ]
+      },
+      "tick_failed": 10,
+      "cause": "blocked",
+      "context_digest": "{\"beliefs\": {}, \"found\": [\"admission_form\"], \"holdings\": [], \"location\": \"triage\", \"searched\": [\"oncall\"]}",
+      "failed_step_id": "advance:0:event_occurred",
+      "failed_step_condition": {
+        "type": "event_occurred",
+        "event_type": "speak",
+        "actor": "self",
+        "claim": "patient_notice",
+        "stance": "assert"
+      }
+    },
+    {
+      "plan_id": "plan_004",
+      "goal_id": "ensure_readiness",
+      "fingerprint": {
+        "goal_id": "ensure_readiness",
+        "steps": [
+          [
+            [
+              [
+                [
+                  "belief_threshold",
+                  "fever_medicine_restocked",
+                  2,
+                  -1
+                ],
+                [
+                  "event_occurred",
+                  "speak",
+                  "any_other",
+                  "-",
+                  "restock_report",
+                  null,
+                  null,
+                  null,
+                  1
+                ]
+              ],
+              [
+                "ask",
+                "confront",
+                "listen",
+                "observe"
+              ]
+            ],
+            1
+          ]
+        ]
+      },
+      "tick_failed": 14,
+      "cause": "blocked",
+      "context_digest": "{\"beliefs\": {\"fever_medicine_restocked\": 0}, \"found\": [\"admission_form\"], \"holdings\": [], \"location\": \"triage\", \"searched\": [\"oncall\", \"triage\"]}",
+      "failed_step_id": "evidence:fever_medicine_restocked",
+      "failed_step_condition": {
+        "any": [
+          {
+            "type": "belief_threshold",
+            "belief": "fever_medicine_restocked",
+            "min_confidence": 0.65
+          },
+          {
+            "type": "event_occurred",
+            "event_type": "speak",
+            "actor": "any_other",
+            "claim": "restock_report"
+          }
+        ]
+      }
+    }
+  ],
+  "plan_gate_counts": {
+    "brief_nurse|{\"beliefs\": {}, \"found\": [\"admission_form\"], \"holdings\": [], \"location\": \"triage\", \"searched\": [\"oncall\"]}": 1,
+    "ensure_readiness|{\"beliefs\": {\"fever_medicine_restocked\": 0}, \"found\": [\"admission_form\"], \"holdings\": [], \"location\": \"triage\", \"searched\": [\"oncall\", \"triage\"]}": 1
+  }
+}

@@ -1,0 +1,16 @@
+# doctor_shen 的私人记忆（其他 Agent 不可见）
+- [t3][experienced] nurse_lin 来到了/去到了 yard。
+- [t4][experienced] porter_wu 来到了/去到了 yard。
+- [t5][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t5][experienced] nurse_lin 来到了/去到了 yard。
+- [t6][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t7][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t14][experienced] porter_wu 来到了/去到了 ward。
+- [t15][experienced] porter_wu 说：吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。
+- [t15][experienced] 环境：病房尽头的监护仪轻轻响了两声，又恢复了平稳。
+- [t16][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t16][experienced] nurse_lin 来到了/去到了 ward。
+- [t17][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t18][experienced] porter_wu 说：吴大勇：跟你说一声，后半夜有个发高烧的要送来。
+- [t19][experienced] porter_wu 说：吴大勇：听说今晚要来个高烧的病人？消息准吗？
+- [t20][experienced] porter_wu 说：吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。

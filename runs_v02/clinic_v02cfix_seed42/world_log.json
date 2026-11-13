@@ -1,0 +1,2244 @@
+[
+ {
+  "tick": 1,
+  "time": "21:05",
+  "positions": {
+   "doctor_shen": "oncall",
+   "nurse_lin": "yard",
+   "porter_wu": "ward"
+  },
+  "events": [
+   {
+    "event_id": "E0001",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "ward",
+    "from": "triage",
+    "to": "ward"
+   },
+   {
+    "event_id": "E0002",
+    "tick": 1,
+    "type": "search",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "oncall",
+    "found": [
+     "admission_form"
+    ]
+   },
+   {
+    "event_id": "E0003",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "yard",
+    "from": "ward",
+    "to": "yard"
+   },
+   {
+    "event_id": "E0004",
+    "tick": 1,
+    "type": "ambient",
+    "actors": [],
+    "location": "ward",
+    "topic": "monitor_beeps",
+    "text": "病房尽头的监护仪轻轻响了两声，又恢复了平稳。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0002"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0003"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0001",
+     "E0004"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 2,
+  "time": "21:10",
+  "positions": {
+   "doctor_shen": "oncall",
+   "nurse_lin": "ward",
+   "porter_wu": "yard"
+  },
+  "events": [
+   {
+    "event_id": "E0005",
+    "tick": 2,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "yard",
+    "from": "ward",
+    "to": "yard"
+   },
+   {
+    "event_id": "E0006",
+    "tick": 2,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "ward",
+    "from": "yard",
+    "to": "ward"
+   },
+   {
+    "event_id": "E0007",
+    "tick": 2,
+    "type": "observe",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "oncall",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0007"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0005"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 3,
+  "time": "21:15",
+  "positions": {
+   "doctor_shen": "oncall",
+   "nurse_lin": "yard",
+   "porter_wu": "pharmacy"
+  },
+  "events": [
+   {
+    "event_id": "E0008",
+    "tick": 3,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "pharmacy",
+    "from": "yard",
+    "to": "pharmacy"
+   },
+   {
+    "event_id": "E0009",
+    "tick": 3,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "yard",
+    "from": "ward",
+    "to": "yard"
+   },
+   {
+    "event_id": "E0010",
+    "tick": 3,
+    "type": "observe",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "oncall",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0011",
+    "tick": 3,
+    "type": "ambient",
+    "actors": [],
+    "location": "oncall",
+    "topic": "phone_rings",
+    "text": "值班室的电话响了一声就断了，大概是打错了。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0010",
+     "E0011"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0009"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0008"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 4,
+  "time": "21:20",
+  "positions": {
+   "doctor_shen": "oncall",
+   "nurse_lin": "pharmacy",
+   "porter_wu": "yard"
+  },
+  "events": [
+   {
+    "event_id": "E0012",
+    "tick": 4,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "yard",
+    "from": "pharmacy",
+    "to": "yard"
+   },
+   {
+    "event_id": "E0013",
+    "tick": 4,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "pharmacy",
+    "from": "yard",
+    "to": "pharmacy"
+   },
+   {
+    "event_id": "E0014",
+    "tick": 4,
+    "type": "observe",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "oncall",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0014"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0013"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0012"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 5,
+  "time": "21:25",
+  "positions": {
+   "doctor_shen": "oncall",
+   "nurse_lin": "triage",
+   "porter_wu": "ward"
+  },
+  "events": [
+   {
+    "event_id": "E0015",
+    "tick": 5,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "ward",
+    "from": "yard",
+    "to": "ward"
+   },
+   {
+    "event_id": "E0016",
+    "tick": 5,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "from": "pharmacy",
+    "to": "triage"
+   },
+   {
+    "event_id": "E0017",
+    "tick": 5,
+    "type": "observe",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "oncall",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0018",
+    "tick": 5,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "cart_wheels",
+    "text": "远处传来推车轮子碾过地砖的声音，渐渐远了。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0016"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0015"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 6,
+  "time": "21:30",
+  "positions": {
+   "doctor_shen": "oncall",
+   "nurse_lin": "ward",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0019",
+    "tick": 6,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "triage",
+    "from": "ward",
+    "to": "triage"
+   },
+   {
+    "event_id": "E0020",
+    "tick": 6,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "ward",
+    "from": "triage",
+    "to": "ward"
+   },
+   {
+    "event_id": "E0021",
+    "tick": 6,
+    "type": "observe",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "oncall",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0022",
+    "tick": 6,
+    "type": "ambient",
+    "actors": [],
+    "location": "ward",
+    "topic": "monitor_beeps",
+    "text": "病房尽头的监护仪轻轻响了两声，又恢复了平稳。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0021"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0020",
+     "E0022"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0019"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 7,
+  "time": "21:35",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "triage",
+   "porter_wu": "pharmacy"
+  },
+  "events": [
+   {
+    "event_id": "E0023",
+    "tick": 7,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "pharmacy",
+    "from": "triage",
+    "to": "pharmacy"
+   },
+   {
+    "event_id": "E0024",
+    "tick": 7,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "from": "ward",
+    "to": "triage"
+   },
+   {
+    "event_id": "E0025",
+    "tick": 7,
+    "type": "move",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "from": "oncall",
+    "to": "triage"
+   },
+   {
+    "type": "session_start",
+    "session": "S1",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "nurse_lin"
+    ],
+    "event_id": "E0026",
+    "tick": 7
+   },
+   {
+    "event_id": "E0027",
+    "tick": 7,
+    "type": "ambient",
+    "actors": [],
+    "location": "ward",
+    "topic": "monitor_beeps",
+    "text": "病房尽头的监护仪轻轻响了两声，又恢复了平稳。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0024",
+     "E0025",
+     "E0026"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0024",
+     "E0025",
+     "E0026"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0023"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 8,
+  "time": "21:40",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "oncall",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0028",
+    "tick": 8,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "triage",
+    "from": "pharmacy",
+    "to": "triage"
+   },
+   {
+    "event_id": "E0029",
+    "tick": 8,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "oncall",
+    "from": "triage",
+    "to": "oncall"
+   },
+   {
+    "event_id": "E0030",
+    "tick": 8,
+    "type": "speak_failed",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "target": "nurse_lin",
+    "topic": "restock_inquire",
+    "reason": "target_left"
+   },
+   {
+    "type": "session_start",
+    "session": "S2",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0031",
+    "tick": 8
+   },
+   {
+    "type": "session_end",
+    "session": "S1",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "nurse_lin"
+    ],
+    "event_id": "E0032",
+    "tick": 8
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0028",
+     "E0030",
+     "E0031",
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0029"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0028",
+     "E0030",
+     "E0031",
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 9,
+  "time": "21:45",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "triage",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0033",
+    "tick": 9,
+    "type": "ask",
+    "actors": [
+     "porter_wu",
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "topic": "patient_inquire",
+    "claim": "patient_inquire",
+    "text": "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+    "interrupted": false,
+    "session_location": "triage"
+   },
+   {
+    "event_id": "E0034",
+    "tick": 9,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "from": "oncall",
+    "to": "triage"
+   },
+   {
+    "event_id": "E0035",
+    "tick": 9,
+    "type": "ask",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "location": "triage",
+    "topic": "restock_inquire",
+    "claim": "restock_inquire",
+    "text": "沈默：退烧药补上了没有？我这边等着确认。",
+    "interrupted": true,
+    "session_location": "triage"
+   },
+   {
+    "type": "session_start",
+    "session": "S3",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "nurse_lin",
+     "porter_wu"
+    ],
+    "event_id": "E0036",
+    "tick": 9
+   },
+   {
+    "type": "session_end",
+    "session": "S2",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0037",
+    "tick": 9
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0033",
+     "E0034",
+     "E0035",
+     "E0036",
+     "E0037"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0033",
+     "E0034",
+     "E0035",
+     "E0036",
+     "E0037"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0033",
+     "E0034",
+     "E0035",
+     "E0036",
+     "E0037"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 10,
+  "time": "21:50",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "oncall",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0038",
+    "tick": 10,
+    "type": "ask",
+    "actors": [
+     "porter_wu",
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "topic": "patient_inquire",
+    "claim": "patient_inquire",
+    "text": "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+    "interrupted": false,
+    "session_location": "triage"
+   },
+   {
+    "event_id": "E0039",
+    "tick": 10,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "oncall",
+    "from": "triage",
+    "to": "oncall"
+   },
+   {
+    "event_id": "E0040",
+    "tick": 10,
+    "type": "speak_failed",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "target": "nurse_lin",
+    "topic": "patient_notice",
+    "reason": "target_left"
+   },
+   {
+    "type": "session_start",
+    "session": "S4",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0041",
+    "tick": 10
+   },
+   {
+    "type": "session_end",
+    "session": "S3",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "nurse_lin",
+     "porter_wu"
+    ],
+    "event_id": "E0042",
+    "tick": 10
+   },
+   {
+    "event_id": "E0043",
+    "tick": 10,
+    "type": "ambient",
+    "actors": [],
+    "location": "yard",
+    "topic": "wind_rattles",
+    "text": "后院的窗棂被风吹得咯咯作响。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0038",
+     "E0040",
+     "E0041",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0039"
+    ],
+    "muffled_event_ids": [
+     "E0038"
+    ]
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0038",
+     "E0040",
+     "E0041",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 11,
+  "time": "21:55",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "oncall",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0044",
+    "tick": 11,
+    "type": "ask",
+    "actors": [
+     "porter_wu",
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "topic": "patient_inquire",
+    "claim": "patient_inquire",
+    "text": "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+    "interrupted": false,
+    "session_location": "triage"
+   },
+   {
+    "event_id": "E0045",
+    "tick": 11,
+    "type": "observe",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "oncall",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0046",
+    "tick": 11,
+    "type": "speak",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "location": "triage",
+    "topic": "patient_notice",
+    "claim": "patient_notice",
+    "text": "沈默：跟你说一声，后半夜有个发高烧的要送来。",
+    "interrupted": true,
+    "session_location": "triage"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0044",
+     "E0046"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0045"
+    ],
+    "muffled_event_ids": [
+     "E0044",
+     "E0046"
+    ]
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0044",
+     "E0046"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 12,
+  "time": "22:00",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "triage",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0047",
+    "tick": 12,
+    "type": "ask",
+    "actors": [
+     "porter_wu",
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "topic": "restock_inquire",
+    "claim": "restock_inquire",
+    "text": "吴大勇：退烧药补上了没有？我这边等着确认。",
+    "interrupted": false,
+    "session_location": "triage"
+   },
+   {
+    "event_id": "E0048",
+    "tick": 12,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "from": "oncall",
+    "to": "triage"
+   },
+   {
+    "event_id": "E0049",
+    "tick": 12,
+    "type": "search",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "found": []
+   },
+   {
+    "type": "session_start",
+    "session": "S5",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "nurse_lin",
+     "porter_wu"
+    ],
+    "event_id": "E0050",
+    "tick": 12
+   },
+   {
+    "type": "session_end",
+    "session": "S4",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0051",
+    "tick": 12
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0047",
+     "E0048",
+     "E0049",
+     "E0050",
+     "E0051"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0047",
+     "E0048",
+     "E0049",
+     "E0050",
+     "E0051"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0047",
+     "E0048",
+     "E0049",
+     "E0050",
+     "E0051"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 13,
+  "time": "22:05",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "oncall",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0052",
+    "tick": 13,
+    "type": "ask",
+    "actors": [
+     "porter_wu",
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "topic": "restock_inquire",
+    "claim": "restock_inquire",
+    "text": "吴大勇：退烧药补上了没有？我这边等着确认。",
+    "interrupted": false,
+    "session_location": "triage"
+   },
+   {
+    "event_id": "E0053",
+    "tick": 13,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "oncall",
+    "from": "triage",
+    "to": "oncall"
+   },
+   {
+    "event_id": "E0054",
+    "tick": 13,
+    "type": "speak_failed",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "target": "nurse_lin",
+    "topic": "restock_inquire",
+    "reason": "target_left"
+   },
+   {
+    "type": "session_start",
+    "session": "S6",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0055",
+    "tick": 13
+   },
+   {
+    "type": "session_end",
+    "session": "S5",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "nurse_lin",
+     "porter_wu"
+    ],
+    "event_id": "E0056",
+    "tick": 13
+   },
+   {
+    "event_id": "E0057",
+    "tick": 13,
+    "type": "ambient",
+    "actors": [],
+    "location": "oncall",
+    "topic": "phone_rings",
+    "text": "值班室的电话响了一声就断了，大概是打错了。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0052",
+     "E0054",
+     "E0055",
+     "E0056"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0053",
+     "E0057"
+    ],
+    "muffled_event_ids": [
+     "E0052"
+    ]
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0052",
+     "E0054",
+     "E0055",
+     "E0056"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 14,
+  "time": "22:10",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "oncall",
+   "porter_wu": "oncall"
+  },
+  "events": [
+   {
+    "event_id": "E0058",
+    "tick": 14,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "oncall",
+    "from": "triage",
+    "to": "oncall"
+   },
+   {
+    "event_id": "E0059",
+    "tick": 14,
+    "type": "speak_failed",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "target": "porter_wu",
+    "topic": "restock_inquire",
+    "reason": "target_left"
+   },
+   {
+    "event_id": "E0060",
+    "tick": 14,
+    "type": "observe",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "oncall",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_start",
+    "session": "S7",
+    "location": "oncall",
+    "actors": [
+     "nurse_lin",
+     "porter_wu"
+    ],
+    "event_id": "E0061",
+    "tick": 14
+   },
+   {
+    "type": "session_end",
+    "session": "S6",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0062",
+    "tick": 14
+   },
+   {
+    "event_id": "E0063",
+    "tick": 14,
+    "type": "ambient",
+    "actors": [],
+    "location": "oncall",
+    "topic": "phone_rings",
+    "text": "值班室的电话响了一声就断了，大概是打错了。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0059",
+     "E0062"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0058",
+     "E0060",
+     "E0061",
+     "E0063"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0058",
+     "E0060",
+     "E0061",
+     "E0063"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 15,
+  "time": "22:15",
+  "positions": {
+   "doctor_shen": "pharmacy",
+   "nurse_lin": "oncall",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0064",
+    "tick": 15,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "triage",
+    "from": "oncall",
+    "to": "triage"
+   },
+   {
+    "event_id": "E0065",
+    "tick": 15,
+    "type": "observe",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "oncall",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0066",
+    "tick": 15,
+    "type": "move",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "pharmacy",
+    "from": "triage",
+    "to": "pharmacy"
+   },
+   {
+    "type": "session_end",
+    "session": "S7",
+    "location": "oncall",
+    "actors": [
+     "nurse_lin",
+     "porter_wu"
+    ],
+    "event_id": "E0067",
+    "tick": 15
+   },
+   {
+    "event_id": "E0068",
+    "tick": 15,
+    "type": "ambient",
+    "actors": [],
+    "location": "ward",
+    "topic": "monitor_beeps",
+    "text": "病房尽头的监护仪轻轻响了两声，又恢复了平稳。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0066"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0065",
+     "E0067"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0064"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 16,
+  "time": "22:20",
+  "positions": {
+   "doctor_shen": "pharmacy",
+   "nurse_lin": "triage",
+   "porter_wu": "pharmacy"
+  },
+  "events": [
+   {
+    "event_id": "E0069",
+    "tick": 16,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "pharmacy",
+    "from": "triage",
+    "to": "pharmacy"
+   },
+   {
+    "event_id": "E0070",
+    "tick": 16,
+    "type": "search",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "pharmacy",
+    "found": [
+     "fever_medicine"
+    ]
+   },
+   {
+    "event_id": "E0071",
+    "tick": 16,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "from": "oncall",
+    "to": "triage"
+   },
+   {
+    "type": "session_start",
+    "session": "S8",
+    "location": "pharmacy",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0072",
+    "tick": 16
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0069",
+     "E0070",
+     "E0072"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0071"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0069",
+     "E0070",
+     "E0072"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 17,
+  "time": "22:25",
+  "positions": {
+   "doctor_shen": "pharmacy",
+   "nurse_lin": "triage",
+   "porter_wu": "pharmacy"
+  },
+  "events": [
+   {
+    "event_id": "E0073",
+    "tick": 17,
+    "type": "ask",
+    "actors": [
+     "porter_wu",
+     "doctor_shen"
+    ],
+    "location": "pharmacy",
+    "topic": "restock_inquire",
+    "claim": "restock_inquire",
+    "text": "吴大勇：退烧药补上了没有？我这边等着确认。",
+    "interrupted": false,
+    "session_location": "pharmacy"
+   },
+   {
+    "event_id": "E0074",
+    "tick": 17,
+    "type": "observe",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0075",
+    "tick": 17,
+    "type": "speak",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "location": "pharmacy",
+    "topic": "restock_report",
+    "claim": "restock_report",
+    "text": "沈默：退烧药已经补上了，放在我手边，随时能用。",
+    "interrupted": true,
+    "session_location": "pharmacy"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0073",
+     "E0075"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0074"
+    ],
+    "muffled_event_ids": [
+     "E0073",
+     "E0075"
+    ]
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0073",
+     "E0075"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 18,
+  "time": "22:30",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "oncall",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0076",
+    "tick": 18,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "triage",
+    "from": "pharmacy",
+    "to": "triage"
+   },
+   {
+    "event_id": "E0077",
+    "tick": 18,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "oncall",
+    "from": "triage",
+    "to": "oncall"
+   },
+   {
+    "event_id": "E0078",
+    "tick": 18,
+    "type": "move",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "from": "pharmacy",
+    "to": "triage"
+   },
+   {
+    "type": "session_start",
+    "session": "S9",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0079",
+    "tick": 18
+   },
+   {
+    "type": "session_end",
+    "session": "S8",
+    "location": "pharmacy",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0080",
+    "tick": 18
+   },
+   {
+    "event_id": "E0081",
+    "tick": 18,
+    "type": "ambient",
+    "actors": [],
+    "location": "yard",
+    "topic": "wind_rattles",
+    "text": "后院的窗棂被风吹得咯咯作响。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0076",
+     "E0078",
+     "E0079"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0077"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0076",
+     "E0078",
+     "E0079"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 19,
+  "time": "22:35",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "triage",
+   "porter_wu": "ward"
+  },
+  "events": [
+   {
+    "event_id": "E0082",
+    "tick": 19,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "ward",
+    "from": "triage",
+    "to": "ward"
+   },
+   {
+    "event_id": "E0083",
+    "tick": 19,
+    "type": "speak_failed",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "target": "porter_wu",
+    "topic": "restock_report",
+    "reason": "target_left"
+   },
+   {
+    "event_id": "E0084",
+    "tick": 19,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "from": "oncall",
+    "to": "triage"
+   },
+   {
+    "type": "session_start",
+    "session": "S10",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "nurse_lin"
+    ],
+    "event_id": "E0085",
+    "tick": 19
+   },
+   {
+    "type": "session_end",
+    "session": "S9",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0086",
+    "tick": 19
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0083",
+     "E0084",
+     "E0085",
+     "E0086"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0083",
+     "E0084",
+     "E0085",
+     "E0086"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0082"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 20,
+  "time": "22:40",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "oncall",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0087",
+    "tick": 20,
+    "type": "move",
+    "actors": [
+     "porter_wu"
+    ],
+    "location": "triage",
+    "from": "ward",
+    "to": "triage"
+   },
+   {
+    "event_id": "E0088",
+    "tick": 20,
+    "type": "listen",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0089",
+    "tick": 20,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "oncall",
+    "from": "triage",
+    "to": "oncall"
+   },
+   {
+    "type": "session_start",
+    "session": "S11",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0090",
+    "tick": 20
+   },
+   {
+    "type": "session_end",
+    "session": "S10",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "nurse_lin"
+    ],
+    "event_id": "E0091",
+    "tick": 20
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0087",
+     "E0088",
+     "E0090",
+     "E0091"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0089"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0087",
+     "E0088",
+     "E0090",
+     "E0091"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 21,
+  "time": "22:45",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "triage",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0092",
+    "tick": 21,
+    "type": "speak",
+    "actors": [
+     "porter_wu",
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "topic": "patient_notice",
+    "claim": "patient_notice",
+    "text": "吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。",
+    "interrupted": false,
+    "session_location": "triage"
+   },
+   {
+    "event_id": "E0093",
+    "tick": 21,
+    "type": "speak",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "location": "triage",
+    "topic": "restock_report",
+    "claim": "restock_report",
+    "text": "沈默：退烧药已经补上了，放在我手边，随时能用。",
+    "interrupted": true,
+    "session_location": "triage"
+   },
+   {
+    "event_id": "E0094",
+    "tick": 21,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "from": "oncall",
+    "to": "triage"
+   },
+   {
+    "type": "session_start",
+    "session": "S12",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "nurse_lin",
+     "porter_wu"
+    ],
+    "event_id": "E0095",
+    "tick": 21
+   },
+   {
+    "type": "session_end",
+    "session": "S11",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0096",
+    "tick": 21
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 21,
+    "delivered_event_ids": [
+     "E0092",
+     "E0093",
+     "E0094",
+     "E0095",
+     "E0096"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 21,
+    "delivered_event_ids": [
+     "E0092",
+     "E0093",
+     "E0094",
+     "E0095",
+     "E0096"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 21,
+    "delivered_event_ids": [
+     "E0092",
+     "E0093",
+     "E0094",
+     "E0095",
+     "E0096"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 22,
+  "time": "22:50",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "triage",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0097",
+    "tick": 22,
+    "type": "speak",
+    "actors": [
+     "porter_wu",
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "topic": "patient_notice",
+    "claim": "patient_notice",
+    "text": "吴大勇：跟你说一声，后半夜有个发高烧的要送来。",
+    "interrupted": false,
+    "session_location": "triage"
+   },
+   {
+    "event_id": "E0098",
+    "tick": 22,
+    "type": "search",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "found": []
+   },
+   {
+    "event_id": "E0099",
+    "tick": 22,
+    "type": "speak",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "location": "triage",
+    "topic": "restock_report",
+    "claim": "restock_report",
+    "text": "沈默：药补齐了，病人来了也不怕。",
+    "interrupted": true,
+    "session_location": "triage"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 22,
+    "delivered_event_ids": [
+     "E0097",
+     "E0098",
+     "E0099"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 22,
+    "delivered_event_ids": [
+     "E0097",
+     "E0098",
+     "E0099"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 22,
+    "delivered_event_ids": [
+     "E0097",
+     "E0098",
+     "E0099"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 23,
+  "time": "22:55",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "pharmacy",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0100",
+    "tick": 23,
+    "type": "ask",
+    "actors": [
+     "porter_wu",
+     "nurse_lin"
+    ],
+    "location": "triage",
+    "topic": "patient_inquire",
+    "claim": "patient_inquire",
+    "text": "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+    "interrupted": false,
+    "session_location": "triage"
+   },
+   {
+    "event_id": "E0101",
+    "tick": 23,
+    "type": "move",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "pharmacy",
+    "from": "triage",
+    "to": "pharmacy"
+   },
+   {
+    "event_id": "E0102",
+    "tick": 23,
+    "type": "speak",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "location": "triage",
+    "topic": "denial",
+    "claim": "denial",
+    "text": "沈默：这事我不清楚，别问我。",
+    "interrupted": true,
+    "session_location": "triage"
+   },
+   {
+    "type": "session_start",
+    "session": "S13",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "porter_wu"
+    ],
+    "event_id": "E0103",
+    "tick": 23
+   },
+   {
+    "type": "session_end",
+    "session": "S12",
+    "location": "triage",
+    "actors": [
+     "doctor_shen",
+     "nurse_lin",
+     "porter_wu"
+    ],
+    "event_id": "E0104",
+    "tick": 23
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 23,
+    "delivered_event_ids": [
+     "E0100",
+     "E0102",
+     "E0103",
+     "E0104"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 23,
+    "delivered_event_ids": [
+     "E0101"
+    ],
+    "muffled_event_ids": [
+     "E0100",
+     "E0102"
+    ]
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 23,
+    "delivered_event_ids": [
+     "E0100",
+     "E0102",
+     "E0103",
+     "E0104"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 24,
+  "time": "23:00",
+  "positions": {
+   "doctor_shen": "triage",
+   "nurse_lin": "pharmacy",
+   "porter_wu": "triage"
+  },
+  "events": [
+   {
+    "event_id": "E0105",
+    "tick": 24,
+    "type": "speak",
+    "actors": [
+     "porter_wu",
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "topic": "denial",
+    "claim": "denial",
+    "text": "吴大勇：这事我不清楚，别问我。",
+    "interrupted": false,
+    "session_location": "triage"
+   },
+   {
+    "event_id": "E0106",
+    "tick": 24,
+    "type": "search",
+    "actors": [
+     "nurse_lin"
+    ],
+    "location": "pharmacy",
+    "found": []
+   },
+   {
+    "event_id": "E0107",
+    "tick": 24,
+    "type": "listen",
+    "actors": [
+     "doctor_shen"
+    ],
+    "location": "triage",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "doctor_shen",
+    "tick": 24,
+    "delivered_event_ids": [
+     "E0105",
+     "E0107"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "nurse_lin",
+    "tick": 24,
+    "delivered_event_ids": [
+     "E0106"
+    ],
+    "muffled_event_ids": [
+     "E0105"
+    ]
+   },
+   {
+    "agent_id": "porter_wu",
+    "tick": 24,
+    "delivered_event_ids": [
+     "E0105",
+     "E0107"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ }
+]
