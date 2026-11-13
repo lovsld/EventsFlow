@@ -1,0 +1,36 @@
+# keeper_zhou 的私人记忆（其他 Agent 不可见）
+- [t3][inferred] 隔墙隐约听到 a_gui,lin_tao 在boathouse说话，听不清内容。
+- [t3][inferred] 隔墙隐约听到 lin_tao,a_gui 在boathouse说话，听不清内容。
+- [t4][experienced] a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？
+- [t4][experienced] lin_tao 说：林涛：今晚真有船要贴着礁石回港？消息准吗？
+- [t4][experienced] 环境：远处浮标的铃铛被浪推着，断断续续地响。
+- [t5][experienced] a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？
+- [t5][experienced] lin_tao 说：林涛：今晚真有船要贴着礁石回港？消息准吗？
+- [t5][experienced] 环境：远处浮标的铃铛被浪推着，断断续续地响。
+- [t6][experienced] a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？
+- [t6][experienced] lin_tao 说：林涛：雾笛那边，到底能不能响了？我这边等着确认。
+- [t7][experienced] a_gui 在 boathouse 翻找着什么。
+- [t7][experienced] lin_tao 在 boathouse 翻找着什么。
+- [t8][experienced] a_gui 说：阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。
+- [t8][experienced] 环境：远处浮标的铃铛被浪推着，断断续续地响。
+- [t9][experienced] a_gui 说：阿贵：雾笛那边，到底能不能响了？我这边等着确认。
+- [t10][experienced] a_gui 说：阿贵：雾笛那边，到底能不能响了？我这边等着确认。
+- [t11][experienced] a_gui 说：阿贵：雾笛那边，到底能不能响了？我这边等着确认。
+- [t12][experienced] 环境：远处浮标的铃铛被浪推着，断断续续地响。
+- [t13][experienced] a_gui 来到了/去到了 boathouse。
+- [t14][experienced] a_gui 说：阿贵：这事我不清楚，别问我。
+- [t15][experienced] a_gui 说：阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。
+- [t16][experienced] a_gui 说：阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。
+- [t17][experienced] a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？
+- [t17][experienced] 环境：远处浮标的铃铛被浪推着，断断续续地响。
+- [t18][experienced] a_gui 说：阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。
+- [t19][experienced] lin_tao 来到了/去到了 boathouse。
+- [t20][experienced] a_gui 来到了/去到了 boathouse。
+- [t20][experienced] lin_tao 说：林涛：雾笛能修好——备件皮带已经到手，我这就装回去。
+- [t20][experienced] 环境：远处浮标的铃铛被浪推着，断断续续地响。
+- [t21][experienced] lin_tao 说：林涛：放心，雾笛误不了事，备件拿到了。
+- [t22][experienced] a_gui 来到了/去到了 boathouse。
+- [t22][experienced] lin_tao 说：林涛：雾笛能修好——备件皮带已经到手，我这就装回去。
+- [t23][experienced] a_gui 说：阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。
+- [t23][experienced] lin_tao 说：林涛：放心，雾笛误不了事，备件拿到了。
+- [t24][experienced] lin_tao 说：林涛：这事我不清楚，别问我。

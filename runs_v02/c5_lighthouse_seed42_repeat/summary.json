@@ -1,0 +1,103 @@
+{
+  "run_id": "c5_lighthouse_seed42_repeat",
+  "mode": "rule",
+  "seed": 42,
+  "ticks": 24,
+  "engine_version": "v0.2-c",
+  "scenario_id": "lighthouse_fog",
+  "world_tick": 24,
+  "resumed_from_tick": null,
+  "quota_stopped": false,
+  "quota_waits": 0,
+  "total_events": 93,
+  "final_positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+  },
+  "objects_seen_by": {
+    "signal_lantern": [
+      "lin_tao",
+      "a_gui"
+    ],
+    "spare_belt": [
+      "keeper_zhou",
+      "lin_tao"
+    ]
+  },
+  "final_beliefs": {
+    "a_gui": {
+      "jetty_lamp_out": {
+        "confidence": 0.9,
+        "kind": "experienced",
+        "desc": "傍晚上栈桥时亲见：栈桥那盏信号灯已经灭了（亲身确认，还没跟人说）"
+      },
+      "ship_passing_tonight": {
+        "confidence": 0.464,
+        "kind": "heard",
+        "desc": "keeper_zhou 声称：ship_passing_tonight"
+      }
+    },
+    "keeper_zhou": {
+      "ship_passing_tonight": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "入夜前抄到电台记录：渔船海燕号后半夜要贴着暗礁回港，需要灯塔的灯光和雾笛引路（亲耳听见、亲手记下）"
+      },
+      "conceals:lin_tao": {
+        "confidence": 0.8,
+        "kind": "inferred",
+        "desc": "lin_tao 否认了 ship_passing_tonight，与其我已知的线索矛盾"
+      },
+      "holds:a_gui:signal_lantern": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "我看见 a_gui 在 boathouse 找到了 signal_lantern"
+      }
+    },
+    "lin_tao": {
+      "belt_broken": {
+        "confidence": 0.95,
+        "kind": "experienced",
+        "desc": "傍晚例行检查时亲手摸到：雾笛空压机的皮带已经断了；备用皮带在值班室的储藏柜里（亲身确认）"
+      },
+      "ship_passing_tonight": {
+        "confidence": 0.464,
+        "kind": "heard",
+        "desc": "keeper_zhou 声称：ship_passing_tonight"
+      },
+      "holds:a_gui:signal_lantern": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "我看见 a_gui 在 boathouse 找到了 signal_lantern"
+      },
+      "fog_horn_ready": {
+        "confidence": 0.95,
+        "kind": "heard",
+        "desc": "spare_belt 的内容表明：fog_horn_ready"
+      }
+    }
+  },
+  "memory_entries": {
+    "a_gui": 21,
+    "keeper_zhou": 25,
+    "lin_tao": 24
+  },
+  "db_counts": {
+    "decisions": 72,
+    "events": 93,
+    "deliveries": 72,
+    "dedup_drops": 0,
+    "predictions": 72,
+    "belief_changes": 7,
+    "plan_transitions": 207,
+    "goal_changes": 28,
+    "consolidations": 72,
+    "counterfactual_suppressions": 0
+  },
+  "llm_repairs_total": 0,
+  "suppression_rules": [],
+  "provider": "rule",
+  "llm_backend": null,
+  "note": "rule mode: no external model calls"
+}

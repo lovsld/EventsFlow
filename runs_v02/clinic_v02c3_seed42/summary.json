@@ -1,0 +1,97 @@
+{
+  "run_id": "clinic_v02c3_seed42",
+  "mode": "rule",
+  "seed": 42,
+  "ticks": 24,
+  "engine_version": "v0.2-c",
+  "scenario_id": "scenario_c_clinic",
+  "world_tick": 24,
+  "resumed_from_tick": null,
+  "quota_stopped": false,
+  "quota_waits": 0,
+  "total_events": 97,
+  "final_positions": {
+    "doctor_shen": "pharmacy",
+    "nurse_lin": "yard",
+    "porter_wu": "pharmacy"
+  },
+  "objects_seen_by": {
+    "admission_form": [
+      "doctor_shen",
+      "nurse_lin"
+    ],
+    "fever_medicine": [
+      "nurse_lin"
+    ]
+  },
+  "final_beliefs": {
+    "doctor_shen": {
+      "fever_patient_coming": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "刚接电话得知：后半夜要送来一名高烧病人（亲耳听见）"
+      }
+    },
+    "nurse_lin": {
+      "fever_med_low": {
+        "confidence": 0.95,
+        "kind": "experienced",
+        "desc": "今晚清点时亲见病房药柜里的退烧药只剩个底儿（亲身确认）"
+      },
+      "fever_patient_coming": {
+        "confidence": 0.946,
+        "kind": "heard",
+        "desc": "doctor_shen 声称：fever_patient_coming"
+      },
+      "fever_medicine_restocked": {
+        "confidence": 0.95,
+        "kind": "heard",
+        "desc": "fever_medicine 的内容表明：fever_medicine_restocked"
+      }
+    },
+    "porter_wu": {
+      "pharmacy_latch_broken": {
+        "confidence": 0.9,
+        "kind": "experienced",
+        "desc": "傍晚关窗时亲见药房的窗扣是坏的（亲身确认，与今晚收治无关，也没跟谁说过）"
+      },
+      "fever_patient_coming": {
+        "confidence": 0.464,
+        "kind": "heard",
+        "desc": "doctor_shen 声称：fever_patient_coming"
+      },
+      "holds:nurse_lin:admission_form": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "我看见 nurse_lin 在 oncall 找到了 admission_form"
+      },
+      "holds:nurse_lin:fever_medicine": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "我看见 nurse_lin 在 pharmacy 找到了 fever_medicine"
+      }
+    }
+  },
+  "memory_entries": {
+    "doctor_shen": 12,
+    "nurse_lin": 16,
+    "porter_wu": 12
+  },
+  "db_counts": {
+    "decisions": 72,
+    "events": 97,
+    "deliveries": 72,
+    "dedup_drops": 0,
+    "predictions": 72,
+    "belief_changes": 8,
+    "plan_transitions": 219,
+    "goal_changes": 27,
+    "consolidations": 72,
+    "counterfactual_suppressions": 0
+  },
+  "llm_repairs_total": 0,
+  "suppression_rules": [],
+  "provider": "rule",
+  "llm_backend": null,
+  "note": "rule mode: no external model calls"
+}

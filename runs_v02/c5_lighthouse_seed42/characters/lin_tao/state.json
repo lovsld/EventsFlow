@@ -1,0 +1,1467 @@
+{
+  "character_id": "lin_tao",
+  "location": "boathouse",
+  "personality": {
+    "caution": 0.6,
+    "curiosity": 0.5,
+    "honesty": 0.8,
+    "impulsiveness": 0.3,
+    "sociability": 0.4
+  },
+  "principles": [
+    "机器的事只认亲手摸到的",
+    "没把握的话不说满",
+    "别人的地盘不乱翻"
+  ],
+  "goals": [
+    {
+      "key": "repair_fog_horn",
+      "desc": "赶在渔船到之前把雾笛修好",
+      "weight": 1.0,
+      "kind": "achievement",
+      "status": "active",
+      "activation_condition": {
+        "type": "belief_threshold",
+        "belief": "ship_passing_tonight",
+        "min_confidence": 0.4
+      },
+      "success_condition": {
+        "all": [
+          {
+            "type": "object_possession",
+            "object": "spare_belt",
+            "holder": "self"
+          },
+          {
+            "type": "agent_at_location",
+            "agent": "self",
+            "location": "boathouse"
+          },
+          {
+            "type": "event_occurred",
+            "event_type": "work",
+            "actor": "self"
+          }
+        ]
+      },
+      "failure_condition": null,
+      "priority_current": 1.0,
+      "priority_rules": [],
+      "progress": 0.6667,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": 23,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "guard_boathouse",
+      "desc": "看好船坞，别让人乱翻机器",
+      "weight": 0.9,
+      "kind": "maintenance",
+      "status": "failed",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "search",
+        "actor": "any_other"
+      },
+      "priority_current": 0.9,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.9,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "belt_broken",
+      "confidence": 0.95,
+      "kind": "experienced",
+      "desc": "傍晚例行检查时亲手摸到：雾笛空压机的皮带已经断了；备用皮带在值班室的储藏柜里（亲身确认）",
+      "evidence": [
+        {
+          "source_event_id": "seed:belt_broken",
+          "source_type": "direct_observation",
+          "reliability": 0.95,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "ship_passing_tonight",
+      "confidence": 0.464,
+      "kind": "heard",
+      "desc": "keeper_zhou 声称：ship_passing_tonight",
+      "evidence": [
+        {
+          "source_event_id": "E0037",
+          "source_type": "testimony",
+          "reliability": 0.464,
+          "observed_at": 10,
+          "source": "keeper_zhou"
+        }
+      ]
+    },
+    {
+      "key": "holds:a_gui:signal_lantern",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "我看见 a_gui 在 boathouse 找到了 signal_lantern",
+      "evidence": [
+        {
+          "source_event_id": "E0040",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 11,
+          "source": "a_gui"
+        }
+      ]
+    },
+    {
+      "key": "fog_horn_ready",
+      "confidence": 0.95,
+      "kind": "heard",
+      "desc": "spare_belt 的内容表明：fog_horn_ready",
+      "evidence": [
+        {
+          "source_event_id": "search_result:spare_belt@15",
+          "source_type": "testimony",
+          "reliability": 0.95,
+          "observed_at": 15,
+          "source": "spare_belt"
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.9826785714285715,
+    "suspicion": 1.0
+  },
+  "current_plan": {
+    "plan_id": "plan_006",
+    "goal": "repair_fog_horn",
+    "goal_id": "repair_fog_horn",
+    "steps": [
+      {
+        "step_id": "locate:spare_belt",
+        "objective": "locate spare_belt",
+        "action_candidates": [
+          {
+            "type": "search"
+          },
+          {
+            "type": "move"
+          },
+          {
+            "type": "ask"
+          }
+        ],
+        "success_condition": {
+          "type": "object_found",
+          "object": "spare_belt"
+        },
+        "failure_condition": null,
+        "retry_policy": {
+          "max_attempts": 2,
+          "on_exhausted": "replan",
+          "reactivate_when": null
+        },
+        "status": "fulfilled",
+        "attempts": 0
+      },
+      {
+        "step_id": "secure:spare_belt",
+        "objective": "secure spare_belt",
+        "action_candidates": [
+          {
+            "type": "search"
+          },
+          {
+            "type": "show"
+          }
+        ],
+        "success_condition": {
+          "type": "object_possession",
+          "object": "spare_belt",
+          "holder": "self"
+        },
+        "failure_condition": null,
+        "retry_policy": {
+          "max_attempts": 2,
+          "on_exhausted": "replan",
+          "reactivate_when": null
+        },
+        "status": "fulfilled",
+        "attempts": 0
+      },
+      {
+        "step_id": "go:boathouse",
+        "objective": "be at boathouse",
+        "action_candidates": [
+          {
+            "type": "move"
+          }
+        ],
+        "success_condition": {
+          "type": "agent_at_location",
+          "agent": "self",
+          "location": "boathouse"
+        },
+        "failure_condition": null,
+        "retry_policy": {
+          "max_attempts": 2,
+          "on_exhausted": "replan",
+          "reactivate_when": null
+        },
+        "status": "fulfilled",
+        "attempts": 2
+      },
+      {
+        "step_id": "advance:0:event_occurred",
+        "objective": "advance: event_occurred",
+        "action_candidates": [
+          {
+            "type": "speak"
+          },
+          {
+            "type": "ask"
+          },
+          {
+            "type": "observe"
+          }
+        ],
+        "success_condition": {
+          "type": "event_occurred",
+          "event_type": "work",
+          "actor": "self"
+        },
+        "failure_condition": null,
+        "retry_policy": {
+          "max_attempts": 2,
+          "on_exhausted": "replan",
+          "reactivate_when": null
+        },
+        "status": "active",
+        "attempts": 0
+      }
+    ],
+    "current_step": 3,
+    "commitment": 0.93,
+    "status": "active",
+    "step_failures": 0,
+    "blocked_info": {
+      "reason": "success_condition decisively false",
+      "since_tick": 20,
+      "step_id": "go:boathouse",
+      "attempts": 2
+    },
+    "reactivate_when": null,
+    "pending_recovery": null,
+    "retry_recoveries": {},
+    "interruption_conditions": [
+      "target_leaves",
+      "new_critical_information",
+      "immediate_danger"
+    ],
+    "interrupt_log": [],
+    "step_history": [
+      {
+        "tick": 18,
+        "step_index": 0,
+        "step": "locate spare_belt",
+        "action_sig": "receive:locate:spare_belt",
+        "counted": true
+      },
+      {
+        "tick": 18,
+        "step_index": 1,
+        "step": "secure spare_belt",
+        "action_sig": "receive:secure:spare_belt",
+        "counted": true
+      },
+      {
+        "tick": 23,
+        "step_index": 2,
+        "step": "be at boathouse",
+        "action_sig": "receive:go:boathouse",
+        "counted": true
+      }
+    ],
+    "last_progress_tick": 23,
+    "commitment_updated_tick": 23
+  },
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "a_gui 来到了/去到了 boathouse。",
+      "event_id": "E0001"
+    },
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+      "event_id": "E0006"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+      "event_id": "E0009"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+      "event_id": "E0013"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+      "event_id": "E0016"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "环境：远处浮标的铃铛被浪推着，断断续续地响。",
+      "event_id": "E0019"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+      "event_id": "E0020"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "a_gui 说：阿贵：这事我不清楚，别问我。",
+      "event_id": "E0024"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+      "event_id": "E0028"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "keeper_zhou 来到了/去到了 boathouse。",
+      "event_id": "E0030"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+      "event_id": "E0033"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "keeper_zhou 说：周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+      "event_id": "E0035"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+      "event_id": "E0036"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "keeper_zhou 说：周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+      "event_id": "E0037"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "a_gui 在 boathouse 翻找着什么。",
+      "event_id": "E0040"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "keeper_zhou 说：周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+      "event_id": "E0042"
+    },
+    {
+      "tick": 12,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 a_gui,lin_tao 在boathouse说话，听不清内容。",
+      "event_id": "E0043"
+    },
+    {
+      "tick": 12,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 keeper_zhou,a_gui 在boathouse说话，听不清内容。",
+      "event_id": "E0044"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "环境：一只夜鹭在栈桥上叫了两声，又没了动静。",
+      "event_id": "E0051"
+    },
+    {
+      "tick": 13,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 a_gui,keeper_zhou 在boathouse说话，听不清内容。",
+      "event_id": "E0048"
+    },
+    {
+      "tick": 13,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 keeper_zhou,a_gui 在boathouse说话，听不清内容。",
+      "event_id": "E0050"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "我在base找到了 spare_belt。",
+      "event_id": null
+    },
+    {
+      "tick": 22,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 a_gui,keeper_zhou 在boathouse说话，听不清内容。",
+      "event_id": "E0081"
+    },
+    {
+      "tick": 24,
+      "kind": "experienced",
+      "text": "a_gui 来到了/去到了 boathouse。",
+      "event_id": "E0089"
+    },
+    {
+      "tick": 24,
+      "kind": "experienced",
+      "text": "keeper_zhou 说：周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+      "event_id": "E0091"
+    }
+  ],
+  "long_term_memory": [
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+      "event_id": "E0036",
+      "importance": 0.812,
+      "consolidated_at_tick": 11
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "keeper_zhou 说：周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+      "event_id": "E0037",
+      "importance": 0.812,
+      "consolidated_at_tick": 11
+    }
+  ],
+  "memory_summary": "",
+  "relationships": {
+    "a_gui": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "keeper_zhou": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0001",
+    "E0006",
+    "E0009",
+    "E0013",
+    "E0016",
+    "E0019",
+    "E0020",
+    "E0024",
+    "E0028",
+    "E0030",
+    "E0033",
+    "E0035",
+    "E0036",
+    "E0037",
+    "E0040",
+    "E0042",
+    "E0043",
+    "E0044",
+    "E0051",
+    "E0048",
+    "E0050",
+    "E0081",
+    "E0089",
+    "E0091"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "a_gui",
+      "topic": "ship_inquire",
+      "claim": "ship_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 3,
+      "from": "a_gui",
+      "topic": "ship_inquire",
+      "claim": "ship_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 4,
+      "from": "a_gui",
+      "topic": "ship_inquire",
+      "claim": "ship_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 5,
+      "from": "a_gui",
+      "topic": "ship_inquire",
+      "claim": "ship_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 6,
+      "from": "a_gui",
+      "topic": "ship_inquire",
+      "claim": "ship_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 7,
+      "from": "a_gui",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "a_gui",
+      "topic": "ship_inquire",
+      "claim": "ship_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 9,
+      "from": "a_gui",
+      "topic": "ship_inquire",
+      "claim": "ship_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 9,
+      "from": "keeper_zhou",
+      "topic": "horn_inquire",
+      "claim": "horn_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 10,
+      "from": "a_gui",
+      "topic": "ship_inquire",
+      "claim": "ship_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 10,
+      "from": "keeper_zhou",
+      "topic": "ship_notice",
+      "claim": "ship_notice",
+      "kind": "speak"
+    },
+    {
+      "tick": 11,
+      "from": "keeper_zhou",
+      "topic": "horn_inquire",
+      "claim": "horn_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 24,
+      "from": "keeper_zhou",
+      "topic": "horn_inquire",
+      "claim": "horn_inquire",
+      "kind": "ask"
+    }
+  ],
+  "pending_question": {
+    "from": "keeper_zhou",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "tick": 24,
+    "addressed_to_me": true
+  },
+  "pending_questions": [
+    {
+      "asker": "keeper_zhou",
+      "claim_key": "horn_inquire",
+      "proposition": "fog_horn_ready",
+      "tick_asked": 24,
+      "addressed_to_me": true,
+      "via": "ask"
+    }
+  ],
+  "action_counts": {
+    "observe::": 3,
+    "ask:a_gui:ship_inquire": 5,
+    "speak:a_gui:denial": 2,
+    "ask:keeper_zhou:horn_inquire": 1,
+    "search:boathouse:": 1,
+    "move:jetty:": 2,
+    "search:jetty:": 1,
+    "move:base:": 4,
+    "search:base:": 1,
+    "move:lamp_room:": 3,
+    "move:boathouse:": 1
+  },
+  "holdings": [
+    "spare_belt"
+  ],
+  "found_objects": [
+    "spare_belt"
+  ],
+  "object_sightings": {
+    "signal_lantern": "boathouse",
+    "spare_belt": "base"
+  },
+  "searched_empty_places": [
+    "boathouse",
+    "jetty"
+  ],
+  "perceived_events": [
+    {
+      "tick": 1,
+      "type": "move",
+      "actor": "a_gui",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": "boathouse",
+      "found": []
+    },
+    {
+      "tick": 1,
+      "type": "session_start",
+      "actor": "a_gui",
+      "target": "lin_tao",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 2,
+      "type": "ask",
+      "actor": "a_gui",
+      "target": "lin_tao",
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 3,
+      "type": "ask",
+      "actor": "a_gui",
+      "target": "lin_tao",
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 4,
+      "type": "ask",
+      "actor": "a_gui",
+      "target": "lin_tao",
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 5,
+      "type": "ask",
+      "actor": "a_gui",
+      "target": "lin_tao",
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 5,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "buoy_bell",
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 6,
+      "type": "ask",
+      "actor": "a_gui",
+      "target": "lin_tao",
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 7,
+      "type": "speak",
+      "actor": "a_gui",
+      "target": "lin_tao",
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 8,
+      "type": "ask",
+      "actor": "a_gui",
+      "target": "lin_tao",
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 8,
+      "type": "move",
+      "actor": "keeper_zhou",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": "boathouse",
+      "found": []
+    },
+    {
+      "tick": 8,
+      "type": "session_start",
+      "actor": "a_gui",
+      "target": "keeper_zhou",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 8,
+      "type": "session_end",
+      "actor": "a_gui",
+      "target": "lin_tao",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 9,
+      "type": "ask",
+      "actor": "a_gui",
+      "target": "keeper_zhou",
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 9,
+      "type": "ask",
+      "actor": "keeper_zhou",
+      "target": "lin_tao",
+      "claim": "horn_inquire",
+      "topic": "horn_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 10,
+      "type": "ask",
+      "actor": "a_gui",
+      "target": "keeper_zhou",
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 10,
+      "type": "speak",
+      "actor": "keeper_zhou",
+      "target": "a_gui",
+      "claim": "ship_notice",
+      "topic": "ship_notice",
+      "stance": "assert",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 11,
+      "type": "search",
+      "actor": "a_gui",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": [
+        "signal_lantern"
+      ]
+    },
+    {
+      "tick": 11,
+      "type": "ask",
+      "actor": "keeper_zhou",
+      "target": "a_gui",
+      "claim": "horn_inquire",
+      "topic": "horn_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 13,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "gull_cries",
+      "stance": null,
+      "object": null,
+      "location": "jetty",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 23,
+      "type": "observe",
+      "actor": "keeper_zhou",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 23,
+      "type": "session_start",
+      "actor": "keeper_zhou",
+      "target": "lin_tao",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 23,
+      "type": "session_end",
+      "actor": "a_gui",
+      "target": "keeper_zhou",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 24,
+      "type": "move",
+      "actor": "a_gui",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": "boathouse",
+      "found": []
+    },
+    {
+      "tick": 24,
+      "type": "ask",
+      "actor": "keeper_zhou",
+      "target": "lin_tao",
+      "claim": "horn_inquire",
+      "topic": "horn_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 24,
+      "type": "session_start",
+      "actor": "a_gui",
+      "target": "keeper_zhou",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 24,
+      "type": "session_end",
+      "actor": "keeper_zhou",
+      "target": "lin_tao",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "boathouse",
+      "to": null,
+      "found": []
+    }
+  ],
+  "own_actions": [
+    {
+      "tick": 0,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 1,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 2,
+      "type": "ask",
+      "target": "a_gui",
+      "target_location": null,
+      "object": null,
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 3,
+      "type": "ask",
+      "target": "a_gui",
+      "target_location": null,
+      "object": null,
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 4,
+      "type": "ask",
+      "target": "a_gui",
+      "target_location": null,
+      "object": null,
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 5,
+      "type": "speak",
+      "target": "a_gui",
+      "target_location": null,
+      "object": null,
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "ok": true
+    },
+    {
+      "tick": 6,
+      "type": "ask",
+      "target": "a_gui",
+      "target_location": null,
+      "object": null,
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 7,
+      "type": "speak",
+      "target": "a_gui",
+      "target_location": null,
+      "object": null,
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "ok": true
+    },
+    {
+      "tick": 8,
+      "type": "ask",
+      "target": "a_gui",
+      "target_location": null,
+      "object": null,
+      "claim": "ship_inquire",
+      "topic": "ship_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 9,
+      "type": "ask",
+      "target": "keeper_zhou",
+      "target_location": null,
+      "object": null,
+      "claim": "horn_inquire",
+      "topic": "horn_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 10,
+      "type": "search",
+      "target": null,
+      "target_location": "boathouse",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 11,
+      "type": "move",
+      "target": null,
+      "target_location": "jetty",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 12,
+      "type": "search",
+      "target": null,
+      "target_location": "jetty",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 13,
+      "type": "move",
+      "target": null,
+      "target_location": "base",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 14,
+      "type": "search",
+      "target": null,
+      "target_location": "base",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 15,
+      "type": "move",
+      "target": null,
+      "target_location": "lamp_room",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 16,
+      "type": "move",
+      "target": null,
+      "target_location": "base",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 17,
+      "type": "move",
+      "target": null,
+      "target_location": "lamp_room",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 18,
+      "type": "move",
+      "target": null,
+      "target_location": "base",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 19,
+      "type": "move",
+      "target": null,
+      "target_location": "lamp_room",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 20,
+      "type": "move",
+      "target": null,
+      "target_location": "base",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 21,
+      "type": "move",
+      "target": null,
+      "target_location": "jetty",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 22,
+      "type": "move",
+      "target": null,
+      "target_location": "boathouse",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 23,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    }
+  ],
+  "scheduler_memory": {
+    "pursuit": "repair_fog_horn",
+    "since": 10
+  },
+  "plan_failure_memory": [
+    {
+      "plan_id": "plan_005",
+      "goal_id": "repair_fog_horn",
+      "fingerprint": {
+        "goal_id": "repair_fog_horn",
+        "steps": [
+          [
+            [
+              [
+                [
+                  "agent_at_location",
+                  "self",
+                  "boathouse"
+                ]
+              ],
+              [
+                "move"
+              ]
+            ],
+            1
+          ],
+          [
+            [
+              [
+                [
+                  "event_occurred",
+                  "work",
+                  "self",
+                  "-",
+                  null,
+                  null,
+                  null,
+                  null,
+                  1
+                ]
+              ],
+              [
+                "ask",
+                "observe",
+                "speak"
+              ]
+            ],
+            1
+          ],
+          [
+            [
+              [
+                [
+                  "object_found",
+                  "spare_belt"
+                ]
+              ],
+              [
+                "ask",
+                "move",
+                "search"
+              ]
+            ],
+            1
+          ],
+          [
+            [
+              [
+                [
+                  "object_possession",
+                  "spare_belt",
+                  "self"
+                ]
+              ],
+              [
+                "search",
+                "show"
+              ]
+            ],
+            1
+          ]
+        ]
+      },
+      "tick_failed": 13,
+      "cause": "blocked",
+      "context_digest": "{\"beliefs\": {\"ship_passing_tonight\": 4}, \"found\": [], \"holdings\": [], \"location\": \"jetty\", \"searched\": [\"boathouse\", \"jetty\"]}",
+      "failed_step_id": "locate:spare_belt",
+      "failed_step_condition": {
+        "type": "object_found",
+        "object": "spare_belt"
+      }
+    },
+    {
+      "plan_id": "plan_006",
+      "goal_id": "repair_fog_horn",
+      "fingerprint": {
+        "goal_id": "repair_fog_horn",
+        "steps": [
+          [
+            [
+              [
+                [
+                  "agent_at_location",
+                  "self",
+                  "boathouse"
+                ]
+              ],
+              [
+                "move"
+              ]
+            ],
+            1
+          ],
+          [
+            [
+              [
+                [
+                  "event_occurred",
+                  "work",
+                  "self",
+                  "-",
+                  null,
+                  null,
+                  null,
+                  null,
+                  1
+                ]
+              ],
+              [
+                "ask",
+                "observe",
+                "speak"
+              ]
+            ],
+            1
+          ],
+          [
+            [
+              [
+                [
+                  "object_found",
+                  "spare_belt"
+                ]
+              ],
+              [
+                "ask",
+                "move",
+                "search"
+              ]
+            ],
+            1
+          ],
+          [
+            [
+              [
+                [
+                  "object_possession",
+                  "spare_belt",
+                  "self"
+                ]
+              ],
+              [
+                "search",
+                "show"
+              ]
+            ],
+            1
+          ]
+        ]
+      },
+      "tick_failed": 20,
+      "cause": "blocked",
+      "context_digest": "{\"beliefs\": {\"ship_passing_tonight\": 4}, \"found\": [\"spare_belt\"], \"holdings\": [\"spare_belt\"], \"location\": \"lamp_room\", \"searched\": [\"base\", \"boathouse\", \"jetty\"]}",
+      "failed_step_id": "go:boathouse",
+      "failed_step_condition": {
+        "type": "agent_at_location",
+        "agent": "self",
+        "location": "boathouse"
+      }
+    }
+  ],
+  "plan_gate_counts": {
+    "repair_fog_horn|{\"beliefs\": {\"ship_passing_tonight\": 4}, \"found\": [], \"holdings\": [], \"location\": \"jetty\", \"searched\": [\"boathouse\", \"jetty\"]}": 1,
+    "repair_fog_horn|{\"beliefs\": {\"ship_passing_tonight\": 4}, \"found\": [\"spare_belt\"], \"holdings\": [\"spare_belt\"], \"location\": \"lamp_room\", \"searched\": [\"base\", \"boathouse\", \"jetty\"]}": 1
+  }
+}

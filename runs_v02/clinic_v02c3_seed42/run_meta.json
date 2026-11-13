@@ -1,0 +1,274 @@
+{
+  "run_id": "clinic_v02c3_seed42",
+  "mode": "rule",
+  "seed": 42,
+  "backend": null,
+  "characters": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+  ],
+  "created_at": "2026-11-12T03:57:41.931762+00:00",
+  "checkpoint_format": 1,
+  "engine_version": "v0.2-c",
+  "scheduler_config": {
+    "dep": 0.4,
+    "wait": 0.15,
+    "wait_scale": 10,
+    "switch": 0.2,
+    "switch_margin": 0.1,
+    "min_dwell": 2,
+    "max_pause_ticks": 8
+  },
+  "scenario_id": "scenario_c_clinic",
+  "scenario": {
+    "scenario_id": "scenario_c_clinic",
+    "version": 1,
+    "comment": "Scenario C (V0.2-B B4 generalization test, written by a non-implementer from the data contract only): a clinic night shift. The night nurse privately knows the fever medicine is nearly out; the on-call doctor privately knows a fever patient will be admitted tonight. The nurse's restock goal only activates once she learns of the admission (from the doctor, or from the admission form in his office); the doctor's readiness goal only completes once he learns the restock happened. Location graph is a 4-cycle plus one leaf (triage-ward-yard-pharmacy-triage, oncall leaf) — not isomorphic to the tavern/warehouse tree.",
+    "locations": [
+      "triage",
+      "ward",
+      "pharmacy",
+      "yard",
+      "oncall"
+    ],
+    "adjacency": {
+      "oncall": [
+        "triage"
+      ],
+      "pharmacy": [
+        "triage",
+        "yard"
+      ],
+      "triage": [
+        "ward",
+        "pharmacy",
+        "oncall"
+      ],
+      "ward": [
+        "triage",
+        "yard"
+      ],
+      "yard": [
+        "ward",
+        "pharmacy"
+      ]
+    },
+    "scenery": {
+      "oncall": [
+        {
+          "id": "desk",
+          "searchable": true
+        },
+        "phone",
+        "cot"
+      ],
+      "pharmacy": [
+        {
+          "id": "drug_shelves",
+          "searchable": true
+        },
+        "counter",
+        "herb_drawers"
+      ],
+      "triage": [
+        {
+          "id": "notice_board",
+          "searchable": true
+        },
+        "bench",
+        "water_cooler"
+      ],
+      "ward": [
+        {
+          "id": "med_cabinet",
+          "searchable": true
+        },
+        "beds",
+        "call_bell"
+      ],
+      "yard": [
+        "delivery_cart",
+        "gate_lamp"
+      ]
+    },
+    "objects": {
+      "admission_form": {
+        "location": "oncall",
+        "holder": "doctor_shen",
+        "seen_by": [
+          "doctor_shen"
+        ],
+        "searchable": true,
+        "movable": true,
+        "displayable": true,
+        "on_found": "inspect",
+        "fact_belief": null,
+        "reveals": [
+          {
+            "belief": "fever_patient_coming",
+            "reliability": 0.9
+          }
+        ]
+      },
+      "fever_medicine": {
+        "location": "pharmacy",
+        "holder": "nurse_lin",
+        "seen_by": [
+          "nurse_lin"
+        ],
+        "searchable": true,
+        "movable": true,
+        "displayable": true,
+        "on_found": "acquire",
+        "fact_belief": null,
+        "reveals": [
+          {
+            "belief": "fever_medicine_restocked",
+            "reliability": 0.95
+          }
+        ]
+      }
+    },
+    "claims": {
+      "denial": {
+        "proposition": null,
+        "stance": "deny",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "greeting": {
+        "proposition": null,
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": false,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "med_low_report": {
+        "proposition": "fever_med_low",
+        "stance": "assert",
+        "base_reliability": 0.75,
+        "sensitive": false,
+        "speaker_belief": "fever_med_low",
+        "basis_required": true,
+        "speaker_min_confidence": 0.8,
+        "speaker_kind": null
+      },
+      "patient_inquire": {
+        "proposition": "fever_patient_coming",
+        "stance": "inquire",
+        "base_reliability": 0.5,
+        "sensitive": true,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "patient_notice": {
+        "proposition": "fever_patient_coming",
+        "stance": "assert",
+        "base_reliability": 0.8,
+        "sensitive": false,
+        "speaker_belief": "fever_patient_coming",
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "restock_inquire": {
+        "proposition": "fever_medicine_restocked",
+        "stance": "inquire",
+        "base_reliability": 0.5,
+        "sensitive": true,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "restock_report": {
+        "proposition": "fever_medicine_restocked",
+        "stance": "assert",
+        "base_reliability": 0.8,
+        "sensitive": false,
+        "speaker_belief": "fever_medicine_restocked",
+        "basis_required": true,
+        "speaker_min_confidence": 0.5,
+        "speaker_kind": null
+      },
+      "smalltalk": {
+        "proposition": null,
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": false,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "stock_inquire": {
+        "proposition": "fever_med_low",
+        "stance": "inquire",
+        "base_reliability": 0.5,
+        "sensitive": true,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      }
+    },
+    "speech_lines": {
+      "denial": [
+        "{name}：这事我不清楚，别问我。",
+        "{name}：我这儿没什么可说的。"
+      ],
+      "greeting": "{name}：夜里辛苦，有事随时喊我。",
+      "med_low_report": [
+        "{name}：不瞒你说，病房柜子里的退烧药已经见底了。",
+        "{name}：退烧药就剩个底儿，真来病人怕是不够。"
+      ],
+      "patient_inquire": "{name}：听说今晚要来个高烧的病人？消息准吗？",
+      "patient_notice": [
+        "{name}：刚接的电话——今晚要收一个高烧病人，提前准备一下。",
+        "{name}：跟你说一声，后半夜有个发高烧的要送来。"
+      ],
+      "restock_inquire": "{name}：退烧药补上了没有？我这边等着确认。",
+      "restock_report": [
+        "{name}：退烧药已经补上了，放在我手边，随时能用。",
+        "{name}：药补齐了，病人来了也不怕。"
+      ],
+      "smalltalk": [
+        "{name}：今晚夜班，但愿后半夜能太平些。",
+        "{name}：走廊的灯又闪了，明天得让电工看看。"
+      ],
+      "stock_inquire": "{name}：病房那边的退烧药，还够用吗？"
+    },
+    "ambient": [
+      [
+        "monitor_beeps",
+        "ward",
+        "病房尽头的监护仪轻轻响了两声，又恢复了平稳。"
+      ],
+      [
+        "phone_rings",
+        "oncall",
+        "值班室的电话响了一声就断了，大概是打错了。"
+      ],
+      [
+        "wind_rattles",
+        "yard",
+        "后院的窗棂被风吹得咯咯作响。"
+      ],
+      [
+        "cart_wheels",
+        null,
+        "远处传来推车轮子碾过地砖的声音，渐渐远了。"
+      ]
+    ]
+  }
+}

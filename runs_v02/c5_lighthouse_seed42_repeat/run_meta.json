@@ -1,0 +1,262 @@
+{
+  "run_id": "c5_lighthouse_seed42_repeat",
+  "mode": "rule",
+  "seed": 42,
+  "backend": null,
+  "characters": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+  ],
+  "created_at": "2026-11-13T06:00:23.171921+00:00",
+  "checkpoint_format": 1,
+  "engine_version": "v0.2-c",
+  "scheduler_config": {
+    "dep": 0.4,
+    "wait": 0.15,
+    "wait_scale": 10,
+    "switch": 0.2,
+    "switch_margin": 0.1,
+    "min_dwell": 2,
+    "max_pause_ticks": 8
+  },
+  "scenario_id": "lighthouse_fog",
+  "scenario": {
+    "scenario_id": "lighthouse_fog",
+    "version": 1,
+    "comment": "Scenario C5 (V0.2-C blind test, written by an independent tester from the data contract only): a lighthouse on a rocky point at the start of fog season. The keeper privately knows from the radio log that a fishing boat will pass the reef tonight and needs light plus fog horn; the mechanic privately knows the fog horn's compressor belt snapped at dusk and that the spare belt is in the base storage cabinet; the boat hand privately knows the jetty signal lamp is out. The mechanic's repair goal only activates once he learns a ship is coming; the keeper's readiness goal only completes once he learns from the mechanic that the horn can be restored. Location graph is a path of four (boathouse-jetty-base-lamp_room) — not isomorphic to the tavern/warehouse tree or the clinic ring-plus-leaf. Modeling convention (same latitude as the clinic's 'acquire the spare box = restocked'): the belt is the horn's only fault, so the spare belt in the mechanic's hands is first-hand proof the horn can be restored — spare_belt's reveals carry fog_horn_ready at 0.95.",
+    "locations": [
+      "boathouse",
+      "jetty",
+      "base",
+      "lamp_room"
+    ],
+    "adjacency": {
+      "base": [
+        "jetty",
+        "lamp_room"
+      ],
+      "boathouse": [
+        "jetty"
+      ],
+      "jetty": [
+        "boathouse",
+        "base"
+      ],
+      "lamp_room": [
+        "base"
+      ]
+    },
+    "scenery": {
+      "base": [
+        {
+          "id": "storage_cabinet",
+          "searchable": true
+        },
+        "duty_desk",
+        "stove"
+      ],
+      "boathouse": [
+        {
+          "id": "tool_shelf",
+          "searchable": true
+        },
+        "workbench",
+        "skiff"
+      ],
+      "jetty": [
+        {
+          "id": "rope_crate",
+          "searchable": true
+        },
+        "mooring_posts",
+        "signal_lamp"
+      ],
+      "lamp_room": [
+        {
+          "id": "log_desk",
+          "searchable": true
+        },
+        "lamp",
+        "chart_table"
+      ]
+    },
+    "objects": {
+      "signal_lantern": {
+        "location": "boathouse",
+        "holder": "lin_tao",
+        "seen_by": [
+          "lin_tao"
+        ],
+        "searchable": true,
+        "movable": true,
+        "displayable": true,
+        "on_found": "acquire",
+        "fact_belief": null,
+        "reveals": []
+      },
+      "spare_belt": {
+        "location": "base",
+        "holder": "keeper_zhou",
+        "seen_by": [
+          "keeper_zhou",
+          "lin_tao"
+        ],
+        "searchable": true,
+        "movable": true,
+        "displayable": true,
+        "on_found": "acquire",
+        "fact_belief": null,
+        "reveals": [
+          {
+            "belief": "fog_horn_ready",
+            "reliability": 0.95
+          }
+        ]
+      }
+    },
+    "claims": {
+      "belt_report": {
+        "proposition": "belt_broken",
+        "stance": "assert",
+        "base_reliability": 0.75,
+        "sensitive": false,
+        "speaker_belief": "belt_broken",
+        "basis_required": true,
+        "speaker_min_confidence": 0.8,
+        "speaker_kind": null
+      },
+      "denial": {
+        "proposition": null,
+        "stance": "deny",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "greeting": {
+        "proposition": null,
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": false,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "horn_inquire": {
+        "proposition": "fog_horn_ready",
+        "stance": "inquire",
+        "base_reliability": 0.5,
+        "sensitive": true,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "horn_report": {
+        "proposition": "fog_horn_ready",
+        "stance": "assert",
+        "base_reliability": 0.8,
+        "sensitive": false,
+        "speaker_belief": "fog_horn_ready",
+        "basis_required": true,
+        "speaker_min_confidence": 0.5,
+        "speaker_kind": null
+      },
+      "lamp_report": {
+        "proposition": "jetty_lamp_out",
+        "stance": "assert",
+        "base_reliability": 0.75,
+        "sensitive": false,
+        "speaker_belief": "jetty_lamp_out",
+        "basis_required": true,
+        "speaker_min_confidence": 0.8,
+        "speaker_kind": null
+      },
+      "ship_inquire": {
+        "proposition": "ship_passing_tonight",
+        "stance": "inquire",
+        "base_reliability": 0.5,
+        "sensitive": true,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "ship_notice": {
+        "proposition": "ship_passing_tonight",
+        "stance": "assert",
+        "base_reliability": 0.8,
+        "sensitive": false,
+        "speaker_belief": "ship_passing_tonight",
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "smalltalk": {
+        "proposition": null,
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": false,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      }
+    },
+    "speech_lines": {
+      "belt_report": [
+        "{name}：雾笛的皮带傍晚就断了，我正想办法，备件在值班室柜子里。",
+        "{name}：跟你说一声——雾笛现在响不了，皮带断了，我去取备件。"
+      ],
+      "denial": [
+        "{name}：这事我不清楚，别问我。",
+        "{name}：我这儿没什么可说的。"
+      ],
+      "greeting": "{name}：雾夜辛苦，各自当心脚下。",
+      "horn_inquire": "{name}：雾笛那边，到底能不能响了？我这边等着确认。",
+      "horn_report": [
+        "{name}：雾笛能修好——备件皮带已经到手，我这就装回去。",
+        "{name}：放心，雾笛误不了事，备件拿到了。"
+      ],
+      "lamp_report": [
+        "{name}：栈桥那盏信号灯傍晚就灭了，我亲眼看见的。",
+        "{name}：跟你们说一声，栈桥信号灯不亮了。"
+      ],
+      "ship_inquire": "{name}：今晚真有船要贴着礁石回港？消息准吗？",
+      "ship_notice": [
+        "{name}：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+        "{name}：跟你说一声，后半夜有船回来，雾又大，各处都得备好。"
+      ],
+      "smalltalk": [
+        "{name}：这雾起得邪乎，怕是要封一夜海。",
+        "{name}：礁石那片水，夜里最吃功夫。"
+      ]
+    },
+    "ambient": [
+      [
+        "fog_thickens",
+        null,
+        "雾又浓了一层，栈桥那头的灯影只剩一个晕。"
+      ],
+      [
+        "gull_cries",
+        "jetty",
+        "一只夜鹭在栈桥上叫了两声，又没了动静。"
+      ],
+      [
+        "radio_static",
+        "base",
+        "值班室的电台沙沙响了几下，没有呼叫。"
+      ],
+      [
+        "buoy_bell",
+        "boathouse",
+        "远处浮标的铃铛被浪推着，断断续续地响。"
+      ]
+    ]
+  }
+}

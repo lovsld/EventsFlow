@@ -1,0 +1,30 @@
+# lin_tao 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] a_gui 来到了/去到了 boathouse。
+- [t2][experienced] a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？
+- [t2][experienced] 环境：远处浮标的铃铛被浪推着，断断续续地响。
+- [t3][experienced] a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？
+- [t4][experienced] a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？
+- [t4][experienced] keeper_zhou 来到了/去到了 boathouse。
+- [t4][experienced] 环境：远处浮标的铃铛被浪推着，断断续续地响。
+- [t5][experienced] a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？
+- [t5][experienced] keeper_zhou 说：周守义：雾笛那边，到底能不能响了？我这边等着确认。
+- [t5][experienced] 环境：远处浮标的铃铛被浪推着，断断续续地响。
+- [t6][experienced] a_gui 说：阿贵：今晚真有船要贴着礁石回港？消息准吗？
+- [t6][experienced] keeper_zhou 说：周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。
+- [t7][experienced] a_gui 在 boathouse 翻找着什么。
+- [t7][experienced] keeper_zhou 说：周守义：雾笛那边，到底能不能响了？我这边等着确认。
+- [t8][inferred] 隔墙隐约听到 a_gui,lin_tao 在boathouse说话，听不清内容。
+- [t9][inferred] 隔墙隐约听到 a_gui,keeper_zhou 在boathouse说话，听不清内容。
+- [t9][inferred] 隔墙隐约听到 keeper_zhou,a_gui 在boathouse说话，听不清内容。
+- [t10][experienced] 环境：值班室的电台沙沙响了几下，没有呼叫。
+- [t11][experienced] 我在base找到了 spare_belt。
+- [t15][experienced] 环境：值班室的电台沙沙响了几下，没有呼叫。
+- [t16][inferred] 隔墙隐约听到 a_gui,keeper_zhou 在boathouse说话，听不清内容。
+- [t16][inferred] 隔墙隐约听到 keeper_zhou,a_gui 在boathouse说话，听不清内容。
+- [t18][inferred] 隔墙隐约听到 a_gui,keeper_zhou 在boathouse说话，听不清内容。
+- [t20][experienced] a_gui 来到了/去到了 boathouse。
+- [t20][experienced] keeper_zhou 说：周守义：雾笛那边，到底能不能响了？我这边等着确认。
+- [t20][experienced] 环境：远处浮标的铃铛被浪推着，断断续续地响。
+- [t22][experienced] a_gui 来到了/去到了 boathouse。
+- [t23][experienced] a_gui 说：阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。
+- [t23][experienced] keeper_zhou 说：周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。

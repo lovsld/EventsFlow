@@ -1,0 +1,16 @@
+# porter_wu 的私人记忆（其他 Agent 不可见）
+- [t3][experienced] 环境：病房尽头的监护仪轻轻响了两声，又恢复了平稳。
+- [t6][experienced] doctor_shen 来到了/去到了 triage。
+- [t7][experienced] nurse_lin 来到了/去到了 triage。
+- [t7][experienced] doctor_shen 说：沈默：退烧药补上了没有？我这边等着确认。
+- [t8][experienced] doctor_shen 说：沈默：刚接的电话——今晚要收一个高烧病人，提前准备一下。
+- [t9][experienced] doctor_shen 说：沈默：退烧药补上了没有？我这边等着确认。
+- [t10][experienced] nurse_lin 来到了/去到了 triage。
+- [t15][experienced] 环境：后院的窗棂被风吹得咯咯作响。
+- [t16][experienced] doctor_shen 来到了/去到了 pharmacy。
+- [t17][experienced] nurse_lin 来到了/去到了 pharmacy。
+- [t17][experienced] doctor_shen 说：沈默：退烧药补上了没有？我这边等着确认。
+- [t18][experienced] nurse_lin 在 pharmacy 翻找着什么。
+- [t19][experienced] doctor_shen 说：沈默：这事我不清楚，别问我。
+- [t22][experienced] nurse_lin 来到了/去到了 pharmacy。
+- [t22][experienced] doctor_shen 说：沈默：跟你说一声，后半夜有个发高烧的要送来。

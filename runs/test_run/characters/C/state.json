@@ -48,90 +48,89 @@
     }
   },
   "plan": [
-    "speak:letter_discussion"
+    "move:bar"
   ],
   "perceived_event_ids": [
     "E0007",
-    "E0012",
+    "E0010",
     "E0016",
-    "E0017",
     "E0019",
-    "E0033",
-    "E0034",
-    "E0036",
-    "E0041",
-    "E0043",
-    "E0045",
-    "E0046"
+    "E0020",
+    "E0023",
+    "E0024",
+    "E0025",
+    "E0027",
+    "E0028",
+    "E0029",
+    "E0043"
   ],
   "utterances_heard": [
     {
-      "tick": 3,
-      "from": "B",
-      "topic": "business_proposal",
-      "claim": "business_proposal",
-      "kind": "speak"
-    },
-    {
       "tick": 4,
-      "from": "B",
-      "topic": "business_proposal",
-      "claim": "business_proposal",
-      "kind": "speak"
-    },
-    {
-      "tick": 5,
-      "from": "B",
-      "topic": "answer_mayor",
-      "claim": "answer_mayor",
-      "kind": "speak"
-    },
-    {
-      "tick": 5,
-      "from": "A",
-      "topic": "denial",
-      "claim": "denial",
-      "kind": "speak"
-    },
-    {
-      "tick": 10,
-      "from": "B",
-      "topic": "business_proposal",
-      "claim": "business_proposal",
-      "kind": "speak"
-    },
-    {
-      "tick": 11,
       "from": "B",
       "topic": "greeting",
       "claim": "greeting",
       "kind": "speak"
     },
     {
-      "tick": 12,
+      "tick": 5,
       "from": "B",
       "topic": "business_proposal",
       "claim": "business_proposal",
       "kind": "speak"
     },
     {
-      "tick": 12,
+      "tick": 6,
+      "from": "B",
+      "topic": "answer_mayor",
+      "claim": "answer_mayor",
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
       "from": "A",
       "topic": "denial",
       "claim": "denial",
       "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "B",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "A",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "B",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "A",
+      "topic": "greeting",
+      "claim": "greeting",
+      "kind": "speak"
     }
   ],
-  "location": "bar",
+  "location": "tables",
   "tick_now": 12,
   "action_counts": {
+    "observe::": 1,
     "move:tables:": 3,
     "move:bar:": 2,
-    "ask:A:investigation_probe": 2,
+    "ask:A:investigation_probe": 3,
+    "speak:A:greeting": 1,
     "move:back_room:": 1,
-    "search:back_room:": 1,
-    "confront:A:mayor_hint": 1,
-    "confront:A:letter_discussion": 1,
-    "speak:A:letter_discussion": 1
+    "search:back_room:": 1
   }
 }
