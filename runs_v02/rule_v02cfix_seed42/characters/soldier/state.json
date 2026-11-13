@@ -1,0 +1,1486 @@
+{
+  "character_id": "soldier",
+  "location": "bar",
+  "personality": {
+    "caution": 0.35,
+    "curiosity": 0.7,
+    "honesty": 0.9,
+    "impulsiveness": 0.85,
+    "sociability": 0.55
+  },
+  "principles": [
+    "不主动欺骗无辜者",
+    "不背叛自己的职责",
+    "不接受明显不公正的命令"
+  ],
+  "goals": [
+    {
+      "key": "complete_investigation",
+      "desc": "完成调查任务",
+      "weight": 1.0,
+      "kind": "achievement",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": {
+        "all": [
+          {
+            "type": "belief_threshold",
+            "belief": "anonymous_letter_exists",
+            "min_confidence": 0.9,
+            "min_source_tier": "direct"
+          },
+          {
+            "any": [
+              {
+                "type": "belief_threshold",
+                "belief": "mayor_embezzled",
+                "min_confidence": 0.9
+              },
+              {
+                "type": "belief_threshold",
+                "belief": "mayor_cleared",
+                "min_confidence": 0.9
+              }
+            ]
+          }
+        ]
+      },
+      "failure_condition": null,
+      "priority_current": 1.0,
+      "priority_rules": [],
+      "progress": 0.8911,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 3,
+      "last_pursued_tick": 19,
+      "pause_count": 3,
+      "protection_until": null
+    },
+    {
+      "key": "keep_honor",
+      "desc": "维护自己的荣誉",
+      "weight": 0.9,
+      "kind": "maintenance",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "refuse",
+        "actor": "any_other",
+        "target": "self",
+        "count": 3
+      },
+      "priority_current": 0.9,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.9,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "learn_mayor_truth",
+      "desc": "搞清楚镇长是否真的存在问题",
+      "weight": 0.75,
+      "kind": "achievement",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": {
+        "any": [
+          {
+            "type": "belief_threshold",
+            "belief": "mayor_embezzled",
+            "min_confidence": 0.9
+          },
+          {
+            "type": "belief_threshold",
+            "belief": "mayor_cleared",
+            "min_confidence": 0.9
+          }
+        ]
+      },
+      "failure_condition": null,
+      "priority_current": 0.75,
+      "priority_rules": [],
+      "progress": 0.7822,
+      "commitment": 0.75,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 17,
+      "last_pursued_tick": 10,
+      "pause_count": 10,
+      "protection_until": 10
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "investigation_order",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "今天接到命令，调查酒馆老板最近的异常行为",
+      "evidence": [
+        {
+          "source_event_id": "seed:investigation_order",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "mayor_suspicious",
+      "confidence": 0.35,
+      "kind": "inferred",
+      "desc": "最近觉得镇长的一些做法不太对劲（直觉，无证据）",
+      "evidence": [
+        {
+          "source_event_id": "seed:mayor_suspicious",
+          "source_type": "inference",
+          "reliability": 0.35,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    },
+    {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "我亲手找到了 anonymous_letter，它确实存在",
+      "evidence": [
+        {
+          "source_event_id": "search_result:anonymous_letter@3",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 3,
+          "source": "anonymous_letter"
+        }
+      ]
+    },
+    {
+      "key": "mayor_embezzled",
+      "confidence": 0.704,
+      "kind": "heard",
+      "desc": "anonymous_letter 的内容表明：mayor_embezzled",
+      "evidence": [
+        {
+          "source_event_id": "search_result:anonymous_letter@3",
+          "source_type": "testimony",
+          "reliability": 0.6,
+          "observed_at": 3,
+          "source": "anonymous_letter"
+        },
+        {
+          "source_event_id": "E0032",
+          "source_type": "testimony",
+          "reliability": 0.261,
+          "observed_at": 8,
+          "source": "owner"
+        },
+        {
+          "source_event_id": "E0038",
+          "source_type": "testimony",
+          "reliability": 0.261,
+          "observed_at": 10,
+          "source": "owner"
+        },
+        {
+          "source_event_id": "E0056",
+          "source_type": "testimony",
+          "reliability": 0.261,
+          "observed_at": 15,
+          "source": "owner"
+        },
+        {
+          "source_event_id": "E0063",
+          "source_type": "testimony",
+          "reliability": 0.261,
+          "observed_at": 17,
+          "source": "owner"
+        }
+      ]
+    },
+    {
+      "key": "business_opportunity",
+      "confidence": 0.29,
+      "kind": "heard",
+      "desc": "merchant 声称：business_opportunity",
+      "evidence": [
+        {
+          "source_event_id": "E0017",
+          "source_type": "testimony",
+          "reliability": 0.29,
+          "observed_at": 5,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0023",
+          "source_type": "testimony",
+          "reliability": 0.29,
+          "observed_at": 6,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0027",
+          "source_type": "testimony",
+          "reliability": 0.29,
+          "observed_at": 7,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0031",
+          "source_type": "testimony",
+          "reliability": 0.29,
+          "observed_at": 8,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0047",
+          "source_type": "testimony",
+          "reliability": 0.29,
+          "observed_at": 13,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0055",
+          "source_type": "testimony",
+          "reliability": 0.29,
+          "observed_at": 15,
+          "source": "merchant"
+        }
+      ]
+    },
+    {
+      "key": "speaker_knows_secret",
+      "confidence": 0.261,
+      "kind": "heard",
+      "desc": "merchant 声称：speaker_knows_secret",
+      "evidence": [
+        {
+          "source_event_id": "E0034",
+          "source_type": "testimony",
+          "reliability": 0.261,
+          "observed_at": 9,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0037",
+          "source_type": "testimony",
+          "reliability": 0.261,
+          "observed_at": 10,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0041",
+          "source_type": "testimony",
+          "reliability": 0.261,
+          "observed_at": 11,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0044",
+          "source_type": "testimony",
+          "reliability": 0.261,
+          "observed_at": 12,
+          "source": "merchant"
+        },
+        {
+          "source_event_id": "E0051",
+          "source_type": "testimony",
+          "reliability": 0.261,
+          "observed_at": 14,
+          "source": "merchant"
+        }
+      ]
+    },
+    {
+      "key": "conceals:merchant",
+      "confidence": 0.622,
+      "kind": "inferred",
+      "desc": "merchant 否认了 mayor_embezzled，与其我已知的线索矛盾",
+      "evidence": [
+        {
+          "source_event_id": "E0065",
+          "source_type": "inference",
+          "reliability": 0.6224,
+          "observed_at": 18,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.5916666666666666,
+    "suspicion": 1.0
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "我在back_room找到了 anonymous_letter。",
+      "event_id": null
+    },
+    {
+      "tick": 4,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 merchant,owner 在bar说话，听不清内容。",
+      "event_id": "E0014"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。",
+      "event_id": "E0017"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+      "event_id": "E0023"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0025"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+      "event_id": "E0027"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0029"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。",
+      "event_id": "E0031"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+      "event_id": "E0032"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0034"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+      "event_id": "E0035"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0037"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+      "event_id": "E0038"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0039"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0041"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0044"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+      "event_id": "E0047"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+      "event_id": "E0048"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+      "event_id": "E0051"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：再问一次，这几天后屋那边，有人动过什么吗？",
+      "event_id": "E0052"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+      "event_id": "E0055"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+      "event_id": "E0056"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+      "event_id": "E0057"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+      "event_id": "E0059"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：再问一次，这几天后屋那边，有人动过什么吗？",
+      "event_id": "E0062"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+      "event_id": "E0063"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "merchant 说：米拉：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+      "event_id": "E0065"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：老板，你越是不说，我越得查清楚。",
+      "event_id": "E0070"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "owner 说：奥伦：问几遍都一样，我什么都不知道。",
+      "event_id": "E0073"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "merchant": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "owner": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0014",
+    "E0017",
+    "E0023",
+    "E0025",
+    "E0027",
+    "E0029",
+    "E0031",
+    "E0032",
+    "E0034",
+    "E0035",
+    "E0037",
+    "E0038",
+    "E0039",
+    "E0041",
+    "E0044",
+    "E0047",
+    "E0048",
+    "E0051",
+    "E0052",
+    "E0055",
+    "E0056",
+    "E0057",
+    "E0059",
+    "E0062",
+    "E0063",
+    "E0065",
+    "E0070",
+    "E0073"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 5,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "owner",
+      "topic": "mayor_hint",
+      "claim": "mayor_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 9,
+      "from": "merchant",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 9,
+      "from": "owner",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 10,
+      "from": "merchant",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 10,
+      "from": "owner",
+      "topic": "mayor_hint",
+      "claim": "mayor_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 11,
+      "from": "merchant",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 12,
+      "from": "merchant",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 13,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 13,
+      "from": "owner",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "merchant",
+      "topic": "bluff_hint",
+      "claim": "bluff_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "owner",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 15,
+      "from": "merchant",
+      "topic": "business_proposal",
+      "claim": "business_proposal",
+      "kind": "speak"
+    },
+    {
+      "tick": 15,
+      "from": "owner",
+      "topic": "mayor_hint",
+      "claim": "mayor_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 16,
+      "from": "merchant",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 17,
+      "from": "merchant",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 17,
+      "from": "owner",
+      "topic": "mayor_hint",
+      "claim": "mayor_hint",
+      "kind": "speak"
+    },
+    {
+      "tick": 18,
+      "from": "merchant",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    },
+    {
+      "tick": 19,
+      "from": "owner",
+      "topic": "investigation_probe",
+      "claim": "investigation_probe",
+      "kind": "ask"
+    },
+    {
+      "tick": 20,
+      "from": "owner",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    }
+  ],
+  "pending_question": {
+    "from": "owner",
+    "topic": "investigation_probe",
+    "claim": "investigation_probe",
+    "tick": 19,
+    "addressed_to_me": true
+  },
+  "pending_questions": [
+    {
+      "asker": "owner",
+      "claim_key": "investigation_probe",
+      "proposition": "mayor_embezzled",
+      "tick_asked": 19,
+      "addressed_to_me": true,
+      "via": "ask"
+    }
+  ],
+  "action_counts": {
+    "move:tables:": 2,
+    "move:back_room:": 1,
+    "search:back_room:": 1,
+    "move:bar:": 1,
+    "confront:merchant:mayor_hint": 3,
+    "ask:merchant:investigation_probe": 3,
+    "confront:owner:mayor_hint": 3,
+    "ask:owner:investigation_probe": 2,
+    "speak:owner:mayor_hint": 2,
+    "speak:merchant:mayor_hint": 2
+  },
+  "holdings": [],
+  "found_objects": [
+    "anonymous_letter"
+  ],
+  "object_sightings": {
+    "anonymous_letter": "back_room"
+  },
+  "searched_empty_places": [],
+  "perceived_events": [
+    {
+      "tick": 5,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "owner",
+      "claim": "business_proposal",
+      "topic": "business_proposal",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 5,
+      "type": "observe",
+      "actor": "owner",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 5,
+      "type": "session_start",
+      "actor": "merchant",
+      "target": "owner",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 5,
+      "type": "session_end",
+      "actor": "merchant",
+      "target": "owner",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 6,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "soldier",
+      "claim": "business_proposal",
+      "topic": "business_proposal",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 6,
+      "type": "listen",
+      "actor": "owner",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 6,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "candle_flickers",
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 7,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "soldier",
+      "claim": "business_proposal",
+      "topic": "business_proposal",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 7,
+      "type": "observe",
+      "actor": "owner",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 7,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "candle_flickers",
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 8,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "owner",
+      "claim": "business_proposal",
+      "topic": "business_proposal",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 8,
+      "type": "speak",
+      "actor": "owner",
+      "target": "soldier",
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 9,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "owner",
+      "claim": "bluff_hint",
+      "topic": "bluff_hint",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 9,
+      "type": "ask",
+      "actor": "owner",
+      "target": "soldier",
+      "claim": "investigation_probe",
+      "topic": "investigation_probe",
+      "stance": "inquire",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 10,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "soldier",
+      "claim": "bluff_hint",
+      "topic": "bluff_hint",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 10,
+      "type": "speak",
+      "actor": "owner",
+      "target": "soldier",
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 10,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "candle_flickers",
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 11,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "soldier",
+      "claim": "bluff_hint",
+      "topic": "bluff_hint",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 11,
+      "type": "observe",
+      "actor": "owner",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 12,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "owner",
+      "claim": "bluff_hint",
+      "topic": "bluff_hint",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 12,
+      "type": "work",
+      "actor": "owner",
+      "target": null,
+      "claim": null,
+      "topic": "tend_bar",
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 13,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "soldier",
+      "claim": "business_proposal",
+      "topic": "business_proposal",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 13,
+      "type": "speak",
+      "actor": "owner",
+      "target": "soldier",
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 14,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "soldier",
+      "claim": "bluff_hint",
+      "topic": "bluff_hint",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 14,
+      "type": "ask",
+      "actor": "owner",
+      "target": "soldier",
+      "claim": "investigation_probe",
+      "topic": "investigation_probe",
+      "stance": "inquire",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 15,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "owner",
+      "claim": "business_proposal",
+      "topic": "business_proposal",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 15,
+      "type": "speak",
+      "actor": "owner",
+      "target": "soldier",
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 15,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "candle_flickers",
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 16,
+      "type": "ask",
+      "actor": "merchant",
+      "target": "soldier",
+      "claim": "investigation_probe",
+      "topic": "investigation_probe",
+      "stance": "inquire",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 16,
+      "type": "listen",
+      "actor": "owner",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 17,
+      "type": "ask",
+      "actor": "merchant",
+      "target": "soldier",
+      "claim": "investigation_probe",
+      "topic": "investigation_probe",
+      "stance": "inquire",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 17,
+      "type": "speak",
+      "actor": "owner",
+      "target": "merchant",
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 18,
+      "type": "speak",
+      "actor": "merchant",
+      "target": "soldier",
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 18,
+      "type": "listen",
+      "actor": "owner",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 19,
+      "type": "observe",
+      "actor": "merchant",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 19,
+      "type": "ask",
+      "actor": "owner",
+      "target": "soldier",
+      "claim": "investigation_probe",
+      "topic": "investigation_probe",
+      "stance": "inquire",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 20,
+      "type": "listen",
+      "actor": "merchant",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 20,
+      "type": "speak",
+      "actor": "owner",
+      "target": "soldier",
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    }
+  ],
+  "own_actions": [
+    {
+      "tick": 0,
+      "type": "move",
+      "target": null,
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 1,
+      "type": "move",
+      "target": null,
+      "target_location": "back_room",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 2,
+      "type": "search",
+      "target": null,
+      "target_location": "back_room",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 3,
+      "type": "move",
+      "target": null,
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 4,
+      "type": "move",
+      "target": null,
+      "target_location": "bar",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 5,
+      "type": "confront",
+      "target": "merchant",
+      "target_location": null,
+      "object": null,
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 6,
+      "type": "ask",
+      "target": "merchant",
+      "target_location": null,
+      "object": null,
+      "claim": "investigation_probe",
+      "topic": "investigation_probe",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 7,
+      "type": "confront",
+      "target": "owner",
+      "target_location": null,
+      "object": null,
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 8,
+      "type": "ask",
+      "target": "owner",
+      "target_location": null,
+      "object": null,
+      "claim": "investigation_probe",
+      "topic": "investigation_probe",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 9,
+      "type": "confront",
+      "target": "merchant",
+      "target_location": null,
+      "object": null,
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 10,
+      "type": "speak",
+      "target": "owner",
+      "target_location": null,
+      "object": null,
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 11,
+      "type": "confront",
+      "target": "owner",
+      "target_location": null,
+      "object": null,
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 12,
+      "type": "speak",
+      "target": "merchant",
+      "target_location": null,
+      "object": null,
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 13,
+      "type": "ask",
+      "target": "owner",
+      "target_location": null,
+      "object": null,
+      "claim": "investigation_probe",
+      "topic": "investigation_probe",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 14,
+      "type": "ask",
+      "target": "merchant",
+      "target_location": null,
+      "object": null,
+      "claim": "investigation_probe",
+      "topic": "investigation_probe",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 15,
+      "type": "speak",
+      "target": "owner",
+      "target_location": null,
+      "object": null,
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 16,
+      "type": "confront",
+      "target": "merchant",
+      "target_location": null,
+      "object": null,
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 17,
+      "type": "confront",
+      "target": "owner",
+      "target_location": null,
+      "object": null,
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 18,
+      "type": "speak",
+      "target": "merchant",
+      "target_location": null,
+      "object": null,
+      "claim": "mayor_hint",
+      "topic": "mayor_hint",
+      "stance": "assert",
+      "ok": true
+    },
+    {
+      "tick": 19,
+      "type": "ask",
+      "target": "merchant",
+      "target_location": null,
+      "object": null,
+      "claim": "investigation_probe",
+      "topic": "investigation_probe",
+      "stance": "inquire",
+      "ok": true
+    }
+  ],
+  "scheduler_memory": {
+    "pursuit": "complete_investigation",
+    "since": 11
+  },
+  "plan_failure_memory": [],
+  "plan_gate_counts": {}
+}
