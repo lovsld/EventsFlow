@@ -1,0 +1,1634 @@
+[
+ {
+  "tick": 1,
+  "time": "21:05",
+  "positions": {
+   "owner": "bar",
+   "merchant": "door",
+   "soldier": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0001",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "tables",
+    "from": "door",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0002",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "merchant"
+    ],
+    "location": "door",
+    "from": "tables",
+    "to": "door"
+   },
+   {
+    "event_id": "E0003",
+    "tick": 1,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0003"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0002"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0001"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 2,
+  "time": "21:10",
+  "positions": {
+   "owner": "bar",
+   "merchant": "tables",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0004",
+    "tick": 2,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "back_room",
+    "from": "tables",
+    "to": "back_room"
+   },
+   {
+    "event_id": "E0005",
+    "tick": 2,
+    "type": "move",
+    "actors": [
+     "merchant"
+    ],
+    "location": "tables",
+    "from": "door",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0006",
+    "tick": 2,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0005"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0004"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 3,
+  "time": "21:15",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0007",
+    "tick": 3,
+    "type": "search",
+    "actors": [
+     "soldier"
+    ],
+    "location": "back_room",
+    "found": [
+     "anonymous_letter"
+    ]
+   },
+   {
+    "event_id": "E0008",
+    "tick": 3,
+    "type": "move",
+    "actors": [
+     "merchant"
+    ],
+    "location": "back_room",
+    "from": "tables",
+    "to": "back_room"
+   },
+   {
+    "event_id": "E0009",
+    "tick": 3,
+    "type": "listen",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_start",
+    "session": "S1",
+    "location": "back_room",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "event_id": "E0010",
+    "tick": 3
+   },
+   {
+    "event_id": "E0011",
+    "tick": 3,
+    "type": "ambient",
+    "actors": [],
+    "location": "outside",
+    "topic": "distant_shout",
+    "text": "街上远处有人喊了一嗓子，很快没了声音。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0009"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0007",
+     "E0008",
+     "E0010"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0007",
+     "E0008",
+     "E0010"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 4,
+  "time": "21:20",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0012",
+    "tick": 4,
+    "type": "confront",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "mayor_hint",
+    "claim": "mayor_hint",
+    "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0013",
+    "tick": 4,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "business_proposal",
+    "claim": "business_proposal",
+    "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0014",
+    "tick": 4,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0015",
+    "tick": 4,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0014"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0012",
+     "E0013"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0012",
+     "E0013"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 5,
+  "time": "21:25",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0016",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "investigation_probe",
+    "claim": "investigation_probe",
+    "text": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0017",
+    "tick": 5,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "business_proposal",
+    "claim": "business_proposal",
+    "text": "米拉：那批货的事，老板真不考虑？价格好商量。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0018",
+    "tick": 5,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0019",
+    "tick": 5,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0018",
+     "E0019"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0016",
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0016",
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 6,
+  "time": "21:30",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0020",
+    "tick": 6,
+    "type": "confront",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "mayor_hint",
+    "claim": "mayor_hint",
+    "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0021",
+    "tick": 6,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "business_proposal",
+    "claim": "business_proposal",
+    "text": "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0022",
+    "tick": 6,
+    "type": "work",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": "tend_bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0022"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0020",
+     "E0021"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0020",
+     "E0021"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 7,
+  "time": "21:35",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0023",
+    "tick": 7,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "investigation_probe",
+    "claim": "investigation_probe",
+    "text": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0024",
+    "tick": 7,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "denial",
+    "claim": "denial",
+    "text": "米拉：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0025",
+    "tick": 7,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0026",
+    "tick": 7,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0025",
+     "E0026"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0023",
+     "E0024"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0023",
+     "E0024"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 8,
+  "time": "21:40",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0027",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "mayor_hint",
+    "claim": "mayor_hint",
+    "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0028",
+    "tick": 8,
+    "type": "listen",
+    "actors": [
+     "merchant"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0029",
+    "tick": 8,
+    "type": "listen",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0029"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0027",
+     "E0028"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0027",
+     "E0028"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 9,
+  "time": "21:45",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0030",
+    "tick": 9,
+    "type": "confront",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "mayor_hint",
+    "claim": "mayor_hint",
+    "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0031",
+    "tick": 9,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "bluff_hint",
+    "claim": "bluff_hint",
+    "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0032",
+    "tick": 9,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0033",
+    "tick": 9,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0030",
+     "E0031"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0030",
+     "E0031"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 10,
+  "time": "21:50",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0034",
+    "tick": 10,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "investigation_probe",
+    "claim": "investigation_probe",
+    "text": "凯尔：老板，你越是不说，我越得查清楚。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0035",
+    "tick": 10,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "bluff_hint",
+    "claim": "bluff_hint",
+    "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0036",
+    "tick": 10,
+    "type": "listen",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0036"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0034",
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0034",
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 11,
+  "time": "21:55",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0037",
+    "tick": 11,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "investigation_probe",
+    "claim": "investigation_probe",
+    "text": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0038",
+    "tick": 11,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "answer_mayor",
+    "claim": "answer_mayor",
+    "text": "米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0039",
+    "tick": 11,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0040",
+    "tick": 11,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0039"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0037",
+     "E0038"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0037",
+     "E0038"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 12,
+  "time": "22:00",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0041",
+    "tick": 12,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "mayor_hint",
+    "claim": "mayor_hint",
+    "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0042",
+    "tick": 12,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "bluff_hint",
+    "claim": "bluff_hint",
+    "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0043",
+    "tick": 12,
+    "type": "listen",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0043"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0041",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0041",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 13,
+  "time": "22:05",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0044",
+    "tick": 13,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "mayor_hint",
+    "claim": "mayor_hint",
+    "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0045",
+    "tick": 13,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "greeting",
+    "claim": "greeting",
+    "text": "米拉：晚上好，雨夜里酒馆可是个好去处。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0046",
+    "tick": 13,
+    "type": "work",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": "tend_bar"
+   },
+   {
+    "event_id": "E0047",
+    "tick": 13,
+    "type": "ambient",
+    "actors": [],
+    "location": "outside",
+    "topic": "distant_shout",
+    "text": "街上远处有人喊了一嗓子，很快没了声音。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0046"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0044",
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0044",
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 14,
+  "time": "22:10",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0048",
+    "tick": 14,
+    "type": "confront",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "mayor_hint",
+    "claim": "mayor_hint",
+    "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0049",
+    "tick": 14,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "bluff_hint",
+    "claim": "bluff_hint",
+    "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0050",
+    "tick": 14,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0050"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0048",
+     "E0049"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0048",
+     "E0049"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 15,
+  "time": "22:15",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0051",
+    "tick": 15,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "mayor_hint",
+    "claim": "mayor_hint",
+    "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0052",
+    "tick": 15,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "answer_mayor",
+    "claim": "answer_mayor",
+    "text": "米拉：镇长的钱袋子紧不紧，我一个做小买卖的（看局势）……只能说，不太好看。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0053",
+    "tick": 15,
+    "type": "listen",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0053"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0051",
+     "E0052"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0051",
+     "E0052"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 16,
+  "time": "22:20",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0054",
+    "tick": 16,
+    "type": "listen",
+    "actors": [
+     "soldier"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0055",
+    "tick": 16,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "business_proposal",
+    "claim": "business_proposal",
+    "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0056",
+    "tick": 16,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0057",
+    "tick": 16,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "酒馆门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0056"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0054",
+     "E0055"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0054",
+     "E0055"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 17,
+  "time": "22:25",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0058",
+    "tick": 17,
+    "type": "confront",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "mayor_hint",
+    "claim": "mayor_hint",
+    "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0059",
+    "tick": 17,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "back_room",
+    "topic": "denial",
+    "claim": "denial",
+    "text": "米拉：问几遍都一样，我什么都不知道。",
+    "interrupted": true,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0060",
+    "tick": 17,
+    "type": "work",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": "tend_bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0060"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0058",
+     "E0059"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0058",
+     "E0059"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 18,
+  "time": "22:30",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0061",
+    "tick": 18,
+    "type": "listen",
+    "actors": [
+     "soldier"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0062",
+    "tick": 18,
+    "type": "listen",
+    "actors": [
+     "merchant"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0063",
+    "tick": 18,
+    "type": "work",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": "tend_bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0063"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0061",
+     "E0062"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0061",
+     "E0062"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 19,
+  "time": "22:35",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0064",
+    "tick": 19,
+    "type": "observe",
+    "actors": [
+     "soldier"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0065",
+    "tick": 19,
+    "type": "listen",
+    "actors": [
+     "merchant"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0066",
+    "tick": 19,
+    "type": "observe",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0066"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0064",
+     "E0065"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0064",
+     "E0065"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 20,
+  "time": "22:40",
+  "positions": {
+   "owner": "bar",
+   "merchant": "back_room",
+   "soldier": "back_room"
+  },
+  "events": [
+   {
+    "event_id": "E0067",
+    "tick": 20,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "back_room",
+    "topic": "investigation_probe",
+    "claim": "investigation_probe",
+    "text": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0068",
+    "tick": 20,
+    "type": "observe",
+    "actors": [
+     "merchant"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0069",
+    "tick": 20,
+    "type": "work",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": "tend_bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "owner",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0069"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "merchant",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0067",
+     "E0068"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0067",
+     "E0068"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ }
+]

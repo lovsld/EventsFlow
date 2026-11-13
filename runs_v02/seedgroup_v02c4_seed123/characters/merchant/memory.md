@@ -1,0 +1,28 @@
+# merchant 的私人记忆（其他 Agent 不可见）
+- [t5][experienced] soldier 来到了/去到了 bar。
+- [t5][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t6][experienced] soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t7][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t7][experienced] owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t8][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t9][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t9][experienced] owner 说：奥伦：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t10][experienced] soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？
+- [t10][experienced] owner 说：奥伦：再问一次，这几天后屋那边，有人动过什么吗？
+- [t11][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t11][experienced] owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。
+- [t12][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t12][experienced] owner 说：奥伦：老板，你越是不说，我越得查清楚。
+- [t13][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t13][experienced] owner 说：奥伦：问几遍都一样，我什么都不知道。
+- [t14][experienced] soldier 说：凯尔：老板，你越是不说，我越得查清楚。
+- [t15][experienced] soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t16][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t16][experienced] owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t17][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t18][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t18][experienced] owner 说：奥伦：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t19][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t19][experienced] owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。
+- [t20][experienced] soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？
+- [t20][experienced] owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。

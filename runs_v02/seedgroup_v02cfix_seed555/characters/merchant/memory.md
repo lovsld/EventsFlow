@@ -1,0 +1,16 @@
+# merchant 的私人记忆（其他 Agent 不可见）
+- [t3][experienced] soldier 在 back_room 翻找着什么。
+- [t4][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t5][experienced] soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t6][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t7][experienced] soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？
+- [t8][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t9][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t10][experienced] soldier 说：凯尔：老板，你越是不说，我越得查清楚。
+- [t11][experienced] soldier 说：凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t12][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t13][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t14][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t15][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t17][experienced] soldier 说：凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t20][experienced] soldier 说：凯尔：再问一次，这几天后屋那边，有人动过什么吗？

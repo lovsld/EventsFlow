@@ -1,0 +1,113 @@
+{
+  "run_id": "seedgroup_v02cfix_seed555",
+  "mode": "rule",
+  "seed": 555,
+  "ticks": 20,
+  "engine_version": "v0.2-c",
+  "scenario_id": "tavern_letter",
+  "world_tick": 20,
+  "resumed_from_tick": null,
+  "quota_stopped": false,
+  "quota_waits": 0,
+  "total_events": 69,
+  "final_positions": {
+    "owner": "bar",
+    "merchant": "back_room",
+    "soldier": "back_room"
+  },
+  "objects_seen_by": {
+    "anonymous_letter": [
+      "owner",
+      "soldier"
+    ]
+  },
+  "letter_seen_by_objective": [
+    "owner",
+    "soldier"
+  ],
+  "final_beliefs": {
+    "owner": {
+      "anonymous_letter_exists": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "三天前收到一封匿名信"
+      },
+      "mayor_embezzled": {
+        "confidence": 0.45,
+        "kind": "heard",
+        "desc": "匿名信称镇长私吞了公共资金（未证实）"
+      }
+    },
+    "merchant": {
+      "mayor_business_deal": {
+        "confidence": 0.9,
+        "kind": "experienced",
+        "desc": "曾与镇长做过一笔粮食生意，镇长付款晚了两个月（私人经历）"
+      },
+      "holds:soldier:anonymous_letter": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "我看见 soldier 在 back_room 找到了 anonymous_letter"
+      },
+      "mayor_embezzled": {
+        "confidence": 0.261,
+        "kind": "heard",
+        "desc": "soldier 声称：mayor_embezzled"
+      }
+    },
+    "soldier": {
+      "investigation_order": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "今天接到命令，调查酒馆老板最近的异常行为"
+      },
+      "mayor_suspicious": {
+        "confidence": 0.35,
+        "kind": "inferred",
+        "desc": "最近觉得镇长的一些做法不太对劲（直觉，无证据）"
+      },
+      "anonymous_letter_exists": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "我亲手找到了 anonymous_letter，它确实存在"
+      },
+      "mayor_embezzled": {
+        "confidence": 0.716,
+        "kind": "heard",
+        "desc": "anonymous_letter 的内容表明：mayor_embezzled"
+      },
+      "business_opportunity": {
+        "confidence": 0.29,
+        "kind": "heard",
+        "desc": "merchant 声称：business_opportunity"
+      },
+      "speaker_knows_secret": {
+        "confidence": 0.261,
+        "kind": "heard",
+        "desc": "merchant 声称：speaker_knows_secret"
+      }
+    }
+  },
+  "memory_entries": {
+    "owner": 2,
+    "merchant": 15,
+    "soldier": 14
+  },
+  "db_counts": {
+    "decisions": 60,
+    "events": 69,
+    "deliveries": 60,
+    "dedup_drops": 0,
+    "predictions": 60,
+    "belief_changes": 7,
+    "plan_transitions": 163,
+    "goal_changes": 38,
+    "consolidations": 60,
+    "counterfactual_suppressions": 0
+  },
+  "llm_repairs_total": 0,
+  "suppression_rules": [],
+  "provider": "rule",
+  "llm_backend": null,
+  "note": "rule mode: no external model calls"
+}

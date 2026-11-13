@@ -1,0 +1,28 @@
+# soldier 的私人记忆（其他 Agent 不可见）
+- [t3][experienced] 我在back_room找到了 anonymous_letter。
+- [t7][experienced] merchant 来到了/去到了 bar。
+- [t7][experienced] owner 说：奥伦：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t8][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t8][experienced] owner 说：奥伦：再问一次，这几天后屋那边，有人动过什么吗？
+- [t9][experienced] merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。
+- [t9][experienced] owner 说：奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。
+- [t10][experienced] merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。
+- [t10][experienced] owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t11][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t12][experienced] merchant 说：米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。
+- [t13][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t13][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t14][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t15][experienced] merchant 说：米拉：那批货的事，老板真不考虑？价格好商量。
+- [t16][experienced] merchant 说：米拉：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？
+- [t16][experienced] owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t17][experienced] merchant 说：米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。
+- [t17][experienced] owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t18][experienced] merchant 说：米拉：再问一次，这几天后屋那边，有人动过什么吗？
+- [t18][experienced] owner 说：奥伦：老板，你越是不说，我越得查清楚。
+- [t18][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
+- [t19][experienced] merchant 说：米拉：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。
+- [t19][experienced] owner 说：奥伦：问几遍都一样，我什么都不知道。
+- [t20][experienced] merchant 说：米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。
+- [t20][experienced] owner 说：奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。
+- [t20][experienced] 环境：吧台的蜡烛晃了晃，老板的目光跟着晃了一下。
