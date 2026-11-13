@@ -1,0 +1,2030 @@
+[
+ {
+  "tick": 1,
+  "time": "21:05",
+  "positions": {
+   "apprentice": "door",
+   "keeper": "tables",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0001",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "door",
+    "from": "tables",
+    "to": "door"
+   },
+   {
+    "event_id": "E0002",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "door",
+    "from": "outside",
+    "to": "door"
+   },
+   {
+    "event_id": "E0003",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "keeper"
+    ],
+    "location": "tables",
+    "from": "bar",
+    "to": "tables"
+   },
+   {
+    "type": "session_start",
+    "session": "S1",
+    "location": "door",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "event_id": "E0004",
+    "tick": 1
+   },
+   {
+    "event_id": "E0005",
+    "tick": 1,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了条凳边的茶碗，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0001",
+     "E0002",
+     "E0004"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0003",
+     "E0005"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0001",
+     "E0002",
+     "E0004"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 2,
+  "time": "21:10",
+  "positions": {
+   "apprentice": "door",
+   "keeper": "door",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0006",
+    "tick": 2,
+    "type": "speak",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "location": "door",
+    "topic": "greeting",
+    "claim": "greeting",
+    "text": "小六：来了？先坐，雨大，路不好走。",
+    "interrupted": false,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0007",
+    "tick": 2,
+    "type": "ask",
+    "actors": [
+     "traveler",
+     "apprentice"
+    ],
+    "location": "door",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "text": "沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+    "interrupted": true,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0008",
+    "tick": 2,
+    "type": "move",
+    "actors": [
+     "keeper"
+    ],
+    "location": "door",
+    "from": "tables",
+    "to": "door"
+   },
+   {
+    "type": "session_start",
+    "session": "S2",
+    "location": "door",
+    "actors": [
+     "apprentice",
+     "keeper",
+     "traveler"
+    ],
+    "event_id": "E0009",
+    "tick": 2
+   },
+   {
+    "type": "session_end",
+    "session": "S1",
+    "location": "door",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "event_id": "E0010",
+    "tick": 2
+   },
+   {
+    "event_id": "E0011",
+    "tick": 2,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "rain_starts",
+    "text": "窗外下起雨来，河面上的船今晚大概都泊住了。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006",
+     "E0007",
+     "E0008",
+     "E0009",
+     "E0010"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006",
+     "E0007",
+     "E0008",
+     "E0009",
+     "E0010"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006",
+     "E0007",
+     "E0008",
+     "E0009",
+     "E0010"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 3,
+  "time": "21:15",
+  "positions": {
+   "apprentice": "door",
+   "keeper": "door",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0012",
+    "tick": 3,
+    "type": "ask",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "location": "door",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "text": "小六：我那批绸缎，今儿能开库提走吗？船不等人。",
+    "interrupted": false,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0013",
+    "tick": 3,
+    "type": "ask",
+    "actors": [
+     "traveler",
+     "keeper"
+    ],
+    "location": "door",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "text": "沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+    "interrupted": true,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0014",
+    "tick": 3,
+    "type": "search",
+    "actors": [
+     "keeper"
+    ],
+    "location": "door",
+    "found": []
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0012",
+     "E0013",
+     "E0014"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0012",
+     "E0013",
+     "E0014"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0012",
+     "E0013",
+     "E0014"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 4,
+  "time": "21:20",
+  "positions": {
+   "apprentice": "door",
+   "keeper": "tables",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0015",
+    "tick": 4,
+    "type": "ask",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "location": "door",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "text": "小六：我那批绸缎，今儿能开库提走吗？船不等人。",
+    "interrupted": false,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0016",
+    "tick": 4,
+    "type": "ask",
+    "actors": [
+     "traveler",
+     "keeper"
+    ],
+    "location": "door",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "text": "沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+    "interrupted": true,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0017",
+    "tick": 4,
+    "type": "move",
+    "actors": [
+     "keeper"
+    ],
+    "location": "tables",
+    "from": "door",
+    "to": "tables"
+   },
+   {
+    "type": "session_start",
+    "session": "S3",
+    "location": "door",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "event_id": "E0018",
+    "tick": 4
+   },
+   {
+    "type": "session_end",
+    "session": "S2",
+    "location": "door",
+    "actors": [
+     "apprentice",
+     "keeper",
+     "traveler"
+    ],
+    "event_id": "E0019",
+    "tick": 4
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0015",
+     "E0016",
+     "E0018",
+     "E0019"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0017"
+    ],
+    "muffled_event_ids": [
+     "E0015",
+     "E0016"
+    ]
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0015",
+     "E0016",
+     "E0018",
+     "E0019"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 5,
+  "time": "21:25",
+  "positions": {
+   "apprentice": "door",
+   "keeper": "back_room",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0020",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "location": "door",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "text": "小六：我那批绸缎，今儿能开库提走吗？船不等人。",
+    "interrupted": false,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0021",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "traveler",
+     "apprentice"
+    ],
+    "location": "door",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "text": "沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+    "interrupted": true,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0022",
+    "tick": 5,
+    "type": "move",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "from": "tables",
+    "to": "back_room"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0020",
+     "E0021"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0022"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0020",
+     "E0021"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 6,
+  "time": "21:30",
+  "positions": {
+   "apprentice": "door",
+   "keeper": "back_room",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0023",
+    "tick": 6,
+    "type": "speak",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "location": "door",
+    "topic": "denial",
+    "claim": "denial",
+    "text": "小六：钥匙的事没什么，我这儿都妥当。",
+    "interrupted": false,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0024",
+    "tick": 6,
+    "type": "ask",
+    "actors": [
+     "traveler",
+     "apprentice"
+    ],
+    "location": "door",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "text": "沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+    "interrupted": true,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0025",
+    "tick": 6,
+    "type": "search",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "found": [
+     "warehouse_key"
+    ]
+   },
+   {
+    "event_id": "E0026",
+    "tick": 6,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "柜台上的油灯晃了晃，老赵的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0023",
+     "E0024"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0025"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0023",
+     "E0024"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 7,
+  "time": "21:35",
+  "positions": {
+   "apprentice": "door",
+   "keeper": "back_room",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0027",
+    "tick": 7,
+    "type": "ask",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "location": "door",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "text": "小六：我那批绸缎，今儿能开库提走吗？船不等人。",
+    "interrupted": false,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0028",
+    "tick": 7,
+    "type": "ask",
+    "actors": [
+     "traveler",
+     "apprentice"
+    ],
+    "location": "door",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "text": "沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+    "interrupted": true,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0029",
+    "tick": 7,
+    "type": "observe",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0030",
+    "tick": 7,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了条凳边的茶碗，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0027",
+     "E0028"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0029"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0027",
+     "E0028"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 8,
+  "time": "21:40",
+  "positions": {
+   "apprentice": "door",
+   "keeper": "back_room",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0031",
+    "tick": 8,
+    "type": "observe",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0032",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "traveler",
+     "apprentice"
+    ],
+    "location": "door",
+    "topic": "denial",
+    "claim": "denial",
+    "text": "沈行舟：钥匙的事没什么，我这儿都妥当。",
+    "interrupted": false,
+    "session_location": "door"
+   },
+   {
+    "event_id": "E0033",
+    "tick": 8,
+    "type": "observe",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0034",
+    "tick": 8,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "柜台上的油灯晃了晃，老赵的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0031",
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0033"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0031",
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 9,
+  "time": "21:45",
+  "positions": {
+   "apprentice": "tables",
+   "keeper": "back_room",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0035",
+    "tick": 9,
+    "type": "move",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "tables",
+    "from": "door",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0036",
+    "tick": 9,
+    "type": "speak_failed",
+    "actors": [
+     "traveler"
+    ],
+    "location": "door",
+    "target": "apprentice",
+    "topic": "goods_inquire",
+    "reason": "target_left"
+   },
+   {
+    "event_id": "E0037",
+    "tick": 9,
+    "type": "listen",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_end",
+    "session": "S3",
+    "location": "door",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "event_id": "E0038",
+    "tick": 9
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0037"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0036",
+     "E0038"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 10,
+  "time": "21:50",
+  "positions": {
+   "apprentice": "bar",
+   "keeper": "back_room",
+   "traveler": "outside"
+  },
+  "events": [
+   {
+    "event_id": "E0039",
+    "tick": 10,
+    "type": "move",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "bar",
+    "from": "tables",
+    "to": "bar"
+   },
+   {
+    "event_id": "E0040",
+    "tick": 10,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "outside",
+    "from": "door",
+    "to": "outside"
+   },
+   {
+    "event_id": "E0041",
+    "tick": 10,
+    "type": "observe",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0042",
+    "tick": 10,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "驿站门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0039"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0041"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0040"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 11,
+  "time": "21:55",
+  "positions": {
+   "apprentice": "tables",
+   "keeper": "back_room",
+   "traveler": "outside"
+  },
+  "events": [
+   {
+    "event_id": "E0043",
+    "tick": 11,
+    "type": "move",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "tables",
+    "from": "bar",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0044",
+    "tick": 11,
+    "type": "listen",
+    "actors": [
+     "traveler"
+    ],
+    "location": "outside",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0045",
+    "tick": 11,
+    "type": "work",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": "check_ledger"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0043"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0044"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 12,
+  "time": "22:00",
+  "positions": {
+   "apprentice": "door",
+   "keeper": "back_room",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0046",
+    "tick": 12,
+    "type": "move",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "door",
+    "from": "tables",
+    "to": "door"
+   },
+   {
+    "event_id": "E0047",
+    "tick": 12,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "door",
+    "from": "outside",
+    "to": "door"
+   },
+   {
+    "event_id": "E0048",
+    "tick": 12,
+    "type": "observe",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_start",
+    "session": "S4",
+    "location": "door",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "event_id": "E0049",
+    "tick": 12
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0046",
+     "E0047",
+     "E0049"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0048"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0046",
+     "E0047",
+     "E0049"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 13,
+  "time": "22:05",
+  "positions": {
+   "apprentice": "tables",
+   "keeper": "back_room",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0050",
+    "tick": 13,
+    "type": "move",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "tables",
+    "from": "door",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0051",
+    "tick": 13,
+    "type": "speak_failed",
+    "actors": [
+     "traveler"
+    ],
+    "location": "door",
+    "target": "apprentice",
+    "topic": "goods_inquire",
+    "reason": "target_left"
+   },
+   {
+    "event_id": "E0052",
+    "tick": 13,
+    "type": "observe",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_end",
+    "session": "S4",
+    "location": "door",
+    "actors": [
+     "apprentice",
+     "traveler"
+    ],
+    "event_id": "E0053",
+    "tick": 13
+   },
+   {
+    "event_id": "E0054",
+    "tick": 13,
+    "type": "ambient",
+    "actors": [],
+    "location": "outside",
+    "topic": "distant_shout",
+    "text": "河边远处有人喊了一嗓子，很快没了声音。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0050"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0052"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0051",
+     "E0053"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 14,
+  "time": "22:10",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0055",
+    "tick": 14,
+    "type": "move",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "back_room",
+    "from": "tables",
+    "to": "back_room"
+   },
+   {
+    "event_id": "E0056",
+    "tick": 14,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "tables",
+    "from": "door",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0057",
+    "tick": 14,
+    "type": "listen",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_start",
+    "session": "S5",
+    "location": "back_room",
+    "actors": [
+     "apprentice",
+     "keeper"
+    ],
+    "event_id": "E0058",
+    "tick": 14
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0055",
+     "E0057",
+     "E0058"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0055",
+     "E0057",
+     "E0058"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0056"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 15,
+  "time": "22:15",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0059",
+    "tick": 15,
+    "type": "observe",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0060",
+    "tick": 15,
+    "type": "observe",
+    "actors": [
+     "traveler"
+    ],
+    "location": "tables",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0061",
+    "tick": 15,
+    "type": "listen",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0059",
+     "E0061"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0059",
+     "E0061"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0060"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 16,
+  "time": "22:20",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0062",
+    "tick": 16,
+    "type": "observe",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0063",
+    "tick": 16,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "door",
+    "from": "tables",
+    "to": "door"
+   },
+   {
+    "event_id": "E0064",
+    "tick": 16,
+    "type": "observe",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0065",
+    "tick": 16,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "柜台上的油灯晃了晃，老赵的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0062",
+     "E0064"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0062",
+     "E0064"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0063"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 17,
+  "time": "22:25",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0066",
+    "tick": 17,
+    "type": "speak",
+    "actors": [
+     "apprentice",
+     "keeper"
+    ],
+    "location": "back_room",
+    "topic": "greeting",
+    "claim": "greeting",
+    "text": "小六：来了？先坐，雨大，路不好走。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0067",
+    "tick": 17,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "tables",
+    "from": "door",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0068",
+    "tick": 17,
+    "type": "work",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": "check_ledger"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0066",
+     "E0068"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0066",
+     "E0068"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0067"
+    ],
+    "muffled_event_ids": [
+     "E0066"
+    ]
+   }
+  ]
+ },
+ {
+  "tick": 18,
+  "time": "22:30",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0069",
+    "tick": 18,
+    "type": "speak",
+    "actors": [
+     "apprentice",
+     "keeper"
+    ],
+    "location": "back_room",
+    "topic": "greeting",
+    "claim": "greeting",
+    "text": "小六：来了？先坐，雨大，路不好走。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0070",
+    "tick": 18,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "door",
+    "from": "tables",
+    "to": "door"
+   },
+   {
+    "event_id": "E0071",
+    "tick": 18,
+    "type": "observe",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0072",
+    "tick": 18,
+    "type": "ambient",
+    "actors": [],
+    "location": "outside",
+    "topic": "distant_shout",
+    "text": "河边远处有人喊了一嗓子，很快没了声音。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0069",
+     "E0071"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0069",
+     "E0071"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0070"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 19,
+  "time": "22:35",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "outside"
+  },
+  "events": [
+   {
+    "event_id": "E0073",
+    "tick": 19,
+    "type": "observe",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0074",
+    "tick": 19,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "outside",
+    "from": "door",
+    "to": "outside"
+   },
+   {
+    "event_id": "E0075",
+    "tick": 19,
+    "type": "observe",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0073",
+     "E0075"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0073",
+     "E0075"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0074"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 20,
+  "time": "22:40",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "outside"
+  },
+  "events": [
+   {
+    "event_id": "E0076",
+    "tick": 20,
+    "type": "observe",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0077",
+    "tick": 20,
+    "type": "listen",
+    "actors": [
+     "traveler"
+    ],
+    "location": "outside",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0078",
+    "tick": 20,
+    "type": "work",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": "check_ledger"
+   },
+   {
+    "event_id": "E0079",
+    "tick": 20,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "驿站门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0076",
+     "E0078"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0076",
+     "E0078"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0077"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 21,
+  "time": "22:45",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "outside"
+  },
+  "events": [
+   {
+    "event_id": "E0080",
+    "tick": 21,
+    "type": "speak",
+    "actors": [
+     "apprentice",
+     "keeper"
+    ],
+    "location": "back_room",
+    "topic": "greeting",
+    "claim": "greeting",
+    "text": "小六：来了？先坐，雨大，路不好走。",
+    "interrupted": false,
+    "session_location": "back_room"
+   },
+   {
+    "event_id": "E0081",
+    "tick": 21,
+    "type": "observe",
+    "actors": [
+     "traveler"
+    ],
+    "location": "outside",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0082",
+    "tick": 21,
+    "type": "listen",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0083",
+    "tick": 21,
+    "type": "ambient",
+    "actors": [],
+    "location": "outside",
+    "topic": "distant_shout",
+    "text": "河边远处有人喊了一嗓子，很快没了声音。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 21,
+    "delivered_event_ids": [
+     "E0080",
+     "E0082"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 21,
+    "delivered_event_ids": [
+     "E0080",
+     "E0082"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 21,
+    "delivered_event_ids": [
+     "E0081",
+     "E0083"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 22,
+  "time": "22:50",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "outside"
+  },
+  "events": [
+   {
+    "event_id": "E0084",
+    "tick": 22,
+    "type": "observe",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0085",
+    "tick": 22,
+    "type": "listen",
+    "actors": [
+     "traveler"
+    ],
+    "location": "outside",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0086",
+    "tick": 22,
+    "type": "observe",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 22,
+    "delivered_event_ids": [
+     "E0084",
+     "E0086"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 22,
+    "delivered_event_ids": [
+     "E0084",
+     "E0086"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 22,
+    "delivered_event_ids": [
+     "E0085"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 23,
+  "time": "22:55",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0087",
+    "tick": 23,
+    "type": "observe",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0088",
+    "tick": 23,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "door",
+    "from": "outside",
+    "to": "door"
+   },
+   {
+    "event_id": "E0089",
+    "tick": 23,
+    "type": "listen",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 23,
+    "delivered_event_ids": [
+     "E0087",
+     "E0089"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 23,
+    "delivered_event_ids": [
+     "E0087",
+     "E0089"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 23,
+    "delivered_event_ids": [
+     "E0088"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 24,
+  "time": "23:00",
+  "positions": {
+   "apprentice": "back_room",
+   "keeper": "back_room",
+   "traveler": "outside"
+  },
+  "events": [
+   {
+    "event_id": "E0090",
+    "tick": 24,
+    "type": "observe",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0091",
+    "tick": 24,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "outside",
+    "from": "door",
+    "to": "outside"
+   },
+   {
+    "event_id": "E0092",
+    "tick": 24,
+    "type": "work",
+    "actors": [
+     "keeper"
+    ],
+    "location": "back_room",
+    "target": null,
+    "topic": "check_ledger"
+   },
+   {
+    "event_id": "E0093",
+    "tick": 24,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "驿站门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "apprentice",
+    "tick": 24,
+    "delivered_event_ids": [
+     "E0090",
+     "E0092"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper",
+    "tick": 24,
+    "delivered_event_ids": [
+     "E0090",
+     "E0092"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "traveler",
+    "tick": 24,
+    "delivered_event_ids": [
+     "E0091"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ }
+]

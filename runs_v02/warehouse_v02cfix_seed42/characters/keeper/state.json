@@ -1,0 +1,256 @@
+{
+  "character_id": "keeper",
+  "location": "tables",
+  "personality": {
+    "caution": 0.8,
+    "curiosity": 0.4,
+    "honesty": 0.7,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "仓库安全第一",
+    "没查清之前不惊动客人",
+    "不冤枉学徒"
+  ],
+  "goals": [
+    {
+      "key": "guard_storehouse",
+      "desc": "看好仓库，不出纰漏",
+      "weight": 1.0,
+      "kind": "maintenance",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "search",
+        "actor": "any_other"
+      },
+      "priority_current": 1.0,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "find_missing_key",
+      "desc": "找回失踪的仓库钥匙",
+      "weight": 0.85,
+      "kind": "achievement",
+      "status": "active",
+      "activation_condition": {
+        "type": "belief_threshold",
+        "belief": "key_missing_this_morning",
+        "min_confidence": 0.8
+      },
+      "success_condition": {
+        "type": "object_possession",
+        "object": "warehouse_key",
+        "holder": "self"
+      },
+      "failure_condition": null,
+      "priority_current": 0.85,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.85,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": 0,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "avoid_blame",
+      "desc": "避免因丢钥匙被东家责罚",
+      "weight": 0.8,
+      "kind": "maintenance",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "confront",
+        "target": "self"
+      },
+      "priority_current": 0.8,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "key_missing_this_morning",
+      "confidence": 0.95,
+      "kind": "experienced",
+      "desc": "今晨开库时发现门边挂钩上的仓库钥匙不见了（亲身确认）",
+      "evidence": [
+        {
+          "source_event_id": "seed:key_missing_this_morning",
+          "source_type": "direct_observation",
+          "reliability": 0.95,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "suspicion": 0.3
+  },
+  "current_plan": {
+    "plan_id": "plan_070",
+    "goal": "find_missing_key",
+    "goal_id": "find_missing_key",
+    "steps": [
+      {
+        "step_id": "locate:warehouse_key",
+        "objective": "locate warehouse_key",
+        "action_candidates": [
+          {
+            "type": "search"
+          },
+          {
+            "type": "move"
+          },
+          {
+            "type": "ask"
+          }
+        ],
+        "success_condition": {
+          "type": "object_found",
+          "object": "warehouse_key"
+        },
+        "failure_condition": null,
+        "retry_policy": {
+          "max_attempts": 2,
+          "on_exhausted": "replan",
+          "reactivate_when": null
+        },
+        "status": "active",
+        "attempts": 0
+      },
+      {
+        "step_id": "secure:warehouse_key",
+        "objective": "secure warehouse_key",
+        "action_candidates": [
+          {
+            "type": "search"
+          },
+          {
+            "type": "show"
+          }
+        ],
+        "success_condition": {
+          "type": "object_possession",
+          "object": "warehouse_key",
+          "holder": "self"
+        },
+        "failure_condition": null,
+        "retry_policy": {
+          "max_attempts": 2,
+          "on_exhausted": "replan",
+          "reactivate_when": null
+        },
+        "status": "pending",
+        "attempts": 0
+      }
+    ],
+    "current_step": 0,
+    "commitment": 0.8,
+    "status": "active",
+    "step_failures": 0,
+    "blocked_info": null,
+    "reactivate_when": null,
+    "pending_recovery": null,
+    "retry_recoveries": {},
+    "interruption_conditions": [
+      "target_leaves",
+      "new_critical_information",
+      "immediate_danger"
+    ],
+    "interrupt_log": [],
+    "step_history": [],
+    "last_progress_tick": 0,
+    "commitment_updated_tick": 0
+  },
+  "short_term_memory": [],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "apprentice": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "traveler": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [],
+  "utterances_heard": [],
+  "pending_question": null,
+  "pending_questions": [],
+  "action_counts": {
+    "move:tables:": 1
+  },
+  "holdings": [],
+  "found_objects": [],
+  "object_sightings": {},
+  "searched_empty_places": [],
+  "perceived_events": [],
+  "own_actions": [
+    {
+      "tick": 0,
+      "type": "move",
+      "target": null,
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    }
+  ],
+  "scheduler_memory": {
+    "pursuit": "find_missing_key",
+    "since": 0
+  },
+  "plan_failure_memory": [],
+  "plan_gate_counts": {}
+}

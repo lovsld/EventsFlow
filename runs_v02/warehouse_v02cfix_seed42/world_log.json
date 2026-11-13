@@ -1,0 +1,56 @@
+[
+ {
+  "tick": 1,
+  "time": "21:05",
+  "positions": {
+   "apprentice": "bar",
+   "keeper": "tables",
+   "traveler": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0001",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "apprentice"
+    ],
+    "location": "bar",
+    "from": "tables",
+    "to": "bar"
+   },
+   {
+    "event_id": "E0002",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "traveler"
+    ],
+    "location": "door",
+    "from": "outside",
+    "to": "door"
+   },
+   {
+    "event_id": "E0003",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "keeper"
+    ],
+    "location": "tables",
+    "from": "bar",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0004",
+    "tick": 1,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "rain_starts",
+    "text": "窗外下起雨来，河面上的船今晚大概都泊住了。"
+   }
+  ],
+  "deliveries": []
+ }
+]

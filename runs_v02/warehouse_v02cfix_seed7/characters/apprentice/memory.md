@@ -1,0 +1,12 @@
+# apprentice 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] traveler 来到了/去到了 door。
+- [t2][experienced] traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t2][experienced] keeper 来到了/去到了 door。
+- [t3][experienced] traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t3][experienced] keeper 在 door 翻找着什么。
+- [t4][experienced] traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t5][experienced] traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t6][experienced] traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t7][experienced] traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t8][experienced] traveler 说：沈行舟：钥匙的事没什么，我这儿都妥当。
+- [t12][experienced] traveler 来到了/去到了 door。

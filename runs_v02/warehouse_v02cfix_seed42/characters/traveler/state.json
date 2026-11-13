@@ -1,0 +1,244 @@
+{
+  "character_id": "traveler",
+  "location": "door",
+  "personality": {
+    "caution": 0.6,
+    "curiosity": 0.7,
+    "honesty": 0.5,
+    "impulsiveness": 0.4,
+    "sociability": 0.8
+  },
+  "principles": [
+    "货期不能误",
+    "和气生财",
+    "先礼后兵"
+  ],
+  "goals": [
+    {
+      "key": "retrieve_goods",
+      "desc": "按时开库提走寄存的绸缎",
+      "weight": 1.0,
+      "kind": "achievement",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": {
+        "type": "belief_threshold",
+        "belief": "goods_ready",
+        "min_confidence": 0.5
+      },
+      "failure_condition": null,
+      "priority_current": 1.0,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": 0,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "protect_goods",
+      "desc": "保住货物不受损失",
+      "weight": 0.85,
+      "kind": "maintenance",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "search",
+        "actor": "any_other"
+      },
+      "priority_current": 0.85,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.85,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "learn_key_whereabouts",
+      "desc": "打听仓库钥匙的下落",
+      "weight": 0.7,
+      "kind": "achievement",
+      "status": "inactive",
+      "activation_condition": {
+        "type": "belief_threshold",
+        "belief": "key_missing_this_morning",
+        "min_confidence": 0.4
+      },
+      "success_condition": {
+        "any": [
+          {
+            "type": "object_possession",
+            "object": "warehouse_key",
+            "holder": "keeper"
+          },
+          {
+            "type": "belief_threshold",
+            "belief": "key_missing_this_morning",
+            "min_confidence": 0.9
+          }
+        ]
+      },
+      "failure_condition": null,
+      "priority_current": 0.7,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.7,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "goods_stored_here",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "有一批绸缎寄存在这间仓库，凭单提货，赶明天的船（私人经历）",
+      "evidence": [
+        {
+          "source_event_id": "seed:goods_stored_here",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "suspicion": 0.3
+  },
+  "current_plan": {
+    "plan_id": "plan_071",
+    "goal": "retrieve_goods",
+    "goal_id": "retrieve_goods",
+    "steps": [
+      {
+        "step_id": "evidence:goods_ready",
+        "objective": "gather evidence: goods_ready",
+        "action_candidates": [
+          {
+            "type": "ask"
+          },
+          {
+            "type": "observe"
+          },
+          {
+            "type": "listen"
+          },
+          {
+            "type": "confront"
+          }
+        ],
+        "success_condition": {
+          "type": "belief_threshold",
+          "belief": "goods_ready",
+          "min_confidence": 0.5
+        },
+        "failure_condition": null,
+        "retry_policy": {
+          "max_attempts": 2,
+          "on_exhausted": "replan",
+          "reactivate_when": null
+        },
+        "status": "active",
+        "attempts": 0
+      }
+    ],
+    "current_step": 0,
+    "commitment": 0.8,
+    "status": "active",
+    "step_failures": 0,
+    "blocked_info": null,
+    "reactivate_when": null,
+    "pending_recovery": null,
+    "retry_recoveries": {},
+    "interruption_conditions": [
+      "target_leaves",
+      "new_critical_information",
+      "immediate_danger"
+    ],
+    "interrupt_log": [],
+    "step_history": [],
+    "last_progress_tick": 0,
+    "commitment_updated_tick": 0
+  },
+  "short_term_memory": [],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "apprentice": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "keeper": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [],
+  "utterances_heard": [],
+  "pending_question": null,
+  "pending_questions": [],
+  "action_counts": {
+    "move:door:": 1
+  },
+  "holdings": [],
+  "found_objects": [],
+  "object_sightings": {},
+  "searched_empty_places": [],
+  "perceived_events": [],
+  "own_actions": [
+    {
+      "tick": 0,
+      "type": "move",
+      "target": null,
+      "target_location": "door",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    }
+  ],
+  "scheduler_memory": {
+    "pursuit": "retrieve_goods",
+    "since": 0
+  },
+  "plan_failure_memory": [],
+  "plan_gate_counts": {}
+}

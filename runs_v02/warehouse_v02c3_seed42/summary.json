@@ -1,0 +1,68 @@
+{
+  "run_id": "warehouse_v02c3_seed42",
+  "mode": "rule",
+  "seed": 42,
+  "ticks": 20,
+  "engine_version": "v0.2-c",
+  "scenario_id": "warehouse_key",
+  "world_tick": 20,
+  "resumed_from_tick": null,
+  "quota_stopped": false,
+  "quota_waits": 0,
+  "total_events": 71,
+  "final_positions": {
+    "apprentice": "tables",
+    "keeper": "back_room",
+    "traveler": "back_room"
+  },
+  "objects_seen_by": {
+    "warehouse_key": [
+      "keeper"
+    ]
+  },
+  "final_beliefs": {
+    "apprentice": {
+      "heard_movement_last_night": {
+        "confidence": 0.6,
+        "kind": "heard",
+        "desc": "昨夜好像听见后屋有翻东西的动静，没敢声张（听见的动静，真假未定）"
+      }
+    },
+    "keeper": {
+      "key_missing_this_morning": {
+        "confidence": 0.95,
+        "kind": "experienced",
+        "desc": "今晨开库时发现门边挂钩上的仓库钥匙不见了（亲身确认）"
+      }
+    },
+    "traveler": {
+      "goods_stored_here": {
+        "confidence": 1.0,
+        "kind": "experienced",
+        "desc": "有一批绸缎寄存在这间仓库，凭单提货，赶明天的船（私人经历）"
+      }
+    }
+  },
+  "memory_entries": {
+    "apprentice": 11,
+    "keeper": 7,
+    "traveler": 8
+  },
+  "db_counts": {
+    "decisions": 60,
+    "events": 71,
+    "deliveries": 60,
+    "dedup_drops": 0,
+    "predictions": 60,
+    "belief_changes": 0,
+    "plan_transitions": 151,
+    "goal_changes": 13,
+    "consolidations": 60,
+    "counterfactual_suppressions": 0
+  },
+  "llm_repairs_total": 0,
+  "suppression_rules": [],
+  "provider": "rule",
+  "llm_backend": null,
+  "note": "rule mode: no external model calls"
+}

@@ -1,0 +1,204 @@
+{
+  "run_id": "warehouse_v02c4_seed7",
+  "mode": "rule",
+  "seed": 7,
+  "backend": null,
+  "characters": [
+    "apprentice",
+    "keeper",
+    "traveler"
+  ],
+  "created_at": "2026-11-13T00:50:36.386806+00:00",
+  "checkpoint_format": 1,
+  "engine_version": "v0.2-c",
+  "scheduler_config": {
+    "dep": 0.4,
+    "wait": 0.15,
+    "wait_scale": 10,
+    "switch": 0.2,
+    "switch_margin": 0.1,
+    "min_dwell": 2,
+    "max_pause_ticks": 8
+  },
+  "scenario_id": "warehouse_key",
+  "scenario": {
+    "scenario_id": "warehouse_key",
+    "version": 1,
+    "comment": "Variant scenario — the missing warehouse key. Pure data (V0.2-A experiment 3b; V0.2-B B1 migrated it to the Scenario Definition contract): same location graph as the tavern, new scenery, one key object. Objective fact: the warehouse key should hang by the door (its registered holder is the keeper) but it objectively lies in the back room — anyone who searches the back room finds it and takes it (on_found=acquire). The door's key hook and the back room's crates/shelves are searchable scenery: searching the door is the natural first guess and comes up empty.",
+    "locations": [
+      "bar",
+      "tables",
+      "door",
+      "back_room",
+      "outside"
+    ],
+    "adjacency": {
+      "back_room": [
+        "tables"
+      ],
+      "bar": [
+        "tables"
+      ],
+      "door": [
+        "tables",
+        "outside"
+      ],
+      "outside": [
+        "door"
+      ],
+      "tables": [
+        "bar",
+        "door",
+        "back_room"
+      ]
+    },
+    "scenery": {
+      "back_room": [
+        {
+          "id": "crates",
+          "searchable": true
+        },
+        "drawer",
+        {
+          "id": "shelves",
+          "searchable": true
+        }
+      ],
+      "bar": [
+        "counter",
+        "abacus",
+        "ledger_desk"
+      ],
+      "door": [
+        {
+          "id": "key_hook",
+          "searchable": true
+        },
+        "signboard"
+      ],
+      "outside": [
+        "cart",
+        "lantern"
+      ],
+      "tables": [
+        "bench",
+        "tea_pot"
+      ]
+    },
+    "objects": {
+      "warehouse_key": {
+        "location": "back_room",
+        "holder": "keeper",
+        "seen_by": [
+          "keeper"
+        ],
+        "searchable": true,
+        "movable": true,
+        "displayable": true,
+        "on_found": "acquire",
+        "fact_belief": null,
+        "reveals": []
+      }
+    },
+    "claims": {
+      "denial": {
+        "proposition": null,
+        "stance": "deny",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "goods_inquire": {
+        "proposition": "goods_ready",
+        "stance": "inquire",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "greeting": {
+        "proposition": null,
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": false,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "key_inquire": {
+        "proposition": "key_missing_this_morning",
+        "stance": "inquire",
+        "base_reliability": 0.5,
+        "sensitive": true,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "key_notice": {
+        "proposition": "key_missing_this_morning",
+        "stance": "assert",
+        "base_reliability": 0.7,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": true,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      },
+      "smalltalk": {
+        "proposition": null,
+        "stance": "assert",
+        "base_reliability": 0.5,
+        "sensitive": false,
+        "speaker_belief": null,
+        "basis_required": false,
+        "speaker_min_confidence": 0.0,
+        "speaker_kind": null
+      }
+    },
+    "speech_lines": {
+      "denial": [
+        "{name}：钥匙的事没什么，我这儿都妥当。",
+        "{name}：问这个做什么？库里一切正常。"
+      ],
+      "goods_inquire": "{name}：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "greeting": "{name}：来了？先坐，雨大，路不好走。",
+      "key_inquire": "{name}：老赵，今儿开库的钥匙……是不是出什么事了？",
+      "key_notice": "{name}：不瞒你说，今早我发现仓库钥匙不见了，挂钩上空着。",
+      "smalltalk": "{name}：仓里那批货都封得好好的，就等着开库了。"
+    },
+    "ambient": [
+      [
+        "rain_starts",
+        null,
+        "窗外下起雨来，河面上的船今晚大概都泊住了。"
+      ],
+      [
+        "bell_rings",
+        "door",
+        "驿站门口的铃铛响了一声，又没有人进来。"
+      ],
+      [
+        "candle_flickers",
+        "bar",
+        "柜台上的油灯晃了晃，老赵的目光跟着晃了一下。"
+      ],
+      [
+        "distant_shout",
+        "outside",
+        "河边远处有人喊了一嗓子，很快没了声音。"
+      ],
+      [
+        "cat_knocks_glass",
+        "tables",
+        "一只野猫碰倒了条凳边的茶碗，碎在地上。"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+# traveler 的私人记忆（其他 Agent 不可见）
+- [t3][experienced] 环境：驿站门口的铃铛响了一声，又没有人进来。
+- [t5][experienced] 环境：河边远处有人喊了一嗓子，很快没了声音。
+- [t15][experienced] keeper 说：老赵：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t16][experienced] keeper 说：老赵：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t17][experienced] keeper 说：老赵：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t18][experienced] keeper 说：老赵：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t19][experienced] keeper 说：老赵：钥匙的事没什么，我这儿都妥当。
+- [t20][experienced] keeper 说：老赵：我那批绸缎，今儿能开库提走吗？船不等人。

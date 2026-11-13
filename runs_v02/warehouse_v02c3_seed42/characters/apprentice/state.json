@@ -1,0 +1,525 @@
+{
+  "character_id": "apprentice",
+  "location": "tables",
+  "personality": {
+    "caution": 0.5,
+    "curiosity": 0.8,
+    "honesty": 0.6,
+    "impulsiveness": 0.6,
+    "sociability": 0.7
+  },
+  "principles": [
+    "听师傅的话",
+    "不确定的事不乱说",
+    "手脚要勤快"
+  ],
+  "goals": [
+    {
+      "key": "earn_keeper_trust",
+      "desc": "赢得师傅的信任",
+      "weight": 0.9,
+      "kind": "achievement",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": {
+        "type": "trust_threshold",
+        "other": "keeper",
+        "min_trust": 0.5
+      },
+      "failure_condition": null,
+      "priority_current": 0.9,
+      "priority_rules": [],
+      "progress": 0.6,
+      "commitment": 0.9,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 8,
+      "last_pursued_tick": 19,
+      "pause_count": 1,
+      "protection_until": 18
+    },
+    {
+      "key": "finish_inventory",
+      "desc": "完成今天的盘点",
+      "weight": 0.8,
+      "kind": "achievement",
+      "status": "paused",
+      "activation_condition": null,
+      "success_condition": {
+        "all": [
+          {
+            "type": "agent_at_location",
+            "agent": "self",
+            "location": "back_room"
+          },
+          {
+            "type": "event_occurred",
+            "event_type": "work",
+            "actor": "self"
+          }
+        ]
+      },
+      "failure_condition": null,
+      "priority_current": 0.8,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": 16,
+      "cumulative_paused_ticks": 8,
+      "last_pursued_tick": 15,
+      "pause_count": 2,
+      "protection_until": 10
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "heard_movement_last_night",
+      "confidence": 0.6,
+      "kind": "heard",
+      "desc": "昨夜好像听见后屋有翻东西的动静，没敢声张（听见的动静，真假未定）",
+      "evidence": [
+        {
+          "source_event_id": "seed:heard_movement_last_night",
+          "source_type": "testimony",
+          "reliability": 0.6,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "suspicion": 0.65
+  },
+  "current_plan": {
+    "plan_id": "plan_046",
+    "goal": "earn_keeper_trust",
+    "goal_id": "earn_keeper_trust",
+    "steps": [
+      {
+        "step_id": "advance:0:trust_threshold",
+        "objective": "advance: trust_threshold",
+        "action_candidates": [
+          {
+            "type": "speak"
+          },
+          {
+            "type": "ask"
+          },
+          {
+            "type": "observe"
+          }
+        ],
+        "success_condition": {
+          "type": "trust_threshold",
+          "other": "keeper",
+          "min_trust": 0.5
+        },
+        "failure_condition": null,
+        "retry_policy": {
+          "max_attempts": 2,
+          "on_exhausted": "replan",
+          "reactivate_when": null
+        },
+        "status": "active",
+        "attempts": 0
+      }
+    ],
+    "current_step": 0,
+    "commitment": 0.74,
+    "status": "active",
+    "step_failures": 0,
+    "blocked_info": null,
+    "reactivate_when": null,
+    "pending_recovery": null,
+    "retry_recoveries": {},
+    "interruption_conditions": [
+      "target_leaves",
+      "new_critical_information",
+      "immediate_danger"
+    ],
+    "interrupt_log": [],
+    "step_history": [],
+    "last_progress_tick": 16,
+    "commitment_updated_tick": 19
+  },
+  "short_term_memory": [
+    {
+      "tick": 1,
+      "kind": "experienced",
+      "text": "环境：窗外下起雨来，河面上的船今晚大概都泊住了。",
+      "event_id": "E0004"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "环境：柜台上的油灯晃了晃，老赵的目光跟着晃了一下。",
+      "event_id": "E0022"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "环境：柜台上的油灯晃了晃，老赵的目光跟着晃了一下。",
+      "event_id": "E0026"
+    },
+    {
+      "tick": 17,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 traveler,keeper 在back_room说话，听不清内容。",
+      "event_id": "E0060"
+    },
+    {
+      "tick": 17,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 keeper,traveler 在back_room说话，听不清内容。",
+      "event_id": "E0061"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "环境：一只野猫碰倒了条凳边的茶碗，碎在地上。",
+      "event_id": "E0065"
+    },
+    {
+      "tick": 18,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 traveler,keeper 在back_room说话，听不清内容。",
+      "event_id": "E0063"
+    },
+    {
+      "tick": 18,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 keeper,traveler 在back_room说话，听不清内容。",
+      "event_id": "E0064"
+    },
+    {
+      "tick": 19,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 traveler,keeper 在back_room说话，听不清内容。",
+      "event_id": "E0067"
+    },
+    {
+      "tick": 19,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 keeper,traveler 在back_room说话，听不清内容。",
+      "event_id": "E0068"
+    },
+    {
+      "tick": 20,
+      "kind": "inferred",
+      "text": "隔墙隐约听到 keeper,traveler 在back_room说话，听不清内容。",
+      "event_id": "E0071"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "keeper": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "traveler": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0004",
+    "E0022",
+    "E0026",
+    "E0060",
+    "E0061",
+    "E0065",
+    "E0063",
+    "E0064",
+    "E0067",
+    "E0068",
+    "E0071"
+  ],
+  "utterances_heard": [],
+  "pending_question": null,
+  "pending_questions": [],
+  "action_counts": {
+    "move:bar:": 1,
+    "observe::": 10,
+    "move:tables:": 2,
+    "move:door:": 4,
+    "move:outside:": 3
+  },
+  "holdings": [],
+  "found_objects": [],
+  "object_sightings": {},
+  "searched_empty_places": [],
+  "perceived_events": [
+    {
+      "tick": 1,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "rain_starts",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 6,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "candle_flickers",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 7,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "candle_flickers",
+      "object": null,
+      "location": "bar",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 18,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "cat_knocks_glass",
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    }
+  ],
+  "own_actions": [
+    {
+      "tick": 0,
+      "type": "move",
+      "target": null,
+      "target_location": "bar",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 1,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 2,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 3,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 4,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 5,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 6,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 7,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 8,
+      "type": "move",
+      "target": null,
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 9,
+      "type": "move",
+      "target": null,
+      "target_location": "door",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 10,
+      "type": "move",
+      "target": null,
+      "target_location": "outside",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 11,
+      "type": "move",
+      "target": null,
+      "target_location": "door",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 12,
+      "type": "move",
+      "target": null,
+      "target_location": "outside",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 13,
+      "type": "move",
+      "target": null,
+      "target_location": "door",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 14,
+      "type": "move",
+      "target": null,
+      "target_location": "outside",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 15,
+      "type": "move",
+      "target": null,
+      "target_location": "door",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 16,
+      "type": "move",
+      "target": null,
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 17,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 18,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    },
+    {
+      "tick": 19,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "ok": true
+    }
+  ],
+  "scheduler_memory": {
+    "pursuit": "earn_keeper_trust",
+    "since": 16
+  }
+}
