@@ -1,0 +1,614 @@
+{
+  "character_id": "keeper",
+  "location": "back_room",
+  "personality": {
+    "caution": 0.8,
+    "curiosity": 0.4,
+    "honesty": 0.7,
+    "impulsiveness": 0.2,
+    "sociability": 0.4
+  },
+  "principles": [
+    "仓库安全第一",
+    "没查清之前不惊动客人",
+    "不冤枉学徒"
+  ],
+  "goals": [
+    {
+      "key": "guard_storehouse",
+      "desc": "看好仓库，不出纰漏",
+      "weight": 1.0,
+      "kind": "maintenance",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "search",
+        "actor": "any_other"
+      },
+      "priority_current": 1.0,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "find_missing_key",
+      "desc": "找回失踪的仓库钥匙",
+      "weight": 0.85,
+      "kind": "achievement",
+      "status": "completed",
+      "activation_condition": {
+        "type": "belief_threshold",
+        "belief": "key_missing_this_morning",
+        "min_confidence": 0.8
+      },
+      "success_condition": {
+        "type": "object_possession",
+        "object": "warehouse_key",
+        "holder": "self"
+      },
+      "failure_condition": null,
+      "priority_current": 0.85,
+      "priority_rules": [],
+      "progress": 1.0,
+      "commitment": 0.85,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": 2,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "avoid_blame",
+      "desc": "避免因丢钥匙被东家责罚",
+      "weight": 0.8,
+      "kind": "maintenance",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "confront",
+        "target": "self"
+      },
+      "priority_current": 0.8,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.8,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "key_missing_this_morning",
+      "confidence": 0.95,
+      "kind": "experienced",
+      "desc": "今晨开库时发现门边挂钩上的仓库钥匙不见了（亲身确认）",
+      "evidence": [
+        {
+          "source_event_id": "seed:key_missing_this_morning",
+          "source_type": "direct_observation",
+          "reliability": 0.95,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.7566666666666667,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "我在back_room找到了 warehouse_key。",
+      "event_id": null
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "traveler 来到了/去到了 back_room。",
+      "event_id": "E0044"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0049"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0053"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0057"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0060"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：我那批绸缎，今儿能开库提走吗？船不等人。",
+      "event_id": "E0063"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "traveler 说：沈行舟：钥匙的事没什么，我这儿都妥当。",
+      "event_id": "E0067"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "apprentice": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "traveler": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0044",
+    "E0049",
+    "E0053",
+    "E0057",
+    "E0060",
+    "E0063",
+    "E0067"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 14,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 15,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 16,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 17,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 18,
+      "from": "traveler",
+      "topic": "goods_inquire",
+      "claim": "goods_inquire",
+      "kind": "ask"
+    },
+    {
+      "tick": 19,
+      "from": "traveler",
+      "topic": "denial",
+      "claim": "denial",
+      "kind": "speak"
+    }
+  ],
+  "pending_question": {
+    "from": "traveler",
+    "topic": "goods_inquire",
+    "claim": "goods_inquire",
+    "tick": 18,
+    "addressed_to_me": true
+  },
+  "pending_questions": [],
+  "action_counts": {
+    "move:tables:": 1,
+    "move:back_room:": 1,
+    "search:back_room:": 1,
+    "observe::": 7,
+    "work::check_ledger": 2,
+    "listen::": 2,
+    "ask:traveler:goods_inquire": 4,
+    "speak:traveler:denial": 2
+  },
+  "holdings": [
+    "warehouse_key"
+  ],
+  "found_objects": [
+    "warehouse_key"
+  ],
+  "object_sightings": {
+    "warehouse_key": "back_room"
+  },
+  "searched_empty_places": [],
+  "perceived_events": [
+    {
+      "tick": 13,
+      "type": "move",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "back_room",
+      "to": "back_room",
+      "found": []
+    },
+    {
+      "tick": 14,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "keeper",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "back_room",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 15,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "keeper",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "back_room",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 16,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "keeper",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "back_room",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 17,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "keeper",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "back_room",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 18,
+      "type": "ask",
+      "actor": "traveler",
+      "target": "keeper",
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "stance": "inquire",
+      "object": null,
+      "location": "back_room",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 19,
+      "type": "speak",
+      "actor": "traveler",
+      "target": "keeper",
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "object": null,
+      "location": "back_room",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 20,
+      "type": "observe",
+      "actor": "traveler",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "back_room",
+      "to": null,
+      "found": []
+    }
+  ],
+  "own_actions": [
+    {
+      "tick": 0,
+      "type": "move",
+      "target": null,
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 1,
+      "type": "move",
+      "target": null,
+      "target_location": "back_room",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 2,
+      "type": "search",
+      "target": null,
+      "target_location": "back_room",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 3,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 4,
+      "type": "work",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": "check_ledger",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 5,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 6,
+      "type": "listen",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 7,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 8,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 9,
+      "type": "listen",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 10,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 11,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 12,
+      "type": "work",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": "check_ledger",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 13,
+      "type": "observe",
+      "target": null,
+      "target_location": null,
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 14,
+      "type": "ask",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 15,
+      "type": "ask",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 16,
+      "type": "ask",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 17,
+      "type": "ask",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "goods_inquire",
+      "topic": "goods_inquire",
+      "stance": "inquire",
+      "ok": true
+    },
+    {
+      "tick": 18,
+      "type": "speak",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "ok": true
+    },
+    {
+      "tick": 19,
+      "type": "speak",
+      "target": "traveler",
+      "target_location": null,
+      "object": null,
+      "claim": "denial",
+      "topic": "denial",
+      "stance": "deny",
+      "ok": true
+    }
+  ],
+  "scheduler_memory": {
+    "pursuit": null,
+    "since": 3
+  },
+  "plan_failure_memory": [],
+  "plan_gate_counts": {}
+}

@@ -1,0 +1,1262 @@
+[
+ {
+  "tick": 1,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "earn_keeper_trust"
+   },
+   "keeper": {
+    "location": "tables",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "find_missing_key"
+   },
+   "traveler": {
+    "location": "door",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 2,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "earn_keeper_trust"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "find_missing_key"
+   },
+   "traveler": {
+    "location": "outside",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 3,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "earn_keeper_trust"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "find_missing_key"
+   },
+   "traveler": {
+    "location": "door",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 4,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "earn_keeper_trust"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "outside",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 5,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "earn_keeper_trust"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "outside",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 6,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "earn_keeper_trust"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "outside",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 7,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "earn_keeper_trust"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "door",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 8,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "earn_keeper_trust"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "outside",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 9,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "tables",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "door",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 10,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "door",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "tables",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 11,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "outside",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "bar",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 12,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "door",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "tables",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 13,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "outside",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "back_room",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 14,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "door",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "back_room",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 15,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "tables",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.5,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "back_room",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 16,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.39999999999999997
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.6,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "back_room",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.44999999999999996,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 17,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "tables",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.39999999999999997
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.6666666666666666,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "back_room",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.5249999999999999,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 18,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.7166666666666667,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "back_room",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.575,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 19,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "tables",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.49999999999999994
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.7566666666666667,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "back_room",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.6124999999999999,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 20,
+  "phase": "post_step",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.6
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.7566666666666667,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "back_room",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.6124999999999999,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ },
+ {
+  "tick": 20,
+  "phase": "final",
+  "agents": {
+   "apprentice": {
+    "location": "bar",
+    "beliefs": {
+     "heard_movement_last_night": {
+      "confidence": 0.6,
+      "kind": "heard"
+     }
+    },
+    "trust": {
+     "keeper": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.3,
+     "suspicion": 0.6
+    },
+    "plan": "finish_inventory"
+   },
+   "keeper": {
+    "location": "back_room",
+    "beliefs": {
+     "key_missing_this_morning": {
+      "confidence": 0.95,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "traveler": 0.3
+    },
+    "emotions": {
+     "arousal": 0.7566666666666667,
+     "suspicion": 0.3
+    },
+    "plan": null
+   },
+   "traveler": {
+    "location": "back_room",
+    "beliefs": {
+     "goods_stored_here": {
+      "confidence": 1.0,
+      "kind": "experienced"
+     }
+    },
+    "trust": {
+     "apprentice": 0.3,
+     "keeper": 0.3
+    },
+    "emotions": {
+     "arousal": 0.6124999999999999,
+     "suspicion": 0.3
+    },
+    "plan": "retrieve_goods"
+   }
+  }
+ }
+]

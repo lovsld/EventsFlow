@@ -1,0 +1,12 @@
+# traveler 的私人记忆（其他 Agent 不可见）
+- [t1][experienced] apprentice 来到了/去到了 door。
+- [t2][experienced] apprentice 说：小六：来了？先坐，雨大，路不好走。
+- [t2][experienced] keeper 来到了/去到了 door。
+- [t3][experienced] apprentice 说：小六：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t3][experienced] keeper 在 door 翻找着什么。
+- [t4][experienced] apprentice 说：小六：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t5][experienced] apprentice 说：小六：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t6][experienced] apprentice 说：小六：钥匙的事没什么，我这儿都妥当。
+- [t7][experienced] apprentice 说：小六：我那批绸缎，今儿能开库提走吗？船不等人。
+- [t12][experienced] apprentice 来到了/去到了 door。
+- [t17][inferred] 隔墙隐约听到 apprentice,keeper 在back_room说话，听不清内容。
