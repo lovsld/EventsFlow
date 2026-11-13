@@ -38,6 +38,15 @@ class CharacterConfig:
     # "topic": ...}); replaces the role-keyed work topics the old
     # rule provider hardcoded.
     routine: dict = field(default_factory=dict)
+    # V0.2-C C2 (design 3.5): disclosure duties — standing
+    # obligations to inform, declared in the character's profile
+    # (NOT as goals: a duty must not be pausable by goal
+    # contention). Shape: [{when: <subjective Condition>,
+    # proposition: str, targets: [agent_id, ...] | "colocated",
+    # urgency: low|normal|high}]. Validated at load (when must be
+    # a subjective condition; the proposition/cast cross-checks
+    # need the scenario and run in the agent's init).
+    disclosure_duties: list = field(default_factory=list)
 
     # V0.2-A: ids of the whole cast, set by load_all() after a
     # directory scan; initial_state() falls back to the canonical
@@ -76,6 +85,69 @@ class CharacterConfig:
         )
 
 
+def validate_goal_dependencies(goals: list[dict], owner_desc: str) -> None:
+    """V0.2-C C1 (design 2.2): depends_on names keys of the SAME
+    character's goals only. Unknown keys (which is what a
+    cross-character key necessarily is, from one character's file),
+    self-dependencies and cycles all fail at load, naming the goal —
+    a dependency typo must never silently gate a goal forever."""
+    import warnings
+    keys = {g.get("key") for g in goals}
+    graph: dict[str, list[str]] = {}
+    for g in goals:
+        key = g.get("key")
+        deps = list(g.get("depends_on") or [])
+        for dep in deps:
+            if dep == key:
+                raise ValueError(
+                    f"{owner_desc} goal {key!r}: depends_on names itself")
+            if dep not in keys:
+                raise ValueError(
+                    f"{owner_desc} goal {key!r}: depends_on names "
+                    f"{dep!r}, which is not one of this character's "
+                    "goals (depends_on is same-character only; "
+                    "cross-character information flow is expressed "
+                    "through activation conditions over own beliefs)")
+        graph[key] = deps
+        # scheduling.pausable is meaningless on maintenance goals
+        # (they never pause); declaring it is ignored, with a warning
+        sched = g.get("scheduling") or {}
+        if g.get("kind") == "maintenance" and (
+                "pausable" in sched or "pausable" in g):
+            warnings.warn(
+                f"{owner_desc} goal {key!r}: 'pausable' declared on "
+                "a maintenance goal — maintenance goals never pause; "
+                "the declaration is ignored", stacklevel=2)
+    # cycle check (iterative DFS over the dependency graph)
+    WHITE, GREY, BLACK = 0, 1, 2
+    color = {k: WHITE for k in graph}
+    for start in sorted(graph):
+        if color[start] != WHITE:
+            continue
+        stack = [(start, iter(sorted(graph[start])))]
+        color[start] = GREY
+        path = [start]
+        while stack:
+            node, it = stack[-1]
+            advanced = False
+            for nxt in it:
+                if color[nxt] == GREY:
+                    cycle = path[path.index(nxt):] + [nxt]
+                    raise ValueError(
+                        f"{owner_desc}: depends_on cycle: "
+                        + " -> ".join(cycle))
+                if color[nxt] == WHITE:
+                    color[nxt] = GREY
+                    path.append(nxt)
+                    stack.append((nxt, iter(sorted(graph[nxt]))))
+                    advanced = True
+                    break
+            if not advanced:
+                color[node] = BLACK
+                stack.pop()
+                path.pop()
+
+
 def load_config(character_id: str, root: Path = CHARACTERS_ROOT) -> CharacterConfig:
     d = Path(root) / character_id
     profile = yaml.safe_load((d / "profile.yaml").read_text(encoding="utf-8"))
@@ -85,8 +157,32 @@ def load_config(character_id: str, root: Path = CHARACTERS_ROOT) -> CharacterCon
     # V0.2-B: goal conditions are decision-path data — they must be
     # subjective closed-vocabulary conditions (design 3.4). Fail at
     # load, naming the goal, not mid-run.
+    from .conditions import validate_subjective
     from .scenario import validate_goal_conditions
     validate_goal_conditions(goals, f"character {character_id}")
+    validate_goal_dependencies(goals, f"character {character_id}")
+    duties = profile.get("disclosure_duties", []) or []
+    for i, duty in enumerate(duties):
+        if duty.get("when") is not None:
+            validate_subjective(
+                duty["when"],
+                f"character {character_id} disclosure_duties[{i}].when")
+        if not duty.get("proposition"):
+            raise ValueError(
+                f"character {character_id} disclosure_duties[{i}]: "
+                "a duty must name its proposition")
+        if duty.get("urgency", "normal") not in ("low", "normal", "high"):
+            raise ValueError(
+                f"character {character_id} disclosure_duties[{i}]: "
+                f"urgency {duty.get('urgency')!r} is not "
+                "low|normal|high")
+        targets = duty.get("targets")
+        if targets != "colocated" and not (
+                isinstance(targets, list) and targets):
+            raise ValueError(
+                f"character {character_id} disclosure_duties[{i}]: "
+                "targets must be a non-empty agent-id list or "
+                "\"colocated\"")
     return CharacterConfig(
         character_id=profile["character_id"], legacy_id=profile.get("legacy_id", ""),
         name=profile["name"], role=profile["role"], identity=profile["identity"],
@@ -97,6 +193,7 @@ def load_config(character_id: str, root: Path = CHARACTERS_ROOT) -> CharacterCon
         disclosure_threshold=profile.get("disclosure_threshold") or 0.75,
         private_knowledge=profile.get("private_knowledge", []),
         routine=profile.get("routine", {}) or {},
+        disclosure_duties=profile.get("disclosure_duties", []) or [],
     )
 
 

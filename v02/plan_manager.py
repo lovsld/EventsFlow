@@ -41,6 +41,7 @@ Nothing here touches another agent or the world.
 """
 from __future__ import annotations
 
+from . import conditions, plan_fingerprint
 from .protocol import PlanState, PlanUpdate
 
 _PLAN_SEQ = [0]
@@ -82,6 +83,121 @@ class PlanManager:
     @staticmethod
     def _snap(plan: PlanState | None) -> dict | None:
         return plan.model_dump() if plan else None
+
+    # ---------------- V0.2-C C4: failure memory + replan gate ----
+    @staticmethod
+    def _view_from_state(state, tick: int):
+        """The agent's subjective view from its state alone (the
+        Plan Manager never holds the agent object; conditions.
+        build_view reads only .state)."""
+        from types import SimpleNamespace
+        return conditions.build_view(SimpleNamespace(state=state), tick)
+
+    def _record_failure(self, state, tick: int, plan, cause: str) -> None:
+        """Design 5.3: a plan that blocks / is abandoned / exhausts
+        its retries leaves a failure memory — its semantic
+        fingerprint and the context digest of the world it failed
+        in — so a later identical re-proposal in an unchanged
+        world can be recognized as a carousel, not a fresh idea.
+        Capped FIFO; consecutive duplicates (same plan, same
+        cause) are recorded once."""
+        if plan is None:
+            return
+        mem = state.plan_failure_memory
+        if mem and mem[-1].get("plan_id") == plan.plan_id \
+                and mem[-1].get("cause") == cause:
+            return
+        step = plan.steps[plan.current_step] \
+            if plan.current_step < len(plan.steps) else None
+        goal = next((g for g in state.goals if g.key == plan.goal_id),
+                    None) if plan.goal_id else None
+        view = self._view_from_state(state, tick)
+        mem.append({
+            "plan_id": plan.plan_id,
+            "goal_id": plan.goal_id,
+            "fingerprint": plan_fingerprint.plan_fingerprint(
+                plan.steps, plan.goal_id, state.character_id),
+            "tick_failed": tick,
+            "cause": cause,
+            "context_digest": plan_fingerprint.context_digest(view, goal),
+            "failed_step_id": step.step_id if step else None,
+            "failed_step_condition": step.success_condition if step else None})
+        while len(mem) > plan_fingerprint.MEMORY_CAP:
+            mem.pop(0)
+
+    def _check_gate(self, state, tick: int, goal_id, new_steps):
+        """The replan gate judgement (design 5.3), shared by the
+        recovery replan branch and the provider synthesis entry
+        (apply_update replace). Returns None when the proposal may
+        proceed; otherwise {digest, soft_cap, entry, similarity}:
+        either the goal's synthesis is soft-capped at this digest
+        (gated GATE_SOFT_CAP times while the world stood still —
+        further synthesis pauses until the digest changes), or the
+        proposal matches a failure memory (similarity >= 0.8 in
+        an identical digest). Unlinked proposals and unknown
+        goals are never gated (the fingerprint is goal-keyed)."""
+        if goal_id is None or not new_steps:
+            return None
+        goal = next((g for g in state.goals if g.key == goal_id), None)
+        if goal is None:
+            return None
+        view = self._view_from_state(state, tick)
+        digest = plan_fingerprint.context_digest(view, goal)
+        if state.plan_gate_counts.get(f"{goal_id}|{digest}", 0) \
+                >= plan_fingerprint.GATE_SOFT_CAP:
+            return {"digest": digest, "soft_cap": True,
+                    "entry": None, "similarity": None}
+        fp = plan_fingerprint.plan_fingerprint(
+            new_steps, goal_id, state.character_id)
+        hit = plan_fingerprint.match_failure(
+            state.plan_failure_memory, fp, digest)
+        if hit is None:
+            return None
+        entry, sim = hit
+        return {"digest": digest, "soft_cap": False,
+                "entry": entry, "similarity": sim}
+
+    @staticmethod
+    def _note_gated(state, goal_id, digest: str) -> int:
+        key = f"{goal_id}|{digest}"
+        state.plan_gate_counts[key] = \
+            state.plan_gate_counts.get(key, 0) + 1
+        return state.plan_gate_counts[key]
+
+    @staticmethod
+    def _gate_reason(gate, goal_id, count: int) -> str:
+        if gate["soft_cap"]:
+            return (f"synthesis for goal {goal_id!r} paused: gated "
+                    f"{count} times at an unchanged context digest "
+                    f"(soft cap, design 5.3)")
+        entry = gate["entry"]
+        return (f"similarity {gate['similarity']:.2f} >= "
+                f"{plan_fingerprint.SIMILARITY_THRESHOLD} to plan "
+                f"{entry.get('plan_id')} (goal {goal_id!r}, failed at "
+                f"tick {entry.get('tick_failed')}, cause "
+                f"{entry.get('cause')}); context digest unchanged")
+
+    def _suspend_via_gate(self, state, tick: int, plan, gate,
+                          fallback_step, reason: str | None) -> str:
+        """Convert a gated replan into the design's default landing
+        spot: the current plan suspends on the failed step's
+        success condition (the B3 policy-default suspend shape),
+        so it reactivates exactly when the world produces the
+        fact the failed step was waiting for."""
+        entry = gate["entry"] or {}
+        cond = entry.get("failed_step_condition") or (
+            fallback_step.success_condition if fallback_step else None)
+        if cond is None:
+            return "no_condition"
+        before = self._snap(plan)
+        plan.status = "suspended"
+        plan.reactivate_when = cond
+        plan.pending_recovery = None
+        self._log(state, tick, "recovery", plan.plan_id,
+                  reason=f"strategy=suspend source=gate: replan "
+                         f"gated (design 5.3): {reason or ''}".rstrip(),
+                  before=before, after=self._snap(plan))
+        return "recovered_suspend"
 
     def _log(self, state, tick: int, kind: str, plan_id: str | None,
              reason: str | None = None, before=None, after=None) -> None:
@@ -186,6 +302,9 @@ class PlanManager:
                                  f"{evaluation.reason} "
                                  f"(attempts {step.attempts})",
                           before=before, after=self._snap(plan))
+                # V0.2-C C4 (design 5.3): entering blocked is a
+                # failure the replan gate must remember.
+                self._record_failure(state, tick, plan, "blocked")
                 return "blocked"
             return "step_failure"
         self._log(state, tick, "step_evaluated", plan.plan_id,
@@ -258,6 +377,10 @@ class PlanManager:
                 return reject("recovery_rejected", "retry: no current step")
             used = plan.retry_recoveries.get(step.step_id, 0)
             if used >= 2:
+                # V0.2-C C4: an exhausted retry is a failure-memory
+                # event (design 5.3's cause enum), recorded before
+                # the rejection is logged.
+                self._record_failure(state, tick, plan, "exhausted")
                 return reject(
                     "recovery_rejected",
                     f"retry cap reached for step {step.step_id!r} "
@@ -332,6 +455,7 @@ class PlanManager:
             if not reason:
                 return reject("recovery_rejected",
                               "abandon requires a reason")
+            self._record_failure(state, tick, plan, "abandoned")
             before = self._snap(plan)
             plan.status = "abandoned"
             plan.interrupt_log.append(
@@ -351,6 +475,31 @@ class PlanManager:
                     "recovery_deferred",
                     "replan needs replacement steps in the same "
                     "decision; none were supplied")
+            # V0.2-C C4 (design 5.3): the replan GATE — a proposal
+            # that is the same plan in the same world as a recorded
+            # failure is not executed; it is converted to a suspend
+            # on the failed step's condition and audited as
+            # replan_gated. A changed digest (new evidence, a new
+            # place searched, a moved agent) lets it through.
+            gate = self._check_gate(
+                state, tick,
+                goal_id if goal_id is not None else plan.goal_id,
+                list(new_steps))
+            if gate is not None:
+                eff_goal = goal_id if goal_id is not None \
+                    else plan.goal_id
+                count = self._note_gated(state, eff_goal, gate["digest"])
+                self._log(state, tick, "replan_gated", plan.plan_id,
+                          reason=self._gate_reason(gate, eff_goal, count),
+                          before=self._snap(plan),
+                          after=self._snap(plan))
+                if self._suspend_via_gate(state, tick, plan, gate,
+                                          step, reason) \
+                        == "recovered_suspend":
+                    return "replan_gated"
+                # no condition to suspend on (a legacy-step edge):
+                # the gate event stands recorded and the replan
+                # proceeds — there is no lawful landing spot.
             before = self._snap(plan)
             old_id, old_goal_id = plan.plan_id, plan.goal_id
             plan.status = "abandoned"
@@ -372,6 +521,30 @@ class PlanManager:
             return "recovered_replan"
         return reject("recovery_rejected",
                       f"unknown recovery strategy {strategy!r}")
+
+    def suspend_for_contention(self, state, tick: int,
+                               reactivate_when: dict,
+                               reason: str | None = None) -> str:
+        """V0.2-C C1 (design 2.1): pursuit contention with a
+        pause-protected incumbent goal suspends the incumbent PLAN
+        instead of replacing it — the plan's steps, attempts and
+        bookkeeping are preserved verbatim and resume when the
+        GoalEvaluator sees reactivate_when satisfied (the same
+        reactivation path as a B3 recovery suspend; the transition
+        is logged in the same shape so suspend counts stay
+        comparable)."""
+        plan = state.current_plan
+        if plan is None or plan.status != "active":
+            return "not_active"
+        before = self._snap(plan)
+        plan.status = "suspended"
+        plan.reactivate_when = reactivate_when
+        plan.pending_recovery = None
+        self._log(state, tick, "recovery", plan.plan_id,
+                  reason=f"strategy=suspend source=contention: "
+                         f"{reason or ''}".rstrip(),
+                  before=before, after=self._snap(plan))
+        return "contention_suspended"
 
     # ---------------- context ----------------
     def current_step_view(self, state) -> dict | None:
@@ -435,6 +608,7 @@ class PlanManager:
             return f"{pu.status}_rejected_no_reason"
 
         if pu.status == "abandon" and plan:
+            self._record_failure(state, tick, plan, "abandoned")
             plan.status = "abandoned"
             plan.interrupt_log.append({"tick": tick, "kind": "abandon",
                                        "reason": pu.reason})
@@ -444,6 +618,36 @@ class PlanManager:
             return "abandoned"
 
         if pu.status == "replace" and pu.new_steps:
+            # V0.2-C C4 (design 5.3): the gate's second landing
+            # point — the provider synthesis entry. The same
+            # judgement as the recovery replan branch: a synthesis
+            # that rebuilds a failed plan in an unchanged world is
+            # refused (kind replan_gated); an active incumbent
+            # suspends on the failed step's condition, a planless
+            # agent simply does not take the plan up. Blocked plans
+            # never reach this branch (the agent routes them to
+            # the recovery machine first).
+            eff_goal_id = pu.goal_id if pu.goal_id is not None \
+                else (plan.goal_id if plan else None)
+            gate = None
+            if plan is None or plan.status == "active":
+                gate = self._check_gate(state, tick, eff_goal_id,
+                                        list(pu.new_steps))
+            if gate is not None:
+                count = self._note_gated(state, eff_goal_id,
+                                         gate["digest"])
+                self._log(state, tick, "replan_gated",
+                          plan.plan_id if plan else None,
+                          reason=self._gate_reason(gate, eff_goal_id,
+                                                   count),
+                          before=self._snap(plan),
+                          after=self._snap(plan))
+                if plan is not None and plan.status == "active":
+                    cur_step = plan.steps[plan.current_step] \
+                        if plan.current_step < len(plan.steps) else None
+                    self._suspend_via_gate(state, tick, plan, gate,
+                                           cur_step, pu.reason)
+                return "replan_gated"
             self.set_plan(state, pu.new_goal or (plan.goal if plan else "new_goal"),
                           pu.new_steps, tick, reason=pu.reason,
                           goal_id=pu.goal_id if pu.goal_id is not None

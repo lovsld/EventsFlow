@@ -36,7 +36,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from . import conditions, plan_evaluator
+from . import conditions, goal_scheduler, plan_evaluator
 from .belief_manager import BeliefManager
 from .config import CharacterConfig
 from .context_builder import action_is_offered, build_context
@@ -93,6 +93,38 @@ class CharacterAgent:
         from .goal_engine import GoalEvaluator
         self.goal_evaluator = GoalEvaluator()
         self._goal_changes: list[dict] = []
+        # V0.2-C C1: Goal Scheduler runtime — the latest schedule
+        # decision (read by the ContextBuilder), the one awaiting
+        # the evaluator's plan_event bookkeeping, and the recent
+        # activation ticks (activation preempts dwell, design 2.5).
+        self._schedule_decision: dict | None = None
+        self._pending_schedule: dict | None = None
+        self._recent_activations: dict[str, int] = {}
+        # V0.2-C C2: questions that expired unanswered since the
+        # last decision (question_expired audit material, merged
+        # into the next decision record's census).
+        self._expired_questions: list[dict] = []
+        # V0.2-C C2 (design 3.5): disclosure-duty cross-validation
+        # that needs the scenario — the duty's proposition must have
+        # an assert claim class, and named targets must be cast
+        # members. Fails at construction, never mid-run.
+        for i, duty in enumerate(config.disclosure_duties or []):
+            prop = duty.get("proposition")
+            if self.scenario.claim_for_proposition(prop, "assert") is None:
+                raise ValueError(
+                    f"character {config.character_id} "
+                    f"disclosure_duties[{i}]: proposition {prop!r} "
+                    "has no assert claim class in scenario "
+                    f"{self.scenario.scenario_id!r}")
+            targets = duty.get("targets")
+            if isinstance(targets, list):
+                known = set(config.all_ids or []) | {config.character_id}
+                for t in targets:
+                    if known and t not in known:
+                        raise ValueError(
+                            f"character {config.character_id} "
+                            f"disclosure_duties[{i}]: target {t!r} "
+                            "is not a cast member")
         # Plan-layer upgrade: the plan step the pending decision was
         # chosen for, awaiting its execution result (see decide()).
         self._pending_step_check: dict | None = None
@@ -134,6 +166,36 @@ class CharacterAgent:
         whole plan_update for this decision."""
         plan = self.state.current_plan
         pu = decision.plan_update
+        # V0.2-C C1 (design 2.1): pursuit contention with a
+        # pause-PROTECTED incumbent goal is resolved at the PLAN
+        # layer, not the goal layer: the incumbent plan suspends
+        # (reactivate_when = its current step's success condition,
+        # the B3 semantics) instead of being replaced, and the
+        # protected goal is never paused. The incoming replace is
+        # consumed; the scheduled goal is pursued through goal
+        # candidates until the suspended plan reactivates or the
+        # contention clears.
+        if plan is not None and plan.status == "active" \
+                and pu.status == "replace" and pu.new_steps \
+                and pu.goal_id is not None \
+                and plan.goal_id is not None \
+                and plan.goal_id != pu.goal_id:
+            incumbent = next(
+                (g for g in self.state.goals if g.key == plan.goal_id),
+                None)
+            if incumbent is not None and not goal_scheduler.may_pause(
+                    incumbent, self._tick):
+                step = plan.steps[plan.current_step] \
+                    if plan.current_step < len(plan.steps) else None
+                reactivate_when = (
+                    step.success_condition if step is not None else None) \
+                    or incumbent.success_condition
+                if reactivate_when is not None:
+                    return self.plan_manager.suspend_for_contention(
+                        self.state, self._tick, reactivate_when,
+                        reason=f"pursuit switched to {pu.goal_id}; "
+                               f"incumbent goal {plan.goal_id} is "
+                               "pause-protected")
         if plan is not None and plan.status == "blocked":
             pm = self.plan_manager
             if pu.recovery is not None:
@@ -173,6 +235,11 @@ class CharacterAgent:
         evaluation points of design section 4.2."""
         changes = self.goal_evaluator.evaluate(self, tick, cause)
         self._goal_changes.extend(changes)
+        # V0.2-C C1: remember fresh activations — a goal activated
+        # by a new event preempts the scheduler's dwell (design 2.5)
+        for c in changes:
+            if c.get("kind") == "activated":
+                self._recent_activations[c["goal_key"]] = tick
         return changes
 
     def _drain_goal_changes(self) -> list[dict]:
@@ -267,6 +334,51 @@ class CharacterAgent:
                  "transition_kind": tr.get("kind"),
                  "decision_key": dkey})
 
+    def _evaluate_step_fulfilment(self, tick: int) -> None:
+        """V0.2-C C4 (design 5.1): step COMPLETION is judged at
+        every receive, not only in the one-shot window after the
+        step's own action. A multi-tick episode (ask -> wait ->
+        answer) closes here: by the time this runs, the receive
+        has ingested the action-result facts AND interpreted the
+        newly perceived events, so the current step's success
+        condition is judged against the freshest subjective view.
+        This pass is fulfilment-only — failure counting stays
+        bound to actions (the pending-check path in
+        _evaluate_step_from_result); a waiting receive never
+        counts a failure and never blocks a plan. Judgements ride
+        the existing StepEvaluator verdict shape + PlanManager
+        machinery, so transition kinds (step_evaluated / advance
+        / plan_completed) and the four-layer separation are
+        unchanged; the advance carries a receive-sourced action
+        signature ("receive:<step_id>") that cannot collide with
+        a real action signature (action types are a closed enum).
+        Cascades are bounded: each fulfilment consumes one step,
+        so the loop runs at most len(steps)+1 iterations."""
+        for _ in range(len(self.state.current_plan.steps) + 1
+                       if self.state.current_plan else 0):
+            plan = self.state.current_plan
+            if plan is None or plan.status != "active":
+                return
+            if plan.current_step >= len(plan.steps):
+                return
+            step = plan.steps[plan.current_step]
+            if step.success_condition is None:
+                return               # legacy step: never judged
+            view = conditions.build_view(self, tick)
+            sat, _report = conditions.evaluate(step.success_condition,
+                                               view)
+            if sat < 1.0:
+                return
+            evaluation = plan_evaluator.StepEvaluation(
+                fulfilled=True,
+                reason="success_condition satisfied at receive "
+                       "(every-receive judgement, design 5.1)")
+            outcome = self.plan_manager.apply_step_evaluation(
+                self.state, tick, step.step_id, evaluation,
+                f"receive:{step.step_id}")
+            if outcome != "advanced":
+                return
+
     def _events_intersect(self, perception: dict,
                           refs: set) -> str | None:
         """Does any event in this perception touch the reference set
@@ -300,10 +412,65 @@ class CharacterAgent:
         return None
 
     # ---------------- perception -> subjective updates ----------------
+    def _merged_census(self, result) -> dict | None:
+        census = getattr(result, "census", None)
+        if self._expired_questions:
+            merged = dict(census or {})
+            merged["expired_questions"] = list(self._expired_questions)
+            self._expired_questions = []
+            return merged
+        return census
+
+    # V0.2-C C2 (design 3.3): pending-question queue maintenance.
+    QUESTION_TTL = 3
+
+    def _expire_questions(self, tick: int) -> None:
+        """Drop queue entries older than the TTL, recording each
+        expiry — a forgotten question is a measurable event
+        (question_expired), never a silent loss. The records ride
+        the next decision record's census."""
+        st = self.state
+        keep = []
+        for entry in st.pending_questions:
+            if tick - int(entry.get("tick_asked", tick)) > self.QUESTION_TTL:
+                self._expired_questions.append(
+                    {**entry, "expired_at": tick})
+            else:
+                keep.append(entry)
+        st.pending_questions = keep
+
+    def _dequeue_answered(self, decision) -> None:
+        """A question leaves the queue when I respond to its asker
+        (an answer/denial utterance, or an explicit refusal)."""
+        st = self.state
+        action = decision.action
+        if action.type not in ("speak", "refuse") or not action.target:
+            return
+        keep = []
+        for entry in st.pending_questions:
+            if entry.get("asker") != action.target:
+                keep.append(entry)
+                continue
+            if action.type == "refuse":
+                continue                    # refused: dequeued
+            cdef = self.scenario.claims.get(action.claim or "")
+            entry_prop = entry.get("proposition")
+            if entry_prop is None:
+                ec = self.scenario.claims.get(entry.get("claim_key") or "")
+                entry_prop = ec.proposition if ec else None
+            if cdef is not None and (
+                    cdef.stance == "deny"
+                    or (entry_prop is not None
+                        and cdef.proposition == entry_prop)):
+                continue                    # answered/denied: dequeued
+            keep.append(entry)
+        st.pending_questions = keep
+
     def receive(self, perception: dict, action_result: dict | None) -> None:
         st = self.state
         tick = perception["tick"]
         self._tick = tick
+        self._expire_questions(tick)
         # V0.2-B (design 5.2 step 2 begins here): record my own last
         # action and its search outcome into the subjective history
         # the predicate evaluator reads — before anything else, so
@@ -357,6 +524,18 @@ class CharacterAgent:
             self._chain_updates.append(
                 {**tr, "kind": "plan_transition",
                  "transition_kind": tr.get("kind"), "decision_key": None})
+        # V0.2-C C4 (design 5.1): with the freshest subjective
+        # state in place, the current plan step's completion is
+        # judged once more — the every-receive judgement that lets
+        # a response arriving THIS receive close the step it
+        # answers. Its transitions join the audit chain like the
+        # interpretation path's (decision_key None: no decision
+        # caused them; the world did).
+        self._evaluate_step_fulfilment(tick)
+        for tr in self._drain_plan_transitions():
+            self._chain_updates.append(
+                {**tr, "kind": "plan_transition",
+                 "transition_kind": tr.get("kind"), "decision_key": None})
         # V0.2-B B2 (design 4.2): the GoalEvaluator runs at the end
         # of receive() — perception has been ingested and interpreted,
         # so conditions judge the agent's freshest subjective state.
@@ -399,11 +578,17 @@ class CharacterAgent:
         self._last_action = None
         if act is None or action_result is None:
             return
+        cdef = self.scenario.claims.get(act.get("claim") or "")
         rec = {"tick": act["tick"], "type": act["type"],
                "target": act.get("target"),
                "target_location": act.get("target_location"),
                "object": act.get("object"), "claim": act.get("claim"),
                "topic": act.get("topic"),
+               # V0.2-C fix round: the speech-act dimension, stamped
+               # from the claim class's declared stance (scenario
+               # data is the single source) so event_occurred leaves
+               # can demand an assert rather than any utterance.
+               "stance": cdef.stance if cdef else None,
                "ok": bool(action_result.get("ok"))}
         st.own_actions.append(rec)
         if act["type"] == "search" and action_result.get("ok"):
@@ -457,11 +642,15 @@ class CharacterAgent:
         # evaluator reads (event_occurred / agent_at_location /
         # object sightings) — recorded for every perceived event,
         # before interpretation.
+        pcdef = self.scenario.claims.get(ev.get("claim") or "")
         st.perceived_events.append({
             "tick": tick, "type": etype, "actor": actor,
             "target": (ev["actors"][1] if len(ev.get("actors") or []) > 1
                        else ev.get("target")),
             "claim": ev.get("claim"), "topic": ev.get("topic"),
+            # V0.2-C fix round: speech-act stance, from the claim
+            # class's data declaration (see _ingest_own_action).
+            "stance": pcdef.stance if pcdef else None,
             "object": ev.get("object"), "location": ev.get("location"),
             "to": ev.get("to"), "found": list(ev.get("found") or [])})
         if etype == "move":
@@ -472,15 +661,37 @@ class CharacterAgent:
             st.utterances_heard.append({"tick": tick, "from": actor, "topic": ev.get("topic"),
                                         "claim": ev.get("claim"), "kind": etype})
             if etype in ("ask", "confront"):
+                # V0.2-C C2 (design 3.3): questions enter the
+                # pending-question QUEUE — but only ones addressed
+                # to ME create an obligation entry; overheard
+                # questions live on as topic heat in
+                # perceived_events / utterances_heard only.
+                addressed = (
+                    (ev["actors"][1] if len(ev.get("actors") or []) > 1
+                     else ev.get("target")) == self.config.character_id)
+                if addressed:
+                    cdef = self.scenario.claims.get(ev.get("claim") or "")
+                    entry = {
+                        "asker": actor, "claim_key": ev.get("claim"),
+                        "proposition": cdef.proposition if cdef else None,
+                        "tick_asked": tick, "addressed_to_me": True,
+                        # V0.2-C C2 interpretation (registered in the
+                        # implementation report): the ANSWER
+                        # obligation attaches to questions (ask);
+                        # a confront entry still generates the
+                        # deny/withhold/clarify responses — an
+                        # accusation is answered by denial, not by
+                        # volunteering the asserted account.
+                        "via": etype}
+                    if entry not in st.pending_questions:
+                        st.pending_questions.append(entry)
+                # the legacy single slot keeps mirroring the latest
+                # question for pre-C consumers (mock provider,
+                # fixtures) — it is no longer the obligation source
                 st.pending_question = {
                     "from": actor, "topic": ev.get("topic"),
                     "claim": ev.get("claim"), "tick": tick,
-                    # V0.2-B: was the question addressed to ME? (the
-                    # event's target) — bystanders overhear a question
-                    # without acquiring the obligation to answer it
-                    "addressed_to_me": (
-                        (ev["actors"][1] if len(ev.get("actors") or []) > 1
-                         else ev.get("target")) == self.config.character_id)}
+                    "addressed_to_me": addressed}
             self._interpret_speech(ev)
         elif etype == "show":
             obj = ev.get("object")
@@ -640,6 +851,24 @@ class CharacterAgent:
         # before the context is built, so the context shows the decayed
         # commitment and the current step.
         self.plan_manager.reconcile(self.state, self._tick)
+        # V0.2-C C1 (design 2.1): the Goal Scheduler runs exactly
+        # once per decision — after reconcile, before the context is
+        # built. It writes no goal state: its memory rides the
+        # character state (checkpoint-safe), its pursuit conclusion
+        # reaches providers through the context, and its bookkeeping
+        # (last_pursued_tick / pursuit_changed) is applied by the
+        # GoalEvaluator at this decide's plan_event evaluation.
+        self._recent_activations = {
+            k: t for k, t in self._recent_activations.items()
+            if self._tick - t <= 4}
+        sched = goal_scheduler.schedule(
+            self.state.goals, self.state.current_plan, self._tick,
+            self.state.scheduler_memory,
+            newly_activated={k for k, t in self._recent_activations.items()
+                             if self._tick - t <= 1})
+        self.state.scheduler_memory = sched["memory"]
+        self._schedule_decision = sched
+        self._pending_schedule = sched
         context = build_context(self, perception)
         self.last_context = context
         record = {
@@ -690,8 +919,10 @@ class CharacterAgent:
             return self._fail_decision(
                 record, f"validation: action {self._sig(decision)} is "
                         f"not in this tick's available_actions")
-        # consume pending question exactly as V0.1 did (it is answered or dropped now)
-        self.state.pending_question = None
+        # V0.2-C C2 (design 3.3): the pending-question QUEUE is
+        # dequeued by response (and by TTL expiry in receive) —
+        # the single slot is no longer cleared wholesale here.
+        self._dequeue_answered(decision)
         plan_note = self._apply_plan_update(decision)
         # V0.2-B B2 (design 4.2): after a plan update, goals are
         # re-evaluated (a plan switch can pause the displaced goal;
@@ -730,6 +961,10 @@ class CharacterAgent:
             # V0.2-B: the rule generator's auditable candidate scoring
             # (None for providers that do not score candidates).
             "candidate_scores": getattr(result, "candidate_scores", None),
+            # V0.2-C C2: the candidate census (design 3.6), with any
+            # question_expired records since the last decision
+            # merged in as audit material.
+            "census": self._merged_census(result),
             "plan_update_result": plan_note,
             "prediction": prediction.model_dump(),
             "plan_transitions": self._drain_plan_transitions(),

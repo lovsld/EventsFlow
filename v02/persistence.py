@@ -52,6 +52,8 @@ class DecisionRow(Base):
     # nullable JSON; None for providers that do not score and for
     # pre-B runs (see the migration guard in Store.__init__).
     candidate_scores = Column(Text)
+    # V0.2-C C2 (design 3.6): the candidate census JSON.
+    census = Column(Text)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
 
@@ -210,6 +212,11 @@ class Store:
                 conn.execute(_text(
                     "ALTER TABLE agent_decisions "
                     "ADD COLUMN candidate_scores TEXT"))
+        if "census" not in cols:
+            with self.engine.begin() as conn:
+                conn.execute(_text(
+                    "ALTER TABLE agent_decisions "
+                    "ADD COLUMN census TEXT"))
         self.Session = sessionmaker(bind=self.engine)
 
     def record_decision(self, rec: dict) -> None:
@@ -231,6 +238,8 @@ class Store:
                 if rec.get("execution_result") is not None else None,
                 candidate_scores=json.dumps(rec.get("candidate_scores"), ensure_ascii=False)
                 if rec.get("candidate_scores") is not None else None,
+                census=json.dumps(rec.get("census"), ensure_ascii=False)
+                if rec.get("census") is not None else None,
                 error=rec.get("error")))
             s.commit()
 

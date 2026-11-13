@@ -192,13 +192,29 @@ def test_counterfactual_pair_seed42(tmp_path):
     The belief layer DOES diverge: both soldiers form
     mayor_embezzled at 0.6 from the letter's reveals (tick 4); from
     tick 9 the control soldier's testimony channel corroborates it
-    to 0.704 while the treatment soldier stays at 0.6."""
+    to 0.704 while the treatment soldier stays at 0.6.
+
+    V0.2-C C2 retarget (stage disposition C2-3): the Communication
+    Generator adds one more owner mayor_hint to the control arm
+    (9 occurrences, first at E0030 tick 8; suppressions 9). Every
+    qualitative finding is unchanged — no objective divergence
+    (73 events both arms, prefix identical through tick 20) and
+    the same belief split (control 0.704 from tick 9, treatment
+    0.6). Only the measured counts moved; re-measured on the C2
+    canonical dynamics (answer coefficient 2.6).
+
+    V0.2-C C3 retarget (stage disposition C3-3): the unified IV
+    and exploration expansions move the count back to 8
+    occurrences (first still E0030 tick 8; suppressions 8); all
+    qualitative findings unchanged, re-measured on the C3
+    canonical dynamics."""
     comp = run_counterfactual(seed=42, ticks=20, rule=OWNER_RULE,
                               out_root=tmp_path)
     recipient = OWNER_RULE["recipient"]
 
     # the target utterance class occurs in the control run (8 times,
-    # measured) and every occurrence reaches the soldier in full
+    # measured; C3 retarget — see the docstring) and every
+    # occurrence reaches the soldier in full
     assert len(comp["target_events_control"]) == 8
     assert comp["verification"]["control_first_target_heard_by_recipient"]
     assert comp["verification"][
@@ -214,7 +230,7 @@ def test_counterfactual_pair_seed42(tmp_path):
     # runs: identical id/tick, and the owner still receives it in full
     c0, t0 = comp["target_events_control"][0], comp["target_events_treatment"][0]
     assert (c0["event_id"], c0["tick"]) == (t0["event_id"], t0["tick"]) == \
-        ("E0026", 7)
+        ("E0030", 8)
     assert t0["deliveries"].get("owner") == c0["deliveries"].get("owner") == "full"
     assert comp["control_suppressions"] == 0
     assert len(comp["suppressions"]) == 8

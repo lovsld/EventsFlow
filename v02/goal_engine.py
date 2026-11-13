@@ -37,7 +37,9 @@ component that already re-evaluates conditions every tick.
 """
 from __future__ import annotations
 
-from . import conditions
+import json
+
+from . import conditions, goal_scheduler
 from .conditions import build_view
 
 
@@ -56,6 +58,40 @@ class GoalEvaluator:
                  "goal_key": goal.key, "kind": kind,
                  "reason": f"{reason} (cause={cause})",
                  "before": before, "after": goal.model_dump()})
+
+        def settle_pause(goal) -> None:
+            """Close out a pause episode's bookkeeping (V0.2-C C1):
+            the ticks spent paused accumulate exactly once, when
+            the goal leaves the paused status by any path."""
+            if goal.paused_since is not None:
+                goal.cumulative_paused_ticks += tick - goal.paused_since
+                goal.paused_since = None
+
+        # V0.2-C C1: scheduler bookkeeping, consumed at the
+        # plan_event evaluation point of decide() — the scheduler
+        # itself writes nothing; its decision is applied HERE, by
+        # the sole writer of goal state. last_pursued_tick is raw
+        # material for the utility's aging term; a pursuit CHANGE
+        # additionally lands as a pursuit_changed record whose
+        # reason carries the full utility table (design 2.9).
+        sched = getattr(agent, "_pending_schedule", None)
+        if sched is not None and cause == "plan_event":
+            agent._pending_schedule = None
+            pursuit_key = sched.get("pursuit_goal_id")
+            if pursuit_key is not None:
+                for goal in st.goals:
+                    if goal.key == pursuit_key:
+                        before_p = goal.model_dump()
+                        goal.last_pursued_tick = tick
+                        if sched.get("switched"):
+                            record(goal, "pursuit_changed",
+                                   "scheduler pursuit: "
+                                   f"{sched.get('previous_pursuit')!r} -> "
+                                   f"{pursuit_key!r}; utilities="
+                                   + json.dumps(sched.get("utilities", {}),
+                                                sort_keys=True),
+                                   before_p)
+                        break
 
         # suspended-plan reactivation (design 5.5): checked on the
         # same cadence as goal conditions
@@ -94,10 +130,32 @@ class GoalEvaluator:
                     continue
 
             if goal.status in ("active", "paused"):
+                # V0.2-C C1 starvation protection (design 2.3/2.5):
+                # a continuous pause that reaches the goal's cap
+                # force-reactivates the goal and opens a guaranteed
+                # pursuit window (protection_until), inside which
+                # the pause policy refuses to pause it again and the
+                # scheduler locks it as pursuit.
+                if goal.status == "paused":
+                    cap = goal_scheduler.max_pause_for(goal)
+                    if cap is not None and goal.paused_since is not None \
+                            and tick - goal.paused_since >= cap:
+                        settle_pause(goal)
+                        goal.status = "active"
+                        goal.protection_until = tick + max(
+                            1, goal_scheduler.CONFIG.min_dwell)
+                        record(goal, "starvation_protection",
+                               f"max_pause_exceeded (cap {cap} ticks); "
+                               "starvation_protection: forced "
+                               "reactivation, guaranteed pursuit "
+                               f"window until tick "
+                               f"{goal.protection_until}", before)
+                        before = goal.model_dump()
                 # failure BEFORE completion (design 4.2)
                 if goal.failure_condition is not None and \
                         conditions.is_satisfied(goal.failure_condition,
                                                 view):
+                    settle_pause(goal)
                     goal.status = "failed"
                     record(goal, "goal_failed",
                            "failure condition satisfied", before)
@@ -106,34 +164,65 @@ class GoalEvaluator:
                         and goal.success_condition is not None:
                     if conditions.is_satisfied(goal.success_condition,
                                                 view):
+                        settle_pause(goal)
                         goal.status = "completed"
                         goal.progress = 1.0
                         record(goal, "goal_completed",
                                "success condition satisfied", before)
                         continue
-                    new_progress = round(
-                        conditions.progress_of(goal.success_condition,
-                                               view), 4)
+                    # V0.2-C C1 (design 2.6): progress is MONOTONIC
+                    # — it records the best satisfaction ever seen;
+                    # completion still requires the CURRENT view to
+                    # satisfy the condition (checked just above), and
+                    # leaf-level candidacy still reads live
+                    # satisfaction, so a world that genuinely
+                    # regresses is not hidden — only the progress
+                    # SIGNAL stops oscillating.
+                    new_progress = max(
+                        goal.progress or 0.0,
+                        round(conditions.progress_of(
+                            goal.success_condition, view), 4))
                     if goal.progress is None or \
-                            abs(new_progress - goal.progress) >= 0.001:
+                            new_progress - goal.progress >= 0.001:
                         goal.progress = new_progress
                         record(goal, "goal_progress",
                                "success-condition satisfaction changed",
                                before)
                         before = goal.model_dump()
-                # paused rule (evaluator-side, design 4.2): pursuit
-                # displaced by another goal's plan
+                # paused rule (evaluator-side, design 4.2), now a
+                # POLICY decision (V0.2-C C1, design 2.1): pursuit
+                # displaced by another goal's plan pauses the goal
+                # only when the scheduler's pause policy allows it
+                # and the goal is not itself the scheduled pursuit.
+                # A protected goal stays active; the contention is
+                # resolved at the plan layer (suspend) instead.
                 if goal.kind == "achievement":
+                    pursuit_key = st.scheduler_memory.get("pursuit")
+                    # V0.2-C C1 refinement (calibration finding): a
+                    # dependency-GATED goal is not pursuit-eligible,
+                    # so it has no pursuit to be displaced FROM —
+                    # pausing it would only manufacture pause
+                    # bookkeeping (and eventually a spurious
+                    # starvation) for a goal that was never in
+                    # contention. The pause rule therefore applies
+                    # only to pursuit-eligible goals.
                     if goal.status == "active" and plan is not None \
                             and plan_goal_id is not None \
-                            and plan_goal_id != goal.key:
+                            and plan_goal_id != goal.key \
+                            and goal.key != pursuit_key \
+                            and goal_scheduler.deps_completed(
+                                goal, {g.key: g for g in st.goals}) \
+                            and goal_scheduler.may_pause(goal, tick):
                         goal.status = "paused"
+                        goal.paused_since = tick
+                        goal.pause_count += 1
                         record(goal, "goal_paused",
                                f"plan pursuit switched to {plan_goal_id}",
                                before)
                     elif goal.status == "paused" and (
                             plan is None or plan_goal_id == goal.key
                             or (first_key == goal.key and plan is None)):
+                        settle_pause(goal)
                         goal.status = "active"
                         record(goal, "goal_reactivated",
                                "pursuit resumed", before)
@@ -154,7 +243,10 @@ class GoalEvaluator:
                         delta += float(rule.get("delta", 0.0))
                         if rule.get("once"):
                             self._latched.add(key)
-                new_priority = max(0.0, min(
+                # V0.2-C C1 (design 2.3): the priority floor binds
+                # the recompute from below (selection magnitude
+                # only — it never exempts a goal from pausing).
+                new_priority = max(goal.priority_floor, min(
                     1.5, round(goal.weight + delta, 4)))
                 if new_priority != goal.priority_current:
                     before_p = goal.model_dump()

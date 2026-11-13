@@ -61,6 +61,10 @@ _ALL_BACKEND_ENVS = (
 def _clean_env(monkeypatch):
     for var in _ALL_BACKEND_ENVS:
         monkeypatch.delenv(var, raising=False)
+    # The vault surrogate source is machine state, not env: isolate it
+    # by default so "no credential configured" cases stay hermetic.
+    # Vault tests opt back in by re-stubbing _vault_available to True.
+    monkeypatch.setattr(cp, "_vault_available", lambda name: False)
     cp._EXHAUSTED_KEYS.clear()
     yield
     cp._EXHAUSTED_KEYS.clear()
@@ -417,3 +421,124 @@ def test_resume_backend_mismatch_rejected_and_matching_ok(
     providers = {r[0] for r in con.execute(
         "SELECT DISTINCT provider FROM agent_decisions")}
     assert providers == {"deepseek"}
+
+
+# ================= vault surrogate source (V0.2-C, design 8 a2) ===
+
+def _vault_on(monkeypatch):
+    monkeypatch.setattr(cp, "_vault_available", lambda name: True)
+
+
+def _fake_apply_factory(seen):
+    def _fake_apply(req, credential_name, base_url):
+        seen["credential_name"] = credential_name
+        seen["base_url"] = base_url
+        req.add_header("Authorization", "Bearer hsurr:STUB-SURROGATE")
+    return _fake_apply
+
+
+def test_vault_label_registered_when_no_raw_keys(monkeypatch):
+    _vault_on(monkeypatch)
+    provider = make_provider("llm", load_all()["owner"],
+                             provider="deepseek")
+    # The credential NAME is the bookkeeping label; no key material of
+    # any kind is held by the provider instance.
+    assert provider.credentials == ["custom.deepseek"]
+    assert provider._raw_keys == {}
+    assert cp.keys_available("deepseek") is True
+
+
+def test_raw_pool_wins_over_vault(monkeypatch):
+    _vault_on(monkeypatch)
+    monkeypatch.setenv("ACP_DEEPSEEK_KEYS", "SENTINEL-RAW-FIRST")
+    provider = make_provider("llm", load_all()["owner"],
+                             provider="deepseek")
+    assert provider.credentials == ["key#1"]
+
+
+def test_vault_unavailable_leaves_no_credentials(monkeypatch):
+    # (the autouse fixture already stubs _vault_available -> False)
+    provider = make_provider("llm", load_all()["owner"],
+                             provider="deepseek")
+    assert provider.credentials == []
+    assert cp.keys_available("deepseek") is False
+    with pytest.raises(ProviderError) as excinfo:
+        asyncio.run(provider.generate_decision(_ctx()))
+    assert "custom.deepseek" in str(excinfo.value)
+
+
+def test_preflight_passes_with_vault_credential(monkeypatch):
+    _vault_on(monkeypatch)
+    preflight("llm", provider="deepseek")  # must not raise
+
+
+def test_vault_request_carries_surrogate_bearer(monkeypatch):
+    _vault_on(monkeypatch)
+    seen: dict = {}
+    monkeypatch.setattr(cp, "_apply_vault_surrogate",
+                        _fake_apply_factory(seen))
+    provider = make_provider("llm", load_all()["owner"],
+                             provider="deepseek")
+    opener = _CaptureOpener(_chat_payload())
+    monkeypatch.setattr("urllib.request.build_opener",
+                        lambda *a, **k: opener)
+    result = asyncio.run(provider.generate_decision(_ctx()))
+    assert seen == {"credential_name": "custom.deepseek",
+                    "base_url": "https://api.deepseek.com/v1"}
+    assert opener.captured["url"] == \
+        "https://api.deepseek.com/v1/chat/completions"
+    assert opener.captured["headers"]["authorization"] == \
+        "Bearer hsurr:STUB-SURROGATE"
+    assert result.decision.action.type == "wait"
+    assert result.provider == "deepseek"
+
+
+def test_vault_429_exhausts_the_single_credential_as_quota(monkeypatch):
+    _vault_on(monkeypatch)
+
+    def always_429(self, payload, credential=None):
+        raise ProviderError("HTTP 429 from deepseek API: quota")
+
+    _stub_post(monkeypatch, always_429)
+    provider = make_provider("llm", load_all()["owner"],
+                             provider="deepseek")
+    with pytest.raises(QuotaExhaustedError):
+        asyncio.run(provider.generate_decision(_ctx()))
+    assert ("deepseek", "custom.deepseek") in cp._EXHAUSTED_KEYS
+
+
+def test_vault_model_alignment_via_acp_model_not_preset(monkeypatch):
+    _vault_on(monkeypatch)
+    monkeypatch.setenv("ACP_MODEL", "deepseek-flash")
+    provider = make_provider("llm", load_all()["owner"],
+                             provider="deepseek")
+    assert provider.model == "deepseek-flash"
+    # the preset default is NOT rewritten to fake the alignment
+    assert cp.PRESETS["deepseek"].default_model == "deepseek-chat"
+
+
+def test_vault_surrogate_never_persisted_in_run_artifacts(
+        monkeypatch, tmp_path):
+    _vault_on(monkeypatch)
+    seen: dict = {}
+    monkeypatch.setattr(cp, "_apply_vault_surrogate",
+                        _fake_apply_factory(seen))
+    opener = _CaptureOpener(_chat_payload())
+    monkeypatch.setattr("urllib.request.build_opener",
+                        lambda *a, **k: opener)
+    run_dir = asyncio.run(run_simulation(
+        mode="llm", ticks=2, seed=42, run_name="ds_vault_e2e",
+        out_root=tmp_path, provider="deepseek"))
+    summary = json.loads((run_dir / "summary.json").read_text(
+        encoding="utf-8"))
+    assert summary["llm_backend"] == "deepseek"
+    assert summary["world_tick"] == 2
+    con = sqlite3.connect(run_dir / "acp.sqlite3")
+    total, errors = con.execute(
+        "SELECT COUNT(*), SUM(error IS NOT NULL) FROM agent_decisions"
+    ).fetchone()
+    assert total == 6 and errors == 0
+    sentinel = b"hsurr:STUB-SURROGATE"
+    for path in run_dir.rglob("*"):
+        if path.is_file():
+            assert sentinel not in path.read_bytes(), path

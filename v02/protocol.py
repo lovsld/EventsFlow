@@ -116,6 +116,54 @@ class Goal(BaseModel):
     commitment: float = Field(default=0.8, ge=0.0, le=1.0)
     created_at: int = 0
     deadline: Optional[int] = None
+    # V0.2-C C1 (design section 2.2/2.3): Goal Scheduler data. All
+    # optional with defaults on the safe side of the pre-C behaviour,
+    # so pre-C goal data and checkpoints load unchanged.
+    #   depends_on   keys of THIS SAME character's goals that must be
+    #                completed before this goal is pursuit-eligible
+    #                (scheduling semantics only — activation and
+    #                progress are unaffected). Validated at load
+    #                (unknown key / cycle -> load error).
+    #   scheduling   optional nested spelling of the four fields
+    #                below (the task book's shape); merged over the
+    #                flat fields by the validator.
+    #   pausable     False = the evaluator's pause policy always
+    #                refuses to pause this goal; contention is then
+    #                resolved at the plan layer (suspend).
+    #   priority_floor  priority_current never recomputes below this.
+    #   max_pause_ticks  cap on one continuous pause; None = use the
+    #                scheduler's global default; only meaningful with
+    #                starvation_protection.
+    #   starvation_protection  False = this goal accepts unbounded
+    #                waiting (an author-declared background goal).
+    depends_on: list[str] = []
+    scheduling: Optional[dict] = None
+    pausable: bool = True
+    priority_floor: float = 0.0
+    max_pause_ticks: Optional[int] = None
+    starvation_protection: bool = True
+    # V0.2-C C1 runtime bookkeeping (written ONLY by the
+    # GoalEvaluator; defaults keep old state/checkpoints valid):
+    paused_since: Optional[int] = None
+    cumulative_paused_ticks: int = 0
+    last_pursued_tick: Optional[int] = None
+    pause_count: int = 0
+    protection_until: Optional[int] = None
+
+    @model_validator(mode="after")
+    def _merge_scheduling_block(self) -> "Goal":
+        """The nested `scheduling: {...}` spelling (task book shape)
+        sets the four flat scheduling fields; flat fields declared
+        alongside win on conflict only when non-default... in
+        practice authors use one spelling; nested values are applied
+        last so the block is authoritative where present."""
+        block = self.scheduling
+        if block:
+            for name in ("pausable", "priority_floor", "max_pause_ticks",
+                         "starvation_protection"):
+                if name in block and block[name] is not None:
+                    object.__setattr__(self, name, block[name])
+        return self
 
 
 class RetryPolicy(BaseModel):
@@ -247,6 +295,13 @@ class CharacterState(BaseModel):
     perceived_event_ids: list[str] = []
     utterances_heard: list[dict] = []
     pending_question: Optional[dict] = None
+    # V0.2-C C2 (design 3.3): the pending-question QUEUE replacing
+    # the single slot above (kept for checkpoint/fixture compat).
+    # Entries: {asker, claim_key, proposition, tick_asked,
+    # addressed_to_me}; only addressed questions enter the
+    # obligation queue. The legacy slot migrates into a one-element
+    # queue on load (see the validator on CharacterState below).
+    pending_questions: list[dict] = []
     action_counts: dict[str, int] = {}
     # V0.2-B: the agent's own holdings of SCENARIO objects (design
     # section 3.2) — initialised from profile possessions ∩ scenario
@@ -265,6 +320,41 @@ class CharacterState(BaseModel):
     searched_empty_places: list[str] = []
     perceived_events: list[dict] = []
     own_actions: list[dict] = []
+    # V0.2-C C1: the Goal Scheduler's memory — the incumbent pursuit
+    # goal and the tick it was (last) selected at. Runtime decision
+    # state, not goal state; it rides the state dump so checkpoints
+    # restore it exactly (resume byte-identity).
+    scheduler_memory: dict = {"pursuit": None, "since": 0}
+    # V0.2-C C4 (design 5.3): the plan failure memory the replan
+    # gate judges against — entries {plan_id, goal_id, fingerprint,
+    # tick_failed, cause (blocked/exhausted/abandoned),
+    # context_digest, failed_step_id, failed_step_condition},
+    # capped at 8 FIFO (plan_fingerprint.MEMORY_CAP) — and the
+    # gate's soft-cap counters, keyed "goal_id|context_digest":
+    # how many times a replan for that goal was gated while the
+    # world (digest) stood still. Both ride the state dump like
+    # every other runtime field; both default empty, so pre-C4
+    # checkpoints load unchanged.
+    plan_failure_memory: list[dict] = []
+    plan_gate_counts: dict[str, int] = {}
+
+
+    @model_validator(mode="after")
+    def _migrate_pending_question(self) -> "CharacterState":
+        """V0.2-C C2 checkpoint migration (design 3.3): a pre-C
+        state carries only the single pending_question slot; wrap
+        it as a one-element queue so the obligation machinery sees
+        exactly one shape. New states (queue populated, or nothing
+        pending) are untouched."""
+        if not self.pending_questions and self.pending_question:
+            slot = self.pending_question
+            self.pending_questions = [{
+                "asker": slot.get("from"),
+                "claim_key": slot.get("claim"),
+                "proposition": None,
+                "tick_asked": slot.get("tick", 0),
+                "addressed_to_me": slot.get("addressed_to_me", True)}]
+        return self
 
 
 class ActionSpec(BaseModel):
@@ -408,3 +498,10 @@ class ProviderResult(BaseModel):
     # final choice. None for providers that do not score candidates
     # (LLM/mock); persisted on the decision record when present.
     candidate_scores: Optional[dict] = None
+    # V0.2-C C2 (design 3.6): the candidate CENSUS — counts over
+    # ALL generated candidates (computed after scoring, before the
+    # top-5 truncation of candidate_scores): {n_generated,
+    # by_source, by_comm_kind, assert_generated, answer_generated,
+    # search_generated, chosen_comm_kind, vetoed}. None for
+    # providers without a candidate market (LLM/mock).
+    census: Optional[dict] = None

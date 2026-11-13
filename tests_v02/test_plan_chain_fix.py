@@ -123,14 +123,48 @@ def test_receive_side_transitions_reach_the_db(fixed_run):
     judged, so its decision_key names an earlier tick than the
     row's own tick. Counts are the measured values of the canonical
     trajectory rule_v02b_seed42 (the sibling test below pins this
-    fixture's world_log to it byte-for-byte)."""
+    fixture's world_log to it byte-for-byte).
+
+    V0.2-C C1 retarget (pre-registered disposition C1-2): counts
+    re-measured on the new canonical rule_v02c_seed42 —
+    step_evaluated 33, blocked 1, recovery 1. The fingerprint
+    properties themselves (receive-side rows exist, all keyed,
+    prev-tick keying present) are unchanged.
+
+    V0.2-C C2 retarget (stage disposition C2-2): counts re-measured
+    on the new canonical rule_v02c2_seed42 — step_evaluated 33,
+    blocked 1, recovery 1 (unchanged numbers; the C2 communication
+    changes move utterances, not this run's step judgements).
+
+    V0.2-C C3 retarget (stage disposition C3-2): counts re-measured
+    on the new canonical rule_v02c3_seed42 — step_evaluated 33,
+    blocked 1, recovery 1 (unchanged again).
+
+    V0.2-C C4 retarget (pre-registered dispositions C4-1/C4-2):
+    counts re-measured on the new canonical rule_v02c4_seed42 —
+    step_evaluated 46, blocked 0, recovery 0. Two C4 mechanisms
+    move these numbers BY DESIGN (design 5.1/5.2): the
+    every-receive fulfilment pass adds receive-side step_evaluated
+    rows (22 of the 46, each fulfilled), and the narrowed failure
+    rule (c) removes the tavern's belief/event-leaf false blocks
+    entirely — blocked/recovery existence evidence moves to the
+    warehouse gate trajectory and the C4 unit fixtures, the same
+    relocation this file's sibling test already accepted for plan
+    completions in B3. The keying property splits by source, and
+    both halves are asserted below: action-result judgements stay
+    keyed to the decision whose action they judged (24 rows,
+    prev-tick property intact); every-receive fulfilments are
+    NULL-keyed, the truthful attribution for a perception-driven
+    record (the interpretation layer's belief rows are NULL-keyed
+    for the same reason) — keying them to a decision would be
+    causally false, since receive precedes decide within a tick."""
     db = sqlite3.connect(f"file:{fixed_run}/acp.sqlite3?mode=ro",
                          uri=True)
     kinds = dict(db.execute(
         "select kind, count(*) from plan_transitions group by kind"))
-    assert kinds.get("step_evaluated", 0) == 36
-    assert kinds.get("blocked", 0) == 3
-    assert kinds.get("recovery", 0) == 2
+    assert kinds.get("step_evaluated", 0) == 46
+    assert kinds.get("blocked", 0) == 0
+    assert kinds.get("recovery", 0) == 0
     # the envelope kind itself never lands in the kind column —
     # the column carries each transition's own kind (transition_kind)
     assert "plan_transition" not in kinds
@@ -142,8 +176,20 @@ def test_receive_side_transitions_reach_the_db(fixed_run):
     rows = db.execute(
         "select tick, decision_key from plan_transitions "
         "where kind = 'step_evaluated'").fetchall()
-    assert rows and all(dk is not None for _, dk in rows)
-    assert any(tick == int(dk.split(":")[1]) + 1 for tick, dk in rows)
+    assert rows
+    # C4 split (see the docstring): action-result judgements are
+    # keyed, with the prev-tick property; every-receive fulfilment
+    # rows are NULL-keyed perception records, and every one of
+    # them is a fulfilment
+    keyed = [(t, dk) for t, dk in rows if dk is not None]
+    unkeyed = [(t, dk) for t, dk in rows if dk is None]
+    assert len(keyed) == 24 and len(unkeyed) == 22
+    assert all(tick == int(dk.split(":")[1]) + 1 for tick, dk in keyed)
+    unkeyed_fulfilled = db.execute(
+        "select count(*) from plan_transitions "
+        "where kind = 'step_evaluated' and decision_key is null "
+        "and after_json like '%\"fulfilled\": true%'").fetchone()[0]
+    assert unkeyed_fulfilled == len(unkeyed)
 
 
 def test_trajectory_matches_current_canonical(fixed_run):
@@ -169,9 +215,44 @@ def test_trajectory_matches_current_canonical(fixed_run):
     events, world_log md5 0ab5c2c676cf3cf1e304fc0ba73ec6b7), built
     by the generic candidate generator + GoalEvaluator +
     StepEvaluator stack; rule_v02a_seed42 stays read-only as the
-    V0.2-A baseline. See V0.2-B_REPORT.md."""
+    V0.2-A baseline. See V0.2-B_REPORT.md.
+
+    V0.2-C C1 retarget (pre-registered disposition C1-1): the
+    Goal Scheduler (pursuit selection, pause policy, monotonic
+    progress) intentionally changes the trajectory again; the
+    canonical is now runs_v02/rule_v02c_seed42 (73 events,
+    world_log md5 073083108602bbbc1864e682d4a03263), built under
+    the calibrated scheduler coefficients (dep 0.4, wait 0.15,
+    margin 0.10 — see docs/V0.2-C_IMPLEMENTATION_REPORT.md).
+    rule_v02b_seed42 stays read-only as the V0.2-B baseline.
+
+    V0.2-C C2 retarget (stage disposition C2-1): the Communication
+    Generator (question queue, recipient-side answer pricing,
+    proactive asserts, census) intentionally changes the
+    trajectory again; the canonical is now
+    runs_v02/rule_v02c2_seed42 (73 events, world_log md5
+    4b5ee390d4bc8ad9054b7d6d0083224c), built under the calibrated
+    answer coefficient 2.6 (see the C2 section of
+    docs/V0.2-C_IMPLEMENTATION_REPORT.md). rule_v02c_seed42 stays
+    read-only as the V0.2-C C1 baseline.
+
+    V0.2-C C3 retarget (stage disposition C3-1): the unified
+    Information Value (searched certainty 0.9 in place of the
+    0.15 discount, derived searched-places) plus the two
+    exploration generation expansions intentionally change the
+    trajectory again; the canonical is now
+    runs_v02/rule_v02c3_seed42 (73 events, world_log md5
+    f0c69bbad8b6fdad33b14b5509175118). rule_v02c2_seed42 stays
+    read-only as the V0.2-C C2 baseline.
+
+    V0.2-C C4 retarget (pre-registered disposition C4-1): the
+    every-receive step judgement, the narrowed failure rule and
+    the replan gate intentionally change the trajectory again;
+    the canonical is now runs_v02/rule_v02c4_seed42 (73 events,
+    world_log md5 cbf84d263ad01e50fca711328c1e78e2).
+    rule_v02c3_seed42 stays read-only as the V0.2-C C3 baseline."""
     log = json.loads((fixed_run / "world_log.json").read_text())
     canonical = json.loads(
-        (ROOT / "runs_v02" / "rule_v02b_seed42" / "world_log.json")
+        (ROOT / "runs_v02" / "rule_v02c4_seed42" / "world_log.json")
         .read_text())
     assert log == canonical

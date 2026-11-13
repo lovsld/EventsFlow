@@ -268,4 +268,26 @@ def test_real_run_advances_plans_from_results(planlayer_run):
     blocked = db.execute(
         "select count(*) from plan_transitions "
         "where kind = 'blocked'").fetchone()[0]
-    assert blocked > 0
+    # V0.2-C C4 adjudication (pre-registered disposition C4-10,
+    # registered in docs/V0.2-C_IMPLEMENTATION_REPORT.md): the
+    # blocked > 0 existence claim is REMOVED, and what replaces it
+    # is the pair of facts C4's design makes true of this run.
+    # The tavern blocks this assertion sampled were the pathology
+    # C4 exists to fix: under the B-era failure rule (c), ANY leaf
+    # at satisfaction 0 — belief and event leaves included — made
+    # a step "decisively false", so tavern plans blocked on
+    # not-yet-obtained beliefs. Design 5.2 narrows decisive
+    # falsity to object/location-class leaves; the tavern's step
+    # conditions are belief/event-class, so a tavern plan can no
+    # longer false-block: blocked == 0 here (and in all five
+    # seed-group runs under C4). Blocked/recovery existence
+    # evidence relocates to where object-class failures
+    # legitimately occur — the warehouse gate trajectories and
+    # the C4 unit fixtures — the same relocation the B3 comment
+    # above already accepted for plan completions. The tavern-side
+    # positive claim becomes the C4 stage gate's own quantity:
+    # the Step Fulfillment Rate (design 9) must sit far above the
+    # B-era canonical baseline of 0.028 (C4 canonical measures
+    # 23/46 = 0.500).
+    assert blocked == 0
+    assert fulfilled * 10 > evals      # SFR > 0.1, vs B-era 0.028

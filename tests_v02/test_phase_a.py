@@ -237,9 +237,24 @@ def test_rule_run_emergent_chain_and_divergent_beliefs(rule_run):
     # has the owner infer concealment (kind "inferred"). The soldier
     # forms no conceals:* belief in this trajectory: no denial he
     # witnesses contradicts a belief he holds.
+    #
+    # V0.2-C C4 retarget (pre-registered disposition C4-11, P-1
+    # precedent): under C4 dynamics the soldier DOES form a
+    # conceals belief, through the same generic contradiction
+    # channel, with the chain verified event-by-event in
+    # runs_v02/rule_v02c4_seed42: the soldier confronts the
+    # merchant with mayor_hint at tick 17 (E0061); at tick 18 the
+    # merchant addresses a denial TO the soldier (E0065); the
+    # soldier then holds mayor_embezzled at 0.704 (testimony,
+    # tick 8), so channel 3 prices the inference at
+    # 0.5 + 0.6 x (0.704 - 0.5) = 0.622. The B-era "no conceals"
+    # line was a trajectory fact (the merchant's denials were
+    # never addressed to a soldier holding the belief), not a
+    # mechanism invariant; the owner's chain is unchanged.
     assert owner["conceals:merchant"]["kind"] == "inferred"
     assert owner["conceals:merchant"]["confidence"] == 0.556
-    assert not any(k.startswith("conceals:") for k in soldier)
+    assert soldier["conceals:merchant"]["kind"] == "inferred"
+    assert soldier["conceals:merchant"]["confidence"] == 0.622
     # "being_investigated" has no generic writer under the new
     # channels; its assertion is deleted (adjudication P-1), not
     # re-pinned to a substitute belief.

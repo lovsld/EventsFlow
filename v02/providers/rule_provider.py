@@ -42,7 +42,11 @@ from __future__ import annotations
 import random
 from collections import deque
 
-from ..conditions import SubjectiveView, all_leaves, evaluate, flatten_leaves
+from ..comm_candidates import (generate_comm_candidates,
+                               proposition_held_since, undelivered_duties)
+from ..conditions import (SubjectiveView, all_leaves, evaluate,
+                          flatten_leaves, last_seen_location)
+from ..info_value import SENSOR_IV, URGENCY_IV, searched_certainty
 from ..context_builder import action_is_offered
 from ..protocol import (ActionSpec, AgentDecision, DecisionContext, PlanStep,
                         PlanUpdate, ProviderResult, RetryPolicy)
@@ -58,6 +62,24 @@ PLAN_BONUS = 0.35
 W_RISK = 0.8
 W_SOCIAL = 0.8
 JITTER_MAX = 0.18
+
+# V0.2-C C2 (design 3.3): the first-hand disclosure cost
+# coefficient for ANSWER candidates. The design's default was
+# 0.6 ("answering is a social obligation, cheaper than
+# volunteering's 1.6"), with the value sent through the
+# section-2.8 calibration method and the tavern secrecy chain as
+# a hard constraint. Calibration result (c2_calibration.py,
+# grid {0.6, 1.2, 1.8, 2.2, 2.6}, winner = smallest survivor):
+# the flat recipient-side info repricing (+0.55 over the old
+# speaker-side value) more than consumes the 0.6 discount, so
+# the chain only survives at 2.6 — the coefficient ends up ABOVE
+# the volunteering coefficient, an artefact of combining the
+# flat info rule with the disclosure fixture's threshold gap;
+# the calibrated NET answer pricing is still more favourable
+# than B's in the clinic case the design measured (doctor's
+# answer total 0.97-1.00 under B vs ~1.19-1.32 here). Full
+# account in docs/V0.2-C_IMPLEMENTATION_REPORT.md (C2 section).
+ANSWER_DISCLOSURE_COEF = 2.6
 BASE_SCORE = {"goal": 0.35, "plan": 0.35, "social": 0.30,
               "greeting": 0.25, "baseline": 0.20}
 BASELINE_BASE = {"observe": 0.30, "listen": 0.22, "wait": 0.08}
@@ -99,7 +121,10 @@ class RuleProvider(LLMProvider):
             object_sightings=dict(getattr(context, "object_sightings", {}) or {}),
             perceived_events=list(getattr(context, "perceived_events", []) or []),
             own_actions=list(getattr(context, "own_actions", []) or []),
-            goals={g.key: g.status for g in context.active_goals})
+            goals={**{g.key: g.status for g in context.active_goals},
+                   **({context.pursuit_goal.key: context.pursuit_goal.status}
+                      if getattr(context, "pursuit_goal", None) is not None
+                      else {})})
 
     # ---------------- small helpers ----------------
     def _conf(self, view: SubjectiveView, key: str) -> float:
@@ -249,11 +274,22 @@ class RuleProvider(LLMProvider):
                                    goal_key=goal_key, leaf=leaf)
             else:
                 # someone else should hold it: ask / observe are the
-                # only subjective levers
+                # subjective levers — plus, V0.2-C C3 (design 4.2.1),
+                # a search route when I do NOT strongly believe the
+                # holder holds it: "not sure it is in their hands —
+                # search the searchable places first". The strong-
+                # belief suppression (conf >= 0.9 on the holds:
+                # belief) is subjective, not plot knowledge.
                 for other in colocated:
                     self._cand(cands, {"type": "observe", "target": other},
                                source=source, goal_key=goal_key, leaf=leaf,
                                obj=obj)
+                if self._conf(view, f"holds:{holder}:{obj}") < 0.9 \
+                        and sc.objects.get(obj) is not None \
+                        and sc.searchable_locations():
+                    self._search_route(cands, view, context, obj,
+                                       source=source, goal_key=goal_key,
+                                       leaf=leaf)
             decl = sc.objects.get(obj)
             if decl is not None and decl.fact_belief:
                 claim = sc.claim_for_proposition(decl.fact_belief, "inquire")
@@ -411,12 +447,41 @@ class RuleProvider(LLMProvider):
         for leaf in belief_leaves:
             templates = [{"type": "ask"}, {"type": "observe"},
                          {"type": "listen"}, {"type": "confront"}]
-            # searching serves a belief step only when the belief is
-            # tied to a findable object by the scenario's data
+            # V0.2-C C4 (design 5.2, the LOCALITY CONTRACT): a
+            # belief leaf never stands alone as a step condition.
+            # At confidence 0 its satisfaction is 0 indefinitely,
+            # so the old gather step could only wait or be counted
+            # failed — the step's condition must be reachable by
+            # the step's own template actions or the responses
+            # they directly cause. The evidence step's condition
+            # is therefore the leaf PLUS: one event branch per
+            # claim class that asserts the proposition (a
+            # co-present other's speak event IS the response the
+            # templates solicit), and an object_found branch when
+            # the scenario declares an object whose fact the
+            # belief is. The goal layer still judges the belief
+            # itself — step completion is not goal completion
+            # (four-layer separation). When the data offers no
+            # asserting claim and no fact object, no response
+            # branch exists to mix in and the leaf stands alone
+            # (degenerate, data-dependent; registered in the C4
+            # report).
+            branches: list[dict] = [leaf]
+            for claim_key in self.scenario.claims_for_proposition(
+                    leaf["belief"], "assert"):
+                branches.append(
+                    {"type": "event_occurred", "event_type": "speak",
+                     "actor": "any_other", "claim": claim_key})
             if self.scenario.object_for_fact_belief(leaf["belief"]):
+                branches.append(
+                    {"type": "object_found",
+                     "object": self.scenario.object_for_fact_belief(
+                         leaf["belief"])})
                 templates.append({"type": "search"})
-            add(f"gather:{leaf['belief']}", f"gather evidence: {leaf['belief']}",
-                templates, leaf)
+            condition = branches[0] if len(branches) == 1 \
+                else {"any": branches}
+            add(f"evidence:{leaf['belief']}",
+                f"gather evidence: {leaf['belief']}", templates, condition)
         for leaf in loc_leaves:
             add(f"go:{leaf['location']}", f"be at {leaf['location']}",
                 [{"type": "move"}], leaf)
@@ -435,13 +500,27 @@ class RuleProvider(LLMProvider):
                 return None                      # already serving it
             if plan.status == "blocked":
                 return None                      # B3 recovery owns blocked
+            if plan.status == "suspended":
+                # V0.2-C C1: a suspended plan is PRESERVED state
+                # (its attempts/bookkeeping resume on reactivation);
+                # synthesis never destroys it. The selected goal is
+                # pursued through goal candidates meanwhile.
+                return None
             by_key = {g.key: g for g in context.active_goals}
             served = by_key.get(plan.goal_id or plan.goal)
             if served is not None and served.status not in (
                     "completed", "failed", "abandoned"):
-                gap = selected.priority_current - served.priority_current
-                if gap < 0.05:
-                    return None                  # not clearly outranked
+                # V0.2-C C1: when the Goal Scheduler has named this
+                # goal the pursuit, the handover is the scheduler's
+                # decision (its hysteresis already priced the
+                # switch) — the priority-gap heuristic only governs
+                # unscheduled (legacy) contexts.
+                sched_id = getattr(context, "scheduled_pursuit_goal_id",
+                                   None)
+                if not (sched_id and sched_id == selected.key):
+                    gap = selected.priority_current - served.priority_current
+                    if gap < 0.05:
+                        return None              # not clearly outranked
         steps = self.synthesize_steps(selected, view)
         if not steps:
             return None
@@ -481,22 +560,29 @@ class RuleProvider(LLMProvider):
             goal_f *= 0.25
 
         info_f = 0.0
-        if cand["prop"]:
+        if cand.get("info_override") is not None:
+            # V0.2-C C2/C3 (design 3.3/4.1): recipient-side
+            # information value, computed by the candidate's
+            # generator (answer = the asker's estimated ignorance;
+            # disclose = the duty's urgency; assert = ignorance x
+            # relevance) — this REPLACES the speaker-side estimate.
+            info_f = cand["info_override"]
+        elif cand["prop"]:
             info_f = 1.0 - self._conf(view, cand["prop"])
         elif verb == "search" or (verb == "move" and cand.get("dest_place")):
-            # searching a place I have already searched (empty OR
-            # fruitful) teaches little; a move that is one leg of a
-            # search route carries most of the search's value
+            # V0.2-C C3 (design 4.1): the unified IV for physical
+            # exploration — uncertainty about a place is
+            # 1 - searched_certainty (0.9 once I have searched it,
+            # from the derived searched-places set, design 4.3);
+            # a move that is one leg of a search route carries
+            # 0.8 of the search's value, as in B.
             place = cand.get("dest_place") or action.get("target_location") \
                 or context.location
-            searched = {a.get("target_location")
-                        for a in view.own_actions
-                        if a.get("type") == "search" and a.get("ok")}
-            info_f = 0.15 if place in searched else 1.0
+            info_f = 1.0 - searched_certainty(view, place)
             if verb == "move":
                 info_f *= 0.8
         elif verb in ("observe", "listen"):
-            info_f = 0.3
+            info_f = SENSOR_IV
 
         pers_map = {
             "search": P.get("curiosity", 0.5),
@@ -579,8 +665,15 @@ class RuleProvider(LLMProvider):
                 if held is not None and held.kind == "experienced":
                     first_hand = True
             if first_hand:
+                # V0.2-C C2 (design 3.3): the coefficient differs
+                # by communicative kind — answering an addressed
+                # question carries the lower ANSWER coefficient
+                # (social obligation), everything else keeps the
+                # volunteering coefficient 1.6.
+                coef = ANSWER_DISCLOSURE_COEF \
+                    if cand.get("comm_kind") == "answer" else 1.6
                 social_f += max(0.0, self.config.disclosure_threshold
-                                - self._trust(view, target)) * 1.6
+                                - self._trust(view, target)) * coef
         if cand["source"] == "social" and target:
             trust_asker = self._trust(view, target)
             threshold = self.config.disclosure_threshold
@@ -607,7 +700,14 @@ class RuleProvider(LLMProvider):
         # agent's own goal pitches would routinely shout down the
         # person it is talking to (measured in the first B1 runs:
         # questions were asked and simply never answered)
-        obligation_f = 0.55 if cand.get("obligation") else 0.0
+        # V0.2-C C2 (design 3.3): the bonus grows with the wait —
+        # a question left sitting for ticks is a stronger claim on
+        # the conversation than one just asked (+0.1 per tick
+        # waited, capped at +0.3).
+        obligation_f = 0.0
+        if cand.get("obligation"):
+            obligation_f = 0.55 + min(
+                0.3, 0.1 * max(0, cand.get("obligation_waited", 0)))
 
         sig = _sig(action)
         rep = counts.get(sig, 0) * (REPETITION_HEAVY
@@ -626,50 +726,45 @@ class RuleProvider(LLMProvider):
             "risk": round(risk_f, 3), "social": round(social_f, 3),
             "repetition": round(rep, 3)}}
 
+    def _pool(self, context: DecisionContext) -> list:
+        """The candidate pool (V0.2-C C1): the active goals PLUS
+        the scheduler's pursuit goal when it is currently paused."""
+        active = [g for g in context.active_goals if g.status == "active"]
+        pursuit_goal = getattr(context, "pursuit_goal", None)
+        if pursuit_goal is not None \
+                and pursuit_goal.status in ("active", "paused") \
+                and pursuit_goal.key not in {g.key for g in active}:
+            active.append(pursuit_goal)
+        return active
+
     # ---------------- candidate sources ----------------
     def _social_candidates(self, cands, context: DecisionContext,
                            view: SubjectiveView, counts: dict) -> None:
-        sc = self.scenario
-        pq = getattr(context, "pending_question", None)
-        colocated = self._colocated(context)
-        # a question creates response candidates only for the agent
-        # it was ADDRESSED to (fixture events without a target count
-        # as addressed — the Resolver always sets one in real runs)
-        if pq and pq.get("from") in colocated \
-                and pq.get("addressed_to_me", True):
-            asker = pq["from"]
-            asked_claim = sc.claims.get(pq.get("claim") or "")
-            prop = asked_claim.proposition if asked_claim else None
-            # answer from my own belief, where a claim class lets me
-            if prop:
-                ans = self._assert_claim_for(view, prop)
-                if ans:
-                    cand = {"action": {"type": "speak", "target": asker,
-                                       "topic": ans, "claim": ans,
-                                       "content": self._line(ans, counts)},
-                            "source": "social", "goal_key": None,
-                            "leaf": None, "prop": prop, "obj": None,
-                            "answers_question": True, "obligation": True}
-                    cands.append(cand)
-            deny = sc.deny_claim()
-            if deny:
-                cand = {"action": {"type": "speak", "target": asker,
-                                   "topic": deny, "claim": deny,
-                                   "content": self._line(deny, counts)},
-                        "source": "social", "goal_key": None, "leaf": None,
-                        "prop": None, "obj": None, "known_prop": prop,
-                        "obligation": True}
-                cands.append(cand)
-            self._cand(cands, {"type": "refuse", "target": asker,
-                               "topic": pq.get("topic")},
-                       source="social")
-            self._cand(cands, {"type": "observe"}, source="social")
-        elif not counts:
-            social = sc.social_claim()
-            if social:
-                for other in colocated:
-                    self._speech(cands, "speak", other, social,
-                                 source="greeting", counts=counts)
+        """V0.2-C C2: the communication family now comes from the
+        dedicated generator (v02/comm_candidates.py) — answers
+        under the obligation, proactive asserts, clarifications,
+        disclosures, denials, withholds — and competes in this
+        provider's one market. This method stays as the thin
+        adapter the generator plugs into (and that unit fixtures
+        call directly)."""
+        queue = getattr(context, "pending_questions", None)
+        if queue is None:
+            pq = getattr(context, "pending_question", None)
+            queue = ([{"asker": pq.get("from"),
+                       "claim_key": pq.get("claim"),
+                       "proposition": None,
+                       "tick_asked": pq.get("tick", context.tick),
+                       "addressed_to_me": pq.get("addressed_to_me", True)}]
+                     if pq else [])
+        result = generate_comm_candidates(
+            view=view, scenario=self.scenario, config=self.config,
+            goals=self._pool(context), pending_questions=queue,
+            colocated=self._colocated(context), counts=counts,
+            tick=context.tick,
+            line_fn=lambda claim, c: self._line(claim, c),
+            assert_claim_for=lambda prop: self._assert_claim_for(view, prop))
+        self._last_vetoed = result["vetoed"]
+        cands.extend(result["candidates"])
 
     def _plan_candidates(self, cands, context: DecisionContext,
                          view: SubjectiveView, counts: dict) -> None:
@@ -677,6 +772,11 @@ class RuleProvider(LLMProvider):
         if not plan_step:
             return
         plan = context.current_plan
+        if plan is not None and plan.status == "suspended":
+            # V0.2-C C1: a suspended plan generates no step
+            # candidates — it waits for its reactivation condition;
+            # the agent's live goals drive behaviour meanwhile.
+            return
         goal_key = plan_step.get("goal_id") or (
             plan.goal if plan and plan.goal in
             {g.key for g in context.active_goals} else None)
@@ -807,10 +907,29 @@ class RuleProvider(LLMProvider):
         counts = dict(getattr(context, "action_counts", {}) or {})
         cands: list[dict] = []
 
-        active = [g for g in context.active_goals if g.status == "active"]
+        # V0.2-C C1: the candidate pool is the active goals PLUS the
+        # scheduler's pursuit goal when it is currently paused (a
+        # paused pursuit resumes by being served, so it must be able
+        # to generate candidates). Selection: the scheduler's
+        # pursuit when the context carries one; otherwise the pre-C
+        # priority-first rule, unchanged (standalone contexts in
+        # unit tests carry no schedule and behave exactly as B).
+        active = self._pool(context)
         active.sort(key=lambda g: (-g.priority_current, g.key))
-        selected = active[0] if active else None
-        second = active[1] if len(active) > 1 else None
+        sched_id = getattr(context, "scheduled_pursuit_goal_id", None)
+        selected = None
+        if sched_id:
+            selected = next((g for g in active if g.key == sched_id), None)
+        if selected is None:
+            selected = active[0] if active else None
+        eligible_ids = getattr(context, "eligible_goal_ids", None)
+        if sched_id and eligible_ids is not None:
+            rest = [g for g in active
+                    if g.key in eligible_ids
+                    and (selected is None or g.key != selected.key)]
+            second = rest[0] if rest else None
+        else:
+            second = active[1] if len(active) > 1 else None
         maintenance = [g for g in active if g.kind == "maintenance"]
 
         # 1. goal-driven candidates from unsatisfied success leaves
@@ -864,6 +983,77 @@ class RuleProvider(LLMProvider):
                                    goal_key=selected.key if selected else None)
         # 3. social candidates
         self._social_candidates(cands, context, view, counts)
+        # 3a. V0.2-C fix round: DUTY SEEKING. A disclosure duty in
+        # force whose named recipient is absent and has not yet
+        # been truly told claims my movement the way a pending
+        # question claims my speech: a move toward the recipient's
+        # last-seen location — derived from my perception history
+        # only (conditions.last_seen_location), routed by the same
+        # BFS as every other move. Its information value is the
+        # duty's own urgency (the price the eventual disclose
+        # candidate carries), and it bears the obligation bonus,
+        # waited since I came to hold the reportable knowledge.
+        # Duties are character DATA; a cast without duties data
+        # generates nothing here. Co-location semantics are the
+        # world's and are not touched: crossing paths in one tick
+        # still does not make a meeting.
+        for item in undelivered_duties(view, self.config, self.scenario,
+                                       self._colocated(context)):
+            duty, target = item["duty"], item["target"]
+            seen = last_seen_location(view, target)
+            if not seen or seen == context.location:
+                continue
+            hop = self._next_hop(context, {seen})
+            if not hop:
+                continue
+            since = proposition_held_since(view, duty.get("proposition"))
+            waited = max(0, context.tick - since) \
+                if since is not None else 0
+            cands.append({
+                "action": {"type": "move", "target_location": hop},
+                "source": "social", "goal_key": None, "leaf": None,
+                "prop": duty.get("proposition"), "obj": None,
+                "dest_place": seen, "comm_kind": "disclose",
+                "obligation": True, "obligation_waited": waited,
+                "info_override": URGENCY_IV.get(duty.get("urgency"), 0.7)})
+        # 3b. V0.2-C C3 (design 4.2.2): BASELINE EXPLORATION.
+        # Only on a genuinely idle tick — no goal-leaf or plan
+        # candidate was generated and no addressed question is
+        # waiting — an unsearched searchable place is worth a
+        # look: IV = curiosity x 0.2 (the relevance floor), an
+        # order below any goal-driven action, so it surfaces only
+        # when nothing with a purpose is on the table. It is
+        # deliberately NOT aimed at any object: aiming it would
+        # be plot knowledge, not exploration.
+        if not any(c["source"] in ("goal", "plan") for c in cands):
+            queue = getattr(context, "pending_questions", None) or []
+            colocated_now = self._colocated(context)
+            obligation_active = any(
+                e.get("addressed_to_me", True)
+                and e.get("asker") in colocated_now for e in queue)
+            if not obligation_active:
+                curiosity = self.config.personality.get("curiosity", 0.5)
+                for place in self.scenario.searchable_locations():
+                    if place in view.searched_places:
+                        continue
+                    if place == context.location:
+                        cands.append({
+                            "action": {"type": "search",
+                                       "target_location": place},
+                            "source": "baseline", "goal_key": None,
+                            "leaf": None, "prop": None, "obj": None,
+                            "dest_place": place,
+                            "info_override": curiosity * 0.2})
+                    else:
+                        hop = self._next_hop(context, {place})
+                        if hop:
+                            cands.append({
+                                "action": {"type": "move",
+                                           "target_location": hop},
+                                "source": "baseline", "goal_key": None,
+                                "leaf": None, "prop": None, "obj": None,
+                                "dest_place": place,
+                                "info_override": 0.8 * curiosity * 0.2})
         # 4. baseline candidates
         for verb in ("observe", "listen", "wait"):
             self._cand(cands, {"type": verb}, source="baseline")
@@ -884,6 +1074,21 @@ class RuleProvider(LLMProvider):
             if sig not in by_sig:
                 by_sig[sig] = c
         uniq = [by_sig[s] for s in sorted(by_sig)]
+        # V0.2-C C2 (design 3.6): candidates from the other sources
+        # get their census kind by their utterance's stance
+        # (generator candidates arrive pre-tagged).
+        for c in uniq:
+            if "comm_kind" not in c:
+                c["comm_kind"] = None
+                claim = c["action"].get("claim")
+                cdef = self.scenario.claims.get(claim) if claim else None
+                if c["action"]["type"] == "ask":
+                    c["comm_kind"] = "ask"
+                elif c["action"]["type"] in ("speak", "confront") \
+                        and cdef is not None and cdef.stance == "assert":
+                    c["comm_kind"] = "assert"
+                elif c["action"]["type"] == "refuse":
+                    c["comm_kind"] = "withhold"
 
         plan_step = getattr(context, "plan_step", None)
         scored = []
@@ -962,7 +1167,29 @@ class RuleProvider(LLMProvider):
                  "source": c["source"], "goal_key": c["goal_key"]}
                 for c in scored[:5]],
         }
+        # V0.2-C C2 (design 3.6): the candidate CENSUS over ALL
+        # scored candidates — computed here, after scoring and
+        # before the top-5 truncation above, so downstream metrics
+        # see generation and selection, not just the shortlist.
+        from collections import Counter
+        census = {
+            "n_generated": len(scored),
+            "by_source": dict(sorted(Counter(
+                c["source"] for c in scored).items())),
+            "by_comm_kind": dict(sorted(Counter(
+                c["comm_kind"] for c in scored
+                if c.get("comm_kind")).items())),
+            "assert_generated": sum(
+                1 for c in scored if c.get("comm_kind") == "assert"),
+            "answer_generated": sum(
+                1 for c in scored if c.get("comm_kind") == "answer"),
+            "search_generated": sum(
+                1 for c in scored if c["action"]["type"] == "search"),
+            "chosen_comm_kind": best.get("comm_kind"),
+            "vetoed": list(getattr(self, "_last_vetoed", []) or []),
+        }
         return ProviderResult(decision=decision, provider=self.name,
                               model=self.model,
                               raw_output=decision.model_dump_json(),
-                              candidate_scores=candidate_scores)
+                              candidate_scores=candidate_scores,
+                              census=census)

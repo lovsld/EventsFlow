@@ -12,6 +12,16 @@ Key handling mirrors the Gemini raw pool (LOCAL_DEPLOY.md):
   without a pool, the vendor's conventional single-key env var
   (DEEPSEEK_API_KEY / MOONSHOT_API_KEY / DASHSCOPE_API_KEY /
   OPENAI_API_KEY) is used.
+- Vault surrogate (V0.2-C close-out, design section 8 option a2): a
+  preset may name a Muse connector credential (deepseek ->
+  custom.deepseek). With no raw key configured, the provider
+  registers that credential name as its sole credential label and,
+  per request, attaches the authd surrogate (hsurr:*) via
+  dynamic_credentials — the egress layer swaps in the real key for
+  the preset's API host only. The surrogate is fetched fresh per
+  request and, exactly like a raw key, never leaves the request
+  header: it is never logged, persisted, or printed. Raw keys keep
+  priority over the vault source, as with Gemini.
 - Keys are referred to everywhere — rotation bookkeeping, logs, error
   text, the audit DB — strictly by ordinal label ("key#1", "key#2",
   ...). Raw key text lives only in the provider instance's private map
@@ -48,8 +58,10 @@ import asyncio
 import json
 import os
 import re
+import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 
@@ -96,6 +108,12 @@ _JSON_CONTRACT = (
     "blocked 必须用 plan_update.recovery{strategy,reason,reactivate_when}，"
     "strategy 只能是 retry/replan/suspend/abandon/skip 之一（replan 时须在 "
     "new_steps 给出替代步骤，suspend 时须给出 reactivate_when 条件）。"
+    "\n【C4 计划粒度】new_steps 中每一步的 success_condition 必须能被该步"
+    "自身行动的结果、或这些行动直接引发的回应事件所改变（局部性契约）："
+    "不要把单个 belief_threshold 叶单独作为步条件，应将它与「他人就该"
+    "命题发言的 event_occurred」或「找到相关物品的 object_found」组合为 "
+    "any。与刚失败过的计划实质相同、且你的处境没有任何新事实时，不要"
+    "原样重提该计划——它会被重规划门槛改派为 suspend 并记录在案。"
     "\n上下文中的 trust 与 relationships 是你对其他角色的信任与关系记录"
     "（0-1，trust 越高越信任），那只是你自己的主观认知，不是客观事实。"
     "\n枚举值必须严格照抄：action.type 只能是 speak/ask/confront/move/search/show/"
@@ -110,12 +128,17 @@ class BackendPreset:
     default_model: str   # cheap tier; overridable via ACP_MODEL(_<CHAR>)
     keys_env: str        # ACP_<BACKEND>_KEYS — comma-separated raw pool
     single_key_env: str  # the vendor's conventional single-key env var
+    # Muse connector credential whose authd surrogate can serve as
+    # the credential source when no raw key is configured (design
+    # section 8, option a2). None = no vault source for this backend.
+    credential_name: str | None = None
 
 
 PRESETS: dict[str, BackendPreset] = {
     "deepseek": BackendPreset(
         "deepseek", "https://api.deepseek.com/v1", "deepseek-chat",
-        "ACP_DEEPSEEK_KEYS", "DEEPSEEK_API_KEY"),
+        "ACP_DEEPSEEK_KEYS", "DEEPSEEK_API_KEY",
+        credential_name="custom.deepseek"),
     "kimi": BackendPreset(
         "kimi", "https://api.moonshot.cn/v1", "moonshot-v1-8k",
         "ACP_KIMI_KEYS", "MOONSHOT_API_KEY"),
@@ -170,9 +193,46 @@ def _parse_pool(preset: BackendPreset) -> list[str]:
     return [single] if single else []
 
 
+_SKILL_BIN = "/opt/muse/skills/custom-connector-setup/bin"
+
+
+def _vault_available(credential_name: str) -> bool:
+    """True if the connector credential's surrogate is reachable via
+    authd right now. Local socket call only; any failure (connector
+    not connected, authd absent) reads as unavailable. The surrogate
+    value itself is discarded here — only reachability is reported."""
+    try:
+        sys.path.insert(0, _SKILL_BIN)
+        from dynamic_credentials import dynamic_credential_entry
+        dynamic_credential_entry(credential_name)
+        return True
+    except Exception:
+        return False
+
+
+def _apply_vault_surrogate(req: urllib.request.Request,
+                           credential_name: str, base_url: str) -> None:
+    """Attach the credential's authd surrogate to this one request,
+    pinned to the base URL's host (the Gemini provider's discipline):
+    the egress layer swaps in the real key for that host only. The
+    surrogate is fetched fresh per request, so a rotated or expired
+    surrogate never lingers in the provider instance."""
+    sys.path.insert(0, _SKILL_BIN)
+    from dynamic_credentials import add_surrogate_to_request
+    host = urllib.parse.urlparse(base_url).hostname
+    add_surrogate_to_request(req, credential_name,
+                             allowed_hosts=[host] if host else [])
+
+
 def keys_available(backend: str) -> bool:
-    """True if the named backend has at least one key configured."""
-    return bool(_parse_pool(PRESETS[backend]))
+    """True if the named backend has at least one credential source:
+    a raw key (pool or single env var), or — for presets naming one —
+    a reachable connector credential in the vault."""
+    preset = PRESETS[backend]
+    if _parse_pool(preset):
+        return True
+    return bool(preset.credential_name
+                and _vault_available(preset.credential_name))
 
 
 def credential_available() -> bool:
@@ -228,6 +288,16 @@ class OpenAICompatibleProvider(LLMProvider):
         keys = _parse_pool(preset)
         self.credentials = [f"key#{i + 1}" for i in range(len(keys))]
         self._raw_keys = dict(zip(self.credentials, keys))
+        # Vault surrogate source (design section 8, option a2): only
+        # when no raw key is configured and the preset's connector
+        # credential is actually reachable. The credential NAME is the
+        # label (bookkeeping/logs never see the surrogate, which is
+        # fetched per request in _post_chat).
+        self._vault_label: str | None = None
+        if not keys and preset.credential_name \
+                and _vault_available(preset.credential_name):
+            self._vault_label = preset.credential_name
+            self.credentials = [preset.credential_name]
 
     # ---------- transport (sync; run in a thread by the async wrapper) ----------
     def _post_chat(self, payload: dict, credential: str | None = None) -> dict:
@@ -242,6 +312,10 @@ class OpenAICompatibleProvider(LLMProvider):
             # The key text goes only into this request's header.
             req.add_header("Authorization",
                            f"Bearer {self._raw_keys[label]}")
+        elif label is not None and label == self._vault_label:
+            # Vault source: the surrogate goes only into this
+            # request's header, fetched fresh and host-pinned.
+            _apply_vault_surrogate(req, label, self.base_url)
         opener = urllib.request.build_opener(_NoRedirect())
         try:
             with opener.open(req, timeout=self.timeout) as resp:
@@ -297,10 +371,13 @@ class OpenAICompatibleProvider(LLMProvider):
     async def generate_decision(self, context: DecisionContext) -> ProviderResult:
         preset = self.PRESET
         if not self.credentials:
+            hint = (f" or connect the {preset.credential_name} "
+                    f"connector credential"
+                    if preset.credential_name else "")
             raise ProviderError(
                 f"No {self.backend} API key available: set "
                 f"{preset.keys_env} (comma-separated key pool) or "
-                f"{preset.single_key_env}; llm mode cannot run.")
+                f"{preset.single_key_env}{hint}; llm mode cannot run.")
         user_text = context.model_dump_json()
         last_error: Exception | None = None
         started = time.monotonic()

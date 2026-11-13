@@ -14,7 +14,8 @@ change + tests, never scenario data inventing types):
   belief_threshold   {belief, min_confidence, min_source_tier?}
   agent_at_location  {agent, location}       0/1
   event_occurred     {event_type?, actor?, target?, claim?, topic?,
-                      object?, location?, within_ticks?, count?}
+                      object?, location?, within_ticks?, count?,
+                      stance?}
   trust_threshold    {other, min_trust}      ("any" = best relationship)
   goal_status        {goal, status}          0/1
 
@@ -71,6 +72,30 @@ class SubjectiveView:
     perceived_events: list = field(default_factory=list)  # structured dicts
     own_actions: list = field(default_factory=list)       # structured dicts
     goals: dict = field(default_factory=dict)        # key -> status
+
+    @property
+    def searched_places(self) -> dict:
+        """V0.2-C C3 (design 4.3): the places I have already
+        searched, DERIVED from existing subjective state — no new
+        bookkeeping (a stored copy could disagree with the books
+        it summarises). Sources: my own search actions (with
+        their ticks), my searched-empty record, and the locations
+        where I have sighted objects (a sighting means the place
+        was inspected closely enough to see what is there).
+        Values: the latest search tick, or -1 when the source
+        carries no tick (the empty/sighting records)."""
+        places: dict[str, int] = {}
+        for a in self.own_actions:
+            if a.get("type") == "search" and a.get("target_location"):
+                t = int(a.get("tick", -1))
+                if t > places.get(a["target_location"], -2):
+                    places[a["target_location"]] = t
+        for p in self.searched_empty_places:
+            places.setdefault(p, -1)
+        for loc in self.object_sightings.values():
+            if loc:
+                places.setdefault(loc, -1)
+        return places
 
     def belief_conf(self, key: str) -> float:
         b = self.beliefs.get(key)
@@ -142,6 +167,18 @@ def _event_matches(ev: dict, spec: dict, view: SubjectiveView) -> bool:
     for f in ("claim", "topic", "object", "location"):
         if spec.get(f) is not None and ev.get(f) != spec.get(f):
             return False
+    # V0.2-C fix round: the speech-act dimension. A leaf may demand
+    # a specific stance (assert / inquire / deny, as declared on
+    # the claim class in scenario data and stamped onto the record
+    # when it was perceived / performed). A record carrying no
+    # stance cannot satisfy a stance-demanding leaf: an informing
+    # condition must not be met by an utterance whose act type is
+    # unknown — and in particular not by a question.
+    stance = spec.get("stance")
+    if stance is not None:
+        wanted = {stance} if isinstance(stance, str) else set(stance)
+        if ev.get("stance") not in wanted:
+            return False
     within = spec.get("within_ticks")
     if within is not None and view.tick - int(ev.get("tick", 0)) >= within:
         return False
@@ -201,8 +238,19 @@ def _eval_leaf(cond: dict, view: SubjectiveView) -> tuple[float, dict]:
         return (1.0 if seen == loc else 0.0), \
             {"agent": who, "location": loc, "last_seen_at": seen}
     if t == "event_occurred":
+        # V0.2-C fix round (transmission truthfulness): own_actions
+        # is an ACTION log, and an action the world rejected
+        # (ok=False — classically a speak whose addressee had
+        # already left; the world logged it as speak_failed)
+        # produced NO event and must not satisfy "this occurred".
+        # Perceived events need no such gate: they are world
+        # events that did occur, failures included under their own
+        # type names. Records without an ok field (legacy
+        # checkpoints, hand-built fixtures) keep the historical
+        # reading.
         history = list(view.perceived_events) + [
-            {**a, "actor": view.agent_id} for a in view.own_actions]
+            {**a, "actor": view.agent_id} for a in view.own_actions
+            if a.get("ok") is not False]
         hits = [ev for ev in history if _event_matches(ev, cond, view)]
         need = int(cond.get("count", 1))
         return (1.0 if len(hits) >= need else 0.0), \
@@ -363,3 +411,13 @@ def validate_subjective(condition: dict | None, where: str = "condition") -> Non
     if condition.get("type") not in known:
         raise ValueError(f"{where}: unknown predicate type "
                          f"{condition.get('type')!r} (closed vocabulary)")
+    if condition.get("type") == "event_occurred" \
+            and "stance" in condition:
+        stance = condition["stance"]
+        ok = (isinstance(stance, str) and bool(stance)) or (
+            isinstance(stance, list) and len(stance) > 0
+            and all(isinstance(s, str) and bool(s) for s in stance))
+        if not ok:
+            raise ValueError(
+                f"{where}: event_occurred stance must be a non-empty "
+                f"string or list of strings, got {stance!r}")

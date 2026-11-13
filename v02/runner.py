@@ -30,9 +30,19 @@ from .world import WorldEngine
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RUNS_DIR = PROJECT_ROOT / "runs_v02"
 
-# V0.2-B: state-semantics version of the engine. Recorded in every
-# run's run_meta.json; --resume refuses a mismatch (design risk 3).
-ENGINE_VERSION = "v0.2-b"
+
+def _scheduler_snapshot() -> dict:
+    from dataclasses import asdict
+
+    from . import goal_scheduler
+    return asdict(goal_scheduler.CONFIG)
+
+# State-semantics version of the engine. Recorded in every run's
+# run_meta.json; --resume refuses a mismatch (design risk 3).
+# v0.2-c: Goal gained scheduling/runtime fields, CharacterState
+# gained scheduler_memory (V0.2-C C1) — old checkpoints are refused
+# rather than silently reinterpreted, exactly as at the B bump.
+ENGINE_VERSION = "v0.2-c"
 
 # Phase A name, kept importable; the canonical copy lives in scheduler.py
 _intent_from_decision = intent_from_decision
@@ -242,6 +252,11 @@ async def run_simulation(mode: str = "rule", ticks: int = 20, seed: int = 42,
                         # same world semantics (and refuses a version
                         # mismatch instead of corrupting state).
                         "engine_version": ENGINE_VERSION,
+                        # V0.2-C C1 (design 2.4): the scheduler
+                        # coefficients this run executes under,
+                        # snapshotted so any trajectory can be
+                        # re-derived against its exact constants.
+                        "scheduler_config": _scheduler_snapshot(),
                         "scenario_id": scenario.scenario_id,
                         "scenario": scenario.model_dump(mode="json")},
                        ensure_ascii=False, indent=2), encoding="utf-8")
