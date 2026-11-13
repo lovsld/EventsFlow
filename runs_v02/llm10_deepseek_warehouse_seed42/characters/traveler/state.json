@@ -1,0 +1,1424 @@
+{
+  "character_id": "traveler",
+  "location": "tables",
+  "personality": {
+    "caution": 0.6,
+    "curiosity": 0.7,
+    "honesty": 0.5,
+    "impulsiveness": 0.4,
+    "sociability": 0.8
+  },
+  "principles": [
+    "货期不能误",
+    "和气生财",
+    "先礼后兵"
+  ],
+  "goals": [
+    {
+      "key": "retrieve_goods",
+      "desc": "按时开库提走寄存的绸缎",
+      "weight": 1.0,
+      "kind": "achievement",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": {
+        "type": "belief_threshold",
+        "belief": "goods_ready",
+        "min_confidence": 0.5
+      },
+      "failure_condition": null,
+      "priority_current": 1.0,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 1.0,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": 19,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "protect_goods",
+      "desc": "保住货物不受损失",
+      "weight": 0.85,
+      "kind": "maintenance",
+      "status": "active",
+      "activation_condition": null,
+      "success_condition": null,
+      "failure_condition": {
+        "type": "event_occurred",
+        "event_type": "search",
+        "actor": "any_other"
+      },
+      "priority_current": 0.85,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.85,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    },
+    {
+      "key": "learn_key_whereabouts",
+      "desc": "打听仓库钥匙的下落",
+      "weight": 0.7,
+      "kind": "achievement",
+      "status": "inactive",
+      "activation_condition": {
+        "type": "belief_threshold",
+        "belief": "key_missing_this_morning",
+        "min_confidence": 0.4
+      },
+      "success_condition": {
+        "any": [
+          {
+            "type": "object_possession",
+            "object": "warehouse_key",
+            "holder": "keeper"
+          },
+          {
+            "type": "belief_threshold",
+            "belief": "key_missing_this_morning",
+            "min_confidence": 0.9
+          }
+        ]
+      },
+      "failure_condition": null,
+      "priority_current": 0.7,
+      "priority_rules": [],
+      "progress": 0.0,
+      "commitment": 0.7,
+      "created_at": 0,
+      "deadline": null,
+      "depends_on": [],
+      "scheduling": null,
+      "pausable": true,
+      "priority_floor": 0.0,
+      "max_pause_ticks": null,
+      "starvation_protection": true,
+      "paused_since": null,
+      "cumulative_paused_ticks": 0,
+      "last_pursued_tick": null,
+      "pause_count": 0,
+      "protection_until": null
+    }
+  ],
+  "beliefs": [
+    {
+      "key": "goods_stored_here",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "desc": "有一批绸缎寄存在这间仓库，凭单提货，赶明天的船（私人经历）",
+      "evidence": [
+        {
+          "source_event_id": "seed:goods_stored_here",
+          "source_type": "direct_observation",
+          "reliability": 1.0,
+          "observed_at": 0,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "emotions": {
+    "arousal": 0.3,
+    "suspicion": 0.3
+  },
+  "current_plan": null,
+  "short_term_memory": [
+    {
+      "tick": 2,
+      "kind": "experienced",
+      "text": "apprentice 说：师傅，今晚盘点的事，要不要我这就去后屋清点一遍？您吩咐一声我就动手。",
+      "event_id": "E0006"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "apprentice 说：师傅，您要是这会儿得空，我这就去后屋把货一件件清点一遍，清完回来给您报数？",
+      "event_id": "E0011"
+    },
+    {
+      "tick": 3,
+      "kind": "experienced",
+      "text": "keeper 说：小六，今晚先别忙着盘点。账目还没对完，后屋我自己进去清一遍就行。你在前堂招呼客人，别让生人往后头去。",
+      "event_id": "E0013"
+    },
+    {
+      "tick": 4,
+      "kind": "experienced",
+      "text": "apprentice 说：哎，师傅，我听着了。后屋我不去，就在前堂守着，客人这边有什么吩咐我来应着，不让生人往后头去。",
+      "event_id": "E0015"
+    },
+    {
+      "tick": 5,
+      "kind": "experienced",
+      "text": "apprentice 说：客官您别急，师傅刚吩咐我在前堂守着，一步也不离。开库、过单子的事我做不了主，得等师傅从后屋出来。您这话我记下了，等师傅一出来我立马替您递过去，您先坐这儿喝口茶。",
+      "event_id": "E0020"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "apprentice 说：客官放心，您的话我记牢了。我这会儿还是得守着前堂，师傅吩咐了，一步也不离。等师傅从后屋出来，我头一句就替您把话递上：那批绸缎凭单提货、明早的船赶不得，问今晚能不能先把单子过一眼。开不开库、怎么个章程，还得听师傅的，我不敢替他说死。",
+      "event_id": "E0024"
+    },
+    {
+      "tick": 6,
+      "kind": "experienced",
+      "text": "keeper 来到了/去到了 tables。",
+      "event_id": "E0026"
+    },
+    {
+      "tick": 7,
+      "kind": "experienced",
+      "text": "keeper 说：小六，后屋的盘点今晚先不必去了，钥匙在我这儿收着，库门今晚不开。你就照旧守好前堂，一步也别离。客官既然在，我也把话说在明处：提货单今晚可以拿给我过一眼，我核对一下数目名目；开库提货则要等明早天亮，凭单当面点清出库，船期赶不赶得上，我这边只能在章程里给您留出最早的时辰。",
+      "event_id": "E0032"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "apprentice 说：师傅，您说的我都记下了。后屋我不去，钥匙在您手里，我就照旧守在前堂，一步也不离。客官这边我也照着您的章程回话，不多说什么。还有一件我拿不准的事，想私下跟您提一句：昨夜里我好像听见后屋有翻东西的响动，当时没敢声张，也分不清是风是雨还是我听岔了。要不要我多留一只耳朵听?",
+      "event_id": "E0034"
+    },
+    {
+      "tick": 8,
+      "kind": "experienced",
+      "text": "keeper 说：客官，您的话我听见了。单子您这就递过来，我坐在这灯下替您过一眼，数目名目对不对、手续上还短什么，我一条条说给您听，您一早好补齐。可开库提货是另一桩事：库门今晚不开，天一亮凭单当面点清出库，我给您留最早的时辰，尽量不误您的头班船。钥匙我随身收着，这是章程，也是替诸位货主看紧东西，还请体谅。",
+      "event_id": "E0036"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "apprentice 说：客官，您的话我都听见了。单子您就交给我师傅，他正坐在灯下替您核。开库的事师傅方才也说定了：今晚库门不开，天亮凭单当面点清出库，给您留最早的时辰。取货还要什么凭证、画押，师傅核完单子自会一并吩咐。我就在前堂守着，您有什么话我替您传到。",
+      "event_id": "E0037"
+    },
+    {
+      "tick": 9,
+      "kind": "experienced",
+      "text": "keeper 说：客官，单子您递过来，我就在这灯下核。明早开库给您最早的时辰——天亮卯时初刻，我先点灯验单，再开库当面点数出库，误不了您的头班船。手续上除了这纸提货单，还得您本人到场画押，单上数目名目与我库里底册对上，一件不差方可出库；若单上有短缺或字迹含糊，我当场说给您，您连夜补齐便是。库门今晚不开，钥匙我随身收着，这是章程，不是我为难您。",
+      "event_id": "E0039"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "apprentice 说：师傅，方才客官提起昨夜后屋的响动，那句是我先前跟客官提的，本不该多嘴。我照实说：昨夜里我隔着一层门板，只听见后屋像有翻动东西的声响，听不真切，也怕是猫，或是风穿窗缝，我没敢声张，更没敢自己往后头去看。开库的事您方才都对客官吩咐明白了，客官要问的，我也都传到。您吩咐一句：我就在前堂守着，多留神后头的动静，有响动立时来报您，绝不擅离，绝不擅自碰后屋的东西。",
+      "event_id": "E0040"
+    },
+    {
+      "tick": 10,
+      "kind": "experienced",
+      "text": "keeper 说：客官，您这话问得在理。方才您提后屋响动，我没敢随口应——这会儿当着您和小六的面说清楚：今儿午后我亲自进库房查验过一遍，门锁、货堆、底册都对过，您的绸缎原封未动，一件不短。昨夜风雨大，后屋那扇窗的窗闩本就松，风吹窗扇的响动是有的，我回头把它钉牢。钥匙在我身上，库门今晚不开，明早卯时初刻点灯验单、开库当面点数出库，误不了您的头班船。若真有闪失，我头一个知会您，这话我记下了。",
+      "event_id": "E0042"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "apprentice 说：师傅，您方才的话我一句不落都记下了：库门今晚不开，钥匙您随身收着，我就在前堂守着，一步不离；后头若真有响动，我立时来报您，绝不擅自往后屋去，也绝不碰库里的东西。您说那窗闩松了要钉牢——若要递个钉子、扶个凳子，您只管吩咐，我搭把手，绝不自己进库房乱动。客官方才托我问的话，您都当面答明白了，我这儿没有旁的添乱。",
+      "event_id": "E0044"
+    },
+    {
+      "tick": 11,
+      "kind": "experienced",
+      "text": "keeper 说：小六，你听着：今晚你就守前堂，后头莫去。听见什么响动，别自己过去查看，先来报我。钥匙在我身上，今晚库门不开。客官方才说要明早开库点数时在旁边看着，这话我应了——你替我回他一句：卯时初刻点灯开库，他可在旁看着当面点清，章程照旧。后屋那扇窗的窗闩松了，我稍后亲自去钉牢，你在前堂听着动静便是，不叫你担惊。",
+      "event_id": "E0046"
+    },
+    {
+      "tick": 12,
+      "kind": "experienced",
+      "text": "apprentice 说：客官，师傅的话我照原样回您：明早卯时初刻点灯开库，您可在旁看着当面点清，章程照旧。后屋那扇窗的窗闩松了，师傅说他稍后亲自去钉牢。我就在这前堂守着，一步不离，夜里有什么响动，我先报师傅，不自己往后屋去。",
+      "event_id": "E0047"
+    },
+    {
+      "tick": 13,
+      "kind": "experienced",
+      "text": "apprentice 说：客官，您方才的话我一字不落地记着，等师傅回来我就原样学给他听，绝不敢漏。师傅先前也当着您的面说过：后屋那响动是窗闩松了风吹的，他稍后亲自去钉牢，钥匙在他身上，今晚库门不开。我就在这前堂守着，火不灭、眼不眨，您坐着候到天亮便是；后头我不去，听见什么响动，头一个先报师傅，再不添乱。",
+      "event_id": "E0052"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "apprentice 说：客官放心，您这两句话我记牢了。后头我不去，一步也不离这前堂；夜里后头真有什么响动，我头一个先报师傅，也顺口知会您一声，不叫您悬着心。窗闩钉没钉牢，等师傅回来我原样问一句，他的答话我一字不落地学给您——这话我不敢替他先应。您就在这儿坐着，火我添着，茶凉了我再续。",
+      "event_id": "E0056"
+    },
+    {
+      "tick": 14,
+      "kind": "experienced",
+      "text": "环境：一只野猫碰倒了条凳边的茶碗，碎在地上。",
+      "event_id": "E0059"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "apprentice 说：客官，实话说——师傅这一阵还没回前堂，我也没见着他回来。他走时吩咐我守在前堂、后头一步不去，我就照吩咐在这儿守着，火添着，茶凉了我再续。他几时回来我不敢替他说，他一露面，我立马把您问的窗闩那句话原样说给他，再顺口知会您一声。方才一只野猫把条凳边的茶碗碰碎了，我这就扫干净，不叫碎瓷硌着人。",
+      "event_id": "E0060"
+    },
+    {
+      "tick": 15,
+      "kind": "experienced",
+      "text": "keeper 来到了/去到了 tables。",
+      "event_id": "E0062"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "apprentice 说：师傅，您回来了。我一步没敢往后头去，就在前堂守着，火添着、茶续着。方才一只野猫把条凳边的茶碗碰碎了，我扫干净就完。这位客官前后问了两回，问您去后头钉窗闩怎么半晌没回音，还说要陪我到后门口唤您一声——我没敢擅自应，只说等您露面就把话原样说给您。您看是先歇口气，还是我先去后头把窗闩的事看一眼？",
+      "event_id": "E0066"
+    },
+    {
+      "tick": 16,
+      "kind": "experienced",
+      "text": "keeper 说：客官，我在，劳您和小六挂心了。后屋那扇窗闩我已钉牢，后头也粗粗看过一遍，没见旁的岔子。今夜库门不开，钥匙我随身收着，谁也不必动它；明早卯时初刻照旧开库点数，您带齐单子和底册来，咱们当面画押对账，绸缎多少、潮没潮，也当面点清。碗碎了不打紧，小六扫干净就成，不必赔。",
+      "event_id": "E0068"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "apprentice 说：师傅，您回来就好，窗闩钉牢了，客官和我都安心。地上的碎碗我这就扫干净，茶再给您续上。今夜我不往后头去，就在这前堂守着，火看着，有响动先来报您。只有一句我心里搁着放不下：昨夜后屋那点翻动声，我听着不真切，不敢乱说，可若是师傅明早卯时开库点数前想再点一遍灯、核一核锁，您唤我一声，我早些起来帮您掌灯搬货，手脚我都有。",
+      "event_id": "E0069"
+    },
+    {
+      "tick": 17,
+      "kind": "experienced",
+      "text": "keeper 说：小六，你做得对，没擅自往后头去，心里有分寸。窗闩我已经钉牢了，后屋粗粗看过一遍，没见旁的岔子，你不必再跑那趟。你就在前堂守着，火续着、门看紧些，碎瓷扫净了别硌着人。夜里若再有什么响动，先来报我，别自己往后头去。明早卯时初刻开库，你也早点歇一歇，养足精神。",
+      "event_id": "E0071"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "apprentice 说：客官，您早先问的那句我一直搁在心里，这就回您：师傅早些时候已经回来了，窗闩是他亲手钉牢的，后头也粗粗看过一遍，没见旁的岔子——这是师傅亲口对我说的，我不敢替他多添一个字。钥匙在师傅身上收着，明早卯时初刻照旧开库点数，您带齐单子候着便是。我这会儿就把地上碎瓷扫净、把火续上，就在这前堂守着，夜里有响动先报师傅，绝不自己往后头去。",
+      "event_id": "E0072"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "keeper 说：客官放心，钥匙就贴身在我身上，我管了十二年库，这个从不敢离身。今晚我不再往后头去了，就在这前堂坐着守到天亮，火有小儿看着，门我也时时看紧。明早卯时初刻，我亲自点灯、亲自开库，当面与您验单点数出库，误不了您那班头船。您只管安心坐着候天亮。",
+      "event_id": "E0074"
+    },
+    {
+      "tick": 18,
+      "kind": "experienced",
+      "text": "环境：一只野猫碰倒了条凳边的茶碗，碎在地上。",
+      "event_id": "E0075"
+    },
+    {
+      "tick": 19,
+      "kind": "experienced",
+      "text": "keeper 说：客官问得实在，我给您交个实底：今晚我不出这驿站，就在前堂坐着守到天亮，钥匙贴身收着，半步不离身。明早卯时初刻我亲自点灯、亲自开库，当面与您验单点数出库，误不了您的头班船。小六愿意早些起来掌灯搭手，我应了——只让他掌灯、搬货、看火，开锁点数仍旧我亲手来，章程不乱，两下都安心。",
+      "event_id": "E0078"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "apprentice 说：师傅，您跟客官的话我都听明白了。明早卯时初刻我准起来，掌灯、搬货、看火，这三样我尽力做；开锁、点数一概不碰，全凭您亲手来，章程我记着。今晚我就在前堂守着，火续着、门看紧，后头若有响动，我先报您，绝不自己往后头去。",
+      "event_id": "E0079"
+    },
+    {
+      "tick": 20,
+      "kind": "experienced",
+      "text": "keeper 说：客官，小六这事我应了：明早卯时初刻之前他先起来掌灯、搬货、看火，开锁点数还是我亲手来，章程不乱。钥匙我贴身收着，今晚我不出这驿站，就在前堂坐着守到天亮。您把单子和底册备齐候着，天一蒙蒙亮咱们当面验、当面点，误不了您的头班船。",
+      "event_id": "E0081"
+    }
+  ],
+  "long_term_memory": [],
+  "memory_summary": "",
+  "relationships": {
+    "apprentice": {
+      "trust": 0.3,
+      "notes": []
+    },
+    "keeper": {
+      "trust": 0.3,
+      "notes": []
+    }
+  },
+  "perceived_event_ids": [
+    "E0006",
+    "E0011",
+    "E0013",
+    "E0015",
+    "E0020",
+    "E0024",
+    "E0026",
+    "E0032",
+    "E0034",
+    "E0036",
+    "E0037",
+    "E0039",
+    "E0040",
+    "E0042",
+    "E0044",
+    "E0046",
+    "E0047",
+    "E0052",
+    "E0056",
+    "E0059",
+    "E0060",
+    "E0062",
+    "E0066",
+    "E0068",
+    "E0069",
+    "E0071",
+    "E0072",
+    "E0074",
+    "E0075",
+    "E0078",
+    "E0079",
+    "E0081"
+  ],
+  "utterances_heard": [
+    {
+      "tick": 2,
+      "from": "apprentice",
+      "topic": "今晚盘点",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 3,
+      "from": "apprentice",
+      "topic": "今晚盘点",
+      "claim": null,
+      "kind": "ask"
+    },
+    {
+      "tick": 3,
+      "from": "keeper",
+      "topic": "今晚盘点",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 4,
+      "from": "apprentice",
+      "topic": "守前堂",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 5,
+      "from": "apprentice",
+      "topic": "开库提货安排",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 6,
+      "from": "apprentice",
+      "topic": "开库提货安排",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 7,
+      "from": "keeper",
+      "topic": "开库提货安排",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "apprentice",
+      "topic": "守前堂与昨夜动静",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 8,
+      "from": "keeper",
+      "topic": "开库提货安排",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 9,
+      "from": "apprentice",
+      "topic": "开库提货安排",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 9,
+      "from": "keeper",
+      "topic": "开库提货安排",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 10,
+      "from": "apprentice",
+      "topic": "昨夜后屋响动与守前堂",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 10,
+      "from": "keeper",
+      "topic": "开库提货安排",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 11,
+      "from": "apprentice",
+      "topic": "守前堂与听师傅吩咐",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 11,
+      "from": "keeper",
+      "topic": "守前堂与明早开库安排",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 12,
+      "from": "apprentice",
+      "topic": "守前堂与明早开库安排",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 13,
+      "from": "apprentice",
+      "topic": "守前堂与转达师傅的话",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 14,
+      "from": "apprentice",
+      "topic": "守前堂与转达师傅的话",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 15,
+      "from": "apprentice",
+      "topic": "师傅去向与窗闩",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 16,
+      "from": "apprentice",
+      "topic": "师傅回来与客商所问窗闩",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 16,
+      "from": "keeper",
+      "topic": "窗闩与明早开库安排",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 17,
+      "from": "apprentice",
+      "topic": "守前堂与明早开库准备",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 17,
+      "from": "keeper",
+      "topic": "守前堂与明早开库",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 18,
+      "from": "apprentice",
+      "topic": "师傅已回、窗闩已钉、守前堂",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 18,
+      "from": "keeper",
+      "topic": "明早开库与钥匙稳妥",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 19,
+      "from": "keeper",
+      "topic": "明早开库与钥匙稳妥",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 20,
+      "from": "apprentice",
+      "topic": "领师傅吩咐、明早搭手与今夜守前堂",
+      "claim": null,
+      "kind": "speak"
+    },
+    {
+      "tick": 20,
+      "from": "keeper",
+      "topic": "明早开库与小六搭手",
+      "claim": null,
+      "kind": "speak"
+    }
+  ],
+  "pending_question": {
+    "from": "apprentice",
+    "topic": "今晚盘点",
+    "claim": null,
+    "tick": 3,
+    "addressed_to_me": false
+  },
+  "pending_questions": [],
+  "action_counts": {
+    "move:keeper:": 2,
+    "speak:keeper:开库提货安排": 7,
+    "ask:keeper:开库提货安排": 1,
+    "ask:apprentice:开库提货安排": 2,
+    "speak:apprentice:守前堂与明早开库安排": 1,
+    "ask:apprentice:师傅去向与窗闩": 1,
+    "speak:apprentice:师傅迟迟未归与窗闩": 1,
+    "speak:keeper:窗闩与明早开库": 1,
+    "speak:keeper:明早开库与钥匙稳妥": 2,
+    "speak:keeper:明早开库安排与小六搭手": 1,
+    "speak:keeper:明早开库与提货准备": 1
+  },
+  "holdings": [],
+  "found_objects": [],
+  "object_sightings": {},
+  "searched_empty_places": [],
+  "perceived_events": [
+    {
+      "tick": 2,
+      "type": "ask",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": "今晚盘点",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 2,
+      "type": "wait",
+      "actor": "keeper",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 2,
+      "type": "session_start",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 2,
+      "type": "session_end",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 3,
+      "type": "ask",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": "今晚盘点",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 3,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "apprentice",
+      "claim": null,
+      "topic": "今晚盘点",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 4,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": "守前堂",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 4,
+      "type": "session_start",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 4,
+      "type": "session_end",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 5,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 6,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 6,
+      "type": "move",
+      "actor": "keeper",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": "tables",
+      "found": []
+    },
+    {
+      "tick": 6,
+      "type": "session_start",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 6,
+      "type": "session_end",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 7,
+      "type": "wait",
+      "actor": "apprentice",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 7,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "apprentice",
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 8,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": "守前堂与昨夜动静",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 8,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "traveler",
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 9,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 9,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "traveler",
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 10,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": "昨夜后屋响动与守前堂",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 10,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "traveler",
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 11,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": "守前堂与听师傅吩咐",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 11,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "apprentice",
+      "claim": null,
+      "topic": "守前堂与明早开库安排",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 12,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": "守前堂与明早开库安排",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 12,
+      "type": "session_start",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 12,
+      "type": "session_end",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 13,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": "守前堂与转达师傅的话",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 14,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": "守前堂与转达师傅的话",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 14,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "cat_knocks_glass",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 15,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": "师傅去向与窗闩",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 15,
+      "type": "move",
+      "actor": "keeper",
+      "target": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": "tables",
+      "found": []
+    },
+    {
+      "tick": 15,
+      "type": "session_start",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 15,
+      "type": "session_end",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 16,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": "师傅回来与客商所问窗闩",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 16,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "traveler",
+      "claim": null,
+      "topic": "窗闩与明早开库安排",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 17,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": "守前堂与明早开库准备",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 17,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "apprentice",
+      "claim": null,
+      "topic": "守前堂与明早开库",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 18,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "traveler",
+      "claim": null,
+      "topic": "师傅已回、窗闩已钉、守前堂",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 18,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "traveler",
+      "claim": null,
+      "topic": "明早开库与钥匙稳妥",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 18,
+      "type": "ambient",
+      "actor": null,
+      "target": null,
+      "claim": null,
+      "topic": "cat_knocks_glass",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 19,
+      "type": "work",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": "扫净碎瓷、续火守前堂",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 19,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "traveler",
+      "claim": null,
+      "topic": "明早开库与钥匙稳妥",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 20,
+      "type": "speak",
+      "actor": "apprentice",
+      "target": "keeper",
+      "claim": null,
+      "topic": "领师傅吩咐、明早搭手与今夜守前堂",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    },
+    {
+      "tick": 20,
+      "type": "speak",
+      "actor": "keeper",
+      "target": "traveler",
+      "claim": null,
+      "topic": "明早开库与小六搭手",
+      "stance": null,
+      "object": null,
+      "location": "tables",
+      "to": null,
+      "found": []
+    }
+  ],
+  "own_actions": [
+    {
+      "tick": 0,
+      "type": "move",
+      "target": "keeper",
+      "target_location": "door",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 1,
+      "type": "move",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": null,
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 2,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 3,
+      "type": "ask",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 4,
+      "type": "ask",
+      "target": "apprentice",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 5,
+      "type": "ask",
+      "target": "apprentice",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 6,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 7,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 8,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": "提货单",
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 9,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": "提货单",
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 10,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": "提货单",
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 11,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "开库提货安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 12,
+      "type": "speak",
+      "target": "apprentice",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "守前堂与明早开库安排",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 13,
+      "type": "ask",
+      "target": "apprentice",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "师傅去向与窗闩",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 14,
+      "type": "speak",
+      "target": "apprentice",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "师傅迟迟未归与窗闩",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 15,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "窗闩与明早开库",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 16,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "明早开库与钥匙稳妥",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 17,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "明早开库与钥匙稳妥",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 18,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "明早开库安排与小六搭手",
+      "stance": null,
+      "ok": true
+    },
+    {
+      "tick": 19,
+      "type": "speak",
+      "target": "keeper",
+      "target_location": "tables",
+      "object": null,
+      "claim": null,
+      "topic": "明早开库与提货准备",
+      "stance": null,
+      "ok": true
+    }
+  ],
+  "scheduler_memory": {
+    "pursuit": "retrieve_goods",
+    "since": 0
+  },
+  "plan_failure_memory": [],
+  "plan_gate_counts": {}
+}
