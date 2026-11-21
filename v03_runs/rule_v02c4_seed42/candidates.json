@@ -1,0 +1,420 @@
+[
+ {
+  "candidate_id": "EC001",
+  "source_type": "world_driven",
+  "kind": "trace_event",
+  "description": "此处留下了被人翻动过的痕迹。",
+  "proposed_location": "back_room",
+  "involved_characters": [],
+  "triggering_conditions": [
+   "object_taken_unnoticed:anonymous_letter"
+  ],
+  "causal_basis": [
+   "E0008"
+  ],
+  "related_threads": [
+   "main_embezzlement",
+   "secret_letter_writer"
+  ],
+  "related_conflicts": [],
+  "expected_world_changes": {
+   "trace_at": "back_room"
+  },
+  "dramatic_functions": [
+   "consequence",
+   "revelation"
+  ],
+  "uncertainty": 0.3,
+  "validity_requirements": [
+   "location exists"
+  ],
+  "fingerprint": "c8631b2fc8573a76",
+  "created_at": 3,
+  "evaluation": {
+   "causality": 0.333,
+   "thread_progress": 0.4,
+   "conflict_impact": 0.0,
+   "goal_impact": 1.0,
+   "information_change": 0.8,
+   "novelty": 1.0,
+   "coherence": 1.0,
+   "rank": 0.533
+  },
+  "validation": {
+   "causal": "ok",
+   "world": "ok",
+   "passed": true
+  }
+ },
+ {
+  "candidate_id": "EC002",
+  "source_type": "story_driven",
+  "kind": "external_arrival",
+  "description": "一个自称替镇长办事的人走进酒馆，在门口站了一会儿，打量着屋里的人。",
+  "proposed_location": "door",
+  "involved_characters": [],
+  "triggering_conditions": [
+   "thread_escalating:crisis_leak",
+   "sensitive_fact_multi_speaker:mayor_embezzled"
+  ],
+  "causal_basis": [
+   "E0022",
+   "E0030",
+   "E0032"
+  ],
+  "related_threads": [
+   "crisis_leak"
+  ],
+  "related_conflicts": [],
+  "expected_world_changes": {
+   "arrival": "mayor_agent"
+  },
+  "dramatic_functions": [
+   "escalation",
+   "consequence"
+  ],
+  "uncertainty": 0.4,
+  "validity_requirements": [
+   "location exists",
+   "no duplicate arrival"
+  ],
+  "fingerprint": "fa4872422cde8c69",
+  "created_at": 8,
+  "evaluation": {
+   "causality": 1.0,
+   "thread_progress": 0.4,
+   "conflict_impact": 0.0,
+   "goal_impact": 1.0,
+   "information_change": 0.8,
+   "novelty": 1.0,
+   "coherence": 1.0,
+   "rank": 0.7
+  },
+  "validation": {
+   "causal": "ok",
+   "world": "ok",
+   "passed": true
+  }
+ },
+ {
+  "candidate_id": "EC003",
+  "source_type": "story_driven",
+  "kind": "external_arrival",
+  "description": "一个自称替镇长办事的人走进酒馆，在门口站了一会儿，打量着屋里的人。",
+  "proposed_location": "door",
+  "involved_characters": [],
+  "triggering_conditions": [
+   "thread_escalating:crisis_leak",
+   "sensitive_fact_multi_speaker:mayor_embezzled"
+  ],
+  "causal_basis": [
+   "E0038",
+   "E0040",
+   "E0043",
+   "E0046"
+  ],
+  "related_threads": [
+   "crisis_leak"
+  ],
+  "related_conflicts": [],
+  "expected_world_changes": {
+   "arrival": "mayor_agent"
+  },
+  "dramatic_functions": [
+   "escalation",
+   "consequence"
+  ],
+  "uncertainty": 0.4,
+  "validity_requirements": [
+   "location exists",
+   "no duplicate arrival"
+  ],
+  "fingerprint": "fa4872422cde8c69",
+  "created_at": 13,
+  "evaluation": {},
+  "validation": {
+   "causal": "ok",
+   "world": "duplicate candidate (fingerprint seen)",
+   "passed": false
+  }
+ },
+ {
+  "candidate_id": "EC004",
+  "source_type": "story_driven",
+  "kind": "opportunity_notice",
+  "description": "酒馆门口一时人来人往，赶集的人在门外歇脚闲谈。",
+  "proposed_location": "door",
+  "involved_characters": [],
+  "triggering_conditions": [
+   "thread_dormant:secret_letter_writer"
+  ],
+  "causal_basis": [
+   "E0008"
+  ],
+  "related_threads": [
+   "secret_letter_writer"
+  ],
+  "related_conflicts": [],
+  "expected_world_changes": {
+   "gathering": "town_square"
+  },
+  "dramatic_functions": [
+   "setup"
+  ],
+  "uncertainty": 0.6,
+  "validity_requirements": [
+   "location exists"
+  ],
+  "fingerprint": "fad867ee2b5cce50",
+  "created_at": 13,
+  "evaluation": {
+   "causality": 0.333,
+   "thread_progress": 1.0,
+   "conflict_impact": 0.0,
+   "goal_impact": 1.0,
+   "information_change": 0.4,
+   "novelty": 1.0,
+   "coherence": 1.0,
+   "rank": 0.593
+  },
+  "validation": {
+   "causal": "ok",
+   "world": "ok",
+   "passed": true
+  }
+ },
+ {
+  "candidate_id": "EC005",
+  "source_type": "story_driven",
+  "kind": "external_arrival",
+  "description": "一个自称替镇长办事的人走进酒馆，在门口站了一会儿，打量着屋里的人。",
+  "proposed_location": "door",
+  "involved_characters": [],
+  "triggering_conditions": [
+   "thread_escalating:crisis_leak",
+   "sensitive_fact_multi_speaker:mayor_embezzled"
+  ],
+  "causal_basis": [
+   "E0058",
+   "E0061",
+   "E0063",
+   "E0064"
+  ],
+  "related_threads": [
+   "crisis_leak"
+  ],
+  "related_conflicts": [],
+  "expected_world_changes": {
+   "arrival": "mayor_agent"
+  },
+  "dramatic_functions": [
+   "escalation",
+   "consequence"
+  ],
+  "uncertainty": 0.4,
+  "validity_requirements": [
+   "location exists",
+   "no duplicate arrival"
+  ],
+  "fingerprint": "fa4872422cde8c69",
+  "created_at": 18,
+  "evaluation": {},
+  "validation": {
+   "causal": "ok",
+   "world": "duplicate candidate (fingerprint seen)",
+   "passed": false
+  }
+ },
+ {
+  "candidate_id": "EC006",
+  "source_type": "story_driven",
+  "kind": "opportunity_notice",
+  "description": "酒馆门口一时人来人往，赶集的人在门外歇脚闲谈。",
+  "proposed_location": "door",
+  "involved_characters": [],
+  "triggering_conditions": [
+   "thread_dormant:secret_letter_writer"
+  ],
+  "causal_basis": [
+   "E0008"
+  ],
+  "related_threads": [
+   "secret_letter_writer"
+  ],
+  "related_conflicts": [],
+  "expected_world_changes": {
+   "gathering": "town_square"
+  },
+  "dramatic_functions": [
+   "setup"
+  ],
+  "uncertainty": 0.6,
+  "validity_requirements": [
+   "location exists"
+  ],
+  "fingerprint": "fad867ee2b5cce50",
+  "created_at": 18,
+  "evaluation": {},
+  "validation": {
+   "causal": "ok",
+   "world": "duplicate candidate (fingerprint seen)",
+   "passed": false
+  }
+ },
+ {
+  "candidate_id": "EC007",
+  "source_type": "story_driven",
+  "kind": "external_arrival",
+  "description": "一个自称替镇长办事的人走进酒馆，在门口站了一会儿，打量着屋里的人。",
+  "proposed_location": "door",
+  "involved_characters": [],
+  "triggering_conditions": [
+   "thread_escalating:crisis_leak",
+   "sensitive_fact_multi_speaker:mayor_embezzled"
+  ],
+  "causal_basis": [
+   "E0061",
+   "E0063",
+   "E0064",
+   "E0068"
+  ],
+  "related_threads": [
+   "crisis_leak"
+  ],
+  "related_conflicts": [],
+  "expected_world_changes": {
+   "arrival": "mayor_agent"
+  },
+  "dramatic_functions": [
+   "escalation",
+   "consequence"
+  ],
+  "uncertainty": 0.4,
+  "validity_requirements": [
+   "location exists",
+   "no duplicate arrival"
+  ],
+  "fingerprint": "fa4872422cde8c69",
+  "created_at": 19,
+  "evaluation": {},
+  "validation": {
+   "causal": "ok",
+   "world": "duplicate candidate (fingerprint seen)",
+   "passed": false
+  }
+ },
+ {
+  "candidate_id": "EC008",
+  "source_type": "story_driven",
+  "kind": "opportunity_notice",
+  "description": "酒馆门口一时人来人往，赶集的人在门外歇脚闲谈。",
+  "proposed_location": "door",
+  "involved_characters": [],
+  "triggering_conditions": [
+   "thread_dormant:secret_letter_writer"
+  ],
+  "causal_basis": [
+   "E0008"
+  ],
+  "related_threads": [
+   "secret_letter_writer"
+  ],
+  "related_conflicts": [],
+  "expected_world_changes": {
+   "gathering": "town_square"
+  },
+  "dramatic_functions": [
+   "setup"
+  ],
+  "uncertainty": 0.6,
+  "validity_requirements": [
+   "location exists"
+  ],
+  "fingerprint": "fad867ee2b5cce50",
+  "created_at": 19,
+  "evaluation": {},
+  "validation": {
+   "causal": "ok",
+   "world": "duplicate candidate (fingerprint seen)",
+   "passed": false
+  }
+ },
+ {
+  "candidate_id": "EC009",
+  "source_type": "story_driven",
+  "kind": "external_arrival",
+  "description": "一个自称替镇长办事的人走进酒馆，在门口站了一会儿，打量着屋里的人。",
+  "proposed_location": "door",
+  "involved_characters": [],
+  "triggering_conditions": [
+   "thread_escalating:crisis_leak",
+   "sensitive_fact_multi_speaker:mayor_embezzled"
+  ],
+  "causal_basis": [
+   "E0061",
+   "E0063",
+   "E0064",
+   "E0068"
+  ],
+  "related_threads": [
+   "crisis_leak"
+  ],
+  "related_conflicts": [],
+  "expected_world_changes": {
+   "arrival": "mayor_agent"
+  },
+  "dramatic_functions": [
+   "escalation",
+   "consequence"
+  ],
+  "uncertainty": 0.4,
+  "validity_requirements": [
+   "location exists",
+   "no duplicate arrival"
+  ],
+  "fingerprint": "fa4872422cde8c69",
+  "created_at": 20,
+  "evaluation": {},
+  "validation": {
+   "causal": "ok",
+   "world": "duplicate candidate (fingerprint seen)",
+   "passed": false
+  }
+ },
+ {
+  "candidate_id": "EC010",
+  "source_type": "story_driven",
+  "kind": "opportunity_notice",
+  "description": "酒馆门口一时人来人往，赶集的人在门外歇脚闲谈。",
+  "proposed_location": "door",
+  "involved_characters": [],
+  "triggering_conditions": [
+   "thread_dormant:secret_letter_writer"
+  ],
+  "causal_basis": [
+   "E0008"
+  ],
+  "related_threads": [
+   "secret_letter_writer"
+  ],
+  "related_conflicts": [],
+  "expected_world_changes": {
+   "gathering": "town_square"
+  },
+  "dramatic_functions": [
+   "setup"
+  ],
+  "uncertainty": 0.6,
+  "validity_requirements": [
+   "location exists"
+  ],
+  "fingerprint": "fad867ee2b5cce50",
+  "created_at": 20,
+  "evaluation": {},
+  "validation": {
+   "causal": "ok",
+   "world": "duplicate candidate (fingerprint seen)",
+   "passed": false
+  }
+ }
+]

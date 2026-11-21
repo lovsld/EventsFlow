@@ -1,0 +1,503 @@
+[
+ {
+  "scene_id": "S01",
+  "location": "back_room",
+  "start_tick": 1,
+  "end_tick": 3,
+  "status": "closed",
+  "participants": [
+   "merchant",
+   "soldier"
+  ],
+  "joined_at": {
+   "merchant": 1,
+   "soldier": 2
+  },
+  "left_at": {
+   "merchant": 2,
+   "soldier": 4
+  },
+  "events": [
+   "E0002",
+   "E0005",
+   "E0008"
+  ],
+  "knowledge": {
+   "merchant": {
+    "at_start": [],
+    "at_end": []
+   },
+   "soldier": {
+    "at_start": [],
+    "at_end": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ]
+   }
+  },
+  "related_threads": [
+   "main_embezzlement",
+   "secret_letter_writer"
+  ],
+  "thread_status_at_end": {
+   "main_embezzlement": "escalating",
+   "secret_letter_writer": "dormant"
+  },
+  "propagations_in": [],
+  "propagations_out": [
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 6,
+    "travel_ticks": 3,
+    "via_event": "E0023"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 8,
+    "travel_ticks": 5,
+    "via_event": "E0031"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 10,
+    "travel_ticks": 7,
+    "via_event": "E0037"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 11,
+    "travel_ticks": 8,
+    "via_event": "E0042"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 12,
+    "travel_ticks": 9,
+    "via_event": "E0045"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 13,
+    "travel_ticks": 10,
+    "via_event": "E0048"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 16,
+    "travel_ticks": 13,
+    "via_event": "E0061"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 17,
+    "travel_ticks": 14,
+    "via_event": "E0064"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 18,
+    "travel_ticks": 15,
+    "via_event": "E0067"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 19,
+    "travel_ticks": 16,
+    "via_event": "E0071"
+   }
+  ],
+  "dramatic_functions": [
+   "depends_on",
+   "discovery"
+  ],
+  "outcome": {
+   "events": 3,
+   "participants": [
+    "merchant",
+    "soldier"
+   ],
+   "threads": [
+    "main_embezzlement",
+    "secret_letter_writer"
+   ]
+  }
+ },
+ {
+  "scene_id": "S02",
+  "location": "bar",
+  "start_tick": 1,
+  "end_tick": 20,
+  "status": "closed",
+  "participants": [
+   "owner",
+   "merchant",
+   "soldier"
+  ],
+  "joined_at": {
+   "owner": 1,
+   "merchant": 3,
+   "soldier": 5
+  },
+  "left_at": {},
+  "events": [
+   "E0003",
+   "E0004",
+   "E0007",
+   "E0009",
+   "E0010",
+   "E0011",
+   "E0014",
+   "E0015",
+   "E0016",
+   "E0017",
+   "E0018",
+   "E0019",
+   "E0020",
+   "E0023",
+   "E0024",
+   "E0025",
+   "E0026",
+   "E0027",
+   "E0028",
+   "E0029",
+   "E0030",
+   "E0031",
+   "E0032",
+   "E0033",
+   "E0034",
+   "E0035",
+   "E0036",
+   "E0037",
+   "E0038",
+   "E0039",
+   "E0040",
+   "E0041",
+   "E0042",
+   "E0043",
+   "E0044",
+   "E0045",
+   "E0046",
+   "E0047",
+   "E0048",
+   "E0049",
+   "E0050",
+   "E0052",
+   "E0053",
+   "E0054",
+   "E0056",
+   "E0057",
+   "E0058",
+   "E0059",
+   "E0060",
+   "E0061",
+   "E0062",
+   "E0063",
+   "E0064",
+   "E0065",
+   "E0066",
+   "E0067",
+   "E0068",
+   "E0069",
+   "E0071",
+   "E0072",
+   "E0073",
+   "E0074",
+   "E0075",
+   "E0076"
+  ],
+  "knowledge": {
+   "owner": {
+    "at_start": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ],
+    "at_end": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "merchant": {
+    "at_start": [],
+    "at_end": [
+     "mayor_embezzled"
+    ]
+   },
+   "soldier": {
+    "at_start": [],
+    "at_end": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   }
+  },
+  "related_threads": [
+   "interest_merchant",
+   "main_embezzlement",
+   "crisis_leak",
+   "trust_owner_soldier"
+  ],
+  "thread_status_at_end": {
+   "interest_merchant": "escalating",
+   "main_embezzlement": "escalating",
+   "crisis_leak": "escalating",
+   "trust_owner_soldier": "active"
+  },
+  "propagations_in": [
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 6,
+    "travel_ticks": 3,
+    "via_event": "E0023"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 8,
+    "travel_ticks": 5,
+    "via_event": "E0031"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 10,
+    "travel_ticks": 7,
+    "via_event": "E0037"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 11,
+    "travel_ticks": 8,
+    "via_event": "E0042"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 12,
+    "travel_ticks": 9,
+    "via_event": "E0045"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 13,
+    "travel_ticks": 10,
+    "via_event": "E0048"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 16,
+    "travel_ticks": 13,
+    "via_event": "E0061"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 17,
+    "travel_ticks": 14,
+    "via_event": "E0064"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 18,
+    "travel_ticks": 15,
+    "via_event": "E0067"
+   },
+   {
+    "fact": "mayor_embezzled",
+    "carrier": "soldier",
+    "from_scene": "S01",
+    "to_scene": "S02",
+    "learned_at": 3,
+    "spoke_at": 19,
+    "travel_ticks": 16,
+    "via_event": "E0071"
+   }
+  ],
+  "propagations_out": [],
+  "dramatic_functions": [
+   "confrontation",
+   "depends_on",
+   "enables",
+   "escalation",
+   "revelation"
+  ],
+  "outcome": {
+   "events": 64,
+   "participants": [
+    "owner",
+    "merchant",
+    "soldier"
+   ],
+   "threads": [
+    "interest_merchant",
+    "main_embezzlement",
+    "crisis_leak",
+    "trust_owner_soldier"
+   ]
+  }
+ },
+ {
+  "scene_id": "S03",
+  "location": "tables",
+  "start_tick": 1,
+  "end_tick": 2,
+  "status": "closed",
+  "participants": [
+   "soldier",
+   "merchant"
+  ],
+  "joined_at": {
+   "soldier": 1,
+   "merchant": 2
+  },
+  "left_at": {
+   "soldier": 2,
+   "merchant": 3
+  },
+  "events": [
+   "E0001",
+   "E0006"
+  ],
+  "knowledge": {
+   "soldier": {
+    "at_start": [],
+    "at_end": []
+   },
+   "merchant": {
+    "at_start": [],
+    "at_end": []
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 2,
+   "participants": [
+    "soldier",
+    "merchant"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S04",
+  "location": "tables",
+  "start_tick": 4,
+  "end_tick": 4,
+  "status": "closed",
+  "participants": [
+   "soldier"
+  ],
+  "joined_at": {
+   "soldier": 4
+  },
+  "left_at": {
+   "soldier": 5
+  },
+  "events": [
+   "E0013"
+  ],
+  "knowledge": {
+   "soldier": {
+    "at_start": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ],
+    "at_end": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "soldier"
+   ],
+   "threads": []
+  }
+ }
+]

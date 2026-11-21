@@ -1,0 +1,1058 @@
+{
+ "run_id": "rule_v02c4_seed42",
+ "nodes": [
+  {
+   "event_id": "E0001",
+   "tick": 1,
+   "type": "move",
+   "location": "tables",
+   "actors": [
+    "soldier"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S03"
+  },
+  {
+   "event_id": "E0002",
+   "tick": 1,
+   "type": "move",
+   "location": "back_room",
+   "actors": [
+    "merchant"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S02"
+  },
+  {
+   "event_id": "E0003",
+   "tick": 1,
+   "type": "listen",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0004",
+   "tick": 1,
+   "type": "ambient",
+   "location": "bar",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0005",
+   "tick": 2,
+   "type": "move",
+   "location": "back_room",
+   "actors": [
+    "soldier"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S02"
+  },
+  {
+   "event_id": "E0006",
+   "tick": 2,
+   "type": "move",
+   "location": "tables",
+   "actors": [
+    "merchant"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S03"
+  },
+  {
+   "event_id": "E0007",
+   "tick": 2,
+   "type": "observe",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0008",
+   "tick": 3,
+   "type": "search",
+   "location": "back_room",
+   "actors": [
+    "soldier"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S02"
+  },
+  {
+   "event_id": "E0009",
+   "tick": 3,
+   "type": "move",
+   "location": "bar",
+   "actors": [
+    "merchant"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0010",
+   "tick": 3,
+   "type": "observe",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0011",
+   "tick": 3,
+   "type": "session_start",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0012",
+   "tick": 3,
+   "type": "ambient",
+   "location": "door",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": ""
+  },
+  {
+   "event_id": "E0013",
+   "tick": 4,
+   "type": "move",
+   "location": "tables",
+   "actors": [
+    "soldier"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S04"
+  },
+  {
+   "event_id": "E0014",
+   "tick": 4,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "owner"
+   ],
+   "proposition": "business_opportunity",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0015",
+   "tick": 4,
+   "type": "observe",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0016",
+   "tick": 5,
+   "type": "move",
+   "location": "bar",
+   "actors": [
+    "soldier"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0017",
+   "tick": 5,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "owner"
+   ],
+   "proposition": "business_opportunity",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0018",
+   "tick": 5,
+   "type": "observe",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0019",
+   "tick": 5,
+   "type": "session_start",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0020",
+   "tick": 5,
+   "type": "session_end",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0021",
+   "tick": 5,
+   "type": "ambient",
+   "location": "outside",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": ""
+  },
+  {
+   "event_id": "E0022",
+   "tick": 6,
+   "type": "confront",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "merchant"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0023",
+   "tick": 6,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "soldier"
+   ],
+   "proposition": "business_opportunity",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0024",
+   "tick": 6,
+   "type": "listen",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0025",
+   "tick": 6,
+   "type": "ambient",
+   "location": "bar",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0026",
+   "tick": 7,
+   "type": "ask",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "merchant"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0027",
+   "tick": 7,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "soldier"
+   ],
+   "proposition": "business_opportunity",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0028",
+   "tick": 7,
+   "type": "observe",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0029",
+   "tick": 7,
+   "type": "ambient",
+   "location": "bar",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0030",
+   "tick": 8,
+   "type": "confront",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "owner"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0031",
+   "tick": 8,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "owner"
+   ],
+   "proposition": "business_opportunity",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0032",
+   "tick": 8,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "owner",
+    "soldier"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0033",
+   "tick": 9,
+   "type": "ask",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "owner"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0034",
+   "tick": 9,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "owner"
+   ],
+   "proposition": "speaker_knows_secret",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0035",
+   "tick": 9,
+   "type": "ask",
+   "location": "bar",
+   "actors": [
+    "owner",
+    "soldier"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0036",
+   "tick": 10,
+   "type": "confront",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "merchant"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0037",
+   "tick": 10,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "soldier"
+   ],
+   "proposition": "speaker_knows_secret",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0038",
+   "tick": 10,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "owner",
+    "soldier"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0039",
+   "tick": 10,
+   "type": "ambient",
+   "location": "bar",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0040",
+   "tick": 11,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "owner"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0041",
+   "tick": 11,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "soldier"
+   ],
+   "proposition": "speaker_knows_secret",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0042",
+   "tick": 11,
+   "type": "observe",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0043",
+   "tick": 12,
+   "type": "confront",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "owner"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0044",
+   "tick": 12,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "owner"
+   ],
+   "proposition": "speaker_knows_secret",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0045",
+   "tick": 12,
+   "type": "work",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0046",
+   "tick": 13,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "merchant"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0047",
+   "tick": 13,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "soldier"
+   ],
+   "proposition": "business_opportunity",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0048",
+   "tick": 13,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "owner",
+    "soldier"
+   ],
+   "proposition": null,
+   "stance": "deny",
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0049",
+   "tick": 13,
+   "type": "ambient",
+   "location": "door",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": ""
+  },
+  {
+   "event_id": "E0050",
+   "tick": 14,
+   "type": "ask",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "owner"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0051",
+   "tick": 14,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "soldier"
+   ],
+   "proposition": "speaker_knows_secret",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0052",
+   "tick": 14,
+   "type": "ask",
+   "location": "bar",
+   "actors": [
+    "owner",
+    "soldier"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0053",
+   "tick": 14,
+   "type": "ambient",
+   "location": "tables",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": ""
+  },
+  {
+   "event_id": "E0054",
+   "tick": 15,
+   "type": "ask",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "merchant"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0055",
+   "tick": 15,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "owner"
+   ],
+   "proposition": "business_opportunity",
+   "stance": "assert",
+   "epistemic": "unverified",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0056",
+   "tick": 15,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "owner",
+    "soldier"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0057",
+   "tick": 15,
+   "type": "ambient",
+   "location": "bar",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0058",
+   "tick": 16,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "owner"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0059",
+   "tick": 16,
+   "type": "ask",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "soldier"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0060",
+   "tick": 16,
+   "type": "listen",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0061",
+   "tick": 17,
+   "type": "confront",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "merchant"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0062",
+   "tick": 17,
+   "type": "ask",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "soldier"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0063",
+   "tick": 17,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "owner",
+    "merchant"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0064",
+   "tick": 18,
+   "type": "confront",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "owner"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0065",
+   "tick": 18,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "merchant",
+    "soldier"
+   ],
+   "proposition": null,
+   "stance": "deny",
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0066",
+   "tick": 18,
+   "type": "listen",
+   "location": "bar",
+   "actors": [
+    "owner"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0067",
+   "tick": 18,
+   "type": "ambient",
+   "location": "tables",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": ""
+  },
+  {
+   "event_id": "E0068",
+   "tick": 19,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "merchant"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0069",
+   "tick": 19,
+   "type": "observe",
+   "location": "bar",
+   "actors": [
+    "merchant"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0070",
+   "tick": 19,
+   "type": "ask",
+   "location": "bar",
+   "actors": [
+    "owner",
+    "soldier"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0071",
+   "tick": 20,
+   "type": "ask",
+   "location": "bar",
+   "actors": [
+    "soldier",
+    "merchant"
+   ],
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0072",
+   "tick": 20,
+   "type": "listen",
+   "location": "bar",
+   "actors": [
+    "merchant"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0073",
+   "tick": 20,
+   "type": "speak",
+   "location": "bar",
+   "actors": [
+    "owner",
+    "soldier"
+   ],
+   "proposition": null,
+   "stance": "deny",
+   "epistemic": "objective",
+   "scene_id": "S01"
+  }
+ ],
+ "edges": [
+  {
+   "source": "E0014",
+   "target": "E0017",
+   "relation": "reveals",
+   "rule": "G-REVEAL",
+   "evidence": {
+    "via_fact": "business_opportunity",
+    "new_audience": [
+     "soldier"
+    ]
+   }
+  },
+  {
+   "source": "E0008",
+   "target": "E0022",
+   "relation": "enables",
+   "rule": "G-ENABLE",
+   "evidence": {
+    "via_fact": "mayor_embezzled",
+    "learner": "soldier"
+   }
+  },
+  {
+   "source": "E0008",
+   "target": "E0022",
+   "relation": "reveals",
+   "rule": "G-REVEAL",
+   "evidence": {
+    "via_fact": "mayor_embezzled",
+    "new_audience": [
+     "merchant"
+    ]
+   }
+  },
+  {
+   "source": "E0030",
+   "target": "E0032",
+   "relation": "escalates",
+   "rule": "G-ESCALATE",
+   "evidence": {
+    "via_fact": "mayor_embezzled"
+   }
+  },
+  {
+   "source": "E0032",
+   "target": "E0036",
+   "relation": "escalates",
+   "rule": "G-ESCALATE",
+   "evidence": {
+    "via_fact": "mayor_embezzled"
+   }
+  },
+  {
+   "source": "E0036",
+   "target": "E0038",
+   "relation": "escalates",
+   "rule": "G-ESCALATE",
+   "evidence": {
+    "via_fact": "mayor_embezzled"
+   }
+  },
+  {
+   "source": "E0061",
+   "target": "E0063",
+   "relation": "escalates",
+   "rule": "G-ESCALATE",
+   "evidence": {
+    "via_fact": "mayor_embezzled"
+   }
+  },
+  {
+   "source": "E0063",
+   "target": "E0064",
+   "relation": "escalates",
+   "rule": "G-ESCALATE",
+   "evidence": {
+    "via_fact": "mayor_embezzled"
+   }
+  }
+ ]
+}

@@ -1,0 +1,462 @@
+[
+ {
+  "run": "rule_off_seed42",
+  "engine_on": false,
+  "events_total": 73,
+  "speaks": {
+   "merchant": 15,
+   "soldier": 15,
+   "owner": 9
+  },
+  "threads_final": {
+   "main_embezzlement": "escalating",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "escalating",
+   "trust_owner_soldier": "active",
+   "crisis_leak": "escalating"
+  },
+  "main_progress": 0.5,
+  "conflicts_peak_severity": 1.0,
+  "propagations": 10,
+  "graph_edges": {
+   "reveals": 2,
+   "enables": 1,
+   "escalates": 5
+  },
+  "arc_final_stage": "climax",
+  "candidates_proposed": 3,
+  "injected_committed": 0,
+  "injected_perceived": 0,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "calls": 0
+  },
+  "provider": "rule",
+  "seed": 42,
+  "variant": "characters_v02"
+ },
+ {
+  "run": "rule_on_seed42",
+  "engine_on": true,
+  "events_total": 76,
+  "speaks": {
+   "merchant": 15,
+   "soldier": 15,
+   "owner": 9
+  },
+  "threads_final": {
+   "main_embezzlement": "escalating",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "escalating",
+   "trust_owner_soldier": "active",
+   "crisis_leak": "escalating"
+  },
+  "main_progress": 0.5,
+  "conflicts_peak_severity": 1.0,
+  "propagations": 10,
+  "graph_edges": {
+   "reveals": 2,
+   "depends_on": 5,
+   "enables": 1,
+   "escalates": 5
+  },
+  "arc_final_stage": "climax",
+  "candidates_proposed": 3,
+  "injected_committed": 3,
+  "injected_perceived": 2,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "calls": 0
+  },
+  "provider": "rule",
+  "seed": 42,
+  "variant": "characters_v02"
+ },
+ {
+  "run": "rule_off_seed7",
+  "engine_on": false,
+  "events_total": 73,
+  "speaks": {
+   "merchant": 16,
+   "soldier": 5,
+   "owner": 3
+  },
+  "threads_final": {
+   "main_embezzlement": "escalating",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "escalating",
+   "trust_owner_soldier": "active",
+   "crisis_leak": "escalating"
+  },
+  "main_progress": 0.5,
+  "conflicts_peak_severity": 0.615,
+  "propagations": 3,
+  "graph_edges": {
+   "reveals": 2,
+   "enables": 1,
+   "escalates": 1
+  },
+  "arc_final_stage": "escalation",
+  "candidates_proposed": 3,
+  "injected_committed": 0,
+  "injected_perceived": 0,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "calls": 0
+  },
+  "provider": "rule",
+  "seed": 7,
+  "variant": "characters_v02"
+ },
+ {
+  "run": "rule_on_seed7",
+  "engine_on": true,
+  "events_total": 75,
+  "speaks": {
+   "merchant": 16,
+   "soldier": 5,
+   "owner": 3
+  },
+  "threads_final": {
+   "main_embezzlement": "escalating",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "escalating",
+   "trust_owner_soldier": "active",
+   "crisis_leak": "escalating"
+  },
+  "main_progress": 0.5,
+  "conflicts_peak_severity": 0.615,
+  "propagations": 3,
+  "graph_edges": {
+   "depends_on": 2,
+   "reveals": 2,
+   "enables": 1,
+   "escalates": 1
+  },
+  "arc_final_stage": "escalation",
+  "candidates_proposed": 3,
+  "injected_committed": 2,
+  "injected_perceived": 1,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "calls": 0
+  },
+  "provider": "rule",
+  "seed": 7,
+  "variant": "characters_v02"
+ },
+ {
+  "run": "rule_off_seed123",
+  "engine_on": false,
+  "events_total": 70,
+  "speaks": {
+   "merchant": 17,
+   "soldier": 15,
+   "owner": 10
+  },
+  "threads_final": {
+   "main_embezzlement": "escalating",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "escalating",
+   "trust_owner_soldier": "active",
+   "crisis_leak": "escalating"
+  },
+  "main_progress": 0.5,
+  "conflicts_peak_severity": 1.0,
+  "propagations": 10,
+  "graph_edges": {
+   "reveals": 2,
+   "enables": 1,
+   "escalates": 4
+  },
+  "arc_final_stage": "climax",
+  "candidates_proposed": 3,
+  "injected_committed": 0,
+  "injected_perceived": 0,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "calls": 0
+  },
+  "provider": "rule",
+  "seed": 123,
+  "variant": "characters_v02"
+ },
+ {
+  "run": "rule_on_seed123",
+  "engine_on": true,
+  "events_total": 73,
+  "speaks": {
+   "merchant": 17,
+   "soldier": 15,
+   "owner": 10
+  },
+  "threads_final": {
+   "main_embezzlement": "escalating",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "escalating",
+   "trust_owner_soldier": "active",
+   "crisis_leak": "escalating"
+  },
+  "main_progress": 0.5,
+  "conflicts_peak_severity": 1.0,
+  "propagations": 10,
+  "graph_edges": {
+   "reveals": 2,
+   "depends_on": 5,
+   "enables": 1,
+   "escalates": 4
+  },
+  "arc_final_stage": "climax",
+  "candidates_proposed": 3,
+  "injected_committed": 3,
+  "injected_perceived": 2,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "calls": 0
+  },
+  "provider": "rule",
+  "seed": 123,
+  "variant": "characters_v02"
+ },
+ {
+  "run": "rule_off_goalvar_seed42",
+  "engine_on": false,
+  "events_total": 77,
+  "speaks": {
+   "soldier": 13,
+   "merchant": 15,
+   "owner": 8
+  },
+  "threads_final": {
+   "main_embezzlement": "escalating",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "escalating",
+   "trust_owner_soldier": "active",
+   "crisis_leak": "escalating"
+  },
+  "main_progress": 0.5,
+  "conflicts_peak_severity": 0.9249999999999998,
+  "propagations": 0,
+  "graph_edges": {
+   "causes": 1,
+   "escalates": 2,
+   "reveals": 1,
+   "resolves": 1
+  },
+  "arc_final_stage": "escalation",
+  "candidates_proposed": 2,
+  "injected_committed": 0,
+  "injected_perceived": 0,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "calls": 0
+  },
+  "provider": "rule",
+  "seed": 42,
+  "variant": "characters_v03_goalvar"
+ },
+ {
+  "run": "rule_on_goalvar_seed42",
+  "engine_on": true,
+  "events_total": 79,
+  "speaks": {
+   "soldier": 13,
+   "merchant": 15,
+   "owner": 8
+  },
+  "threads_final": {
+   "main_embezzlement": "escalating",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "escalating",
+   "trust_owner_soldier": "active",
+   "crisis_leak": "escalating"
+  },
+  "main_progress": 0.5,
+  "conflicts_peak_severity": 0.9249999999999998,
+  "propagations": 0,
+  "graph_edges": {
+   "depends_on": 5,
+   "causes": 1,
+   "escalates": 2,
+   "reveals": 1,
+   "resolves": 1
+  },
+  "arc_final_stage": "escalation",
+  "candidates_proposed": 2,
+  "injected_committed": 2,
+  "injected_perceived": 1,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "calls": 0
+  },
+  "provider": "rule",
+  "seed": 42,
+  "variant": "characters_v03_goalvar"
+ },
+ {
+  "run": "llm_off_seed42",
+  "engine_on": false,
+  "events_total": 73,
+  "speaks": {
+   "merchant": 18,
+   "owner": 19,
+   "soldier": 7
+  },
+  "threads_final": {
+   "main_embezzlement": "dormant",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "dormant",
+   "trust_owner_soldier": "dormant",
+   "crisis_leak": "dormant"
+  },
+  "main_progress": 0.0,
+  "conflicts_peak_severity": 0.5,
+  "propagations": 0,
+  "graph_edges": {},
+  "arc_final_stage": "setup",
+  "candidates_proposed": 0,
+  "injected_committed": 0,
+  "injected_perceived": 0,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 236872,
+   "output_tokens": 11345,
+   "calls": 60
+  },
+  "provider": "deepseek",
+  "seed": 42,
+  "variant": "characters_v02"
+ },
+ {
+  "run": "llm_on_seed42",
+  "engine_on": true,
+  "events_total": 73,
+  "speaks": {
+   "owner": 18,
+   "merchant": 15,
+   "soldier": 8
+  },
+  "threads_final": {
+   "main_embezzlement": "dormant",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "dormant",
+   "trust_owner_soldier": "dormant",
+   "crisis_leak": "dormant"
+  },
+  "main_progress": 0.0,
+  "conflicts_peak_severity": 0.5,
+  "propagations": 0,
+  "graph_edges": {},
+  "arc_final_stage": "setup",
+  "candidates_proposed": 0,
+  "injected_committed": 0,
+  "injected_perceived": 0,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 217364,
+   "output_tokens": 10891,
+   "calls": 60
+  },
+  "provider": "deepseek",
+  "seed": 42,
+  "variant": "characters_v02"
+ },
+ {
+  "run": "llm_off_seed7",
+  "engine_on": false,
+  "events_total": 73,
+  "speaks": {
+   "merchant": 13,
+   "owner": 16,
+   "soldier": 9
+  },
+  "threads_final": {
+   "main_embezzlement": "dormant",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "dormant",
+   "trust_owner_soldier": "dormant",
+   "crisis_leak": "dormant"
+  },
+  "main_progress": 0.0,
+  "conflicts_peak_severity": 0.5,
+  "propagations": 0,
+  "graph_edges": {
+   "prevents": 1
+  },
+  "arc_final_stage": "setup",
+  "candidates_proposed": 0,
+  "injected_committed": 0,
+  "injected_perceived": 0,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 217097,
+   "output_tokens": 10566,
+   "calls": 60
+  },
+  "provider": "deepseek",
+  "seed": 7,
+  "variant": "characters_v02"
+ },
+ {
+  "run": "llm_on_seed7",
+  "engine_on": true,
+  "events_total": 73,
+  "speaks": {
+   "merchant": 17,
+   "owner": 18,
+   "soldier": 4
+  },
+  "threads_final": {
+   "main_embezzlement": "dormant",
+   "secret_letter_writer": "dormant",
+   "interest_merchant": "dormant",
+   "trust_owner_soldier": "dormant",
+   "crisis_leak": "dormant"
+  },
+  "main_progress": 0.0,
+  "conflicts_peak_severity": 0.5,
+  "propagations": 0,
+  "graph_edges": {},
+  "arc_final_stage": "setup",
+  "candidates_proposed": 0,
+  "injected_committed": 0,
+  "injected_perceived": 0,
+  "continuity_errors": 0,
+  "story_engine_decision_changes": 0,
+  "usage": {
+   "input_tokens": 191836,
+   "output_tokens": 10414,
+   "calls": 60
+  },
+  "provider": "deepseek",
+  "seed": 7,
+  "variant": "characters_v02"
+ }
+]

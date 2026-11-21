@@ -1,0 +1,123 @@
+{
+ "story_id": "tavern_secret_v03",
+ "tick": 20,
+ "threads": {
+  "main_embezzlement": {
+   "status": "escalating",
+   "progress": 0.5,
+   "events": 25,
+   "known_by": {
+    "owner": 1,
+    "soldier": 2,
+    "merchant": 1
+   }
+  },
+  "secret_letter_writer": {
+   "status": "dormant",
+   "progress": 0.0,
+   "events": 1,
+   "known_by": {
+    "owner": 1,
+    "soldier": 2
+   }
+  },
+  "interest_merchant": {
+   "status": "escalating",
+   "progress": 0.0,
+   "events": 31,
+   "known_by": {
+    "owner": 2,
+    "merchant": 2,
+    "soldier": 2
+   }
+  },
+  "trust_owner_soldier": {
+   "status": "active",
+   "progress": 0.0,
+   "events": 5,
+   "known_by": {
+    "soldier": 1,
+    "owner": 1,
+    "merchant": 1
+   }
+  },
+  "crisis_leak": {
+   "status": "escalating",
+   "progress": 0.0,
+   "events": 24,
+   "known_by": {
+    "soldier": 1,
+    "owner": 1,
+    "merchant": 1
+   }
+  }
+ },
+ "conflicts": {
+  "C001": {
+   "type": "interest",
+   "status": "active",
+   "severity": 0.605,
+   "escalation": 0.41,
+   "participants": [
+    "merchant",
+    "soldier"
+   ]
+  },
+  "C002": {
+   "type": "goal",
+   "status": "latent",
+   "severity": 0.725,
+   "escalation": 0.21,
+   "participants": [
+    "merchant",
+    "soldier"
+   ]
+  },
+  "C003": {
+   "type": "resource",
+   "status": "latent",
+   "severity": 0.4,
+   "escalation": 0.0,
+   "participants": [
+    "merchant",
+    "owner"
+   ]
+  },
+  "C004": {
+   "type": "information",
+   "status": "escalating",
+   "severity": 1.0,
+   "escalation": 0.98,
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ]
+  },
+  "C005": {
+   "type": "information",
+   "status": "latent",
+   "severity": 0.575,
+   "escalation": 0.25,
+   "participants": [
+    "owner",
+    "soldier"
+   ]
+  },
+  "C006": {
+   "type": "information",
+   "status": "latent",
+   "severity": 0.39,
+   "escalation": 0.02,
+   "participants": [
+    "merchant",
+    "owner"
+   ]
+  }
+ },
+ "stagnation": {
+  "ticks_since_plot_event": 0,
+  "ticks_since_thread_progress": 0
+ },
+ "changes": 24
+}

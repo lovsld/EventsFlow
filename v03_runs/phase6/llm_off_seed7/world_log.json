@@ -1,0 +1,1807 @@
+[
+ {
+  "tick": 1,
+  "time": "21:05",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0001",
+    "tick": 1,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0002",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "from": "tables",
+    "to": "bar"
+   },
+   {
+    "event_id": "E0003",
+    "tick": 1,
+    "type": "work",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_start",
+    "session": "S1",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "event_id": "E0004",
+    "tick": 1
+   },
+   {
+    "event_id": "E0005",
+    "tick": 1,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0002",
+     "E0003",
+     "E0004"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0002",
+     "E0003",
+     "E0004"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0001"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 2,
+  "time": "21:10",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "door"
+  },
+  "events": [
+   {
+    "event_id": "E0006",
+    "tick": 2,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "door",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0007",
+    "tick": 2,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0008",
+    "tick": 2,
+    "type": "work",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0009",
+    "tick": 2,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "rain_starts",
+    "text": "窗外下起雨来，酒馆里的人今晚大概走不了太早。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0007",
+     "E0008",
+     "E0009"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0007",
+     "E0008",
+     "E0009"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 3,
+  "time": "21:15",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "tables"
+  },
+  "events": [
+   {
+    "event_id": "E0010",
+    "tick": 3,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "tables",
+    "from": "door",
+    "to": "tables"
+   },
+   {
+    "event_id": "E0011",
+    "tick": 3,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "镇上商业机会",
+    "claim": null,
+    "text": "这雨下得真急啊。老板，我是刚来镇上的，正想找点营生做。您在这镇上待得久，最近有没有什么生意上的风声，值得留意的？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0012",
+    "tick": 3,
+    "type": "work",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0011",
+     "E0012"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0011",
+     "E0012"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0010"
+    ],
+    "muffled_event_ids": [
+     "E0011"
+    ]
+   }
+  ]
+ },
+ {
+  "tick": 4,
+  "time": "21:20",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0013",
+    "tick": 4,
+    "type": "move",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "from": "tables",
+    "to": "bar"
+   },
+   {
+    "event_id": "E0014",
+    "tick": 4,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "镇上商业机会",
+    "claim": null,
+    "text": "老板，您先忙。我就随口问问——这镇上最近有没有谁在收粮食，或者哪家铺子想转手？我跑生意这些年，多少能帮上点忙。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0015",
+    "tick": 4,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "镇上商业机会",
+    "claim": null,
+    "text": "这雨夜赶路人少，酒馆的生意也就这样。镇上营生无非是给来往的客商备些吃食和住处，没什么特别的门道。您要是想找活计，明儿天晴了去集市那边转转，比在我这儿打听强。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "type": "session_start",
+    "session": "S2",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner",
+     "soldier"
+    ],
+    "event_id": "E0016",
+    "tick": 4
+   },
+   {
+    "type": "session_end",
+    "session": "S1",
+    "location": "bar",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "event_id": "E0017",
+    "tick": 4
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0013",
+     "E0014",
+     "E0015",
+     "E0016",
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0013",
+     "E0014",
+     "E0015",
+     "E0016",
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0013",
+     "E0014",
+     "E0015",
+     "E0016",
+     "E0017"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 5,
+  "time": "21:25",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0018",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "镇上收粮与铺子转手",
+    "claim": null,
+    "text": "老板，我插一句——刚才这位客商问收粮的事，我也好奇。最近镇上真没人大量收粮？还有，您这酒馆有没有想转手的意思？我听说近来有些风声，想跟您确认确认。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0019",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "镇上商机与货栈需求",
+    "claim": null,
+    "text": "这位军爷，打扰一下——我跑生意的，头回上这镇子来。您常在这一带走动，可知道附近有没有粮行、货栈要收货，或者哪家铺子想盘出去？我出价公道，也懂规矩。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0020",
+    "tick": 5,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "镇上商业机会",
+    "claim": null,
+    "text": "收粮食的事我不清楚，我这酒馆只进些酒和柴火。铺子转手嘛，没听说谁要卖。您要真想做买卖，等雨停了去集市问问，那边掌事的人比我清楚。这雨夜就别折腾了，先喝口热的。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0018",
+     "E0019",
+     "E0020"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0018",
+     "E0019",
+     "E0020"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0018",
+     "E0019",
+     "E0020"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 6,
+  "time": "21:30",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0021",
+    "tick": 6,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "镇上商机与传闻",
+    "claim": null,
+    "text": "粮行货栈的事我不太清楚，铺子转手也没听说。不过您问得巧——近来镇上确实有些风声，您这趟来之前，可听人提过这镇子的什么传闻？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0022",
+    "tick": 6,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0023",
+    "tick": 6,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "镇上风声与酒馆转手",
+    "claim": null,
+    "text": "风声？这镇上闲话向来不少，我耳朵里进进出出，多半当不得真。酒馆是我吃饭的根，没打算转手，您别听外头瞎传。倒是您说的风声，具体指哪一桩？",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0024",
+    "tick": 6,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0021",
+     "E0022",
+     "E0023",
+     "E0024"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0021",
+     "E0022",
+     "E0023",
+     "E0024"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0021",
+     "E0022",
+     "E0023",
+     "E0024"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 7,
+  "time": "21:35",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0025",
+    "tick": 7,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0026",
+    "tick": 7,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "镇上商机与风声",
+    "claim": null,
+    "text": "风声我倒是没听出什么门道来——我这趟来是看货、看行情的，传闻这种东西，听十句不如看一桩买卖。您既然在镇上当差，耳目比我灵，倒不如说说：眼下这镇上哪门营生最缺人搭把手，或者谁家正为进货、出货发愁？我出钱出力都行，就想找个实在的门路。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0027",
+    "tick": 7,
+    "type": "ask",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "镇上风声的具体所指",
+    "claim": null,
+    "text": "风声这词儿太笼统，军爷您给个准话——是收粮的事，还是镇上公账上的闲话？我这酒馆开十年，最怕的就是外头传得沸沸扬扬，客人反倒不敢进门。您要真听到什么，跟我说个大概，我也好心里有数。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0028",
+    "tick": 7,
+    "type": "ambient",
+    "actors": [],
+    "location": "tables",
+    "topic": "cat_knocks_glass",
+    "text": "一只野猫碰倒了桌边的空杯子，碎在地上。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0025",
+     "E0026",
+     "E0027"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0025",
+     "E0026",
+     "E0027"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0025",
+     "E0026",
+     "E0027"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 8,
+  "time": "21:40",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0029",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "公账与镇上风声",
+    "claim": null,
+    "text": "公账的事我可没提。我不过是奉命走走看看，问问近来镇上有什么不太平。老板你倒好，自己把公账两个字先摆出来了——是最近公账上有什么动静，还是你听人说过什么？",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0030",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "镇上实际买卖需求与门路",
+    "claim": null,
+    "text": "老板别多心，我说的风声跟公账、收粮那些闲话没关系——我这人只认账本不认传闻。您开十年酒馆，进货出货的门路比谁都清楚：眼下这镇上，谁家缺货源、谁家货压着出不去，您给我透个实在的，我出钱搭把手，成了也少不了您的好处。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0031",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "镇上商机与避开风声",
+    "claim": null,
+    "text": "这位客商说的是实在话——听传闻不如看买卖。镇上缺人手的营生，我看是粮行装卸和货栈搬运，雨季一到，进出的货都急着找地方落脚。至于风声，我一个开酒馆的，只管酒菜账目，别家的事不敢多嘴。您要真想做门路，明儿雨停了去粮行那边转转，比在我这儿打听强。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0032",
+    "tick": 8,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0029",
+     "E0030",
+     "E0031",
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0029",
+     "E0030",
+     "E0031",
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0029",
+     "E0030",
+     "E0031",
+     "E0032"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 9,
+  "time": "21:45",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0033",
+    "tick": 9,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "公账风声的具体所指",
+    "claim": null,
+    "text": "老板，我先把话说清楚：我今晚来不是冲着公账来的，是奉命看看近来镇上有没有什么不太平。你倒先提了公账两个字，那我不妨问一句——你听人说过公账上什么动静？还是有人在你店里提过？我不为难你，你照实说个大概就行。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0034",
+    "tick": 9,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "粮行货栈的门路与对接人",
+    "claim": null,
+    "text": "老板这话在理，我就爱听实在的。粮行装卸和货栈搬运——雨季货急着落脚，这生意听着有谱。那我想再请教一句：粮行那边掌事的，是镇上自己人还是外来的？我明儿去谈，总得知道跟谁递话、按什么规矩来，免得冒冒失失碰一鼻子灰。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0035",
+    "tick": 9,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "公账与镇上风声",
+    "claim": null,
+    "text": "军爷这话说得我糊涂了——我一个开酒馆的，每天经手的只有酒钱菜钱，公账那种事哪轮得到我插嘴。方才我不过是顺着话头问一句镇上风声，倒让您误会了。您要问镇上太平不太平，我只知道这雨夜客人赖着不走，别的真不敢乱说。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0033",
+     "E0034",
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0033",
+     "E0034",
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0033",
+     "E0034",
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 10,
+  "time": "21:50",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0036",
+    "tick": 10,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "酒馆里客人提过的公账闲话",
+    "claim": null,
+    "text": "老板，别紧张，我没说你插嘴公账。只是这镇上近来风声不太对，我是奉命来摸个底。你开十年酒馆，来往的人多，耳朵最灵——哪怕只是听客人醉后提过一两句，说个大概就行，我记在心里，不往外传。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0037",
+    "tick": 10,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "粮行掌事与对接门路",
+    "claim": null,
+    "text": "军爷问的公账，我一个外乡客商可插不上嘴，这些事我确实一无所知。倒是老板方才提的粮行装卸，我记在心上了——您还没说完呢，粮行那边掌事的是镇上自己人还是外来的？我明儿去递话，总得知道找谁、按什么规矩来。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0038",
+    "tick": 10,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "公账与镇上风声",
+    "claim": null,
+    "text": "军爷，我一个开酒馆的，公账长什么样都没见过，哪能说出什么动静来。您奉命查看镇上太平不太平，我这儿能给您作证的只有一桩：这雨下了整晚，客人赖着不走，酒钱照付，再没别的。真要查什么，还得您自己去问该问的人。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0039",
+    "tick": 10,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "酒馆门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0036",
+     "E0037",
+     "E0038"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0036",
+     "E0037",
+     "E0038"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0036",
+     "E0037",
+     "E0038"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 11,
+  "time": "21:55",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0040",
+    "tick": 11,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "公账闲话与酒馆所见所闻",
+    "claim": null,
+    "text": "老板，我不是要你指证谁。上回你问我风声具体指哪一桩，我实话说：我听到的是公账上的闲话，具体是谁、哪一笔，我手上没有准信。你开十年酒馆，来往的人多——就说一句，这半年里有没有人在你店里提过账目上的事，哪怕醉话。你说了我记着，不外传。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0041",
+    "tick": 11,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "粮行掌事与对接门路",
+    "claim": null,
+    "text": "老板，军爷问的公账我确实插不上嘴。不过您方才说的粮行装卸，我明儿想去递个话——掌事的是镇上自己人还是外来的？按什么规矩来？您给指条路，我也好备些礼数。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0042",
+    "tick": 11,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "公账与粮行对接",
+    "claim": null,
+    "text": "军爷，我明白您是奉命行事。可我这儿客人喝多了，吹牛的、骂天气的、说自家婆娘的，什么话都有，我哪能句句当真、句句记得。公账的事我实在说不出个所以然，您要摸底，镇公所那边的人比我清楚。至于粮行——这位客商问的，掌事的是镇上老户，姓周，规矩是先递话后谈价。我把知道的都摆桌上了，剩下的您二位自己掂量。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0040",
+     "E0041",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0040",
+     "E0041",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0040",
+     "E0041",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 12,
+  "time": "22:00",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0043",
+    "tick": 12,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "公账闲话与酒馆所见所闻",
+    "claim": null,
+    "text": "老板，我不逼你指证谁，也不外传。你方才说镇公所那边比我清楚——这话我记下了。我只再问一句：这半年里，有没有人当着你面提过公账上的数目对不上，哪怕一句醉话？你点头摇头都行。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0044",
+    "tick": 12,
+    "type": "ask",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "粮行递话的引荐与礼数",
+    "claim": null,
+    "text": "老板，多谢您把话摆到桌面上。军爷的事我不掺和，我一个跑买卖的，只认货和价。既然粮行掌事的是周家老户，规矩是先递话后谈价——那我明儿递话时，该提谁的名号引荐，还是直接登门自报来意？您给句准话，礼数上我不失分寸。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0045",
+    "tick": 12,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "公账闲话与酒馆所见所闻",
+    "claim": null,
+    "text": "军爷，我上回说的就是实话：我这店里酒话不少，可具体到公账上谁、哪一笔，我是真没有准信，也不敢瞎编一句害人。您要摸底，镇公所那边才是正路。我这做买卖的，只求安安生生开门，别的插不上手。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0043",
+     "E0044",
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0043",
+     "E0044",
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0043",
+     "E0044",
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 13,
+  "time": "22:05",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0046",
+    "tick": 13,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "公账闲话与酒馆所见所闻",
+    "claim": null,
+    "text": "老板，我不为难你。你两次都说镇公所比我清楚——这话我记下了。我最后问一句：这半年你在店里，有没有听人提过公账上的数目对不上，哪怕一句醉话？你点头摇头都行。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0047",
+    "tick": 13,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "粮行递话的引荐与礼数",
+    "claim": null,
+    "text": "老板，军爷问的是他的公事，我不插嘴。我只把您方才提的那句落到实处：明儿我去粮行递话，是提您这酒馆的名号引荐，还是我自报来意、备一份薄礼登门？您给个准话，我好按镇上的规矩来，不叫您为难。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0048",
+    "tick": 13,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "merchant"
+    ],
+    "location": "bar",
+    "topic": "粮行递话的礼数与不涉公账",
+    "claim": null,
+    "text": "米拉掌柜，礼数上我给您句准话：周家老户讲究先递话后谈价，您明儿登门自报来意就成，别提谁的名号——提了反倒像替谁站台，人家心里要掂量。就说雨季货急着落脚，想搭把手做装卸搬运，实打实的买卖，比什么引荐都管用。军爷这边我也把话撂下了：公账的事我店里没准信，谁也别指望我编一句。我这店只做酒和货的生意。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0049",
+    "tick": 13,
+    "type": "ambient",
+    "actors": [],
+    "location": "outside",
+    "topic": "distant_shout",
+    "text": "街上远处有人喊了一嗓子，很快没了声音。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0046",
+     "E0047",
+     "E0048"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0046",
+     "E0047",
+     "E0048"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0046",
+     "E0047",
+     "E0048"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 14,
+  "time": "22:10",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0050",
+    "tick": 14,
+    "type": "ask",
+    "actors": [
+     "soldier",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "公账数目对不上的闲话",
+    "claim": null,
+    "text": "老板，你两次都说镇公所比我清楚——这话我记下了，不逼你编。我只问最后一句：这半年你在店里，有没有听人提过公账上的数目对不上，哪怕一句醉话？点头摇头都行。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0051",
+    "tick": 14,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "粮行递话的礼数与不涉公账",
+    "claim": null,
+    "text": "老板，这话我记下了——自报来意，不提名号，就说雨季货急着落脚、想搭把手做装卸搬运，实打实的买卖。这份实在我领情。军爷问的公账，我一个跑买卖的确实插不上嘴，也没听见过什么数目不对的话，就不在这儿添乱了。明儿雨停我就去粮行递话。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0052",
+    "tick": 14,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "公账闲话与酒馆所见所闻",
+    "claim": null,
+    "text": "军爷，我给您个准话，点头摇头都不必了：这半年在我店里，没人当着我的面提过公账上数目对不上，一句醉话也没有。我这耳朵只记账单和酒钱。您要摸底，去镇公所问，比在我这儿问实在。",
+    "interrupted": true,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0050",
+     "E0051",
+     "E0052"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0050",
+     "E0051",
+     "E0052"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0050",
+     "E0051",
+     "E0052"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 15,
+  "time": "22:15",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0053",
+    "tick": 15,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0054",
+    "tick": 15,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "粮行递话与不涉公账",
+    "claim": null,
+    "text": "老板，军爷问的公账，我一个跑买卖的确实插不上嘴，也没听见过什么数目不对的话。您这店里的规矩我记下了——明儿雨停我就去粮行递话，自报来意，不提谁的名号。今晚不多搅扰，先歇了。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0055",
+    "tick": 15,
+    "type": "refuse",
+    "actors": [
+     "owner"
+    ],
+    "location": "bar",
+    "topic": "公账追问到此为止",
+    "target": "soldier"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0053",
+     "E0054",
+     "E0055"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0053",
+     "E0054",
+     "E0055"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0053",
+     "E0054",
+     "E0055"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 16,
+  "time": "22:20",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0056",
+    "tick": 16,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0057",
+    "tick": 16,
+    "type": "speak",
+    "actors": [
+     "merchant",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "公账之事无从奉告",
+    "claim": null,
+    "text": "军爷，我不过是个外来的买卖人，公账上的事我既没经手也没听人提过，实在给不出什么准信。您要摸底，镇公所那边是正路。我明儿还得跑生意，先不搅扰了。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0058",
+    "tick": 16,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "收店送客与公账追问到此为止",
+    "claim": null,
+    "text": "军爷，时候不早了，雨还下着，我这店也该收了。公账的事我先前把话说明白了——我这儿没听过什么数目对不上的闲话，也不敢瞎猜。您要查，镇公所的门路比我这酒馆清楚。今晚就到这儿吧，您慢走。",
+    "interrupted": true,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0059",
+    "tick": 16,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "candle_flickers",
+    "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0056",
+     "E0057",
+     "E0058",
+     "E0059"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0056",
+     "E0057",
+     "E0058",
+     "E0059"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0056",
+     "E0057",
+     "E0058",
+     "E0059"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 17,
+  "time": "22:25",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0060",
+    "tick": 17,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0061",
+    "tick": 17,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0062",
+    "tick": 17,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "收店送客与公账追问到此为止",
+    "claim": null,
+    "text": "军爷，话我上回已经说尽了：我这儿没听过数目对不上的闲话，也不敢瞎猜。蜡烛都烧到底了，雨夜路滑，您早些回营。我这店要落闩收灯了。",
+    "interrupted": false,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0060",
+     "E0061",
+     "E0062"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0060",
+     "E0061",
+     "E0062"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0060",
+     "E0061",
+     "E0062"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 18,
+  "time": "22:30",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0063",
+    "tick": 18,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0064",
+    "tick": 18,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0065",
+    "tick": 18,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "收店送客，公账之事无可奉告",
+    "claim": null,
+    "text": "军爷，我上回已经把话说尽了：我这儿没听过数目对不上的闲话，也不敢瞎猜。蜡烛都烧到底了，雨夜路滑，您早些回营，我这店要落闩收灯了。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0066",
+    "tick": 18,
+    "type": "ambient",
+    "actors": [],
+    "location": "outside",
+    "topic": "distant_shout",
+    "text": "街上远处有人喊了一嗓子，很快没了声音。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0063",
+     "E0064",
+     "E0065"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0063",
+     "E0064",
+     "E0065"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0063",
+     "E0064",
+     "E0065"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 19,
+  "time": "22:35",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0067",
+    "tick": 19,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0068",
+    "tick": 19,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0069",
+    "tick": 19,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "收店送客，公账之事无可奉告",
+    "claim": null,
+    "text": "军爷，我方才已把话说尽了，这店要落闩了。雨夜里您早些回营，我也好熄灯。公账的事，我一个开店的实在无可奉告。",
+    "interrupted": false,
+    "session_location": "bar"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0067",
+     "E0068",
+     "E0069"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0067",
+     "E0068",
+     "E0069"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0067",
+     "E0068",
+     "E0069"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 20,
+  "time": "22:40",
+  "positions": {
+   "merchant": "bar",
+   "owner": "bar",
+   "soldier": "bar"
+  },
+  "events": [
+   {
+    "event_id": "E0070",
+    "tick": 20,
+    "type": "wait",
+    "actors": [
+     "soldier"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0071",
+    "tick": 20,
+    "type": "wait",
+    "actors": [
+     "merchant"
+    ],
+    "location": "bar",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0072",
+    "tick": 20,
+    "type": "speak",
+    "actors": [
+     "owner",
+     "soldier"
+    ],
+    "location": "bar",
+    "topic": "收店落闩，无可奉告",
+    "claim": null,
+    "text": "军爷，话我前头已说尽了，店里实在没有别的可奉告。夜也深了，我这就熄灯落闩——您和这位客商都早些安置吧。",
+    "interrupted": false,
+    "session_location": "bar"
+   },
+   {
+    "event_id": "E0073",
+    "tick": 20,
+    "type": "ambient",
+    "actors": [],
+    "location": "door",
+    "topic": "bell_rings",
+    "text": "酒馆门口的铃铛响了一声，又没有人进来。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "merchant",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0070",
+     "E0071",
+     "E0072"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "owner",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0070",
+     "E0071",
+     "E0072"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "soldier",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0070",
+     "E0071",
+     "E0072"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ }
+]

@@ -168,6 +168,12 @@ class WorldEngine:
         self.rng = random.Random(seed)
         self.tick_no = 0
         self.event_seq = [0]
+        # V0.3 Phase 3b (approved by Hu 2026-11-21): external event
+        # queue — the World Engine's receiving port for validated
+        # Story Engine candidates. Empty queue (the default, and
+        # always when the Story Engine is off) leaves step()
+        # behaviour and RNG consumption exactly as before.
+        self._external_queue: list[dict] = []
         self.interactions = InteractionManager()
         self.log: list[dict] = []
         agents = {}
@@ -184,6 +190,14 @@ class WorldEngine:
 
     def snapshot(self) -> dict:
         return copy.deepcopy(self.state)
+
+    def queue_external_event(self, event: dict) -> None:
+        """V0.3 Phase 3b: accept an externally proposed event (a
+        Story Engine candidate that passed causal + world-rule
+        validation) for commitment at the next step(). The world
+        stamps its own event_id and tick; committing stays the
+        World Engine's act alone."""
+        self._external_queue.append(dict(event))
 
     def step(self, intents: dict[str, dict]) -> list[dict]:
         self.tick_no += 1
@@ -212,5 +226,13 @@ class WorldEngine:
             events.append({"event_id": f"E{self.event_seq[0]:04d}", "tick": self.tick_no,
                            "type": "ambient", "actors": [], "location": loc or "bar",
                            "topic": kind, "text": text})
+        # V0.3 Phase 3b: commit queued external events as ordinary
+        # events of this tick, numbered by the world's own sequence.
+        while self._external_queue:
+            ev = self._external_queue.pop(0)
+            self.event_seq[0] += 1
+            ev["event_id"] = f"E{self.event_seq[0]:04d}"
+            ev["tick"] = self.tick_no
+            events.append(ev)
         self.log.extend(events)
         return events

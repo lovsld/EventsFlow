@@ -1,0 +1,373 @@
+{
+ "run_id": "rule_on_seed42",
+ "main_thread": "interest_merchant",
+ "arc": {
+  "final_stage": "climax",
+  "transitions": [
+   {
+    "tick": 5,
+    "from": "setup",
+    "to": "development",
+    "trigger": "thread developed past opening / first propagation",
+    "evidence": [
+     "interest_merchant"
+    ]
+   },
+   {
+    "tick": 6,
+    "from": "development",
+    "to": "escalation",
+    "trigger": "thread escalating or conflict severity >= 0.6",
+    "evidence": [
+     "main_embezzlement",
+     "interest_merchant",
+     "crisis_leak"
+    ]
+   },
+   {
+    "tick": 10,
+    "from": "escalation",
+    "to": "climax",
+    "trigger": "main-thread confrontation ladder >= 3",
+    "evidence": [
+     "E0033",
+     "E0037",
+     "E0039"
+    ]
+   }
+  ],
+  "stage_at": {
+   "1": "setup",
+   "2": "setup",
+   "3": "setup",
+   "4": "setup",
+   "5": "development",
+   "6": "escalation",
+   "7": "escalation",
+   "8": "escalation",
+   "9": "escalation",
+   "10": "climax",
+   "11": "climax",
+   "12": "climax",
+   "13": "climax",
+   "14": "climax",
+   "15": "climax",
+   "16": "climax",
+   "17": "climax",
+   "18": "climax",
+   "19": "climax",
+   "20": "climax"
+  },
+  "not_reached": [
+   "aftermath",
+   "resolution"
+  ]
+ },
+ "chapters": [
+  {
+   "chapter_id": "CH01",
+   "title": "第1章 · 铺垫",
+   "stage": "setup",
+   "tick_range": [
+    1,
+    4
+   ],
+   "scene_slices": [
+    {
+     "scene_id": "S01",
+     "location": "back_room",
+     "events": [
+      "E0002",
+      "E0005",
+      "E0008"
+     ]
+    },
+    {
+     "scene_id": "S02",
+     "location": "bar",
+     "events": [
+      "E0003",
+      "E0004",
+      "E0007",
+      "E0009",
+      "E0010",
+      "E0011",
+      "E0014",
+      "E0015"
+     ]
+    },
+    {
+     "scene_id": "S03",
+     "location": "tables",
+     "events": [
+      "E0001",
+      "E0006"
+     ]
+    },
+    {
+     "scene_id": "S04",
+     "location": "tables",
+     "events": [
+      "E0013"
+     ]
+    }
+   ],
+   "locations": [
+    "back_room",
+    "bar",
+    "tables"
+   ],
+   "threads": [
+    "main_embezzlement",
+    "secret_letter_writer",
+    "interest_merchant",
+    "crisis_leak",
+    "trust_owner_soldier"
+   ],
+   "key_events": [
+    "E0008",
+    "E0014"
+   ]
+  },
+  {
+   "chapter_id": "CH02",
+   "title": "第2章 · 发展",
+   "stage": "development",
+   "tick_range": [
+    5,
+    5
+   ],
+   "scene_slices": [
+    {
+     "scene_id": "S02",
+     "location": "bar",
+     "events": [
+      "E0016",
+      "E0017",
+      "E0018",
+      "E0019",
+      "E0020"
+     ]
+    }
+   ],
+   "locations": [
+    "bar"
+   ],
+   "threads": [
+    "interest_merchant",
+    "main_embezzlement",
+    "crisis_leak",
+    "trust_owner_soldier"
+   ],
+   "key_events": [
+    "E0017"
+   ]
+  },
+  {
+   "chapter_id": "CH03",
+   "title": "第3章 · 升级",
+   "stage": "escalation",
+   "tick_range": [
+    6,
+    9
+   ],
+   "scene_slices": [
+    {
+     "scene_id": "S02",
+     "location": "bar",
+     "events": [
+      "E0023",
+      "E0024",
+      "E0025",
+      "E0026",
+      "E0027",
+      "E0028",
+      "E0029",
+      "E0030",
+      "E0031",
+      "E0032",
+      "E0033",
+      "E0034",
+      "E0035",
+      "E0036"
+     ]
+    }
+   ],
+   "locations": [
+    "bar"
+   ],
+   "threads": [
+    "interest_merchant",
+    "main_embezzlement",
+    "crisis_leak",
+    "trust_owner_soldier"
+   ],
+   "key_events": [
+    "E0023",
+    "E0031",
+    "E0033"
+   ]
+  },
+  {
+   "chapter_id": "CH04",
+   "title": "第4章 · 高潮",
+   "stage": "climax",
+   "tick_range": [
+    10,
+    20
+   ],
+   "scene_slices": [
+    {
+     "scene_id": "S02",
+     "location": "bar",
+     "events": [
+      "E0037",
+      "E0038",
+      "E0039",
+      "E0040",
+      "E0041",
+      "E0042",
+      "E0043",
+      "E0044",
+      "E0045",
+      "E0046",
+      "E0047",
+      "E0048",
+      "E0049",
+      "E0050",
+      "E0052",
+      "E0053",
+      "E0054",
+      "E0056",
+      "E0057",
+      "E0058",
+      "E0059",
+      "E0060",
+      "E0061",
+      "E0062",
+      "E0063",
+      "E0064",
+      "E0065",
+      "E0066",
+      "E0067",
+      "E0068",
+      "E0069",
+      "E0071",
+      "E0072",
+      "E0073",
+      "E0074",
+      "E0075",
+      "E0076"
+     ]
+    }
+   ],
+   "locations": [
+    "bar"
+   ],
+   "threads": [
+    "interest_merchant",
+    "main_embezzlement",
+    "crisis_leak",
+    "trust_owner_soldier"
+   ],
+   "key_events": [
+    "E0037",
+    "E0039",
+    "E0041",
+    "E0060",
+    "E0064",
+    "E0066",
+    "E0067"
+   ]
+  }
+ ],
+ "setups": [
+  {
+   "id": "setup_q_main_embezzlement_letter_exists",
+   "kind": "question",
+   "thread": "main_embezzlement",
+   "description": "匿名信是否真实存在？",
+   "planted_tick": 3,
+   "payoff_tick": 3,
+   "status": "paid_off"
+  },
+  {
+   "id": "setup_q_main_embezzlement_embezzled",
+   "kind": "question",
+   "thread": "main_embezzlement",
+   "description": "镇长是否侵吞了公共资金？",
+   "planted_tick": 3,
+   "payoff_tick": null,
+   "status": "open"
+  },
+  {
+   "id": "setup_q_secret_letter_writer_writer_identified",
+   "kind": "question",
+   "thread": "secret_letter_writer",
+   "description": "写信人身份是否查明？",
+   "planted_tick": 3,
+   "payoff_tick": null,
+   "status": "open"
+  },
+  {
+   "id": "setup_q_interest_merchant_deal_done",
+   "kind": "question",
+   "thread": "interest_merchant",
+   "description": "商业交易是否达成？",
+   "planted_tick": 4,
+   "payoff_tick": null,
+   "status": "open"
+  },
+  {
+   "id": "setup_q_crisis_leak_mayor_informed",
+   "kind": "question",
+   "thread": "crisis_leak",
+   "description": "镇长是否已得知调查？",
+   "planted_tick": 6,
+   "payoff_tick": null,
+   "status": "open"
+  },
+  {
+   "id": "setup_obj_anonymous_letter",
+   "kind": "object",
+   "thread": "",
+   "description": "object anonymous_letter discovered",
+   "planted_tick": 3,
+   "payoff_tick": 6,
+   "status": "paid_off"
+  }
+ ],
+ "threads": {
+  "main_embezzlement": {
+   "status": "escalating",
+   "progress": 0.5,
+   "events": 25
+  },
+  "secret_letter_writer": {
+   "status": "dormant",
+   "progress": 0.0,
+   "events": 1
+  },
+  "interest_merchant": {
+   "status": "escalating",
+   "progress": 0.0,
+   "events": 31
+  },
+  "trust_owner_soldier": {
+   "status": "active",
+   "progress": 0.0,
+   "events": 5
+  },
+  "crisis_leak": {
+   "status": "escalating",
+   "progress": 0.0,
+   "events": 24
+  }
+ },
+ "edge_counts": {
+  "reveals": 2,
+  "depends_on": 5,
+  "enables": 1,
+  "escalates": 5
+ }
+}
