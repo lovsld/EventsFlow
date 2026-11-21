@@ -1,0 +1,363 @@
+[
+ {
+  "context_event_ids": [
+   "E0001",
+   "E0003",
+   "E0004",
+   "E0005",
+   "E0006",
+   "E0007",
+   "E0008",
+   "E0009",
+   "E0010",
+   "E0011",
+   "E0012",
+   "E0013",
+   "E0014"
+  ],
+  "end_tick": 1,
+  "event_ids": [
+   "E0002"
+  ],
+  "kind": "loose",
+  "location": "oncall",
+  "open": false,
+  "participants": [
+   "doctor_shen"
+  ],
+  "scene_id": "SC-001",
+  "session": null,
+  "start_tick": 1
+ },
+ {
+  "context_event_ids": [
+   "E0015",
+   "E0016",
+   "E0017",
+   "E0018",
+   "E0019",
+   "E0020",
+   "E0021",
+   "E0022",
+   "E0023",
+   "E0027",
+   "E0029"
+  ],
+  "end_tick": 8,
+  "event_ids": [
+   "E0024",
+   "E0025",
+   "E0026",
+   "E0032"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "nurse_lin"
+  ],
+  "scene_id": "SC-002",
+  "session": "S1",
+  "start_tick": 7
+ },
+ {
+  "context_event_ids": [],
+  "end_tick": 9,
+  "event_ids": [
+   "E0028",
+   "E0030",
+   "E0031",
+   "E0037"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "scene_id": "SC-003",
+  "session": "S2",
+  "start_tick": 8
+ },
+ {
+  "context_event_ids": [
+   "E0039"
+  ],
+  "end_tick": 10,
+  "event_ids": [
+   "E0033",
+   "E0034",
+   "E0035",
+   "E0036",
+   "E0042"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "scene_id": "SC-004",
+  "session": "S3",
+  "start_tick": 9
+ },
+ {
+  "context_event_ids": [
+   "E0043",
+   "E0045"
+  ],
+  "end_tick": 12,
+  "event_ids": [
+   "E0038",
+   "E0040",
+   "E0041",
+   "E0044",
+   "E0046",
+   "E0051"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "scene_id": "SC-005",
+  "session": "S4",
+  "start_tick": 10
+ },
+ {
+  "context_event_ids": [
+   "E0053"
+  ],
+  "end_tick": 13,
+  "event_ids": [
+   "E0047",
+   "E0048",
+   "E0049",
+   "E0050",
+   "E0056"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "scene_id": "SC-006",
+  "session": "S5",
+  "start_tick": 12
+ },
+ {
+  "context_event_ids": [
+   "E0057"
+  ],
+  "end_tick": 14,
+  "event_ids": [
+   "E0052",
+   "E0054",
+   "E0055",
+   "E0059",
+   "E0062"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "scene_id": "SC-007",
+  "session": "S6",
+  "start_tick": 13
+ },
+ {
+  "context_event_ids": [
+   "E0064",
+   "E0066",
+   "E0068"
+  ],
+  "end_tick": 15,
+  "event_ids": [
+   "E0058",
+   "E0060",
+   "E0061",
+   "E0063",
+   "E0065",
+   "E0067"
+  ],
+  "kind": "session",
+  "location": "oncall",
+  "open": false,
+  "participants": [
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "scene_id": "SC-008",
+  "session": "S7",
+  "start_tick": 14
+ },
+ {
+  "context_event_ids": [
+   "E0071",
+   "E0074"
+  ],
+  "end_tick": 18,
+  "event_ids": [
+   "E0069",
+   "E0070",
+   "E0072",
+   "E0073",
+   "E0075",
+   "E0080"
+  ],
+  "kind": "session",
+  "location": "pharmacy",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "scene_id": "SC-009",
+  "session": "S8",
+  "start_tick": 16
+ },
+ {
+  "context_event_ids": [
+   "E0077",
+   "E0081",
+   "E0082"
+  ],
+  "end_tick": 19,
+  "event_ids": [
+   "E0076",
+   "E0078",
+   "E0079",
+   "E0086"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "scene_id": "SC-010",
+  "session": "S9",
+  "start_tick": 18
+ },
+ {
+  "context_event_ids": [
+   "E0089"
+  ],
+  "end_tick": 20,
+  "event_ids": [
+   "E0083",
+   "E0084",
+   "E0085",
+   "E0091"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "nurse_lin"
+  ],
+  "scene_id": "SC-011",
+  "session": "S10",
+  "start_tick": 19
+ },
+ {
+  "context_event_ids": [],
+  "end_tick": 21,
+  "event_ids": [
+   "E0087",
+   "E0088",
+   "E0090",
+   "E0096"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "scene_id": "SC-012",
+  "session": "S11",
+  "start_tick": 20
+ },
+ {
+  "context_event_ids": [
+   "E0101"
+  ],
+  "end_tick": 23,
+  "event_ids": [
+   "E0092",
+   "E0093",
+   "E0094",
+   "E0095",
+   "E0097",
+   "E0098",
+   "E0099",
+   "E0104"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": false,
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "scene_id": "SC-013",
+  "session": "S12",
+  "start_tick": 21
+ },
+ {
+  "context_event_ids": [],
+  "end_tick": 24,
+  "event_ids": [
+   "E0100",
+   "E0102",
+   "E0103",
+   "E0105",
+   "E0107"
+  ],
+  "kind": "session",
+  "location": "triage",
+  "open": true,
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "scene_id": "SC-014",
+  "session": "S13",
+  "start_tick": 23
+ },
+ {
+  "context_event_ids": [],
+  "end_tick": 24,
+  "event_ids": [
+   "E0106"
+  ],
+  "kind": "loose",
+  "location": "pharmacy",
+  "open": false,
+  "participants": [
+   "nurse_lin"
+  ],
+  "scene_id": "SC-015",
+  "session": null,
+  "start_tick": 24
+ }
+]

@@ -1,0 +1,45 @@
+{
+ "characters": [
+  "doctor_shen",
+  "nurse_lin",
+  "porter_wu"
+ ],
+ "engine_version": "v0.2-c",
+ "input_hash_check_after": "pass",
+ "input_hashes_sha256": {
+  "acp.sqlite3": "6f8c83c51171d38b23120d307af793bdfe2ef9044968bcf9e0fccfa911b3af9d",
+  "narrative.md": "8a0290e27ca13868ab9b961bc5e5bf9df670ddff7a3c6527004cc73325fc6286",
+  "run_meta.json": "abd34f7d335958d7ed023ea669b035547c5cced110fcfcc5f1af20b4933984a4",
+  "summary.json": "b3df7c62b376fa92659da7f03103ea3f1e96bdf908d17bf965e9003bdcad8388",
+  "world_log.json": "80016bc1eb16bd5b383260c4c5a126be0a21daa37343ace38ebd47614933f803"
+ },
+ "mode": "rule",
+ "names": {
+  "doctor_shen": {
+   "name": "沈默",
+   "source": "characters_scenario_c/doctor_shen/profile.yaml"
+  },
+  "nurse_lin": {
+   "name": "林小满",
+   "source": "characters_scenario_c/nurse_lin/profile.yaml"
+  },
+  "porter_wu": {
+   "name": "吴大勇",
+   "source": "characters_scenario_c/porter_wu/profile.yaml"
+  }
+ },
+ "observer_version": "n1-observer-1.0",
+ "products": [
+  "observations.json",
+  "frontier.json",
+  "scenes.json",
+  "issues.json",
+  "provenance.json"
+ ],
+ "run_id": "clinic_v02cfix_seed42",
+ "scenario_id": "scenario_c_clinic",
+ "scenario_source": "run_meta.json embedded snapshot",
+ "seed": 42,
+ "ticks": 24,
+ "total_events": 107
+}

@@ -1,0 +1,25 @@
+{
+ "form": "B",
+ "paragraphs": 20,
+ "unsupported_fact_paragraphs": 0,
+ "quotes_checked": 16,
+ "quotes_verbatim": 16,
+ "quote_fidelity": 1.0,
+ "covered_events": 87,
+ "line_events_total": 19,
+ "line_events_covered": 19,
+ "violations": [],
+ "pass": true,
+ "limitation": "Semantic fabrication inside a correctly mapped paragraph is not mechanically detectable; human spot-check remains necessary.",
+ "attempts": [
+  {
+   "attempt": 1,
+   "pass": true,
+   "violations": 0
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 3952,
+  "completion_tokens": 12549
+ }
+}

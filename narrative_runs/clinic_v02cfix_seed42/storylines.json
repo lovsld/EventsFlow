@@ -1,0 +1,320 @@
+{
+ "fragments": [
+  {
+   "aux_notes": [],
+   "break_event": null,
+   "claims": [
+    "denial"
+   ],
+   "edges": [
+    {
+     "basis": [
+      "adjacent mentions of 'denial'",
+      "porter_wu received E0102 (delivered, nearest source) then spoke 'denial'"
+     ],
+     "from": "E0102",
+     "to": "E0105",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    }
+   ],
+   "end_tick": 24,
+   "event_ids": [
+    "E0102",
+    "E0105"
+   ],
+   "kind": "fragment",
+   "line_id": "F01",
+   "participants": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "propositions": [],
+   "start_tick": 23,
+   "state": "fragment",
+   "state_reasons": [
+    "below line criteria (§5.1)"
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "aux_notes": [
+    {
+     "character_id": "nurse_lin",
+     "goal_key": "restock_medicine",
+     "note": "L-AUX corroboration: this goal was activated and never completed in goal_changes (auxiliary evidence only, not a world fact)"
+    }
+   ],
+   "break_event": "E0106",
+   "claims": [
+    "patient_inquire",
+    "patient_notice",
+    "restock_inquire",
+    "restock_report"
+   ],
+   "edges": [
+    {
+     "basis": [
+      "found 'admission_form'; finder later asserted its belief 'fever_patient_coming'"
+     ],
+     "from": "E0002",
+     "to": "E0046",
+     "types": [
+      "E4"
+     ]
+    },
+    {
+     "basis": [
+      "doctor_shen's consecutive searches (one effort)"
+     ],
+     "from": "E0002",
+     "to": "E0049",
+     "types": [
+      "E7"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_patient_coming'"
+     ],
+     "from": "E0033",
+     "to": "E0038",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered within 3 ticks (weak_window)"
+     ],
+     "from": "E0033",
+     "to": "E0046",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_medicine_restocked'",
+      "porter_wu received E0035 (delivered, nearest source) then spoke 'fever_medicine_restocked'"
+     ],
+     "from": "E0035",
+     "to": "E0047",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_patient_coming'"
+     ],
+     "from": "E0038",
+     "to": "E0044",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered in session"
+     ],
+     "from": "E0038",
+     "to": "E0046",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_patient_coming'",
+      "doctor_shen received E0044 (delivered, nearest source) then spoke 'fever_patient_coming'",
+      "ask answered in session"
+     ],
+     "from": "E0044",
+     "to": "E0046",
+     "types": [
+      "E1",
+      "E2",
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_patient_coming'",
+      "porter_wu received E0046 (delivered, nearest source) then spoke 'fever_patient_coming'"
+     ],
+     "from": "E0046",
+     "to": "E0092",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_medicine_restocked'"
+     ],
+     "from": "E0047",
+     "to": "E0052",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "doctor_shen's consecutive searches (one effort)"
+     ],
+     "from": "E0049",
+     "to": "E0070",
+     "types": [
+      "E7"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_medicine_restocked'"
+     ],
+     "from": "E0052",
+     "to": "E0073",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "found 'fever_medicine'; finder later asserted its belief 'fever_medicine_restocked'"
+     ],
+     "from": "E0070",
+     "to": "E0075",
+     "types": [
+      "E4"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_medicine_restocked'",
+      "doctor_shen received E0073 (delivered, nearest source) then spoke 'fever_medicine_restocked'",
+      "ask answered in session"
+     ],
+     "from": "E0073",
+     "to": "E0075",
+     "types": [
+      "E1",
+      "E2",
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_medicine_restocked'"
+     ],
+     "from": "E0075",
+     "to": "E0093",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_patient_coming'"
+     ],
+     "from": "E0092",
+     "to": "E0097",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_medicine_restocked'"
+     ],
+     "from": "E0093",
+     "to": "E0099",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "nurse_lin was told E0097 (addressee, delivered) then searched (informed action)"
+     ],
+     "from": "E0097",
+     "to": "E0098",
+     "types": [
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fever_patient_coming'"
+     ],
+     "from": "E0097",
+     "to": "E0100",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "nurse_lin's consecutive searches (one effort)"
+     ],
+     "from": "E0098",
+     "to": "E0106",
+     "types": [
+      "E7"
+     ]
+    }
+   ],
+   "end_tick": 24,
+   "event_ids": [
+    "E0002",
+    "E0033",
+    "E0035",
+    "E0038",
+    "E0044",
+    "E0046",
+    "E0047",
+    "E0049",
+    "E0052",
+    "E0070",
+    "E0073",
+    "E0075",
+    "E0092",
+    "E0093",
+    "E0097",
+    "E0098",
+    "E0099",
+    "E0100",
+    "E0106"
+   ],
+   "kind": "line",
+   "line_id": "L01",
+   "participants": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "propositions": [
+    "fever_medicine_restocked",
+    "fever_patient_coming"
+   ],
+   "start_tick": 1,
+   "state": "broken",
+   "state_reasons": [
+    "B3: nurse_lin's search E0106 at pharmacy came up empty after the object there had already been found by another agent; no later recovery"
+   ]
+  }
+ ],
+ "meta": {
+  "extractor_version": "n2-extractor-1.0",
+  "input_hash_check_after": "pass",
+  "observer_version": "n1-observer-1.0",
+  "run_id": "clinic_v02cfix_seed42",
+  "strong_edges": 21,
+  "weak_edges": 12
+ }
+}

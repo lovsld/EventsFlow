@@ -1,0 +1,570 @@
+{
+ "fragments": [],
+ "lines": [
+  {
+   "aux_notes": [],
+   "break_event": null,
+   "claims": [
+    "horn_inquire",
+    "horn_report",
+    "ship_inquire",
+    "ship_notice"
+   ],
+   "edges": [
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'"
+     ],
+     "from": "E0006",
+     "to": "E0010",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'",
+      "lin_tao received E0010 (delivered, nearest source) then spoke 'ship_passing_tonight'"
+     ],
+     "from": "E0010",
+     "to": "E0011",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered within 3 ticks (weak_window)"
+     ],
+     "from": "E0010",
+     "to": "E0026",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'",
+      "a_gui received E0011 (delivered, nearest source) then spoke 'ship_passing_tonight'"
+     ],
+     "from": "E0011",
+     "to": "E0014",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered within 3 ticks (weak_window)"
+     ],
+     "from": "E0011",
+     "to": "E0026",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'",
+      "lin_tao received E0014 (delivered, nearest source) then spoke 'ship_passing_tonight'"
+     ],
+     "from": "E0014",
+     "to": "E0015",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered in session"
+     ],
+     "from": "E0014",
+     "to": "E0026",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'",
+      "a_gui received E0015 (delivered, nearest source) then spoke 'ship_passing_tonight'"
+     ],
+     "from": "E0015",
+     "to": "E0020",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered in session"
+     ],
+     "from": "E0015",
+     "to": "E0026",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'",
+      "lin_tao received E0020 (delivered, nearest source) then spoke 'ship_passing_tonight'"
+     ],
+     "from": "E0020",
+     "to": "E0021",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered in session"
+     ],
+     "from": "E0020",
+     "to": "E0026",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'",
+      "a_gui received E0021 (delivered, nearest source) then spoke 'ship_passing_tonight'"
+     ],
+     "from": "E0021",
+     "to": "E0024",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered in session"
+     ],
+     "from": "E0021",
+     "to": "E0026",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'",
+      "lin_tao received E0022 (delivered, nearest source) then spoke 'fog_horn_ready'"
+     ],
+     "from": "E0022",
+     "to": "E0025",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'",
+      "keeper_zhou received E0024 (delivered, nearest source) then spoke 'ship_passing_tonight'",
+      "ask answered in session"
+     ],
+     "from": "E0024",
+     "to": "E0026",
+     "types": [
+      "E1",
+      "E2",
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'",
+      "keeper_zhou received E0025 (delivered, nearest source) then spoke 'fog_horn_ready'"
+     ],
+     "from": "E0025",
+     "to": "E0029",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "lin_tao was told E0026 (addressee, delivered) then searched (informed action)"
+     ],
+     "from": "E0026",
+     "to": "E0028",
+     "types": [
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'",
+      "a_gui received E0026 (delivered, nearest source) then spoke 'ship_passing_tonight'"
+     ],
+     "from": "E0026",
+     "to": "E0030",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "lin_tao's consecutive searches (one effort)"
+     ],
+     "from": "E0028",
+     "to": "E0037",
+     "types": [
+      "E7"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'",
+      "a_gui received E0029 (delivered, nearest source) then spoke 'fog_horn_ready'"
+     ],
+     "from": "E0029",
+     "to": "E0036",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "lin_tao received E0029 (delivered, nearest source) then spoke 'fog_horn_ready'"
+     ],
+     "from": "E0029",
+     "to": "E0080",
+     "types": [
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'"
+     ],
+     "from": "E0030",
+     "to": "E0059",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'",
+      "keeper_zhou received E0036 (delivered, nearest source) then spoke 'fog_horn_ready'"
+     ],
+     "from": "E0036",
+     "to": "E0038",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "lin_tao's consecutive searches (one effort)"
+     ],
+     "from": "E0037",
+     "to": "E0044",
+     "types": [
+      "E7"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'",
+      "a_gui received E0038 (delivered, nearest source) then spoke 'fog_horn_ready'"
+     ],
+     "from": "E0038",
+     "to": "E0039",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'",
+      "keeper_zhou received E0039 (delivered, nearest source) then spoke 'fog_horn_ready'"
+     ],
+     "from": "E0039",
+     "to": "E0041",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'",
+      "a_gui received E0041 (delivered, nearest source) then spoke 'fog_horn_ready'"
+     ],
+     "from": "E0041",
+     "to": "E0043",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'",
+      "keeper_zhou received E0043 (delivered, nearest source) then spoke 'fog_horn_ready'"
+     ],
+     "from": "E0043",
+     "to": "E0045",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "found 'spare_belt'; finder later asserted its belief 'fog_horn_ready'"
+     ],
+     "from": "E0044",
+     "to": "E0080",
+     "types": [
+      "E4"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'"
+     ],
+     "from": "E0045",
+     "to": "E0064",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'"
+     ],
+     "from": "E0059",
+     "to": "E0063",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'"
+     ],
+     "from": "E0063",
+     "to": "E0066",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'"
+     ],
+     "from": "E0064",
+     "to": "E0080",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'"
+     ],
+     "from": "E0066",
+     "to": "E0070",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'"
+     ],
+     "from": "E0070",
+     "to": "E0095",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'",
+      "keeper_zhou received E0080 (delivered, nearest source) then spoke 'fog_horn_ready'"
+     ],
+     "from": "E0080",
+     "to": "E0081",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'",
+      "lin_tao received E0081 (delivered, nearest source) then spoke 'fog_horn_ready'",
+      "ask answered within 3 ticks (weak_window)"
+     ],
+     "from": "E0081",
+     "to": "E0086",
+     "types": [
+      "E1",
+      "E2",
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'"
+     ],
+     "from": "E0086",
+     "to": "E0091",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'fog_horn_ready'"
+     ],
+     "from": "E0091",
+     "to": "E0096",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'ship_passing_tonight'",
+      "keeper_zhou received E0095 (delivered, nearest source) then spoke 'ship_passing_tonight'"
+     ],
+     "from": "E0095",
+     "to": "E0097",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    }
+   ],
+   "end_tick": 23,
+   "event_ids": [
+    "E0006",
+    "E0010",
+    "E0011",
+    "E0014",
+    "E0015",
+    "E0020",
+    "E0021",
+    "E0022",
+    "E0024",
+    "E0025",
+    "E0026",
+    "E0028",
+    "E0029",
+    "E0030",
+    "E0036",
+    "E0037",
+    "E0038",
+    "E0039",
+    "E0041",
+    "E0043",
+    "E0044",
+    "E0045",
+    "E0059",
+    "E0063",
+    "E0064",
+    "E0066",
+    "E0070",
+    "E0080",
+    "E0081",
+    "E0086",
+    "E0091",
+    "E0095",
+    "E0096",
+    "E0097"
+   ],
+   "kind": "line",
+   "line_id": "L01",
+   "participants": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "propositions": [
+    "fog_horn_ready",
+    "ship_passing_tonight"
+   ],
+   "start_tick": 2,
+   "state": "closed",
+   "state_reasons": [
+    "closed: contains an answered ask (E3)"
+   ]
+  },
+  {
+   "aux_notes": [],
+   "break_event": null,
+   "claims": [
+    "denial"
+   ],
+   "edges": [
+    {
+     "basis": [
+      "adjacent mentions of 'denial'",
+      "keeper_zhou received E0056 (delivered, nearest source) then spoke 'denial'"
+     ],
+     "from": "E0056",
+     "to": "E0058",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'denial'"
+     ],
+     "from": "E0058",
+     "to": "E0101",
+     "types": [
+      "E1"
+     ]
+    }
+   ],
+   "end_tick": 24,
+   "event_ids": [
+    "E0056",
+    "E0058",
+    "E0101"
+   ],
+   "kind": "line",
+   "line_id": "L02",
+   "participants": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "propositions": [],
+   "start_tick": 14,
+   "state": "open",
+   "state_reasons": [
+    "open: no terminal element and no break evidence"
+   ]
+  }
+ ],
+ "meta": {
+  "extractor_version": "n2-extractor-1.0",
+  "input_hash_check_after": "pass",
+  "observer_version": "n1-observer-1.0",
+  "run_id": "c5_lighthouse_seed7",
+  "strong_edges": 42,
+  "weak_edges": 13
+ }
+}

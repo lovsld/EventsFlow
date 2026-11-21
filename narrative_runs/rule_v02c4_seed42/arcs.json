@@ -1,0 +1,278 @@
+{
+ "merchant": {
+  "fragments": [],
+  "frontier_by_tick": [
+   {
+    "cumulative_count": 1,
+    "tick": 1
+   },
+   {
+    "cumulative_count": 2,
+    "tick": 2
+   },
+   {
+    "cumulative_count": 5,
+    "tick": 3
+   },
+   {
+    "cumulative_count": 7,
+    "tick": 4
+   },
+   {
+    "cumulative_count": 12,
+    "tick": 5
+   },
+   {
+    "cumulative_count": 16,
+    "tick": 6
+   },
+   {
+    "cumulative_count": 20,
+    "tick": 7
+   },
+   {
+    "cumulative_count": 23,
+    "tick": 8
+   },
+   {
+    "cumulative_count": 26,
+    "tick": 9
+   },
+   {
+    "cumulative_count": 30,
+    "tick": 10
+   },
+   {
+    "cumulative_count": 33,
+    "tick": 11
+   },
+   {
+    "cumulative_count": 36,
+    "tick": 12
+   },
+   {
+    "cumulative_count": 39,
+    "tick": 13
+   },
+   {
+    "cumulative_count": 42,
+    "tick": 14
+   },
+   {
+    "cumulative_count": 46,
+    "tick": 15
+   },
+   {
+    "cumulative_count": 49,
+    "tick": 16
+   },
+   {
+    "cumulative_count": 52,
+    "tick": 17
+   },
+   {
+    "cumulative_count": 55,
+    "tick": 18
+   },
+   {
+    "cumulative_count": 58,
+    "tick": 19
+   },
+   {
+    "cumulative_count": 61,
+    "tick": 20
+   }
+  ],
+  "frontier_final_count": 61,
+  "lines": [
+   "L01",
+   "L02",
+   "L03",
+   "L04"
+  ]
+ },
+ "owner": {
+  "fragments": [],
+  "frontier_by_tick": [
+   {
+    "cumulative_count": 2,
+    "tick": 1
+   },
+   {
+    "cumulative_count": 3,
+    "tick": 2
+   },
+   {
+    "cumulative_count": 6,
+    "tick": 3
+   },
+   {
+    "cumulative_count": 8,
+    "tick": 4
+   },
+   {
+    "cumulative_count": 13,
+    "tick": 5
+   },
+   {
+    "cumulative_count": 17,
+    "tick": 6
+   },
+   {
+    "cumulative_count": 21,
+    "tick": 7
+   },
+   {
+    "cumulative_count": 24,
+    "tick": 8
+   },
+   {
+    "cumulative_count": 27,
+    "tick": 9
+   },
+   {
+    "cumulative_count": 31,
+    "tick": 10
+   },
+   {
+    "cumulative_count": 34,
+    "tick": 11
+   },
+   {
+    "cumulative_count": 37,
+    "tick": 12
+   },
+   {
+    "cumulative_count": 40,
+    "tick": 13
+   },
+   {
+    "cumulative_count": 43,
+    "tick": 14
+   },
+   {
+    "cumulative_count": 47,
+    "tick": 15
+   },
+   {
+    "cumulative_count": 50,
+    "tick": 16
+   },
+   {
+    "cumulative_count": 53,
+    "tick": 17
+   },
+   {
+    "cumulative_count": 56,
+    "tick": 18
+   },
+   {
+    "cumulative_count": 59,
+    "tick": 19
+   },
+   {
+    "cumulative_count": 62,
+    "tick": 20
+   }
+  ],
+  "frontier_final_count": 62,
+  "lines": [
+   "L01",
+   "L02",
+   "L03",
+   "L04"
+  ]
+ },
+ "soldier": {
+  "fragments": [],
+  "frontier_by_tick": [
+   {
+    "cumulative_count": 1,
+    "tick": 1
+   },
+   {
+    "cumulative_count": 2,
+    "tick": 2
+   },
+   {
+    "cumulative_count": 3,
+    "tick": 3
+   },
+   {
+    "cumulative_count": 4,
+    "tick": 4
+   },
+   {
+    "cumulative_count": 9,
+    "tick": 5
+   },
+   {
+    "cumulative_count": 13,
+    "tick": 6
+   },
+   {
+    "cumulative_count": 17,
+    "tick": 7
+   },
+   {
+    "cumulative_count": 20,
+    "tick": 8
+   },
+   {
+    "cumulative_count": 23,
+    "tick": 9
+   },
+   {
+    "cumulative_count": 27,
+    "tick": 10
+   },
+   {
+    "cumulative_count": 30,
+    "tick": 11
+   },
+   {
+    "cumulative_count": 33,
+    "tick": 12
+   },
+   {
+    "cumulative_count": 36,
+    "tick": 13
+   },
+   {
+    "cumulative_count": 39,
+    "tick": 14
+   },
+   {
+    "cumulative_count": 43,
+    "tick": 15
+   },
+   {
+    "cumulative_count": 46,
+    "tick": 16
+   },
+   {
+    "cumulative_count": 49,
+    "tick": 17
+   },
+   {
+    "cumulative_count": 52,
+    "tick": 18
+   },
+   {
+    "cumulative_count": 55,
+    "tick": 19
+   },
+   {
+    "cumulative_count": 58,
+    "tick": 20
+   }
+  ],
+  "frontier_final_count": 58,
+  "lines": [
+   "L01",
+   "L02",
+   "L03",
+   "L04"
+  ]
+ }
+}

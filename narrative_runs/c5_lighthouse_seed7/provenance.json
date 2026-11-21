@@ -1,0 +1,45 @@
+{
+ "characters": [
+  "a_gui",
+  "keeper_zhou",
+  "lin_tao"
+ ],
+ "engine_version": "v0.2-c",
+ "input_hash_check_after": "pass",
+ "input_hashes_sha256": {
+  "acp.sqlite3": "b454043b620da7c2ac4f06f9a00eac8e75735d96af1771bc74f0a6206b66cbde",
+  "narrative.md": "9b57d49549eed47591ae0d7a04a221809c8249378ff7f6ddb3f773632fa18aa4",
+  "run_meta.json": "3b3f2f84d797f634761c7c54d1a6f5e9642af4182faf15ed9fb1b9f8380537a8",
+  "summary.json": "367bac6ffbf279426950a9c9eb801dd9bc339053a3da18a65b435a7a644004c4",
+  "world_log.json": "61434a6b2e16e9282ce7844cf445b3ed4a942a7c1abd35779145c92f9a08499a"
+ },
+ "mode": "rule",
+ "names": {
+  "a_gui": {
+   "name": "阿贵",
+   "source": "characters_c5/a_gui/profile.yaml"
+  },
+  "keeper_zhou": {
+   "name": "周守义",
+   "source": "characters_c5/keeper_zhou/profile.yaml"
+  },
+  "lin_tao": {
+   "name": "林涛",
+   "source": "characters_c5/lin_tao/profile.yaml"
+  }
+ },
+ "observer_version": "n1-observer-1.0",
+ "products": [
+  "observations.json",
+  "frontier.json",
+  "scenes.json",
+  "issues.json",
+  "provenance.json"
+ ],
+ "run_id": "c5_lighthouse_seed7",
+ "scenario_id": "lighthouse_fog",
+ "scenario_source": "run_meta.json embedded snapshot",
+ "seed": 7,
+ "ticks": 24,
+ "total_events": 104
+}

@@ -1,0 +1,14 @@
+[
+ {
+  "line_id": "L01",
+  "note": "placeholder title; the LLM decorative layer of design §5.4 is not part of this run",
+  "source": "deterministic_fallback",
+  "title": "fever_medicine_restocked · doctor_shen/nurse_lin/porter_wu"
+ },
+ {
+  "line_id": "F01",
+  "note": "placeholder title; the LLM decorative layer of design §5.4 is not part of this run",
+  "source": "deterministic_fallback",
+  "title": "denial · doctor_shen/porter_wu"
+ }
+]
