@@ -1,0 +1,364 @@
+{
+ "arcs": [
+  {
+   "character_id": "a_gui",
+   "initial_state": {
+    "known_facts": [
+     "jetty_lamp_out"
+    ],
+    "action_distribution": {
+     "move": 0.174,
+     "session_start": 0.13,
+     "ask": 0.37,
+     "session_end": 0.13,
+     "search": 0.022,
+     "speak": 0.174
+    }
+   },
+   "current_state": {
+    "known_facts": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "goals_aux": {
+     "learn_ship_news": {
+      "status": "paused",
+      "progress": 0.7733
+     },
+     "ready_mooring": {
+      "status": "active",
+      "progress": 0.6667
+     },
+     "keep_jetty": {
+      "status": "active",
+      "progress": 0.0
+     }
+    }
+   },
+   "final_state": null,
+   "initial_beliefs": [
+    "jetty_lamp_out"
+   ],
+   "belief_changes": [
+    {
+     "fact": "ship_passing_tonight",
+     "tick": 6,
+     "event_id": "NE-E0026",
+     "via": "delivery"
+    },
+    {
+     "fact": "fog_horn_ready",
+     "tick": 20,
+     "event_id": "NE-E0080",
+     "via": "delivery"
+    }
+   ],
+   "value_changes": [],
+   "emotional_changes": [],
+   "relationship_changes": [],
+   "internal_conflict": "",
+   "turning_points": [
+    {
+     "fact": "ship_passing_tonight",
+     "tick": 6,
+     "learned_at": "NE-E0026",
+     "downstream_uses": [
+      "NE-E0030",
+      "NE-E0059",
+      "NE-E0063",
+      "NE-E0070",
+      "NE-E0095"
+     ]
+    }
+   ],
+   "character_arc_type": "unresolved_arc",
+   "arc_status": "open"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "initial_state": {
+    "known_facts": [
+     "ship_passing_tonight"
+    ],
+    "action_distribution": {
+     "move": 0.073,
+     "session_start": 0.145,
+     "ask": 0.255,
+     "speak": 0.218,
+     "speak_failed": 0.073,
+     "session_end": 0.127,
+     "observe": 0.091,
+     "listen": 0.018
+    }
+   },
+   "current_state": {
+    "known_facts": [
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "goals_aux": {
+     "spread_word": {
+      "status": "completed",
+      "progress": 1.0
+     },
+     "ensure_fog_signal": {
+      "status": "completed",
+      "progress": 1.0
+     }
+    }
+   },
+   "final_state": null,
+   "initial_beliefs": [
+    "ship_passing_tonight"
+   ],
+   "belief_changes": [
+    {
+     "fact": "ship_passing_tonight",
+     "tick": 8,
+     "event_id": "NE-E0030",
+     "via": "delivery"
+    },
+    {
+     "fact": "fog_horn_ready",
+     "tick": 20,
+     "event_id": "NE-E0080",
+     "via": "delivery"
+    }
+   ],
+   "value_changes": [],
+   "emotional_changes": [],
+   "relationship_changes": [],
+   "internal_conflict": "",
+   "turning_points": [
+    {
+     "fact": "ship_passing_tonight",
+     "tick": 8,
+     "learned_at": "NE-E0030",
+     "downstream_uses": [
+      "NE-E0097"
+     ]
+    },
+    {
+     "fact": "fog_horn_ready",
+     "tick": 20,
+     "learned_at": "NE-E0080",
+     "downstream_uses": [
+      "NE-E0086"
+     ]
+    }
+   ],
+   "character_arc_type": "unresolved_arc",
+   "arc_status": "open"
+  },
+  {
+   "character_id": "lin_tao",
+   "initial_state": {
+    "known_facts": [
+     "belt_broken"
+    ],
+    "action_distribution": {
+     "work": 0.022,
+     "session_start": 0.156,
+     "ask": 0.2,
+     "observe": 0.022,
+     "session_end": 0.133,
+     "speak": 0.178,
+     "search": 0.067,
+     "move": 0.222
+    }
+   },
+   "current_state": {
+    "known_facts": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "goals_aux": {
+     "repair_fog_horn": {
+      "status": "completed",
+      "progress": 1.0
+     },
+     "guard_boathouse": {
+      "status": "failed",
+      "progress": 0.0
+     }
+    }
+   },
+   "final_state": null,
+   "initial_beliefs": [
+    "belt_broken"
+   ],
+   "belief_changes": [
+    {
+     "fact": "ship_passing_tonight",
+     "tick": 6,
+     "event_id": "NE-E0026",
+     "via": "delivery"
+    },
+    {
+     "fact": "fog_horn_ready",
+     "tick": 11,
+     "event_id": "NE-E0044",
+     "via": "find"
+    }
+   ],
+   "value_changes": [],
+   "emotional_changes": [],
+   "relationship_changes": [],
+   "internal_conflict": "",
+   "turning_points": [
+    {
+     "fact": "ship_passing_tonight",
+     "tick": 6,
+     "learned_at": "NE-E0026",
+     "downstream_uses": [
+      "NE-E0028",
+      "NE-E0030"
+     ]
+    },
+    {
+     "fact": "fog_horn_ready",
+     "tick": 11,
+     "learned_at": "NE-E0044",
+     "downstream_uses": [
+      "NE-E0080",
+      "NE-E0081",
+      "NE-E0086",
+      "NE-E0091",
+      "NE-E0096"
+     ]
+    }
+   ],
+   "character_arc_type": "unresolved_arc",
+   "arc_status": "open"
+  }
+ ],
+ "diagnostics": {
+  "a_gui": {
+   "impact_without_followthrough": [
+    {
+     "fact": "fog_horn_ready",
+     "tick": 20,
+     "learned_at": "NE-E0080",
+     "downstream_uses": []
+    }
+   ],
+   "aux_belief_changes": [
+    {
+     "tick": 6,
+     "fact": "ship_passing_tonight",
+     "kind": "heard",
+     "before": null,
+     "after": 0.464
+    },
+    {
+     "tick": 20,
+     "fact": "fog_horn_ready",
+     "kind": "heard",
+     "before": null,
+     "after": 0.464
+    }
+   ]
+  },
+  "keeper_zhou": {
+   "impact_without_followthrough": [],
+   "aux_belief_changes": [
+    {
+     "tick": 7,
+     "fact": "holds:a_gui:signal_lantern",
+     "kind": "experienced",
+     "before": null,
+     "after": 1.0
+    },
+    {
+     "tick": 8,
+     "fact": "trust:lin_tao",
+     "kind": "trust",
+     "before": 0.3,
+     "after": 0.25
+    },
+    {
+     "tick": 12,
+     "fact": "trust:a_gui",
+     "kind": "trust",
+     "before": 0.3,
+     "after": 0.25
+    },
+    {
+     "tick": 14,
+     "fact": "conceals:a_gui",
+     "kind": "inferred",
+     "before": null,
+     "after": 0.8
+    },
+    {
+     "tick": 20,
+     "fact": "fog_horn_ready",
+     "kind": "heard",
+     "before": null,
+     "after": 0.44
+    },
+    {
+     "tick": 21,
+     "fact": "trust:a_gui",
+     "kind": "trust",
+     "before": 0.25,
+     "after": 0.2
+    },
+    {
+     "tick": 24,
+     "fact": "trust:a_gui",
+     "kind": "trust",
+     "before": 0.2,
+     "after": 0.15
+    },
+    {
+     "tick": 24,
+     "fact": "conceals:lin_tao",
+     "kind": "inferred",
+     "before": null,
+     "after": 0.8
+    }
+   ]
+  },
+  "lin_tao": {
+   "impact_without_followthrough": [],
+   "aux_belief_changes": [
+    {
+     "tick": 6,
+     "fact": "ship_passing_tonight",
+     "kind": "heard",
+     "before": null,
+     "after": 0.464
+    },
+    {
+     "tick": 7,
+     "fact": "holds:a_gui:signal_lantern",
+     "kind": "experienced",
+     "before": null,
+     "after": 1.0
+    },
+    {
+     "tick": 11,
+     "fact": "fog_horn_ready",
+     "kind": "heard",
+     "before": null,
+     "after": 0.95
+    },
+    {
+     "tick": 23,
+     "fact": "ship_passing_tonight",
+     "kind": "heard",
+     "before": 0.464,
+     "after": 0.713
+    }
+   ]
+  }
+ },
+ "notes": [
+  "emotional_changes and value_changes are left empty: no deterministic source exists in the narrative inputs (no emotion trace is recorded by the emergence layer).",
+  "aux traces come from acp.sqlite3 (L-AUX corroboration, not objective fact).",
+  "valence arc types are never auto-assigned by the rule layer."
+ ]
+}

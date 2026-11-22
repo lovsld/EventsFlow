@@ -1,0 +1,164 @@
+{
+ "threads": [
+  {
+   "thread_id": "main_ship_safety",
+   "title": "今晚的船能否安全通过",
+   "central_question": "今晚的船能否安全通过？",
+   "involved_characters": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0006",
+    "NE-E0010",
+    "NE-E0011",
+    "NE-E0014",
+    "NE-E0015",
+    "NE-E0020",
+    "NE-E0021",
+    "NE-E0022",
+    "NE-E0024",
+    "NE-E0025",
+    "NE-E0026",
+    "NE-E0029",
+    "NE-E0030",
+    "NE-E0036",
+    "NE-E0038",
+    "NE-E0039",
+    "NE-E0041",
+    "NE-E0043",
+    "NE-E0045",
+    "NE-E0059",
+    "NE-E0063",
+    "NE-E0064",
+    "NE-E0066",
+    "NE-E0070",
+    "NE-E0080",
+    "NE-E0081",
+    "NE-E0086",
+    "NE-E0091",
+    "NE-E0095",
+    "NE-E0096",
+    "NE-E0097"
+   ],
+   "opening_event": "NE-E0006",
+   "turning_points": [
+    "NE-E0026",
+    "NE-E0080",
+    "NE-E0030"
+   ],
+   "climax_event": "NE-E0026",
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.0,
+   "tension": 0.4,
+   "status": "active",
+   "unresolved_questions": [
+    "今晚是否有船通过？",
+    "雾号是否就绪？",
+    "码头灯是否熄灭？"
+   ],
+   "relations": []
+  },
+  {
+   "thread_id": "belt_repair",
+   "title": "备用皮带与传动",
+   "central_question": "断裂的皮带是否被发现并处理？",
+   "involved_characters": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0022",
+    "NE-E0025",
+    "NE-E0029",
+    "NE-E0036",
+    "NE-E0038",
+    "NE-E0039",
+    "NE-E0041",
+    "NE-E0043",
+    "NE-E0045",
+    "NE-E0064",
+    "NE-E0080",
+    "NE-E0081",
+    "NE-E0086",
+    "NE-E0091",
+    "NE-E0096"
+   ],
+   "opening_event": "NE-E0022",
+   "turning_points": [
+    "NE-E0080",
+    "NE-E0022",
+    "NE-E0025"
+   ],
+   "climax_event": "NE-E0080",
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.0,
+   "tension": 0.4,
+   "status": "dormant",
+   "unresolved_questions": [
+    "皮带是否断裂？"
+   ],
+   "relations": []
+  },
+  {
+   "thread_id": "narrative-L02",
+   "title": "",
+   "central_question": "",
+   "involved_characters": [],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0101"
+   ],
+   "opening_event": "NE-E0056",
+   "turning_points": [
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0101"
+   ],
+   "climax_event": null,
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.0,
+   "tension": 0.0,
+   "status": "open",
+   "unresolved_questions": [],
+   "relations": []
+  }
+ ],
+ "conflicts": [],
+ "diagnostics": {
+  "main_ship_safety": {
+   "v03_status": "active",
+   "v03_progress": 0.0,
+   "narrative_line_states": [
+    {
+     "line_id": "L01",
+     "state": "closed"
+    }
+   ],
+   "calibre_note": "progress is information-evidence based (v03); a narrative line may be closed by action completion while progress stays low — both are kept."
+  },
+  "belt_repair": {
+   "v03_status": "dormant",
+   "v03_progress": 0.0,
+   "narrative_line_states": [
+    {
+     "line_id": "L01",
+     "state": "closed"
+    }
+   ],
+   "calibre_note": "progress is information-evidence based (v03); a narrative line may be closed by action completion while progress stays low — both are kept."
+  },
+  "narrative-L02": {
+   "source": "narrative storyline only (no v03 thread)"
+  }
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "central_question": "今晚的船能否安全通过？",
+ "characters": [
+  "a_gui",
+  "keeper_zhou",
+  "lin_tao"
+ ],
+ "dormant_after_ticks": 8,
+ "ending_constraints": [
+  "结局必须由模拟事件产生，不预设任务必然完成"
+ ],
+ "genre": "task_drama",
+ "goal_metadata": {},
+ "initial_conflicts": [],
+ "initial_knowledge": {
+  "a_gui": [
+   "jetty_lamp_out"
+  ],
+  "keeper_zhou": [
+   "ship_passing_tonight"
+  ],
+  "lin_tao": [
+   "belt_broken"
+  ]
+ },
+ "initial_threads": [
+  {
+   "central_question": "今晚的船能否安全通过？",
+   "involved_characters": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "objects": [
+    "signal_lantern"
+   ],
+   "possible_resolutions": [
+    "信号齐备，船安全通过",
+    "信号缺失，悬而未决"
+   ],
+   "propositions": [
+    "ship_passing_tonight",
+    "fog_horn_ready",
+    "jetty_lamp_out"
+   ],
+   "questions": [
+    {
+     "answered_by": "ship_passing_tonight",
+     "id": "ship_coming",
+     "text": "今晚是否有船通过？"
+    },
+    {
+     "answered_by": "fog_horn_ready",
+     "id": "horn_ready",
+     "text": "雾号是否就绪？"
+    },
+    {
+     "answered_by": "jetty_lamp_out",
+     "id": "lamp_status",
+     "text": "码头灯是否熄灭？"
+    }
+   ],
+   "sensitive_facts": [],
+   "thread_id": "main_ship_safety",
+   "thread_type": "main",
+   "title": "今晚的船能否安全通过"
+  },
+  {
+   "central_question": "断裂的皮带是否被发现并处理？",
+   "involved_characters": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "objects": [
+    "spare_belt"
+   ],
+   "possible_resolutions": [
+    "皮带问题被处理",
+    "悬而未决"
+   ],
+   "propositions": [
+    "belt_broken"
+   ],
+   "questions": [
+    {
+     "answered_by": "belt_broken",
+     "id": "belt_status",
+     "text": "皮带是否断裂？"
+    }
+   ],
+   "sensitive_facts": [],
+   "thread_id": "belt_repair",
+   "thread_type": "sub",
+   "title": "备用皮带与传动"
+  }
+ ],
+ "scenario_id": "c5_lighthouse",
+ "stakes": [
+  "雾夜里信号失效可能导致船只事故"
+ ],
+ "story_id": "lighthouse_watch",
+ "theme": "责任与协作",
+ "title": "灯塔守夜"
+}

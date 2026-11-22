@@ -1,0 +1,347 @@
+{
+ "arcs": [
+  {
+   "character_id": "doctor_shen",
+   "initial_state": {
+    "known_facts": [
+     "fever_patient_coming"
+    ],
+    "action_distribution": {
+     "search": 0.056,
+     "observe": 0.093,
+     "move": 0.056,
+     "session_start": 0.222,
+     "speak_failed": 0.093,
+     "session_end": 0.204,
+     "ask": 0.111,
+     "speak": 0.13,
+     "listen": 0.037
+    }
+   },
+   "current_state": {
+    "known_facts": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "goals_aux": {
+     "brief_nurse": {
+      "status": "completed",
+      "progress": 1.0
+     },
+     "ensure_readiness": {
+      "status": "completed",
+      "progress": 1.0
+     }
+    }
+   },
+   "final_state": null,
+   "initial_beliefs": [
+    "fever_patient_coming"
+   ],
+   "belief_changes": [
+    {
+     "fact": "fever_patient_coming",
+     "tick": 1,
+     "event_id": "NE-E0002",
+     "via": "find"
+    },
+    {
+     "fact": "fever_medicine_restocked",
+     "tick": 16,
+     "event_id": "NE-E0070",
+     "via": "find"
+    }
+   ],
+   "value_changes": [],
+   "emotional_changes": [],
+   "relationship_changes": [],
+   "internal_conflict": "",
+   "turning_points": [
+    {
+     "fact": "fever_patient_coming",
+     "tick": 1,
+     "learned_at": "NE-E0002",
+     "downstream_uses": [
+      "NE-E0046",
+      "NE-E0092"
+     ]
+    },
+    {
+     "fact": "fever_medicine_restocked",
+     "tick": 16,
+     "learned_at": "NE-E0070",
+     "downstream_uses": [
+      "NE-E0075",
+      "NE-E0093",
+      "NE-E0099"
+     ]
+    }
+   ],
+   "character_arc_type": "unresolved_arc",
+   "arc_status": "open"
+  },
+  {
+   "character_id": "nurse_lin",
+   "initial_state": {
+    "known_facts": [
+     "fever_med_low"
+    ],
+    "action_distribution": {
+     "move": 0.462,
+     "session_start": 0.154,
+     "session_end": 0.154,
+     "ask": 0.051,
+     "observe": 0.103,
+     "speak": 0.026,
+     "search": 0.051
+    }
+   },
+   "current_state": {
+    "known_facts": [
+     "fever_med_low",
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "goals_aux": {
+     "finish_chart": {
+      "status": "paused",
+      "progress": 0.5
+     },
+     "restock_medicine": {
+      "status": "active",
+      "progress": 0.0
+     }
+    }
+   },
+   "final_state": null,
+   "initial_beliefs": [
+    "fever_med_low"
+   ],
+   "belief_changes": [
+    {
+     "fact": "fever_patient_coming",
+     "tick": 21,
+     "event_id": "NE-E0092",
+     "via": "delivery"
+    },
+    {
+     "fact": "fever_medicine_restocked",
+     "tick": 21,
+     "event_id": "NE-E0093",
+     "via": "delivery"
+    }
+   ],
+   "value_changes": [],
+   "emotional_changes": [],
+   "relationship_changes": [],
+   "internal_conflict": "",
+   "turning_points": [],
+   "character_arc_type": "flat_arc",
+   "arc_status": "open"
+  },
+  {
+   "character_id": "porter_wu",
+   "initial_state": {
+    "known_facts": [
+     "pharmacy_latch_broken"
+    ],
+    "action_distribution": {
+     "move": 0.275,
+     "session_start": 0.216,
+     "ask": 0.157,
+     "session_end": 0.196,
+     "speak": 0.157
+    }
+   },
+   "current_state": {
+    "known_facts": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ],
+    "goals_aux": {
+     "learn_admission": {
+      "status": "paused",
+      "progress": 0.7733
+     },
+     "prepare_stretcher": {
+      "status": "active",
+      "progress": 0.5
+     },
+     "keep_gate": {
+      "status": "active",
+      "progress": 0.0
+     }
+    }
+   },
+   "final_state": null,
+   "initial_beliefs": [
+    "pharmacy_latch_broken"
+   ],
+   "belief_changes": [
+    {
+     "fact": "fever_patient_coming",
+     "tick": 11,
+     "event_id": "NE-E0046",
+     "via": "delivery"
+    },
+    {
+     "fact": "fever_medicine_restocked",
+     "tick": 17,
+     "event_id": "NE-E0075",
+     "via": "delivery"
+    }
+   ],
+   "value_changes": [],
+   "emotional_changes": [],
+   "relationship_changes": [],
+   "internal_conflict": "",
+   "turning_points": [
+    {
+     "fact": "fever_patient_coming",
+     "tick": 11,
+     "learned_at": "NE-E0046",
+     "downstream_uses": [
+      "NE-E0092",
+      "NE-E0097"
+     ]
+    }
+   ],
+   "character_arc_type": "unresolved_arc",
+   "arc_status": "open"
+  }
+ ],
+ "diagnostics": {
+  "doctor_shen": {
+   "impact_without_followthrough": [],
+   "aux_belief_changes": [
+    {
+     "tick": 8,
+     "fact": "trust:nurse_lin",
+     "kind": "trust",
+     "before": 0.3,
+     "after": 0.25
+    },
+    {
+     "tick": 10,
+     "fact": "trust:nurse_lin",
+     "kind": "trust",
+     "before": 0.25,
+     "after": 0.2
+    },
+    {
+     "tick": 13,
+     "fact": "nurse_lin_cooperative",
+     "kind": "inferred",
+     "before": null,
+     "after": 0.65
+    },
+    {
+     "tick": 13,
+     "fact": "trust:nurse_lin",
+     "kind": "trust",
+     "before": 0.2,
+     "after": 0.15
+    },
+    {
+     "tick": 13,
+     "fact": "trust:nurse_lin",
+     "kind": "trust",
+     "before": 0.15,
+     "after": 0.19
+    },
+    {
+     "tick": 14,
+     "fact": "trust:porter_wu",
+     "kind": "trust",
+     "before": 0.3,
+     "after": 0.25
+    },
+    {
+     "tick": 16,
+     "fact": "fever_medicine_restocked",
+     "kind": "heard",
+     "before": null,
+     "after": 0.95
+    },
+    {
+     "tick": 19,
+     "fact": "trust:porter_wu",
+     "kind": "trust",
+     "before": 0.25,
+     "after": 0.2
+    }
+   ]
+  },
+  "nurse_lin": {
+   "impact_without_followthrough": [
+    {
+     "fact": "fever_patient_coming",
+     "tick": 21,
+     "learned_at": "NE-E0092",
+     "downstream_uses": []
+    },
+    {
+     "fact": "fever_medicine_restocked",
+     "tick": 21,
+     "learned_at": "NE-E0093",
+     "downstream_uses": []
+    }
+   ],
+   "aux_belief_changes": [
+    {
+     "tick": 21,
+     "fact": "fever_patient_coming",
+     "kind": "heard",
+     "before": null,
+     "after": 0.464
+    },
+    {
+     "tick": 21,
+     "fact": "fever_medicine_restocked",
+     "kind": "heard",
+     "before": null,
+     "after": 0.464
+    }
+   ]
+  },
+  "porter_wu": {
+   "impact_without_followthrough": [
+    {
+     "fact": "fever_medicine_restocked",
+     "tick": 17,
+     "learned_at": "NE-E0075",
+     "downstream_uses": []
+    }
+   ],
+   "aux_belief_changes": [
+    {
+     "tick": 11,
+     "fact": "fever_patient_coming",
+     "kind": "heard",
+     "before": null,
+     "after": 0.464
+    },
+    {
+     "tick": 16,
+     "fact": "holds:doctor_shen:fever_medicine",
+     "kind": "experienced",
+     "before": null,
+     "after": 1.0
+    },
+    {
+     "tick": 17,
+     "fact": "fever_medicine_restocked",
+     "kind": "heard",
+     "before": null,
+     "after": 0.464
+    }
+   ]
+  }
+ },
+ "notes": [
+  "emotional_changes and value_changes are left empty: no deterministic source exists in the narrative inputs (no emotion trace is recorded by the emergence layer).",
+  "aux traces come from acp.sqlite3 (L-AUX corroboration, not objective fact).",
+  "valence arc types are never auto-assigned by the rule layer."
+ ]
+}

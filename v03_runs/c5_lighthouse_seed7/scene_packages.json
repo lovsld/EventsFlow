@@ -1,0 +1,927 @@
+[
+ {
+  "scene_id": "S01",
+  "location": "boathouse",
+  "start_tick": 1,
+  "end_tick": 24,
+  "status": "closed",
+  "participants": [
+   "lin_tao",
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "joined_at": {
+   "lin_tao": 1,
+   "a_gui": 1,
+   "keeper_zhou": 4
+  },
+  "left_at": {
+   "a_gui": 24
+  },
+  "events": [
+   "E0001",
+   "E0002",
+   "E0004",
+   "E0006",
+   "E0007",
+   "E0009",
+   "E0010",
+   "E0011",
+   "E0014",
+   "E0015",
+   "E0016",
+   "E0017",
+   "E0018",
+   "E0019",
+   "E0020",
+   "E0021",
+   "E0022",
+   "E0023",
+   "E0024",
+   "E0025",
+   "E0026",
+   "E0027",
+   "E0028",
+   "E0029",
+   "E0030",
+   "E0032",
+   "E0033",
+   "E0034",
+   "E0035",
+   "E0036",
+   "E0038",
+   "E0039",
+   "E0041",
+   "E0043",
+   "E0045",
+   "E0049",
+   "E0050",
+   "E0051",
+   "E0052",
+   "E0053",
+   "E0055",
+   "E0056",
+   "E0058",
+   "E0059",
+   "E0060",
+   "E0063",
+   "E0064",
+   "E0066",
+   "E0068",
+   "E0069",
+   "E0070",
+   "E0072",
+   "E0074",
+   "E0075",
+   "E0076",
+   "E0077",
+   "E0079",
+   "E0080",
+   "E0081",
+   "E0082",
+   "E0083",
+   "E0084",
+   "E0086",
+   "E0087",
+   "E0088",
+   "E0089",
+   "E0090",
+   "E0091",
+   "E0092",
+   "E0093",
+   "E0094",
+   "E0095",
+   "E0096",
+   "E0097",
+   "E0100",
+   "E0101",
+   "E0102",
+   "E0103"
+  ],
+  "knowledge": {
+   "lin_tao": {
+    "at_start": [
+     "belt_broken"
+    ],
+    "at_end": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "a_gui": {
+    "at_start": [
+     "jetty_lamp_out"
+    ],
+    "at_end": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ]
+   },
+   "keeper_zhou": {
+    "at_start": [
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [
+   "main_ship_safety"
+  ],
+  "thread_status_at_end": {
+   "main_ship_safety": "active"
+  },
+  "propagations_in": [
+   {
+    "fact": "fog_horn_ready",
+    "carrier": "lin_tao",
+    "from_scene": "S06",
+    "to_scene": "S01",
+    "learned_at": 11,
+    "spoke_at": 20,
+    "travel_ticks": 9,
+    "via_event": "E0080"
+   },
+   {
+    "fact": "fog_horn_ready",
+    "carrier": "lin_tao",
+    "from_scene": "S06",
+    "to_scene": "S01",
+    "learned_at": 11,
+    "spoke_at": 21,
+    "travel_ticks": 10,
+    "via_event": "E0086"
+   },
+   {
+    "fact": "fog_horn_ready",
+    "carrier": "lin_tao",
+    "from_scene": "S06",
+    "to_scene": "S01",
+    "learned_at": 11,
+    "spoke_at": 22,
+    "travel_ticks": 11,
+    "via_event": "E0091"
+   },
+   {
+    "fact": "fog_horn_ready",
+    "carrier": "lin_tao",
+    "from_scene": "S06",
+    "to_scene": "S01",
+    "learned_at": 11,
+    "spoke_at": 23,
+    "travel_ticks": 12,
+    "via_event": "E0096"
+   }
+  ],
+  "propagations_out": [],
+  "dramatic_functions": [
+   "causes",
+   "discovery",
+   "enables",
+   "revelation"
+  ],
+  "outcome": {
+   "events": 78,
+   "participants": [
+    "lin_tao",
+    "a_gui",
+    "keeper_zhou"
+   ],
+   "threads": [
+    "main_ship_safety"
+   ]
+  }
+ },
+ {
+  "scene_id": "S02",
+  "location": "lamp_room",
+  "start_tick": 1,
+  "end_tick": 1,
+  "status": "closed",
+  "participants": [
+   "keeper_zhou"
+  ],
+  "joined_at": {
+   "keeper_zhou": 1
+  },
+  "left_at": {
+   "keeper_zhou": 2
+  },
+  "events": [
+   "E0003"
+  ],
+  "knowledge": {
+   "keeper_zhou": {
+    "at_start": [
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "keeper_zhou"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S03",
+  "location": "base",
+  "start_tick": 2,
+  "end_tick": 2,
+  "status": "closed",
+  "participants": [
+   "keeper_zhou"
+  ],
+  "joined_at": {
+   "keeper_zhou": 2
+  },
+  "left_at": {
+   "keeper_zhou": 3
+  },
+  "events": [
+   "E0008"
+  ],
+  "knowledge": {
+   "keeper_zhou": {
+    "at_start": [
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "keeper_zhou"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S04",
+  "location": "jetty",
+  "start_tick": 3,
+  "end_tick": 3,
+  "status": "closed",
+  "participants": [
+   "keeper_zhou"
+  ],
+  "joined_at": {
+   "keeper_zhou": 3
+  },
+  "left_at": {
+   "keeper_zhou": 4
+  },
+  "events": [
+   "E0012"
+  ],
+  "knowledge": {
+   "keeper_zhou": {
+    "at_start": [
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "keeper_zhou"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S05",
+  "location": "jetty",
+  "start_tick": 8,
+  "end_tick": 9,
+  "status": "closed",
+  "participants": [
+   "lin_tao"
+  ],
+  "joined_at": {
+   "lin_tao": 8
+  },
+  "left_at": {
+   "lin_tao": 10
+  },
+  "events": [
+   "E0031",
+   "E0037"
+  ],
+  "knowledge": {
+   "lin_tao": {
+    "at_start": [
+     "belt_broken",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "belt_broken",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [
+   "discovery"
+  ],
+  "outcome": {
+   "events": 2,
+   "participants": [
+    "lin_tao"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S06",
+  "location": "base",
+  "start_tick": 10,
+  "end_tick": 11,
+  "status": "closed",
+  "participants": [
+   "lin_tao"
+  ],
+  "joined_at": {
+   "lin_tao": 10
+  },
+  "left_at": {
+   "lin_tao": 12
+  },
+  "events": [
+   "E0040",
+   "E0042",
+   "E0044"
+  ],
+  "knowledge": {
+   "lin_tao": {
+    "at_start": [
+     "belt_broken",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [
+   "belt_repair"
+  ],
+  "thread_status_at_end": {
+   "belt_repair": "dormant"
+  },
+  "propagations_in": [],
+  "propagations_out": [
+   {
+    "fact": "fog_horn_ready",
+    "carrier": "lin_tao",
+    "from_scene": "S06",
+    "to_scene": "S01",
+    "learned_at": 11,
+    "spoke_at": 20,
+    "travel_ticks": 9,
+    "via_event": "E0080"
+   },
+   {
+    "fact": "fog_horn_ready",
+    "carrier": "lin_tao",
+    "from_scene": "S06",
+    "to_scene": "S01",
+    "learned_at": 11,
+    "spoke_at": 21,
+    "travel_ticks": 10,
+    "via_event": "E0086"
+   },
+   {
+    "fact": "fog_horn_ready",
+    "carrier": "lin_tao",
+    "from_scene": "S06",
+    "to_scene": "S01",
+    "learned_at": 11,
+    "spoke_at": 22,
+    "travel_ticks": 11,
+    "via_event": "E0091"
+   },
+   {
+    "fact": "fog_horn_ready",
+    "carrier": "lin_tao",
+    "from_scene": "S06",
+    "to_scene": "S01",
+    "learned_at": 11,
+    "spoke_at": 23,
+    "travel_ticks": 12,
+    "via_event": "E0096"
+   }
+  ],
+  "dramatic_functions": [
+   "discovery"
+  ],
+  "outcome": {
+   "events": 3,
+   "participants": [
+    "lin_tao"
+   ],
+   "threads": [
+    "belt_repair"
+   ]
+  }
+ },
+ {
+  "scene_id": "S07",
+  "location": "jetty",
+  "start_tick": 12,
+  "end_tick": 12,
+  "status": "closed",
+  "participants": [
+   "a_gui"
+  ],
+  "joined_at": {
+   "a_gui": 12
+  },
+  "left_at": {
+   "a_gui": 13
+  },
+  "events": [
+   "E0047"
+  ],
+  "knowledge": {
+   "a_gui": {
+    "at_start": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "a_gui"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S08",
+  "location": "lamp_room",
+  "start_tick": 12,
+  "end_tick": 12,
+  "status": "closed",
+  "participants": [
+   "lin_tao"
+  ],
+  "joined_at": {
+   "lin_tao": 12
+  },
+  "left_at": {
+   "lin_tao": 13
+  },
+  "events": [
+   "E0048"
+  ],
+  "knowledge": {
+   "lin_tao": {
+    "at_start": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "lin_tao"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S09",
+  "location": "base",
+  "start_tick": 13,
+  "end_tick": 13,
+  "status": "closed",
+  "participants": [
+   "lin_tao"
+  ],
+  "joined_at": {
+   "lin_tao": 13
+  },
+  "left_at": {
+   "lin_tao": 14
+  },
+  "events": [
+   "E0054"
+  ],
+  "knowledge": {
+   "lin_tao": {
+    "at_start": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "lin_tao"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S10",
+  "location": "lamp_room",
+  "start_tick": 14,
+  "end_tick": 14,
+  "status": "closed",
+  "participants": [
+   "lin_tao"
+  ],
+  "joined_at": {
+   "lin_tao": 14
+  },
+  "left_at": {
+   "lin_tao": 15
+  },
+  "events": [
+   "E0057"
+  ],
+  "knowledge": {
+   "lin_tao": {
+    "at_start": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "lin_tao"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S11",
+  "location": "base",
+  "start_tick": 15,
+  "end_tick": 15,
+  "status": "closed",
+  "participants": [
+   "lin_tao"
+  ],
+  "joined_at": {
+   "lin_tao": 15
+  },
+  "left_at": {
+   "lin_tao": 16
+  },
+  "events": [
+   "E0061",
+   "E0062"
+  ],
+  "knowledge": {
+   "lin_tao": {
+    "at_start": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 2,
+   "participants": [
+    "lin_tao"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S12",
+  "location": "jetty",
+  "start_tick": 16,
+  "end_tick": 16,
+  "status": "closed",
+  "participants": [
+   "lin_tao"
+  ],
+  "joined_at": {
+   "lin_tao": 16
+  },
+  "left_at": {
+   "lin_tao": 17
+  },
+  "events": [
+   "E0065"
+  ],
+  "knowledge": {
+   "lin_tao": {
+    "at_start": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "lin_tao"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S13",
+  "location": "base",
+  "start_tick": 17,
+  "end_tick": 17,
+  "status": "closed",
+  "participants": [
+   "lin_tao"
+  ],
+  "joined_at": {
+   "lin_tao": 17
+  },
+  "left_at": {
+   "lin_tao": 18
+  },
+  "events": [
+   "E0067"
+  ],
+  "knowledge": {
+   "lin_tao": {
+    "at_start": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "lin_tao"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S14",
+  "location": "jetty",
+  "start_tick": 18,
+  "end_tick": 19,
+  "status": "closed",
+  "participants": [
+   "lin_tao",
+   "a_gui"
+  ],
+  "joined_at": {
+   "lin_tao": 18,
+   "a_gui": 19
+  },
+  "left_at": {
+   "lin_tao": 19,
+   "a_gui": 20
+  },
+  "events": [
+   "E0071",
+   "E0073",
+   "E0078"
+  ],
+  "knowledge": {
+   "lin_tao": {
+    "at_start": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "a_gui": {
+    "at_start": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 3,
+   "participants": [
+    "lin_tao",
+    "a_gui"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S15",
+  "location": "jetty",
+  "start_tick": 21,
+  "end_tick": 21,
+  "status": "closed",
+  "participants": [
+   "a_gui"
+  ],
+  "joined_at": {
+   "a_gui": 21
+  },
+  "left_at": {
+   "a_gui": 22
+  },
+  "events": [
+   "E0085"
+  ],
+  "knowledge": {
+   "a_gui": {
+    "at_start": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "a_gui"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S16",
+  "location": "jetty",
+  "start_tick": 24,
+  "end_tick": 24,
+  "status": "closed",
+  "participants": [
+   "a_gui"
+  ],
+  "joined_at": {
+   "a_gui": 24
+  },
+  "left_at": {},
+  "events": [
+   "E0099",
+   "E0104"
+  ],
+  "knowledge": {
+   "a_gui": {
+    "at_start": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "at_end": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 2,
+   "participants": [
+    "a_gui"
+   ],
+   "threads": []
+  }
+ }
+]

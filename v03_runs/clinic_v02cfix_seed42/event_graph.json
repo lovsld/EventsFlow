@@ -1,0 +1,1493 @@
+{
+ "run_id": "clinic_v02cfix_seed42",
+ "nodes": [
+  {
+   "event_id": "E0001",
+   "tick": 1,
+   "type": "move",
+   "location": "ward",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S03"
+  },
+  {
+   "event_id": "E0002",
+   "tick": 1,
+   "type": "search",
+   "location": "oncall",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0003",
+   "tick": 1,
+   "type": "move",
+   "location": "yard",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S02"
+  },
+  {
+   "event_id": "E0004",
+   "tick": 1,
+   "type": "ambient",
+   "location": "ward",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S03"
+  },
+  {
+   "event_id": "E0005",
+   "tick": 2,
+   "type": "move",
+   "location": "yard",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S02"
+  },
+  {
+   "event_id": "E0006",
+   "tick": 2,
+   "type": "move",
+   "location": "ward",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S03"
+  },
+  {
+   "event_id": "E0007",
+   "tick": 2,
+   "type": "observe",
+   "location": "oncall",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0008",
+   "tick": 3,
+   "type": "move",
+   "location": "pharmacy",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S04"
+  },
+  {
+   "event_id": "E0009",
+   "tick": 3,
+   "type": "move",
+   "location": "yard",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S02"
+  },
+  {
+   "event_id": "E0010",
+   "tick": 3,
+   "type": "observe",
+   "location": "oncall",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0011",
+   "tick": 3,
+   "type": "ambient",
+   "location": "oncall",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0012",
+   "tick": 4,
+   "type": "move",
+   "location": "yard",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S02"
+  },
+  {
+   "event_id": "E0013",
+   "tick": 4,
+   "type": "move",
+   "location": "pharmacy",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S04"
+  },
+  {
+   "event_id": "E0014",
+   "tick": 4,
+   "type": "observe",
+   "location": "oncall",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0015",
+   "tick": 5,
+   "type": "move",
+   "location": "ward",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S06"
+  },
+  {
+   "event_id": "E0016",
+   "tick": 5,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0017",
+   "tick": 5,
+   "type": "observe",
+   "location": "oncall",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0018",
+   "tick": 5,
+   "type": "ambient",
+   "location": "bar",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": ""
+  },
+  {
+   "event_id": "E0019",
+   "tick": 6,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0020",
+   "tick": 6,
+   "type": "move",
+   "location": "ward",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S06"
+  },
+  {
+   "event_id": "E0021",
+   "tick": 6,
+   "type": "observe",
+   "location": "oncall",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S01"
+  },
+  {
+   "event_id": "E0022",
+   "tick": 6,
+   "type": "ambient",
+   "location": "ward",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S06"
+  },
+  {
+   "event_id": "E0023",
+   "tick": 7,
+   "type": "move",
+   "location": "pharmacy",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S07"
+  },
+  {
+   "event_id": "E0024",
+   "tick": 7,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0025",
+   "tick": 7,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0026",
+   "tick": 7,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0027",
+   "tick": 7,
+   "type": "ambient",
+   "location": "ward",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S06"
+  },
+  {
+   "event_id": "E0028",
+   "tick": 8,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0029",
+   "tick": 8,
+   "type": "move",
+   "location": "oncall",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S08"
+  },
+  {
+   "event_id": "E0030",
+   "tick": 8,
+   "type": "speak_failed",
+   "location": "triage",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0031",
+   "tick": 8,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0032",
+   "tick": 8,
+   "type": "session_end",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0033",
+   "tick": 9,
+   "type": "ask",
+   "location": "triage",
+   "actors": [
+    "porter_wu",
+    "doctor_shen"
+   ],
+   "proposition": "fever_patient_coming",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0034",
+   "tick": 9,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0035",
+   "tick": 9,
+   "type": "ask",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": "fever_medicine_restocked",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0036",
+   "tick": 9,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0037",
+   "tick": 9,
+   "type": "session_end",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0038",
+   "tick": 10,
+   "type": "ask",
+   "location": "triage",
+   "actors": [
+    "porter_wu",
+    "nurse_lin"
+   ],
+   "proposition": "fever_patient_coming",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0039",
+   "tick": 10,
+   "type": "move",
+   "location": "oncall",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S09"
+  },
+  {
+   "event_id": "E0040",
+   "tick": 10,
+   "type": "speak_failed",
+   "location": "triage",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0041",
+   "tick": 10,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0042",
+   "tick": 10,
+   "type": "session_end",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0043",
+   "tick": 10,
+   "type": "ambient",
+   "location": "yard",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": ""
+  },
+  {
+   "event_id": "E0044",
+   "tick": 11,
+   "type": "ask",
+   "location": "triage",
+   "actors": [
+    "porter_wu",
+    "doctor_shen"
+   ],
+   "proposition": "fever_patient_coming",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0045",
+   "tick": 11,
+   "type": "observe",
+   "location": "oncall",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S09"
+  },
+  {
+   "event_id": "E0046",
+   "tick": 11,
+   "type": "speak",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": "fever_patient_coming",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0047",
+   "tick": 12,
+   "type": "ask",
+   "location": "triage",
+   "actors": [
+    "porter_wu",
+    "doctor_shen"
+   ],
+   "proposition": "fever_medicine_restocked",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0048",
+   "tick": 12,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0049",
+   "tick": 12,
+   "type": "search",
+   "location": "triage",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0050",
+   "tick": 12,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0051",
+   "tick": 12,
+   "type": "session_end",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0052",
+   "tick": 13,
+   "type": "ask",
+   "location": "triage",
+   "actors": [
+    "porter_wu",
+    "doctor_shen"
+   ],
+   "proposition": "fever_medicine_restocked",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0053",
+   "tick": 13,
+   "type": "move",
+   "location": "oncall",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S10"
+  },
+  {
+   "event_id": "E0054",
+   "tick": 13,
+   "type": "speak_failed",
+   "location": "triage",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0055",
+   "tick": 13,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0056",
+   "tick": 13,
+   "type": "session_end",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0057",
+   "tick": 13,
+   "type": "ambient",
+   "location": "oncall",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S10"
+  },
+  {
+   "event_id": "E0058",
+   "tick": 14,
+   "type": "move",
+   "location": "oncall",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S10"
+  },
+  {
+   "event_id": "E0059",
+   "tick": 14,
+   "type": "speak_failed",
+   "location": "triage",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0060",
+   "tick": 14,
+   "type": "observe",
+   "location": "oncall",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S10"
+  },
+  {
+   "event_id": "E0061",
+   "tick": 14,
+   "type": "session_start",
+   "location": "oncall",
+   "actors": [
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S10"
+  },
+  {
+   "event_id": "E0062",
+   "tick": 14,
+   "type": "session_end",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0063",
+   "tick": 14,
+   "type": "ambient",
+   "location": "oncall",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S10"
+  },
+  {
+   "event_id": "E0064",
+   "tick": 15,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0065",
+   "tick": 15,
+   "type": "observe",
+   "location": "oncall",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S10"
+  },
+  {
+   "event_id": "E0066",
+   "tick": 15,
+   "type": "move",
+   "location": "pharmacy",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S11"
+  },
+  {
+   "event_id": "E0067",
+   "tick": 15,
+   "type": "session_end",
+   "location": "oncall",
+   "actors": [
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S10"
+  },
+  {
+   "event_id": "E0068",
+   "tick": 15,
+   "type": "ambient",
+   "location": "ward",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": ""
+  },
+  {
+   "event_id": "E0069",
+   "tick": 16,
+   "type": "move",
+   "location": "pharmacy",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S11"
+  },
+  {
+   "event_id": "E0070",
+   "tick": 16,
+   "type": "search",
+   "location": "pharmacy",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S11"
+  },
+  {
+   "event_id": "E0071",
+   "tick": 16,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0072",
+   "tick": 16,
+   "type": "session_start",
+   "location": "pharmacy",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S11"
+  },
+  {
+   "event_id": "E0073",
+   "tick": 17,
+   "type": "ask",
+   "location": "pharmacy",
+   "actors": [
+    "porter_wu",
+    "doctor_shen"
+   ],
+   "proposition": "fever_medicine_restocked",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S11"
+  },
+  {
+   "event_id": "E0074",
+   "tick": 17,
+   "type": "observe",
+   "location": "triage",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0075",
+   "tick": 17,
+   "type": "speak",
+   "location": "pharmacy",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": "fever_medicine_restocked",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S11"
+  },
+  {
+   "event_id": "E0076",
+   "tick": 18,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0077",
+   "tick": 18,
+   "type": "move",
+   "location": "oncall",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S12"
+  },
+  {
+   "event_id": "E0078",
+   "tick": 18,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0079",
+   "tick": 18,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0080",
+   "tick": 18,
+   "type": "session_end",
+   "location": "pharmacy",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S11"
+  },
+  {
+   "event_id": "E0081",
+   "tick": 18,
+   "type": "ambient",
+   "location": "yard",
+   "actors": [],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": ""
+  },
+  {
+   "event_id": "E0082",
+   "tick": 19,
+   "type": "move",
+   "location": "ward",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S13"
+  },
+  {
+   "event_id": "E0083",
+   "tick": 19,
+   "type": "speak_failed",
+   "location": "triage",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0084",
+   "tick": 19,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0085",
+   "tick": 19,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0086",
+   "tick": 19,
+   "type": "session_end",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0087",
+   "tick": 20,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0088",
+   "tick": 20,
+   "type": "listen",
+   "location": "triage",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0089",
+   "tick": 20,
+   "type": "move",
+   "location": "oncall",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S14"
+  },
+  {
+   "event_id": "E0090",
+   "tick": 20,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0091",
+   "tick": 20,
+   "type": "session_end",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0092",
+   "tick": 21,
+   "type": "speak",
+   "location": "triage",
+   "actors": [
+    "porter_wu",
+    "doctor_shen"
+   ],
+   "proposition": "fever_patient_coming",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0093",
+   "tick": 21,
+   "type": "speak",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": "fever_medicine_restocked",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0094",
+   "tick": 21,
+   "type": "move",
+   "location": "triage",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0095",
+   "tick": 21,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0096",
+   "tick": 21,
+   "type": "session_end",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0097",
+   "tick": 22,
+   "type": "speak",
+   "location": "triage",
+   "actors": [
+    "porter_wu",
+    "nurse_lin"
+   ],
+   "proposition": "fever_patient_coming",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0098",
+   "tick": 22,
+   "type": "search",
+   "location": "triage",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0099",
+   "tick": 22,
+   "type": "speak",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": "fever_medicine_restocked",
+   "stance": "assert",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0100",
+   "tick": 23,
+   "type": "ask",
+   "location": "triage",
+   "actors": [
+    "porter_wu",
+    "nurse_lin"
+   ],
+   "proposition": "fever_patient_coming",
+   "stance": "inquire",
+   "epistemic": "rumored",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0101",
+   "tick": 23,
+   "type": "move",
+   "location": "pharmacy",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S15"
+  },
+  {
+   "event_id": "E0102",
+   "tick": 23,
+   "type": "speak",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": "deny",
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0103",
+   "tick": 23,
+   "type": "session_start",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0104",
+   "tick": 23,
+   "type": "session_end",
+   "location": "triage",
+   "actors": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0105",
+   "tick": 24,
+   "type": "speak",
+   "location": "triage",
+   "actors": [
+    "porter_wu",
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": "deny",
+   "epistemic": "objective",
+   "scene_id": "S05"
+  },
+  {
+   "event_id": "E0106",
+   "tick": 24,
+   "type": "search",
+   "location": "pharmacy",
+   "actors": [
+    "nurse_lin"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S15"
+  },
+  {
+   "event_id": "E0107",
+   "tick": 24,
+   "type": "listen",
+   "location": "triage",
+   "actors": [
+    "doctor_shen"
+   ],
+   "proposition": null,
+   "stance": null,
+   "epistemic": "objective",
+   "scene_id": "S05"
+  }
+ ],
+ "edges": [
+  {
+   "source": "E0002",
+   "target": "E0046",
+   "relation": "reveals",
+   "rule": "G-REVEAL",
+   "evidence": {
+    "via_fact": "fever_patient_coming",
+    "new_audience": [
+     "porter_wu"
+    ]
+   }
+  },
+  {
+   "source": "E0070",
+   "target": "E0075",
+   "relation": "enables",
+   "rule": "G-ENABLE",
+   "evidence": {
+    "via_fact": "fever_medicine_restocked",
+    "learner": "doctor_shen"
+   }
+  },
+  {
+   "source": "E0070",
+   "target": "E0075",
+   "relation": "reveals",
+   "rule": "G-REVEAL",
+   "evidence": {
+    "via_fact": "fever_medicine_restocked",
+    "new_audience": [
+     "porter_wu"
+    ]
+   }
+  },
+  {
+   "source": "E0046",
+   "target": "E0092",
+   "relation": "causes",
+   "rule": "G-CAUSE",
+   "evidence": {
+    "via_fact": "fever_patient_coming",
+    "learner": "porter_wu"
+   }
+  },
+  {
+   "source": "E0002",
+   "target": "E0092",
+   "relation": "reveals",
+   "rule": "G-REVEAL",
+   "evidence": {
+    "via_fact": "fever_patient_coming",
+    "new_audience": [
+     "nurse_lin"
+    ]
+   }
+  },
+  {
+   "source": "E0070",
+   "target": "E0093",
+   "relation": "reveals",
+   "rule": "G-REVEAL",
+   "evidence": {
+    "via_fact": "fever_medicine_restocked",
+    "new_audience": [
+     "nurse_lin"
+    ]
+   }
+  }
+ ]
+}

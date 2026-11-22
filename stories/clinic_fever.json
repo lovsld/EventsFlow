@@ -1,0 +1,107 @@
+{
+ "central_question": "发热病人到诊前，退烧药能否备齐？",
+ "characters": [
+  "doctor_shen",
+  "nurse_lin",
+  "porter_wu"
+ ],
+ "dormant_after_ticks": 8,
+ "ending_constraints": [
+  "结局必须由模拟事件产生，不预设补药必然送达"
+ ],
+ "genre": "task_drama",
+ "goal_metadata": {},
+ "initial_conflicts": [],
+ "initial_knowledge": {
+  "doctor_shen": [
+   "fever_patient_coming"
+  ],
+  "nurse_lin": [
+   "fever_med_low"
+  ],
+  "porter_wu": [
+   "pharmacy_latch_broken"
+  ]
+ },
+ "initial_threads": [
+  {
+   "central_question": "发热病人到诊前，退烧药能否备齐？",
+   "involved_characters": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "objects": [
+    "fever_medicine",
+    "admission_form"
+   ],
+   "possible_resolutions": [
+    "药品备齐，病人得到处置",
+    "药品未备齐，悬而未决"
+   ],
+   "propositions": [
+    "fever_patient_coming",
+    "fever_med_low",
+    "fever_medicine_restocked"
+   ],
+   "questions": [
+    {
+     "answered_by": "fever_patient_coming",
+     "id": "patient_coming",
+     "text": "发热病人是否要来？"
+    },
+    {
+     "answered_by": "fever_med_low",
+     "id": "medicine_stock",
+     "text": "退烧药是否不足？"
+    },
+    {
+     "answered_by": "fever_medicine_restocked",
+     "id": "restocked",
+     "text": "退烧药是否已补齐？"
+    }
+   ],
+   "sensitive_facts": [],
+   "thread_id": "main_fever_patient",
+   "thread_type": "main",
+   "title": "发热病人与退烧药"
+  },
+  {
+   "central_question": "退烧药库存不足的问题是否被解决？",
+   "involved_characters": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "objects": [
+    "fever_medicine"
+   ],
+   "possible_resolutions": [
+    "补齐",
+    "悬而未决"
+   ],
+   "propositions": [
+    "fever_med_low",
+    "fever_medicine_restocked"
+   ],
+   "questions": [
+    {
+     "answered_by": "fever_medicine_restocked",
+     "id": "supply_restocked",
+     "text": "库存是否补齐？"
+    }
+   ],
+   "sensitive_facts": [],
+   "thread_id": "medicine_supply",
+   "thread_type": "sub",
+   "title": "药品供应"
+  }
+ ],
+ "scenario_id": "clinic_fever",
+ "stakes": [
+  "病人到诊时无药可用将延误处置"
+ ],
+ "story_id": "clinic_fever",
+ "theme": "断裂与未完成",
+ "title": "诊所之夜"
+}

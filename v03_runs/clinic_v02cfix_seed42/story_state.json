@@ -1,0 +1,222 @@
+{
+ "story_id": "clinic_fever",
+ "title": "诊所之夜",
+ "genre": "task_drama",
+ "theme": "断裂与未完成",
+ "central_question": "发热病人到诊前，退烧药能否备齐？",
+ "stakes": [
+  "病人到诊时无药可用将延误处置"
+ ],
+ "ending_constraints": [
+  "结局必须由模拟事件产生，不预设补药必然送达"
+ ],
+ "tick": 24,
+ "threads": {
+  "main_fever_patient": {
+   "thread_id": "main_fever_patient",
+   "title": "发热病人与退烧药",
+   "thread_type": "main",
+   "central_question": "发热病人到诊前，退烧药能否备齐？",
+   "status": "active",
+   "involved_characters": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "questions": [
+    {
+     "id": "patient_coming",
+     "text": "发热病人是否要来？",
+     "answered_by": "fever_patient_coming",
+     "answered_at": null,
+     "addressed_at": 1
+    },
+    {
+     "id": "medicine_stock",
+     "text": "退烧药是否不足？",
+     "answered_by": "fever_med_low",
+     "answered_at": null,
+     "addressed_at": null
+    },
+    {
+     "id": "restocked",
+     "text": "退烧药是否已补齐？",
+     "answered_by": "fever_medicine_restocked",
+     "answered_at": null,
+     "addressed_at": 16
+    }
+   ],
+   "known_facts": [
+    "fever_patient_coming",
+    "fever_med_low",
+    "fever_medicine_restocked"
+   ],
+   "stakes": [],
+   "progress": 0.0,
+   "dependencies": [],
+   "related_threads": [],
+   "shared_events": [
+    "E0035",
+    "E0047",
+    "E0052",
+    "E0070",
+    "E0073",
+    "E0075",
+    "E0093",
+    "E0099"
+   ],
+   "related_events": [
+    "E0002",
+    "E0033",
+    "E0035",
+    "E0038",
+    "E0044",
+    "E0046",
+    "E0047",
+    "E0052",
+    "E0070",
+    "E0073",
+    "E0075",
+    "E0092",
+    "E0093",
+    "E0097",
+    "E0099",
+    "E0100"
+   ],
+   "possible_resolutions": [
+    "药品备齐，病人得到处置",
+    "药品未备齐，悬而未决"
+   ],
+   "created_at": 0,
+   "last_developed_at": 23,
+   "resolved_at": null,
+   "propositions": [
+    "fever_patient_coming",
+    "fever_med_low",
+    "fever_medicine_restocked"
+   ],
+   "objects": [
+    "fever_medicine",
+    "admission_form"
+   ],
+   "sensitive_facts": [],
+   "pressure_event": null,
+   "opportunity_event": null,
+   "known_by": {
+    "doctor_shen": [
+     "fever_patient_coming",
+     "fever_medicine_restocked"
+    ],
+    "nurse_lin": [
+     "fever_med_low",
+     "fever_patient_coming",
+     "fever_medicine_restocked"
+    ],
+    "porter_wu": [
+     "fever_patient_coming",
+     "fever_medicine_restocked"
+    ]
+   }
+  },
+  "medicine_supply": {
+   "thread_id": "medicine_supply",
+   "title": "药品供应",
+   "thread_type": "sub",
+   "central_question": "退烧药库存不足的问题是否被解决？",
+   "status": "active",
+   "involved_characters": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "questions": [
+    {
+     "id": "supply_restocked",
+     "text": "库存是否补齐？",
+     "answered_by": "fever_medicine_restocked",
+     "answered_at": null,
+     "addressed_at": 16
+    }
+   ],
+   "known_facts": [
+    "fever_med_low",
+    "fever_medicine_restocked"
+   ],
+   "stakes": [],
+   "progress": 0.0,
+   "dependencies": [],
+   "related_threads": [],
+   "shared_events": [
+    "E0035",
+    "E0047",
+    "E0052",
+    "E0070",
+    "E0073",
+    "E0075",
+    "E0093",
+    "E0099"
+   ],
+   "related_events": [
+    "E0035",
+    "E0047",
+    "E0052",
+    "E0070",
+    "E0073",
+    "E0075",
+    "E0093",
+    "E0099"
+   ],
+   "possible_resolutions": [
+    "补齐",
+    "悬而未决"
+   ],
+   "created_at": 0,
+   "last_developed_at": 22,
+   "resolved_at": null,
+   "propositions": [
+    "fever_med_low",
+    "fever_medicine_restocked"
+   ],
+   "objects": [
+    "fever_medicine"
+   ],
+   "sensitive_facts": [],
+   "pressure_event": null,
+   "opportunity_event": null,
+   "known_by": {
+    "nurse_lin": [
+     "fever_med_low",
+     "fever_medicine_restocked"
+    ],
+    "doctor_shen": [
+     "fever_medicine_restocked"
+    ],
+    "porter_wu": [
+     "fever_medicine_restocked"
+    ]
+   }
+  }
+ },
+ "conflicts": {},
+ "goals": [],
+ "ticks_since_plot_event": 0,
+ "ticks_since_thread_progress": 1,
+ "ticks_since_belief_change": 0,
+ "change_log": [
+  {
+   "tick": 0,
+   "kind": "story_initialized",
+   "detail": "2 threads, 0 goals"
+  },
+  {
+   "tick": 8,
+   "kind": "thread_status",
+   "detail": "medicine_supply: active -> dormant no development for 8 ticks"
+  },
+  {
+   "tick": 9,
+   "kind": "thread_status",
+   "detail": "medicine_supply: dormant -> active developed"
+  }
+ ]
+}

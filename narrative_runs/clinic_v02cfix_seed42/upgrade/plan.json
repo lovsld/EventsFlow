@@ -1,0 +1,374 @@
+{
+ "story": {
+  "title": "诊所之夜",
+  "theme": "断裂与未完成",
+  "central_question": "发热病人到诊前，退烧药能否备齐？",
+  "main_thread": "main_fever_patient",
+  "sub_threads": [
+   "medicine_supply"
+  ],
+  "main_characters": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "core_conflicts": [],
+  "key_turning_points": [
+   "NE-E0002",
+   "NE-E0046",
+   "NE-E0070",
+   "NE-E0075"
+  ],
+  "climax_candidates": [
+   "NE-E0002",
+   "NE-E0070",
+   "NE-E0046"
+  ],
+  "ending_state": "线索「发热病人与退烧药」状态 active，未答问题 3 个；线索「药品供应」状态 active，未答问题 1 个"
+ },
+ "chapters": [
+  {
+   "chapter_id": "CH01",
+   "chapter_title": "第1章",
+   "narrative_purpose": "发热病人到诊前，退烧药能否备齐？",
+   "opening_state": {
+    "known_facts_total": 0
+   },
+   "ending_state": {
+    "known_facts_total": 1
+   },
+   "included_threads": [
+    "main_fever_patient"
+   ],
+   "included_events": [
+    "NE-E0002",
+    "NE-E0030"
+   ],
+   "turning_point": "NE-E0002",
+   "unresolved_questions": [
+    "发热病人是否要来？",
+    "退烧药是否不足？",
+    "退烧药是否已补齐？"
+   ],
+   "emotional_curve": [
+    0.4
+   ]
+  },
+  {
+   "chapter_id": "CH02",
+   "chapter_title": "第2章",
+   "narrative_purpose": "发热病人到诊前，退烧药能否备齐？",
+   "opening_state": {
+    "known_facts_total": 1
+   },
+   "ending_state": {
+    "known_facts_total": 1
+   },
+   "included_threads": [
+    "main_fever_patient"
+   ],
+   "included_events": [
+    "NE-E0033",
+    "NE-E0035",
+    "NE-E0038",
+    "NE-E0040",
+    "NE-E0044",
+    "NE-E0046",
+    "NE-E0047",
+    "NE-E0049",
+    "NE-E0052",
+    "NE-E0054",
+    "NE-E0059"
+   ],
+   "turning_point": "NE-E0046",
+   "unresolved_questions": [
+    "发热病人是否要来？",
+    "退烧药是否不足？",
+    "退烧药是否已补齐？"
+   ],
+   "emotional_curve": [
+    0.4,
+    0.4,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "chapter_id": "CH03",
+   "chapter_title": "第3章",
+   "narrative_purpose": "发热病人到诊前，退烧药能否备齐？",
+   "opening_state": {
+    "known_facts_total": 1
+   },
+   "ending_state": {
+    "known_facts_total": 2
+   },
+   "included_threads": [
+    "main_fever_patient"
+   ],
+   "included_events": [
+    "NE-E0070",
+    "NE-E0073",
+    "NE-E0075",
+    "NE-E0083"
+   ],
+   "turning_point": "NE-E0070",
+   "unresolved_questions": [
+    "发热病人是否要来？",
+    "退烧药是否不足？",
+    "退烧药是否已补齐？"
+   ],
+   "emotional_curve": [
+    0.4
+   ]
+  },
+  {
+   "chapter_id": "CH04",
+   "chapter_title": "第4章",
+   "narrative_purpose": "发热病人到诊前，退烧药能否备齐？",
+   "opening_state": {
+    "known_facts_total": 2
+   },
+   "ending_state": {
+    "known_facts_total": 2
+   },
+   "included_threads": [
+    "main_fever_patient"
+   ],
+   "included_events": [
+    "NE-E0092",
+    "NE-E0093",
+    "NE-E0097",
+    "NE-E0098",
+    "NE-E0099",
+    "NE-E0100",
+    "NE-E0102",
+    "NE-E0105",
+    "NE-E0106"
+   ],
+   "turning_point": "NE-E0098",
+   "unresolved_questions": [
+    "发热病人是否要来？",
+    "退烧药是否不足？",
+    "退烧药是否已补齐？"
+   ],
+   "emotional_curve": [
+    0.4,
+    0.4
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "scene_id": "SC01",
+   "location": "oncall",
+   "time_range": [
+    1,
+    8
+   ],
+   "participants": [
+    "doctor_shen"
+   ],
+   "viewpoint_character": "doctor_shen",
+   "scene_goal": "发热病人到诊前，退烧药能否备齐？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_fever_patient",
+   "turning_point": "NE-E0002",
+   "outcome": "speak_failed @ triage",
+   "next_scene_hook": "发热病人到诊前，退烧药能否备齐？",
+   "event_ids": [
+    "NE-E0002",
+    "NE-E0030"
+   ]
+  },
+  {
+   "scene_id": "SC02",
+   "location": "triage",
+   "time_range": [
+    9,
+    9
+   ],
+   "participants": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "viewpoint_character": "porter_wu",
+   "scene_goal": "发热病人到诊前，退烧药能否备齐？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_fever_patient",
+   "turning_point": "NE-E0033",
+   "outcome": "沈默：退烧药补上了没有？我这边等着确认。",
+   "next_scene_hook": "发热病人到诊前，退烧药能否备齐？",
+   "event_ids": [
+    "NE-E0033",
+    "NE-E0035"
+   ]
+  },
+  {
+   "scene_id": "SC03",
+   "location": "triage",
+   "time_range": [
+    10,
+    11
+   ],
+   "participants": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "viewpoint_character": "porter_wu",
+   "scene_goal": "发热病人到诊前，退烧药能否备齐？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_fever_patient",
+   "turning_point": "NE-E0046",
+   "outcome": "沈默：跟你说一声，后半夜有个发高烧的要送来。",
+   "next_scene_hook": "发热病人到诊前，退烧药能否备齐？",
+   "event_ids": [
+    "NE-E0038",
+    "NE-E0040",
+    "NE-E0044",
+    "NE-E0046"
+   ]
+  },
+  {
+   "scene_id": "SC04",
+   "location": "triage",
+   "time_range": [
+    12,
+    12
+   ],
+   "participants": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "viewpoint_character": "doctor_shen",
+   "scene_goal": "发热病人到诊前，退烧药能否备齐？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_fever_patient",
+   "turning_point": "NE-E0049",
+   "outcome": "search @ triage",
+   "next_scene_hook": "发热病人到诊前，退烧药能否备齐？",
+   "event_ids": [
+    "NE-E0047",
+    "NE-E0049"
+   ]
+  },
+  {
+   "scene_id": "SC05",
+   "location": "triage",
+   "time_range": [
+    13,
+    14
+   ],
+   "participants": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "viewpoint_character": "doctor_shen",
+   "scene_goal": "发热病人到诊前，退烧药能否备齐？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_fever_patient",
+   "turning_point": "NE-E0052",
+   "outcome": "speak_failed @ triage",
+   "next_scene_hook": "发热病人到诊前，退烧药能否备齐？",
+   "event_ids": [
+    "NE-E0052",
+    "NE-E0054",
+    "NE-E0059"
+   ]
+  },
+  {
+   "scene_id": "SC06",
+   "location": "pharmacy",
+   "time_range": [
+    16,
+    19
+   ],
+   "participants": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "viewpoint_character": "doctor_shen",
+   "scene_goal": "发热病人到诊前，退烧药能否备齐？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_fever_patient",
+   "turning_point": "NE-E0070",
+   "outcome": "speak_failed @ triage",
+   "next_scene_hook": "发热病人到诊前，退烧药能否备齐？",
+   "event_ids": [
+    "NE-E0070",
+    "NE-E0073",
+    "NE-E0075",
+    "NE-E0083"
+   ]
+  },
+  {
+   "scene_id": "SC07",
+   "location": "triage",
+   "time_range": [
+    21,
+    22
+   ],
+   "participants": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "viewpoint_character": "nurse_lin",
+   "scene_goal": "发热病人到诊前，退烧药能否备齐？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_fever_patient",
+   "turning_point": "NE-E0098",
+   "outcome": "沈默：药补齐了，病人来了也不怕。",
+   "next_scene_hook": "发热病人到诊前，退烧药能否备齐？",
+   "event_ids": [
+    "NE-E0092",
+    "NE-E0093",
+    "NE-E0097",
+    "NE-E0098",
+    "NE-E0099"
+   ]
+  },
+  {
+   "scene_id": "SC08",
+   "location": "triage",
+   "time_range": [
+    23,
+    24
+   ],
+   "participants": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "viewpoint_character": "porter_wu",
+   "scene_goal": "发热病人到诊前，退烧药能否备齐？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_fever_patient",
+   "turning_point": "NE-E0106",
+   "outcome": "search @ pharmacy",
+   "next_scene_hook": "",
+   "event_ids": [
+    "NE-E0100",
+    "NE-E0102",
+    "NE-E0105",
+    "NE-E0106"
+   ]
+  }
+ ],
+ "validation": {
+  "errors": [],
+  "warnings": [],
+  "checked_events": 107,
+  "scenes": 8,
+  "chapters": 4
+ }
+}

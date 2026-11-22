@@ -1,0 +1,388 @@
+{
+ "edges": [
+  {
+   "from": "NE-E0017",
+   "to": "NE-E0014",
+   "relation": "REVEALED_BY",
+   "evidence_event_ids": [
+    "E0014",
+    "E0017"
+   ],
+   "confidence": 0.9,
+   "source": "v03",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0022",
+   "to": "NE-E0008",
+   "relation": "ENABLED_BY",
+   "evidence_event_ids": [
+    "E0008",
+    "E0022"
+   ],
+   "confidence": 0.95,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0022",
+   "to": "NE-E0008",
+   "relation": "REVEALED_BY",
+   "evidence_event_ids": [
+    "E0008",
+    "E0022"
+   ],
+   "confidence": 0.9,
+   "source": "v03",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0032",
+   "to": "NE-E0026",
+   "relation": "RESPONDED_TO",
+   "evidence_event_ids": [
+    "E0026",
+    "E0032"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0032",
+   "to": "NE-E0030",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0030",
+    "E0032"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0032",
+   "to": "NE-E0030",
+   "relation": "ESCALATED_BY",
+   "evidence_event_ids": [
+    "E0030",
+    "E0032"
+   ],
+   "confidence": 0.9,
+   "source": "v03",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0033",
+   "to": "NE-E0032",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0032",
+    "E0033"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0035",
+   "to": "NE-E0033",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0033",
+    "E0035"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0036",
+   "to": "NE-E0032",
+   "relation": "ESCALATED_BY",
+   "evidence_event_ids": [
+    "E0032",
+    "E0036"
+   ],
+   "confidence": 0.9,
+   "source": "v03",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0036",
+   "to": "NE-E0035",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0035",
+    "E0036"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0038",
+   "to": "NE-E0033",
+   "relation": "RESPONDED_TO",
+   "evidence_event_ids": [
+    "E0033",
+    "E0038"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0038",
+   "to": "NE-E0036",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0036",
+    "E0038"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0038",
+   "to": "NE-E0036",
+   "relation": "ESCALATED_BY",
+   "evidence_event_ids": [
+    "E0036",
+    "E0038"
+   ],
+   "confidence": 0.9,
+   "source": "v03",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0040",
+   "to": "NE-E0038",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0038",
+    "E0040"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0052",
+   "to": "NE-E0050",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0050",
+    "E0052"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0054",
+   "to": "NE-E0052",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0052",
+    "E0054"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0056",
+   "to": "NE-E0050",
+   "relation": "RESPONDED_TO",
+   "evidence_event_ids": [
+    "E0050",
+    "E0056"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0056",
+   "to": "NE-E0054",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0054",
+    "E0056"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0058",
+   "to": "NE-E0052",
+   "relation": "RESPONDED_TO",
+   "evidence_event_ids": [
+    "E0052",
+    "E0058"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0058",
+   "to": "NE-E0056",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0056",
+    "E0058"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0059",
+   "to": "NE-E0058",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0058",
+    "E0059"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0061",
+   "to": "NE-E0059",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0059",
+    "E0061"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0062",
+   "to": "NE-E0061",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0061",
+    "E0062"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0063",
+   "to": "NE-E0061",
+   "relation": "ESCALATED_BY",
+   "evidence_event_ids": [
+    "E0061",
+    "E0063"
+   ],
+   "confidence": 0.9,
+   "source": "v03",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0063",
+   "to": "NE-E0062",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0062",
+    "E0063"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0064",
+   "to": "NE-E0063",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0063",
+    "E0064"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0064",
+   "to": "NE-E0063",
+   "relation": "ESCALATED_BY",
+   "evidence_event_ids": [
+    "E0063",
+    "E0064"
+   ],
+   "confidence": 0.9,
+   "source": "v03",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0065",
+   "to": "NE-E0048",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0048",
+    "E0065"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0070",
+   "to": "NE-E0068",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0068",
+    "E0070"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0071",
+   "to": "NE-E0070",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0070",
+    "E0071"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  },
+  {
+   "from": "NE-E0073",
+   "to": "NE-E0065",
+   "relation": "CAUSED_BY",
+   "evidence_event_ids": [
+    "E0065",
+    "E0073"
+   ],
+   "confidence": 0.9,
+   "source": "extractor",
+   "verification_status": "verified"
+  }
+ ],
+ "build_stats": {
+  "extractor_used": 24,
+  "extractor_skipped_org": 16,
+  "v03_used": 8,
+  "v03_unmapped": 0
+ },
+ "verification": {
+  "verified": 31,
+  "unverified": 0,
+  "rejected": 0,
+  "reasons": []
+ }
+}
