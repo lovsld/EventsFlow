@@ -72,8 +72,7 @@
     0.4,
     0.4,
     0.4
-   ],
-   "literary_title": "海雾深处，渔火将至"
+   ]
   },
   {
    "chapter_id": "CH02",
@@ -105,8 +104,7 @@
    ],
    "emotional_curve": [
     0.4
-   ],
-   "literary_title": "灯塔之下，暗影浮动"
+   ]
   },
   {
    "chapter_id": "CH03",
@@ -149,8 +147,7 @@
     0.4,
     0.4,
     0.4
-   ],
-   "literary_title": "雾笛重鸣，一线生机"
+   ]
   },
   {
    "chapter_id": "CH04",
@@ -173,8 +170,7 @@
    "unresolved_questions": [],
    "emotional_curve": [
     0.0
-   ],
-   "literary_title": "讳莫如深，旧事难言"
+   ]
   }
  ],
  "scenes": [
@@ -201,7 +197,56 @@
     "NE-E0006",
     "NE-E0010",
     "NE-E0011"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "a_gui": {
+      "goals_active": [
+       "ready_mooring",
+       "keep_jetty",
+       "ready_mooring",
+       "keep_jetty"
+      ],
+      "knows_at_entry": [
+       "jetty_lamp_out"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "emotion_entering": null,
+      "conflicts_with": []
+     },
+     "lin_tao": {
+      "goals_active": [],
+      "knows_at_entry": [
+       "belt_broken"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "emotion_entering": null,
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "a_gui",
+       "lin_tao"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [],
+    "no_expected_change": true
+   }
   },
   {
    "scene_id": "SC02",
@@ -231,7 +276,139 @@
     "NE-E0022",
     "NE-E0024",
     "NE-E0025"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "a_gui": {
+      "goals_active": [
+       "ready_mooring",
+       "keep_jetty",
+       "ready_mooring",
+       "keep_jetty"
+      ],
+      "knows_at_entry": [
+       "jetty_lamp_out"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "emotion_entering": {
+       "character_id": "a_gui",
+       "scene_id": "SC01",
+       "tick": 2,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "keeper_zhou": {
+      "goals_active": [
+       "keep_light"
+      ],
+      "knows_at_entry": [],
+      "must_not_use_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "emotion_entering": null,
+      "conflicts_with": []
+     },
+     "lin_tao": {
+      "goals_active": [],
+      "knows_at_entry": [
+       "belt_broken"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "emotion_entering": {
+       "character_id": "lin_tao",
+       "scene_id": "SC01",
+       "tick": 2,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "a_gui",
+       "keeper_zhou"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "keeper_zhou_only": []
+     },
+     {
+      "pair": [
+       "a_gui",
+       "lin_tao"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     },
+     {
+      "pair": [
+       "keeper_zhou",
+       "lin_tao"
+      ],
+      "keeper_zhou_only": [],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "a_gui",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "ship_passing_tonight"
+      },
+      "event_id": "NE-E0026"
+     },
+     {
+      "character_id": "lin_tao",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anticipation",
+       "intensity": 0.5
+      },
+      "event_id": "E0026"
+     },
+     {
+      "character_id": "lin_tao",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "ship_passing_tonight"
+      },
+      "event_id": "NE-E0026"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC03",
@@ -258,7 +435,159 @@
     "NE-E0027",
     "NE-E0028",
     "NE-E0029"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "a_gui": {
+      "goals_active": [
+       "ready_mooring",
+       "keep_jetty",
+       "ready_mooring",
+       "keep_jetty"
+      ],
+      "knows_at_entry": [
+       "jetty_lamp_out"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "emotion_entering": {
+       "character_id": "a_gui",
+       "scene_id": "SC02",
+       "tick": 4,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "keeper_zhou": {
+      "goals_active": [
+       "keep_light"
+      ],
+      "knows_at_entry": [],
+      "must_not_use_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "emotion_entering": {
+       "character_id": "keeper_zhou",
+       "scene_id": "SC02",
+       "tick": 4,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "lin_tao": {
+      "goals_active": [],
+      "knows_at_entry": [
+       "belt_broken"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "emotion_entering": {
+       "character_id": "lin_tao",
+       "scene_id": "SC02",
+       "tick": 4,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "a_gui",
+       "keeper_zhou"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "keeper_zhou_only": []
+     },
+     {
+      "pair": [
+       "a_gui",
+       "lin_tao"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     },
+     {
+      "pair": [
+       "keeper_zhou",
+       "lin_tao"
+      ],
+      "keeper_zhou_only": [],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "a_gui",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "ship_passing_tonight"
+      },
+      "event_id": "NE-E0026"
+     },
+     {
+      "character_id": "lin_tao",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anticipation",
+       "intensity": 0.5
+      },
+      "event_id": "E0026"
+     },
+     {
+      "character_id": "lin_tao",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "ship_passing_tonight"
+      },
+      "event_id": "NE-E0026"
+     },
+     {
+      "character_id": "a_gui",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "surprise",
+       "intensity": 0.7
+      },
+      "event_id": "E0026"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC04",
@@ -285,7 +614,166 @@
     "NE-E0032",
     "NE-E0036",
     "NE-E0037"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "a_gui": {
+      "goals_active": [
+       "ready_mooring",
+       "keep_jetty",
+       "ready_mooring",
+       "keep_jetty"
+      ],
+      "knows_at_entry": [
+       "jetty_lamp_out",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready"
+      ],
+      "emotion_entering": {
+       "character_id": "a_gui",
+       "scene_id": "SC03",
+       "tick": 7,
+       "emotion": "surprise",
+       "intensity": 0.7,
+       "confidence": 0.6,
+       "evidence_event_ids": [
+        "E0026",
+        "E0027"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "keeper_zhou": {
+      "goals_active": [
+       "keep_light"
+      ],
+      "knows_at_entry": [],
+      "must_not_use_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "emotion_entering": {
+       "character_id": "keeper_zhou",
+       "scene_id": "SC03",
+       "tick": 6,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "lin_tao": {
+      "goals_active": [],
+      "knows_at_entry": [
+       "belt_broken",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready"
+      ],
+      "emotion_entering": {
+       "character_id": "lin_tao",
+       "scene_id": "SC03",
+       "tick": 6,
+       "emotion": "anticipation",
+       "intensity": 0.5,
+       "confidence": 0.35,
+       "evidence_event_ids": [
+        "E0026"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "a_gui",
+       "keeper_zhou"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out",
+       "ship_passing_tonight"
+      ],
+      "keeper_zhou_only": []
+     },
+     {
+      "pair": [
+       "a_gui",
+       "lin_tao"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     },
+     {
+      "pair": [
+       "keeper_zhou",
+       "lin_tao"
+      ],
+      "keeper_zhou_only": [],
+      "lin_tao_only": [
+       "belt_broken",
+       "ship_passing_tonight"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "a_gui",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     },
+     {
+      "character_id": "keeper_zhou",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anticipation",
+       "intensity": 0.5
+      },
+      "event_id": "E0030"
+     },
+     {
+      "character_id": "keeper_zhou",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "ship_passing_tonight"
+      },
+      "event_id": "NE-E0030"
+     },
+     {
+      "character_id": "lin_tao",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC05",
@@ -315,7 +803,153 @@
     "NE-E0044",
     "NE-E0045",
     "NE-E0049"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "a_gui": {
+      "goals_active": [
+       "ready_mooring",
+       "keep_jetty",
+       "ready_mooring",
+       "keep_jetty"
+      ],
+      "knows_at_entry": [
+       "jetty_lamp_out",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready"
+      ],
+      "emotion_entering": {
+       "character_id": "a_gui",
+       "scene_id": "SC04",
+       "tick": 8,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "keeper_zhou": {
+      "goals_active": [
+       "keep_light"
+      ],
+      "knows_at_entry": [
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready"
+      ],
+      "emotion_entering": {
+       "character_id": "keeper_zhou",
+       "scene_id": "SC04",
+       "tick": 8,
+       "emotion": "anticipation",
+       "intensity": 0.5,
+       "confidence": 0.35,
+       "evidence_event_ids": [
+        "E0030",
+        "E0032"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "lin_tao": {
+      "goals_active": [],
+      "knows_at_entry": [
+       "belt_broken",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready"
+      ],
+      "emotion_entering": {
+       "character_id": "lin_tao",
+       "scene_id": "SC04",
+       "tick": 8,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "a_gui",
+       "keeper_zhou"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "keeper_zhou_only": []
+     },
+     {
+      "pair": [
+       "a_gui",
+       "lin_tao"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     },
+     {
+      "pair": [
+       "keeper_zhou",
+       "lin_tao"
+      ],
+      "keeper_zhou_only": [],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "lin_tao",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "surprise",
+       "intensity": 0.7
+      },
+      "event_id": "E0044"
+     },
+     {
+      "character_id": "lin_tao",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "fog_horn_ready"
+      },
+      "event_id": "NE-E0044"
+     },
+     {
+      "character_id": "keeper_zhou",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "sadness",
+       "intensity": 0.4
+      },
+      "event_id": "E0049"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC06",
@@ -344,7 +978,98 @@
     "NE-E0064",
     "NE-E0066",
     "NE-E0070"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "a_gui": {
+      "goals_active": [
+       "ready_mooring",
+       "keep_jetty",
+       "ready_mooring",
+       "keep_jetty"
+      ],
+      "knows_at_entry": [
+       "jetty_lamp_out",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready"
+      ],
+      "emotion_entering": {
+       "character_id": "a_gui",
+       "scene_id": "SC05",
+       "tick": 9,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "keeper_zhou": {
+      "goals_active": [
+       "keep_light"
+      ],
+      "knows_at_entry": [
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready"
+      ],
+      "emotion_entering": {
+       "character_id": "keeper_zhou",
+       "scene_id": "SC05",
+       "tick": 12,
+       "emotion": "sadness",
+       "intensity": 0.4,
+       "confidence": 0.3,
+       "evidence_event_ids": [
+        "E0049"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "a_gui",
+       "keeper_zhou"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "keeper_zhou_only": []
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "a_gui",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anger",
+       "intensity": 0.4
+      },
+      "event_id": "E0056"
+     },
+     {
+      "character_id": "keeper_zhou",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anger",
+       "intensity": 0.4
+      },
+      "event_id": "E0058"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC07",
@@ -368,7 +1093,105 @@
    "event_ids": [
     "NE-E0080",
     "NE-E0081"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "keeper_zhou": {
+      "goals_active": [
+       "keep_light"
+      ],
+      "knows_at_entry": [
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [
+       "fog_horn_ready"
+      ],
+      "emotion_entering": {
+       "character_id": "keeper_zhou",
+       "scene_id": "SC06",
+       "tick": 14,
+       "emotion": "anger",
+       "intensity": 0.4,
+       "confidence": 0.3,
+       "evidence_event_ids": [
+        "E0058"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "lin_tao": {
+      "goals_active": [],
+      "knows_at_entry": [
+       "belt_broken",
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "lin_tao",
+       "scene_id": "SC05",
+       "tick": 11,
+       "emotion": "surprise",
+       "intensity": 0.7,
+       "confidence": 0.6,
+       "evidence_event_ids": [
+        "E0044"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "keeper_zhou",
+       "lin_tao"
+      ],
+      "keeper_zhou_only": [],
+      "lin_tao_only": [
+       "belt_broken",
+       "fog_horn_ready"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "keeper_zhou",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anticipation",
+       "intensity": 0.5
+      },
+      "event_id": "E0080"
+     },
+     {
+      "character_id": "keeper_zhou",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "fog_horn_ready"
+      },
+      "event_id": "NE-E0080"
+     },
+     {
+      "character_id": "lin_tao",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC08",
@@ -392,7 +1215,81 @@
    "event_ids": [
     "NE-E0086",
     "NE-E0087"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "keeper_zhou": {
+      "goals_active": [
+       "keep_light"
+      ],
+      "knows_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "keeper_zhou",
+       "scene_id": "SC07",
+       "tick": 20,
+       "emotion": "anticipation",
+       "intensity": 0.5,
+       "confidence": 0.35,
+       "evidence_event_ids": [
+        "E0080"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "lin_tao": {
+      "goals_active": [],
+      "knows_at_entry": [
+       "belt_broken",
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "lin_tao",
+       "scene_id": "SC07",
+       "tick": 20,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "keeper_zhou",
+       "lin_tao"
+      ],
+      "keeper_zhou_only": [],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "keeper_zhou",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "sadness",
+       "intensity": 0.4
+      },
+      "event_id": "E0087"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC09",
@@ -419,7 +1316,141 @@
     "NE-E0095",
     "NE-E0096",
     "NE-E0097"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "a_gui": {
+      "goals_active": [
+       "ready_mooring",
+       "keep_jetty",
+       "ready_mooring",
+       "keep_jetty"
+      ],
+      "knows_at_entry": [
+       "fog_horn_ready",
+       "jetty_lamp_out",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "a_gui",
+       "scene_id": "SC06",
+       "tick": 14,
+       "emotion": "anger",
+       "intensity": 0.4,
+       "confidence": 0.3,
+       "evidence_event_ids": [
+        "E0056"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "keeper_zhou": {
+      "goals_active": [
+       "keep_light"
+      ],
+      "knows_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "keeper_zhou",
+       "scene_id": "SC08",
+       "tick": 21,
+       "emotion": "sadness",
+       "intensity": 0.4,
+       "confidence": 0.3,
+       "evidence_event_ids": [
+        "E0087"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "lin_tao": {
+      "goals_active": [],
+      "knows_at_entry": [
+       "belt_broken",
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "lin_tao",
+       "scene_id": "SC08",
+       "tick": 21,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "a_gui",
+       "keeper_zhou"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "keeper_zhou_only": []
+     },
+     {
+      "pair": [
+       "a_gui",
+       "lin_tao"
+      ],
+      "a_gui_only": [
+       "jetty_lamp_out"
+      ],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     },
+     {
+      "pair": [
+       "keeper_zhou",
+       "lin_tao"
+      ],
+      "keeper_zhou_only": [],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "a_gui",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     },
+     {
+      "character_id": "keeper_zhou",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC10",
@@ -443,7 +1474,89 @@
    "event_ids": [
     "NE-E0100",
     "NE-E0101"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "keeper_zhou": {
+      "goals_active": [
+       "keep_light"
+      ],
+      "knows_at_entry": [
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "keeper_zhou",
+       "scene_id": "SC09",
+       "tick": 22,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "lin_tao": {
+      "goals_active": [],
+      "knows_at_entry": [
+       "belt_broken",
+       "fog_horn_ready",
+       "ship_passing_tonight"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "lin_tao",
+       "scene_id": "SC09",
+       "tick": 22,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "keeper_zhou",
+       "lin_tao"
+      ],
+      "keeper_zhou_only": [],
+      "lin_tao_only": [
+       "belt_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "keeper_zhou",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "sadness",
+       "intensity": 0.4
+      },
+      "event_id": "E0100"
+     },
+     {
+      "character_id": "lin_tao",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anger",
+       "intensity": 0.4
+      },
+      "event_id": "E0101"
+     }
+    ],
+    "no_expected_change": false
+   }
   }
  ],
  "validation": {

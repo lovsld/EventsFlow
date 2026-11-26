@@ -1,0 +1,619 @@
+{
+ "updates": [
+  {
+   "event_id": "NE-E0002",
+   "character_id": "doctor_shen",
+   "tick": 1,
+   "field": "knowledge",
+   "tier": "fact",
+   "before": {
+    "known": false
+   },
+   "after": {
+    "known": true,
+    "fact": "fever_patient_coming"
+   },
+   "reason": "learned via find",
+   "evidence_event_ids": [
+    "NE-E0002"
+   ],
+   "confidence": 1.0,
+   "alternative_explanations": []
+  },
+  {
+   "event_id": "E0040",
+   "character_id": "doctor_shen",
+   "tick": 10,
+   "field": "emotion",
+   "tier": "inference",
+   "before": {
+    "emotion": "unknown"
+   },
+   "after": {
+    "emotion": "sadness",
+    "intensity": 0.4
+   },
+   "reason": "scene evidence changed the inferred emotional state",
+   "evidence_event_ids": [
+    "E0040"
+   ],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "情境性短暂反应，未形成稳定情绪变化",
+    "推断规则误判（证据不足）"
+   ]
+  },
+  {
+   "event_id": "E0046",
+   "character_id": "porter_wu",
+   "tick": 11,
+   "field": "emotion",
+   "tier": "inference",
+   "before": {
+    "emotion": "unknown"
+   },
+   "after": {
+    "emotion": "anticipation",
+    "intensity": 0.5
+   },
+   "reason": "scene evidence changed the inferred emotional state",
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "confidence": 0.35,
+   "alternative_explanations": [
+    "情境性短暂反应，未形成稳定情绪变化",
+    "推断规则误判（证据不足）"
+   ]
+  },
+  {
+   "event_id": "NE-E0046",
+   "character_id": "porter_wu",
+   "tick": 11,
+   "field": "knowledge",
+   "tier": "fact",
+   "before": {
+    "known": false
+   },
+   "after": {
+    "known": true,
+    "fact": "fever_patient_coming"
+   },
+   "reason": "learned via delivery",
+   "evidence_event_ids": [
+    "NE-E0046"
+   ],
+   "confidence": 1.0,
+   "alternative_explanations": []
+  },
+  {
+   "event_id": "E0054",
+   "character_id": "doctor_shen",
+   "tick": 13,
+   "field": "emotion",
+   "tier": "inference",
+   "before": {
+    "emotion": "unknown"
+   },
+   "after": {
+    "emotion": "sadness",
+    "intensity": 0.4
+   },
+   "reason": "scene evidence changed the inferred emotional state",
+   "evidence_event_ids": [
+    "E0054",
+    "E0059"
+   ],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "情境性短暂反应，未形成稳定情绪变化",
+    "推断规则误判（证据不足）"
+   ]
+  },
+  {
+   "event_id": "E0070",
+   "character_id": "doctor_shen",
+   "tick": 16,
+   "field": "emotion",
+   "tier": "inference",
+   "before": {
+    "emotion": "sadness"
+   },
+   "after": {
+    "emotion": "surprise",
+    "intensity": 0.7
+   },
+   "reason": "scene evidence changed the inferred emotional state",
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "confidence": 0.6,
+   "alternative_explanations": [
+    "情境性短暂反应，未形成稳定情绪变化",
+    "推断规则误判（证据不足）"
+   ]
+  },
+  {
+   "event_id": "NE-E0070",
+   "character_id": "doctor_shen",
+   "tick": 16,
+   "field": "knowledge",
+   "tier": "fact",
+   "before": {
+    "known": false
+   },
+   "after": {
+    "known": true,
+    "fact": "fever_medicine_restocked"
+   },
+   "reason": "learned via find",
+   "evidence_event_ids": [
+    "NE-E0070"
+   ],
+   "confidence": 1.0,
+   "alternative_explanations": []
+  },
+  {
+   "event_id": "E0075",
+   "character_id": "porter_wu",
+   "tick": 17,
+   "field": "emotion",
+   "tier": "inference",
+   "before": {
+    "emotion": "unknown"
+   },
+   "after": {
+    "emotion": "anticipation",
+    "intensity": 0.5
+   },
+   "reason": "scene evidence changed the inferred emotional state",
+   "evidence_event_ids": [
+    "E0075"
+   ],
+   "confidence": 0.35,
+   "alternative_explanations": [
+    "情境性短暂反应，未形成稳定情绪变化",
+    "推断规则误判（证据不足）"
+   ]
+  },
+  {
+   "event_id": "NE-E0075",
+   "character_id": "porter_wu",
+   "tick": 17,
+   "field": "knowledge",
+   "tier": "fact",
+   "before": {
+    "known": false
+   },
+   "after": {
+    "known": true,
+    "fact": "fever_medicine_restocked"
+   },
+   "reason": "learned via delivery",
+   "evidence_event_ids": [
+    "NE-E0075"
+   ],
+   "confidence": 1.0,
+   "alternative_explanations": []
+  },
+  {
+   "event_id": "E0092",
+   "character_id": "nurse_lin",
+   "tick": 21,
+   "field": "emotion",
+   "tier": "inference",
+   "before": {
+    "emotion": "unknown"
+   },
+   "after": {
+    "emotion": "anticipation",
+    "intensity": 0.5
+   },
+   "reason": "scene evidence changed the inferred emotional state",
+   "evidence_event_ids": [
+    "E0092",
+    "E0093"
+   ],
+   "confidence": 0.35,
+   "alternative_explanations": [
+    "情境性短暂反应，未形成稳定情绪变化",
+    "推断规则误判（证据不足）"
+   ]
+  },
+  {
+   "event_id": "NE-E0092",
+   "character_id": "nurse_lin",
+   "tick": 21,
+   "field": "knowledge",
+   "tier": "fact",
+   "before": {
+    "known": false
+   },
+   "after": {
+    "known": true,
+    "fact": "fever_patient_coming"
+   },
+   "reason": "learned via delivery",
+   "evidence_event_ids": [
+    "NE-E0092"
+   ],
+   "confidence": 1.0,
+   "alternative_explanations": []
+  },
+  {
+   "event_id": "NE-E0093",
+   "character_id": "nurse_lin",
+   "tick": 21,
+   "field": "knowledge",
+   "tier": "fact",
+   "before": {
+    "known": false
+   },
+   "after": {
+    "known": true,
+    "fact": "fever_medicine_restocked"
+   },
+   "reason": "learned via delivery",
+   "evidence_event_ids": [
+    "NE-E0093"
+   ],
+   "confidence": 1.0,
+   "alternative_explanations": []
+  },
+  {
+   "event_id": "E0102",
+   "character_id": "doctor_shen",
+   "tick": 23,
+   "field": "emotion",
+   "tier": "inference",
+   "before": {
+    "emotion": "unknown"
+   },
+   "after": {
+    "emotion": "anger",
+    "intensity": 0.4
+   },
+   "reason": "scene evidence changed the inferred emotional state",
+   "evidence_event_ids": [
+    "E0102"
+   ],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "情境性短暂反应，未形成稳定情绪变化",
+    "推断规则误判（证据不足）"
+   ]
+  },
+  {
+   "event_id": "E0105",
+   "character_id": "porter_wu",
+   "tick": 24,
+   "field": "emotion",
+   "tier": "inference",
+   "before": {
+    "emotion": "unknown"
+   },
+   "after": {
+    "emotion": "anger",
+    "intensity": 0.4
+   },
+   "reason": "scene evidence changed the inferred emotional state",
+   "evidence_event_ids": [
+    "E0105"
+   ],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "情境性短暂反应，未形成稳定情绪变化",
+    "推断规则误判（证据不足）"
+   ]
+  },
+  {
+   "event_id": "E0035",
+   "character_id": "doctor_shen",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0046",
+   "character_id": "doctor_shen",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [
+    "E0002"
+   ],
+   "confidence": 0.4,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0075",
+   "character_id": "doctor_shen",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "confidence": 0.4,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0093",
+   "character_id": "doctor_shen",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "confidence": 0.4,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0099",
+   "character_id": "doctor_shen",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "confidence": 0.4,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0033",
+   "character_id": "porter_wu",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0038",
+   "character_id": "porter_wu",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0044",
+   "character_id": "porter_wu",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0047",
+   "character_id": "porter_wu",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0052",
+   "character_id": "porter_wu",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0073",
+   "character_id": "porter_wu",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [],
+   "confidence": 0.3,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0092",
+   "character_id": "porter_wu",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "confidence": 0.4,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0097",
+   "character_id": "porter_wu",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "confidence": 0.4,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  },
+  {
+   "event_id": "E0100",
+   "character_id": "porter_wu",
+   "tick": null,
+   "field": "motivation",
+   "tier": "hypothesis",
+   "before": {
+    "motivation_hypothesis": null
+   },
+   "after": {
+    "motivation_hypothesis": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+    "inference_status": "HYPOTHESIS"
+   },
+   "reason": "key action inside a thread the character is involved in",
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "confidence": 0.4,
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ]
+  }
+ ],
+ "note": "Incremental state updates derived from character arcs + psychology inference; tiers keep fact / inference / hypothesis physically labelled."
+}

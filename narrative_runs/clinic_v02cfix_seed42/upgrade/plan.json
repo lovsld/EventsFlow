@@ -52,8 +52,7 @@
    ],
    "emotional_curve": [
     0.4
-   ],
-   "literary_title": "药柜空空，长夜将至"
+   ]
   },
   {
    "chapter_id": "CH02",
@@ -92,8 +91,7 @@
     0.4,
     0.4,
     0.4
-   ],
-   "literary_title": "急报！高烧入夜来袭"
+   ]
   },
   {
    "chapter_id": "CH03",
@@ -122,8 +120,7 @@
    ],
    "emotional_curve": [
     0.4
-   ],
-   "literary_title": "药房寻踪，一线生机"
+   ]
   },
   {
    "chapter_id": "CH04",
@@ -158,8 +155,7 @@
    "emotional_curve": [
     0.4,
     0.4
-   ],
-   "literary_title": "分诊台前，焦灼待命"
+   ]
   }
  ],
  "scenes": [
@@ -184,7 +180,37 @@
    "event_ids": [
     "NE-E0002",
     "NE-E0030"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "doctor_shen": {
+      "goals_active": [
+       "keep_calm"
+      ],
+      "knows_at_entry": [],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked",
+       "fever_patient_coming"
+      ],
+      "emotion_entering": null,
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [],
+    "expected_state_changes": [
+     {
+      "character_id": "doctor_shen",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "fever_patient_coming"
+      },
+      "event_id": "NE-E0002"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC02",
@@ -208,7 +234,80 @@
    "event_ids": [
     "NE-E0033",
     "NE-E0035"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "doctor_shen": {
+      "goals_active": [
+       "keep_calm"
+      ],
+      "knows_at_entry": [
+       "fever_patient_coming"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked"
+      ],
+      "emotion_entering": {
+       "character_id": "doctor_shen",
+       "scene_id": "SC01",
+       "tick": 1,
+       "emotion": "surprise",
+       "intensity": 0.7,
+       "confidence": 0.6,
+       "evidence_event_ids": [
+        "E0002"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "porter_wu": {
+      "goals_active": [
+       "prepare_stretcher",
+       "keep_gate",
+       "prepare_stretcher",
+       "keep_gate"
+      ],
+      "knows_at_entry": [
+       "pharmacy_latch_broken"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked",
+       "fever_patient_coming"
+      ],
+      "emotion_entering": null,
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "doctor_shen",
+       "porter_wu"
+      ],
+      "doctor_shen_only": [
+       "fever_patient_coming"
+      ],
+      "porter_wu_only": [
+       "pharmacy_latch_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "doctor_shen",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC03",
@@ -235,7 +334,148 @@
     "NE-E0040",
     "NE-E0044",
     "NE-E0046"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "doctor_shen": {
+      "goals_active": [
+       "keep_calm"
+      ],
+      "knows_at_entry": [
+       "fever_patient_coming"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked"
+      ],
+      "emotion_entering": {
+       "character_id": "doctor_shen",
+       "scene_id": "SC02",
+       "tick": 9,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "nurse_lin": {
+      "goals_active": [
+       "restock_medicine",
+       "guard_ward",
+       "restock_medicine"
+      ],
+      "knows_at_entry": [
+       "fever_med_low"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked",
+       "fever_patient_coming"
+      ],
+      "emotion_entering": null,
+      "conflicts_with": []
+     },
+     "porter_wu": {
+      "goals_active": [
+       "prepare_stretcher",
+       "keep_gate",
+       "prepare_stretcher",
+       "keep_gate"
+      ],
+      "knows_at_entry": [
+       "pharmacy_latch_broken"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked",
+       "fever_patient_coming"
+      ],
+      "emotion_entering": {
+       "character_id": "porter_wu",
+       "scene_id": "SC02",
+       "tick": 9,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "doctor_shen",
+       "nurse_lin"
+      ],
+      "doctor_shen_only": [
+       "fever_patient_coming"
+      ],
+      "nurse_lin_only": [
+       "fever_med_low"
+      ]
+     },
+     {
+      "pair": [
+       "doctor_shen",
+       "porter_wu"
+      ],
+      "doctor_shen_only": [
+       "fever_patient_coming"
+      ],
+      "porter_wu_only": [
+       "pharmacy_latch_broken"
+      ]
+     },
+     {
+      "pair": [
+       "nurse_lin",
+       "porter_wu"
+      ],
+      "nurse_lin_only": [
+       "fever_med_low"
+      ],
+      "porter_wu_only": [
+       "pharmacy_latch_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "doctor_shen",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "sadness",
+       "intensity": 0.4
+      },
+      "event_id": "E0040"
+     },
+     {
+      "character_id": "porter_wu",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anticipation",
+       "intensity": 0.5
+      },
+      "event_id": "E0046"
+     },
+     {
+      "character_id": "porter_wu",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "fever_patient_coming"
+      },
+      "event_id": "NE-E0046"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC04",
@@ -259,7 +499,100 @@
    "event_ids": [
     "NE-E0047",
     "NE-E0049"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "doctor_shen": {
+      "goals_active": [
+       "keep_calm"
+      ],
+      "knows_at_entry": [
+       "fever_patient_coming"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked"
+      ],
+      "emotion_entering": {
+       "character_id": "doctor_shen",
+       "scene_id": "SC03",
+       "tick": 10,
+       "emotion": "sadness",
+       "intensity": 0.4,
+       "confidence": 0.3,
+       "evidence_event_ids": [
+        "E0040"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "porter_wu": {
+      "goals_active": [
+       "prepare_stretcher",
+       "keep_gate",
+       "prepare_stretcher",
+       "keep_gate"
+      ],
+      "knows_at_entry": [
+       "fever_patient_coming",
+       "pharmacy_latch_broken"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked"
+      ],
+      "emotion_entering": {
+       "character_id": "porter_wu",
+       "scene_id": "SC03",
+       "tick": 11,
+       "emotion": "anticipation",
+       "intensity": 0.5,
+       "confidence": 0.35,
+       "evidence_event_ids": [
+        "E0046"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "doctor_shen",
+       "porter_wu"
+      ],
+      "doctor_shen_only": [],
+      "porter_wu_only": [
+       "pharmacy_latch_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "doctor_shen",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     },
+     {
+      "character_id": "porter_wu",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC05",
@@ -284,7 +617,86 @@
     "NE-E0052",
     "NE-E0054",
     "NE-E0059"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "doctor_shen": {
+      "goals_active": [
+       "keep_calm"
+      ],
+      "knows_at_entry": [
+       "fever_patient_coming"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked"
+      ],
+      "emotion_entering": {
+       "character_id": "doctor_shen",
+       "scene_id": "SC04",
+       "tick": 12,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "porter_wu": {
+      "goals_active": [
+       "prepare_stretcher",
+       "keep_gate",
+       "prepare_stretcher",
+       "keep_gate"
+      ],
+      "knows_at_entry": [
+       "fever_patient_coming",
+       "pharmacy_latch_broken"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked"
+      ],
+      "emotion_entering": {
+       "character_id": "porter_wu",
+       "scene_id": "SC04",
+       "tick": 12,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "doctor_shen",
+       "porter_wu"
+      ],
+      "doctor_shen_only": [],
+      "porter_wu_only": [
+       "pharmacy_latch_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "doctor_shen",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "sadness",
+       "intensity": 0.4
+      },
+      "event_id": "E0054"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC06",
@@ -310,7 +722,119 @@
     "NE-E0073",
     "NE-E0075",
     "NE-E0083"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "doctor_shen": {
+      "goals_active": [
+       "keep_calm"
+      ],
+      "knows_at_entry": [
+       "fever_patient_coming"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked"
+      ],
+      "emotion_entering": {
+       "character_id": "doctor_shen",
+       "scene_id": "SC05",
+       "tick": 13,
+       "emotion": "sadness",
+       "intensity": 0.4,
+       "confidence": 0.3,
+       "evidence_event_ids": [
+        "E0054",
+        "E0059"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "porter_wu": {
+      "goals_active": [
+       "prepare_stretcher",
+       "keep_gate",
+       "prepare_stretcher",
+       "keep_gate"
+      ],
+      "knows_at_entry": [
+       "fever_patient_coming",
+       "pharmacy_latch_broken"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked"
+      ],
+      "emotion_entering": {
+       "character_id": "porter_wu",
+       "scene_id": "SC05",
+       "tick": 13,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "doctor_shen",
+       "porter_wu"
+      ],
+      "doctor_shen_only": [],
+      "porter_wu_only": [
+       "pharmacy_latch_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "doctor_shen",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "surprise",
+       "intensity": 0.7
+      },
+      "event_id": "E0070"
+     },
+     {
+      "character_id": "doctor_shen",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "fever_medicine_restocked"
+      },
+      "event_id": "NE-E0070"
+     },
+     {
+      "character_id": "porter_wu",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anticipation",
+       "intensity": 0.5
+      },
+      "event_id": "E0075"
+     },
+     {
+      "character_id": "porter_wu",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "fever_medicine_restocked"
+      },
+      "event_id": "NE-E0075"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC07",
@@ -338,7 +862,181 @@
     "NE-E0097",
     "NE-E0098",
     "NE-E0099"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "doctor_shen": {
+      "goals_active": [
+       "keep_calm"
+      ],
+      "knows_at_entry": [
+       "fever_medicine_restocked",
+       "fever_patient_coming"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "doctor_shen",
+       "scene_id": "SC06",
+       "tick": 16,
+       "emotion": "surprise",
+       "intensity": 0.7,
+       "confidence": 0.6,
+       "evidence_event_ids": [
+        "E0070"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "nurse_lin": {
+      "goals_active": [
+       "restock_medicine",
+       "guard_ward",
+       "restock_medicine"
+      ],
+      "knows_at_entry": [
+       "fever_med_low"
+      ],
+      "must_not_use_at_entry": [
+       "fever_medicine_restocked",
+       "fever_patient_coming"
+      ],
+      "emotion_entering": {
+       "character_id": "nurse_lin",
+       "scene_id": "SC03",
+       "tick": 10,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "porter_wu": {
+      "goals_active": [
+       "prepare_stretcher",
+       "keep_gate",
+       "prepare_stretcher",
+       "keep_gate"
+      ],
+      "knows_at_entry": [
+       "fever_medicine_restocked",
+       "fever_patient_coming",
+       "pharmacy_latch_broken"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "porter_wu",
+       "scene_id": "SC06",
+       "tick": 17,
+       "emotion": "anticipation",
+       "intensity": 0.5,
+       "confidence": 0.35,
+       "evidence_event_ids": [
+        "E0075"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "doctor_shen",
+       "nurse_lin"
+      ],
+      "doctor_shen_only": [
+       "fever_medicine_restocked",
+       "fever_patient_coming"
+      ],
+      "nurse_lin_only": [
+       "fever_med_low"
+      ]
+     },
+     {
+      "pair": [
+       "doctor_shen",
+       "porter_wu"
+      ],
+      "doctor_shen_only": [],
+      "porter_wu_only": [
+       "pharmacy_latch_broken"
+      ]
+     },
+     {
+      "pair": [
+       "nurse_lin",
+       "porter_wu"
+      ],
+      "nurse_lin_only": [
+       "fever_med_low"
+      ],
+      "porter_wu_only": [
+       "fever_medicine_restocked",
+       "fever_patient_coming",
+       "pharmacy_latch_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "doctor_shen",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     },
+     {
+      "character_id": "nurse_lin",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anticipation",
+       "intensity": 0.5
+      },
+      "event_id": "E0092"
+     },
+     {
+      "character_id": "nurse_lin",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "fever_patient_coming"
+      },
+      "event_id": "NE-E0092"
+     },
+     {
+      "character_id": "nurse_lin",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "fever_medicine_restocked"
+      },
+      "event_id": "NE-E0093"
+     },
+     {
+      "character_id": "porter_wu",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC08",
@@ -365,7 +1063,154 @@
     "NE-E0102",
     "NE-E0105",
     "NE-E0106"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "doctor_shen": {
+      "goals_active": [
+       "keep_calm"
+      ],
+      "knows_at_entry": [
+       "fever_medicine_restocked",
+       "fever_patient_coming"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "doctor_shen",
+       "scene_id": "SC07",
+       "tick": 21,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "nurse_lin": {
+      "goals_active": [
+       "restock_medicine",
+       "guard_ward",
+       "restock_medicine"
+      ],
+      "knows_at_entry": [
+       "fever_med_low",
+       "fever_medicine_restocked",
+       "fever_patient_coming"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "nurse_lin",
+       "scene_id": "SC07",
+       "tick": 21,
+       "emotion": "anticipation",
+       "intensity": 0.5,
+       "confidence": 0.35,
+       "evidence_event_ids": [
+        "E0092",
+        "E0093"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     },
+     "porter_wu": {
+      "goals_active": [
+       "prepare_stretcher",
+       "keep_gate",
+       "prepare_stretcher",
+       "keep_gate"
+      ],
+      "knows_at_entry": [
+       "fever_medicine_restocked",
+       "fever_patient_coming",
+       "pharmacy_latch_broken"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "porter_wu",
+       "scene_id": "SC07",
+       "tick": 21,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": []
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "doctor_shen",
+       "nurse_lin"
+      ],
+      "doctor_shen_only": [],
+      "nurse_lin_only": [
+       "fever_med_low"
+      ]
+     },
+     {
+      "pair": [
+       "doctor_shen",
+       "porter_wu"
+      ],
+      "doctor_shen_only": [],
+      "porter_wu_only": [
+       "pharmacy_latch_broken"
+      ]
+     },
+     {
+      "pair": [
+       "nurse_lin",
+       "porter_wu"
+      ],
+      "nurse_lin_only": [
+       "fever_med_low"
+      ],
+      "porter_wu_only": [
+       "pharmacy_latch_broken"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "doctor_shen",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anger",
+       "intensity": 0.4
+      },
+      "event_id": "E0102"
+     },
+     {
+      "character_id": "nurse_lin",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     },
+     {
+      "character_id": "porter_wu",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anger",
+       "intensity": 0.4
+      },
+      "event_id": "E0105"
+     }
+    ],
+    "no_expected_change": false
+   }
   }
  ],
  "validation": {

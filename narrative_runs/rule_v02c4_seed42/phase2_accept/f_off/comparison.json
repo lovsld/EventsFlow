@@ -1,0 +1,18 @@
+{
+ "old_story_B": {
+  "chars": 1560,
+  "sentences": 46,
+  "duplicate_rate": 0.348
+ },
+ "new_novel": {
+  "chars": 2869,
+  "sentences": 82,
+  "duplicate_rate": 0.012,
+  "paragraphs": 56,
+  "f_levels": {
+   "F2": 17,
+   "F1": 29,
+   "F3": 10
+  }
+ }
+}

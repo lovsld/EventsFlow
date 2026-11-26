@@ -142,6 +142,10 @@ def assemble_context(run_dir: Path, narrative_dir: Path,
                               products["setup"].get("records", [])
                               if r["status"] != "payoff"],
         "already_revealed": sorted(already_revealed),
+        # Phase 2: character state + scene expectations from the
+        # planner's state enrichment (goals / entry knowledge /
+        # must-not-use / entering emotion / expected changes).
+        "character_state": scene.get("character_state"),
         "scene_events": scene_events}
     manifest = {k: (v is not None and v != {} and v != [])
                 for k, v in ctx.items()}
@@ -192,6 +196,35 @@ def _prompt(ctx: dict) -> str:
         lines.append("【已揭示事实（前场已交代，本场不得再次当作"
                      "新信息揭示，只能简短带过）】" +
                      "；".join(c["already_revealed"]))
+    cs = c.get("character_state")
+    if cs:
+        lines.append("【人物状态与本场约束（Phase 2）】")
+        for cid, p in cs.get("participants", {}).items():
+            emo = p.get("emotion_entering") or {}
+            lines.append(
+                f"- {cid}：当前目标 {p.get('goals_active', [])}；"
+                f"入场情绪（推断）{emo.get('emotion', 'unknown')}"
+                f"（置信度 {emo.get('confidence', 0)}）；"
+                f"尚未掌握、不得当作已知使用的事实："
+                f"{p.get('must_not_use_at_entry', [])}")
+        gaps = cs.get("information_gaps", [])
+        if gaps:
+            lines.append("信息差：" + "；".join(
+                f"{g['pair'][0]} 与 {g['pair'][1]} 掌握的信息不同"
+                for g in gaps))
+        exp = cs.get("expected_state_changes", [])
+        if exp:
+            lines.append("本场预期状态变化（由本场事件产生，"
+                         "须在文本中自然呈现）：" + "；".join(
+                             f"{e['character_id']}·{e['field']}"
+                             for e in exp))
+        lines.append(
+            "心理呈现规则：禁止把心理写成说明书式旁白（不得出现"
+            "「他感到恐惧/愤怒/犹豫，因此决定……」这类直接解释）；"
+            "必须通过动作、对话、停顿、回避、语气和选择性注意"
+            "让读者自己看出。人物只能使用其入场已知与本场事件中"
+            "学到的信息；对尚未掌握的事实，人物至多猜测，且文本"
+            "必须表现为猜测（如「莫非……」），不得写成确定事实。")
     lines.append("【本场事件（按序；role=repeat 的不要重写；"
                  "quotable=true 的台词才可逐字引用，"
                  "quotable=false 的只能转述）】")
@@ -207,9 +240,103 @@ def _prompt(ctx: dict) -> str:
     return "\n".join(lines)
 
 
+REWRITE_SYSTEM = """你是一名小说改稿编辑。下面是某章中被标为
+F3（创作补充）的段落。你的任务是把它们改写为 F2（叙事呈现）：
+用人物动作、对话、场景信息来表达同样的内容，减少纯解释、
+纯描写和作者补充。硬性规则：
+1. 不得新增任何客观事实、人物、物件或引语；不得删除段落中
+   已有的事件信息与因果关系。
+2. 段落数量、顺序、event_ids 必须与输入完全一致。
+3. 只输出 JSON：{"paragraphs":[{"text":"...","level":"F2",
+   "event_ids":[...]}]}。"""
+
+
+def _enforce_budget(novel: dict, gen, usage: dict,
+                    cap_in: int = CAP_IN) -> dict:
+    """F-budget enforcement pass (Phase 2 acceptance §2.2):
+    measure -> one targeted F3->F2 rewrite round per chapter ->
+    re-measure -> explicit diagnosis if still over budget.
+    Never deletes paragraphs, never touches F1, preserves
+    event_ids (traceability). Returns the enforcement record;
+    the novel dict is modified in place."""
+    from narrative.fbudget import analyze
+    before = analyze(novel)
+    record = {"before": before["book"]["ratios"],
+              "issues_before": [i["kind"] for i in before["issues"]],
+              "rewritten_paragraphs": 0, "chapters": []}
+    if not before["over_budget"]:
+        record["status"] = "within_budget"
+        record["after"] = before["book"]["ratios"]
+        novel["budget_enforcement"] = record
+        return record
+    # Convert only as many F3 paragraphs as the book-level
+    # budget calls for: enough to bring F3 under its cap AND
+    # to lift F2 to its floor, but never so many that F2 is
+    # pushed over its own cap.
+    import math
+    counts = before["book"]["counts"]
+    total = max(1, before["book"]["total"])
+    b = before["budgets"]
+    n_for_f3 = counts["F3"] - math.floor(b["F3_max"] * total)
+    n_for_f2_floor = math.ceil(b["F2_min"] * total) - counts["F2"]
+    n_for_f2_cap = math.floor(b["F2_max"] * total) - counts["F2"]
+    n_convert = max(0, min(max(n_for_f3, n_for_f2_floor),
+                           n_for_f2_cap, counts["F3"]))
+    record["planned_conversions"] = n_convert
+    by_id = {ch["chapter_id"]: ch for ch in novel["chapters"]}
+    for ch_rep in before["chapters"]:
+        if n_convert <= 0:
+            break
+        ch = by_id[ch_rep["chapter_id"]]
+        targets = [(i, p) for i, p in enumerate(ch["paragraphs"])
+                   if p.get("level") == "F3"][:n_convert]
+        if not targets or usage["prompt_tokens"] >= cap_in:
+            continue
+        n_convert -= len(targets)
+        payload = [{"n": n, "text": p.get("text", ""),
+                    "event_ids": p.get("event_ids", [])}
+                   for n, (_, p) in enumerate(targets)]
+        text, u = gen(REWRITE_SYSTEM,
+                      json.dumps({"paragraphs": payload},
+                                 ensure_ascii=False),
+                      max_tokens=8192)
+        usage["prompt_tokens"] += u.get("prompt_tokens", 0)
+        usage["candidates_tokens"] += u.get(
+            "candidates_tokens", 0) + u.get("thoughts_tokens", 0)
+        usage["calls"] += 1
+        entry = {"chapter_id": ch["chapter_id"],
+                 "targeted": len(targets), "applied": 0}
+        try:
+            data = json.loads(text[text.find("{"):
+                                   text.rfind("}") + 1])
+            new_paras = data["paragraphs"]
+            if len(new_paras) != len(targets):
+                raise ValueError("paragraph count changed")
+            for (idx, old), new in zip(targets, new_paras):
+                if new.get("event_ids") != old.get("event_ids"):
+                    raise ValueError("event_ids changed")
+                ch["paragraphs"][idx] = {
+                    **old, "text": new["text"], "level": "F2",
+                    "budget_rewritten": True}
+                entry["applied"] += 1
+        except (json.JSONDecodeError, ValueError, KeyError) as e:
+            entry["error"] = f"rewrite rejected: {e}"
+        record["rewritten_paragraphs"] += entry["applied"]
+        record["chapters"].append(entry)
+    after = analyze(novel)
+    record["after"] = after["book"]["ratios"]
+    record["issues_after"] = [i["kind"] for i in after["issues"]]
+    record["status"] = ("within_budget_after_rewrite"
+                        if not after["over_budget"]
+                        else "over_budget_after_rewrite")
+    novel["budget_enforcement"] = record
+    return record
+
+
 def write_novel(run_dir: Path, narrative_dir: Path,
                 generate_fn=None, cap_in: int = CAP_IN,
-                cap_out: int = CAP_OUT) -> dict:
+                cap_out: int = CAP_OUT,
+                enforce_budget: bool = False) -> dict:
     gen = generate_fn or _gemini_generate
     upgrade = narrative_dir / "upgrade"
     plan = _load(upgrade / "plan.json")
@@ -280,10 +407,14 @@ def write_novel(run_dir: Path, narrative_dir: Path,
                              "paragraphs": paras})
         if stopped:
             break
-    return {"chapters": chapters_out, "usage": usage,
-            "creative_register": creative_register,
-            "stopped": stopped,
-            "plan_validation": plan.get("validation", {})}
+    novel = {"chapters": chapters_out, "usage": usage,
+             "creative_register": creative_register,
+             "stopped": stopped,
+             "plan_validation": plan.get("validation", {})}
+    if enforce_budget and not stopped:
+        _enforce_budget(novel, gen, usage,
+                        cap_in=cap_in)
+    return novel
 
 
 def render_markdown(novel: dict, story_title: str) -> str:
@@ -302,9 +433,11 @@ def render_markdown(novel: dict, story_title: str) -> str:
 
 
 def write_novel_files(run_dir: Path, narrative_dir: Path,
-                      out_dir: Path, generate_fn=None) -> dict:
+                      out_dir: Path, generate_fn=None,
+                      enforce_budget: bool = False) -> dict:
     novel = write_novel(run_dir, narrative_dir,
-                        generate_fn=generate_fn)
+                        generate_fn=generate_fn,
+                        enforce_budget=enforce_budget)
     plan = _load(narrative_dir / "upgrade" / "plan.json")
     title = plan["story"].get("title") or run_dir.name
     out_dir.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,561 @@
+{
+ "chapters": [
+  {
+   "chapter_id": "CH01",
+   "title": "酒馆风声，暗室寻踪",
+   "paragraphs": [
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "凯尔回到了酒馆的后屋，这里是酒馆老板奥伦的私人空间，也是他之前得到指示要秘密搜查的地方。他需要找到那封神秘的匿名信。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0008"
+     ],
+     "text": "凯尔在back_room搜寻，在一番细致的检查后，他找到了一封anonymous_letter。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "凯尔指尖轻触信封，粗糙的纸质下，边缘的磨损似在无声诉说着经年累月的摩挲。他小心翼翼地撕开封口，抽出信纸，目光扫过，眉宇间凝结起一丝寒意。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01",
+     "budget_rewritten": true
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "就在凯尔专注地阅读信件时，他听到后屋的门被推开，商人的声音传了进来。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0014"
+     ],
+     "text": "米拉的声音带着一丝精明：“老板，我手里有批货，镇上要是有销路，咱们都有赚头。”",
+     "scene_id": "SC01",
+     "chapter_id": "CH01"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "凯尔手腕一转，迅速将信件塞入衣襟，只留下一角若隐若现。他绷紧身体，双眼紧盯着商人，试图从对方的每一个字眼中榨取更多线索。与此同时，米拉的身影在他脑海中闪过，搅乱了他对调查走向的预判。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01",
+     "budget_rewritten": true
+    }
+   ]
+  },
+  {
+   "chapter_id": "CH02",
+   "title": "低语疑云：公款账目",
+   "paragraphs": [
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "奥伦站在酒馆的后屋，空气中弥漫着酒糟与灰尘混合的陈旧气息。他看着凯尔士兵将一张匿名信小心翼翼地收起，心头却被另一种烦恼占据。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0017"
+     ],
+     "text": "商人米拉的声音适时地传来，带着一丝不容忽视的执着：“那批货的事，老板真不考虑？价格好商量。”",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "奥伦揉了揉太阳穴，看着米拉不依不饶的神情，他知道这场纠缠还远远没有结束。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02",
+     "budget_rewritten": true
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0022"
+     ],
+     "text": "就在这时，凯尔压低了声音，语气中带着明显的警惕：“镇上那笔公共资金……数目好像对不上。”",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "奥伦猛地抬眼望向凯尔，那句话像一道惊雷在他耳边炸响，他的眼神里充满了困惑和一丝不易察觉的忧虑。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02",
+     "budget_rewritten": true
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0023"
+     ],
+     "text": "米拉似乎没有察觉到两人之间暗流涌动，她继续她的推销，语气中带着一丝无奈：“我也不绕了——货压在手里，镇上只有你这儿能走量。”",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0026"
+     ],
+     "text": "凯尔没有理会米拉，他转过身，面向奥伦，以一种例行公事的口吻问道：“老板，我例行问一句——这几天酒馆有没有什么异常的人或事？”",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "奥伦的视线在凯尔和米拉之间来回梭巡，凯尔刚才那句关于资金的话在他脑海里嗡嗡作响。他深吸一口气，努力让自己的表情保持平静。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02",
+     "budget_rewritten": true
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0027"
+     ],
+     "text": "米拉的声音再次响起，试图将奥伦的注意力拉回生意上：“老板，我手里有批货，镇上要是有销路，咱们都有赚头。”",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "然而，奥伦的心思已经完全被凯尔的话所占据。他知道凯尔正在调查镇上的公共资金问题，而这与他之前听到的风声不谋而合。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0032"
+     ],
+     "text": "奥伦也压低了声音，重复了凯尔的话：“镇上那笔公共资金……数目好像对不上。”他的语气中充满了担忧。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0033"
+     ],
+     "text": "凯尔的目光锐利地扫过奥伦，再次问道：“再问一次，这几天后屋那边，有人动过什么吗？”",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "后屋里，米拉的推销声渐渐弱了下去，空气仿佛凝固了一般，连带着她的声音也显得有些黯淡。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02",
+     "budget_rewritten": true
+    }
+   ]
+  },
+  {
+   "chapter_id": "CH03",
+   "title": "米拉笑语，秘密浮现",
+   "paragraphs": [
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "酒馆后屋里，昏暗的灯光下，空气仿佛凝固了一般，充满了未言明的紧张。米拉的出现，让奥伦和凯尔的对话不得不暂时中断。",
+     "scene_id": "SC03",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0034"
+     ],
+     "text": "商人米拉带着一丝神秘的笑容，对奥伦和凯尔说：“这镇上的秘密啊，我知道的可能比你们想的多一点。”",
+     "scene_id": "SC03",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "奥伦的心头猛地一跳，米拉的话语像是一道闪电，劈开了他原本就紧绷的神经。他瞥了一眼凯尔，试图从对方眼中读出些什么，但士兵的表情一如既往地沉稳，只是眼底深处掠过一丝不易察觉的警惕。",
+     "scene_id": "SC03",
+     "chapter_id": "CH03",
+     "budget_rewritten": true
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0035"
+     ],
+     "text": "奥伦例行性地向凯尔询问：“老板，我例行问一句——这几天酒馆有没有什么异常的人或事？”",
+     "scene_id": "SC03",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "凯尔没有直接回答奥伦的问题，他将目光从米拉身上收回，转而投向奥伦，压低了声音。",
+     "scene_id": "SC03",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0036"
+     ],
+     "text": "凯尔再次提及：“镇上那笔公共资金……数目好像对不上。”",
+     "scene_id": "SC03",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "奥伦的脸色微变，喉结上下滚动了一下。他知道凯尔指的是什么，那是萦绕在他们心头许久的疑虑。米拉的笑容在昏暗中显得有些深不可测，她的目光在两人之间流转，最后落在奥伦身上，嘴角微微上扬，似乎在享受着这种被秘密包围的气氛。",
+     "scene_id": "SC03",
+     "chapter_id": "CH03",
+     "budget_rewritten": true
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0038"
+     ],
+     "text": "奥伦也压低了声音，重复了凯尔的说法：“镇上那笔公共资金……数目好像对不上。”",
+     "scene_id": "SC03",
+     "chapter_id": "CH03"
+    }
+   ]
+  },
+  {
+   "chapter_id": "CH04",
+   "title": "耳语惑心：公款疑踪",
+   "paragraphs": [
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0043",
+      "E0046",
+      "E0058"
+     ],
+     "text": "凯尔压低声音，反复强调：“镇上那笔公共资金……数目好像对不上。”",
+     "scene_id": "SC04",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0044",
+      "E0051"
+     ],
+     "text": "米拉则笑着说：“这镇上的秘密啊，我知道的可能比你们想的多一点。”",
+     "scene_id": "SC04",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0047",
+      "E0055"
+     ],
+     "text": "她接着推销：“我也不绕了——货压在手里，镇上只有你这儿能走量。”她又补充道：“老板，我手里有批货，镇上要是有销路，咱们都有赚头。”",
+     "scene_id": "SC04",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "奥伦感到一股无形的压力笼罩着狭小的后屋，他试图在商人与士兵之间周旋。",
+     "scene_id": "SC04",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0048"
+     ],
+     "text": "奥伦回应：“我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。”",
+     "scene_id": "SC04",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0050"
+     ],
+     "text": "凯尔语气坚定地表示：“老板，你越是不说，我越得查清楚。”",
+     "scene_id": "SC04",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0052"
+     ],
+     "text": "奥伦则反问凯尔：“再问一次，这几天后屋那边，有人动过什么吗？”",
+     "scene_id": "SC04",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0054"
+     ],
+     "text": "凯尔再次例行询问：“老板，我例行问一句——这几天酒馆有没有什么异常的人或事？”",
+     "scene_id": "SC04",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0056"
+     ],
+     "text": "奥伦最终也压低了声音，像是在自言自语，又像是在向在场的两人确认：“镇上那笔公共资金……数目好像对不上。”",
+     "scene_id": "SC04",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0059"
+     ],
+     "text": "米拉突然转向奥伦，用凯尔之前的口吻问道：“老板，我例行问一句——这几天酒馆有没有什么异常的人或事？”",
+     "scene_id": "SC04",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "酒味在空气中弥漫，浓烈得有些刺鼻。房间里的每个人都紧绷着身体，眼神在彼此间游走，像是等待着谁先露出哪怕一丝的破绽。",
+     "scene_id": "SC04",
+     "chapter_id": "CH04",
+     "budget_rewritten": true
+    }
+   ]
+  },
+  {
+   "chapter_id": "CH05",
+   "title": "低语入耳，公款谜团",
+   "paragraphs": [
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "酒馆里，气氛依旧凝重。米拉的目光在凯尔和奥伦之间流转，她能感受到两人之间某种无声的交流，以及那份她尚未完全掌握的秘密。",
+     "scene_id": "SC05",
+     "chapter_id": "CH05"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0061",
+      "E0064",
+      "E0068"
+     ],
+     "text": "凯尔压低声音，重复着他的疑虑：“镇上那笔公共资金……数目好像对不上。”",
+     "scene_id": "SC05",
+     "chapter_id": "CH05"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0063"
+     ],
+     "text": "奥伦也同样压低了声音，附和道：“镇上那笔公共资金……数目好像对不上。”",
+     "scene_id": "SC05",
+     "chapter_id": "CH05"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "米拉的目光落在两人之间，她想起之前隐约听到的只言片语，但此刻，从他们紧绷的神情来看，这事远比她想象的要严重。",
+     "scene_id": "SC05",
+     "chapter_id": "CH05",
+     "budget_rewritten": true
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0062",
+      "E0071"
+     ],
+     "text": "米拉再次开口，语气中带着一丝试探：“再问一次，这几天后屋那边，有人动过什么吗？”",
+     "scene_id": "SC05",
+     "chapter_id": "CH05"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0065"
+     ],
+     "text": "奥伦摇了摇头，答道：“我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。”",
+     "scene_id": "SC05",
+     "chapter_id": "CH05"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "他话语中的敷衍，让米拉更加确信后屋藏着什么。她知道奥伦不是个会轻易撒谎的人，但此刻他的回避，反倒是一种默认。",
+     "scene_id": "SC05",
+     "chapter_id": "CH05"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0070"
+     ],
+     "text": "凯尔紧盯着奥伦，语气坚定：“老板，你越是不说，我越得查清楚。”",
+     "scene_id": "SC05",
+     "chapter_id": "CH05"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0073"
+     ],
+     "text": "奥伦显得有些不耐烦，他摆了摆手说：“问几遍都一样，我什么都不知道。”",
+     "scene_id": "SC05",
+     "chapter_id": "CH05"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "他紧抿着唇，眼中闪过一丝不易察觉的慌乱，随即又被坚决覆盖。这让米拉心头一沉，直觉告诉她，他知道的比他表现出来的要多得多。",
+     "scene_id": "SC05",
+     "chapter_id": "CH05",
+     "budget_rewritten": true
+    }
+   ]
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 10556,
+  "candidates_tokens": 4330,
+  "calls": 10
+ },
+ "creative_register": [
+  {
+   "chapter_id": "CH01",
+   "scene_id": "SC01",
+   "text": "信封的纸质泛黄，边缘有些磨损，看起来被人反复触摸过。凯尔小心翼翼地打开信封，里面的内容让他感到一丝寒意。"
+  },
+  {
+   "chapter_id": "CH01",
+   "scene_id": "SC01",
+   "text": "凯尔迅速将信件藏好，只露出一小部分，做出若无其事的样子。他紧绷着身体，试图从商人的语气中捕捉更多信息，同时也在思考米拉的出现是否会影响他的调查。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC02",
+   "text": "奥伦感到一阵头疼，他知道米拉的纠缠不会轻易结束。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC02",
+   "text": "这句话像一道闪电划过奥伦的心头，他不由自主地看向凯尔，眼神中充满了疑问与不安。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC02",
+   "text": "奥伦的目光在凯尔和米拉之间游移，脑海中盘旋着凯尔刚才那句关于资金的话。他知道自己不能表现出任何异常。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC02",
+   "text": "后屋的空气变得更加凝重，米拉的推销声似乎也在这紧张的氛围中黯淡下去。"
+  },
+  {
+   "chapter_id": "CH03",
+   "scene_id": "SC03",
+   "text": "奥伦的心头猛地一跳，米拉的话语像是一道闪电，劈开了他原本就紧绷的神经。他瞥了一眼凯尔，试图从对方眼中读出些什么，但士兵的表情一如既往地沉稳，只是眼底深处掠过一丝"
+  },
+  {
+   "chapter_id": "CH03",
+   "scene_id": "SC03",
+   "text": "奥伦的脸色微变，他知道凯尔指的是什么，那是萦绕在他们心头许久的疑虑。米拉的笑容在昏暗中显得有些深不可测，她的目光在两人之间流转，似乎在享受着这种被秘密包围的气氛"
+  },
+  {
+   "chapter_id": "CH04",
+   "scene_id": "SC04",
+   "text": "空气中弥漫着酒味和尚未消散的紧张，每个人的眼神都在互相试探，等待着对方露出破绽。"
+  },
+  {
+   "chapter_id": "CH05",
+   "scene_id": "SC05",
+   "text": "米拉心中一动，这显然是他们之间正在进行的某种调查。她之前听过他们提起过，但现在看来，这事比她想象的要严重。"
+  },
+  {
+   "chapter_id": "CH05",
+   "scene_id": "SC05",
+   "text": "他脸上的表情，在坚决与一丝不易察觉的慌乱之间摇摆，让米拉觉得，他知道的比他表现出来的要多得多。"
+  }
+ ],
+ "stopped": null,
+ "plan_validation": {
+  "errors": [],
+  "warnings": [],
+  "checked_events": 73,
+  "scenes": 5,
+  "chapters": 5
+ },
+ "budget_enforcement": {
+  "before": {
+   "F1": 0.5833,
+   "F2": 0.1875,
+   "F3": 0.2292
+  },
+  "issues_before": [
+   "F3_OVER_MAX",
+   "F2_OUT_OF_RANGE"
+  ],
+  "rewritten_paragraphs": 11,
+  "chapters": [
+   {
+    "chapter_id": "CH01",
+    "targeted": 2,
+    "applied": 2
+   },
+   {
+    "chapter_id": "CH02",
+    "targeted": 4,
+    "applied": 4
+   },
+   {
+    "chapter_id": "CH03",
+    "targeted": 2,
+    "applied": 2
+   },
+   {
+    "chapter_id": "CH04",
+    "targeted": 1,
+    "applied": 1
+   },
+   {
+    "chapter_id": "CH05",
+    "targeted": 2,
+    "applied": 2
+   }
+  ],
+  "planned_conversions": 11,
+  "after": {
+   "F1": 0.5833,
+   "F2": 0.4167,
+   "F3": 0.0
+  },
+  "issues_after": [],
+  "status": "within_budget_after_rewrite"
+ }
+}

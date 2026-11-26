@@ -1,0 +1,902 @@
+{
+ "run_id": "clinic_v02cfix_seed42",
+ "tiers": {
+  "fact": "recorded by the simulation or derived from committed events",
+  "inference": "evidence-based psychological inference (psychology.py)",
+  "hypothesis": "unconfirmed motivational inference (MOTIVATED_BY)"
+ },
+ "characters": {
+  "doctor_shen": {
+   "character_id": "doctor_shen",
+   "name": "沈默",
+   "goals": [
+    {
+     "key": "ensure_readiness",
+     "desc": "确认退烧药已经备好，病人一到就能用",
+     "status": "completed",
+     "weight": 1.0,
+     "source": "character_config"
+    },
+    {
+     "key": "brief_nurse",
+     "desc": "把今晚要收治高烧病人的事交代到护士站",
+     "status": "completed",
+     "weight": 0.85,
+     "source": "character_config"
+    },
+    {
+     "key": "keep_calm",
+     "desc": "别让夜里出医疗乱子",
+     "status": "active",
+     "weight": 0.8,
+     "source": "character_config"
+    },
+    {
+     "key": "brief_nurse",
+     "status": "completed",
+     "progress": 1.0,
+     "source": "goal_engine_aux"
+    },
+    {
+     "key": "ensure_readiness",
+     "status": "completed",
+     "progress": 1.0,
+     "source": "goal_engine_aux"
+    }
+   ],
+   "knowledge": {
+    "tier": "fact",
+    "known_facts": [
+     {
+      "fact": "fever_medicine_restocked",
+      "learned_at_event": "NE-E0070",
+      "learned_at_tick": 16,
+      "via": "find"
+     },
+     {
+      "fact": "fever_patient_coming",
+      "learned_at_event": "NE-E0002",
+      "learned_at_tick": 1,
+      "via": "find"
+     }
+    ],
+    "beliefs": [
+     {
+      "key": "fever_patient_coming",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "held_as": "fact",
+      "evidence_sources": [
+       "seed:fever_patient_coming",
+       "search_result:admission_form@1",
+       "E0092",
+       "E0097"
+      ]
+     },
+     {
+      "key": "nurse_lin_cooperative",
+      "confidence": 0.65,
+      "kind": "inferred",
+      "held_as": "belief",
+      "evidence_sources": [
+       "pred:pred_doctor_shen_12"
+      ]
+     },
+     {
+      "key": "fever_medicine_restocked",
+      "confidence": 0.95,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "search_result:fever_medicine@16"
+      ]
+     }
+    ],
+    "not_known_key_facts": [
+     "fever_med_low",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "emotions": {
+    "tier": "inference",
+    "current": {
+     "character_id": "doctor_shen",
+     "scene_id": "SC08",
+     "tick": 23,
+     "emotion": "anger",
+     "intensity": 0.4,
+     "confidence": 0.3,
+     "evidence_event_ids": [
+      "E0102"
+     ],
+     "source_type": "rule_inference",
+     "evidence_level": "interpretation"
+    },
+    "trajectory": [
+     {
+      "character_id": "doctor_shen",
+      "scene_id": "SC01",
+      "tick": 1,
+      "emotion": "surprise",
+      "intensity": 0.7,
+      "confidence": 0.6,
+      "evidence_event_ids": [
+       "E0002"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "scene_id": "SC02",
+      "tick": 9,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "scene_id": "SC03",
+      "tick": 10,
+      "emotion": "sadness",
+      "intensity": 0.4,
+      "confidence": 0.3,
+      "evidence_event_ids": [
+       "E0040"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "scene_id": "SC04",
+      "tick": 12,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "scene_id": "SC05",
+      "tick": 13,
+      "emotion": "sadness",
+      "intensity": 0.4,
+      "confidence": 0.3,
+      "evidence_event_ids": [
+       "E0054",
+       "E0059"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "scene_id": "SC06",
+      "tick": 16,
+      "emotion": "surprise",
+      "intensity": 0.7,
+      "confidence": 0.6,
+      "evidence_event_ids": [
+       "E0070"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "scene_id": "SC07",
+      "tick": 21,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "scene_id": "SC08",
+      "tick": 23,
+      "emotion": "anger",
+      "intensity": 0.4,
+      "confidence": 0.3,
+      "evidence_event_ids": [
+       "E0102"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     }
+    ]
+   },
+   "motivations": {
+    "tier": "hypothesis",
+    "items": [
+     {
+      "character_id": "doctor_shen",
+      "action_event_id": "E0035",
+      "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+      "thread_id": "medicine_supply",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "action_event_id": "E0046",
+      "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+      "thread_id": "main_fever_patient",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0002"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "action_event_id": "E0075",
+      "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+      "thread_id": "medicine_supply",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0070"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "action_event_id": "E0093",
+      "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+      "thread_id": "medicine_supply",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0070"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "doctor_shen",
+      "action_event_id": "E0099",
+      "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+      "thread_id": "medicine_supply",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0070"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     }
+    ]
+   },
+   "internal_conflict": "",
+   "concerns": [],
+   "relationships": {
+    "tier": "fact",
+    "conflicts": [],
+    "state": {
+     "nurse_lin": {
+      "trust": 0.19,
+      "notes": []
+     },
+     "porter_wu": {
+      "trust": 0.2,
+      "notes": []
+     }
+    }
+   },
+   "arc": {
+    "tier": "fact",
+    "arc_type": "unresolved_arc",
+    "arc_status": "open",
+    "turning_points": [
+     {
+      "fact": "fever_patient_coming",
+      "tick": 1,
+      "learned_at": "NE-E0002",
+      "downstream_uses": [
+       "NE-E0046",
+       "NE-E0092"
+      ]
+     },
+     {
+      "fact": "fever_medicine_restocked",
+      "tick": 16,
+      "learned_at": "NE-E0070",
+      "downstream_uses": [
+       "NE-E0075",
+       "NE-E0093",
+       "NE-E0099"
+      ]
+     }
+    ]
+   }
+  },
+  "nurse_lin": {
+   "character_id": "nurse_lin",
+   "name": "林小满",
+   "goals": [
+    {
+     "key": "restock_medicine",
+     "desc": "补齐退烧药，别等病人到了抓瞎",
+     "status": "active",
+     "weight": 1.0,
+     "source": "character_config"
+    },
+    {
+     "key": "finish_chart",
+     "desc": "做完今晚的夜班记录",
+     "status": "paused",
+     "weight": 0.7,
+     "source": "character_config"
+    },
+    {
+     "key": "guard_ward",
+     "desc": "守好病房，别出乱子",
+     "status": "active",
+     "weight": 0.9,
+     "source": "character_config"
+    },
+    {
+     "key": "finish_chart",
+     "status": "paused",
+     "progress": 0.5,
+     "source": "goal_engine_aux"
+    },
+    {
+     "key": "restock_medicine",
+     "status": "active",
+     "progress": 0.0,
+     "source": "goal_engine_aux"
+    }
+   ],
+   "knowledge": {
+    "tier": "fact",
+    "known_facts": [
+     {
+      "fact": "fever_med_low",
+      "learned_at_event": null,
+      "learned_at_tick": null,
+      "via": "seed"
+     },
+     {
+      "fact": "fever_medicine_restocked",
+      "learned_at_event": "NE-E0093",
+      "learned_at_tick": 21,
+      "via": "delivery"
+     },
+     {
+      "fact": "fever_patient_coming",
+      "learned_at_event": "NE-E0092",
+      "learned_at_tick": 21,
+      "via": "delivery"
+     }
+    ],
+    "beliefs": [
+     {
+      "key": "fever_med_low",
+      "confidence": 0.95,
+      "kind": "experienced",
+      "held_as": "fact",
+      "evidence_sources": [
+       "seed:fever_med_low"
+      ]
+     },
+     {
+      "key": "fever_patient_coming",
+      "confidence": 0.464,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0092",
+       "E0097"
+      ]
+     },
+     {
+      "key": "fever_medicine_restocked",
+      "confidence": 0.464,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0093",
+       "E0099"
+      ]
+     }
+    ],
+    "not_known_key_facts": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "emotions": {
+    "tier": "inference",
+    "current": {
+     "character_id": "nurse_lin",
+     "scene_id": "SC07",
+     "tick": 21,
+     "emotion": "anticipation",
+     "intensity": 0.5,
+     "confidence": 0.35,
+     "evidence_event_ids": [
+      "E0092",
+      "E0093"
+     ],
+     "source_type": "rule_inference",
+     "evidence_level": "interpretation"
+    },
+    "trajectory": [
+     {
+      "character_id": "nurse_lin",
+      "scene_id": "SC03",
+      "tick": 10,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "nurse_lin",
+      "scene_id": "SC07",
+      "tick": 21,
+      "emotion": "anticipation",
+      "intensity": 0.5,
+      "confidence": 0.35,
+      "evidence_event_ids": [
+       "E0092",
+       "E0093"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "nurse_lin",
+      "scene_id": "SC08",
+      "tick": 23,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     }
+    ]
+   },
+   "motivations": {
+    "tier": "hypothesis",
+    "items": []
+   },
+   "internal_conflict": "",
+   "concerns": [],
+   "relationships": {
+    "tier": "fact",
+    "conflicts": [],
+    "state": {
+     "doctor_shen": {
+      "trust": 0.3,
+      "notes": []
+     },
+     "porter_wu": {
+      "trust": 0.3,
+      "notes": []
+     }
+    }
+   },
+   "arc": {
+    "tier": "fact",
+    "arc_type": "flat_arc",
+    "arc_status": "open",
+    "turning_points": []
+   }
+  },
+  "porter_wu": {
+   "character_id": "porter_wu",
+   "name": "吴大勇",
+   "goals": [
+    {
+     "key": "learn_admission",
+     "desc": "弄清今晚到底有没有新病人要来",
+     "status": "paused",
+     "weight": 0.8,
+     "source": "character_config"
+    },
+    {
+     "key": "prepare_stretcher",
+     "desc": "提前把病房的床位担架备好",
+     "status": "active",
+     "weight": 0.85,
+     "source": "character_config"
+    },
+    {
+     "key": "keep_gate",
+     "desc": "守好大门和分诊台",
+     "status": "active",
+     "weight": 0.7,
+     "source": "character_config"
+    },
+    {
+     "key": "learn_admission",
+     "status": "paused",
+     "progress": 0.7733,
+     "source": "goal_engine_aux"
+    },
+    {
+     "key": "prepare_stretcher",
+     "status": "active",
+     "progress": 0.5,
+     "source": "goal_engine_aux"
+    },
+    {
+     "key": "keep_gate",
+     "status": "active",
+     "progress": 0.0,
+     "source": "goal_engine_aux"
+    }
+   ],
+   "knowledge": {
+    "tier": "fact",
+    "known_facts": [
+     {
+      "fact": "fever_medicine_restocked",
+      "learned_at_event": "NE-E0075",
+      "learned_at_tick": 17,
+      "via": "delivery"
+     },
+     {
+      "fact": "fever_patient_coming",
+      "learned_at_event": "NE-E0046",
+      "learned_at_tick": 11,
+      "via": "delivery"
+     },
+     {
+      "fact": "pharmacy_latch_broken",
+      "learned_at_event": null,
+      "learned_at_tick": null,
+      "via": "seed"
+     }
+    ],
+    "beliefs": [
+     {
+      "key": "pharmacy_latch_broken",
+      "confidence": 0.9,
+      "kind": "experienced",
+      "held_as": "fact",
+      "evidence_sources": [
+       "seed:pharmacy_latch_broken"
+      ]
+     },
+     {
+      "key": "fever_patient_coming",
+      "confidence": 0.464,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0046"
+      ]
+     },
+     {
+      "key": "holds:doctor_shen:fever_medicine",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "held_as": "fact",
+      "evidence_sources": [
+       "E0070"
+      ]
+     },
+     {
+      "key": "fever_medicine_restocked",
+      "confidence": 0.464,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0075",
+       "E0093",
+       "E0099"
+      ]
+     }
+    ],
+    "not_known_key_facts": [
+     "fever_med_low"
+    ]
+   },
+   "emotions": {
+    "tier": "inference",
+    "current": {
+     "character_id": "porter_wu",
+     "scene_id": "SC08",
+     "tick": 24,
+     "emotion": "anger",
+     "intensity": 0.4,
+     "confidence": 0.3,
+     "evidence_event_ids": [
+      "E0105"
+     ],
+     "source_type": "rule_inference",
+     "evidence_level": "interpretation"
+    },
+    "trajectory": [
+     {
+      "character_id": "porter_wu",
+      "scene_id": "SC02",
+      "tick": 9,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "scene_id": "SC03",
+      "tick": 11,
+      "emotion": "anticipation",
+      "intensity": 0.5,
+      "confidence": 0.35,
+      "evidence_event_ids": [
+       "E0046"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "scene_id": "SC04",
+      "tick": 12,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "scene_id": "SC05",
+      "tick": 13,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "scene_id": "SC06",
+      "tick": 17,
+      "emotion": "anticipation",
+      "intensity": 0.5,
+      "confidence": 0.35,
+      "evidence_event_ids": [
+       "E0075"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "scene_id": "SC07",
+      "tick": 21,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "scene_id": "SC08",
+      "tick": 24,
+      "emotion": "anger",
+      "intensity": 0.4,
+      "confidence": 0.3,
+      "evidence_event_ids": [
+       "E0105"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     }
+    ]
+   },
+   "motivations": {
+    "tier": "hypothesis",
+    "items": [
+     {
+      "character_id": "porter_wu",
+      "action_event_id": "E0033",
+      "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+      "thread_id": "main_fever_patient",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "action_event_id": "E0038",
+      "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+      "thread_id": "main_fever_patient",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "action_event_id": "E0044",
+      "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+      "thread_id": "main_fever_patient",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "action_event_id": "E0047",
+      "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+      "thread_id": "medicine_supply",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "action_event_id": "E0052",
+      "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+      "thread_id": "medicine_supply",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "action_event_id": "E0073",
+      "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+      "thread_id": "medicine_supply",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "action_event_id": "E0092",
+      "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+      "thread_id": "main_fever_patient",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0046"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "action_event_id": "E0097",
+      "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+      "thread_id": "main_fever_patient",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0046"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "porter_wu",
+      "action_event_id": "E0100",
+      "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+      "thread_id": "main_fever_patient",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0046"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     }
+    ]
+   },
+   "internal_conflict": "",
+   "concerns": [],
+   "relationships": {
+    "tier": "fact",
+    "conflicts": [],
+    "state": {
+     "doctor_shen": {
+      "trust": 0.3,
+      "notes": []
+     },
+     "nurse_lin": {
+      "trust": 0.3,
+      "notes": []
+     }
+    }
+   },
+   "arc": {
+    "tier": "fact",
+    "arc_type": "unresolved_arc",
+    "arc_status": "open",
+    "turning_points": [
+     {
+      "fact": "fever_patient_coming",
+      "tick": 11,
+      "learned_at": "NE-E0046",
+      "downstream_uses": [
+       "NE-E0092",
+       "NE-E0097"
+      ]
+     }
+    ]
+   }
+  }
+ }
+}

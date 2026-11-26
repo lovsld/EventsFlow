@@ -65,16 +65,21 @@ def _finish(run_dir: Path) -> dict:
 
 def _complete(run_dir: Path, ticks: int = 20) -> bool:
     """A run counts as complete only with a full-length
-    world_log: the checkpointer writes world_log.json
-    incrementally, so a killed run leaves a partial file that
-    must not be mistaken for a finished run."""
+    world_log AND zero failed decisions. Tick count alone is
+    not enough: a run whose every decision failed (e.g. the
+    2026-11-26 systemd attempt, killed by egress TLS timeouts)
+    still writes 20 tick records, and must be re-run in full
+    rather than banked as a finished arm."""
     wl_path = run_dir / "world_log.json"
     if not wl_path.exists():
         return False
     try:
-        return len(json.loads(wl_path.read_text(
-            encoding="utf-8"))) >= ticks
-    except (OSError, json.JSONDecodeError):
+        if len(json.loads(wl_path.read_text(
+                encoding="utf-8"))) < ticks:
+            return False
+        return _failures(run_dir)["failed"] == 0
+    except (OSError, json.JSONDecodeError, KeyError,
+            sqlite3.Error):
         return False
 
 

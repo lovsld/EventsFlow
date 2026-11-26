@@ -61,8 +61,7 @@
    ],
    "emotional_curve": [
     0.574
-   ],
-   "literary_title": "酒馆风声，暗室寻踪"
+   ]
   },
   {
    "chapter_id": "CH02",
@@ -94,8 +93,7 @@
    ],
    "emotional_curve": [
     0.574
-   ],
-   "literary_title": "低语疑云：公款账目"
+   ]
   },
   {
    "chapter_id": "CH03",
@@ -125,8 +123,7 @@
    ],
    "emotional_curve": [
     0.425
-   ],
-   "literary_title": "米拉笑语，秘密浮现"
+   ]
   },
   {
    "chapter_id": "CH04",
@@ -162,8 +159,7 @@
    ],
    "emotional_curve": [
     0.574
-   ],
-   "literary_title": "耳语惑心：公款疑踪"
+   ]
   },
   {
    "chapter_id": "CH05",
@@ -195,8 +191,7 @@
    ],
    "emotional_curve": [
     0.425
-   ],
-   "literary_title": "低语入耳，公款谜团"
+   ]
   }
  ],
  "scenes": [
@@ -223,7 +218,245 @@
    "event_ids": [
     "NE-E0008",
     "NE-E0014"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "merchant": {
+      "goals_active": [
+       "gain_business",
+       "protect_wealth",
+       "gain_business"
+      ],
+      "knows_at_entry": [
+       "mayor_business_deal"
+      ],
+      "must_not_use_at_entry": [
+       "mayor_embezzled"
+      ],
+      "emotion_entering": null,
+      "conflicts_with": [
+       {
+        "conflict_id": "C001",
+        "type": "interest_conflict",
+        "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C002",
+        "type": "goal_conflict",
+        "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C003",
+        "type": "resource_conflict",
+        "core_issue": "goals compete for resource tavern_channel",
+        "with": [
+         "owner"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "owner",
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C006",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+        "with": [
+         "owner"
+        ]
+       }
+      ]
+     },
+     "owner": {
+      "goals_active": [
+       "protect_tavern"
+      ],
+      "knows_at_entry": [
+       "anonymous_letter_exists"
+      ],
+      "must_not_use_at_entry": [
+       "business_opportunity",
+       "mayor_embezzled",
+       "speaker_knows_secret"
+      ],
+      "emotion_entering": null,
+      "conflicts_with": [
+       {
+        "conflict_id": "C003",
+        "type": "resource_conflict",
+        "core_issue": "goals compete for resource tavern_channel",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "merchant",
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C005",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C006",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+        "with": [
+         "merchant"
+        ]
+       }
+      ]
+     },
+     "soldier": {
+      "goals_active": [
+       "complete_investigation",
+       "keep_honor",
+       "learn_mayor_truth",
+       "complete_investigation",
+       "learn_mayor_truth"
+      ],
+      "knows_at_entry": [
+       "investigation_order",
+       "mayor_suspicious"
+      ],
+      "must_not_use_at_entry": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "mayor_embezzled",
+       "speaker_knows_secret"
+      ],
+      "emotion_entering": null,
+      "conflicts_with": [
+       {
+        "conflict_id": "C001",
+        "type": "interest_conflict",
+        "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C002",
+        "type": "goal_conflict",
+        "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "merchant",
+         "owner"
+        ]
+       },
+       {
+        "conflict_id": "C005",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+        "with": [
+         "owner"
+        ]
+       }
+      ]
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "merchant",
+       "owner"
+      ],
+      "merchant_only": [
+       "mayor_business_deal"
+      ],
+      "owner_only": [
+       "anonymous_letter_exists"
+      ]
+     },
+     {
+      "pair": [
+       "merchant",
+       "soldier"
+      ],
+      "merchant_only": [
+       "mayor_business_deal"
+      ],
+      "soldier_only": [
+       "investigation_order",
+       "mayor_suspicious"
+      ]
+     },
+     {
+      "pair": [
+       "owner",
+       "soldier"
+      ],
+      "owner_only": [
+       "anonymous_letter_exists"
+      ],
+      "soldier_only": [
+       "investigation_order",
+       "mayor_suspicious"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "soldier",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "anonymous_letter_exists"
+      },
+      "event_id": "NE-E0008"
+     },
+     {
+      "character_id": "soldier",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "mayor_embezzled"
+      },
+      "event_id": "NE-E0008"
+     },
+     {
+      "character_id": "owner",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "business_opportunity"
+      },
+      "event_id": "NE-E0014"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC02",
@@ -255,7 +488,333 @@
     "NE-E0031",
     "NE-E0032",
     "NE-E0033"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "merchant": {
+      "goals_active": [
+       "gain_business",
+       "protect_wealth",
+       "gain_business"
+      ],
+      "knows_at_entry": [
+       "mayor_business_deal"
+      ],
+      "must_not_use_at_entry": [
+       "mayor_embezzled"
+      ],
+      "emotion_entering": {
+       "character_id": "merchant",
+       "scene_id": "SC01",
+       "tick": 3,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C001",
+        "type": "interest_conflict",
+        "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C002",
+        "type": "goal_conflict",
+        "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C003",
+        "type": "resource_conflict",
+        "core_issue": "goals compete for resource tavern_channel",
+        "with": [
+         "owner"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "owner",
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C006",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+        "with": [
+         "owner"
+        ]
+       }
+      ]
+     },
+     "owner": {
+      "goals_active": [
+       "protect_tavern"
+      ],
+      "knows_at_entry": [
+       "anonymous_letter_exists",
+       "business_opportunity"
+      ],
+      "must_not_use_at_entry": [
+       "mayor_embezzled",
+       "speaker_knows_secret"
+      ],
+      "emotion_entering": {
+       "character_id": "owner",
+       "scene_id": "SC01",
+       "tick": 4,
+       "emotion": "anticipation",
+       "intensity": 0.5,
+       "confidence": 0.35,
+       "evidence_event_ids": [
+        "E0014"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C003",
+        "type": "resource_conflict",
+        "core_issue": "goals compete for resource tavern_channel",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "merchant",
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C005",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C006",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+        "with": [
+         "merchant"
+        ]
+       }
+      ]
+     },
+     "soldier": {
+      "goals_active": [
+       "complete_investigation",
+       "keep_honor",
+       "learn_mayor_truth",
+       "complete_investigation",
+       "learn_mayor_truth"
+      ],
+      "knows_at_entry": [
+       "anonymous_letter_exists",
+       "investigation_order",
+       "mayor_embezzled",
+       "mayor_suspicious"
+      ],
+      "must_not_use_at_entry": [
+       "business_opportunity",
+       "speaker_knows_secret"
+      ],
+      "emotion_entering": {
+       "character_id": "soldier",
+       "scene_id": "SC01",
+       "tick": 3,
+       "emotion": "surprise",
+       "intensity": 0.7,
+       "confidence": 0.6,
+       "evidence_event_ids": [
+        "E0008"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C001",
+        "type": "interest_conflict",
+        "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C002",
+        "type": "goal_conflict",
+        "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "merchant",
+         "owner"
+        ]
+       },
+       {
+        "conflict_id": "C005",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+        "with": [
+         "owner"
+        ]
+       }
+      ]
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "merchant",
+       "owner"
+      ],
+      "merchant_only": [
+       "mayor_business_deal"
+      ],
+      "owner_only": [
+       "anonymous_letter_exists",
+       "business_opportunity"
+      ]
+     },
+     {
+      "pair": [
+       "merchant",
+       "soldier"
+      ],
+      "merchant_only": [
+       "mayor_business_deal"
+      ],
+      "soldier_only": [
+       "anonymous_letter_exists",
+       "investigation_order",
+       "mayor_embezzled",
+       "mayor_suspicious"
+      ]
+     },
+     {
+      "pair": [
+       "owner",
+       "soldier"
+      ],
+      "owner_only": [
+       "business_opportunity"
+      ],
+      "soldier_only": [
+       "investigation_order",
+       "mayor_embezzled",
+       "mayor_suspicious"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "soldier",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "business_opportunity"
+      },
+      "event_id": "NE-E0017"
+     },
+     {
+      "character_id": "merchant",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anticipation",
+       "intensity": 0.5
+      },
+      "event_id": "E0022"
+     },
+     {
+      "character_id": "merchant",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "mayor_embezzled"
+      },
+      "event_id": "NE-E0022"
+     },
+     {
+      "character_id": "owner",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "mayor_embezzled"
+      },
+      "event_id": "NE-E0022"
+     },
+     {
+      "character_id": "soldier",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anger",
+       "intensity": 0.6
+      },
+      "event_id": "E0017"
+     },
+     {
+      "character_id": "merchant",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     },
+     {
+      "character_id": "owner",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "speaker_knows_secret"
+      },
+      "event_id": "NE-E0034"
+     },
+     {
+      "character_id": "soldier",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "speaker_knows_secret"
+      },
+      "event_id": "NE-E0034"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC03",
@@ -285,7 +844,283 @@
     "NE-E0038",
     "NE-E0040",
     "NE-E0041"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "merchant": {
+      "goals_active": [
+       "gain_business",
+       "protect_wealth",
+       "gain_business"
+      ],
+      "knows_at_entry": [
+       "mayor_business_deal",
+       "mayor_embezzled"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "merchant",
+       "scene_id": "SC02",
+       "tick": 6,
+       "emotion": "anticipation",
+       "intensity": 0.5,
+       "confidence": 0.35,
+       "evidence_event_ids": [
+        "E0022"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C001",
+        "type": "interest_conflict",
+        "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C002",
+        "type": "goal_conflict",
+        "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C003",
+        "type": "resource_conflict",
+        "core_issue": "goals compete for resource tavern_channel",
+        "with": [
+         "owner"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "owner",
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C006",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+        "with": [
+         "owner"
+        ]
+       }
+      ]
+     },
+     "owner": {
+      "goals_active": [
+       "protect_tavern"
+      ],
+      "knows_at_entry": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "mayor_embezzled"
+      ],
+      "must_not_use_at_entry": [
+       "speaker_knows_secret"
+      ],
+      "emotion_entering": {
+       "character_id": "owner",
+       "scene_id": "SC02",
+       "tick": 6,
+       "emotion": "anticipation",
+       "intensity": 0.5,
+       "confidence": 0.35,
+       "evidence_event_ids": [
+        "E0022"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C003",
+        "type": "resource_conflict",
+        "core_issue": "goals compete for resource tavern_channel",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "merchant",
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C005",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C006",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+        "with": [
+         "merchant"
+        ]
+       }
+      ]
+     },
+     "soldier": {
+      "goals_active": [
+       "complete_investigation",
+       "keep_honor",
+       "learn_mayor_truth",
+       "complete_investigation",
+       "learn_mayor_truth"
+      ],
+      "knows_at_entry": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "investigation_order",
+       "mayor_embezzled",
+       "mayor_suspicious"
+      ],
+      "must_not_use_at_entry": [
+       "speaker_knows_secret"
+      ],
+      "emotion_entering": {
+       "character_id": "soldier",
+       "scene_id": "SC02",
+       "tick": 6,
+       "emotion": "anger",
+       "intensity": 0.6,
+       "confidence": 0.4,
+       "evidence_event_ids": [
+        "E0017",
+        "E0022",
+        "E0030"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C001",
+        "type": "interest_conflict",
+        "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C002",
+        "type": "goal_conflict",
+        "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "merchant",
+         "owner"
+        ]
+       },
+       {
+        "conflict_id": "C005",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+        "with": [
+         "owner"
+        ]
+       }
+      ]
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "merchant",
+       "owner"
+      ],
+      "merchant_only": [
+       "mayor_business_deal"
+      ],
+      "owner_only": [
+       "anonymous_letter_exists",
+       "business_opportunity"
+      ]
+     },
+     {
+      "pair": [
+       "merchant",
+       "soldier"
+      ],
+      "merchant_only": [
+       "mayor_business_deal"
+      ],
+      "soldier_only": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "investigation_order",
+       "mayor_suspicious"
+      ]
+     },
+     {
+      "pair": [
+       "owner",
+       "soldier"
+      ],
+      "owner_only": [],
+      "soldier_only": [
+       "investigation_order",
+       "mayor_suspicious"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "merchant",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "unknown",
+       "intensity": 0.0
+      },
+      "event_id": null
+     },
+     {
+      "character_id": "owner",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "speaker_knows_secret"
+      },
+      "event_id": "NE-E0034"
+     },
+     {
+      "character_id": "soldier",
+      "field": "knowledge",
+      "tier": "fact",
+      "after": {
+       "known": true,
+       "fact": "speaker_knows_secret"
+      },
+      "event_id": "NE-E0034"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC04",
@@ -321,7 +1156,260 @@
     "NE-E0056",
     "NE-E0058",
     "NE-E0059"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "merchant": {
+      "goals_active": [
+       "gain_business",
+       "protect_wealth",
+       "gain_business"
+      ],
+      "knows_at_entry": [
+       "mayor_business_deal",
+       "mayor_embezzled"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "merchant",
+       "scene_id": "SC03",
+       "tick": 9,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C001",
+        "type": "interest_conflict",
+        "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C002",
+        "type": "goal_conflict",
+        "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C003",
+        "type": "resource_conflict",
+        "core_issue": "goals compete for resource tavern_channel",
+        "with": [
+         "owner"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "owner",
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C006",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+        "with": [
+         "owner"
+        ]
+       }
+      ]
+     },
+     "owner": {
+      "goals_active": [
+       "protect_tavern"
+      ],
+      "knows_at_entry": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "mayor_embezzled",
+       "speaker_knows_secret"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "owner",
+       "scene_id": "SC03",
+       "tick": 9,
+       "emotion": "anticipation",
+       "intensity": 0.5,
+       "confidence": 0.35,
+       "evidence_event_ids": [
+        "E0034"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C003",
+        "type": "resource_conflict",
+        "core_issue": "goals compete for resource tavern_channel",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "merchant",
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C005",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C006",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+        "with": [
+         "merchant"
+        ]
+       }
+      ]
+     },
+     "soldier": {
+      "goals_active": [
+       "complete_investigation",
+       "keep_honor",
+       "learn_mayor_truth",
+       "complete_investigation",
+       "learn_mayor_truth"
+      ],
+      "knows_at_entry": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "investigation_order",
+       "mayor_embezzled",
+       "mayor_suspicious",
+       "speaker_knows_secret"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "soldier",
+       "scene_id": "SC03",
+       "tick": 10,
+       "emotion": "anger",
+       "intensity": 0.6,
+       "confidence": 0.4,
+       "evidence_event_ids": [
+        "E0034",
+        "E0036"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C001",
+        "type": "interest_conflict",
+        "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C002",
+        "type": "goal_conflict",
+        "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "merchant",
+         "owner"
+        ]
+       },
+       {
+        "conflict_id": "C005",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+        "with": [
+         "owner"
+        ]
+       }
+      ]
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "merchant",
+       "owner"
+      ],
+      "merchant_only": [
+       "mayor_business_deal"
+      ],
+      "owner_only": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "speaker_knows_secret"
+      ]
+     },
+     {
+      "pair": [
+       "merchant",
+       "soldier"
+      ],
+      "merchant_only": [
+       "mayor_business_deal"
+      ],
+      "soldier_only": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "investigation_order",
+       "mayor_suspicious",
+       "speaker_knows_secret"
+      ]
+     },
+     {
+      "pair": [
+       "owner",
+       "soldier"
+      ],
+      "owner_only": [],
+      "soldier_only": [
+       "investigation_order",
+       "mayor_suspicious"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "owner",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anger",
+       "intensity": 0.4
+      },
+      "event_id": "E0048"
+     }
+    ],
+    "no_expected_change": false
+   }
   },
   {
    "scene_id": "SC05",
@@ -353,7 +1441,259 @@
     "NE-E0070",
     "NE-E0071",
     "NE-E0073"
-   ]
+   ],
+   "character_state": {
+    "participants": {
+     "merchant": {
+      "goals_active": [
+       "gain_business",
+       "protect_wealth",
+       "gain_business"
+      ],
+      "knows_at_entry": [
+       "mayor_business_deal",
+       "mayor_embezzled"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "merchant",
+       "scene_id": "SC04",
+       "tick": 12,
+       "emotion": "unknown",
+       "intensity": 0.0,
+       "confidence": 0.0,
+       "evidence_event_ids": [],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C001",
+        "type": "interest_conflict",
+        "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C002",
+        "type": "goal_conflict",
+        "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C003",
+        "type": "resource_conflict",
+        "core_issue": "goals compete for resource tavern_channel",
+        "with": [
+         "owner"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "owner",
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C006",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+        "with": [
+         "owner"
+        ]
+       }
+      ]
+     },
+     "owner": {
+      "goals_active": [
+       "protect_tavern"
+      ],
+      "knows_at_entry": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "mayor_embezzled",
+       "speaker_knows_secret"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "owner",
+       "scene_id": "SC04",
+       "tick": 13,
+       "emotion": "anger",
+       "intensity": 0.4,
+       "confidence": 0.3,
+       "evidence_event_ids": [
+        "E0048"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C003",
+        "type": "resource_conflict",
+        "core_issue": "goals compete for resource tavern_channel",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "merchant",
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C005",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+        "with": [
+         "soldier"
+        ]
+       },
+       {
+        "conflict_id": "C006",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+        "with": [
+         "merchant"
+        ]
+       }
+      ]
+     },
+     "soldier": {
+      "goals_active": [
+       "complete_investigation",
+       "keep_honor",
+       "learn_mayor_truth",
+       "complete_investigation",
+       "learn_mayor_truth"
+      ],
+      "knows_at_entry": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "investigation_order",
+       "mayor_embezzled",
+       "mayor_suspicious",
+       "speaker_knows_secret"
+      ],
+      "must_not_use_at_entry": [],
+      "emotion_entering": {
+       "character_id": "soldier",
+       "scene_id": "SC04",
+       "tick": 12,
+       "emotion": "anger",
+       "intensity": 0.6,
+       "confidence": 0.4,
+       "evidence_event_ids": [
+        "E0043"
+       ],
+       "source_type": "rule_inference",
+       "evidence_level": "interpretation"
+      },
+      "conflicts_with": [
+       {
+        "conflict_id": "C001",
+        "type": "interest_conflict",
+        "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C002",
+        "type": "goal_conflict",
+        "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+        "with": [
+         "merchant"
+        ]
+       },
+       {
+        "conflict_id": "C004",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+        "with": [
+         "merchant",
+         "owner"
+        ]
+       },
+       {
+        "conflict_id": "C005",
+        "type": "information_conflict",
+        "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+        "with": [
+         "owner"
+        ]
+       }
+      ]
+     }
+    },
+    "information_gaps": [
+     {
+      "pair": [
+       "merchant",
+       "owner"
+      ],
+      "merchant_only": [
+       "mayor_business_deal"
+      ],
+      "owner_only": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "speaker_knows_secret"
+      ]
+     },
+     {
+      "pair": [
+       "merchant",
+       "soldier"
+      ],
+      "merchant_only": [
+       "mayor_business_deal"
+      ],
+      "soldier_only": [
+       "anonymous_letter_exists",
+       "business_opportunity",
+       "investigation_order",
+       "mayor_suspicious",
+       "speaker_knows_secret"
+      ]
+     },
+     {
+      "pair": [
+       "owner",
+       "soldier"
+      ],
+      "owner_only": [],
+      "soldier_only": [
+       "investigation_order",
+       "mayor_suspicious"
+      ]
+     }
+    ],
+    "expected_state_changes": [
+     {
+      "character_id": "merchant",
+      "field": "emotion",
+      "tier": "inference",
+      "after": {
+       "emotion": "anger",
+       "intensity": 0.4
+      },
+      "event_id": "E0065"
+     }
+    ],
+    "no_expected_change": false
+   }
   }
  ],
  "validation": {

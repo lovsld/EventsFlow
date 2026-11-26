@@ -24,6 +24,14 @@ def build_plan(run_dir: Path, narrative_dir: Path,
     arcs = _load(upgrade / "character_arcs.json")
     setup = _load(upgrade / "setup_payoff.json")
     scenes = build_scene_outlines(run_dir, narrative_dir, views)
+    # Phase 2: scenes read the unified character-state view.
+    from narrative.character_state import build_character_states
+    from narrative.planner.scene_planner import (
+        enrich_scenes_with_states)
+    from narrative.psychology import build_state_updates
+    _states = build_character_states(run_dir, narrative_dir)
+    _updates = build_state_updates(narrative_dir)["updates"]
+    scenes = enrich_scenes_with_states(scenes, _states, _updates)
     story = build_story_outline(run_dir, narrative_dir, views,
                                 arcs, config_path)
     chapters = build_chapters(narrative_dir, scenes, views, setup)

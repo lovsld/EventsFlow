@@ -1,0 +1,69 @@
+{
+ "scenes": [
+  {
+   "scene_id": "SC01",
+   "paragraphs": 6,
+   "expected_changes": 3,
+   "diffs": [],
+   "verdict": "ok"
+  },
+  {
+   "scene_id": "SC02",
+   "paragraphs": 18,
+   "expected_changes": 8,
+   "diffs": [
+    {
+     "kind": "expected_change_missing",
+     "character_id": "owner",
+     "event_id": "NE-E0034",
+     "severity": "medium"
+    },
+    {
+     "kind": "expected_change_missing",
+     "character_id": "soldier",
+     "event_id": "NE-E0034",
+     "severity": "medium"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC03",
+   "paragraphs": 9,
+   "expected_changes": 3,
+   "diffs": [],
+   "verdict": "ok"
+  },
+  {
+   "scene_id": "SC04",
+   "paragraphs": 17,
+   "expected_changes": 1,
+   "diffs": [],
+   "verdict": "ok"
+  },
+  {
+   "scene_id": "SC05",
+   "paragraphs": 11,
+   "expected_changes": 1,
+   "diffs": [
+    {
+     "kind": "psychology_stated_not_shown",
+     "paragraph_index": 10,
+     "severity": "low",
+     "note": "heuristic match; human judgement decides"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  }
+ ],
+ "summary": {
+  "scenes": 5,
+  "total_diffs": 3,
+  "by_kind": {
+   "future_event_reference": 0,
+   "expected_change_missing": 2,
+   "psychology_stated_not_shown": 1
+  }
+ },
+ "note": "Deterministic plan-vs-text verification. Diffs are recorded, never auto-fixed; the text is the record, the plan the expectation."
+}

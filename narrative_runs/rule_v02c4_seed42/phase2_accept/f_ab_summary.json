@@ -1,0 +1,86 @@
+{
+ "f_off": {
+  "ratios": {
+   "F1": 0.5179,
+   "F2": 0.3036,
+   "F3": 0.1786
+  },
+  "over": true,
+  "issues": [
+   "F2_OUT_OF_RANGE"
+  ],
+  "writer_usage": {
+   "prompt_tokens": 9155,
+   "candidates_tokens": 4232,
+   "calls": 5
+  },
+  "factual": 5.0,
+  "traceability_paras": 37,
+  "enforcement": null
+ },
+ "f_on": {
+  "ratios": {
+   "F1": 0.5082,
+   "F2": 0.2951,
+   "F3": 0.1967
+  },
+  "over": true,
+  "issues": [
+   "F2_OUT_OF_RANGE"
+  ],
+  "writer_usage": {
+   "prompt_tokens": 9990,
+   "candidates_tokens": 5253,
+   "calls": 7
+  },
+  "factual": 5.0,
+  "traceability_paras": 40,
+  "enforcement": {
+   "status": "over_budget_after_rewrite",
+   "rewritten": 8,
+   "before": {
+    "F1": 0.5082,
+    "F2": 0.1639,
+    "F3": 0.3279
+   },
+   "after": {
+    "F1": 0.5082,
+    "F2": 0.2951,
+    "F3": 0.1967
+   },
+   "issues_after": [
+    "F2_OUT_OF_RANGE"
+   ]
+  }
+ },
+ "f_on2": {
+  "ratios": {
+   "F1": 0.5833,
+   "F2": 0.4167,
+   "F3": 0.0
+  },
+  "over": false,
+  "issues": [],
+  "writer_usage": {
+   "prompt_tokens": 10556,
+   "candidates_tokens": 4330,
+   "calls": 10
+  },
+  "factual": 5.0,
+  "enforcement": {
+   "status": "within_budget_after_rewrite",
+   "rewritten_paragraphs": 11,
+   "before": {
+    "F1": 0.5833,
+    "F2": 0.1875,
+    "F3": 0.2292
+   },
+   "after": {
+    "F1": 0.5833,
+    "F2": 0.4167,
+    "F3": 0.0
+   },
+   "issues_after": []
+  }
+ }
+}

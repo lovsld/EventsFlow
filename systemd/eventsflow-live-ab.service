@@ -1,0 +1,18 @@
+[Unit]
+Description=EventsFlow Phase 1 live intervention A/B (2x 20-tick DeepSeek runs; driver banks completed arms, re-runs incomplete ones in full)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/hatch/workspace/multi-agent-story-sim
+ExecStart=/home/hatch/workspace/multi-agent-story-sim/.venv/bin/python /home/hatch/workspace/multi-agent-story-sim/scripts/run_phase1_live.py
+Restart=on-failure
+RestartSec=30
+TimeoutStopSec=30
+KillMode=control-group
+StandardOutput=append:/home/hatch/workspace/multi-agent-story-sim/v03_runs/phase1_live/service.log
+StandardError=append:/home/hatch/workspace/multi-agent-story-sim/v03_runs/phase1_live/service.log
+
+[Install]
+WantedBy=default.target

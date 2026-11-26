@@ -1,0 +1,27 @@
+{
+ "scene_id": "SC01",
+ "mutation": {
+  "soldier.knows_at_entry +=": [
+   "anonymous_letter_exists",
+   "mayor_embezzled"
+  ],
+  "soldier.emotion_entering": "anger"
+ },
+ "prompt_differs_only_in_state_block": true,
+ "usage_a": {
+  "prompt_tokens": 1729,
+  "candidates_tokens": 474,
+  "thoughts_tokens": 0,
+  "credential": "custom.gemini3",
+  "model": "gemini-2.5-flash"
+ },
+ "usage_b": {
+  "prompt_tokens": 1717,
+  "candidates_tokens": 493,
+  "thoughts_tokens": 0,
+  "credential": "custom.gemini3",
+  "model": "gemini-2.5-flash"
+ },
+ "text_a": "{\n  \"paragraphs\": [\n    {\n      \"level\": \"F2\",\n      \"event_ids\": [],\n      \"text\": \"凯尔回到了酒馆的后屋，这里是奥伦用来堆放杂物和不常用酒桶的地方。狭小的空间里弥漫着一股陈年的酒味和灰尘的气息，他知道自己必须仔细搜寻，不能放过任何角落。\"\n    },\n    {\n      \"level\": \"F1\",\n      \"event_ids\": [\"E0008\"],\n      \"text\": \"凯尔在back_room搜寻，最终在一个旧木箱的底部发现了一封匿名的信件。\"\n    },\n    {\n      \"level\": \"F3\",\n      \"event_ids\": [],\n      \"text\": \"信封没有署名，封口也已破损，仿佛被人匆匆拆开又随意丢弃。凯尔的心脏不自觉地跳动了一下，他知道这可能就是他一直在寻找的线索。\"\n    },\n    {\n      \"level\": \"F2\",\n      \"event_ids\": [],\n      \"text\": \"就在他准备展开信件细读时，门外传来了一阵脚步声，紧接着是奥伦的声音，似乎在与人交谈。凯尔迅速将信件藏好，警惕地看向门口。\"\n    },\n    {\n      \"level\": \"F1\",\n      \"event_ids\": [\"E0014\"],\n      \"text\": \"米拉的声音穿透门板清晰地传来，她对奥伦说：「老板，我手里有批货，镇上要是有销路，咱们都有赚头。」\"\n    },\n    {\n      \"level\": \"F3\",\n      \"event_ids\": [],\n      \"text\": \"凯尔站在阴影里，屏住呼吸，努力分辨着门外对话的更多细节，空气中弥漫着一股紧张的气息。\"\n    }\n  ],\n  \"scene_end_state\": \"凯尔找到了匿名信件，并意外听到了商人米拉与老板奥伦的对话。\"\n}",
+ "text_b": "{\n  \"paragraphs\": [\n    {\n      \"level\": \"F2\",\n      \"event_ids\": [],\n      \"text\": \"凯尔回到了后屋，那里依然弥漫着一股陈旧的酒气和尘土味。他深吸一口气，开始了他例行的检查。今天的他格外仔细，不放过任何一个角落。\"\n    },\n    {\n      \"level\": \"F1\",\n      \"event_ids\": [\"E0008\"],\n      \"text\": \"凯尔在后屋搜寻，在堆积的杂物中，他触及到了一封匿名信，信纸的边缘有些粗糙，似乎是匆忙之下撕扯下来的。\"\n    },\n    {\n      \"level\": \"F3\",\n      \"event_ids\": [],\n      \"text\": \"凯尔将信件小心翼翼地取出，指尖摩挲着纸张的纹理，心头涌起一丝不安。这封信件的出现，让原本就模糊的疑团，变得更加扑朔迷离。\"\n    },\n    {\n      \"level\": \"F2\",\n      \"event_ids\": [],\n      \"text\": \"就在凯尔仔细审视着信件的时候，前厅传来了说话声。米拉的声音穿透了木板，隐约传入后屋。\"\n    },\n    {\n      \"level\": \"F1\",\n      \"event_ids\": [\"E0014\"],\n      \"text\": \"米拉的声音清晰地传来，她对奥伦说：“老板，我手里有批货，镇上要是有销路，咱们都有赚头。”\"\n    },\n    {\n      \"level\": \"F3\",\n      \"event_ids\": [],\n      \"text\": \"凯尔握着匿名信的手微微一紧。他知道米拉是个精明的商人，她的出现，往往伴随着某种交易的可能。只是，这笔交易是否会与他正在调查的事情有所关联，他尚不得而知。\"\n    }\n  ],\n  \"scene_end_state\": \"凯尔发现了匿名信，同时听到了米拉与奥伦的对话，商人似乎在试图达成一笔交易。\"\n}"
+}

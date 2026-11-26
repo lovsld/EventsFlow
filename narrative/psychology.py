@@ -184,3 +184,93 @@ def write_psychology(narrative_dir: Path, out_dir: Path) -> dict:
                    ensure_ascii=False, indent=1),
         encoding="utf-8")
     return psych
+
+
+# ------------------------------------------------------------------
+# Phase 2 (task book 4.2): incremental state-update records.
+# Every update names its triggering event, the before/after
+# values, the reason, the evidence, a confidence, and the
+# alternative explanations that were NOT chosen. Fact-level
+# updates (recorded learnings) carry confidence 1.0 and no
+# alternatives; inference/hypothesis updates always carry at
+# least one alternative. Updates are derived from existing
+# products (character arcs + this module's own output); they
+# never write back to any fact-layer file.
+# ------------------------------------------------------------------
+
+def build_state_updates(narrative_dir: Path) -> dict:
+    upgrade = narrative_dir / "upgrade"
+    arcs = json.loads((upgrade / "character_arcs.json")
+                      .read_text(encoding="utf-8"))["arcs"]
+    psych = build_psychology(narrative_dir)
+    updates: list[dict] = []
+    for arc in arcs:
+        cid = arc["character_id"]
+        for ch in arc.get("belief_changes", []):
+            updates.append({
+                "event_id": ch["event_id"],
+                "character_id": cid, "tick": ch.get("tick"),
+                "field": "knowledge", "tier": "fact",
+                "before": {"known": False},
+                "after": {"known": True, "fact": ch["fact"]},
+                "reason": f"learned via {ch.get('via')}",
+                "evidence_event_ids": [ch["event_id"]],
+                "confidence": 1.0,
+                "alternative_explanations": []})
+    by_char: dict[str, list[dict]] = {}
+    for e in psych["emotions"]:
+        by_char.setdefault(e["character_id"], []).append(e)
+    for cid, records in by_char.items():
+        records = sorted(records, key=lambda r: r.get("tick", 0))
+        prev = None
+        for r in records:
+            if prev is not None and r["emotion"] != prev \
+                    and r["evidence_event_ids"]:
+                updates.append({
+                    "event_id": (r["evidence_event_ids"] or [None])[0],
+                    "character_id": cid, "tick": r.get("tick"),
+                    "field": "emotion", "tier": "inference",
+                    "before": {"emotion": prev},
+                    "after": {"emotion": r["emotion"],
+                              "intensity": r["intensity"]},
+                    "reason": "scene evidence changed the "
+                              "inferred emotional state",
+                    "evidence_event_ids": r["evidence_event_ids"],
+                    "confidence": r["confidence"],
+                    "alternative_explanations": [
+                        "情境性短暂反应，未形成稳定情绪变化",
+                        "推断规则误判（证据不足）"]})
+            prev = r["emotion"]
+    for m in psych["motivated_by"]:
+        updates.append({
+            "event_id": m["action_event_id"],
+            "character_id": m["character_id"], "tick": None,
+            "field": "motivation", "tier": "hypothesis",
+            "before": {"motivation_hypothesis": None},
+            "after": {"motivation_hypothesis": m["motivation"],
+                      "inference_status": m["inference_status"]},
+            "reason": "key action inside a thread the character "
+                      "is involved in",
+            "evidence_event_ids": m["evidence_event_ids"],
+            "confidence": m["confidence"],
+            "alternative_explanations":
+                m["alternative_explanations"]})
+    updates.sort(key=lambda u: (u["tick"] is None,
+                                u["tick"] or 0,
+                                u["character_id"], u["field"]))
+    return {"updates": updates,
+            "note": "Incremental state updates derived from "
+                    "character arcs + psychology inference; "
+                    "tiers keep fact / inference / hypothesis "
+                    "physically labelled."}
+
+
+def write_state_updates(narrative_dir: Path,
+                        out_dir: Path | None = None) -> Path:
+    data = build_state_updates(narrative_dir)
+    out = out_dir or (narrative_dir / "phase2")
+    out.mkdir(parents=True, exist_ok=True)
+    path = out / "state_updates.json"
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=1),
+                    encoding="utf-8")
+    return path

@@ -152,3 +152,79 @@ def build_scene_outlines(run_dir: Path, narrative_dir: Path,
         outline["next_scene_hook"] = nxt["scene_goal"] or \
             nxt["outcome"]
     return outlines
+
+
+# ------------------------------------------------------------------
+# Phase 2 (task book 4.3): enrich scene outlines with character
+# state. The planner now reads the unified character-state view:
+# per participant it records the goals they bring in, what they
+# know / must not use at scene entry, their entering emotion,
+# and their conflicts with co-participants; per scene it records
+# information gaps, the state changes the scene's events are
+# expected to produce, and flags scenes with no expected change
+# (transition-scene candidates). All values come from the state
+# view and the incremental update records -- nothing is invented
+# here, and expectations never overwrite what actually happens.
+# ------------------------------------------------------------------
+
+def enrich_scenes_with_states(scenes: list[dict], states: dict,
+                              updates: list[dict]) -> list[dict]:
+    from narrative.character_state import knowledge_at
+    chars = states.get("characters", {})
+    for scene in scenes:
+        start, end = (scene.get("time_range") or [0, 0])[:2]
+        parts = {}
+        for cid in scene.get("participants", []):
+            view = chars.get(cid)
+            if view is None:
+                continue
+            entering = set(knowledge_at(view, start - 1))
+            must_not = [k["fact"] for k in
+                        view["knowledge"]["known_facts"]
+                        if k["fact"] not in entering]
+            emo = None
+            for rec in view["emotions"]["trajectory"]:
+                if (rec.get("tick") or 0) < start:
+                    emo = rec
+            parts[cid] = {
+                "goals_active": [g["key"] for g in view["goals"]
+                                 if g.get("status") in
+                                 ("active", None)],
+                "knows_at_entry": sorted(entering),
+                "must_not_use_at_entry": sorted(must_not),
+                "emotion_entering": emo,
+                "conflicts_with": [
+                    c for c in
+                    view["relationships"]["conflicts"]
+                    if any(p in scene.get("participants", [])
+                           for p in c["with"])]}
+        gaps = []
+        cids = [c for c in scene.get("participants", [])
+                if c in parts]
+        for a in cids:
+            for b in cids:
+                if a >= b:
+                    continue
+                a_only = sorted(set(parts[a]["knows_at_entry"])
+                                - set(parts[b]["knows_at_entry"]))
+                b_only = sorted(set(parts[b]["knows_at_entry"])
+                                - set(parts[a]["knows_at_entry"]))
+                if a_only or b_only:
+                    gaps.append({"pair": [a, b],
+                                 f"{a}_only": a_only,
+                                 f"{b}_only": b_only})
+        expected = [{"character_id": u["character_id"],
+                     "field": u["field"], "tier": u["tier"],
+                     "after": u["after"],
+                     "event_id": u["event_id"]}
+                    for u in updates
+                    if u.get("tick") is not None
+                    and start <= u["tick"] <= end
+                    and u["character_id"] in
+                    scene.get("participants", [])]
+        scene["character_state"] = {
+            "participants": parts,
+            "information_gaps": gaps,
+            "expected_state_changes": expected,
+            "no_expected_change": not expected}
+    return scenes

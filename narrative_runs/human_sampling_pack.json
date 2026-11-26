@@ -1,0 +1,239 @@
+{
+ "dimensions": [
+  "自然度",
+  "人物一致性",
+  "情节推进",
+  "信息重复",
+  "事实一致性"
+ ],
+ "problem_tags": [
+  "机械复述",
+  "对话不自然",
+  "日志/标签泄漏",
+  "无依据事实",
+  "心理说明书式旁白",
+  "其他"
+ ],
+ "samples": [
+  {
+   "sample_id": "S01",
+   "run": "rule_v02c4_seed42",
+   "chapter_id": "CH01",
+   "chapter_title": "酒馆风声，暗室寻踪",
+   "scene_id": "SC01",
+   "para_index": 0,
+   "level": "F2",
+   "event_ids": [],
+   "text": "凯尔回到了酒馆的后屋，这里是酒馆最隐蔽的角落，平时少有人来。他紧绷着神经，目光在昏暗的房间里搜寻着。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S02",
+   "run": "rule_v02c4_seed42",
+   "chapter_id": "CH02",
+   "chapter_title": "低语疑云：公款账目",
+   "scene_id": "SC02",
+   "para_index": 5,
+   "level": "F1",
+   "event_ids": [
+    "E0023"
+   ],
+   "text": "“我也不绕了——货压在手里，镇上只有你这儿能走量。”米拉继续向奥伦推销她的货物，声音里带着不容置疑的肯定。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S03",
+   "run": "rule_v02c4_seed42",
+   "chapter_id": "CH02",
+   "chapter_title": "低语疑云：公款账目",
+   "scene_id": "SC02",
+   "para_index": 17,
+   "level": "F1",
+   "event_ids": [
+    "E0033"
+   ],
+   "text": "凯尔又问了一次：“再问一次，这几天后屋那边，有人动过什么吗？”",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S04",
+   "run": "rule_v02c4_seed42",
+   "chapter_id": "CH04",
+   "chapter_title": "耳语惑心：公款疑踪",
+   "scene_id": "SC04",
+   "para_index": 0,
+   "level": "F3",
+   "event_ids": [],
+   "text": "酒馆里的空气仿佛凝固了，酒精的甜腻与汗水的咸涩交织成一种令人不安的氛围。奥伦感到自己被两股无形的力量拉扯着，一边是商人米拉，一边是士兵凯尔，他们的眼神都像钩子一样，试图从他身上探出些什么。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S05",
+   "run": "rule_v02c4_seed42",
+   "chapter_id": "CH04",
+   "chapter_title": "耳语惑心：公款疑踪",
+   "scene_id": "SC04",
+   "para_index": 12,
+   "level": "F1",
+   "event_ids": [
+    "E0059"
+   ],
+   "text": "米拉也加入了盘问，她问奥伦：「老板，我例行问一句——这几天酒馆有没有什么异常的人或事？」",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S06",
+   "run": "c5_lighthouse_seed7",
+   "chapter_id": "CH01",
+   "chapter_title": "第1章",
+   "scene_id": "SC01",
+   "para_index": 0,
+   "level": "F3",
+   "event_ids": [],
+   "text": "船屋里弥漫着一股潮湿的鱼腥味，混杂着柴油和海水的咸涩，空气沉闷得让人喘不过气。阿贵的心情也像这天气一样，阴沉沉的，他搓了搓手，试图驱散心头的烦躁。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S07",
+   "run": "c5_lighthouse_seed7",
+   "chapter_id": "CH01",
+   "chapter_title": "第1章",
+   "scene_id": "SC02",
+   "para_index": 11,
+   "level": "F3",
+   "event_ids": [],
+   "text": "阿贵的心情越发沉重，码头灯熄灭，船只信息不明，现在连雾笛也成了悬而未决的难题。他感到一股无形的压力正逐渐将他包围。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S08",
+   "run": "c5_lighthouse_seed7",
+   "chapter_id": "CH01",
+   "chapter_title": "第1章",
+   "scene_id": "SC04",
+   "para_index": 27,
+   "level": "F3",
+   "event_ids": [],
+   "text": "夜色渐浓，海风带着湿咸的气息扑面而来，远处的海浪声仿佛也在催促着他加快脚步。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S09",
+   "run": "c5_lighthouse_seed7",
+   "chapter_id": "CH03",
+   "chapter_title": "第3章",
+   "scene_id": "SC06",
+   "para_index": 2,
+   "level": "F3",
+   "event_ids": [],
+   "text": "他知道，这意味着今夜注定是个不眠之夜，每一个细节都可能关乎到渔船上人们的安危。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S10",
+   "run": "c5_lighthouse_seed7",
+   "chapter_id": "CH01",
+   "chapter_title": "第1章",
+   "scene_id": "SC01",
+   "para_index": 1,
+   "level": "F1",
+   "event_ids": [
+    "E0006"
+   ],
+   "text": "“阿贵：今晚真有船要贴着礁石回港？消息准吗？”阿贵的声音在船屋里回荡，带着一丝不确定和焦急。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S11",
+   "run": "clinic_v02cfix_seed42",
+   "chapter_id": "CH01",
+   "chapter_title": "第1章",
+   "scene_id": "SC01",
+   "para_index": 0,
+   "level": "F2",
+   "event_ids": [],
+   "text": "午夜时分，oncall室里一片寂静，只有电脑屏幕发出微弱的光。沈默医生坐在桌前，揉了揉有些发胀的太阳穴。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S12",
+   "run": "clinic_v02cfix_seed42",
+   "chapter_id": "CH02",
+   "chapter_title": "第2章",
+   "scene_id": "SC02",
+   "para_index": 3,
+   "level": "F1",
+   "event_ids": [
+    "E0035"
+   ],
+   "text": "几乎是同时，沈默医生也开口了，语气里带着同样的急切：“退烧药补上了没有？我这边等着确认。”",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S13",
+   "run": "clinic_v02cfix_seed42",
+   "chapter_id": "CH02",
+   "chapter_title": "第2章",
+   "scene_id": "SC03",
+   "para_index": 10,
+   "level": "F3",
+   "event_ids": [],
+   "text": "这个消息让吴大勇的心头一紧，他知道这意味着今晚注定不会平静。药房那扇坏掉的门锁，以及退烧药是否备齐的问题，像两块大石头压在他的心头。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S14",
+   "run": "clinic_v02cfix_seed42",
+   "chapter_id": "CH02",
+   "chapter_title": "第2章",
+   "scene_id": "SC05",
+   "para_index": 20,
+   "level": "F3",
+   "event_ids": [],
+   "text": "分诊台再次只剩下他一人，高烧病人的消息像一块沉重的石头压在他心头，而退烧药的下落依然成谜。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  },
+  {
+   "sample_id": "S15",
+   "run": "clinic_v02cfix_seed42",
+   "chapter_id": "CH03",
+   "chapter_title": "第3章",
+   "scene_id": "SC06",
+   "para_index": 7,
+   "level": "F3",
+   "event_ids": [],
+   "text": "话语卡在喉咙，最终化作一声轻叹，沈默无奈地看着吴大勇离去的背影，心头涌上一丝失落。门锁的问题依然悬而未决，但至少，退烧药的燃眉之急算是解了。",
+   "scores": null,
+   "problem_tags": null,
+   "note": null
+  }
+ ]
+}

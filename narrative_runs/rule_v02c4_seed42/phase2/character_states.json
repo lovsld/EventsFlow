@@ -1,0 +1,1266 @@
+{
+ "run_id": "rule_v02c4_seed42",
+ "tiers": {
+  "fact": "recorded by the simulation or derived from committed events",
+  "inference": "evidence-based psychological inference (psychology.py)",
+  "hypothesis": "unconfirmed motivational inference (MOTIVATED_BY)"
+ },
+ "characters": {
+  "merchant": {
+   "character_id": "merchant",
+   "name": "米拉",
+   "goals": [
+    {
+     "key": "gain_business",
+     "desc": "获得更多商业资源",
+     "status": "active",
+     "weight": 1.0,
+     "source": "character_config"
+    },
+    {
+     "key": "build_relationships",
+     "desc": "建立有价值的人际关系",
+     "status": "paused",
+     "weight": 0.8,
+     "source": "character_config"
+    },
+    {
+     "key": "protect_wealth",
+     "desc": "避免损失自己的财富",
+     "status": "active",
+     "weight": 0.85,
+     "source": "character_config"
+    },
+    {
+     "key": "build_relationships",
+     "status": "paused",
+     "progress": 0.6,
+     "source": "goal_engine_aux"
+    },
+    {
+     "key": "gain_business",
+     "status": "active",
+     "progress": 0.0,
+     "source": "goal_engine_aux"
+    }
+   ],
+   "knowledge": {
+    "tier": "fact",
+    "known_facts": [
+     {
+      "fact": "mayor_business_deal",
+      "learned_at_event": null,
+      "learned_at_tick": null,
+      "via": "seed"
+     },
+     {
+      "fact": "mayor_embezzled",
+      "learned_at_event": "NE-E0022",
+      "learned_at_tick": 6,
+      "via": "delivery"
+     }
+    ],
+    "beliefs": [
+     {
+      "key": "mayor_business_deal",
+      "confidence": 0.9,
+      "kind": "experienced",
+      "held_as": "fact",
+      "evidence_sources": [
+       "seed:mayor_business_deal"
+      ]
+     },
+     {
+      "key": "mayor_embezzled",
+      "confidence": 0.454,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0022",
+       "E0030",
+       "E0032",
+       "E0036",
+       "E0038",
+       "E0040",
+       "E0043",
+       "E0046",
+       "E0056",
+       "E0058",
+       "E0061",
+       "E0063",
+       "E0064",
+       "E0068"
+      ]
+     }
+    ],
+    "not_known_key_facts": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "investigation_order",
+     "mayor_suspicious",
+     "speaker_knows_secret"
+    ]
+   },
+   "emotions": {
+    "tier": "inference",
+    "current": {
+     "character_id": "merchant",
+     "scene_id": "SC05",
+     "tick": 18,
+     "emotion": "anger",
+     "intensity": 0.4,
+     "confidence": 0.3,
+     "evidence_event_ids": [
+      "E0065"
+     ],
+     "source_type": "rule_inference",
+     "evidence_level": "interpretation"
+    },
+    "trajectory": [
+     {
+      "character_id": "merchant",
+      "scene_id": "SC01",
+      "tick": 3,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "scene_id": "SC02",
+      "tick": 6,
+      "emotion": "anticipation",
+      "intensity": 0.5,
+      "confidence": 0.35,
+      "evidence_event_ids": [
+       "E0022"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "scene_id": "SC03",
+      "tick": 9,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "scene_id": "SC04",
+      "tick": 12,
+      "emotion": "unknown",
+      "intensity": 0.0,
+      "confidence": 0.0,
+      "evidence_event_ids": [],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "scene_id": "SC05",
+      "tick": 18,
+      "emotion": "anger",
+      "intensity": 0.4,
+      "confidence": 0.3,
+      "evidence_event_ids": [
+       "E0065"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     }
+    ]
+   },
+   "motivations": {
+    "tier": "hypothesis",
+    "items": [
+     {
+      "character_id": "merchant",
+      "action_event_id": "E0014",
+      "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+      "thread_id": "interest_merchant",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "action_event_id": "E0017",
+      "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+      "thread_id": "interest_merchant",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "action_event_id": "E0023",
+      "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+      "thread_id": "interest_merchant",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "action_event_id": "E0027",
+      "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+      "thread_id": "interest_merchant",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "action_event_id": "E0031",
+      "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+      "thread_id": "interest_merchant",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "action_event_id": "E0047",
+      "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+      "thread_id": "interest_merchant",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "action_event_id": "E0055",
+      "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+      "thread_id": "interest_merchant",
+      "confidence": 0.3,
+      "evidence_event_ids": [],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "action_event_id": "E0059",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0022"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "merchant",
+      "action_event_id": "E0062",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0022"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     }
+    ]
+   },
+   "internal_conflict": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+   "concerns": [],
+   "relationships": {
+    "tier": "fact",
+    "conflicts": [
+     {
+      "conflict_id": "C001",
+      "type": "interest_conflict",
+      "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+      "with": [
+       "soldier"
+      ]
+     },
+     {
+      "conflict_id": "C002",
+      "type": "goal_conflict",
+      "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+      "with": [
+       "soldier"
+      ]
+     },
+     {
+      "conflict_id": "C003",
+      "type": "resource_conflict",
+      "core_issue": "goals compete for resource tavern_channel",
+      "with": [
+       "owner"
+      ]
+     },
+     {
+      "conflict_id": "C004",
+      "type": "information_conflict",
+      "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+      "with": [
+       "owner",
+       "soldier"
+      ]
+     },
+     {
+      "conflict_id": "C006",
+      "type": "information_conflict",
+      "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+      "with": [
+       "owner"
+      ]
+     }
+    ],
+    "state": {
+     "owner": {
+      "trust": 0.3,
+      "notes": []
+     },
+     "soldier": {
+      "trust": 0.3,
+      "notes": []
+     }
+    }
+   },
+   "arc": {
+    "tier": "fact",
+    "arc_type": "flat_arc",
+    "arc_status": "open",
+    "turning_points": []
+   }
+  },
+  "owner": {
+   "character_id": "owner",
+   "name": "奥伦",
+   "goals": [
+    {
+     "key": "protect_tavern",
+     "desc": "保护自己的酒馆",
+     "status": "active",
+     "weight": 1.0,
+     "source": "character_config"
+    },
+    {
+     "key": "find_letter_source",
+     "desc": "搞清楚匿名信的来源",
+     "status": "inactive",
+     "weight": 0.8,
+     "source": "character_config"
+    },
+    {
+     "key": "avoid_politics",
+     "desc": "避免卷入政治冲突",
+     "status": "failed",
+     "weight": 0.9,
+     "source": "character_config"
+    },
+    {
+     "key": "avoid_politics",
+     "status": "failed",
+     "progress": 0.0,
+     "source": "goal_engine_aux"
+    }
+   ],
+   "knowledge": {
+    "tier": "fact",
+    "known_facts": [
+     {
+      "fact": "anonymous_letter_exists",
+      "learned_at_event": null,
+      "learned_at_tick": null,
+      "via": "seed"
+     },
+     {
+      "fact": "business_opportunity",
+      "learned_at_event": "NE-E0014",
+      "learned_at_tick": 4,
+      "via": "delivery"
+     },
+     {
+      "fact": "mayor_embezzled",
+      "learned_at_event": "NE-E0022",
+      "learned_at_tick": 6,
+      "via": "delivery"
+     },
+     {
+      "fact": "speaker_knows_secret",
+      "learned_at_event": "NE-E0034",
+      "learned_at_tick": 9,
+      "via": "delivery"
+     }
+    ],
+    "beliefs": [
+     {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "held_as": "fact",
+      "evidence_sources": [
+       "seed:anonymous_letter_exists"
+      ]
+     },
+     {
+      "key": "mayor_embezzled",
+      "confidence": 0.594,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "seed:mayor_embezzled",
+       "E0022",
+       "E0030",
+       "E0036",
+       "E0040",
+       "E0043",
+       "E0046",
+       "E0058",
+       "E0061",
+       "E0064",
+       "E0068"
+      ]
+     },
+     {
+      "key": "business_opportunity",
+      "confidence": 0.29,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0014",
+       "E0017",
+       "E0023",
+       "E0027",
+       "E0031",
+       "E0047",
+       "E0055"
+      ]
+     },
+     {
+      "key": "speaker_knows_secret",
+      "confidence": 0.261,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0034",
+       "E0037",
+       "E0041",
+       "E0044",
+       "E0051"
+      ]
+     },
+     {
+      "key": "conceals:merchant",
+      "confidence": 0.556,
+      "kind": "inferred",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0065"
+      ]
+     }
+    ],
+    "not_known_key_facts": [
+     "investigation_order",
+     "mayor_business_deal",
+     "mayor_suspicious"
+    ]
+   },
+   "emotions": {
+    "tier": "inference",
+    "current": {
+     "character_id": "owner",
+     "scene_id": "SC05",
+     "tick": 20,
+     "emotion": "anger",
+     "intensity": 0.4,
+     "confidence": 0.3,
+     "evidence_event_ids": [
+      "E0073"
+     ],
+     "source_type": "rule_inference",
+     "evidence_level": "interpretation"
+    },
+    "trajectory": [
+     {
+      "character_id": "owner",
+      "scene_id": "SC01",
+      "tick": 4,
+      "emotion": "anticipation",
+      "intensity": 0.5,
+      "confidence": 0.35,
+      "evidence_event_ids": [
+       "E0014"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "owner",
+      "scene_id": "SC02",
+      "tick": 6,
+      "emotion": "anticipation",
+      "intensity": 0.5,
+      "confidence": 0.35,
+      "evidence_event_ids": [
+       "E0022"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "owner",
+      "scene_id": "SC03",
+      "tick": 9,
+      "emotion": "anticipation",
+      "intensity": 0.5,
+      "confidence": 0.35,
+      "evidence_event_ids": [
+       "E0034"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "owner",
+      "scene_id": "SC04",
+      "tick": 13,
+      "emotion": "anger",
+      "intensity": 0.4,
+      "confidence": 0.3,
+      "evidence_event_ids": [
+       "E0048"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "owner",
+      "scene_id": "SC05",
+      "tick": 20,
+      "emotion": "anger",
+      "intensity": 0.4,
+      "confidence": 0.3,
+      "evidence_event_ids": [
+       "E0073"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     }
+    ]
+   },
+   "motivations": {
+    "tier": "hypothesis",
+    "items": []
+   },
+   "internal_conflict": "",
+   "concerns": [
+    {
+     "kind": "goal_not_progressing",
+     "goal": "avoid_politics",
+     "status": "failed"
+    },
+    {
+     "kind": "goal_not_progressing",
+     "goal": "avoid_politics",
+     "status": "failed"
+    }
+   ],
+   "relationships": {
+    "tier": "fact",
+    "conflicts": [
+     {
+      "conflict_id": "C003",
+      "type": "resource_conflict",
+      "core_issue": "goals compete for resource tavern_channel",
+      "with": [
+       "merchant"
+      ]
+     },
+     {
+      "conflict_id": "C004",
+      "type": "information_conflict",
+      "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+      "with": [
+       "merchant",
+       "soldier"
+      ]
+     },
+     {
+      "conflict_id": "C005",
+      "type": "information_conflict",
+      "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+      "with": [
+       "soldier"
+      ]
+     },
+     {
+      "conflict_id": "C006",
+      "type": "information_conflict",
+      "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+      "with": [
+       "merchant"
+      ]
+     }
+    ],
+    "state": {
+     "merchant": {
+      "trust": 0.3,
+      "notes": []
+     },
+     "soldier": {
+      "trust": 0.3,
+      "notes": []
+     }
+    }
+   },
+   "arc": {
+    "tier": "fact",
+    "arc_type": "unresolved_arc",
+    "arc_status": "open",
+    "turning_points": [
+     {
+      "fact": "business_opportunity",
+      "tick": 4,
+      "learned_at": "NE-E0014",
+      "downstream_uses": [
+       "NE-E0017"
+      ]
+     },
+     {
+      "fact": "mayor_embezzled",
+      "tick": 6,
+      "learned_at": "NE-E0022",
+      "downstream_uses": [
+       "NE-E0032",
+       "NE-E0038",
+       "NE-E0056",
+       "NE-E0063"
+      ]
+     }
+    ]
+   }
+  },
+  "soldier": {
+   "character_id": "soldier",
+   "name": "凯尔",
+   "goals": [
+    {
+     "key": "complete_investigation",
+     "desc": "完成调查任务",
+     "status": "active",
+     "weight": 1.0,
+     "source": "character_config"
+    },
+    {
+     "key": "keep_honor",
+     "desc": "维护自己的荣誉",
+     "status": "active",
+     "weight": 0.9,
+     "source": "character_config"
+    },
+    {
+     "key": "learn_mayor_truth",
+     "desc": "搞清楚镇长是否真的存在问题",
+     "status": "active",
+     "weight": 0.75,
+     "source": "character_config"
+    },
+    {
+     "key": "complete_investigation",
+     "status": "active",
+     "progress": 0.8911,
+     "source": "goal_engine_aux"
+    },
+    {
+     "key": "learn_mayor_truth",
+     "status": "active",
+     "progress": 0.7822,
+     "source": "goal_engine_aux"
+    }
+   ],
+   "knowledge": {
+    "tier": "fact",
+    "known_facts": [
+     {
+      "fact": "anonymous_letter_exists",
+      "learned_at_event": "NE-E0008",
+      "learned_at_tick": 3,
+      "via": "find"
+     },
+     {
+      "fact": "business_opportunity",
+      "learned_at_event": "NE-E0017",
+      "learned_at_tick": 5,
+      "via": "delivery"
+     },
+     {
+      "fact": "investigation_order",
+      "learned_at_event": null,
+      "learned_at_tick": null,
+      "via": "seed"
+     },
+     {
+      "fact": "mayor_embezzled",
+      "learned_at_event": "NE-E0008",
+      "learned_at_tick": 3,
+      "via": "find"
+     },
+     {
+      "fact": "mayor_suspicious",
+      "learned_at_event": null,
+      "learned_at_tick": null,
+      "via": "seed"
+     },
+     {
+      "fact": "speaker_knows_secret",
+      "learned_at_event": "NE-E0034",
+      "learned_at_tick": 9,
+      "via": "delivery"
+     }
+    ],
+    "beliefs": [
+     {
+      "key": "investigation_order",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "held_as": "fact",
+      "evidence_sources": [
+       "seed:investigation_order"
+      ]
+     },
+     {
+      "key": "mayor_suspicious",
+      "confidence": 0.35,
+      "kind": "inferred",
+      "held_as": "belief",
+      "evidence_sources": [
+       "seed:mayor_suspicious"
+      ]
+     },
+     {
+      "key": "anonymous_letter_exists",
+      "confidence": 1.0,
+      "kind": "experienced",
+      "held_as": "fact",
+      "evidence_sources": [
+       "search_result:anonymous_letter@3"
+      ]
+     },
+     {
+      "key": "mayor_embezzled",
+      "confidence": 0.704,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "search_result:anonymous_letter@3",
+       "E0032",
+       "E0038",
+       "E0056",
+       "E0063"
+      ]
+     },
+     {
+      "key": "business_opportunity",
+      "confidence": 0.29,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0017",
+       "E0023",
+       "E0027",
+       "E0031",
+       "E0047",
+       "E0055"
+      ]
+     },
+     {
+      "key": "speaker_knows_secret",
+      "confidence": 0.261,
+      "kind": "heard",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0034",
+       "E0037",
+       "E0041",
+       "E0044",
+       "E0051"
+      ]
+     },
+     {
+      "key": "conceals:merchant",
+      "confidence": 0.622,
+      "kind": "inferred",
+      "held_as": "belief",
+      "evidence_sources": [
+       "E0065"
+      ]
+     }
+    ],
+    "not_known_key_facts": [
+     "mayor_business_deal"
+    ]
+   },
+   "emotions": {
+    "tier": "inference",
+    "current": {
+     "character_id": "soldier",
+     "scene_id": "SC05",
+     "tick": 17,
+     "emotion": "anger",
+     "intensity": 0.6,
+     "confidence": 0.4,
+     "evidence_event_ids": [
+      "E0061",
+      "E0064"
+     ],
+     "source_type": "rule_inference",
+     "evidence_level": "interpretation"
+    },
+    "trajectory": [
+     {
+      "character_id": "soldier",
+      "scene_id": "SC01",
+      "tick": 3,
+      "emotion": "surprise",
+      "intensity": 0.7,
+      "confidence": 0.6,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "scene_id": "SC02",
+      "tick": 6,
+      "emotion": "anger",
+      "intensity": 0.6,
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0017",
+       "E0022",
+       "E0030"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "scene_id": "SC03",
+      "tick": 10,
+      "emotion": "anger",
+      "intensity": 0.6,
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0034",
+       "E0036"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "scene_id": "SC04",
+      "tick": 12,
+      "emotion": "anger",
+      "intensity": 0.6,
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0043"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "scene_id": "SC05",
+      "tick": 17,
+      "emotion": "anger",
+      "intensity": 0.6,
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0061",
+       "E0064"
+      ],
+      "source_type": "rule_inference",
+      "evidence_level": "interpretation"
+     }
+    ]
+   },
+   "motivations": {
+    "tier": "hypothesis",
+    "items": [
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0022",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0026",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0030",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0033",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0036",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0040",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0043",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0046",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0050",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0054",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0058",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0061",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0064",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0068",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     },
+     {
+      "character_id": "soldier",
+      "action_event_id": "E0071",
+      "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+      "thread_id": "crisis_leak",
+      "confidence": 0.4,
+      "evidence_event_ids": [
+       "E0008"
+      ],
+      "alternative_explanations": [
+       "日常行为，无故事动机（零假设）",
+       "执行他人指令或履行职责"
+      ],
+      "inference_status": "HYPOTHESIS",
+      "evidence_level": "interpretation"
+     }
+    ]
+   },
+   "internal_conflict": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+   "concerns": [],
+   "relationships": {
+    "tier": "fact",
+    "conflicts": [
+     {
+      "conflict_id": "C001",
+      "type": "interest_conflict",
+      "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+      "with": [
+       "merchant"
+      ]
+     },
+     {
+      "conflict_id": "C002",
+      "type": "goal_conflict",
+      "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+      "with": [
+       "merchant"
+      ]
+     },
+     {
+      "conflict_id": "C004",
+      "type": "information_conflict",
+      "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+      "with": [
+       "merchant",
+       "owner"
+      ]
+     },
+     {
+      "conflict_id": "C005",
+      "type": "information_conflict",
+      "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+      "with": [
+       "owner"
+      ]
+     }
+    ],
+    "state": {
+     "merchant": {
+      "trust": 0.3,
+      "notes": []
+     },
+     "owner": {
+      "trust": 0.3,
+      "notes": []
+     }
+    }
+   },
+   "arc": {
+    "tier": "fact",
+    "arc_type": "unresolved_arc",
+    "arc_status": "open",
+    "turning_points": [
+     {
+      "fact": "anonymous_letter_exists",
+      "tick": 3,
+      "learned_at": "NE-E0008",
+      "downstream_uses": [
+       "NE-E0022"
+      ]
+     },
+     {
+      "fact": "mayor_embezzled",
+      "tick": 3,
+      "learned_at": "NE-E0008",
+      "downstream_uses": [
+       "NE-E0022",
+       "NE-E0030",
+       "NE-E0036",
+       "NE-E0040",
+       "NE-E0043",
+       "NE-E0046",
+       "NE-E0058",
+       "NE-E0061",
+       "NE-E0064",
+       "NE-E0068"
+      ]
+     }
+    ]
+   }
+  }
+ }
+}
