@@ -1,0 +1,294 @@
+[
+ {
+  "context_event_ids": [
+   "E0003",
+   "E0005",
+   "E0008"
+  ],
+  "end_tick": 4,
+  "event_ids": [
+   "E0001",
+   "E0002",
+   "E0004",
+   "E0006",
+   "E0007",
+   "E0009",
+   "E0010",
+   "E0011",
+   "E0018"
+  ],
+  "kind": "session",
+  "location": "boathouse",
+  "open": false,
+  "participants": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "scene_id": "SC-001",
+  "session": "S1",
+  "start_tick": 1
+ },
+ {
+  "context_event_ids": [
+   "E0012",
+   "E0013",
+   "E0031"
+  ],
+  "end_tick": 8,
+  "event_ids": [
+   "E0014",
+   "E0015",
+   "E0016",
+   "E0017",
+   "E0019",
+   "E0020",
+   "E0021",
+   "E0022",
+   "E0023",
+   "E0024",
+   "E0025",
+   "E0026",
+   "E0027",
+   "E0028",
+   "E0029",
+   "E0034"
+  ],
+  "kind": "session",
+  "location": "boathouse",
+  "open": false,
+  "participants": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "scene_id": "SC-002",
+  "session": "S2",
+  "start_tick": 4
+ },
+ {
+  "context_event_ids": [
+   "E0047"
+  ],
+  "end_tick": 12,
+  "event_ids": [
+   "E0030",
+   "E0032",
+   "E0033",
+   "E0035",
+   "E0036",
+   "E0038",
+   "E0039",
+   "E0041",
+   "E0043",
+   "E0045",
+   "E0049",
+   "E0050",
+   "E0051"
+  ],
+  "kind": "session",
+  "location": "boathouse",
+  "open": false,
+  "participants": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "scene_id": "SC-003",
+  "session": "S3",
+  "start_tick": 8
+ },
+ {
+  "context_event_ids": [
+   "E0040",
+   "E0042"
+  ],
+  "end_tick": 9,
+  "event_ids": [
+   "E0037"
+  ],
+  "kind": "loose",
+  "location": "jetty",
+  "open": false,
+  "participants": [
+   "lin_tao"
+  ],
+  "scene_id": "SC-004",
+  "session": null,
+  "start_tick": 9
+ },
+ {
+  "context_event_ids": [
+   "E0046",
+   "E0048"
+  ],
+  "end_tick": 11,
+  "event_ids": [
+   "E0044"
+  ],
+  "kind": "loose",
+  "location": "base",
+  "open": false,
+  "participants": [
+   "lin_tao"
+  ],
+  "scene_id": "SC-005",
+  "session": null,
+  "start_tick": 11
+ },
+ {
+  "context_event_ids": [
+   "E0054",
+   "E0057",
+   "E0061",
+   "E0062",
+   "E0065",
+   "E0073"
+  ],
+  "end_tick": 19,
+  "event_ids": [
+   "E0052",
+   "E0053",
+   "E0055",
+   "E0056",
+   "E0058",
+   "E0059",
+   "E0060",
+   "E0063",
+   "E0064",
+   "E0066",
+   "E0068",
+   "E0069",
+   "E0070",
+   "E0072",
+   "E0077"
+  ],
+  "kind": "session",
+  "location": "boathouse",
+  "open": false,
+  "participants": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "scene_id": "SC-006",
+  "session": "S4",
+  "start_tick": 13
+ },
+ {
+  "context_event_ids": [
+   "E0067",
+   "E0071",
+   "E0078"
+  ],
+  "end_tick": 20,
+  "event_ids": [
+   "E0074",
+   "E0075",
+   "E0076",
+   "E0083"
+  ],
+  "kind": "session",
+  "location": "boathouse",
+  "open": false,
+  "participants": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "scene_id": "SC-007",
+  "session": "S5",
+  "start_tick": 19
+ },
+ {
+  "context_event_ids": [
+   "E0085"
+  ],
+  "end_tick": 21,
+  "event_ids": [
+   "E0079",
+   "E0080",
+   "E0081",
+   "E0082",
+   "E0084",
+   "E0089"
+  ],
+  "kind": "session",
+  "location": "boathouse",
+  "open": false,
+  "participants": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "scene_id": "SC-008",
+  "session": "S6",
+  "start_tick": 20
+ },
+ {
+  "context_event_ids": [],
+  "end_tick": 22,
+  "event_ids": [
+   "E0086",
+   "E0087",
+   "E0088",
+   "E0094"
+  ],
+  "kind": "session",
+  "location": "boathouse",
+  "open": false,
+  "participants": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "scene_id": "SC-009",
+  "session": "S7",
+  "start_tick": 21
+ },
+ {
+  "context_event_ids": [
+   "E0098",
+   "E0099"
+  ],
+  "end_tick": 24,
+  "event_ids": [
+   "E0090",
+   "E0091",
+   "E0092",
+   "E0093",
+   "E0095",
+   "E0096",
+   "E0097",
+   "E0103"
+  ],
+  "kind": "session",
+  "location": "boathouse",
+  "open": false,
+  "participants": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "scene_id": "SC-010",
+  "session": "S8",
+  "start_tick": 22
+ },
+ {
+  "context_event_ids": [
+   "E0104"
+  ],
+  "end_tick": 24,
+  "event_ids": [
+   "E0100",
+   "E0101",
+   "E0102"
+  ],
+  "kind": "session",
+  "location": "boathouse",
+  "open": true,
+  "participants": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "scene_id": "SC-011",
+  "session": "S9",
+  "start_tick": 24
+ }
+]

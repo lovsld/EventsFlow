@@ -1,0 +1,187 @@
+{
+ "groups": [
+  {
+   "group_id": "MG-V01",
+   "kind": "verbatim_repeat",
+   "speaker": "a_gui",
+   "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+   "primary_ne_id": "NE-E0006",
+   "member_ne_ids": [
+    "NE-E0006",
+    "NE-E0010",
+    "NE-E0014",
+    "NE-E0020",
+    "NE-E0024",
+    "NE-E0066"
+   ]
+  },
+  {
+   "group_id": "MG-V02",
+   "kind": "verbatim_repeat",
+   "speaker": "a_gui",
+   "text": "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+   "primary_ne_id": "NE-E0030",
+   "member_ne_ids": [
+    "NE-E0030",
+    "NE-E0063",
+    "NE-E0095"
+   ]
+  },
+  {
+   "group_id": "MG-V03",
+   "kind": "verbatim_repeat",
+   "speaker": "a_gui",
+   "text": "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。",
+   "primary_ne_id": "NE-E0059",
+   "member_ne_ids": [
+    "NE-E0059",
+    "NE-E0070"
+   ]
+  },
+  {
+   "group_id": "MG-V04",
+   "kind": "verbatim_repeat",
+   "speaker": "a_gui",
+   "text": "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+   "primary_ne_id": "NE-E0036",
+   "member_ne_ids": [
+    "NE-E0036",
+    "NE-E0039",
+    "NE-E0043"
+   ]
+  },
+  {
+   "group_id": "MG-V05",
+   "kind": "verbatim_repeat",
+   "speaker": "keeper_zhou",
+   "text": "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+   "primary_ne_id": "NE-E0026",
+   "member_ne_ids": [
+    "NE-E0026",
+    "NE-E0097"
+   ]
+  },
+  {
+   "group_id": "MG-V06",
+   "kind": "verbatim_repeat",
+   "speaker": "keeper_zhou",
+   "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+   "primary_ne_id": "NE-E0022",
+   "member_ne_ids": [
+    "NE-E0022",
+    "NE-E0029",
+    "NE-E0038",
+    "NE-E0041",
+    "NE-E0045",
+    "NE-E0064",
+    "NE-E0081"
+   ]
+  },
+  {
+   "group_id": "MG-V07",
+   "kind": "verbatim_repeat",
+   "speaker": "lin_tao",
+   "text": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+   "primary_ne_id": "NE-E0011",
+   "member_ne_ids": [
+    "NE-E0011",
+    "NE-E0015",
+    "NE-E0021"
+   ]
+  },
+  {
+   "group_id": "MG-V08",
+   "kind": "verbatim_repeat",
+   "speaker": "lin_tao",
+   "text": "林涛：放心，雾笛误不了事，备件拿到了。",
+   "primary_ne_id": "NE-E0086",
+   "member_ne_ids": [
+    "NE-E0086",
+    "NE-E0096"
+   ]
+  },
+  {
+   "group_id": "MG-V09",
+   "kind": "verbatim_repeat",
+   "speaker": "lin_tao",
+   "text": "林涛：雾笛能修好——备件皮带已经到手，我这就装回去。",
+   "primary_ne_id": "NE-E0080",
+   "member_ne_ids": [
+    "NE-E0080",
+    "NE-E0091"
+   ]
+  },
+  {
+   "group_id": "MG-R10",
+   "kind": "fact_relay",
+   "proposition": "fog_horn_ready",
+   "stance": "assert",
+   "primary_ne_id": "NE-E0080",
+   "member_ne_ids": [
+    "NE-E0080",
+    "NE-E0086",
+    "NE-E0091",
+    "NE-E0096"
+   ]
+  },
+  {
+   "group_id": "MG-R11",
+   "kind": "fact_relay",
+   "proposition": "fog_horn_ready",
+   "stance": "inquire",
+   "primary_ne_id": "NE-E0022",
+   "member_ne_ids": [
+    "NE-E0022",
+    "NE-E0025",
+    "NE-E0029",
+    "NE-E0036",
+    "NE-E0038",
+    "NE-E0039",
+    "NE-E0041",
+    "NE-E0043",
+    "NE-E0045",
+    "NE-E0064",
+    "NE-E0081"
+   ]
+  },
+  {
+   "group_id": "MG-R12",
+   "kind": "fact_relay",
+   "proposition": "ship_passing_tonight",
+   "stance": "assert",
+   "primary_ne_id": "NE-E0026",
+   "member_ne_ids": [
+    "NE-E0026",
+    "NE-E0030",
+    "NE-E0059",
+    "NE-E0063",
+    "NE-E0070",
+    "NE-E0095",
+    "NE-E0097"
+   ]
+  },
+  {
+   "group_id": "MG-R13",
+   "kind": "fact_relay",
+   "proposition": "ship_passing_tonight",
+   "stance": "inquire",
+   "primary_ne_id": "NE-E0006",
+   "member_ne_ids": [
+    "NE-E0006",
+    "NE-E0010",
+    "NE-E0011",
+    "NE-E0014",
+    "NE-E0015",
+    "NE-E0020",
+    "NE-E0021",
+    "NE-E0024",
+    "NE-E0066"
+   ]
+  }
+ ],
+ "stats": {
+  "speech_events": 34,
+  "grouped_events": 31,
+  "unique_after_merge": 16
+ }
+}

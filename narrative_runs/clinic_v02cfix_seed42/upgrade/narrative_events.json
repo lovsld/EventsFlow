@@ -6,7 +6,7 @@
   ],
   "tick": 1,
   "event_summary": "move @ ward",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -30,7 +30,7 @@
   ],
   "tick": 1,
   "event_summary": "search @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -76,7 +76,7 @@
   ],
   "tick": 1,
   "event_summary": "move @ yard",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -122,7 +122,7 @@
   ],
   "tick": 2,
   "event_summary": "move @ yard",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -146,7 +146,7 @@
   ],
   "tick": 2,
   "event_summary": "move @ ward",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -170,7 +170,7 @@
   ],
   "tick": 2,
   "event_summary": "observe @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -194,7 +194,7 @@
   ],
   "tick": 3,
   "event_summary": "move @ pharmacy",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -218,7 +218,7 @@
   ],
   "tick": 3,
   "event_summary": "move @ yard",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -242,7 +242,7 @@
   ],
   "tick": 3,
   "event_summary": "observe @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -288,7 +288,7 @@
   ],
   "tick": 4,
   "event_summary": "move @ yard",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -312,7 +312,7 @@
   ],
   "tick": 4,
   "event_summary": "move @ pharmacy",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -336,7 +336,7 @@
   ],
   "tick": 4,
   "event_summary": "observe @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -360,7 +360,7 @@
   ],
   "tick": 5,
   "event_summary": "move @ ward",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -384,7 +384,7 @@
   ],
   "tick": 5,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -408,7 +408,7 @@
   ],
   "tick": 5,
   "event_summary": "observe @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -454,7 +454,7 @@
   ],
   "tick": 6,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -478,7 +478,7 @@
   ],
   "tick": 6,
   "event_summary": "move @ ward",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -502,7 +502,7 @@
   ],
   "tick": 6,
   "event_summary": "observe @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -548,7 +548,7 @@
   ],
   "tick": 7,
   "event_summary": "move @ pharmacy",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -572,7 +572,7 @@
   ],
   "tick": 7,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -596,7 +596,7 @@
   ],
   "tick": 7,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -620,7 +620,7 @@
   ],
   "tick": 7,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "nurse_lin"
@@ -669,7 +669,7 @@
   ],
   "tick": 8,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -693,7 +693,7 @@
   ],
   "tick": 8,
   "event_summary": "move @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -717,7 +717,7 @@
   ],
   "tick": 8,
   "event_summary": "speak_failed @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -741,7 +741,7 @@
   ],
   "tick": 8,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -768,7 +768,7 @@
   ],
   "tick": 8,
   "event_summary": "session_end @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "nurse_lin"
@@ -820,7 +820,7 @@
   ],
   "tick": 9,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -871,7 +871,7 @@
   ],
   "tick": 9,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "nurse_lin",
@@ -899,7 +899,7 @@
   ],
   "tick": 9,
   "event_summary": "session_end @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -951,7 +951,7 @@
   ],
   "tick": 10,
   "event_summary": "move @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -975,7 +975,7 @@
   ],
   "tick": 10,
   "event_summary": "speak_failed @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -999,7 +999,7 @@
   ],
   "tick": 10,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -1026,7 +1026,7 @@
   ],
   "tick": 10,
   "event_summary": "session_end @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "nurse_lin",
@@ -1101,7 +1101,7 @@
   ],
   "tick": 11,
   "event_summary": "observe @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -1256,7 +1256,7 @@
   ],
   "tick": 12,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -1280,7 +1280,7 @@
   ],
   "tick": 12,
   "event_summary": "search @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -1304,7 +1304,7 @@
   ],
   "tick": 12,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "nurse_lin",
@@ -1332,7 +1332,7 @@
   ],
   "tick": 12,
   "event_summary": "session_end @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -1384,7 +1384,7 @@
   ],
   "tick": 13,
   "event_summary": "move @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -1408,7 +1408,7 @@
   ],
   "tick": 13,
   "event_summary": "speak_failed @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -1432,7 +1432,7 @@
   ],
   "tick": 13,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -1459,7 +1459,7 @@
   ],
   "tick": 13,
   "event_summary": "session_end @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "nurse_lin",
@@ -1507,7 +1507,7 @@
   ],
   "tick": 14,
   "event_summary": "move @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -1531,7 +1531,7 @@
   ],
   "tick": 14,
   "event_summary": "speak_failed @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -1555,7 +1555,7 @@
   ],
   "tick": 14,
   "event_summary": "observe @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -1579,7 +1579,7 @@
   ],
   "tick": 14,
   "event_summary": "session_start @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin",
    "porter_wu"
@@ -1606,7 +1606,7 @@
   ],
   "tick": 14,
   "event_summary": "session_end @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -1653,7 +1653,7 @@
   ],
   "tick": 15,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -1677,7 +1677,7 @@
   ],
   "tick": 15,
   "event_summary": "observe @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -1701,7 +1701,7 @@
   ],
   "tick": 15,
   "event_summary": "move @ pharmacy",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -1725,7 +1725,7 @@
   ],
   "tick": 15,
   "event_summary": "session_end @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin",
    "porter_wu"
@@ -1772,7 +1772,7 @@
   ],
   "tick": 16,
   "event_summary": "move @ pharmacy",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -1796,7 +1796,7 @@
   ],
   "tick": 16,
   "event_summary": "search @ pharmacy",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -1842,7 +1842,7 @@
   ],
   "tick": 16,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -1866,7 +1866,7 @@
   ],
   "tick": 16,
   "event_summary": "session_start @ pharmacy",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -1920,7 +1920,7 @@
   ],
   "tick": 17,
   "event_summary": "observe @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -2014,7 +2014,7 @@
   ],
   "tick": 18,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -2038,7 +2038,7 @@
   ],
   "tick": 18,
   "event_summary": "move @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -2062,7 +2062,7 @@
   ],
   "tick": 18,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -2086,7 +2086,7 @@
   ],
   "tick": 18,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -2113,7 +2113,7 @@
   ],
   "tick": 18,
   "event_summary": "session_end @ pharmacy",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -2160,7 +2160,7 @@
   ],
   "tick": 19,
   "event_summary": "move @ ward",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -2184,7 +2184,7 @@
   ],
   "tick": 19,
   "event_summary": "speak_failed @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -2208,7 +2208,7 @@
   ],
   "tick": 19,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -2232,7 +2232,7 @@
   ],
   "tick": 19,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "nurse_lin"
@@ -2259,7 +2259,7 @@
   ],
   "tick": 19,
   "event_summary": "session_end @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -2284,7 +2284,7 @@
   ],
   "tick": 20,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "porter_wu"
   ],
@@ -2308,7 +2308,7 @@
   ],
   "tick": 20,
   "event_summary": "listen @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],
@@ -2332,7 +2332,7 @@
   ],
   "tick": 20,
   "event_summary": "move @ oncall",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -2356,7 +2356,7 @@
   ],
   "tick": 20,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -2383,7 +2383,7 @@
   ],
   "tick": 20,
   "event_summary": "session_end @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "nurse_lin"
@@ -2527,7 +2527,7 @@
   ],
   "tick": 21,
   "event_summary": "move @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -2551,7 +2551,7 @@
   ],
   "tick": 21,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "nurse_lin",
@@ -2579,7 +2579,7 @@
   ],
   "tick": 21,
   "event_summary": "session_end @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -2646,7 +2646,7 @@
   ],
   "tick": 22,
   "event_summary": "search @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -2751,7 +2751,7 @@
   ],
   "tick": 23,
   "event_summary": "move @ pharmacy",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -2800,7 +2800,7 @@
   ],
   "tick": 23,
   "event_summary": "session_start @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "porter_wu"
@@ -2827,7 +2827,7 @@
   ],
   "tick": 23,
   "event_summary": "session_end @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen",
    "nurse_lin",
@@ -2878,7 +2878,7 @@
   ],
   "tick": 24,
   "event_summary": "search @ pharmacy",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "nurse_lin"
   ],
@@ -2902,7 +2902,7 @@
   ],
   "tick": 24,
   "event_summary": "listen @ triage",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "doctor_shen"
   ],

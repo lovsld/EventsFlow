@@ -1,0 +1,110 @@
+{
+ "threads": [
+  {
+   "thread_id": "main_fever_patient",
+   "title": "发热病人与退烧药",
+   "central_question": "发热病人到诊前，退烧药能否备齐？",
+   "involved_characters": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0033",
+    "NE-E0035",
+    "NE-E0038",
+    "NE-E0044",
+    "NE-E0046",
+    "NE-E0047",
+    "NE-E0052",
+    "NE-E0073",
+    "NE-E0075",
+    "NE-E0092",
+    "NE-E0093",
+    "NE-E0097",
+    "NE-E0099",
+    "NE-E0100"
+   ],
+   "opening_event": "NE-E0033",
+   "turning_points": [
+    "NE-E0046",
+    "NE-E0075",
+    "NE-E0092"
+   ],
+   "climax_event": "NE-E0046",
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.0,
+   "tension": 0.4,
+   "status": "active",
+   "unresolved_questions": [
+    "发热病人是否要来？",
+    "退烧药是否不足？",
+    "退烧药是否已补齐？"
+   ],
+   "relations": []
+  },
+  {
+   "thread_id": "medicine_supply",
+   "title": "药品供应",
+   "central_question": "退烧药库存不足的问题是否被解决？",
+   "involved_characters": [
+    "doctor_shen",
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0035",
+    "NE-E0047",
+    "NE-E0052",
+    "NE-E0073",
+    "NE-E0075",
+    "NE-E0093",
+    "NE-E0099"
+   ],
+   "opening_event": "NE-E0035",
+   "turning_points": [
+    "NE-E0075",
+    "NE-E0093",
+    "NE-E0035"
+   ],
+   "climax_event": "NE-E0075",
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.0,
+   "tension": 0.4,
+   "status": "active",
+   "unresolved_questions": [
+    "库存是否补齐？"
+   ],
+   "relations": []
+  }
+ ],
+ "conflicts": [],
+ "diagnostics": {
+  "main_fever_patient": {
+   "v03_status": "active",
+   "v03_progress": 0.0,
+   "narrative_line_states": [
+    {
+     "line_id": "L01",
+     "state": "broken"
+    }
+   ],
+   "calibre_note": "progress is information-evidence based (v03); a narrative line may be closed by action completion while progress stays low — both are kept."
+  },
+  "medicine_supply": {
+   "v03_status": "active",
+   "v03_progress": 0.0,
+   "narrative_line_states": [
+    {
+     "line_id": "L01",
+     "state": "broken"
+    }
+   ],
+   "calibre_note": "progress is information-evidence based (v03); a narrative line may be closed by action completion while progress stays low — both are kept."
+  }
+ }
+}

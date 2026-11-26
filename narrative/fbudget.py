@@ -1,0 +1,76 @@
+"""F1/F2/F3 budget control (Phase 1 / V1.0, task 5).
+
+Level semantics are the project's existing ones (writer2):
+F1 factual (event-anchored), F2 narrative presentation,
+F3 creative addition. This module only MEASURES and DIAGNOSES:
+per-chapter and whole-book ratios against a configurable
+budget (narrative/f_budgets.json), over-budget warnings, and
+F3->F2 downgrade candidates (F3 paragraphs that are anchored
+to events and could be re-anchored as presentation). It never
+deletes or relabels text: exceptions are a human decision
+(task book §7.3).
+"""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+DEFAULT_BUDGETS = Path(__file__).with_name("f_budgets.json")
+
+
+def load_budgets(path: Path | None = None) -> dict:
+    return json.loads((path or DEFAULT_BUDGETS).read_text(
+        encoding="utf-8"))
+
+
+def _ratios(paras: list[dict]) -> dict:
+    counts = {"F1": 0, "F2": 0, "F3": 0}
+    for p in paras:
+        if p.get("level") in counts:
+            counts[p["level"]] += 1
+    total = max(1, sum(counts.values()))
+    return {"counts": counts,
+            "ratios": {k: round(v / total, 4)
+                       for k, v in counts.items()},
+            "total": sum(counts.values())}
+
+
+def analyze(novel: dict, budgets: dict | None = None) -> dict:
+    b = budgets or load_budgets()
+    chapters = []
+    all_paras = []
+    for ch in novel["chapters"]:
+        paras = ch["paragraphs"]
+        all_paras.extend(paras)
+        chapters.append({"chapter_id": ch["chapter_id"],
+                         **_ratios(paras)})
+    book = _ratios(all_paras)
+    issues = []
+    r = book["ratios"]
+    if r["F1"] < b["F1_min"]:
+        issues.append({"kind": "F1_BELOW_MIN", "value": r["F1"],
+                       "limit": b["F1_min"]})
+    if r["F3"] > b["F3_max"]:
+        issues.append({"kind": "F3_OVER_MAX", "value": r["F3"],
+                       "limit": b["F3_max"]})
+    if not (b["F2_min"] <= r["F2"] <= b["F2_max"]):
+        issues.append({"kind": "F2_OUT_OF_RANGE", "value": r["F2"],
+                       "limit": [b["F2_min"], b["F2_max"]]})
+    # downgrade candidates: F3 paragraphs anchored to events —
+    # their content is event-bound presentation wearing an F3
+    # label; a human may relabel them F2 (never automatic).
+    candidates = [{"chapter_id": p.get("chapter_id"),
+                   "event_ids": p.get("event_ids", []),
+                   "text_prefix": p.get("text", "")[:50]}
+                  for p in all_paras
+                  if p.get("level") == "F3" and p.get("event_ids")]
+    return {"book": book, "chapters": chapters,
+            "budgets": {k: b[k] for k in
+                        ("F1_min", "F2_min", "F2_max", "F3_max")},
+            "over_budget": bool(issues), "issues": issues,
+            "f3_downgrade_candidates": candidates,
+            "fact_sources": {
+                lvl: sorted({eid for p in all_paras
+                             if p.get("level") == lvl
+                             for eid in p.get("event_ids", [])})
+                for lvl in ("F1", "F2", "F3")}}

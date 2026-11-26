@@ -1,0 +1,2922 @@
+[
+ {
+  "narrative_event_id": "NE-E0001",
+  "source_event_ids": [
+   "E0001"
+  ],
+  "tick": 1,
+  "event_summary": "move @ ward",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "ward",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0002",
+  "source_event_ids": [
+   "E0002"
+  ],
+  "tick": 1,
+  "event_summary": "search @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "oncall",
+  "event_type": "search",
+  "dramatic_function": [
+   "discovery"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 1.0,
+  "knowledge_changes": [
+   {
+    "character": "doctor_shen",
+    "fact": "fever_patient_coming",
+    "change": "learned",
+    "via": "find",
+    "source_event_id": "E0002",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [
+   {
+    "character": "doctor_shen",
+    "dimension": "belief",
+    "description": "learned fever_patient_coming by finding admission_form",
+    "evidence_event_ids": [
+     "E0002"
+    ],
+    "evidence_level": "interpretation",
+    "confidence": 1.0
+   }
+  ],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0003",
+  "source_event_ids": [
+   "E0003"
+  ],
+  "tick": 1,
+  "event_summary": "move @ yard",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "yard",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0004",
+  "source_event_ids": [
+   "E0004"
+  ],
+  "tick": 1,
+  "event_summary": "病房尽头的监护仪轻轻响了两声，又恢复了平稳。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "ward",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0005",
+  "source_event_ids": [
+   "E0005"
+  ],
+  "tick": 2,
+  "event_summary": "move @ yard",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "yard",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0006",
+  "source_event_ids": [
+   "E0006"
+  ],
+  "tick": 2,
+  "event_summary": "move @ ward",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "ward",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0007",
+  "source_event_ids": [
+   "E0007"
+  ],
+  "tick": 2,
+  "event_summary": "observe @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "oncall",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0008",
+  "source_event_ids": [
+   "E0008"
+  ],
+  "tick": 3,
+  "event_summary": "move @ pharmacy",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "pharmacy",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0009",
+  "source_event_ids": [
+   "E0009"
+  ],
+  "tick": 3,
+  "event_summary": "move @ yard",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "yard",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0010",
+  "source_event_ids": [
+   "E0010"
+  ],
+  "tick": 3,
+  "event_summary": "observe @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "oncall",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0011",
+  "source_event_ids": [
+   "E0011"
+  ],
+  "tick": 3,
+  "event_summary": "值班室的电话响了一声就断了，大概是打错了。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "oncall",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0012",
+  "source_event_ids": [
+   "E0012"
+  ],
+  "tick": 4,
+  "event_summary": "move @ yard",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "yard",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0013",
+  "source_event_ids": [
+   "E0013"
+  ],
+  "tick": 4,
+  "event_summary": "move @ pharmacy",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "pharmacy",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0014",
+  "source_event_ids": [
+   "E0014"
+  ],
+  "tick": 4,
+  "event_summary": "observe @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "oncall",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0015",
+  "source_event_ids": [
+   "E0015"
+  ],
+  "tick": 5,
+  "event_summary": "move @ ward",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "ward",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0016",
+  "source_event_ids": [
+   "E0016"
+  ],
+  "tick": 5,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0017",
+  "source_event_ids": [
+   "E0017"
+  ],
+  "tick": 5,
+  "event_summary": "observe @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "oncall",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0018",
+  "source_event_ids": [
+   "E0018"
+  ],
+  "tick": 5,
+  "event_summary": "远处传来推车轮子碾过地砖的声音，渐渐远了。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "bar",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0019",
+  "source_event_ids": [
+   "E0019"
+  ],
+  "tick": 6,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0020",
+  "source_event_ids": [
+   "E0020"
+  ],
+  "tick": 6,
+  "event_summary": "move @ ward",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "ward",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0021",
+  "source_event_ids": [
+   "E0021"
+  ],
+  "tick": 6,
+  "event_summary": "observe @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "oncall",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0022",
+  "source_event_ids": [
+   "E0022"
+  ],
+  "tick": 6,
+  "event_summary": "病房尽头的监护仪轻轻响了两声，又恢复了平稳。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "ward",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0023",
+  "source_event_ids": [
+   "E0023"
+  ],
+  "tick": 7,
+  "event_summary": "move @ pharmacy",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "pharmacy",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0024",
+  "source_event_ids": [
+   "E0024"
+  ],
+  "tick": 7,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0025",
+  "source_event_ids": [
+   "E0025"
+  ],
+  "tick": 7,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0026",
+  "source_event_ids": [
+   "E0026"
+  ],
+  "tick": 7,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0027",
+  "source_event_ids": [
+   "E0027"
+  ],
+  "tick": 7,
+  "event_summary": "病房尽头的监护仪轻轻响了两声，又恢复了平稳。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "ward",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0028",
+  "source_event_ids": [
+   "E0028"
+  ],
+  "tick": 8,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0029",
+  "source_event_ids": [
+   "E0029"
+  ],
+  "tick": 8,
+  "event_summary": "move @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "oncall",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0030",
+  "source_event_ids": [
+   "E0030"
+  ],
+  "tick": 8,
+  "event_summary": "speak_failed @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "speak_failed",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0031",
+  "source_event_ids": [
+   "E0031"
+  ],
+  "tick": 8,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0032",
+  "source_event_ids": [
+   "E0032"
+  ],
+  "tick": 8,
+  "event_summary": "session_end @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0033",
+  "source_event_ids": [
+   "E0033"
+  ],
+  "tick": 9,
+  "event_summary": "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu",
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0034",
+  "source_event_ids": [
+   "E0034"
+  ],
+  "tick": 9,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0035",
+  "source_event_ids": [
+   "E0035"
+  ],
+  "tick": 9,
+  "event_summary": "沈默：退烧药补上了没有？我这边等着确认。",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0036",
+  "source_event_ids": [
+   "E0036"
+  ],
+  "tick": 9,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0037",
+  "source_event_ids": [
+   "E0037"
+  ],
+  "tick": 9,
+  "event_summary": "session_end @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0038",
+  "source_event_ids": [
+   "E0038"
+  ],
+  "tick": 10,
+  "event_summary": "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu",
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0039",
+  "source_event_ids": [
+   "E0039"
+  ],
+  "tick": 10,
+  "event_summary": "move @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "oncall",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0040",
+  "source_event_ids": [
+   "E0040"
+  ],
+  "tick": 10,
+  "event_summary": "speak_failed @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "speak_failed",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0041",
+  "source_event_ids": [
+   "E0041"
+  ],
+  "tick": 10,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0042",
+  "source_event_ids": [
+   "E0042"
+  ],
+  "tick": 10,
+  "event_summary": "session_end @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0043",
+  "source_event_ids": [
+   "E0043"
+  ],
+  "tick": 10,
+  "event_summary": "后院的窗棂被风吹得咯咯作响。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "yard",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0044",
+  "source_event_ids": [
+   "E0044"
+  ],
+  "tick": 11,
+  "event_summary": "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu",
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0045",
+  "source_event_ids": [
+   "E0045"
+  ],
+  "tick": 11,
+  "event_summary": "observe @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "oncall",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0046",
+  "source_event_ids": [
+   "E0046"
+  ],
+  "tick": 11,
+  "event_summary": "沈默：跟你说一声，后半夜有个发高烧的要送来。",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "speak",
+  "dramatic_function": [
+   "revelation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [
+   {
+    "character": "porter_wu",
+    "fact": "fever_patient_coming",
+    "change": "learned",
+    "via": "delivery",
+    "source_event_id": "E0046",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "ENABLED_BY",
+    "target_ne_id": "NE-E0002",
+    "evidence_event_ids": [
+     "E0002",
+     "E0046"
+    ],
+    "confidence": 0.95,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "REVEALED_BY",
+    "target_ne_id": "NE-E0002",
+    "evidence_event_ids": [
+     "E0002",
+     "E0046"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "RESPONDED_TO",
+    "target_ne_id": "NE-E0033",
+    "evidence_event_ids": [
+     "E0033",
+     "E0046"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "RESPONDED_TO",
+    "target_ne_id": "NE-E0038",
+    "evidence_event_ids": [
+     "E0038",
+     "E0046"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0044",
+    "evidence_event_ids": [
+     "E0044",
+     "E0046"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0047",
+  "source_event_ids": [
+   "E0047"
+  ],
+  "tick": 12,
+  "event_summary": "吴大勇：退烧药补上了没有？我这边等着确认。",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu",
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0035",
+    "evidence_event_ids": [
+     "E0035",
+     "E0047"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0048",
+  "source_event_ids": [
+   "E0048"
+  ],
+  "tick": 12,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0049",
+  "source_event_ids": [
+   "E0049"
+  ],
+  "tick": 12,
+  "event_summary": "search @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "search",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0050",
+  "source_event_ids": [
+   "E0050"
+  ],
+  "tick": 12,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0051",
+  "source_event_ids": [
+   "E0051"
+  ],
+  "tick": 12,
+  "event_summary": "session_end @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0052",
+  "source_event_ids": [
+   "E0052"
+  ],
+  "tick": 13,
+  "event_summary": "吴大勇：退烧药补上了没有？我这边等着确认。",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu",
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0053",
+  "source_event_ids": [
+   "E0053"
+  ],
+  "tick": 13,
+  "event_summary": "move @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "oncall",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0054",
+  "source_event_ids": [
+   "E0054"
+  ],
+  "tick": 13,
+  "event_summary": "speak_failed @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "speak_failed",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0055",
+  "source_event_ids": [
+   "E0055"
+  ],
+  "tick": 13,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0056",
+  "source_event_ids": [
+   "E0056"
+  ],
+  "tick": 13,
+  "event_summary": "session_end @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0057",
+  "source_event_ids": [
+   "E0057"
+  ],
+  "tick": 13,
+  "event_summary": "值班室的电话响了一声就断了，大概是打错了。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "oncall",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0058",
+  "source_event_ids": [
+   "E0058"
+  ],
+  "tick": 14,
+  "event_summary": "move @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "oncall",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0059",
+  "source_event_ids": [
+   "E0059"
+  ],
+  "tick": 14,
+  "event_summary": "speak_failed @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "speak_failed",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0060",
+  "source_event_ids": [
+   "E0060"
+  ],
+  "tick": 14,
+  "event_summary": "observe @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "oncall",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0061",
+  "source_event_ids": [
+   "E0061"
+  ],
+  "tick": 14,
+  "event_summary": "session_start @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "location": "oncall",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0062",
+  "source_event_ids": [
+   "E0062"
+  ],
+  "tick": 14,
+  "event_summary": "session_end @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0063",
+  "source_event_ids": [
+   "E0063"
+  ],
+  "tick": 14,
+  "event_summary": "值班室的电话响了一声就断了，大概是打错了。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "oncall",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0064",
+  "source_event_ids": [
+   "E0064"
+  ],
+  "tick": 15,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0065",
+  "source_event_ids": [
+   "E0065"
+  ],
+  "tick": 15,
+  "event_summary": "observe @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "oncall",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0066",
+  "source_event_ids": [
+   "E0066"
+  ],
+  "tick": 15,
+  "event_summary": "move @ pharmacy",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "pharmacy",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0067",
+  "source_event_ids": [
+   "E0067"
+  ],
+  "tick": 15,
+  "event_summary": "session_end @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "location": "oncall",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0068",
+  "source_event_ids": [
+   "E0068"
+  ],
+  "tick": 15,
+  "event_summary": "病房尽头的监护仪轻轻响了两声，又恢复了平稳。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "ward",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0069",
+  "source_event_ids": [
+   "E0069"
+  ],
+  "tick": 16,
+  "event_summary": "move @ pharmacy",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "pharmacy",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0070",
+  "source_event_ids": [
+   "E0070"
+  ],
+  "tick": 16,
+  "event_summary": "search @ pharmacy",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "pharmacy",
+  "event_type": "search",
+  "dramatic_function": [
+   "discovery"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 1.0,
+  "knowledge_changes": [
+   {
+    "character": "doctor_shen",
+    "fact": "fever_medicine_restocked",
+    "change": "learned",
+    "via": "find",
+    "source_event_id": "E0070",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [
+   {
+    "character": "doctor_shen",
+    "dimension": "belief",
+    "description": "learned fever_medicine_restocked by finding fever_medicine",
+    "evidence_event_ids": [
+     "E0070"
+    ],
+    "evidence_level": "interpretation",
+    "confidence": 1.0
+   }
+  ],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0071",
+  "source_event_ids": [
+   "E0071"
+  ],
+  "tick": 16,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0072",
+  "source_event_ids": [
+   "E0072"
+  ],
+  "tick": 16,
+  "event_summary": "session_start @ pharmacy",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "pharmacy",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0073",
+  "source_event_ids": [
+   "E0073"
+  ],
+  "tick": 17,
+  "event_summary": "吴大勇：退烧药补上了没有？我这边等着确认。",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu",
+   "doctor_shen"
+  ],
+  "location": "pharmacy",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0074",
+  "source_event_ids": [
+   "E0074"
+  ],
+  "tick": 17,
+  "event_summary": "observe @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0075",
+  "source_event_ids": [
+   "E0075"
+  ],
+  "tick": 17,
+  "event_summary": "沈默：退烧药已经补上了，放在我手边，随时能用。",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "pharmacy",
+  "event_type": "speak",
+  "dramatic_function": [
+   "revelation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [
+   {
+    "character": "porter_wu",
+    "fact": "fever_medicine_restocked",
+    "change": "learned",
+    "via": "delivery",
+    "source_event_id": "E0075",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "ENABLED_BY",
+    "target_ne_id": "NE-E0070",
+    "evidence_event_ids": [
+     "E0070",
+     "E0075"
+    ],
+    "confidence": 0.95,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "REVEALED_BY",
+    "target_ne_id": "NE-E0070",
+    "evidence_event_ids": [
+     "E0070",
+     "E0075"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0073",
+    "evidence_event_ids": [
+     "E0073",
+     "E0075"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0076",
+  "source_event_ids": [
+   "E0076"
+  ],
+  "tick": 18,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0077",
+  "source_event_ids": [
+   "E0077"
+  ],
+  "tick": 18,
+  "event_summary": "move @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "oncall",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0078",
+  "source_event_ids": [
+   "E0078"
+  ],
+  "tick": 18,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0079",
+  "source_event_ids": [
+   "E0079"
+  ],
+  "tick": 18,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0080",
+  "source_event_ids": [
+   "E0080"
+  ],
+  "tick": 18,
+  "event_summary": "session_end @ pharmacy",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "pharmacy",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0081",
+  "source_event_ids": [
+   "E0081"
+  ],
+  "tick": 18,
+  "event_summary": "后院的窗棂被风吹得咯咯作响。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "yard",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0082",
+  "source_event_ids": [
+   "E0082"
+  ],
+  "tick": 19,
+  "event_summary": "move @ ward",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "ward",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0083",
+  "source_event_ids": [
+   "E0083"
+  ],
+  "tick": 19,
+  "event_summary": "speak_failed @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "speak_failed",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0084",
+  "source_event_ids": [
+   "E0084"
+  ],
+  "tick": 19,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0085",
+  "source_event_ids": [
+   "E0085"
+  ],
+  "tick": 19,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0086",
+  "source_event_ids": [
+   "E0086"
+  ],
+  "tick": 19,
+  "event_summary": "session_end @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0087",
+  "source_event_ids": [
+   "E0087"
+  ],
+  "tick": 20,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0088",
+  "source_event_ids": [
+   "E0088"
+  ],
+  "tick": 20,
+  "event_summary": "listen @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "listen",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0089",
+  "source_event_ids": [
+   "E0089"
+  ],
+  "tick": 20,
+  "event_summary": "move @ oncall",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "oncall",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0090",
+  "source_event_ids": [
+   "E0090"
+  ],
+  "tick": 20,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0091",
+  "source_event_ids": [
+   "E0091"
+  ],
+  "tick": 20,
+  "event_summary": "session_end @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0092",
+  "source_event_ids": [
+   "E0092"
+  ],
+  "tick": 21,
+  "event_summary": "吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu",
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.7,
+  "knowledge_changes": [
+   {
+    "character": "doctor_shen",
+    "fact": "fever_patient_coming",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0092",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "nurse_lin",
+    "fact": "fever_patient_coming",
+    "change": "learned",
+    "via": "delivery",
+    "source_event_id": "E0092",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "REVEALED_BY",
+    "target_ne_id": "NE-E0002",
+    "evidence_event_ids": [
+     "E0002",
+     "E0092"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0046",
+    "evidence_event_ids": [
+     "E0046",
+     "E0092"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0093",
+  "source_event_ids": [
+   "E0093"
+  ],
+  "tick": 21,
+  "event_summary": "沈默：退烧药已经补上了，放在我手边，随时能用。",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.7,
+  "knowledge_changes": [
+   {
+    "character": "nurse_lin",
+    "fact": "fever_medicine_restocked",
+    "change": "learned",
+    "via": "delivery",
+    "source_event_id": "E0093",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "porter_wu",
+    "fact": "fever_medicine_restocked",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0093",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "REVEALED_BY",
+    "target_ne_id": "NE-E0070",
+    "evidence_event_ids": [
+     "E0070",
+     "E0093"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0094",
+  "source_event_ids": [
+   "E0094"
+  ],
+  "tick": 21,
+  "event_summary": "move @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0095",
+  "source_event_ids": [
+   "E0095"
+  ],
+  "tick": 21,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0096",
+  "source_event_ids": [
+   "E0096"
+  ],
+  "tick": 21,
+  "event_summary": "session_end @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0097",
+  "source_event_ids": [
+   "E0097"
+  ],
+  "tick": 22,
+  "event_summary": "吴大勇：跟你说一声，后半夜有个发高烧的要送来。",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu",
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "doctor_shen",
+    "fact": "fever_patient_coming",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0097",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "nurse_lin",
+    "fact": "fever_patient_coming",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0097",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0098",
+  "source_event_ids": [
+   "E0098"
+  ],
+  "tick": 22,
+  "event_summary": "search @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "search",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0097",
+    "evidence_event_ids": [
+     "E0097",
+     "E0098"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0099",
+  "source_event_ids": [
+   "E0099"
+  ],
+  "tick": 22,
+  "event_summary": "沈默：药补齐了，病人来了也不怕。",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "nurse_lin",
+    "fact": "fever_medicine_restocked",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0099",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "porter_wu",
+    "fact": "fever_medicine_restocked",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0099",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0100",
+  "source_event_ids": [
+   "E0100"
+  ],
+  "tick": 23,
+  "event_summary": "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu",
+   "nurse_lin"
+  ],
+  "location": "triage",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0101",
+  "source_event_ids": [
+   "E0101"
+  ],
+  "tick": 23,
+  "event_summary": "move @ pharmacy",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "pharmacy",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0102",
+  "source_event_ids": [
+   "E0102"
+  ],
+  "tick": 23,
+  "event_summary": "沈默：这事我不清楚，别问我。",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.3,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0103",
+  "source_event_ids": [
+   "E0103"
+  ],
+  "tick": 23,
+  "event_summary": "session_start @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0104",
+  "source_event_ids": [
+   "E0104"
+  ],
+  "tick": 23,
+  "event_summary": "session_end @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen",
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "location": "triage",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0105",
+  "source_event_ids": [
+   "E0105"
+  ],
+  "tick": 24,
+  "event_summary": "吴大勇：这事我不清楚，别问我。",
+  "summary_source": "source_text",
+  "participants": [
+   "porter_wu",
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.3,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0106",
+  "source_event_ids": [
+   "E0106"
+  ],
+  "tick": 24,
+  "event_summary": "search @ pharmacy",
+  "summary_source": "source_text",
+  "participants": [
+   "nurse_lin"
+  ],
+  "location": "pharmacy",
+  "event_type": "search",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0107",
+  "source_event_ids": [
+   "E0107"
+  ],
+  "tick": 24,
+  "event_summary": "listen @ triage",
+  "summary_source": "source_text",
+  "participants": [
+   "doctor_shen"
+  ],
+  "location": "triage",
+  "event_type": "listen",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ }
+]

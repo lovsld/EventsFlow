@@ -1,0 +1,2802 @@
+[
+ {
+  "actors": [
+   "soldier"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "door",
+   "to": "tables"
+  },
+  "found": [],
+  "location": "tables",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0001",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0001",
+  "stance": null,
+  "text": null,
+  "tick": 1,
+  "time": "21:05",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "merchant"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "tables",
+   "to": "back_room"
+  },
+  "found": [],
+  "location": "back_room",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0002",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0002",
+  "stance": null,
+  "text": null,
+  "tick": 1,
+  "time": "21:05",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "owner"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0003",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0003",
+  "stance": null,
+  "text": null,
+  "tick": 1,
+  "time": "21:05",
+  "type": "listen"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "owner"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+   "topic": "rain_starts"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0004",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0004",
+  "stance": null,
+  "text": "窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+  "tick": 1,
+  "time": "21:05",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "soldier"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "tables",
+   "to": "back_room"
+  },
+  "found": [],
+  "location": "back_room",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0005",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0005",
+  "stance": null,
+  "text": null,
+  "tick": 2,
+  "time": "21:10",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "merchant"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "back_room",
+   "to": "tables"
+  },
+  "found": [],
+  "location": "tables",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0006",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0006",
+  "stance": null,
+  "text": null,
+  "tick": 2,
+  "time": "21:10",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "owner"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0007",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0007",
+  "stance": null,
+  "text": null,
+  "tick": 2,
+  "time": "21:10",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "soldier"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": true,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "found": [
+    "anonymous_letter"
+   ]
+  },
+  "found": [
+   "anonymous_letter"
+  ],
+  "location": "back_room",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0008",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0008",
+  "stance": null,
+  "text": null,
+  "tick": 3,
+  "time": "21:15",
+  "type": "search"
+ },
+ {
+  "actors": [
+   "merchant"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "tables",
+   "to": "bar"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0009",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0009",
+  "stance": null,
+  "text": null,
+  "tick": 3,
+  "time": "21:15",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0010",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0010",
+  "stance": null,
+  "text": null,
+  "tick": 3,
+  "time": "21:15",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "merchant",
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S1"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0011",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0011",
+  "stance": null,
+  "text": null,
+  "tick": 3,
+  "time": "21:15",
+  "type": "session_start"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "酒馆门口的铃铛响了一声，又没有人进来。",
+   "topic": "bell_rings"
+  },
+  "found": [],
+  "location": "door",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0012",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0012",
+  "stance": null,
+  "text": "酒馆门口的铃铛响了一声，又没有人进来。",
+  "tick": 3,
+  "time": "21:15",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "soldier"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "back_room",
+   "to": "tables"
+  },
+  "found": [],
+  "location": "tables",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0013",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0013",
+  "stance": null,
+  "text": null,
+  "tick": 4,
+  "time": "21:20",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "merchant",
+   "owner"
+  ],
+  "claim": "business_proposal",
+  "delivered_to": [
+   "merchant",
+   "owner"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": true,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "business_proposal",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+   "topic": "business_proposal"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [
+   "soldier"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0014",
+  "proposition": "business_opportunity",
+  "raw_ref": "world_log.json#E0014",
+  "stance": "assert",
+  "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+  "tick": 4,
+  "time": "21:20",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0015",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0015",
+  "stance": null,
+  "text": null,
+  "tick": 4,
+  "time": "21:20",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "soldier"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "tables",
+   "to": "bar"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0016",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0016",
+  "stance": null,
+  "text": null,
+  "tick": 5,
+  "time": "21:25",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "merchant",
+   "owner"
+  ],
+  "claim": "business_proposal",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "business_proposal",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "米拉：那批货的事，老板真不考虑？价格好商量。",
+   "topic": "business_proposal"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0017",
+  "proposition": "business_opportunity",
+  "raw_ref": "world_log.json#E0017",
+  "stance": "assert",
+  "text": "米拉：那批货的事，老板真不考虑？价格好商量。",
+  "tick": 5,
+  "time": "21:25",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0018",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0018",
+  "stance": null,
+  "text": null,
+  "tick": 5,
+  "time": "21:25",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S2"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0019",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0019",
+  "stance": null,
+  "text": null,
+  "tick": 5,
+  "time": "21:25",
+  "type": "session_start"
+ },
+ {
+  "actors": [
+   "merchant",
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": true,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "session": "S1"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0020",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0020",
+  "stance": null,
+  "text": null,
+  "tick": 5,
+  "time": "21:25",
+  "type": "session_end"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "街上远处有人喊了一嗓子，很快没了声音。",
+   "topic": "distant_shout"
+  },
+  "found": [],
+  "location": "outside",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0021",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0021",
+  "stance": null,
+  "text": "街上远处有人喊了一嗓子，很快没了声音。",
+  "tick": 5,
+  "time": "21:25",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "soldier",
+   "merchant"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": true,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0022",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0022",
+  "stance": "assert",
+  "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 6,
+  "time": "21:30",
+  "type": "confront"
+ },
+ {
+  "actors": [
+   "merchant",
+   "soldier"
+  ],
+  "claim": "business_proposal",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "business_proposal",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+   "topic": "business_proposal"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0023",
+  "proposition": "business_opportunity",
+  "raw_ref": "world_log.json#E0023",
+  "stance": "assert",
+  "text": "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+  "tick": 6,
+  "time": "21:30",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0024",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0024",
+  "stance": null,
+  "text": null,
+  "tick": 6,
+  "time": "21:30",
+  "type": "listen"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+   "topic": "candle_flickers"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0025",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0025",
+  "stance": null,
+  "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+  "tick": 6,
+  "time": "21:30",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "soldier",
+   "merchant"
+  ],
+  "claim": "investigation_probe",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": true,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "investigation_probe",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+   "topic": "investigation_probe"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0026",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0026",
+  "stance": "inquire",
+  "text": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+  "tick": 7,
+  "time": "21:35",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "merchant",
+   "soldier"
+  ],
+  "claim": "business_proposal",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "business_proposal",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+   "topic": "business_proposal"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0027",
+  "proposition": "business_opportunity",
+  "raw_ref": "world_log.json#E0027",
+  "stance": "assert",
+  "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+  "tick": 7,
+  "time": "21:35",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0028",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0028",
+  "stance": null,
+  "text": null,
+  "tick": 7,
+  "time": "21:35",
+  "type": "observe"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+   "topic": "candle_flickers"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0029",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0029",
+  "stance": null,
+  "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+  "tick": 7,
+  "time": "21:35",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "soldier",
+   "owner"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0030",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0030",
+  "stance": "assert",
+  "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 8,
+  "time": "21:40",
+  "type": "confront"
+ },
+ {
+  "actors": [
+   "merchant",
+   "owner"
+  ],
+  "claim": "business_proposal",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "business_proposal",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：那批货的事，老板真不考虑？价格好商量。",
+   "topic": "business_proposal"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0031",
+  "proposition": "business_opportunity",
+  "raw_ref": "world_log.json#E0031",
+  "stance": "assert",
+  "text": "米拉：那批货的事，老板真不考虑？价格好商量。",
+  "tick": 8,
+  "time": "21:40",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner",
+   "soldier"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0032",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0032",
+  "stance": "assert",
+  "text": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 8,
+  "time": "21:40",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "soldier",
+   "owner"
+  ],
+  "claim": "investigation_probe",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "investigation_probe",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+   "topic": "investigation_probe"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0033",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0033",
+  "stance": "inquire",
+  "text": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+  "tick": 9,
+  "time": "21:45",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "merchant",
+   "owner"
+  ],
+  "claim": "bluff_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": true,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "bluff_hint",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+   "topic": "bluff_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0034",
+  "proposition": "speaker_knows_secret",
+  "raw_ref": "world_log.json#E0034",
+  "stance": "assert",
+  "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "tick": 9,
+  "time": "21:45",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner",
+   "soldier"
+  ],
+  "claim": "investigation_probe",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "investigation_probe",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "奥伦：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+   "topic": "investigation_probe"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0035",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0035",
+  "stance": "inquire",
+  "text": "奥伦：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+  "tick": 9,
+  "time": "21:45",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "soldier",
+   "merchant"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0036",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0036",
+  "stance": "assert",
+  "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 10,
+  "time": "21:50",
+  "type": "confront"
+ },
+ {
+  "actors": [
+   "merchant",
+   "soldier"
+  ],
+  "claim": "bluff_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "bluff_hint",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+   "topic": "bluff_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0037",
+  "proposition": "speaker_knows_secret",
+  "raw_ref": "world_log.json#E0037",
+  "stance": "assert",
+  "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "tick": 10,
+  "time": "21:50",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner",
+   "soldier"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0038",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0038",
+  "stance": "assert",
+  "text": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 10,
+  "time": "21:50",
+  "type": "speak"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+   "topic": "candle_flickers"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0039",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0039",
+  "stance": null,
+  "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+  "tick": 10,
+  "time": "21:50",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "soldier",
+   "owner"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0040",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0040",
+  "stance": "assert",
+  "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 11,
+  "time": "21:55",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "merchant",
+   "soldier"
+  ],
+  "claim": "bluff_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "bluff_hint",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+   "topic": "bluff_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0041",
+  "proposition": "speaker_knows_secret",
+  "raw_ref": "world_log.json#E0041",
+  "stance": "assert",
+  "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "tick": 11,
+  "time": "21:55",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0042",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0042",
+  "stance": null,
+  "text": null,
+  "tick": 11,
+  "time": "21:55",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "soldier",
+   "owner"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0043",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0043",
+  "stance": "assert",
+  "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 12,
+  "time": "22:00",
+  "type": "confront"
+ },
+ {
+  "actors": [
+   "merchant",
+   "owner"
+  ],
+  "claim": "bluff_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "bluff_hint",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+   "topic": "bluff_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0044",
+  "proposition": "speaker_knows_secret",
+  "raw_ref": "world_log.json#E0044",
+  "stance": "assert",
+  "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "tick": 12,
+  "time": "22:00",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": "tend_bar"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0045",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0045",
+  "stance": null,
+  "text": null,
+  "tick": 12,
+  "time": "22:00",
+  "type": "work"
+ },
+ {
+  "actors": [
+   "soldier",
+   "merchant"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0046",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0046",
+  "stance": "assert",
+  "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 13,
+  "time": "22:05",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "merchant",
+   "soldier"
+  ],
+  "claim": "business_proposal",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "business_proposal",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+   "topic": "business_proposal"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0047",
+  "proposition": "business_opportunity",
+  "raw_ref": "world_log.json#E0047",
+  "stance": "assert",
+  "text": "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+  "tick": 13,
+  "time": "22:05",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner",
+   "soldier"
+  ],
+  "claim": "denial",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": true,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "denial",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+   "topic": "denial"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0048",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0048",
+  "stance": "deny",
+  "text": "奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+  "tick": 13,
+  "time": "22:05",
+  "type": "speak"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "酒馆门口的铃铛响了一声，又没有人进来。",
+   "topic": "bell_rings"
+  },
+  "found": [],
+  "location": "door",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0049",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0049",
+  "stance": null,
+  "text": "酒馆门口的铃铛响了一声，又没有人进来。",
+  "tick": 13,
+  "time": "22:05",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "soldier",
+   "owner"
+  ],
+  "claim": "investigation_probe",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "investigation_probe",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：老板，你越是不说，我越得查清楚。",
+   "topic": "investigation_probe"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0050",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0050",
+  "stance": "inquire",
+  "text": "凯尔：老板，你越是不说，我越得查清楚。",
+  "tick": 14,
+  "time": "22:10",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "merchant",
+   "soldier"
+  ],
+  "claim": "bluff_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "bluff_hint",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+   "topic": "bluff_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0051",
+  "proposition": "speaker_knows_secret",
+  "raw_ref": "world_log.json#E0051",
+  "stance": "assert",
+  "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "tick": 14,
+  "time": "22:10",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner",
+   "soldier"
+  ],
+  "claim": "investigation_probe",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "investigation_probe",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "奥伦：再问一次，这几天后屋那边，有人动过什么吗？",
+   "topic": "investigation_probe"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0052",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0052",
+  "stance": "inquire",
+  "text": "奥伦：再问一次，这几天后屋那边，有人动过什么吗？",
+  "tick": 14,
+  "time": "22:10",
+  "type": "ask"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "一只野猫碰倒了桌边的空杯子，碎在地上。",
+   "topic": "cat_knocks_glass"
+  },
+  "found": [],
+  "location": "tables",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0053",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0053",
+  "stance": null,
+  "text": "一只野猫碰倒了桌边的空杯子，碎在地上。",
+  "tick": 14,
+  "time": "22:10",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "soldier",
+   "merchant"
+  ],
+  "claim": "investigation_probe",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "investigation_probe",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+   "topic": "investigation_probe"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0054",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0054",
+  "stance": "inquire",
+  "text": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+  "tick": 15,
+  "time": "22:15",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "merchant",
+   "owner"
+  ],
+  "claim": "business_proposal",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "business_proposal",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+   "topic": "business_proposal"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0055",
+  "proposition": "business_opportunity",
+  "raw_ref": "world_log.json#E0055",
+  "stance": "assert",
+  "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+  "tick": 15,
+  "time": "22:15",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner",
+   "soldier"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0056",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0056",
+  "stance": "assert",
+  "text": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 15,
+  "time": "22:15",
+  "type": "speak"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+   "topic": "candle_flickers"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0057",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0057",
+  "stance": null,
+  "text": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+  "tick": 15,
+  "time": "22:15",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "soldier",
+   "owner"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0058",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0058",
+  "stance": "assert",
+  "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 16,
+  "time": "22:20",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "merchant",
+   "soldier"
+  ],
+  "claim": "investigation_probe",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "investigation_probe",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+   "topic": "investigation_probe"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0059",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0059",
+  "stance": "inquire",
+  "text": "米拉：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+  "tick": 16,
+  "time": "22:20",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0060",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0060",
+  "stance": null,
+  "text": null,
+  "tick": 16,
+  "time": "22:20",
+  "type": "listen"
+ },
+ {
+  "actors": [
+   "soldier",
+   "merchant"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0061",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0061",
+  "stance": "assert",
+  "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 17,
+  "time": "22:25",
+  "type": "confront"
+ },
+ {
+  "actors": [
+   "merchant",
+   "soldier"
+  ],
+  "claim": "investigation_probe",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "investigation_probe",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：再问一次，这几天后屋那边，有人动过什么吗？",
+   "topic": "investigation_probe"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0062",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0062",
+  "stance": "inquire",
+  "text": "米拉：再问一次，这几天后屋那边，有人动过什么吗？",
+  "tick": 17,
+  "time": "22:25",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "owner",
+   "merchant"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0063",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0063",
+  "stance": "assert",
+  "text": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 17,
+  "time": "22:25",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "soldier",
+   "owner"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0064",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0064",
+  "stance": "assert",
+  "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 18,
+  "time": "22:30",
+  "type": "confront"
+ },
+ {
+  "actors": [
+   "merchant",
+   "soldier"
+  ],
+  "claim": "denial",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "denial",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "米拉：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+   "topic": "denial"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0065",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0065",
+  "stance": "deny",
+  "text": "米拉：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+  "tick": 18,
+  "time": "22:30",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "owner"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0066",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0066",
+  "stance": null,
+  "text": null,
+  "tick": 18,
+  "time": "22:30",
+  "type": "listen"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "一只野猫碰倒了桌边的空杯子，碎在地上。",
+   "topic": "cat_knocks_glass"
+  },
+  "found": [],
+  "location": "tables",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0067",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0067",
+  "stance": null,
+  "text": "一只野猫碰倒了桌边的空杯子，碎在地上。",
+  "tick": 18,
+  "time": "22:30",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "soldier",
+   "merchant"
+  ],
+  "claim": "mayor_hint",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "mayor_hint",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "topic": "mayor_hint"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0068",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0068",
+  "stance": "assert",
+  "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "tick": 19,
+  "time": "22:35",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "merchant"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0069",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0069",
+  "stance": null,
+  "text": null,
+  "tick": 19,
+  "time": "22:35",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "owner",
+   "soldier"
+  ],
+  "claim": "investigation_probe",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "investigation_probe",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "奥伦：老板，你越是不说，我越得查清楚。",
+   "topic": "investigation_probe"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0070",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0070",
+  "stance": "inquire",
+  "text": "奥伦：老板，你越是不说，我越得查清楚。",
+  "tick": 19,
+  "time": "22:35",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "soldier",
+   "merchant"
+  ],
+  "claim": "investigation_probe",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "investigation_probe",
+   "interrupted": false,
+   "session_location": "bar",
+   "text": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+   "topic": "investigation_probe"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0071",
+  "proposition": "mayor_embezzled",
+  "raw_ref": "world_log.json#E0071",
+  "stance": "inquire",
+  "text": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+  "tick": 20,
+  "time": "22:40",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "merchant"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0072",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0072",
+  "stance": null,
+  "text": null,
+  "tick": 20,
+  "time": "22:40",
+  "type": "listen"
+ },
+ {
+  "actors": [
+   "owner",
+   "soldier"
+  ],
+  "claim": "denial",
+  "delivered_to": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "denial",
+   "interrupted": true,
+   "session_location": "bar",
+   "text": "奥伦：问几遍都一样，我什么都不知道。",
+   "topic": "denial"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0073",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0073",
+  "stance": "deny",
+  "text": "奥伦：问几遍都一样，我什么都不知道。",
+  "tick": 20,
+  "time": "22:40",
+  "type": "speak"
+ }
+]

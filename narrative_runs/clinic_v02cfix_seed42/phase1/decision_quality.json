@@ -1,0 +1,1941 @@
+{
+ "snapshots": [
+  {
+   "tick": 1,
+   "open_questions": [
+    "medicine_stock",
+    "restocked",
+    "supply_restocked"
+   ],
+   "addressed_questions": [
+    "patient_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "oncall",
+    "nurse_lin": "yard",
+    "porter_wu": "ward"
+   }
+  },
+  {
+   "tick": 2,
+   "open_questions": [
+    "medicine_stock",
+    "restocked",
+    "supply_restocked"
+   ],
+   "addressed_questions": [
+    "patient_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "oncall",
+    "nurse_lin": "ward",
+    "porter_wu": "yard"
+   }
+  },
+  {
+   "tick": 3,
+   "open_questions": [
+    "medicine_stock",
+    "restocked",
+    "supply_restocked"
+   ],
+   "addressed_questions": [
+    "patient_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "oncall",
+    "nurse_lin": "yard",
+    "porter_wu": "pharmacy"
+   }
+  },
+  {
+   "tick": 4,
+   "open_questions": [
+    "medicine_stock",
+    "restocked",
+    "supply_restocked"
+   ],
+   "addressed_questions": [
+    "patient_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "oncall",
+    "nurse_lin": "pharmacy",
+    "porter_wu": "yard"
+   }
+  },
+  {
+   "tick": 5,
+   "open_questions": [
+    "medicine_stock",
+    "restocked",
+    "supply_restocked"
+   ],
+   "addressed_questions": [
+    "patient_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "oncall",
+    "nurse_lin": "triage",
+    "porter_wu": "ward"
+   }
+  },
+  {
+   "tick": 6,
+   "open_questions": [
+    "medicine_stock",
+    "restocked",
+    "supply_restocked"
+   ],
+   "addressed_questions": [
+    "patient_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "oncall",
+    "nurse_lin": "ward",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 7,
+   "open_questions": [
+    "medicine_stock",
+    "restocked",
+    "supply_restocked"
+   ],
+   "addressed_questions": [
+    "patient_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "triage",
+    "porter_wu": "pharmacy"
+   }
+  },
+  {
+   "tick": 8,
+   "open_questions": [
+    "medicine_stock",
+    "restocked",
+    "supply_restocked"
+   ],
+   "addressed_questions": [
+    "patient_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "oncall",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 9,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "triage",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 10,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "oncall",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 11,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "oncall",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 12,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "triage",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 13,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "oncall",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 14,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "oncall",
+    "porter_wu": "oncall"
+   }
+  },
+  {
+   "tick": 15,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "pharmacy",
+    "nurse_lin": "oncall",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 16,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "pharmacy",
+    "nurse_lin": "triage",
+    "porter_wu": "pharmacy"
+   }
+  },
+  {
+   "tick": 17,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "pharmacy",
+    "nurse_lin": "triage",
+    "porter_wu": "pharmacy"
+   }
+  },
+  {
+   "tick": 18,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "oncall",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 19,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "triage",
+    "porter_wu": "ward"
+   }
+  },
+  {
+   "tick": 20,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low"
+    ],
+    "porter_wu": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "oncall",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 21,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low",
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "porter_wu": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "triage",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 22,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low",
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "porter_wu": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "triage",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 23,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low",
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "porter_wu": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "pharmacy",
+    "porter_wu": "triage"
+   }
+  },
+  {
+   "tick": 24,
+   "open_questions": [
+    "medicine_stock"
+   ],
+   "addressed_questions": [
+    "patient_coming",
+    "restocked",
+    "supply_restocked"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.375,
+   "known_facts": {
+    "doctor_shen": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "nurse_lin": [
+     "fever_med_low",
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "porter_wu": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "positions": {
+    "doctor_shen": "triage",
+    "nurse_lin": "pharmacy",
+    "porter_wu": "triage"
+   }
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "tick": 1,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock",
+     "restocked",
+     "supply_restocked"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "reveal_information",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0002"
+     ]
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0001",
+      "E0002",
+      "E0002",
+      "E0003"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0001",
+    "E0002",
+    "E0003"
+   ],
+   "rationale": "advanced: information, state; events this tick: 4",
+   "expected": null,
+   "actual": "reveal_information",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D002",
+   "tick": 2,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock",
+     "restocked",
+     "supply_restocked"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0005",
+      "E0006"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0005",
+    "E0006"
+   ],
+   "rationale": "advanced: state; events this tick: 3",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D003",
+   "tick": 3,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock",
+     "restocked",
+     "supply_restocked"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0008"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "rationale": "advanced: state; events this tick: 4",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D004",
+   "tick": 4,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock",
+     "restocked",
+     "supply_restocked"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0013"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0013"
+   ],
+   "rationale": "advanced: state; events this tick: 3",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D005",
+   "tick": 5,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock",
+     "restocked",
+     "supply_restocked"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0016"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0016"
+   ],
+   "rationale": "advanced: state; events this tick: 4",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D006",
+   "tick": 6,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock",
+     "restocked",
+     "supply_restocked"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0019"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0019"
+   ],
+   "rationale": "advanced: state; events this tick: 4",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D007",
+   "tick": 7,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock",
+     "restocked",
+     "supply_restocked"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0025"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0025"
+   ],
+   "rationale": "advanced: state; events this tick: 5",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D008",
+   "tick": 8,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock",
+     "restocked",
+     "supply_restocked"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "1 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0029"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0029"
+   ],
+   "rationale": "advanced: goal, state; events this tick: 5",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D009",
+   "tick": 9,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": true,
+     "evidence": [
+      "E0033",
+      "E0033",
+      "E0035",
+      "E0035"
+     ]
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0033",
+      "E0035",
+      "E0033",
+      "E0035",
+      "E0033",
+      "E0035"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0033",
+    "E0035"
+   ],
+   "rationale": "advanced: relationship, suspense; events this tick: 5",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D010",
+   "tick": 10,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0038",
+      "E0038"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0038"
+   ],
+   "rationale": "advanced: suspense; events this tick: 6",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D011",
+   "tick": 11,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0046"
+     ]
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "7 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0044",
+      "E0046",
+      "E0044",
+      "E0046"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0044",
+    "E0046"
+   ],
+   "rationale": "advanced: information, goal, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D012",
+   "tick": 12,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0047",
+      "E0047",
+      "E0047"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0047"
+   ],
+   "rationale": "advanced: suspense; events this tick: 5",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D013",
+   "tick": 13,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0052",
+      "E0052"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0052"
+   ],
+   "rationale": "advanced: suspense; events this tick: 6",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D014",
+   "tick": 14,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0058"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0058"
+   ],
+   "rationale": "advanced: state; events this tick: 6",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D015",
+   "tick": 15,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0066"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0066"
+   ],
+   "rationale": "advanced: state; events this tick: 5",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D016",
+   "tick": 16,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "reveal_information",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0070"
+     ]
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "1 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0070"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "rationale": "advanced: information, goal, state; events this tick: 4",
+   "expected": null,
+   "actual": "reveal_information",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D017",
+   "tick": 17,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0075"
+     ]
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0073",
+      "E0075",
+      "E0073",
+      "E0075"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0073",
+    "E0075"
+   ],
+   "rationale": "advanced: information, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D018",
+   "tick": 18,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "hold_observe",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [],
+   "rationale": "advanced: none; events this tick: 6; motion without progress — events changed no assessed dimension",
+   "expected": null,
+   "actual": "hold_observe",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D019",
+   "tick": 19,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "4 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [],
+   "rationale": "advanced: goal; events this tick: 5",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D020",
+   "tick": 20,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [],
+   "rationale": "advanced: goal; events this tick: 5",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D021",
+   "tick": 21,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0092",
+      "E0093"
+     ]
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "7 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0092",
+      "E0093",
+      "E0092",
+      "E0093",
+      "E0092",
+      "E0093"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0092",
+    "E0093"
+   ],
+   "rationale": "advanced: information, goal, suspense; events this tick: 5",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D022",
+   "tick": 22,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0097",
+      "E0099",
+      "E0097",
+      "E0099",
+      "E0097",
+      "E0099"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0097",
+    "E0099"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D023",
+   "tick": 23,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "3 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0100",
+      "E0100"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0100"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 5",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D024",
+   "tick": 24,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "medicine_stock"
+    ],
+    "story_progress": 0.375
+   },
+   "outcome_type": "hold_observe",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [],
+   "rationale": "advanced: none; events this tick: 3; motion without progress — events changed no assessed dimension",
+   "expected": null,
+   "actual": "hold_observe",
+   "validation": "n/a (retrospective)"
+  }
+ ],
+ "diagnoses": [],
+ "summary": {
+  "ticks": 24,
+  "progress_ticks": 22,
+  "question_progress_ticks": 2,
+  "zero_engagement": false,
+  "mainline_zero_engagement": false,
+  "final_story_progress": 0.375,
+  "diagnosis_count": 0
+ }
+}

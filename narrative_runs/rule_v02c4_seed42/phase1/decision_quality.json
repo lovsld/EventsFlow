@@ -1,0 +1,1875 @@
+{
+ "snapshots": [
+  {
+   "tick": 1,
+   "open_questions": [
+    "letter_exists",
+    "embezzled",
+    "writer_identified",
+    "deal_done",
+    "mayor_informed"
+   ],
+   "addressed_questions": [],
+   "answered_questions": [],
+   "story_progress": 0.0,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "back_room",
+    "soldier": "tables"
+   }
+  },
+  {
+   "tick": 2,
+   "open_questions": [
+    "letter_exists",
+    "embezzled",
+    "writer_identified",
+    "deal_done",
+    "mayor_informed"
+   ],
+   "addressed_questions": [],
+   "answered_questions": [],
+   "story_progress": 0.0,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "tables",
+    "soldier": "back_room"
+   }
+  },
+  {
+   "tick": 3,
+   "open_questions": [
+    "writer_identified",
+    "deal_done",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.3,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "back_room"
+   }
+  },
+  {
+   "tick": 4,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ],
+    "merchant": [
+     "business_opportunity"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "tables"
+   }
+  },
+  {
+   "tick": 5,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled"
+    ],
+    "merchant": [
+     "business_opportunity"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 6,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 7,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 8,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 9,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 10,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 11,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 12,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 13,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 14,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 15,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 16,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 17,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 18,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 19,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  },
+  {
+   "tick": 20,
+   "open_questions": [
+    "writer_identified",
+    "mayor_informed"
+   ],
+   "addressed_questions": [
+    "embezzled",
+    "deal_done"
+   ],
+   "answered_questions": [
+    "letter_exists"
+   ],
+   "story_progress": 0.4,
+   "known_facts": {
+    "owner": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ]
+   },
+   "positions": {
+    "owner": "bar",
+    "merchant": "bar",
+    "soldier": "bar"
+   }
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "tick": 1,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "letter_exists",
+     "embezzled",
+     "writer_identified",
+     "deal_done",
+     "mayor_informed"
+    ],
+    "story_progress": 0.0
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0001",
+      "E0002",
+      "E0003"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0001",
+    "E0002",
+    "E0003"
+   ],
+   "rationale": "advanced: state; events this tick: 4",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D002",
+   "tick": 2,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "letter_exists",
+     "embezzled",
+     "writer_identified",
+     "deal_done",
+     "mayor_informed"
+    ],
+    "story_progress": 0.0
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0005",
+      "E0006"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0005",
+    "E0006"
+   ],
+   "rationale": "advanced: state; events this tick: 3",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D003",
+   "tick": 3,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "deal_done",
+     "mayor_informed"
+    ],
+    "story_progress": 0.3
+   },
+   "outcome_type": "reveal_information",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0008"
+     ]
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0008",
+      "E0009"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0008",
+    "E0009"
+   ],
+   "rationale": "advanced: information, goal, state; events this tick: 5",
+   "expected": null,
+   "actual": "reveal_information",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D004",
+   "tick": 4,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0014",
+      "E0014"
+     ]
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": true,
+     "evidence": [
+      "E0014"
+     ]
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0014",
+      "E0014"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0014"
+   ],
+   "rationale": "advanced: information, relationship, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D005",
+   "tick": 5,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0017"
+     ]
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": true,
+     "evidence": [
+      "E0017"
+     ]
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0016"
+     ]
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0017",
+      "E0017",
+      "E0017"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0016",
+    "E0017"
+   ],
+   "rationale": "advanced: information, relationship, state, suspense; events this tick: 6",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D006",
+   "tick": 6,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "advance_conflict",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0022"
+     ]
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": true,
+     "evidence": [
+      "E0022"
+     ]
+    },
+    "relationship": {
+     "advanced": true,
+     "evidence": [
+      "E0022",
+      "E0022"
+     ]
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0022",
+      "E0023",
+      "E0022",
+      "E0023",
+      "E0022",
+      "E0023"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0022",
+    "E0023"
+   ],
+   "rationale": "advanced: information, conflict, relationship, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "advance_conflict",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D007",
+   "tick": 7,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0026",
+      "E0027",
+      "E0026",
+      "E0027",
+      "E0026",
+      "E0027"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0026",
+    "E0027"
+   ],
+   "rationale": "advanced: suspense; events this tick: 4",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D008",
+   "tick": 8,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "advance_conflict",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "8 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": true,
+     "evidence": [
+      "E0030"
+     ]
+    },
+    "relationship": {
+     "advanced": true,
+     "evidence": [
+      "E0032",
+      "E0032"
+     ]
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0030",
+      "E0031",
+      "E0032",
+      "E0030",
+      "E0031",
+      "E0032",
+      "E0030",
+      "E0031",
+      "E0032"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0030",
+    "E0031",
+    "E0032"
+   ],
+   "rationale": "advanced: goal, conflict, relationship, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "advance_conflict",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D009",
+   "tick": 9,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0034",
+      "E0034",
+      "E0034"
+     ]
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "3 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0033",
+      "E0034",
+      "E0035",
+      "E0033",
+      "E0034",
+      "E0035",
+      "E0033",
+      "E0034",
+      "E0035"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0033",
+    "E0034",
+    "E0035"
+   ],
+   "rationale": "advanced: information, goal, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D010",
+   "tick": 10,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "advance_conflict",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": true,
+     "evidence": [
+      "E0036"
+     ]
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0036",
+      "E0037",
+      "E0038",
+      "E0036",
+      "E0037",
+      "E0038",
+      "E0036",
+      "E0037",
+      "E0038"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0036",
+    "E0037",
+    "E0038"
+   ],
+   "rationale": "advanced: goal, conflict, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "advance_conflict",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D011",
+   "tick": 11,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "3 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0040",
+      "E0041",
+      "E0040",
+      "E0041",
+      "E0040",
+      "E0041"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0040",
+    "E0041"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D012",
+   "tick": 12,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "advance_conflict",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": true,
+     "evidence": [
+      "E0043"
+     ]
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0043",
+      "E0044",
+      "E0043",
+      "E0044",
+      "E0043",
+      "E0044"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0043",
+    "E0044"
+   ],
+   "rationale": "advanced: goal, conflict, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "advance_conflict",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D013",
+   "tick": 13,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0046",
+      "E0047",
+      "E0046",
+      "E0047",
+      "E0046",
+      "E0047"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0046",
+    "E0047"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D014",
+   "tick": 14,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "5 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0050",
+      "E0051",
+      "E0052",
+      "E0050",
+      "E0051",
+      "E0052",
+      "E0050",
+      "E0051",
+      "E0052"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0050",
+    "E0051",
+    "E0052"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D015",
+   "tick": 15,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0054",
+      "E0055",
+      "E0056",
+      "E0054",
+      "E0055",
+      "E0056",
+      "E0054",
+      "E0055",
+      "E0056"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0054",
+    "E0055",
+    "E0056"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D016",
+   "tick": 16,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0058",
+      "E0059",
+      "E0058",
+      "E0059",
+      "E0058",
+      "E0059"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0058",
+    "E0059"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D017",
+   "tick": 17,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "advance_conflict",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": true,
+     "evidence": [
+      "E0061"
+     ]
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0061",
+      "E0062",
+      "E0063",
+      "E0061",
+      "E0062",
+      "E0063",
+      "E0061",
+      "E0062",
+      "E0063"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0061",
+    "E0062",
+    "E0063"
+   ],
+   "rationale": "advanced: goal, conflict, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "advance_conflict",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D018",
+   "tick": 18,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "advance_conflict",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": true,
+     "evidence": [
+      "E0064"
+     ]
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0064",
+      "E0064",
+      "E0064"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0064"
+   ],
+   "rationale": "advanced: goal, conflict, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "advance_conflict",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D019",
+   "tick": 19,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0068",
+      "E0070",
+      "E0068",
+      "E0070",
+      "E0068",
+      "E0070"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0068",
+    "E0070"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D020",
+   "tick": 20,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "writer_identified",
+     "mayor_informed"
+    ],
+    "story_progress": 0.4
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "1 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0071",
+      "E0071",
+      "E0071"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0071"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  }
+ ],
+ "diagnoses": [],
+ "summary": {
+  "ticks": 20,
+  "progress_ticks": 20,
+  "question_progress_ticks": 2,
+  "zero_engagement": false,
+  "mainline_zero_engagement": false,
+  "final_story_progress": 0.4,
+  "diagnosis_count": 0
+ }
+}

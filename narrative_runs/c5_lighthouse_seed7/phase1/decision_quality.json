@@ -1,0 +1,2043 @@
+{
+ "snapshots": [
+  {
+   "tick": 1,
+   "open_questions": [
+    "ship_coming",
+    "horn_ready",
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [],
+   "answered_questions": [],
+   "story_progress": 0.0,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "lamp_room",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 2,
+   "open_questions": [
+    "horn_ready",
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "base",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 3,
+   "open_questions": [
+    "horn_ready",
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "jetty",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 4,
+   "open_questions": [
+    "horn_ready",
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.125,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 5,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 6,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 7,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 8,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "jetty"
+   }
+  },
+  {
+   "tick": 9,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "jetty"
+   }
+  },
+  {
+   "tick": 10,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "base"
+   }
+  },
+  {
+   "tick": 11,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "base"
+   }
+  },
+  {
+   "tick": 12,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "jetty",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "lamp_room"
+   }
+  },
+  {
+   "tick": 13,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "base"
+   }
+  },
+  {
+   "tick": 14,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "lamp_room"
+   }
+  },
+  {
+   "tick": 15,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "base"
+   }
+  },
+  {
+   "tick": 16,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "jetty"
+   }
+  },
+  {
+   "tick": 17,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "base"
+   }
+  },
+  {
+   "tick": 18,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "jetty"
+   }
+  },
+  {
+   "tick": 19,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "jetty",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 20,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 21,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "jetty",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 22,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 23,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "boathouse",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+   }
+  },
+  {
+   "tick": 24,
+   "open_questions": [
+    "lamp_status",
+    "belt_status"
+   ],
+   "addressed_questions": [
+    "ship_coming",
+    "horn_ready"
+   ],
+   "answered_questions": [],
+   "story_progress": 0.25,
+   "known_facts": {
+    "a_gui": [
+     "fog_horn_ready",
+     "jetty_lamp_out",
+     "ship_passing_tonight"
+    ],
+    "keeper_zhou": [
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ],
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready",
+     "ship_passing_tonight"
+    ]
+   },
+   "positions": {
+    "a_gui": "jetty",
+    "keeper_zhou": "boathouse",
+    "lin_tao": "boathouse"
+   }
+  }
+ ],
+ "decisions": [
+  {
+   "decision_id": "D001",
+   "tick": 1,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "ship_coming",
+     "horn_ready",
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.0
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0001",
+      "E0002",
+      "E0003"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0001",
+    "E0002",
+    "E0003"
+   ],
+   "rationale": "advanced: state; events this tick: 5",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D002",
+   "tick": 2,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "horn_ready",
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": true,
+     "evidence": [
+      "E0006"
+     ]
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0008"
+     ]
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0006",
+      "E0006"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0006",
+    "E0008"
+   ],
+   "rationale": "advanced: relationship, state, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D003",
+   "tick": 3,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "horn_ready",
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": true,
+     "evidence": [
+      "E0011"
+     ]
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0012"
+     ]
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0010",
+      "E0011",
+      "E0010",
+      "E0011"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0010",
+    "E0011",
+    "E0012"
+   ],
+   "rationale": "advanced: relationship, state, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D004",
+   "tick": 4,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "horn_ready",
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.125
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": true,
+     "evidence": [
+      "E0014",
+      "E0015"
+     ]
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0016"
+     ]
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0014",
+      "E0015",
+      "E0014",
+      "E0015",
+      "E0014",
+      "E0015"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0014",
+    "E0015",
+    "E0016"
+   ],
+   "rationale": "advanced: relationship, state, suspense; events this tick: 6",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D005",
+   "tick": 5,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": true,
+     "evidence": [
+      "E0022",
+      "E0022"
+     ]
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0020",
+      "E0021",
+      "E0022",
+      "E0020",
+      "E0021",
+      "E0022",
+      "E0020",
+      "E0021",
+      "E0022"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0020",
+    "E0021",
+    "E0022"
+   ],
+   "rationale": "advanced: relationship, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D006",
+   "tick": 6,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0026",
+      "E0026"
+     ]
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "10 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0024",
+      "E0025",
+      "E0026",
+      "E0024",
+      "E0025",
+      "E0026",
+      "E0024",
+      "E0025",
+      "E0026"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0024",
+    "E0025",
+    "E0026"
+   ],
+   "rationale": "advanced: information, goal, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D007",
+   "tick": 7,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "reveal_information",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0027"
+     ]
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0027"
+     ]
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0029",
+      "E0029",
+      "E0029"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0027",
+    "E0029"
+   ],
+   "rationale": "advanced: information, goal, state, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "reveal_information",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D008",
+   "tick": 8,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0031"
+     ]
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0030",
+      "E0030"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0030",
+    "E0031"
+   ],
+   "rationale": "advanced: state, suspense; events this tick: 6",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D009",
+   "tick": 9,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0036",
+      "E0038",
+      "E0036",
+      "E0038"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0036",
+    "E0038"
+   ],
+   "rationale": "advanced: suspense; events this tick: 3",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D010",
+   "tick": 10,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0040"
+     ]
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0039",
+      "E0041",
+      "E0039",
+      "E0041"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0039",
+    "E0040",
+    "E0041"
+   ],
+   "rationale": "advanced: state, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D011",
+   "tick": 11,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "reveal_information",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0044"
+     ]
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0044"
+     ]
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0043",
+      "E0045",
+      "E0043",
+      "E0045"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0043",
+    "E0044",
+    "E0045"
+   ],
+   "rationale": "advanced: information, state, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "reveal_information",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D012",
+   "tick": 12,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "1 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": true,
+     "evidence": [
+      "E0047",
+      "E0048"
+     ]
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [
+    "E0047",
+    "E0048"
+   ],
+   "rationale": "advanced: goal, state; events this tick: 5",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D013",
+   "tick": 13,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "hold_observe",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [],
+   "rationale": "advanced: none; events this tick: 4; motion without progress — events changed no assessed dimension",
+   "expected": null,
+   "actual": "hold_observe",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D014",
+   "tick": 14,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "3 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [],
+   "rationale": "advanced: goal; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D015",
+   "tick": 15,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0059",
+      "E0059"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0059"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D016",
+   "tick": 16,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0063",
+      "E0064",
+      "E0063",
+      "E0064"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0063",
+    "E0064"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D017",
+   "tick": 17,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "2 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0066",
+      "E0066"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0066"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 4",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D018",
+   "tick": 18,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "3 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0070",
+      "E0070"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "rationale": "advanced: goal, suspense; events this tick: 3",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D019",
+   "tick": 19,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "1 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [],
+   "rationale": "advanced: goal; events this tick: 6",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D020",
+   "tick": 20,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "character_choice",
+   "dimensions": {
+    "information": {
+     "advanced": true,
+     "evidence": [
+      "E0080",
+      "E0080"
+     ]
+    },
+    "goal": {
+     "advanced": true,
+     "evidence": [],
+     "detail": "1 goal change(s) in acp log"
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0080",
+      "E0081",
+      "E0080",
+      "E0081",
+      "E0080",
+      "E0081"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0080",
+    "E0081"
+   ],
+   "rationale": "advanced: information, goal, suspense; events this tick: 6",
+   "expected": null,
+   "actual": "character_choice",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D021",
+   "tick": 21,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0086",
+      "E0086"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0086"
+   ],
+   "rationale": "advanced: suspense; events this tick: 5",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D022",
+   "tick": 22,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0091",
+      "E0091",
+      "E0091"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0091"
+   ],
+   "rationale": "advanced: suspense; events this tick: 5",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D023",
+   "tick": 23,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "new_event",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": true,
+     "evidence": [
+      "E0095",
+      "E0096",
+      "E0097",
+      "E0095",
+      "E0096",
+      "E0097",
+      "E0095",
+      "E0096",
+      "E0097"
+     ]
+    }
+   },
+   "evidence_event_ids": [
+    "E0095",
+    "E0096",
+    "E0097"
+   ],
+   "rationale": "advanced: suspense; events this tick: 4",
+   "expected": null,
+   "actual": "new_event",
+   "validation": "n/a (retrospective)"
+  },
+  {
+   "decision_id": "D024",
+   "tick": 24,
+   "mode": "retrospective",
+   "state_summary": {
+    "open_questions": [
+     "lamp_status",
+     "belt_status"
+    ],
+    "story_progress": 0.25
+   },
+   "outcome_type": "hold_observe",
+   "dimensions": {
+    "information": {
+     "advanced": false,
+     "evidence": []
+    },
+    "goal": {
+     "advanced": false,
+     "evidence": []
+    },
+    "conflict": {
+     "advanced": false,
+     "evidence": []
+    },
+    "relationship": {
+     "advanced": false,
+     "evidence": []
+    },
+    "state": {
+     "advanced": false,
+     "evidence": []
+    },
+    "suspense": {
+     "advanced": false,
+     "evidence": []
+    }
+   },
+   "evidence_event_ids": [],
+   "rationale": "advanced: none; events this tick: 6; motion without progress — events changed no assessed dimension",
+   "expected": null,
+   "actual": "hold_observe",
+   "validation": "n/a (retrospective)"
+  }
+ ],
+ "diagnoses": [],
+ "summary": {
+  "ticks": 24,
+  "progress_ticks": 22,
+  "question_progress_ticks": 2,
+  "zero_engagement": false,
+  "mainline_zero_engagement": false,
+  "final_story_progress": 0.25,
+  "diagnosis_count": 0
+ }
+}

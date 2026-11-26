@@ -1,0 +1,183 @@
+{
+ "groups": [
+  {
+   "group_id": "MG-V01",
+   "kind": "verbatim_repeat",
+   "speaker": "merchant",
+   "text": "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+   "primary_ne_id": "NE-E0023",
+   "member_ne_ids": [
+    "NE-E0023",
+    "NE-E0047"
+   ]
+  },
+  {
+   "group_id": "MG-V02",
+   "kind": "verbatim_repeat",
+   "speaker": "merchant",
+   "text": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+   "primary_ne_id": "NE-E0014",
+   "member_ne_ids": [
+    "NE-E0014",
+    "NE-E0027",
+    "NE-E0055"
+   ]
+  },
+  {
+   "group_id": "MG-V03",
+   "kind": "verbatim_repeat",
+   "speaker": "merchant",
+   "text": "米拉：那批货的事，老板真不考虑？价格好商量。",
+   "primary_ne_id": "NE-E0017",
+   "member_ne_ids": [
+    "NE-E0017",
+    "NE-E0031"
+   ]
+  },
+  {
+   "group_id": "MG-V04",
+   "kind": "verbatim_repeat",
+   "speaker": "merchant",
+   "text": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+   "primary_ne_id": "NE-E0034",
+   "member_ne_ids": [
+    "NE-E0034",
+    "NE-E0037",
+    "NE-E0041",
+    "NE-E0044",
+    "NE-E0051"
+   ]
+  },
+  {
+   "group_id": "MG-V05",
+   "kind": "verbatim_repeat",
+   "speaker": "owner",
+   "text": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "primary_ne_id": "NE-E0032",
+   "member_ne_ids": [
+    "NE-E0032",
+    "NE-E0038",
+    "NE-E0056",
+    "NE-E0063"
+   ]
+  },
+  {
+   "group_id": "MG-V06",
+   "kind": "verbatim_repeat",
+   "speaker": "soldier",
+   "text": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+   "primary_ne_id": "NE-E0033",
+   "member_ne_ids": [
+    "NE-E0033",
+    "NE-E0071"
+   ]
+  },
+  {
+   "group_id": "MG-V07",
+   "kind": "verbatim_repeat",
+   "speaker": "soldier",
+   "text": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+   "primary_ne_id": "NE-E0026",
+   "member_ne_ids": [
+    "NE-E0026",
+    "NE-E0054"
+   ]
+  },
+  {
+   "group_id": "MG-V08",
+   "kind": "verbatim_repeat",
+   "speaker": "soldier",
+   "text": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+   "primary_ne_id": "NE-E0022",
+   "member_ne_ids": [
+    "NE-E0022",
+    "NE-E0030",
+    "NE-E0036",
+    "NE-E0040",
+    "NE-E0043",
+    "NE-E0046",
+    "NE-E0058",
+    "NE-E0061",
+    "NE-E0064",
+    "NE-E0068"
+   ]
+  },
+  {
+   "group_id": "MG-R09",
+   "kind": "fact_relay",
+   "proposition": "business_opportunity",
+   "stance": "assert",
+   "primary_ne_id": "NE-E0014",
+   "member_ne_ids": [
+    "NE-E0014",
+    "NE-E0017",
+    "NE-E0023",
+    "NE-E0027",
+    "NE-E0031",
+    "NE-E0047",
+    "NE-E0055"
+   ]
+  },
+  {
+   "group_id": "MG-R10",
+   "kind": "fact_relay",
+   "proposition": "mayor_embezzled",
+   "stance": "assert",
+   "primary_ne_id": "NE-E0022",
+   "member_ne_ids": [
+    "NE-E0022",
+    "NE-E0030",
+    "NE-E0032",
+    "NE-E0036",
+    "NE-E0038",
+    "NE-E0040",
+    "NE-E0043",
+    "NE-E0046",
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0061",
+    "NE-E0063",
+    "NE-E0064",
+    "NE-E0068"
+   ]
+  },
+  {
+   "group_id": "MG-R11",
+   "kind": "fact_relay",
+   "proposition": "mayor_embezzled",
+   "stance": "inquire",
+   "primary_ne_id": "NE-E0026",
+   "member_ne_ids": [
+    "NE-E0026",
+    "NE-E0033",
+    "NE-E0035",
+    "NE-E0050",
+    "NE-E0052",
+    "NE-E0054",
+    "NE-E0059",
+    "NE-E0062",
+    "NE-E0070",
+    "NE-E0071"
+   ]
+  },
+  {
+   "group_id": "MG-R12",
+   "kind": "fact_relay",
+   "proposition": "speaker_knows_secret",
+   "stance": "assert",
+   "primary_ne_id": "NE-E0034",
+   "member_ne_ids": [
+    "NE-E0034",
+    "NE-E0037",
+    "NE-E0041",
+    "NE-E0044",
+    "NE-E0051"
+   ]
+  }
+ ],
+ "stats": {
+  "speech_events": 39,
+  "grouped_events": 36,
+  "unique_after_merge": 15
+ }
+}

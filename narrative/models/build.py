@@ -153,7 +153,8 @@ def build_narrative_events(run_dir: Path, narrative_dir: Path
         events.append(NarrativeEvent(
             narrative_event_id=f"NE-{eid}",
             source_event_ids=[eid], tick=tick,
-            event_summary=summary, summary_source="source_text",
+            event_summary=summary,
+            summary_source="source_text" if text else "rule",
             participants=actors, location=obs.get("location") or "",
             event_type=obs["type"], dramatic_function=functions,
             narrative_importance=importance,

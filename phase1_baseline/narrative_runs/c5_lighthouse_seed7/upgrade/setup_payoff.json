@@ -1,0 +1,139 @@
+{
+ "records": [
+  {
+   "setup_id": "SP-Q01",
+   "kind": "question",
+   "description": "今晚是否有船通过？",
+   "setup_event_ids": [
+    "NE-E0006"
+   ],
+   "related_thread_id": "main_ship_safety",
+   "expected_payoff": "问题被直接证据回答（ship_passing_tonight）",
+   "actual_payoff_event_ids": [],
+   "status": "reinforcement",
+   "evidence": [
+    "NE-E0026",
+    "NE-E0030"
+   ]
+  },
+  {
+   "setup_id": "SP-Q02",
+   "kind": "question",
+   "description": "雾号是否就绪？",
+   "setup_event_ids": [
+    "NE-E0022"
+   ],
+   "related_thread_id": "main_ship_safety",
+   "expected_payoff": "问题被直接证据回答（fog_horn_ready）",
+   "actual_payoff_event_ids": [],
+   "status": "reinforcement",
+   "evidence": [
+    "NE-E0044",
+    "NE-E0080",
+    "NE-E0080"
+   ]
+  },
+  {
+   "setup_id": "SP-Q03",
+   "kind": "question",
+   "description": "码头灯是否熄灭？",
+   "setup_event_ids": [],
+   "related_thread_id": "main_ship_safety",
+   "expected_payoff": "问题被直接证据回答（jetty_lamp_out）",
+   "actual_payoff_event_ids": [],
+   "status": "unresolved",
+   "evidence": []
+  },
+  {
+   "setup_id": "SP-Q04",
+   "kind": "question",
+   "description": "皮带是否断裂？",
+   "setup_event_ids": [],
+   "related_thread_id": "belt_repair",
+   "expected_payoff": "问题被直接证据回答（belt_broken）",
+   "actual_payoff_event_ids": [],
+   "status": "unresolved",
+   "evidence": []
+  },
+  {
+   "setup_id": "SP-O05",
+   "kind": "object",
+   "description": "物件 signal_lantern 被发现",
+   "setup_event_ids": [
+    "NE-E0027"
+   ],
+   "related_thread_id": "main_ship_safety",
+   "expected_payoff": "物件揭示的事实（None）被证实并解决关联问题",
+   "actual_payoff_event_ids": [],
+   "status": "unresolved",
+   "evidence": [
+    "NE-E0027"
+   ]
+  },
+  {
+   "setup_id": "SP-O06",
+   "kind": "object",
+   "description": "物件 spare_belt 被发现",
+   "setup_event_ids": [
+    "NE-E0044"
+   ],
+   "related_thread_id": "belt_repair",
+   "expected_payoff": "物件揭示的事实（None）被证实并解决关联问题",
+   "actual_payoff_event_ids": [],
+   "status": "unresolved",
+   "evidence": [
+    "NE-E0044"
+   ]
+  }
+ ],
+ "diagnostics": {
+  "SP-Q01": {
+   "discovery_events": [],
+   "corroboration_events": [
+    "NE-E0026",
+    "NE-E0030"
+   ],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-Q02": {
+   "discovery_events": [
+    "NE-E0044"
+   ],
+   "corroboration_events": [
+    "NE-E0080",
+    "NE-E0080"
+   ],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-Q03": {
+   "discovery_events": [],
+   "corroboration_events": [],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-Q04": {
+   "discovery_events": [],
+   "corroboration_events": [],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-O05": {
+   "discovery_events": [],
+   "corroboration_events": [],
+   "resolution_events": [],
+   "note": "discovery is level 1 evidence only; status payoff requires the linked question to be answered by direct evidence"
+  },
+  "SP-O06": {
+   "discovery_events": [],
+   "corroboration_events": [],
+   "resolution_events": [],
+   "note": "discovery is level 1 evidence only; status payoff requires the linked question to be answered by direct evidence"
+  }
+ },
+ "line_states": {
+  "L01": "closed",
+  "L02": "open"
+ }
+}

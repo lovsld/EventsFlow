@@ -6,7 +6,7 @@
   ],
   "tick": 1,
   "event_summary": "move @ tables",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "soldier"
   ],
@@ -30,7 +30,7 @@
   ],
   "tick": 1,
   "event_summary": "move @ back_room",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "merchant"
   ],
@@ -54,7 +54,7 @@
   ],
   "tick": 1,
   "event_summary": "listen @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -100,7 +100,7 @@
   ],
   "tick": 2,
   "event_summary": "move @ back_room",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "soldier"
   ],
@@ -124,7 +124,7 @@
   ],
   "tick": 2,
   "event_summary": "move @ tables",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "merchant"
   ],
@@ -148,7 +148,7 @@
   ],
   "tick": 2,
   "event_summary": "observe @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -172,7 +172,7 @@
   ],
   "tick": 3,
   "event_summary": "search @ back_room",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "soldier"
   ],
@@ -236,7 +236,7 @@
   ],
   "tick": 3,
   "event_summary": "move @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "merchant"
   ],
@@ -260,7 +260,7 @@
   ],
   "tick": 3,
   "event_summary": "observe @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -284,7 +284,7 @@
   ],
   "tick": 3,
   "event_summary": "session_start @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "merchant",
    "owner"
@@ -333,7 +333,7 @@
   ],
   "tick": 4,
   "event_summary": "move @ tables",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "soldier"
   ],
@@ -393,7 +393,7 @@
   ],
   "tick": 4,
   "event_summary": "observe @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -417,7 +417,7 @@
   ],
   "tick": 5,
   "event_summary": "move @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "soldier"
   ],
@@ -495,7 +495,7 @@
   ],
   "tick": 5,
   "event_summary": "observe @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -519,7 +519,7 @@
   ],
   "tick": 5,
   "event_summary": "session_start @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "merchant",
    "owner",
@@ -547,7 +547,7 @@
   ],
   "tick": 5,
   "event_summary": "session_end @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "merchant",
    "owner"
@@ -704,7 +704,7 @@
   ],
   "tick": 6,
   "event_summary": "listen @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -819,7 +819,7 @@
   ],
   "tick": 7,
   "event_summary": "observe @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -1460,7 +1460,7 @@
   ],
   "tick": 11,
   "event_summary": "observe @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -1571,7 +1571,7 @@
   ],
   "tick": 12,
   "event_summary": "work @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -2134,7 +2134,7 @@
   ],
   "tick": 16,
   "event_summary": "listen @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -2426,7 +2426,7 @@
   ],
   "tick": 18,
   "event_summary": "listen @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "owner"
   ],
@@ -2516,7 +2516,7 @@
   ],
   "tick": 19,
   "event_summary": "observe @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "merchant"
   ],
@@ -2618,7 +2618,7 @@
   ],
   "tick": 20,
   "event_summary": "listen @ bar",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "merchant"
   ],

@@ -1,0 +1,540 @@
+{
+ "threads": [
+  {
+   "thread_id": "main_embezzlement",
+   "title": "镇长是否侵吞了公共资金",
+   "central_question": "镇长是否侵吞了公共资金？",
+   "involved_characters": [
+    "owner",
+    "merchant",
+    "soldier"
+   ],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0022",
+    "NE-E0026",
+    "NE-E0030",
+    "NE-E0032",
+    "NE-E0033",
+    "NE-E0035",
+    "NE-E0036",
+    "NE-E0038",
+    "NE-E0040",
+    "NE-E0043",
+    "NE-E0046",
+    "NE-E0050",
+    "NE-E0052",
+    "NE-E0054",
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0059",
+    "NE-E0061",
+    "NE-E0062",
+    "NE-E0063",
+    "NE-E0064",
+    "NE-E0068",
+    "NE-E0070",
+    "NE-E0071"
+   ],
+   "opening_event": "NE-E0022",
+   "turning_points": [
+    "NE-E0022",
+    "NE-E0030",
+    "NE-E0036"
+   ],
+   "climax_event": "NE-E0022",
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.5,
+   "tension": 0.425,
+   "status": "escalating",
+   "unresolved_questions": [
+    "镇长是否侵吞了公共资金？"
+   ],
+   "relations": []
+  },
+  {
+   "thread_id": "secret_letter_writer",
+   "title": "匿名信是谁写的",
+   "central_question": "匿名信的作者是谁？",
+   "involved_characters": [
+    "owner",
+    "soldier"
+   ],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0022",
+    "NE-E0026",
+    "NE-E0030",
+    "NE-E0032",
+    "NE-E0033",
+    "NE-E0035",
+    "NE-E0036",
+    "NE-E0038",
+    "NE-E0040",
+    "NE-E0043",
+    "NE-E0046",
+    "NE-E0050",
+    "NE-E0052",
+    "NE-E0054",
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0059",
+    "NE-E0061",
+    "NE-E0062",
+    "NE-E0063",
+    "NE-E0064",
+    "NE-E0068",
+    "NE-E0070",
+    "NE-E0071"
+   ],
+   "opening_event": "NE-E0022",
+   "turning_points": [
+    "NE-E0022",
+    "NE-E0030",
+    "NE-E0036"
+   ],
+   "climax_event": "NE-E0022",
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.0,
+   "tension": 0.625,
+   "status": "dormant",
+   "unresolved_questions": [
+    "写信人身份是否查明？"
+   ],
+   "relations": []
+  },
+  {
+   "thread_id": "interest_merchant",
+   "title": "商人是否会利用秘密牟利",
+   "central_question": "商人会如何处置自己听到的风声？",
+   "involved_characters": [
+    "merchant",
+    "owner"
+   ],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0014",
+    "NE-E0017",
+    "NE-E0022",
+    "NE-E0023",
+    "NE-E0026",
+    "NE-E0027",
+    "NE-E0030",
+    "NE-E0031",
+    "NE-E0032",
+    "NE-E0033",
+    "NE-E0035",
+    "NE-E0036",
+    "NE-E0038",
+    "NE-E0040",
+    "NE-E0043",
+    "NE-E0046",
+    "NE-E0047",
+    "NE-E0050",
+    "NE-E0052",
+    "NE-E0054",
+    "NE-E0055",
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0059",
+    "NE-E0061",
+    "NE-E0062",
+    "NE-E0063",
+    "NE-E0064",
+    "NE-E0068",
+    "NE-E0070",
+    "NE-E0071"
+   ],
+   "opening_event": "NE-E0014",
+   "turning_points": [
+    "NE-E0022",
+    "NE-E0014",
+    "NE-E0030"
+   ],
+   "climax_event": "NE-E0022",
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.0,
+   "tension": 0.574,
+   "status": "escalating",
+   "unresolved_questions": [
+    "商业交易是否达成？"
+   ],
+   "relations": []
+  },
+  {
+   "thread_id": "trust_owner_soldier",
+   "title": "老板与士兵能否建立信任",
+   "central_question": "对峙之下两人能否互信？",
+   "involved_characters": [
+    "owner",
+    "soldier"
+   ],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0034",
+    "NE-E0037",
+    "NE-E0041",
+    "NE-E0044",
+    "NE-E0051"
+   ],
+   "opening_event": "NE-E0034",
+   "turning_points": [
+    "NE-E0034",
+    "NE-E0037",
+    "NE-E0041"
+   ],
+   "climax_event": "NE-E0034",
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.0,
+   "tension": 0.0,
+   "status": "active",
+   "unresolved_questions": [],
+   "relations": []
+  },
+  {
+   "thread_id": "crisis_leak",
+   "title": "调查泄露的危机",
+   "central_question": "调查的消息会不会传到镇长耳朵里？",
+   "involved_characters": [
+    "soldier",
+    "merchant"
+   ],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0022",
+    "NE-E0026",
+    "NE-E0030",
+    "NE-E0032",
+    "NE-E0033",
+    "NE-E0035",
+    "NE-E0036",
+    "NE-E0038",
+    "NE-E0040",
+    "NE-E0043",
+    "NE-E0046",
+    "NE-E0050",
+    "NE-E0052",
+    "NE-E0054",
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0059",
+    "NE-E0061",
+    "NE-E0062",
+    "NE-E0063",
+    "NE-E0064",
+    "NE-E0068",
+    "NE-E0070",
+    "NE-E0071"
+   ],
+   "opening_event": "NE-E0022",
+   "turning_points": [
+    "NE-E0022",
+    "NE-E0030",
+    "NE-E0036"
+   ],
+   "climax_event": "NE-E0022",
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.0,
+   "tension": 0.625,
+   "status": "escalating",
+   "unresolved_questions": [
+    "镇长是否已得知调查？"
+   ],
+   "relations": [
+    {
+     "other_thread": "main_embezzlement",
+     "relation": "dependent"
+    }
+   ]
+  },
+  {
+   "thread_id": "narrative-L04",
+   "title": "",
+   "central_question": "",
+   "involved_characters": [],
+   "related_conflicts": [],
+   "related_events": [
+    "NE-E0048",
+    "NE-E0065",
+    "NE-E0073"
+   ],
+   "opening_event": "NE-E0048",
+   "turning_points": [
+    "NE-E0048",
+    "NE-E0065",
+    "NE-E0073"
+   ],
+   "climax_event": null,
+   "resolution_event": null,
+   "stakes": "",
+   "progress": 0.0,
+   "tension": 0.0,
+   "status": "open",
+   "unresolved_questions": [],
+   "relations": []
+  }
+ ],
+ "conflicts": [
+  {
+   "conflict_id": "C001",
+   "participants": [
+    "merchant",
+    "soldier"
+   ],
+   "conflict_type": "interest_conflict",
+   "core_issue": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+   "opposing_goals": {},
+   "stakes": "",
+   "severity": 0.605,
+   "tension": 0.505,
+   "escalation_history": [
+    {
+     "tick": 6,
+     "confront_count_so_far": 1
+    },
+    {
+     "tick": 10,
+     "confront_count_so_far": 2
+    },
+    {
+     "tick": 17,
+     "confront_count_so_far": 3
+    }
+   ],
+   "triggering_events": [
+    "NE-E0022"
+   ],
+   "turning_points": [],
+   "resolution_conditions": [
+    "问题「商业交易是否达成？」被直接证据回答",
+    "问题「镇长是否侵吞了公共资金？」被直接证据回答"
+   ],
+   "status": "active"
+  },
+  {
+   "conflict_id": "C002",
+   "participants": [
+    "merchant",
+    "soldier"
+   ],
+   "conflict_type": "goal_conflict",
+   "core_issue": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+   "opposing_goals": {},
+   "stakes": "",
+   "severity": 0.7249999999999999,
+   "tension": 0.605,
+   "escalation_history": [
+    {
+     "tick": 6,
+     "confront_count_so_far": 1
+    },
+    {
+     "tick": 10,
+     "confront_count_so_far": 2
+    },
+    {
+     "tick": 17,
+     "confront_count_so_far": 3
+    }
+   ],
+   "triggering_events": [
+    "NE-E0022"
+   ],
+   "turning_points": [],
+   "resolution_conditions": [],
+   "status": "latent"
+  },
+  {
+   "conflict_id": "C003",
+   "participants": [
+    "merchant",
+    "owner"
+   ],
+   "conflict_type": "resource_conflict",
+   "core_issue": "goals compete for resource tavern_channel",
+   "opposing_goals": {},
+   "stakes": "",
+   "severity": 0.4,
+   "tension": 0.0,
+   "escalation_history": [],
+   "triggering_events": [],
+   "turning_points": [],
+   "resolution_conditions": [],
+   "status": "latent"
+  },
+  {
+   "conflict_id": "C004",
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "conflict_type": "information_conflict",
+   "core_issue": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+   "opposing_goals": {},
+   "stakes": "",
+   "severity": 1.0,
+   "tension": 0.704,
+   "escalation_history": [
+    {
+     "tick": 6,
+     "confront_count_so_far": 1
+    },
+    {
+     "tick": 8,
+     "confront_count_so_far": 2
+    },
+    {
+     "tick": 10,
+     "confront_count_so_far": 3
+    },
+    {
+     "tick": 12,
+     "confront_count_so_far": 4
+    },
+    {
+     "tick": 17,
+     "confront_count_so_far": 5
+    },
+    {
+     "tick": 18,
+     "confront_count_so_far": 6
+    }
+   ],
+   "triggering_events": [
+    "NE-E0022"
+   ],
+   "turning_points": [],
+   "resolution_conditions": [
+    "问题「镇长是否侵吞了公共资金？」被直接证据回答"
+   ],
+   "status": "escalating"
+  },
+  {
+   "conflict_id": "C005",
+   "participants": [
+    "owner",
+    "soldier"
+   ],
+   "conflict_type": "information_conflict",
+   "core_issue": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+   "opposing_goals": {},
+   "stakes": "",
+   "severity": 0.575,
+   "tension": 0.625,
+   "escalation_history": [
+    {
+     "tick": 8,
+     "confront_count_so_far": 1
+    },
+    {
+     "tick": 12,
+     "confront_count_so_far": 2
+    },
+    {
+     "tick": 18,
+     "confront_count_so_far": 3
+    }
+   ],
+   "triggering_events": [
+    "NE-E0030"
+   ],
+   "turning_points": [],
+   "resolution_conditions": [
+    "问题「写信人身份是否查明？」被直接证据回答"
+   ],
+   "status": "latent"
+  },
+  {
+   "conflict_id": "C006",
+   "participants": [
+    "merchant",
+    "owner"
+   ],
+   "conflict_type": "information_conflict",
+   "core_issue": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+   "opposing_goals": {},
+   "stakes": "",
+   "severity": 0.38999999999999996,
+   "tension": 0.01,
+   "escalation_history": [],
+   "triggering_events": [
+    "NE-E0063"
+   ],
+   "turning_points": [],
+   "resolution_conditions": [
+    "问题「商业交易是否达成？」被直接证据回答"
+   ],
+   "status": "latent"
+  }
+ ],
+ "diagnostics": {
+  "main_embezzlement": {
+   "v03_status": "escalating",
+   "v03_progress": 0.5,
+   "narrative_line_states": [
+    {
+     "line_id": "L01",
+     "state": "closed"
+    }
+   ],
+   "calibre_note": "progress is information-evidence based (v03); a narrative line may be closed by action completion while progress stays low — both are kept."
+  },
+  "secret_letter_writer": {
+   "v03_status": "dormant",
+   "v03_progress": 0.0,
+   "narrative_line_states": [
+    {
+     "line_id": "L01",
+     "state": "closed"
+    }
+   ],
+   "calibre_note": "progress is information-evidence based (v03); a narrative line may be closed by action completion while progress stays low — both are kept."
+  },
+  "interest_merchant": {
+   "v03_status": "escalating",
+   "v03_progress": 0.0,
+   "narrative_line_states": [
+    {
+     "line_id": "L01",
+     "state": "closed"
+    },
+    {
+     "line_id": "L02",
+     "state": "closed"
+    }
+   ],
+   "calibre_note": "progress is information-evidence based (v03); a narrative line may be closed by action completion while progress stays low — both are kept."
+  },
+  "trust_owner_soldier": {
+   "v03_status": "active",
+   "v03_progress": 0.0,
+   "narrative_line_states": [
+    {
+     "line_id": "L03",
+     "state": "closed"
+    }
+   ],
+   "calibre_note": "progress is information-evidence based (v03); a narrative line may be closed by action completion while progress stays low — both are kept."
+  },
+  "crisis_leak": {
+   "v03_status": "escalating",
+   "v03_progress": 0.0,
+   "narrative_line_states": [
+    {
+     "line_id": "L01",
+     "state": "closed"
+    }
+   ],
+   "calibre_note": "progress is information-evidence based (v03); a narrative line may be closed by action completion while progress stays low — both are kept."
+  },
+  "narrative-L04": {
+   "source": "narrative storyline only (no v03 thread)"
+  }
+ }
+}

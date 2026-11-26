@@ -1,0 +1,575 @@
+{
+ "emotions": [
+  {
+   "character_id": "merchant",
+   "scene_id": "SC01",
+   "tick": 3,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "owner",
+   "scene_id": "SC01",
+   "tick": 4,
+   "emotion": "anticipation",
+   "intensity": 0.5,
+   "confidence": 0.35,
+   "evidence_event_ids": [
+    "E0014"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "scene_id": "SC01",
+   "tick": 3,
+   "emotion": "surprise",
+   "intensity": 0.7,
+   "confidence": 0.6,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "scene_id": "SC02",
+   "tick": 6,
+   "emotion": "anticipation",
+   "intensity": 0.5,
+   "confidence": 0.35,
+   "evidence_event_ids": [
+    "E0022"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "owner",
+   "scene_id": "SC02",
+   "tick": 6,
+   "emotion": "anticipation",
+   "intensity": 0.5,
+   "confidence": 0.35,
+   "evidence_event_ids": [
+    "E0022"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "scene_id": "SC02",
+   "tick": 6,
+   "emotion": "anger",
+   "intensity": 0.6,
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0017",
+    "E0022",
+    "E0030"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "scene_id": "SC03",
+   "tick": 9,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "owner",
+   "scene_id": "SC03",
+   "tick": 9,
+   "emotion": "anticipation",
+   "intensity": 0.5,
+   "confidence": 0.35,
+   "evidence_event_ids": [
+    "E0034"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "scene_id": "SC03",
+   "tick": 10,
+   "emotion": "anger",
+   "intensity": 0.6,
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0034",
+    "E0036"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "scene_id": "SC04",
+   "tick": 12,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "owner",
+   "scene_id": "SC04",
+   "tick": 13,
+   "emotion": "anger",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0048"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "scene_id": "SC04",
+   "tick": 12,
+   "emotion": "anger",
+   "intensity": 0.6,
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0043"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "scene_id": "SC05",
+   "tick": 18,
+   "emotion": "anger",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0065"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "owner",
+   "scene_id": "SC05",
+   "tick": 20,
+   "emotion": "anger",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0073"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "scene_id": "SC05",
+   "tick": 17,
+   "emotion": "anger",
+   "intensity": 0.6,
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0061",
+    "E0064"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  }
+ ],
+ "motivated_by": [
+  {
+   "character_id": "merchant",
+   "action_event_id": "E0014",
+   "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "thread_id": "interest_merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "action_event_id": "E0017",
+   "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "thread_id": "interest_merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0022",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "action_event_id": "E0023",
+   "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "thread_id": "interest_merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0026",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "action_event_id": "E0027",
+   "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "thread_id": "interest_merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0030",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "action_event_id": "E0031",
+   "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "thread_id": "interest_merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0033",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0036",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0040",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0043",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0046",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "action_event_id": "E0047",
+   "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "thread_id": "interest_merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0050",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0054",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "action_event_id": "E0055",
+   "motivation": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "thread_id": "interest_merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0058",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "action_event_id": "E0059",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0022"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0061",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "merchant",
+   "action_event_id": "E0062",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0022"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0064",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0068",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "soldier",
+   "action_event_id": "E0071",
+   "motivation": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "thread_id": "crisis_leak",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  }
+ ],
+ "diagnostics": {
+  "key_actions": 40,
+  "motivated_actions": 24,
+  "emotion_records": 15,
+  "unknown_emotions": 3
+ }
+}

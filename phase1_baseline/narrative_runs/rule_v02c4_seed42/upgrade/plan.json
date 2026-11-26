@@ -1,0 +1,361 @@
+{
+ "story": {
+  "title": "小镇酒馆的匿名信",
+  "theme": "利益与信任",
+  "central_question": "镇长是否侵吞了公共资金？",
+  "main_thread": "main_embezzlement",
+  "sub_threads": [
+   "secret_letter_writer",
+   "interest_merchant",
+   "trust_owner_soldier",
+   "crisis_leak",
+   "narrative-L04"
+  ],
+  "main_characters": [
+   "owner",
+   "merchant",
+   "soldier"
+  ],
+  "core_conflicts": [
+   "C001",
+   "C002",
+   "C003",
+   "C004",
+   "C005",
+   "C006"
+  ],
+  "key_turning_points": [
+   "NE-E0008",
+   "NE-E0014",
+   "NE-E0022",
+   "NE-E0034"
+  ],
+  "climax_candidates": [
+   "NE-E0008",
+   "NE-E0022",
+   "NE-E0014"
+  ],
+  "ending_state": "线索「镇长是否侵吞了公共资金」状态 escalating，未答问题 1 个；线索「匿名信是谁写的」状态 dormant，未答问题 1 个；线索「商人是否会利用秘密牟利」状态 escalating，未答问题 1 个；线索「老板与士兵能否建立信任」状态 active，未答问题 0 个；线索「调查泄露的危机」状态 escalating，未答问题 1 个；线索「narrative-L04」状态 open，未答问题 0 个"
+ },
+ "chapters": [
+  {
+   "chapter_id": "CH01",
+   "chapter_title": "第1章",
+   "narrative_purpose": "商人会如何处置自己听到的风声？",
+   "opening_state": {
+    "known_facts_total": 0
+   },
+   "ending_state": {
+    "known_facts_total": 3
+   },
+   "included_threads": [
+    "interest_merchant"
+   ],
+   "included_events": [
+    "NE-E0008",
+    "NE-E0014"
+   ],
+   "turning_point": "NE-E0008",
+   "unresolved_questions": [
+    "商业交易是否达成？"
+   ],
+   "emotional_curve": [
+    0.574
+   ]
+  },
+  {
+   "chapter_id": "CH02",
+   "chapter_title": "第2章",
+   "narrative_purpose": "商人会如何处置自己听到的风声？",
+   "opening_state": {
+    "known_facts_total": 3
+   },
+   "ending_state": {
+    "known_facts_total": 3
+   },
+   "included_threads": [
+    "interest_merchant"
+   ],
+   "included_events": [
+    "NE-E0017",
+    "NE-E0022",
+    "NE-E0023",
+    "NE-E0026",
+    "NE-E0027",
+    "NE-E0030",
+    "NE-E0031",
+    "NE-E0032",
+    "NE-E0033"
+   ],
+   "turning_point": "NE-E0022",
+   "unresolved_questions": [
+    "商业交易是否达成？"
+   ],
+   "emotional_curve": [
+    0.574
+   ]
+  },
+  {
+   "chapter_id": "CH03",
+   "chapter_title": "第3章",
+   "narrative_purpose": "镇长是否侵吞了公共资金？",
+   "opening_state": {
+    "known_facts_total": 3
+   },
+   "ending_state": {
+    "known_facts_total": 4
+   },
+   "included_threads": [
+    "main_embezzlement"
+   ],
+   "included_events": [
+    "NE-E0034",
+    "NE-E0035",
+    "NE-E0036",
+    "NE-E0037",
+    "NE-E0038",
+    "NE-E0040",
+    "NE-E0041"
+   ],
+   "turning_point": "NE-E0034",
+   "unresolved_questions": [
+    "镇长是否侵吞了公共资金？"
+   ],
+   "emotional_curve": [
+    0.425
+   ]
+  },
+  {
+   "chapter_id": "CH04",
+   "chapter_title": "第4章",
+   "narrative_purpose": "商人会如何处置自己听到的风声？",
+   "opening_state": {
+    "known_facts_total": 4
+   },
+   "ending_state": {
+    "known_facts_total": 4
+   },
+   "included_threads": [
+    "interest_merchant"
+   ],
+   "included_events": [
+    "NE-E0043",
+    "NE-E0044",
+    "NE-E0046",
+    "NE-E0047",
+    "NE-E0048",
+    "NE-E0050",
+    "NE-E0051",
+    "NE-E0052",
+    "NE-E0054",
+    "NE-E0055",
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0059"
+   ],
+   "turning_point": "NE-E0043",
+   "unresolved_questions": [
+    "商业交易是否达成？"
+   ],
+   "emotional_curve": [
+    0.574
+   ]
+  },
+  {
+   "chapter_id": "CH05",
+   "chapter_title": "第5章",
+   "narrative_purpose": "镇长是否侵吞了公共资金？",
+   "opening_state": {
+    "known_facts_total": 4
+   },
+   "ending_state": {
+    "known_facts_total": 4
+   },
+   "included_threads": [
+    "main_embezzlement"
+   ],
+   "included_events": [
+    "NE-E0061",
+    "NE-E0062",
+    "NE-E0063",
+    "NE-E0064",
+    "NE-E0065",
+    "NE-E0068",
+    "NE-E0070",
+    "NE-E0071",
+    "NE-E0073"
+   ],
+   "turning_point": "NE-E0061",
+   "unresolved_questions": [
+    "镇长是否侵吞了公共资金？"
+   ],
+   "emotional_curve": [
+    0.425
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "scene_id": "SC01",
+   "location": "back_room",
+   "time_range": [
+    3,
+    4
+   ],
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "viewpoint_character": "soldier",
+   "scene_goal": "商人会如何处置自己听到的风声？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "interest_merchant",
+   "turning_point": "NE-E0008",
+   "outcome": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+   "next_scene_hook": "商人会如何处置自己听到的风声？",
+   "event_ids": [
+    "NE-E0008",
+    "NE-E0014"
+   ]
+  },
+  {
+   "scene_id": "SC02",
+   "location": "bar",
+   "time_range": [
+    5,
+    9
+   ],
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "viewpoint_character": "owner",
+   "scene_goal": "商人会如何处置自己听到的风声？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "interest_merchant",
+   "turning_point": "NE-E0022",
+   "outcome": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+   "next_scene_hook": "镇长是否侵吞了公共资金？",
+   "event_ids": [
+    "NE-E0017",
+    "NE-E0022",
+    "NE-E0023",
+    "NE-E0026",
+    "NE-E0027",
+    "NE-E0030",
+    "NE-E0031",
+    "NE-E0032",
+    "NE-E0033"
+   ]
+  },
+  {
+   "scene_id": "SC03",
+   "location": "bar",
+   "time_range": [
+    9,
+    11
+   ],
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "viewpoint_character": "owner",
+   "scene_goal": "镇长是否侵吞了公共资金？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_embezzlement",
+   "turning_point": "NE-E0034",
+   "outcome": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+   "next_scene_hook": "商人会如何处置自己听到的风声？",
+   "event_ids": [
+    "NE-E0034",
+    "NE-E0035",
+    "NE-E0036",
+    "NE-E0037",
+    "NE-E0038",
+    "NE-E0040",
+    "NE-E0041"
+   ]
+  },
+  {
+   "scene_id": "SC04",
+   "location": "bar",
+   "time_range": [
+    12,
+    16
+   ],
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "viewpoint_character": "owner",
+   "scene_goal": "商人会如何处置自己听到的风声？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "interest_merchant",
+   "turning_point": "NE-E0043",
+   "outcome": "米拉：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+   "next_scene_hook": "镇长是否侵吞了公共资金？",
+   "event_ids": [
+    "NE-E0043",
+    "NE-E0044",
+    "NE-E0046",
+    "NE-E0047",
+    "NE-E0048",
+    "NE-E0050",
+    "NE-E0051",
+    "NE-E0052",
+    "NE-E0054",
+    "NE-E0055",
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0059"
+   ]
+  },
+  {
+   "scene_id": "SC05",
+   "location": "bar",
+   "time_range": [
+    17,
+    20
+   ],
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "viewpoint_character": "merchant",
+   "scene_goal": "镇长是否侵吞了公共资金？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_embezzlement",
+   "turning_point": "NE-E0061",
+   "outcome": "奥伦：问几遍都一样，我什么都不知道。",
+   "next_scene_hook": "",
+   "event_ids": [
+    "NE-E0061",
+    "NE-E0062",
+    "NE-E0063",
+    "NE-E0064",
+    "NE-E0065",
+    "NE-E0068",
+    "NE-E0070",
+    "NE-E0071",
+    "NE-E0073"
+   ]
+  }
+ ],
+ "validation": {
+  "errors": [],
+  "warnings": [],
+  "checked_events": 73,
+  "scenes": 5,
+  "chapters": 5
+ }
+}

@@ -1,0 +1,95 @@
+{
+ "groups": [
+  {
+   "group_id": "MG-V01",
+   "kind": "verbatim_repeat",
+   "speaker": "doctor_shen",
+   "text": "沈默：退烧药已经补上了，放在我手边，随时能用。",
+   "primary_ne_id": "NE-E0075",
+   "member_ne_ids": [
+    "NE-E0075",
+    "NE-E0093"
+   ]
+  },
+  {
+   "group_id": "MG-V02",
+   "kind": "verbatim_repeat",
+   "speaker": "porter_wu",
+   "text": "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+   "primary_ne_id": "NE-E0033",
+   "member_ne_ids": [
+    "NE-E0033",
+    "NE-E0038",
+    "NE-E0044",
+    "NE-E0100"
+   ]
+  },
+  {
+   "group_id": "MG-V03",
+   "kind": "verbatim_repeat",
+   "speaker": "porter_wu",
+   "text": "吴大勇：退烧药补上了没有？我这边等着确认。",
+   "primary_ne_id": "NE-E0047",
+   "member_ne_ids": [
+    "NE-E0047",
+    "NE-E0052",
+    "NE-E0073"
+   ]
+  },
+  {
+   "group_id": "MG-R04",
+   "kind": "fact_relay",
+   "proposition": "fever_medicine_restocked",
+   "stance": "assert",
+   "primary_ne_id": "NE-E0075",
+   "member_ne_ids": [
+    "NE-E0075",
+    "NE-E0093",
+    "NE-E0099"
+   ]
+  },
+  {
+   "group_id": "MG-R05",
+   "kind": "fact_relay",
+   "proposition": "fever_medicine_restocked",
+   "stance": "inquire",
+   "primary_ne_id": "NE-E0035",
+   "member_ne_ids": [
+    "NE-E0035",
+    "NE-E0047",
+    "NE-E0052",
+    "NE-E0073"
+   ]
+  },
+  {
+   "group_id": "MG-R06",
+   "kind": "fact_relay",
+   "proposition": "fever_patient_coming",
+   "stance": "assert",
+   "primary_ne_id": "NE-E0046",
+   "member_ne_ids": [
+    "NE-E0046",
+    "NE-E0092",
+    "NE-E0097"
+   ]
+  },
+  {
+   "group_id": "MG-R07",
+   "kind": "fact_relay",
+   "proposition": "fever_patient_coming",
+   "stance": "inquire",
+   "primary_ne_id": "NE-E0033",
+   "member_ne_ids": [
+    "NE-E0033",
+    "NE-E0038",
+    "NE-E0044",
+    "NE-E0100"
+   ]
+  }
+ ],
+ "stats": {
+  "speech_events": 16,
+  "grouped_events": 14,
+  "unique_after_merge": 9
+ }
+}

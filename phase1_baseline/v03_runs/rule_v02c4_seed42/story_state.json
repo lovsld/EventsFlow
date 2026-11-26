@@ -1,0 +1,849 @@
+{
+ "story_id": "tavern_secret_v03",
+ "title": "小镇酒馆的匿名信",
+ "genre": "mystery_drama",
+ "theme": "利益与信任",
+ "central_question": "镇长是否侵吞了公共资金？",
+ "stakes": [
+  "若贪腐坐实，商人与镇长的交易财富将受损",
+  "若调查泄露，老板可能遭到报复",
+  "若士兵完不成调查，其职责与荣誉受损"
+ ],
+ "ending_constraints": [
+  "结局必须由模拟事件产生，不预设镇长是否有罪",
+  "不预设任何人物必然背叛、交信或查明真相"
+ ],
+ "tick": 20,
+ "threads": {
+  "main_embezzlement": {
+   "thread_id": "main_embezzlement",
+   "title": "镇长是否侵吞了公共资金",
+   "thread_type": "main",
+   "central_question": "镇长是否侵吞了公共资金？",
+   "status": "escalating",
+   "involved_characters": [
+    "owner",
+    "merchant",
+    "soldier"
+   ],
+   "questions": [
+    {
+     "id": "letter_exists",
+     "text": "匿名信是否真实存在？",
+     "answered_by": "anonymous_letter_exists",
+     "answered_at": 3,
+     "addressed_at": 3
+    },
+    {
+     "id": "embezzled",
+     "text": "镇长是否侵吞了公共资金？",
+     "answered_by": "mayor_embezzled",
+     "answered_at": null,
+     "addressed_at": 3
+    }
+   ],
+   "known_facts": [
+    "mayor_embezzled",
+    "anonymous_letter_exists"
+   ],
+   "stakes": [],
+   "progress": 0.5,
+   "dependencies": [],
+   "related_threads": [
+    "crisis_leak"
+   ],
+   "shared_events": [
+    "E0008",
+    "E0022",
+    "E0026",
+    "E0030",
+    "E0032",
+    "E0033",
+    "E0035",
+    "E0036",
+    "E0038",
+    "E0040",
+    "E0043",
+    "E0046",
+    "E0050",
+    "E0052",
+    "E0054",
+    "E0056",
+    "E0058",
+    "E0059",
+    "E0061",
+    "E0062",
+    "E0063",
+    "E0064",
+    "E0068",
+    "E0070",
+    "E0071"
+   ],
+   "related_events": [
+    "E0008",
+    "E0022",
+    "E0026",
+    "E0030",
+    "E0032",
+    "E0033",
+    "E0035",
+    "E0036",
+    "E0038",
+    "E0040",
+    "E0043",
+    "E0046",
+    "E0050",
+    "E0052",
+    "E0054",
+    "E0056",
+    "E0058",
+    "E0059",
+    "E0061",
+    "E0062",
+    "E0063",
+    "E0064",
+    "E0068",
+    "E0070",
+    "E0071"
+   ],
+   "possible_resolutions": [
+    "贪腐被证实",
+    "镇长被澄清",
+    "悬而未决"
+   ],
+   "created_at": 0,
+   "last_developed_at": 20,
+   "resolved_at": null,
+   "propositions": [
+    "mayor_embezzled"
+   ],
+   "objects": [
+    "anonymous_letter"
+   ],
+   "sensitive_facts": [
+    "mayor_embezzled"
+   ],
+   "known_by": {
+    "owner": [
+     "mayor_embezzled"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ],
+    "merchant": [
+     "mayor_embezzled"
+    ]
+   }
+  },
+  "secret_letter_writer": {
+   "thread_id": "secret_letter_writer",
+   "title": "匿名信是谁写的",
+   "thread_type": "secret",
+   "central_question": "匿名信的作者是谁？",
+   "status": "dormant",
+   "involved_characters": [
+    "owner",
+    "soldier"
+   ],
+   "questions": [
+    {
+     "id": "writer_identified",
+     "text": "写信人身份是否查明？",
+     "answered_by": "letter_source_identified",
+     "answered_at": null,
+     "addressed_at": null
+    }
+   ],
+   "known_facts": [
+    "anonymous_letter_exists",
+    "mayor_embezzled"
+   ],
+   "stakes": [],
+   "progress": 0.0,
+   "dependencies": [],
+   "related_threads": [],
+   "shared_events": [
+    "E0008"
+   ],
+   "related_events": [
+    "E0008"
+   ],
+   "possible_resolutions": [
+    "写信人现身或被查明",
+    "始终成谜"
+   ],
+   "created_at": 0,
+   "last_developed_at": 3,
+   "resolved_at": null,
+   "propositions": [
+    "letter_source_identified",
+    "anonymous_letter_exists"
+   ],
+   "objects": [
+    "anonymous_letter"
+   ],
+   "sensitive_facts": [
+    "anonymous_letter_exists"
+   ],
+   "known_by": {
+    "owner": [
+     "anonymous_letter_exists"
+    ],
+    "soldier": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ]
+   }
+  },
+  "interest_merchant": {
+   "thread_id": "interest_merchant",
+   "title": "商人是否会利用秘密牟利",
+   "thread_type": "interest",
+   "central_question": "商人会如何处置自己听到的风声？",
+   "status": "escalating",
+   "involved_characters": [
+    "merchant",
+    "owner"
+   ],
+   "questions": [
+    {
+     "id": "deal_done",
+     "text": "商业交易是否达成？",
+     "answered_by": "business_opportunity",
+     "answered_at": null,
+     "addressed_at": 4
+    }
+   ],
+   "known_facts": [
+    "mayor_embezzled",
+    "business_opportunity"
+   ],
+   "stakes": [],
+   "progress": 0.0,
+   "dependencies": [],
+   "related_threads": [],
+   "shared_events": [
+    "E0022",
+    "E0026",
+    "E0030",
+    "E0032",
+    "E0033",
+    "E0035",
+    "E0036",
+    "E0038",
+    "E0040",
+    "E0043",
+    "E0046",
+    "E0050",
+    "E0052",
+    "E0054",
+    "E0056",
+    "E0058",
+    "E0059",
+    "E0061",
+    "E0062",
+    "E0063",
+    "E0064",
+    "E0068",
+    "E0070",
+    "E0071"
+   ],
+   "related_events": [
+    "E0014",
+    "E0017",
+    "E0022",
+    "E0023",
+    "E0026",
+    "E0027",
+    "E0030",
+    "E0031",
+    "E0032",
+    "E0033",
+    "E0035",
+    "E0036",
+    "E0038",
+    "E0040",
+    "E0043",
+    "E0046",
+    "E0047",
+    "E0050",
+    "E0052",
+    "E0054",
+    "E0055",
+    "E0056",
+    "E0058",
+    "E0059",
+    "E0061",
+    "E0062",
+    "E0063",
+    "E0064",
+    "E0068",
+    "E0070",
+    "E0071"
+   ],
+   "possible_resolutions": [
+    "达成交易",
+    "交易落空",
+    "秘密被转卖"
+   ],
+   "created_at": 0,
+   "last_developed_at": 20,
+   "resolved_at": null,
+   "propositions": [
+    "business_opportunity",
+    "mayor_embezzled"
+   ],
+   "objects": [],
+   "sensitive_facts": [
+    "mayor_embezzled"
+   ],
+   "known_by": {
+    "owner": [
+     "mayor_embezzled",
+     "business_opportunity"
+    ],
+    "merchant": [
+     "business_opportunity",
+     "mayor_embezzled"
+    ],
+    "soldier": [
+     "business_opportunity",
+     "mayor_embezzled"
+    ]
+   }
+  },
+  "trust_owner_soldier": {
+   "thread_id": "trust_owner_soldier",
+   "title": "老板与士兵能否建立信任",
+   "thread_type": "relationship",
+   "central_question": "对峙之下两人能否互信？",
+   "status": "active",
+   "involved_characters": [
+    "owner",
+    "soldier"
+   ],
+   "questions": [],
+   "known_facts": [
+    "speaker_knows_secret"
+   ],
+   "stakes": [],
+   "progress": 0.0,
+   "dependencies": [],
+   "related_threads": [],
+   "shared_events": [],
+   "related_events": [
+    "E0034",
+    "E0037",
+    "E0041",
+    "E0044",
+    "E0051"
+   ],
+   "possible_resolutions": [
+    "建立信任",
+    "彻底破裂"
+   ],
+   "created_at": 0,
+   "last_developed_at": 14,
+   "resolved_at": null,
+   "propositions": [
+    "speaker_knows_secret"
+   ],
+   "objects": [],
+   "sensitive_facts": [],
+   "known_by": {
+    "soldier": [
+     "speaker_knows_secret"
+    ],
+    "owner": [
+     "speaker_knows_secret"
+    ],
+    "merchant": [
+     "speaker_knows_secret"
+    ]
+   }
+  },
+  "crisis_leak": {
+   "thread_id": "crisis_leak",
+   "title": "调查泄露的危机",
+   "thread_type": "crisis",
+   "central_question": "调查的消息会不会传到镇长耳朵里？",
+   "status": "escalating",
+   "involved_characters": [
+    "soldier",
+    "merchant"
+   ],
+   "questions": [
+    {
+     "id": "mayor_informed",
+     "text": "镇长是否已得知调查？",
+     "answered_by": "mayor_alerted",
+     "answered_at": null,
+     "addressed_at": null
+    }
+   ],
+   "known_facts": [
+    "mayor_embezzled"
+   ],
+   "stakes": [],
+   "progress": 0.0,
+   "dependencies": [
+    "main_embezzlement"
+   ],
+   "related_threads": [
+    "main_embezzlement"
+   ],
+   "shared_events": [
+    "E0022",
+    "E0026",
+    "E0030",
+    "E0032",
+    "E0033",
+    "E0035",
+    "E0036",
+    "E0038",
+    "E0040",
+    "E0043",
+    "E0046",
+    "E0050",
+    "E0052",
+    "E0054",
+    "E0056",
+    "E0058",
+    "E0059",
+    "E0061",
+    "E0062",
+    "E0063",
+    "E0064",
+    "E0068",
+    "E0070",
+    "E0071"
+   ],
+   "related_events": [
+    "E0022",
+    "E0026",
+    "E0030",
+    "E0032",
+    "E0033",
+    "E0035",
+    "E0036",
+    "E0038",
+    "E0040",
+    "E0043",
+    "E0046",
+    "E0050",
+    "E0052",
+    "E0054",
+    "E0056",
+    "E0058",
+    "E0059",
+    "E0061",
+    "E0062",
+    "E0063",
+    "E0064",
+    "E0068",
+    "E0070",
+    "E0071"
+   ],
+   "possible_resolutions": [
+    "镇长提前得知并干预",
+    "调查在暗中完成"
+   ],
+   "created_at": 0,
+   "last_developed_at": 20,
+   "resolved_at": null,
+   "propositions": [
+    "mayor_embezzled"
+   ],
+   "objects": [],
+   "sensitive_facts": [
+    "mayor_embezzled"
+   ],
+   "known_by": {
+    "soldier": [
+     "mayor_embezzled"
+    ],
+    "owner": [
+     "mayor_embezzled"
+    ],
+    "merchant": [
+     "mayor_embezzled"
+    ]
+   }
+  }
+ },
+ "conflicts": {
+  "C001": {
+   "conflict_id": "C001",
+   "conflict_type": "interest",
+   "participants": [
+    "merchant",
+    "soldier"
+   ],
+   "goals_involved": [],
+   "conflicting_interests": [
+    "secrecy_value"
+   ],
+   "severity": 0.605,
+   "escalation": 0.41,
+   "related_threads": [
+    "interest_merchant",
+    "main_embezzlement"
+   ],
+   "related_events": [
+    "E0022",
+    "E0036",
+    "E0046",
+    "E0061",
+    "E0068"
+   ],
+   "status": "active",
+   "basis": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+   "last_touched_at": 19
+  },
+  "C002": {
+   "conflict_id": "C002",
+   "conflict_type": "goal",
+   "participants": [
+    "merchant",
+    "soldier"
+   ],
+   "goals_involved": [
+    "protect_wealth",
+    "complete_investigation"
+   ],
+   "conflicting_interests": [
+    "belief:mayor_embezzled"
+   ],
+   "severity": 0.7249999999999999,
+   "escalation": 0.21000000000000002,
+   "related_threads": [],
+   "related_events": [
+    "E0022",
+    "E0036",
+    "E0061"
+   ],
+   "status": "latent",
+   "basis": "protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions",
+   "last_touched_at": 17
+  },
+  "C003": {
+   "conflict_id": "C003",
+   "conflict_type": "resource",
+   "participants": [
+    "merchant",
+    "owner"
+   ],
+   "goals_involved": [
+    "gain_business",
+    "protect_tavern"
+   ],
+   "conflicting_interests": [
+    "resource:tavern_channel"
+   ],
+   "severity": 0.4,
+   "escalation": 0.0,
+   "related_threads": [],
+   "related_events": [],
+   "status": "latent",
+   "basis": "goals compete for resource tavern_channel",
+   "last_touched_at": 0
+  },
+  "C004": {
+   "conflict_id": "C004",
+   "conflict_type": "information",
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "goals_involved": [],
+   "conflicting_interests": [
+    "asymmetry:main_embezzlement:mayor_embezzled"
+   ],
+   "severity": 1.0,
+   "escalation": 0.98,
+   "related_threads": [
+    "main_embezzlement"
+   ],
+   "related_events": [
+    "E0022",
+    "E0030",
+    "E0032",
+    "E0036",
+    "E0038",
+    "E0040",
+    "E0043",
+    "E0046",
+    "E0056",
+    "E0058",
+    "E0061",
+    "E0063",
+    "E0064",
+    "E0068"
+   ],
+   "status": "escalating",
+   "basis": "['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not",
+   "last_touched_at": 19
+  },
+  "C005": {
+   "conflict_id": "C005",
+   "conflict_type": "information",
+   "participants": [
+    "owner",
+    "soldier"
+   ],
+   "goals_involved": [],
+   "conflicting_interests": [
+    "asymmetry:secret_letter_writer:anonymous_letter_exists"
+   ],
+   "severity": 0.575,
+   "escalation": 0.25,
+   "related_threads": [
+    "secret_letter_writer"
+   ],
+   "related_events": [
+    "E0030",
+    "E0043",
+    "E0064"
+   ],
+   "status": "latent",
+   "basis": "['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not",
+   "last_touched_at": 18
+  },
+  "C006": {
+   "conflict_id": "C006",
+   "conflict_type": "information",
+   "participants": [
+    "merchant",
+    "owner"
+   ],
+   "goals_involved": [],
+   "conflicting_interests": [
+    "asymmetry:interest_merchant:mayor_embezzled"
+   ],
+   "severity": 0.38999999999999996,
+   "escalation": 0.019999999999999993,
+   "related_threads": [
+    "interest_merchant"
+   ],
+   "related_events": [
+    "E0063"
+   ],
+   "status": "latent",
+   "basis": "['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not",
+   "last_touched_at": 17
+  }
+ },
+ "goals": [
+  {
+   "character_id": "merchant",
+   "goal_id": "gain_business",
+   "description": "获得更多商业资源",
+   "priority": 1.0,
+   "urgency": 0.0,
+   "kind": "achievement",
+   "status": "unknown",
+   "success_beliefs": [
+    "business_opportunity"
+   ],
+   "failure_beliefs": [],
+   "required_resources": [
+    "tavern_channel"
+   ],
+   "deadline": null
+  },
+  {
+   "character_id": "merchant",
+   "goal_id": "build_relationships",
+   "description": "建立有价值的人际关系",
+   "priority": 0.8,
+   "urgency": 0.0,
+   "kind": "achievement",
+   "status": "unknown",
+   "success_beliefs": [],
+   "failure_beliefs": [],
+   "required_resources": [],
+   "deadline": null
+  },
+  {
+   "character_id": "merchant",
+   "goal_id": "protect_wealth",
+   "description": "避免损失自己的财富",
+   "priority": 0.85,
+   "urgency": 0.0,
+   "kind": "maintenance",
+   "status": "unknown",
+   "success_beliefs": [],
+   "failure_beliefs": [
+    "mayor_embezzled"
+   ],
+   "required_resources": [],
+   "deadline": null
+  },
+  {
+   "character_id": "owner",
+   "goal_id": "protect_tavern",
+   "description": "保护自己的酒馆",
+   "priority": 1.0,
+   "urgency": 0.0,
+   "kind": "maintenance",
+   "status": "unknown",
+   "success_beliefs": [],
+   "failure_beliefs": [],
+   "required_resources": [
+    "tavern_channel"
+   ],
+   "deadline": null
+  },
+  {
+   "character_id": "owner",
+   "goal_id": "find_letter_source",
+   "description": "搞清楚匿名信的来源",
+   "priority": 0.8,
+   "urgency": 0.0,
+   "kind": "achievement",
+   "status": "unknown",
+   "success_beliefs": [
+    "letter_source_identified"
+   ],
+   "failure_beliefs": [],
+   "required_resources": [],
+   "deadline": null
+  },
+  {
+   "character_id": "owner",
+   "goal_id": "avoid_politics",
+   "description": "避免卷入政治冲突",
+   "priority": 0.9,
+   "urgency": 0.0,
+   "kind": "maintenance",
+   "status": "unknown",
+   "success_beliefs": [],
+   "failure_beliefs": [],
+   "required_resources": [],
+   "deadline": null
+  },
+  {
+   "character_id": "soldier",
+   "goal_id": "complete_investigation",
+   "description": "完成调查任务",
+   "priority": 1.0,
+   "urgency": 0.0,
+   "kind": "achievement",
+   "status": "unknown",
+   "success_beliefs": [
+    "anonymous_letter_exists",
+    "mayor_embezzled",
+    "mayor_cleared"
+   ],
+   "failure_beliefs": [],
+   "required_resources": [],
+   "deadline": null
+  },
+  {
+   "character_id": "soldier",
+   "goal_id": "keep_honor",
+   "description": "维护自己的荣誉",
+   "priority": 0.9,
+   "urgency": 0.0,
+   "kind": "maintenance",
+   "status": "unknown",
+   "success_beliefs": [],
+   "failure_beliefs": [],
+   "required_resources": [],
+   "deadline": null
+  },
+  {
+   "character_id": "soldier",
+   "goal_id": "learn_mayor_truth",
+   "description": "搞清楚镇长是否真的存在问题",
+   "priority": 0.75,
+   "urgency": 0.0,
+   "kind": "achievement",
+   "status": "unknown",
+   "success_beliefs": [
+    "mayor_embezzled",
+    "mayor_cleared"
+   ],
+   "failure_beliefs": [],
+   "required_resources": [],
+   "deadline": null
+  }
+ ],
+ "ticks_since_plot_event": 0,
+ "ticks_since_thread_progress": 0,
+ "ticks_since_belief_change": 0,
+ "change_log": [
+  {
+   "tick": 0,
+   "kind": "story_initialized",
+   "detail": "5 threads, 9 goals"
+  },
+  {
+   "tick": 0,
+   "kind": "conflict_detected",
+   "detail": "C001 interest ['merchant', 'soldier'] (declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden))"
+  },
+  {
+   "tick": 0,
+   "kind": "conflict_detected",
+   "detail": "C002 goal ['merchant', 'soldier'] (protect_wealth and complete_investigation pull belief mayor_embezzled in opposite directions)"
+  },
+  {
+   "tick": 0,
+   "kind": "conflict_detected",
+   "detail": "C003 resource ['merchant', 'owner'] (goals compete for resource tavern_channel)"
+  },
+  {
+   "tick": 0,
+   "kind": "conflict_detected",
+   "detail": "C004 information ['merchant', 'owner', 'soldier'] (['owner'] know mayor_embezzled in thread main_embezzlement; ['merchant', 'soldier'] do not)"
+  },
+  {
+   "tick": 0,
+   "kind": "conflict_detected",
+   "detail": "C005 information ['owner', 'soldier'] (['owner'] know anonymous_letter_exists in thread secret_letter_writer; ['soldier'] do not)"
+  },
+  {
+   "tick": 0,
+   "kind": "conflict_detected",
+   "detail": "C006 information ['merchant', 'owner'] (['owner'] know mayor_embezzled in thread interest_merchant; ['merchant'] do not)"
+  },
+  {
+   "tick": 3,
+   "kind": "question_answered",
+   "detail": "main_embezzlement/letter_exists by direct evidence (anonymous_letter_exists)"
+  },
+  {
+   "tick": 6,
+   "kind": "thread_status",
+   "detail": "main_embezzlement: active -> escalating confrontation or sensitive assertion"
+  },
+  {
+   "tick": 6,
+   "kind": "thread_status",
+   "detail": "interest_merchant: active -> escalating confrontation or sensitive assertion"
+  },
+  {
+   "tick": 6,
+   "kind": "thread_status",
+   "detail": "crisis_leak: active -> escalating confrontation or sensitive assertion"
+  },
+  {
+   "tick": 8,
+   "kind": "thread_status",
+   "detail": "trust_owner_soldier: active -> dormant no development for 8 ticks"
+  },
+  {
+   "tick": 9,
+   "kind": "thread_status",
+   "detail": "trust_owner_soldier: dormant -> active developed"
+  },
+  {
+   "tick": 11,
+   "kind": "thread_status",
+   "detail": "secret_letter_writer: active -> dormant no development for 8 ticks"
+  }
+ ]
+}

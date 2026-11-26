@@ -1,0 +1,337 @@
+{
+ "edges": [
+  {
+   "from": "E0006",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0010",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0011",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "lin_tao",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0014",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0015",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "lin_tao",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0020",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0021",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "lin_tao",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0022",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "keeper_zhou",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0024",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0025",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "lin_tao",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0026",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "keeper_zhou",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0029",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "keeper_zhou",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0030",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0036",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "a_gui",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0038",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "keeper_zhou",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0039",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "a_gui",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0041",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "keeper_zhou",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0043",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "a_gui",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0045",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "keeper_zhou",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0059",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0063",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0064",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "keeper_zhou",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0066",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0070",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0080",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "lin_tao",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0044"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0081",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "keeper_zhou",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0086",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "lin_tao",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0044"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0091",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "lin_tao",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0044"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0095",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "a_gui",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0096",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "character_id": "lin_tao",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0044"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0097",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "character_id": "keeper_zhou",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0030"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  }
+ ],
+ "note": "INFERENCE ONLY — physically separate from the verified causal graph"
+}

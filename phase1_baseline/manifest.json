@@ -1,0 +1,512 @@
+{
+ "runs_v02/rule_v02c4_seed42/world_log.json": {
+  "md5": "cbf84d263ad01e50fca711328c1e78e2",
+  "bytes": 33295,
+  "source": "runs_v02/rule_v02c4_seed42/world_log.json"
+ },
+ "runs_v02/rule_v02c4_seed42/run_meta.json": {
+  "md5": "d1968741241b2d7d95304e2d606cbe95",
+  "bytes": 8381,
+  "source": "runs_v02/rule_v02c4_seed42/run_meta.json"
+ },
+ "runs_v02/rule_v02c4_seed42/summary.json": {
+  "md5": "b3e64e353a6a66b2d422df9e67e63c83",
+  "bytes": 3416,
+  "source": "runs_v02/rule_v02c4_seed42/summary.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/observations.json": {
+  "md5": "bd948b10de2c59a7d074f53986d6ac22",
+  "bytes": 61250,
+  "source": "narrative_runs/rule_v02c4_seed42/observations.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/frontier.json": {
+  "md5": "a8c2151d606bbe78138f5e11f119128e",
+  "bytes": 8682,
+  "source": "narrative_runs/rule_v02c4_seed42/frontier.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/scenes.json": {
+  "md5": "d0c1af6dc2a7c7239cbe0c52ab2a51a0",
+  "bytes": 1617,
+  "source": "narrative_runs/rule_v02c4_seed42/scenes.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/issues.json": {
+  "md5": "58e0494c51d30eb3494f7c9198986bb9",
+  "bytes": 3,
+  "source": "narrative_runs/rule_v02c4_seed42/issues.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/provenance.json": {
+  "md5": "0bd6e84853a4b0c5b41ba66dc56bbb91",
+  "bytes": 1215,
+  "source": "narrative_runs/rule_v02c4_seed42/provenance.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/storylines.json": {
+  "md5": "f40dbe4fbb379265cfa03759ac84a063",
+  "bytes": 10969,
+  "source": "narrative_runs/rule_v02c4_seed42/storylines.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/arcs.json": {
+  "md5": "8bc4391b95f9aa2b6eef9cba3b096918",
+  "bytes": 3655,
+  "source": "narrative_runs/rule_v02c4_seed42/arcs.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/titles.json": {
+  "md5": "87ef031fa6d2d527cfa4037bd66a7300",
+  "bytes": 872,
+  "source": "narrative_runs/rule_v02c4_seed42/titles.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/extractor_issues.json": {
+  "md5": "58e0494c51d30eb3494f7c9198986bb9",
+  "bytes": 3,
+  "source": "narrative_runs/rule_v02c4_seed42/extractor_issues.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/story_A.md": {
+  "md5": "f2c72a88d51038fa59596c8c1e411b25",
+  "bytes": 4969,
+  "source": "narrative_runs/rule_v02c4_seed42/story_A.md"
+ },
+ "narrative_runs/rule_v02c4_seed42/trace_A.json": {
+  "md5": "164ce7497cc0562e1213f727b40f41c9",
+  "bytes": 8640,
+  "source": "narrative_runs/rule_v02c4_seed42/trace_A.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/audit_A.json": {
+  "md5": "f3f3dca2355c6d2b265059952b0bc331",
+  "bytes": 544,
+  "source": "narrative_runs/rule_v02c4_seed42/audit_A.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/story_B.md": {
+  "md5": "5a44c1906427a78ad4e2709cbedcff28",
+  "bytes": 4594,
+  "source": "narrative_runs/rule_v02c4_seed42/story_B.md"
+ },
+ "narrative_runs/rule_v02c4_seed42/trace_B.json": {
+  "md5": "b60b4793400a29fb89ea98dd34f7451e",
+  "bytes": 9183,
+  "source": "narrative_runs/rule_v02c4_seed42/trace_B.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/audit_B.json": {
+  "md5": "a0ee1d55b89819dae0bb93e28b3e3aca",
+  "bytes": 545,
+  "source": "narrative_runs/rule_v02c4_seed42/audit_B.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/narrative_events.json": {
+  "md5": "02357fca0a1dd83dde77b7db2c4f6ae4",
+  "bytes": 61778,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/narrative_events.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/semantic.json": {
+  "md5": "5f7d1dc6b011ebdb597f6e9484f7be70",
+  "bytes": 3826,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/semantic.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/causal_graph.json": {
+  "md5": "2e93632d3a42003672ae910d7a776264",
+  "bytes": 7159,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/causal_graph.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/character_arcs.json": {
+  "md5": "6f5ae13cb083c656caab3f8d97b095c5",
+  "bytes": 7623,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/character_arcs.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/story_views.json": {
+  "md5": "7c439c057ab42fd5e337f247208de17f",
+  "bytes": 11476,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/story_views.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/setup_payoff.json": {
+  "md5": "d50897e67d9d2c670afd896da6f426d4",
+  "bytes": 3861,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/setup_payoff.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/foreshadow_edges.json": {
+  "md5": "56334399468d450ad54e06ad2e585948",
+  "bytes": 16,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/foreshadow_edges.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/plan.json": {
+  "md5": "6455c0a08f3f2aff2bd3a82ebdfe36a1",
+  "bytes": 7630,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/plan.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/novel_v2.md": {
+  "md5": "e02f0f38f41171f64136cf087981fa61",
+  "bytes": 8069,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/novel_v2.md"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/trace_v2.json": {
+  "md5": "d1917e478b0531cc05ca87469b248097",
+  "bytes": 21327,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/trace_v2.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/narrative_quality_report.json": {
+  "md5": "a5cdfa51164b0dd71487fcb1719b1b61",
+  "bytes": 9192,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/narrative_quality_report.json"
+ },
+ "narrative_runs/rule_v02c4_seed42/upgrade/comparison.json": {
+  "md5": "d44e2d0cd25adbe10cf73aa5045fbf20",
+  "bytes": 246,
+  "source": "narrative_runs/rule_v02c4_seed42/upgrade/comparison.json"
+ },
+ "v03_runs/rule_v02c4_seed42/story_state.json": {
+  "md5": "a85f3927f193588f762a6dd000431db0",
+  "bytes": 17665,
+  "source": "v03_runs/rule_v02c4_seed42/story_state.json"
+ },
+ "v03_runs/rule_v02c4_seed42/story_summary.json": {
+  "md5": "ff906cc0c8fe56996be41fb90623cd16",
+  "bytes": 1992,
+  "source": "v03_runs/rule_v02c4_seed42/story_summary.json"
+ },
+ "v03_runs/rule_v02c4_seed42/candidates.json": {
+  "md5": "360633fc59e7fa17c0154cd38ec3ca2c",
+  "bytes": 9362,
+  "source": "v03_runs/rule_v02c4_seed42/candidates.json"
+ },
+ "v03_runs/rule_v02c4_seed42/scenes.json": {
+  "md5": "971c9d589d0544933ebee103acfe5d72",
+  "bytes": 6212,
+  "source": "v03_runs/rule_v02c4_seed42/scenes.json"
+ },
+ "v03_runs/rule_v02c4_seed42/event_graph.json": {
+  "md5": "f3b6e58cb37b87c37fab1efa0f884dae",
+  "bytes": 18500,
+  "source": "v03_runs/rule_v02c4_seed42/event_graph.json"
+ },
+ "v03_runs/rule_v02c4_seed42/scene_packages.json": {
+  "md5": "76dc1ffed8d7859ca8f263063763cf19",
+  "bytes": 8677,
+  "source": "v03_runs/rule_v02c4_seed42/scene_packages.json"
+ },
+ "v03_runs/rule_v02c4_seed42/novel_export.json": {
+  "md5": "8eeaaaee7895ef58fd93c85fd85fbc11",
+  "bytes": 36635,
+  "source": "v03_runs/rule_v02c4_seed42/novel_export.json"
+ },
+ "runs_v02/c5_lighthouse_seed7/world_log.json": {
+  "md5": "6a76a48e98659bf8cf481761781a9833",
+  "bytes": 41557,
+  "source": "runs_v02/c5_lighthouse_seed7/world_log.json"
+ },
+ "runs_v02/c5_lighthouse_seed7/run_meta.json": {
+  "md5": "3b19b19e53801ee3567ec3c594d16c2e",
+  "bytes": 7961,
+  "source": "runs_v02/c5_lighthouse_seed7/run_meta.json"
+ },
+ "runs_v02/c5_lighthouse_seed7/summary.json": {
+  "md5": "b6505dbd84477aa5353c7e0621337046",
+  "bytes": 3294,
+  "source": "runs_v02/c5_lighthouse_seed7/summary.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/observations.json": {
+  "md5": "52e3eaafe5c28662cd0deb4bd16def6d",
+  "bytes": 80972,
+  "source": "narrative_runs/c5_lighthouse_seed7/observations.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/frontier.json": {
+  "md5": "c546c795e08c528337072e06724e52cf",
+  "bytes": 10473,
+  "source": "narrative_runs/c5_lighthouse_seed7/frontier.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/scenes.json": {
+  "md5": "1e074a46aecc5b2d566ffb427ff04dcc",
+  "bytes": 4070,
+  "source": "narrative_runs/c5_lighthouse_seed7/scenes.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/issues.json": {
+  "md5": "58e0494c51d30eb3494f7c9198986bb9",
+  "bytes": 3,
+  "source": "narrative_runs/c5_lighthouse_seed7/issues.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/provenance.json": {
+  "md5": "8733136615188e6e36975507d39242a9",
+  "bytes": 1227,
+  "source": "narrative_runs/c5_lighthouse_seed7/provenance.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/storylines.json": {
+  "md5": "e7bbe8bf8d07516bda012c8801d4faad",
+  "bytes": 10649,
+  "source": "narrative_runs/c5_lighthouse_seed7/storylines.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/arcs.json": {
+  "md5": "fe11e52bcc84222ccc6c2b4902e3816c",
+  "bytes": 4249,
+  "source": "narrative_runs/c5_lighthouse_seed7/arcs.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/titles.json": {
+  "md5": "da9d27c8c904a12ec41d05045c59df4b",
+  "bytes": 439,
+  "source": "narrative_runs/c5_lighthouse_seed7/titles.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/extractor_issues.json": {
+  "md5": "58e0494c51d30eb3494f7c9198986bb9",
+  "bytes": 3,
+  "source": "narrative_runs/c5_lighthouse_seed7/extractor_issues.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/story_B.md": {
+  "md5": "6600fbfed43e97d28ed76a7e7acdec8b",
+  "bytes": 3828,
+  "source": "narrative_runs/c5_lighthouse_seed7/story_B.md"
+ },
+ "narrative_runs/c5_lighthouse_seed7/trace_B.json": {
+  "md5": "60085d3b778d227de6d89cc1dee451d0",
+  "bytes": 9785,
+  "source": "narrative_runs/c5_lighthouse_seed7/trace_B.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/audit_B.json": {
+  "md5": "bf87840e6c1a7ea6f340f031e010c68f",
+  "bytes": 543,
+  "source": "narrative_runs/c5_lighthouse_seed7/audit_B.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/narrative_events.json": {
+  "md5": "cd4d08d6d8904d08deb8c4b919340784",
+  "bytes": 72325,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/narrative_events.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/semantic.json": {
+  "md5": "6197928f47f8128cc10a1d7c461fb5ff",
+  "bytes": 3941,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/semantic.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/causal_graph.json": {
+  "md5": "856bacc40aaafcccfa715b0374ae26a9",
+  "bytes": 6960,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/causal_graph.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/character_arcs.json": {
+  "md5": "789a8a6cd5450e250767be492a5a9483",
+  "bytes": 7009,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/character_arcs.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/story_views.json": {
+  "md5": "437ea995a82da774abfefaf7ad03eb7d",
+  "bytes": 3349,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/story_views.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/setup_payoff.json": {
+  "md5": "2a6b194cfef16a66114eb6a9cce5a8a5",
+  "bytes": 3304,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/setup_payoff.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/foreshadow_edges.json": {
+  "md5": "56334399468d450ad54e06ad2e585948",
+  "bytes": 16,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/foreshadow_edges.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/plan.json": {
+  "md5": "3647759339d889c95273a8edc4cf2cec",
+  "bytes": 9309,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/plan.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/novel_v2.md": {
+  "md5": "cdb3de931bd56377030c3525ddc2c6e9",
+  "bytes": 9739,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/novel_v2.md"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/trace_v2.json": {
+  "md5": "1b69008448a72a8bc1ee7d37aeb77d55",
+  "bytes": 25057,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/trace_v2.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/narrative_quality_report.json": {
+  "md5": "af752bdd29640eff18b836d7b37cf565",
+  "bytes": 9636,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/narrative_quality_report.json"
+ },
+ "narrative_runs/c5_lighthouse_seed7/upgrade/comparison.json": {
+  "md5": "939a86355bcf91cd08988cacad4519a2",
+  "bytes": 244,
+  "source": "narrative_runs/c5_lighthouse_seed7/upgrade/comparison.json"
+ },
+ "v03_runs/c5_lighthouse_seed7/story_state.json": {
+  "md5": "bf7822934c947582ac48d7f51decef37",
+  "bytes": 4223,
+  "source": "v03_runs/c5_lighthouse_seed7/story_state.json"
+ },
+ "v03_runs/c5_lighthouse_seed7/scenes.json": {
+  "md5": "a8ba7b39271c1022b55698fd42356d2b",
+  "bytes": 10626,
+  "source": "v03_runs/c5_lighthouse_seed7/scenes.json"
+ },
+ "v03_runs/c5_lighthouse_seed7/event_graph.json": {
+  "md5": "7ada267cef0e4c49a72255826659323a",
+  "bytes": 25240,
+  "source": "v03_runs/c5_lighthouse_seed7/event_graph.json"
+ },
+ "v03_runs/c5_lighthouse_seed7/scene_packages.json": {
+  "md5": "67a93d2ccf2faa1ae5294b9ef8970ce2",
+  "bytes": 14579,
+  "source": "v03_runs/c5_lighthouse_seed7/scene_packages.json"
+ },
+ "runs_v02/clinic_v02cfix_seed42/world_log.json": {
+  "md5": "d4a9e9ebf865f625f7502fba75220388",
+  "bytes": 38473,
+  "source": "runs_v02/clinic_v02cfix_seed42/world_log.json"
+ },
+ "runs_v02/clinic_v02cfix_seed42/run_meta.json": {
+  "md5": "cde35e640e7d9094f712467305605042",
+  "bytes": 7661,
+  "source": "runs_v02/clinic_v02cfix_seed42/run_meta.json"
+ },
+ "runs_v02/clinic_v02cfix_seed42/summary.json": {
+  "md5": "6b4c9d0ac7112b4c2e1be57e33f2403e",
+  "bytes": 2897,
+  "source": "runs_v02/clinic_v02cfix_seed42/summary.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/observations.json": {
+  "md5": "aaae9f03050de8c9ade516d147c03392",
+  "bytes": 77641,
+  "source": "narrative_runs/clinic_v02cfix_seed42/observations.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/frontier.json": {
+  "md5": "1593375ea6ddb34107a5634b60d09c1e",
+  "bytes": 10207,
+  "source": "narrative_runs/clinic_v02cfix_seed42/frontier.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/scenes.json": {
+  "md5": "edc1a4092e0e87e020360a7743da226b",
+  "bytes": 5174,
+  "source": "narrative_runs/clinic_v02cfix_seed42/scenes.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/issues.json": {
+  "md5": "58e0494c51d30eb3494f7c9198986bb9",
+  "bytes": 3,
+  "source": "narrative_runs/clinic_v02cfix_seed42/issues.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/provenance.json": {
+  "md5": "db9ecd6e7829eef35d45faa357e71c54",
+  "bytes": 1278,
+  "source": "narrative_runs/clinic_v02cfix_seed42/provenance.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/storylines.json": {
+  "md5": "f3ee81f458921e37a463ae7f10712f94",
+  "bytes": 5980,
+  "source": "narrative_runs/clinic_v02cfix_seed42/storylines.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/arcs.json": {
+  "md5": "e84dd038b232cc017d0cb2429422a8aa",
+  "bytes": 4240,
+  "source": "narrative_runs/clinic_v02cfix_seed42/arcs.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/titles.json": {
+  "md5": "c2d3ece4455b0f804e318427e15b27e2",
+  "bytes": 445,
+  "source": "narrative_runs/clinic_v02cfix_seed42/titles.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/extractor_issues.json": {
+  "md5": "58e0494c51d30eb3494f7c9198986bb9",
+  "bytes": 3,
+  "source": "narrative_runs/clinic_v02cfix_seed42/extractor_issues.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/story_B.md": {
+  "md5": "50f2eaba93787e0d7275b8d2d7371da1",
+  "bytes": 3961,
+  "source": "narrative_runs/clinic_v02cfix_seed42/story_B.md"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/trace_B.json": {
+  "md5": "9d2f0bf87c1e994f210e0a0ee1ce54ec",
+  "bytes": 7054,
+  "source": "narrative_runs/clinic_v02cfix_seed42/trace_B.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/audit_B.json": {
+  "md5": "4438f114ea7badaccad9d03c9a6e7d2f",
+  "bytes": 545,
+  "source": "narrative_runs/clinic_v02cfix_seed42/audit_B.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/narrative_events.json": {
+  "md5": "e761c87a9e3488d8f549764607cf8ece",
+  "bytes": 67947,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/narrative_events.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/semantic.json": {
+  "md5": "dd8cbb584c37cb9d1eca728bd1457b76",
+  "bytes": 1905,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/semantic.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/causal_graph.json": {
+  "md5": "0a9709aed89202bb4497a46cef19dd12",
+  "bytes": 3129,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/causal_graph.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/character_arcs.json": {
+  "md5": "93ba4ada2882f419532933cf2b0dd74b",
+  "bytes": 6886,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/character_arcs.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/story_views.json": {
+  "md5": "8ec1751acfc79723eb0ac8a76d86e31b",
+  "bytes": 2393,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/story_views.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/setup_payoff.json": {
+  "md5": "313c77354f34b926a602c9a04a886d40",
+  "bytes": 3497,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/setup_payoff.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/foreshadow_edges.json": {
+  "md5": "56334399468d450ad54e06ad2e585948",
+  "bytes": 16,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/foreshadow_edges.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/plan.json": {
+  "md5": "ac5805f598fa4cfe8d1f5e277c2d119e",
+  "bytes": 7991,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/plan.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/novel_v2.md": {
+  "md5": "c37189bea0ee20d3d4c5267b5dda5006",
+  "bytes": 8415,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/novel_v2.md"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/trace_v2.json": {
+  "md5": "a193492b92e0ead52f70cba073a6bc4a",
+  "bytes": 22586,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/trace_v2.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/narrative_quality_report.json": {
+  "md5": "ef8b9839e4ee10271b9ecc1a7594bde6",
+  "bytes": 10712,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/narrative_quality_report.json"
+ },
+ "narrative_runs/clinic_v02cfix_seed42/upgrade/comparison.json": {
+  "md5": "52fcd008c6a84351b91bdc55cbb23cf6",
+  "bytes": 245,
+  "source": "narrative_runs/clinic_v02cfix_seed42/upgrade/comparison.json"
+ },
+ "v03_runs/clinic_v02cfix_seed42/story_state.json": {
+  "md5": "a39404d098516e34f8879a6947ff2e41",
+  "bytes": 4526,
+  "source": "v03_runs/clinic_v02cfix_seed42/story_state.json"
+ },
+ "v03_runs/clinic_v02cfix_seed42/scenes.json": {
+  "md5": "35151f370834f02cc340d8c370408dbe",
+  "bytes": 11360,
+  "source": "v03_runs/clinic_v02cfix_seed42/scenes.json"
+ },
+ "v03_runs/clinic_v02cfix_seed42/event_graph.json": {
+  "md5": "2f9474c77fd01ce4adb42cc759009a54",
+  "bytes": 26333,
+  "source": "v03_runs/clinic_v02cfix_seed42/event_graph.json"
+ },
+ "v03_runs/clinic_v02cfix_seed42/scene_packages.json": {
+  "md5": "90dd6fc1ad3445de498db5e6d1e296e7",
+  "bytes": 14067,
+  "source": "v03_runs/clinic_v02cfix_seed42/scene_packages.json"
+ },
+ "stories/tavern_secret.json": {
+  "md5": "3b7ff018734e8e53b0e2dcd5d37c8b7c",
+  "bytes": 4926,
+  "source": "stories/tavern_secret.json"
+ },
+ "stories/lighthouse_watch.json": {
+  "md5": "78afb73f2af9b5b3b1f1ea0904c98631",
+  "bytes": 2168,
+  "source": "stories/lighthouse_watch.json"
+ },
+ "stories/clinic_fever.json": {
+  "md5": "d8d8841fa9aeb3d9037a81563c51178b",
+  "bytes": 2321,
+  "source": "stories/clinic_fever.json"
+ }
+}

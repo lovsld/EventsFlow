@@ -1,0 +1,359 @@
+{
+ "scenes": [
+  {
+   "scene_id": "S01",
+   "location_id": "bar",
+   "start_tick": 1,
+   "end_tick": 20,
+   "participants": [
+    "owner",
+    "merchant",
+    "soldier"
+   ],
+   "joined_at": {
+    "owner": 1,
+    "merchant": 3,
+    "soldier": 5
+   },
+   "left_at": {},
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [
+    "interest_merchant",
+    "main_embezzlement",
+    "crisis_leak",
+    "trust_owner_soldier"
+   ],
+   "event_queue": [
+    "E0003",
+    "E0004",
+    "E0007",
+    "E0009",
+    "E0010",
+    "E0011",
+    "E0014",
+    "E0015",
+    "E0016",
+    "E0017",
+    "E0018",
+    "E0019",
+    "E0020",
+    "E0022",
+    "E0023",
+    "E0024",
+    "E0025",
+    "E0026",
+    "E0027",
+    "E0028",
+    "E0029",
+    "E0030",
+    "E0031",
+    "E0032",
+    "E0033",
+    "E0034",
+    "E0035",
+    "E0036",
+    "E0037",
+    "E0038",
+    "E0039",
+    "E0040",
+    "E0041",
+    "E0042",
+    "E0043",
+    "E0044",
+    "E0045",
+    "E0046",
+    "E0047",
+    "E0048",
+    "E0050",
+    "E0051",
+    "E0052",
+    "E0054",
+    "E0055",
+    "E0056",
+    "E0057",
+    "E0058",
+    "E0059",
+    "E0060",
+    "E0061",
+    "E0062",
+    "E0063",
+    "E0064",
+    "E0065",
+    "E0066",
+    "E0068",
+    "E0069",
+    "E0070",
+    "E0071",
+    "E0072",
+    "E0073"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 62,
+    "participants": [
+     "owner",
+     "merchant",
+     "soldier"
+    ],
+    "threads": [
+     "interest_merchant",
+     "main_embezzlement",
+     "crisis_leak",
+     "trust_owner_soldier"
+    ]
+   }
+  },
+  {
+   "scene_id": "S02",
+   "location_id": "back_room",
+   "start_tick": 1,
+   "end_tick": 3,
+   "participants": [
+    "merchant",
+    "soldier"
+   ],
+   "joined_at": {
+    "merchant": 1,
+    "soldier": 2
+   },
+   "left_at": {
+    "merchant": 2,
+    "soldier": 4
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [
+    "main_embezzlement",
+    "secret_letter_writer"
+   ],
+   "event_queue": [
+    "E0002",
+    "E0005",
+    "E0008"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 3,
+    "participants": [
+     "merchant",
+     "soldier"
+    ],
+    "threads": [
+     "main_embezzlement",
+     "secret_letter_writer"
+    ]
+   }
+  },
+  {
+   "scene_id": "S03",
+   "location_id": "tables",
+   "start_tick": 1,
+   "end_tick": 2,
+   "participants": [
+    "soldier",
+    "merchant"
+   ],
+   "joined_at": {
+    "soldier": 1,
+    "merchant": 2
+   },
+   "left_at": {
+    "soldier": 2,
+    "merchant": 3
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0001",
+    "E0006"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 2,
+    "participants": [
+     "soldier",
+     "merchant"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S04",
+   "location_id": "tables",
+   "start_tick": 4,
+   "end_tick": 4,
+   "participants": [
+    "soldier"
+   ],
+   "joined_at": {
+    "soldier": 4
+   },
+   "left_at": {
+    "soldier": 5
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0013"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "soldier"
+    ],
+    "threads": []
+   }
+  }
+ ],
+ "propagations": [
+  {
+   "fact": "mayor_embezzled",
+   "carrier": "soldier",
+   "from_scene": "S02",
+   "to_scene": "S01",
+   "learned_at": 3,
+   "spoke_at": 6,
+   "travel_ticks": 3,
+   "via_event": "E0022"
+  },
+  {
+   "fact": "mayor_embezzled",
+   "carrier": "soldier",
+   "from_scene": "S02",
+   "to_scene": "S01",
+   "learned_at": 3,
+   "spoke_at": 8,
+   "travel_ticks": 5,
+   "via_event": "E0030"
+  },
+  {
+   "fact": "mayor_embezzled",
+   "carrier": "soldier",
+   "from_scene": "S02",
+   "to_scene": "S01",
+   "learned_at": 3,
+   "spoke_at": 10,
+   "travel_ticks": 7,
+   "via_event": "E0036"
+  },
+  {
+   "fact": "mayor_embezzled",
+   "carrier": "soldier",
+   "from_scene": "S02",
+   "to_scene": "S01",
+   "learned_at": 3,
+   "spoke_at": 11,
+   "travel_ticks": 8,
+   "via_event": "E0040"
+  },
+  {
+   "fact": "mayor_embezzled",
+   "carrier": "soldier",
+   "from_scene": "S02",
+   "to_scene": "S01",
+   "learned_at": 3,
+   "spoke_at": 12,
+   "travel_ticks": 9,
+   "via_event": "E0043"
+  },
+  {
+   "fact": "mayor_embezzled",
+   "carrier": "soldier",
+   "from_scene": "S02",
+   "to_scene": "S01",
+   "learned_at": 3,
+   "spoke_at": 13,
+   "travel_ticks": 10,
+   "via_event": "E0046"
+  },
+  {
+   "fact": "mayor_embezzled",
+   "carrier": "soldier",
+   "from_scene": "S02",
+   "to_scene": "S01",
+   "learned_at": 3,
+   "spoke_at": 16,
+   "travel_ticks": 13,
+   "via_event": "E0058"
+  },
+  {
+   "fact": "mayor_embezzled",
+   "carrier": "soldier",
+   "from_scene": "S02",
+   "to_scene": "S01",
+   "learned_at": 3,
+   "spoke_at": 17,
+   "travel_ticks": 14,
+   "via_event": "E0061"
+  },
+  {
+   "fact": "mayor_embezzled",
+   "carrier": "soldier",
+   "from_scene": "S02",
+   "to_scene": "S01",
+   "learned_at": 3,
+   "spoke_at": 18,
+   "travel_ticks": 15,
+   "via_event": "E0064"
+  },
+  {
+   "fact": "mayor_embezzled",
+   "carrier": "soldier",
+   "from_scene": "S02",
+   "to_scene": "S01",
+   "learned_at": 3,
+   "spoke_at": 19,
+   "travel_ticks": 16,
+   "via_event": "E0068"
+  }
+ ],
+ "propagation_issues": [],
+ "consistency_issues": [],
+ "pending_events": [
+  {
+   "event_id": "PENDING",
+   "type": "ambient",
+   "subtype": "trace_event",
+   "actors": [],
+   "location": "back_room",
+   "text": "此处留下了被人翻动过的痕迹。",
+   "source": "story_engine",
+   "candidate_id": "EC001",
+   "causal_basis": [
+    "E0008"
+   ]
+  },
+  {
+   "event_id": "PENDING",
+   "type": "ambient",
+   "subtype": "external_arrival",
+   "actors": [],
+   "location": "door",
+   "text": "一个自称替镇长办事的人走进酒馆，在门口站了一会儿，打量着屋里的人。",
+   "source": "story_engine",
+   "candidate_id": "EC002",
+   "causal_basis": [
+    "E0022",
+    "E0030",
+    "E0032"
+   ]
+  },
+  {
+   "event_id": "PENDING",
+   "type": "ambient",
+   "subtype": "opportunity_notice",
+   "actors": [],
+   "location": "door",
+   "text": "酒馆门口一时人来人往，赶集的人在门外歇脚闲谈。",
+   "source": "story_engine",
+   "candidate_id": "EC004",
+   "causal_basis": [
+    "E0008"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,3879 @@
+[
+ {
+  "actors": [
+   "a_gui"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "jetty",
+   "to": "boathouse"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0001",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0001",
+  "stance": null,
+  "text": null,
+  "tick": 1,
+  "time": "21:05",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": "maintain_engine"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0002",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0002",
+  "stance": null,
+  "text": null,
+  "tick": 1,
+  "time": "21:05",
+  "type": "work"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "base",
+   "to": "lamp_room"
+  },
+  "found": [],
+  "location": "lamp_room",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0003",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0003",
+  "stance": null,
+  "text": null,
+  "tick": 1,
+  "time": "21:05",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S1"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0004",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0004",
+  "stance": null,
+  "text": null,
+  "tick": 1,
+  "time": "21:05",
+  "type": "session_start"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "雾又浓了一层，栈桥那头的灯影只剩一个晕。",
+   "topic": "fog_thickens"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0005",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0005",
+  "stance": null,
+  "text": "雾又浓了一层，栈桥那头的灯影只剩一个晕。",
+  "tick": 1,
+  "time": "21:05",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "claim": "ship_inquire",
+  "delivered_to": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": true,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_inquire",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+   "topic": "ship_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0006",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0006",
+  "stance": "inquire",
+  "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+  "tick": 2,
+  "time": "21:10",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0007",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0007",
+  "stance": null,
+  "text": null,
+  "tick": 2,
+  "time": "21:10",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "lamp_room",
+   "to": "base"
+  },
+  "found": [],
+  "location": "base",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0008",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0008",
+  "stance": null,
+  "text": null,
+  "tick": 2,
+  "time": "21:10",
+  "type": "move"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+   "topic": "buoy_bell"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0009",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0009",
+  "stance": null,
+  "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+  "tick": 2,
+  "time": "21:10",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "claim": "ship_inquire",
+  "delivered_to": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_inquire",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+   "topic": "ship_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [
+   "keeper_zhou"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0010",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0010",
+  "stance": "inquire",
+  "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+  "tick": 3,
+  "time": "21:15",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "lin_tao",
+   "a_gui"
+  ],
+  "claim": "ship_inquire",
+  "delivered_to": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_inquire",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+   "topic": "ship_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [
+   "keeper_zhou"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0011",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0011",
+  "stance": "inquire",
+  "text": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+  "tick": 3,
+  "time": "21:15",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "base",
+   "to": "jetty"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0012",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0012",
+  "stance": null,
+  "text": null,
+  "tick": 3,
+  "time": "21:15",
+  "type": "move"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "雾又浓了一层，栈桥那头的灯影只剩一个晕。",
+   "topic": "fog_thickens"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0013",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0013",
+  "stance": null,
+  "text": "雾又浓了一层，栈桥那头的灯影只剩一个晕。",
+  "tick": 3,
+  "time": "21:15",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "claim": "ship_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_inquire",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+   "topic": "ship_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0014",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0014",
+  "stance": "inquire",
+  "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+  "tick": 4,
+  "time": "21:20",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "lin_tao",
+   "a_gui"
+  ],
+  "claim": "ship_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_inquire",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+   "topic": "ship_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0015",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0015",
+  "stance": "inquire",
+  "text": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+  "tick": 4,
+  "time": "21:20",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "jetty",
+   "to": "boathouse"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0016",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0016",
+  "stance": null,
+  "text": null,
+  "tick": 4,
+  "time": "21:20",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S2"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0017",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0017",
+  "stance": null,
+  "text": null,
+  "tick": 4,
+  "time": "21:20",
+  "type": "session_start"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": true,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "session": "S1"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0018",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0018",
+  "stance": null,
+  "text": null,
+  "tick": 4,
+  "time": "21:20",
+  "type": "session_end"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+   "topic": "buoy_bell"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0019",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0019",
+  "stance": null,
+  "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+  "tick": 4,
+  "time": "21:20",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": "ship_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_inquire",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+   "topic": "ship_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0020",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0020",
+  "stance": "inquire",
+  "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+  "tick": 5,
+  "time": "21:25",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "lin_tao",
+   "a_gui"
+  ],
+  "claim": "ship_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_inquire",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+   "topic": "ship_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0021",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0021",
+  "stance": "inquire",
+  "text": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+  "tick": 5,
+  "time": "21:25",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": true,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0022",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0022",
+  "stance": "inquire",
+  "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 5,
+  "time": "21:25",
+  "type": "ask"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+   "topic": "buoy_bell"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0023",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0023",
+  "stance": null,
+  "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+  "tick": 5,
+  "time": "21:25",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": "ship_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_inquire",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+   "topic": "ship_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0024",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0024",
+  "stance": "inquire",
+  "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+  "tick": 6,
+  "time": "21:30",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "lin_tao",
+   "keeper_zhou"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "林涛：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0025",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0025",
+  "stance": "inquire",
+  "text": "林涛：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 6,
+  "time": "21:30",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": "ship_notice",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": true,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_notice",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+   "topic": "ship_notice"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0026",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0026",
+  "stance": "assert",
+  "text": "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+  "tick": 6,
+  "time": "21:30",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "a_gui"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": true,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "found": [
+    "signal_lantern"
+   ]
+  },
+  "found": [
+   "signal_lantern"
+  ],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0027",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0027",
+  "stance": null,
+  "text": null,
+  "tick": 7,
+  "time": "21:35",
+  "type": "search"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "found": []
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0028",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0028",
+  "stance": null,
+  "text": null,
+  "tick": 7,
+  "time": "21:35",
+  "type": "search"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "a_gui"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0029",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0029",
+  "stance": "inquire",
+  "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 7,
+  "time": "21:35",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "claim": "ship_notice",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": false,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_notice",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+   "topic": "ship_notice"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [
+   "lin_tao"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0030",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0030",
+  "stance": "assert",
+  "text": "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+  "tick": 8,
+  "time": "21:40",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "boathouse",
+   "to": "jetty"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0031",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0031",
+  "stance": null,
+  "text": null,
+  "tick": 8,
+  "time": "21:40",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": true,
+   "opens_session": false
+  },
+  "fields": {
+   "reason": "target_left",
+   "target": "lin_tao",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0032",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0032",
+  "stance": null,
+  "text": null,
+  "tick": 8,
+  "time": "21:40",
+  "type": "speak_failed"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S3"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0033",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0033",
+  "stance": null,
+  "text": null,
+  "tick": 8,
+  "time": "21:40",
+  "type": "session_start"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": true,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "session": "S2"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0034",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0034",
+  "stance": null,
+  "text": null,
+  "tick": 8,
+  "time": "21:40",
+  "type": "session_end"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+   "topic": "buoy_bell"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0035",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0035",
+  "stance": null,
+  "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+  "tick": 8,
+  "time": "21:40",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [
+   "lin_tao"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0036",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0036",
+  "stance": "inquire",
+  "text": "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 9,
+  "time": "21:45",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "found": []
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0037",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0037",
+  "stance": null,
+  "text": null,
+  "tick": 9,
+  "time": "21:45",
+  "type": "search"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "a_gui"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [
+   "lin_tao"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0038",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0038",
+  "stance": "inquire",
+  "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 9,
+  "time": "21:45",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0039",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0039",
+  "stance": "inquire",
+  "text": "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 10,
+  "time": "21:50",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "jetty",
+   "to": "base"
+  },
+  "found": [],
+  "location": "base",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0040",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0040",
+  "stance": null,
+  "text": null,
+  "tick": 10,
+  "time": "21:50",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "a_gui"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0041",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0041",
+  "stance": "inquire",
+  "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 10,
+  "time": "21:50",
+  "type": "ask"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "值班室的电台沙沙响了几下，没有呼叫。",
+   "topic": "radio_static"
+  },
+  "found": [],
+  "location": "base",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0042",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0042",
+  "stance": null,
+  "text": "值班室的电台沙沙响了几下，没有呼叫。",
+  "tick": 10,
+  "time": "21:50",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0043",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0043",
+  "stance": "inquire",
+  "text": "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 11,
+  "time": "21:55",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": true,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "found": [
+    "spare_belt"
+   ]
+  },
+  "found": [
+   "spare_belt"
+  ],
+  "location": "base",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0044",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0044",
+  "stance": null,
+  "text": null,
+  "tick": 11,
+  "time": "21:55",
+  "type": "search"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "a_gui"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0045",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0045",
+  "stance": "inquire",
+  "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 11,
+  "time": "21:55",
+  "type": "ask"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "雾又浓了一层，栈桥那头的灯影只剩一个晕。",
+   "topic": "fog_thickens"
+  },
+  "found": [],
+  "location": "bar",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0046",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0046",
+  "stance": null,
+  "text": "雾又浓了一层，栈桥那头的灯影只剩一个晕。",
+  "tick": 11,
+  "time": "21:55",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "boathouse",
+   "to": "jetty"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0047",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0047",
+  "stance": null,
+  "text": null,
+  "tick": 12,
+  "time": "22:00",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "base",
+   "to": "lamp_room"
+  },
+  "found": [],
+  "location": "lamp_room",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0048",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0048",
+  "stance": null,
+  "text": null,
+  "tick": 12,
+  "time": "22:00",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": true,
+   "opens_session": false
+  },
+  "fields": {
+   "reason": "target_left",
+   "target": "a_gui",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0049",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0049",
+  "stance": null,
+  "text": null,
+  "tick": 12,
+  "time": "22:00",
+  "type": "speak_failed"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": true,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "session": "S3"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0050",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0050",
+  "stance": null,
+  "text": null,
+  "tick": 12,
+  "time": "22:00",
+  "type": "session_end"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+   "topic": "buoy_bell"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0051",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0051",
+  "stance": null,
+  "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+  "tick": 12,
+  "time": "22:00",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "jetty",
+   "to": "boathouse"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0052",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0052",
+  "stance": null,
+  "text": null,
+  "tick": 13,
+  "time": "22:05",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0053",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0053",
+  "stance": null,
+  "text": null,
+  "tick": 13,
+  "time": "22:05",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "lamp_room",
+   "to": "base"
+  },
+  "found": [],
+  "location": "base",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0054",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0054",
+  "stance": null,
+  "text": null,
+  "tick": 13,
+  "time": "22:05",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S4"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0055",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0055",
+  "stance": null,
+  "text": null,
+  "tick": 13,
+  "time": "22:05",
+  "type": "session_start"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": "denial",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": true,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "denial",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：这事我不清楚，别问我。",
+   "topic": "denial"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0056",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0056",
+  "stance": "deny",
+  "text": "阿贵：这事我不清楚，别问我。",
+  "tick": 14,
+  "time": "22:10",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "base",
+   "to": "lamp_room"
+  },
+  "found": [],
+  "location": "lamp_room",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0057",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0057",
+  "stance": null,
+  "text": null,
+  "tick": 14,
+  "time": "22:10",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "a_gui"
+  ],
+  "claim": "denial",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "denial",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "周守义：这事我不清楚，别问我。",
+   "topic": "denial"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0058",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0058",
+  "stance": "deny",
+  "text": "周守义：这事我不清楚，别问我。",
+  "tick": 14,
+  "time": "22:10",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": "ship_notice",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_notice",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。",
+   "topic": "ship_notice"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0059",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0059",
+  "stance": "assert",
+  "text": "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。",
+  "tick": 15,
+  "time": "22:15",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0060",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0060",
+  "stance": null,
+  "text": null,
+  "tick": 15,
+  "time": "22:15",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "lamp_room",
+   "to": "base"
+  },
+  "found": [],
+  "location": "base",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0061",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0061",
+  "stance": null,
+  "text": null,
+  "tick": 15,
+  "time": "22:15",
+  "type": "move"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "值班室的电台沙沙响了几下，没有呼叫。",
+   "topic": "radio_static"
+  },
+  "found": [],
+  "location": "base",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0062",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0062",
+  "stance": null,
+  "text": "值班室的电台沙沙响了几下，没有呼叫。",
+  "tick": 15,
+  "time": "22:15",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": "ship_notice",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_notice",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+   "topic": "ship_notice"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [
+   "lin_tao"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0063",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0063",
+  "stance": "assert",
+  "text": "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+  "tick": 16,
+  "time": "22:20",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "a_gui"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [
+   "lin_tao"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0064",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0064",
+  "stance": "inquire",
+  "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 16,
+  "time": "22:20",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "base",
+   "to": "jetty"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0065",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0065",
+  "stance": null,
+  "text": null,
+  "tick": 16,
+  "time": "22:20",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": "ship_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_inquire",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+   "topic": "ship_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0066",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0066",
+  "stance": "inquire",
+  "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+  "tick": 17,
+  "time": "22:25",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "jetty",
+   "to": "base"
+  },
+  "found": [],
+  "location": "base",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0067",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0067",
+  "stance": null,
+  "text": null,
+  "tick": 17,
+  "time": "22:25",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0068",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0068",
+  "stance": null,
+  "text": null,
+  "tick": 17,
+  "time": "22:25",
+  "type": "observe"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+   "topic": "buoy_bell"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0069",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0069",
+  "stance": null,
+  "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+  "tick": 17,
+  "time": "22:25",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": "ship_notice",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_notice",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。",
+   "topic": "ship_notice"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [
+   "lin_tao"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0070",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0070",
+  "stance": "assert",
+  "text": "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。",
+  "tick": 18,
+  "time": "22:30",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "base",
+   "to": "jetty"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0071",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0071",
+  "stance": null,
+  "text": null,
+  "tick": 18,
+  "time": "22:30",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0072",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0072",
+  "stance": null,
+  "text": null,
+  "tick": 18,
+  "time": "22:30",
+  "type": "listen"
+ },
+ {
+  "actors": [
+   "a_gui"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "boathouse",
+   "to": "jetty"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0073",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0073",
+  "stance": null,
+  "text": null,
+  "tick": 19,
+  "time": "22:35",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "jetty",
+   "to": "boathouse"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0074",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0074",
+  "stance": null,
+  "text": null,
+  "tick": 19,
+  "time": "22:35",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0075",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0075",
+  "stance": null,
+  "text": null,
+  "tick": 19,
+  "time": "22:35",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S5"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0076",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0076",
+  "stance": null,
+  "text": null,
+  "tick": 19,
+  "time": "22:35",
+  "type": "session_start"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": true,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "session": "S4"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0077",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0077",
+  "stance": null,
+  "text": null,
+  "tick": 19,
+  "time": "22:35",
+  "type": "session_end"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "a_gui"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "一只夜鹭在栈桥上叫了两声，又没了动静。",
+   "topic": "gull_cries"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0078",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0078",
+  "stance": null,
+  "text": "一只夜鹭在栈桥上叫了两声，又没了动静。",
+  "tick": 19,
+  "time": "22:35",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "jetty",
+   "to": "boathouse"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0079",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0079",
+  "stance": null,
+  "text": null,
+  "tick": 20,
+  "time": "22:40",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "lin_tao",
+   "keeper_zhou"
+  ],
+  "claim": "horn_report",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": true,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_report",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "林涛：雾笛能修好——备件皮带已经到手，我这就装回去。",
+   "topic": "horn_report"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0080",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0080",
+  "stance": "assert",
+  "text": "林涛：雾笛能修好——备件皮带已经到手，我这就装回去。",
+  "tick": 20,
+  "time": "22:40",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": "horn_inquire",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_inquire",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+   "topic": "horn_inquire"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0081",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0081",
+  "stance": "inquire",
+  "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+  "tick": 20,
+  "time": "22:40",
+  "type": "ask"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S6"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0082",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0082",
+  "stance": null,
+  "text": null,
+  "tick": 20,
+  "time": "22:40",
+  "type": "session_start"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": true,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "session": "S5"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0083",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0083",
+  "stance": null,
+  "text": null,
+  "tick": 20,
+  "time": "22:40",
+  "type": "session_end"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+   "topic": "buoy_bell"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0084",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0084",
+  "stance": null,
+  "text": "远处浮标的铃铛被浪推着，断断续续地响。",
+  "tick": 20,
+  "time": "22:40",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "boathouse",
+   "to": "jetty"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0085",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0085",
+  "stance": null,
+  "text": null,
+  "tick": 21,
+  "time": "22:45",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "lin_tao",
+   "keeper_zhou"
+  ],
+  "claim": "horn_report",
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_report",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "林涛：放心，雾笛误不了事，备件拿到了。",
+   "topic": "horn_report"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [
+   "a_gui"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0086",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0086",
+  "stance": "assert",
+  "text": "林涛：放心，雾笛误不了事，备件拿到了。",
+  "tick": 21,
+  "time": "22:45",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": true,
+   "opens_session": false
+  },
+  "fields": {
+   "reason": "target_left",
+   "target": "a_gui",
+   "topic": "ship_notice"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0087",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0087",
+  "stance": null,
+  "text": null,
+  "tick": 21,
+  "time": "22:45",
+  "type": "speak_failed"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S7"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0088",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0088",
+  "stance": null,
+  "text": null,
+  "tick": 21,
+  "time": "22:45",
+  "type": "session_start"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": true,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "session": "S6"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0089",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0089",
+  "stance": null,
+  "text": null,
+  "tick": 21,
+  "time": "22:45",
+  "type": "session_end"
+ },
+ {
+  "actors": [
+   "a_gui"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "jetty",
+   "to": "boathouse"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0090",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0090",
+  "stance": null,
+  "text": null,
+  "tick": 22,
+  "time": "22:50",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "lin_tao",
+   "keeper_zhou"
+  ],
+  "claim": "horn_report",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_report",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "林涛：雾笛能修好——备件皮带已经到手，我这就装回去。",
+   "topic": "horn_report"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0091",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0091",
+  "stance": "assert",
+  "text": "林涛：雾笛能修好——备件皮带已经到手，我这就装回去。",
+  "tick": 22,
+  "time": "22:50",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "target": null,
+   "topic": null
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0092",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0092",
+  "stance": null,
+  "text": null,
+  "tick": 22,
+  "time": "22:50",
+  "type": "observe"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S8"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0093",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0093",
+  "stance": null,
+  "text": null,
+  "tick": 22,
+  "time": "22:50",
+  "type": "session_start"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": true,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "session": "S7"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0094",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0094",
+  "stance": null,
+  "text": null,
+  "tick": 22,
+  "time": "22:50",
+  "type": "session_end"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "lin_tao"
+  ],
+  "claim": "ship_notice",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_notice",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+   "topic": "ship_notice"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0095",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0095",
+  "stance": "assert",
+  "text": "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+  "tick": 23,
+  "time": "22:55",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "lin_tao",
+   "keeper_zhou"
+  ],
+  "claim": "horn_report",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "horn_report",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "林涛：放心，雾笛误不了事，备件拿到了。",
+   "topic": "horn_report"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0096",
+  "proposition": "fog_horn_ready",
+  "raw_ref": "world_log.json#E0096",
+  "stance": "assert",
+  "text": "林涛：放心，雾笛误不了事，备件拿到了。",
+  "tick": 23,
+  "time": "22:55",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "a_gui"
+  ],
+  "claim": "ship_notice",
+  "delivered_to": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "ship_notice",
+   "interrupted": true,
+   "session_location": "boathouse",
+   "text": "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+   "topic": "ship_notice"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0097",
+  "proposition": "ship_passing_tonight",
+  "raw_ref": "world_log.json#E0097",
+  "stance": "assert",
+  "text": "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+  "tick": 23,
+  "time": "22:55",
+  "type": "speak"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "一只夜鹭在栈桥上叫了两声，又没了动静。",
+   "topic": "gull_cries"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0098",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0098",
+  "stance": null,
+  "text": "一只夜鹭在栈桥上叫了两声，又没了动静。",
+  "tick": 23,
+  "time": "22:55",
+  "type": "ambient"
+ },
+ {
+  "actors": [
+   "a_gui"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "a_gui"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "from": "boathouse",
+   "to": "jetty"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0099",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0099",
+  "stance": null,
+  "text": null,
+  "tick": 24,
+  "time": "23:00",
+  "type": "move"
+ },
+ {
+  "actors": [
+   "keeper_zhou"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": true,
+   "opens_session": false
+  },
+  "fields": {
+   "reason": "target_left",
+   "target": "a_gui",
+   "topic": "ship_notice"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0100",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0100",
+  "stance": null,
+  "text": null,
+  "tick": 24,
+  "time": "23:00",
+  "type": "speak_failed"
+ },
+ {
+  "actors": [
+   "lin_tao",
+   "keeper_zhou"
+  ],
+  "claim": "denial",
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": true,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "claim": "denial",
+   "interrupted": false,
+   "session_location": "boathouse",
+   "text": "林涛：这事我不清楚，别问我。",
+   "topic": "denial"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [
+   "a_gui"
+  ],
+  "narrative_role": "plot",
+  "object": null,
+  "obs_id": "E0101",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0101",
+  "stance": "deny",
+  "text": "林涛：这事我不清楚，别问我。",
+  "tick": 24,
+  "time": "23:00",
+  "type": "speak"
+ },
+ {
+  "actors": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": true
+  },
+  "fields": {
+   "session": "S9"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0102",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0102",
+  "stance": null,
+  "text": null,
+  "tick": 24,
+  "time": "23:00",
+  "type": "session_start"
+ },
+ {
+  "actors": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "claim": null,
+  "delivered_to": [
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": true,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": false,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "session": "S8"
+  },
+  "found": [],
+  "location": "boathouse",
+  "muffled_for": [],
+  "narrative_role": "structure",
+  "object": null,
+  "obs_id": "E0103",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0103",
+  "stance": null,
+  "text": null,
+  "tick": 24,
+  "time": "23:00",
+  "type": "session_end"
+ },
+ {
+  "actors": [],
+  "claim": null,
+  "delivered_to": [
+   "a_gui"
+  ],
+  "features": {
+   "addressee_present": null,
+   "closes_session": false,
+   "first_find_of_object": false,
+   "first_mention_of_claim": false,
+   "has_text": true,
+   "is_failed_attempt": false,
+   "opens_session": false
+  },
+  "fields": {
+   "text": "一只夜鹭在栈桥上叫了两声，又没了动静。",
+   "topic": "gull_cries"
+  },
+  "found": [],
+  "location": "jetty",
+  "muffled_for": [],
+  "narrative_role": "texture",
+  "object": null,
+  "obs_id": "E0104",
+  "proposition": null,
+  "raw_ref": "world_log.json#E0104",
+  "stance": null,
+  "text": "一只夜鹭在栈桥上叫了两声，又没了动静。",
+  "tick": 24,
+  "time": "23:00",
+  "type": "ambient"
+ }
+]

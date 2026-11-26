@@ -1,0 +1,487 @@
+{
+ "scenes": [
+  {
+   "scene_id": "SC01",
+   "narrative_goal": "商人会如何处置自己听到的风声？",
+   "used_event_ids": [
+    "E0008",
+    "E0014"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "anonymous_letter_exists",
+    "business_opportunity",
+    "mayor_embezzled"
+   ],
+   "new_facts": [
+    "anonymous_letter_exists",
+    "business_opportunity",
+    "mayor_embezzled"
+   ],
+   "key_dialogues": [
+    "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。"
+   ],
+   "repeated_dialogues": [],
+   "character_state_changes": [
+    {
+     "character": "soldier",
+     "fact": "anonymous_letter_exists",
+     "change": "learned"
+    },
+    {
+     "character": "soldier",
+     "fact": "mayor_embezzled",
+     "change": "learned"
+    },
+    {
+     "character": "owner",
+     "fact": "business_opportunity",
+     "change": "learned"
+    }
+   ],
+   "paragraphs": 6,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC02",
+   "narrative_goal": "商人会如何处置自己听到的风声？",
+   "used_event_ids": [
+    "E0017",
+    "E0022",
+    "E0023",
+    "E0026",
+    "E0027",
+    "E0030",
+    "E0031",
+    "E0032",
+    "E0033"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "business_opportunity",
+    "mayor_embezzled"
+   ],
+   "new_facts": [],
+   "key_dialogues": [
+    "米拉：那批货的事，老板真不考虑？价格好商量。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+    "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+    "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：那批货的事，老板真不考虑？价格好商量。",
+    "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "凯尔：再问一次，这几天后屋那边，有人动过什么吗？"
+   ],
+   "repeated_dialogues": [
+    "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：那批货的事，老板真不考虑？价格好商量。"
+   ],
+   "character_state_changes": [
+    {
+     "character": "owner",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "business_opportunity",
+     "change": "learned"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "learned"
+    },
+    {
+     "character": "owner",
+     "fact": "mayor_embezzled",
+     "change": "learned"
+    },
+    {
+     "character": "owner",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    }
+   ],
+   "paragraphs": 18,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC03",
+   "narrative_goal": "镇长是否侵吞了公共资金？",
+   "used_event_ids": [
+    "E0034",
+    "E0035",
+    "E0036",
+    "E0038"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "mayor_embezzled",
+    "speaker_knows_secret"
+   ],
+   "new_facts": [
+    "speaker_knows_secret"
+   ],
+   "key_dialogues": [
+    "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "奥伦：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。"
+   ],
+   "repeated_dialogues": [
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。"
+   ],
+   "character_state_changes": [
+    {
+     "character": "owner",
+     "fact": "speaker_knows_secret",
+     "change": "learned"
+    },
+    {
+     "character": "soldier",
+     "fact": "speaker_knows_secret",
+     "change": "learned"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "speaker_knows_secret",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "speaker_knows_secret",
+     "change": "reinforced"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "speaker_knows_secret",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "speaker_knows_secret",
+     "change": "reinforced"
+    }
+   ],
+   "paragraphs": 9,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC04",
+   "narrative_goal": "商人会如何处置自己听到的风声？",
+   "used_event_ids": [
+    "E0043",
+    "E0046",
+    "E0058",
+    "E0044",
+    "E0051",
+    "E0047",
+    "E0055",
+    "E0048",
+    "E0050",
+    "E0054",
+    "E0052",
+    "E0056",
+    "E0059"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "business_opportunity",
+    "mayor_embezzled",
+    "speaker_knows_secret"
+   ],
+   "new_facts": [],
+   "key_dialogues": [
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+    "奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+    "凯尔：老板，你越是不说，我越得查清楚。",
+    "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "奥伦：再问一次，这几天后屋那边，有人动过什么吗？",
+    "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+    "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+    "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？"
+   ],
+   "repeated_dialogues": [
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+    "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+    "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+    "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+    "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。"
+   ],
+   "character_state_changes": [
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "speaker_knows_secret",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "speaker_knows_secret",
+     "change": "reinforced"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "speaker_knows_secret",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "speaker_knows_secret",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "business_opportunity",
+     "change": "reinforced"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    }
+   ],
+   "paragraphs": 14,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC05",
+   "narrative_goal": "镇长是否侵吞了公共资金？",
+   "used_event_ids": [
+    "E0061",
+    "E0063",
+    "E0064",
+    "E0068",
+    "E0062",
+    "E0071",
+    "E0065",
+    "E0070",
+    "E0073"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "mayor_embezzled"
+   ],
+   "new_facts": [],
+   "key_dialogues": [
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：再问一次，这几天后屋那边，有人动过什么吗？",
+    "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "米拉：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "奥伦：老板，你越是不说，我越得查清楚。",
+    "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+    "奥伦：问几遍都一样，我什么都不知道。"
+   ],
+   "repeated_dialogues": [
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+    "凯尔：再问一次，这几天后屋那边，有人动过什么吗？"
+   ],
+   "character_state_changes": [
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "soldier",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "merchant",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    },
+    {
+     "character": "owner",
+     "fact": "mayor_embezzled",
+     "change": "reinforced"
+    }
+   ],
+   "paragraphs": 8,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  }
+ ],
+ "summary": {
+  "scenes": 5,
+  "paragraphs": 55,
+  "valueless_repeat_paragraphs": 0,
+  "scene_repetition_rate": 0.0,
+  "repeated_event_ids": 0,
+  "repeated_dialogues": 22,
+  "scenes_without_increment": []
+ }
+}

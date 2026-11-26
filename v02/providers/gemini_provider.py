@@ -25,6 +25,7 @@ import urllib.error
 import urllib.request
 
 from ..protocol import AgentDecision, DecisionContext, ProviderResult
+from .openai_provider import _strip_decision_extras
 from .base import LLMProvider, ProviderError, QuotaExhaustedError
 from .openai_provider import SYSTEM_TEMPLATE, _JSON_CONTRACT
 
@@ -202,7 +203,7 @@ class GeminiProvider(LLMProvider):
         conf = data.get("confidence")
         if isinstance(conf, (int, float)):
             data["confidence"] = min(1.0, max(0.0, float(conf)))
-        return data
+        return _strip_decision_extras(data)
 
     async def generate_decision(self, context: DecisionContext) -> ProviderResult:
         if not credential_available():

@@ -1,0 +1,210 @@
+{
+ "story_id": "lighthouse_watch",
+ "title": "灯塔守夜",
+ "genre": "task_drama",
+ "theme": "责任与协作",
+ "central_question": "今晚的船能否安全通过？",
+ "stakes": [
+  "雾夜里信号失效可能导致船只事故"
+ ],
+ "ending_constraints": [
+  "结局必须由模拟事件产生，不预设任务必然完成"
+ ],
+ "tick": 24,
+ "threads": {
+  "main_ship_safety": {
+   "thread_id": "main_ship_safety",
+   "title": "今晚的船能否安全通过",
+   "thread_type": "main",
+   "central_question": "今晚的船能否安全通过？",
+   "status": "active",
+   "involved_characters": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "questions": [
+    {
+     "id": "ship_coming",
+     "text": "今晚是否有船通过？",
+     "answered_by": "ship_passing_tonight",
+     "answered_at": null,
+     "addressed_at": 6
+    },
+    {
+     "id": "horn_ready",
+     "text": "雾号是否就绪？",
+     "answered_by": "fog_horn_ready",
+     "answered_at": null,
+     "addressed_at": 20
+    },
+    {
+     "id": "lamp_status",
+     "text": "码头灯是否熄灭？",
+     "answered_by": "jetty_lamp_out",
+     "answered_at": null,
+     "addressed_at": null
+    }
+   ],
+   "known_facts": [
+    "jetty_lamp_out",
+    "ship_passing_tonight",
+    "fog_horn_ready"
+   ],
+   "stakes": [],
+   "progress": 0.0,
+   "dependencies": [],
+   "related_threads": [],
+   "shared_events": [],
+   "related_events": [
+    "E0006",
+    "E0010",
+    "E0011",
+    "E0014",
+    "E0015",
+    "E0020",
+    "E0021",
+    "E0022",
+    "E0024",
+    "E0025",
+    "E0026",
+    "E0027",
+    "E0029",
+    "E0030",
+    "E0036",
+    "E0038",
+    "E0039",
+    "E0041",
+    "E0043",
+    "E0045",
+    "E0059",
+    "E0063",
+    "E0064",
+    "E0066",
+    "E0070",
+    "E0080",
+    "E0081",
+    "E0086",
+    "E0091",
+    "E0095",
+    "E0096",
+    "E0097"
+   ],
+   "possible_resolutions": [
+    "信号齐备，船安全通过",
+    "信号缺失，悬而未决"
+   ],
+   "created_at": 0,
+   "last_developed_at": 23,
+   "resolved_at": null,
+   "propositions": [
+    "ship_passing_tonight",
+    "fog_horn_ready",
+    "jetty_lamp_out"
+   ],
+   "objects": [
+    "signal_lantern"
+   ],
+   "sensitive_facts": [],
+   "pressure_event": null,
+   "opportunity_event": null,
+   "known_by": {
+    "a_gui": [
+     "jetty_lamp_out",
+     "ship_passing_tonight",
+     "fog_horn_ready"
+    ],
+    "keeper_zhou": [
+     "ship_passing_tonight",
+     "fog_horn_ready"
+    ],
+    "lin_tao": [
+     "ship_passing_tonight",
+     "fog_horn_ready"
+    ]
+   }
+  },
+  "belt_repair": {
+   "thread_id": "belt_repair",
+   "title": "备用皮带与传动",
+   "thread_type": "sub",
+   "central_question": "断裂的皮带是否被发现并处理？",
+   "status": "dormant",
+   "involved_characters": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "questions": [
+    {
+     "id": "belt_status",
+     "text": "皮带是否断裂？",
+     "answered_by": "belt_broken",
+     "answered_at": null,
+     "addressed_at": null
+    }
+   ],
+   "known_facts": [
+    "belt_broken",
+    "fog_horn_ready"
+   ],
+   "stakes": [],
+   "progress": 0.0,
+   "dependencies": [],
+   "related_threads": [],
+   "shared_events": [],
+   "related_events": [
+    "E0044"
+   ],
+   "possible_resolutions": [
+    "皮带问题被处理",
+    "悬而未决"
+   ],
+   "created_at": 0,
+   "last_developed_at": 11,
+   "resolved_at": null,
+   "propositions": [
+    "belt_broken"
+   ],
+   "objects": [
+    "spare_belt"
+   ],
+   "sensitive_facts": [],
+   "pressure_event": null,
+   "opportunity_event": null,
+   "known_by": {
+    "lin_tao": [
+     "belt_broken",
+     "fog_horn_ready"
+    ]
+   }
+  }
+ },
+ "conflicts": {},
+ "goals": [],
+ "ticks_since_plot_event": 0,
+ "ticks_since_thread_progress": 1,
+ "ticks_since_belief_change": 0,
+ "change_log": [
+  {
+   "tick": 0,
+   "kind": "story_initialized",
+   "detail": "2 threads, 0 goals"
+  },
+  {
+   "tick": 8,
+   "kind": "thread_status",
+   "detail": "belt_repair: active -> dormant no development for 8 ticks"
+  },
+  {
+   "tick": 11,
+   "kind": "thread_status",
+   "detail": "belt_repair: dormant -> active developed"
+  },
+  {
+   "tick": 19,
+   "kind": "thread_status",
+   "detail": "belt_repair: active -> dormant no development for 8 ticks"
+  }
+ ]
+}

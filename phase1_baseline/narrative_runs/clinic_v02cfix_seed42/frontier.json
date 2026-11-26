@@ -1,0 +1,719 @@
+{
+ "doctor_shen": [
+  {
+   "cumulative_count": 1,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0002"
+   ],
+   "tick": 1
+  },
+  {
+   "cumulative_count": 2,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0007"
+   ],
+   "tick": 2
+  },
+  {
+   "cumulative_count": 4,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0010",
+    "E0011"
+   ],
+   "tick": 3
+  },
+  {
+   "cumulative_count": 5,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0014"
+   ],
+   "tick": 4
+  },
+  {
+   "cumulative_count": 6,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0017"
+   ],
+   "tick": 5
+  },
+  {
+   "cumulative_count": 7,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0021"
+   ],
+   "tick": 6
+  },
+  {
+   "cumulative_count": 10,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0024",
+    "E0025",
+    "E0026"
+   ],
+   "tick": 7
+  },
+  {
+   "cumulative_count": 14,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0028",
+    "E0030",
+    "E0031",
+    "E0032"
+   ],
+   "tick": 8
+  },
+  {
+   "cumulative_count": 19,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0033",
+    "E0034",
+    "E0035",
+    "E0036",
+    "E0037"
+   ],
+   "tick": 9
+  },
+  {
+   "cumulative_count": 23,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0038",
+    "E0040",
+    "E0041",
+    "E0042"
+   ],
+   "tick": 10
+  },
+  {
+   "cumulative_count": 25,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0044",
+    "E0046"
+   ],
+   "tick": 11
+  },
+  {
+   "cumulative_count": 30,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0047",
+    "E0048",
+    "E0049",
+    "E0050",
+    "E0051"
+   ],
+   "tick": 12
+  },
+  {
+   "cumulative_count": 34,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0052",
+    "E0054",
+    "E0055",
+    "E0056"
+   ],
+   "tick": 13
+  },
+  {
+   "cumulative_count": 36,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0059",
+    "E0062"
+   ],
+   "tick": 14
+  },
+  {
+   "cumulative_count": 37,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0066"
+   ],
+   "tick": 15
+  },
+  {
+   "cumulative_count": 40,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0069",
+    "E0070",
+    "E0072"
+   ],
+   "tick": 16
+  },
+  {
+   "cumulative_count": 42,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0073",
+    "E0075"
+   ],
+   "tick": 17
+  },
+  {
+   "cumulative_count": 46,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0076",
+    "E0078",
+    "E0079",
+    "E0080"
+   ],
+   "tick": 18
+  },
+  {
+   "cumulative_count": 50,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0083",
+    "E0084",
+    "E0085",
+    "E0086"
+   ],
+   "tick": 19
+  },
+  {
+   "cumulative_count": 54,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0087",
+    "E0088",
+    "E0090",
+    "E0091"
+   ],
+   "tick": 20
+  },
+  {
+   "cumulative_count": 59,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0092",
+    "E0093",
+    "E0094",
+    "E0095",
+    "E0096"
+   ],
+   "tick": 21
+  },
+  {
+   "cumulative_count": 62,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0097",
+    "E0098",
+    "E0099"
+   ],
+   "tick": 22
+  },
+  {
+   "cumulative_count": 66,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0100",
+    "E0102",
+    "E0103",
+    "E0104"
+   ],
+   "tick": 23
+  },
+  {
+   "cumulative_count": 68,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0105",
+    "E0107"
+   ],
+   "tick": 24
+  }
+ ],
+ "nurse_lin": [
+  {
+   "cumulative_count": 1,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0003"
+   ],
+   "tick": 1
+  },
+  {
+   "cumulative_count": 2,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0006"
+   ],
+   "tick": 2
+  },
+  {
+   "cumulative_count": 3,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0009"
+   ],
+   "tick": 3
+  },
+  {
+   "cumulative_count": 4,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0013"
+   ],
+   "tick": 4
+  },
+  {
+   "cumulative_count": 5,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0016"
+   ],
+   "tick": 5
+  },
+  {
+   "cumulative_count": 7,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0020",
+    "E0022"
+   ],
+   "tick": 6
+  },
+  {
+   "cumulative_count": 10,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0024",
+    "E0025",
+    "E0026"
+   ],
+   "tick": 7
+  },
+  {
+   "cumulative_count": 12,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0029",
+    "E0032"
+   ],
+   "tick": 8
+  },
+  {
+   "cumulative_count": 17,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0033",
+    "E0034",
+    "E0035",
+    "E0036",
+    "E0037"
+   ],
+   "tick": 9
+  },
+  {
+   "cumulative_count": 20,
+   "muffled_event_ids": [
+    "E0038"
+   ],
+   "new_event_ids": [
+    "E0038",
+    "E0039",
+    "E0042"
+   ],
+   "tick": 10
+  },
+  {
+   "cumulative_count": 21,
+   "muffled_event_ids": [
+    "E0044",
+    "E0046"
+   ],
+   "new_event_ids": [
+    "E0045"
+   ],
+   "tick": 11
+  },
+  {
+   "cumulative_count": 26,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0047",
+    "E0048",
+    "E0049",
+    "E0050",
+    "E0051"
+   ],
+   "tick": 12
+  },
+  {
+   "cumulative_count": 29,
+   "muffled_event_ids": [
+    "E0052"
+   ],
+   "new_event_ids": [
+    "E0053",
+    "E0056",
+    "E0057"
+   ],
+   "tick": 13
+  },
+  {
+   "cumulative_count": 33,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0058",
+    "E0060",
+    "E0061",
+    "E0063"
+   ],
+   "tick": 14
+  },
+  {
+   "cumulative_count": 35,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0065",
+    "E0067"
+   ],
+   "tick": 15
+  },
+  {
+   "cumulative_count": 36,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0071"
+   ],
+   "tick": 16
+  },
+  {
+   "cumulative_count": 37,
+   "muffled_event_ids": [
+    "E0073",
+    "E0075"
+   ],
+   "new_event_ids": [
+    "E0074"
+   ],
+   "tick": 17
+  },
+  {
+   "cumulative_count": 38,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0077"
+   ],
+   "tick": 18
+  },
+  {
+   "cumulative_count": 42,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0083",
+    "E0084",
+    "E0085",
+    "E0086"
+   ],
+   "tick": 19
+  },
+  {
+   "cumulative_count": 44,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0089",
+    "E0091"
+   ],
+   "tick": 20
+  },
+  {
+   "cumulative_count": 49,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0092",
+    "E0093",
+    "E0094",
+    "E0095",
+    "E0096"
+   ],
+   "tick": 21
+  },
+  {
+   "cumulative_count": 52,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0097",
+    "E0098",
+    "E0099"
+   ],
+   "tick": 22
+  },
+  {
+   "cumulative_count": 55,
+   "muffled_event_ids": [
+    "E0100",
+    "E0102"
+   ],
+   "new_event_ids": [
+    "E0100",
+    "E0101",
+    "E0104"
+   ],
+   "tick": 23
+  },
+  {
+   "cumulative_count": 56,
+   "muffled_event_ids": [
+    "E0105"
+   ],
+   "new_event_ids": [
+    "E0106"
+   ],
+   "tick": 24
+  }
+ ],
+ "porter_wu": [
+  {
+   "cumulative_count": 2,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0001",
+    "E0004"
+   ],
+   "tick": 1
+  },
+  {
+   "cumulative_count": 3,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0005"
+   ],
+   "tick": 2
+  },
+  {
+   "cumulative_count": 4,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0008"
+   ],
+   "tick": 3
+  },
+  {
+   "cumulative_count": 5,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0012"
+   ],
+   "tick": 4
+  },
+  {
+   "cumulative_count": 6,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0015"
+   ],
+   "tick": 5
+  },
+  {
+   "cumulative_count": 7,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0019"
+   ],
+   "tick": 6
+  },
+  {
+   "cumulative_count": 8,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0023"
+   ],
+   "tick": 7
+  },
+  {
+   "cumulative_count": 12,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0028",
+    "E0030",
+    "E0031",
+    "E0032"
+   ],
+   "tick": 8
+  },
+  {
+   "cumulative_count": 17,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0033",
+    "E0034",
+    "E0035",
+    "E0036",
+    "E0037"
+   ],
+   "tick": 9
+  },
+  {
+   "cumulative_count": 21,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0038",
+    "E0040",
+    "E0041",
+    "E0042"
+   ],
+   "tick": 10
+  },
+  {
+   "cumulative_count": 23,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0044",
+    "E0046"
+   ],
+   "tick": 11
+  },
+  {
+   "cumulative_count": 28,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0047",
+    "E0048",
+    "E0049",
+    "E0050",
+    "E0051"
+   ],
+   "tick": 12
+  },
+  {
+   "cumulative_count": 32,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0052",
+    "E0054",
+    "E0055",
+    "E0056"
+   ],
+   "tick": 13
+  },
+  {
+   "cumulative_count": 37,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0058",
+    "E0060",
+    "E0061",
+    "E0062",
+    "E0063"
+   ],
+   "tick": 14
+  },
+  {
+   "cumulative_count": 39,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0064",
+    "E0067"
+   ],
+   "tick": 15
+  },
+  {
+   "cumulative_count": 42,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0069",
+    "E0070",
+    "E0072"
+   ],
+   "tick": 16
+  },
+  {
+   "cumulative_count": 44,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0073",
+    "E0075"
+   ],
+   "tick": 17
+  },
+  {
+   "cumulative_count": 48,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0076",
+    "E0078",
+    "E0079",
+    "E0080"
+   ],
+   "tick": 18
+  },
+  {
+   "cumulative_count": 50,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0082",
+    "E0086"
+   ],
+   "tick": 19
+  },
+  {
+   "cumulative_count": 54,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0087",
+    "E0088",
+    "E0090",
+    "E0091"
+   ],
+   "tick": 20
+  },
+  {
+   "cumulative_count": 59,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0092",
+    "E0093",
+    "E0094",
+    "E0095",
+    "E0096"
+   ],
+   "tick": 21
+  },
+  {
+   "cumulative_count": 62,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0097",
+    "E0098",
+    "E0099"
+   ],
+   "tick": 22
+  },
+  {
+   "cumulative_count": 66,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0100",
+    "E0102",
+    "E0103",
+    "E0104"
+   ],
+   "tick": 23
+  },
+  {
+   "cumulative_count": 68,
+   "muffled_event_ids": [],
+   "new_event_ids": [
+    "E0105",
+    "E0107"
+   ],
+   "tick": 24
+  }
+ ]
+}

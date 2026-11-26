@@ -1,0 +1,263 @@
+{
+ "scenes": [
+  {
+   "scene_id": "SC01",
+   "narrative_goal": "发热病人到诊前，退烧药能否备齐？",
+   "used_event_ids": [
+    "E0002",
+    "E0030"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "fever_patient_coming"
+   ],
+   "new_facts": [
+    "fever_patient_coming"
+   ],
+   "key_dialogues": [],
+   "repeated_dialogues": [],
+   "character_state_changes": [
+    {
+     "character": "doctor_shen",
+     "fact": "fever_patient_coming",
+     "change": "learned"
+    }
+   ],
+   "paragraphs": 7,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC02",
+   "narrative_goal": "发热病人到诊前，退烧药能否备齐？",
+   "used_event_ids": [
+    "E0033",
+    "E0035"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [],
+   "new_facts": [],
+   "key_dialogues": [
+    "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+    "沈默：退烧药补上了没有？我这边等着确认。"
+   ],
+   "repeated_dialogues": [],
+   "character_state_changes": [],
+   "paragraphs": 8,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC03",
+   "narrative_goal": "发热病人到诊前，退烧药能否备齐？",
+   "used_event_ids": [
+    "E0038",
+    "E0040",
+    "E0044",
+    "E0046"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "fever_patient_coming"
+   ],
+   "new_facts": [],
+   "key_dialogues": [
+    "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+    "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+    "沈默：跟你说一声，后半夜有个发高烧的要送来。"
+   ],
+   "repeated_dialogues": [
+    "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+    "吴大勇：听说今晚要来个高烧的病人？消息准吗？"
+   ],
+   "character_state_changes": [
+    {
+     "character": "porter_wu",
+     "fact": "fever_patient_coming",
+     "change": "learned"
+    }
+   ],
+   "paragraphs": 10,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC04",
+   "narrative_goal": "发热病人到诊前，退烧药能否备齐？",
+   "used_event_ids": [
+    "E0047",
+    "E0049"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [],
+   "new_facts": [],
+   "key_dialogues": [
+    "吴大勇：退烧药补上了没有？我这边等着确认。"
+   ],
+   "repeated_dialogues": [],
+   "character_state_changes": [],
+   "paragraphs": 7,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC05",
+   "narrative_goal": "发热病人到诊前，退烧药能否备齐？",
+   "used_event_ids": [
+    "E0052",
+    "E0054",
+    "E0059"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [],
+   "new_facts": [],
+   "key_dialogues": [
+    "吴大勇：退烧药补上了没有？我这边等着确认。"
+   ],
+   "repeated_dialogues": [
+    "吴大勇：退烧药补上了没有？我这边等着确认。"
+   ],
+   "character_state_changes": [],
+   "paragraphs": 10,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC06",
+   "narrative_goal": "发热病人到诊前，退烧药能否备齐？",
+   "used_event_ids": [
+    "E0070",
+    "E0073",
+    "E0075",
+    "E0083"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "fever_medicine_restocked"
+   ],
+   "new_facts": [
+    "fever_medicine_restocked"
+   ],
+   "key_dialogues": [
+    "吴大勇：退烧药补上了没有？我这边等着确认。",
+    "沈默：退烧药已经补上了，放在我手边，随时能用。"
+   ],
+   "repeated_dialogues": [
+    "吴大勇：退烧药补上了没有？我这边等着确认。"
+   ],
+   "character_state_changes": [
+    {
+     "character": "doctor_shen",
+     "fact": "fever_medicine_restocked",
+     "change": "learned"
+    },
+    {
+     "character": "porter_wu",
+     "fact": "fever_medicine_restocked",
+     "change": "learned"
+    }
+   ],
+   "paragraphs": 9,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC07",
+   "narrative_goal": "发热病人到诊前，退烧药能否备齐？",
+   "used_event_ids": [
+    "E0098"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [],
+   "new_facts": [],
+   "key_dialogues": [
+    "吴大勇：刚接的电话——今晚要收一个高烧病人，提前准备一下。",
+    "沈默：退烧药已经补上了，放在我手边，随时能用。",
+    "吴大勇：跟你说一声，后半夜有个发高烧的要送来。",
+    "沈默：药补齐了，病人来了也不怕。"
+   ],
+   "repeated_dialogues": [
+    "沈默：退烧药已经补上了，放在我手边，随时能用。"
+   ],
+   "character_state_changes": [
+    {
+     "character": "doctor_shen",
+     "fact": "fever_patient_coming",
+     "change": "reinforced"
+    },
+    {
+     "character": "nurse_lin",
+     "fact": "fever_patient_coming",
+     "change": "learned"
+    },
+    {
+     "character": "nurse_lin",
+     "fact": "fever_medicine_restocked",
+     "change": "learned"
+    },
+    {
+     "character": "porter_wu",
+     "fact": "fever_medicine_restocked",
+     "change": "reinforced"
+    },
+    {
+     "character": "doctor_shen",
+     "fact": "fever_patient_coming",
+     "change": "reinforced"
+    },
+    {
+     "character": "nurse_lin",
+     "fact": "fever_patient_coming",
+     "change": "reinforced"
+    },
+    {
+     "character": "nurse_lin",
+     "fact": "fever_medicine_restocked",
+     "change": "reinforced"
+    },
+    {
+     "character": "porter_wu",
+     "fact": "fever_medicine_restocked",
+     "change": "reinforced"
+    }
+   ],
+   "paragraphs": 3,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC08",
+   "narrative_goal": "发热病人到诊前，退烧药能否备齐？",
+   "used_event_ids": [
+    "E0100",
+    "E0102",
+    "E0105",
+    "E0106"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [],
+   "new_facts": [],
+   "key_dialogues": [
+    "吴大勇：听说今晚要来个高烧的病人？消息准吗？",
+    "沈默：这事我不清楚，别问我。",
+    "吴大勇：这事我不清楚，别问我。"
+   ],
+   "repeated_dialogues": [
+    "吴大勇：听说今晚要来个高烧的病人？消息准吗？"
+   ],
+   "character_state_changes": [],
+   "paragraphs": 9,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  }
+ ],
+ "summary": {
+  "scenes": 8,
+  "paragraphs": 63,
+  "valueless_repeat_paragraphs": 0,
+  "scene_repetition_rate": 0.0,
+  "repeated_event_ids": 0,
+  "repeated_dialogues": 6,
+  "scenes_without_increment": []
+ }
+}

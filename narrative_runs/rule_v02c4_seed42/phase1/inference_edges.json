@@ -1,0 +1,279 @@
+{
+ "edges": [
+  {
+   "from": "E0014",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "character_id": "merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0017",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "character_id": "merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0022",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0023",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "character_id": "merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0026",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0027",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "character_id": "merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0030",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0031",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "character_id": "merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0033",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0036",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0040",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0043",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0046",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0047",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "character_id": "merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0050",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0054",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0055",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「商人是否会利用秘密牟利」：商人会如何处置自己听到的风声？",
+   "character_id": "merchant",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0058",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0059",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "merchant",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0022"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0061",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0062",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "merchant",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0022"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0064",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0068",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0071",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「调查泄露的危机」：调查的消息会不会传到镇长耳朵里？",
+   "character_id": "soldier",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0008"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  }
+ ],
+ "note": "INFERENCE ONLY — physically separate from the verified causal graph"
+}

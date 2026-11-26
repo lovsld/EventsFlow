@@ -72,7 +72,8 @@
     0.4,
     0.4,
     0.4
-   ]
+   ],
+   "literary_title": "海雾深处，渔火将至"
   },
   {
    "chapter_id": "CH02",
@@ -104,7 +105,8 @@
    ],
    "emotional_curve": [
     0.4
-   ]
+   ],
+   "literary_title": "灯塔之下，暗影浮动"
   },
   {
    "chapter_id": "CH03",
@@ -147,7 +149,8 @@
     0.4,
     0.4,
     0.4
-   ]
+   ],
+   "literary_title": "雾笛重鸣，一线生机"
   },
   {
    "chapter_id": "CH04",
@@ -170,7 +173,8 @@
    "unresolved_questions": [],
    "emotional_curve": [
     0.0
-   ]
+   ],
+   "literary_title": "讳莫如深，旧事难言"
   }
  ],
  "scenes": [

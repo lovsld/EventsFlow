@@ -1,0 +1,2675 @@
+[
+ {
+  "narrative_event_id": "NE-E0001",
+  "source_event_ids": [
+   "E0001"
+  ],
+  "tick": 1,
+  "event_summary": "move @ tables",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier"
+  ],
+  "location": "tables",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0002",
+  "source_event_ids": [
+   "E0002"
+  ],
+  "tick": 1,
+  "event_summary": "move @ back_room",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant"
+  ],
+  "location": "back_room",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0003",
+  "source_event_ids": [
+   "E0003"
+  ],
+  "tick": 1,
+  "event_summary": "listen @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "listen",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0004",
+  "source_event_ids": [
+   "E0004"
+  ],
+  "tick": 1,
+  "event_summary": "窗外下起雨来，酒馆里的人今晚大概走不了太早。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "bar",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0005",
+  "source_event_ids": [
+   "E0005"
+  ],
+  "tick": 2,
+  "event_summary": "move @ back_room",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier"
+  ],
+  "location": "back_room",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0006",
+  "source_event_ids": [
+   "E0006"
+  ],
+  "tick": 2,
+  "event_summary": "move @ tables",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant"
+  ],
+  "location": "tables",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0007",
+  "source_event_ids": [
+   "E0007"
+  ],
+  "tick": 2,
+  "event_summary": "observe @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0008",
+  "source_event_ids": [
+   "E0008"
+  ],
+  "tick": 3,
+  "event_summary": "search @ back_room",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier"
+  ],
+  "location": "back_room",
+  "event_type": "search",
+  "dramatic_function": [
+   "discovery"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 1.0,
+  "knowledge_changes": [
+   {
+    "character": "soldier",
+    "fact": "anonymous_letter_exists",
+    "change": "learned",
+    "via": "find",
+    "source_event_id": "E0008",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "mayor_embezzled",
+    "change": "learned",
+    "via": "find",
+    "source_event_id": "E0008",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [
+   {
+    "character": "soldier",
+    "dimension": "belief",
+    "description": "learned anonymous_letter_exists by finding anonymous_letter",
+    "evidence_event_ids": [
+     "E0008"
+    ],
+    "evidence_level": "interpretation",
+    "confidence": 1.0
+   },
+   {
+    "character": "soldier",
+    "dimension": "belief",
+    "description": "learned mayor_embezzled by finding anonymous_letter",
+    "evidence_event_ids": [
+     "E0008"
+    ],
+    "evidence_level": "interpretation",
+    "confidence": 1.0
+   }
+  ],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0009",
+  "source_event_ids": [
+   "E0009"
+  ],
+  "tick": 3,
+  "event_summary": "move @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0010",
+  "source_event_ids": [
+   "E0010"
+  ],
+  "tick": 3,
+  "event_summary": "observe @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0011",
+  "source_event_ids": [
+   "E0011"
+  ],
+  "tick": 3,
+  "event_summary": "session_start @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0012",
+  "source_event_ids": [
+   "E0012"
+  ],
+  "tick": 3,
+  "event_summary": "酒馆门口的铃铛响了一声，又没有人进来。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "door",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0013",
+  "source_event_ids": [
+   "E0013"
+  ],
+  "tick": 4,
+  "event_summary": "move @ tables",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier"
+  ],
+  "location": "tables",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0014",
+  "source_event_ids": [
+   "E0014"
+  ],
+  "tick": 4,
+  "event_summary": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [
+   "revelation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "business_opportunity",
+    "change": "learned",
+    "via": "delivery",
+    "source_event_id": "E0014",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0015",
+  "source_event_ids": [
+   "E0015"
+  ],
+  "tick": 4,
+  "event_summary": "observe @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0016",
+  "source_event_ids": [
+   "E0016"
+  ],
+  "tick": 5,
+  "event_summary": "move @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "move",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0017",
+  "source_event_ids": [
+   "E0017"
+  ],
+  "tick": 5,
+  "event_summary": "米拉：那批货的事，老板真不考虑？价格好商量。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.7,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0017",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "business_opportunity",
+    "change": "learned",
+    "via": "delivery",
+    "source_event_id": "E0017",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "REVEALED_BY",
+    "target_ne_id": "NE-E0014",
+    "evidence_event_ids": [
+     "E0014",
+     "E0017"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0018",
+  "source_event_ids": [
+   "E0018"
+  ],
+  "tick": 5,
+  "event_summary": "observe @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0019",
+  "source_event_ids": [
+   "E0019"
+  ],
+  "tick": 5,
+  "event_summary": "session_start @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "owner",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "session_start",
+  "dramatic_function": [
+   "introduction"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0020",
+  "source_event_ids": [
+   "E0020"
+  ],
+  "tick": 5,
+  "event_summary": "session_end @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "session_end",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.1,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0021",
+  "source_event_ids": [
+   "E0021"
+  ],
+  "tick": 5,
+  "event_summary": "街上远处有人喊了一嗓子，很快没了声音。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "outside",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0022",
+  "source_event_ids": [
+   "E0022"
+  ],
+  "tick": 6,
+  "event_summary": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "confront",
+  "dramatic_function": [
+   "revelation",
+   "confrontation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 1.0,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "learned",
+    "via": "delivery",
+    "source_event_id": "E0022",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "owner",
+    "fact": "mayor_embezzled",
+    "change": "learned",
+    "via": "delivery",
+    "source_event_id": "E0022",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "ENABLED_BY",
+    "target_ne_id": "NE-E0008",
+    "evidence_event_ids": [
+     "E0008",
+     "E0022"
+    ],
+    "confidence": 0.95,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "REVEALED_BY",
+    "target_ne_id": "NE-E0008",
+    "evidence_event_ids": [
+     "E0008",
+     "E0022"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0023",
+  "source_event_ids": [
+   "E0023"
+  ],
+  "tick": 6,
+  "event_summary": "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0023",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0023",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0024",
+  "source_event_ids": [
+   "E0024"
+  ],
+  "tick": 6,
+  "event_summary": "listen @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "listen",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0025",
+  "source_event_ids": [
+   "E0025"
+  ],
+  "tick": 6,
+  "event_summary": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "bar",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0026",
+  "source_event_ids": [
+   "E0026"
+  ],
+  "tick": 7,
+  "event_summary": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0027",
+  "source_event_ids": [
+   "E0027"
+  ],
+  "tick": 7,
+  "event_summary": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0027",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0027",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0028",
+  "source_event_ids": [
+   "E0028"
+  ],
+  "tick": 7,
+  "event_summary": "observe @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0029",
+  "source_event_ids": [
+   "E0029"
+  ],
+  "tick": 7,
+  "event_summary": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "bar",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0030",
+  "source_event_ids": [
+   "E0030"
+  ],
+  "tick": 8,
+  "event_summary": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "confront",
+  "dramatic_function": [
+   "confrontation",
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0030",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "owner",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0030",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0031",
+  "source_event_ids": [
+   "E0031"
+  ],
+  "tick": 8,
+  "event_summary": "米拉：那批货的事，老板真不考虑？价格好商量。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0031",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0031",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0032",
+  "source_event_ids": [
+   "E0032"
+  ],
+  "tick": 8,
+  "event_summary": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "owner",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0032",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0032",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "RESPONDED_TO",
+    "target_ne_id": "NE-E0026",
+    "evidence_event_ids": [
+     "E0026",
+     "E0032"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0030",
+    "evidence_event_ids": [
+     "E0030",
+     "E0032"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "ESCALATED_BY",
+    "target_ne_id": "NE-E0030",
+    "evidence_event_ids": [
+     "E0030",
+     "E0032"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0033",
+  "source_event_ids": [
+   "E0033"
+  ],
+  "tick": 9,
+  "event_summary": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0032",
+    "evidence_event_ids": [
+     "E0032",
+     "E0033"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0034",
+  "source_event_ids": [
+   "E0034"
+  ],
+  "tick": 9,
+  "event_summary": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [
+   "revelation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "speaker_knows_secret",
+    "change": "learned",
+    "via": "delivery",
+    "source_event_id": "E0034",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "speaker_knows_secret",
+    "change": "learned",
+    "via": "delivery",
+    "source_event_id": "E0034",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0035",
+  "source_event_ids": [
+   "E0035"
+  ],
+  "tick": 9,
+  "event_summary": "奥伦：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+  "summary_source": "source_text",
+  "participants": [
+   "owner",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0033",
+    "evidence_event_ids": [
+     "E0033",
+     "E0035"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0036",
+  "source_event_ids": [
+   "E0036"
+  ],
+  "tick": 10,
+  "event_summary": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "confront",
+  "dramatic_function": [
+   "confrontation",
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0036",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "owner",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0036",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "ESCALATED_BY",
+    "target_ne_id": "NE-E0032",
+    "evidence_event_ids": [
+     "E0032",
+     "E0036"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0035",
+    "evidence_event_ids": [
+     "E0035",
+     "E0036"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0037",
+  "source_event_ids": [
+   "E0037"
+  ],
+  "tick": 10,
+  "event_summary": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "speaker_knows_secret",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0037",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "speaker_knows_secret",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0037",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0038",
+  "source_event_ids": [
+   "E0038"
+  ],
+  "tick": 10,
+  "event_summary": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "owner",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0038",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0038",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "RESPONDED_TO",
+    "target_ne_id": "NE-E0033",
+    "evidence_event_ids": [
+     "E0033",
+     "E0038"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0036",
+    "evidence_event_ids": [
+     "E0036",
+     "E0038"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "ESCALATED_BY",
+    "target_ne_id": "NE-E0036",
+    "evidence_event_ids": [
+     "E0036",
+     "E0038"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0039",
+  "source_event_ids": [
+   "E0039"
+  ],
+  "tick": 10,
+  "event_summary": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "bar",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0040",
+  "source_event_ids": [
+   "E0040"
+  ],
+  "tick": 11,
+  "event_summary": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0040",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "owner",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0040",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0038",
+    "evidence_event_ids": [
+     "E0038",
+     "E0040"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0041",
+  "source_event_ids": [
+   "E0041"
+  ],
+  "tick": 11,
+  "event_summary": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "speaker_knows_secret",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0041",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "speaker_knows_secret",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0041",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0042",
+  "source_event_ids": [
+   "E0042"
+  ],
+  "tick": 11,
+  "event_summary": "observe @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0043",
+  "source_event_ids": [
+   "E0043"
+  ],
+  "tick": 12,
+  "event_summary": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "confront",
+  "dramatic_function": [
+   "confrontation",
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0043",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "owner",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0043",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0044",
+  "source_event_ids": [
+   "E0044"
+  ],
+  "tick": 12,
+  "event_summary": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "speaker_knows_secret",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0044",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "speaker_knows_secret",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0044",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0045",
+  "source_event_ids": [
+   "E0045"
+  ],
+  "tick": 12,
+  "event_summary": "work @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "work",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0046",
+  "source_event_ids": [
+   "E0046"
+  ],
+  "tick": 13,
+  "event_summary": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0046",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "owner",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0046",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0047",
+  "source_event_ids": [
+   "E0047"
+  ],
+  "tick": 13,
+  "event_summary": "米拉：我也不绕了——货压在手里，镇上只有你这儿能走量。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0047",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0047",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0048",
+  "source_event_ids": [
+   "E0048"
+  ],
+  "tick": 13,
+  "event_summary": "奥伦：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+  "summary_source": "source_text",
+  "participants": [
+   "owner",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0049",
+  "source_event_ids": [
+   "E0049"
+  ],
+  "tick": 13,
+  "event_summary": "酒馆门口的铃铛响了一声，又没有人进来。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "door",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0050",
+  "source_event_ids": [
+   "E0050"
+  ],
+  "tick": 14,
+  "event_summary": "凯尔：老板，你越是不说，我越得查清楚。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0051",
+  "source_event_ids": [
+   "E0051"
+  ],
+  "tick": 14,
+  "event_summary": "米拉：（笑）这镇上的秘密啊，我知道的可能比你们想的多一点。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "speaker_knows_secret",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0051",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "speaker_knows_secret",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0051",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0052",
+  "source_event_ids": [
+   "E0052"
+  ],
+  "tick": 14,
+  "event_summary": "奥伦：再问一次，这几天后屋那边，有人动过什么吗？",
+  "summary_source": "source_text",
+  "participants": [
+   "owner",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0050",
+    "evidence_event_ids": [
+     "E0050",
+     "E0052"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0053",
+  "source_event_ids": [
+   "E0053"
+  ],
+  "tick": 14,
+  "event_summary": "一只野猫碰倒了桌边的空杯子，碎在地上。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "tables",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0054",
+  "source_event_ids": [
+   "E0054"
+  ],
+  "tick": 15,
+  "event_summary": "凯尔：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0052",
+    "evidence_event_ids": [
+     "E0052",
+     "E0054"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0055",
+  "source_event_ids": [
+   "E0055"
+  ],
+  "tick": 15,
+  "event_summary": "米拉：老板，我手里有批货，镇上要是有销路，咱们都有赚头。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "owner",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0055",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "business_opportunity",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0055",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0056",
+  "source_event_ids": [
+   "E0056"
+  ],
+  "tick": 15,
+  "event_summary": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "owner",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0056",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0056",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "RESPONDED_TO",
+    "target_ne_id": "NE-E0050",
+    "evidence_event_ids": [
+     "E0050",
+     "E0056"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0054",
+    "evidence_event_ids": [
+     "E0054",
+     "E0056"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0057",
+  "source_event_ids": [
+   "E0057"
+  ],
+  "tick": 15,
+  "event_summary": "吧台的蜡烛晃了晃，老板的目光跟着晃了一下。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "bar",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0058",
+  "source_event_ids": [
+   "E0058"
+  ],
+  "tick": 16,
+  "event_summary": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0058",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "owner",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0058",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "RESPONDED_TO",
+    "target_ne_id": "NE-E0052",
+    "evidence_event_ids": [
+     "E0052",
+     "E0058"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0056",
+    "evidence_event_ids": [
+     "E0056",
+     "E0058"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0059",
+  "source_event_ids": [
+   "E0059"
+  ],
+  "tick": 16,
+  "event_summary": "米拉：老板，我例行问一句——这几天酒馆有没有什么异常的人或事？",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0058",
+    "evidence_event_ids": [
+     "E0058",
+     "E0059"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0060",
+  "source_event_ids": [
+   "E0060"
+  ],
+  "tick": 16,
+  "event_summary": "listen @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "listen",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0061",
+  "source_event_ids": [
+   "E0061"
+  ],
+  "tick": 17,
+  "event_summary": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "confront",
+  "dramatic_function": [
+   "confrontation",
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0061",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "owner",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0061",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0059",
+    "evidence_event_ids": [
+     "E0059",
+     "E0061"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0062",
+  "source_event_ids": [
+   "E0062"
+  ],
+  "tick": 17,
+  "event_summary": "米拉：再问一次，这几天后屋那边，有人动过什么吗？",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0061",
+    "evidence_event_ids": [
+     "E0061",
+     "E0062"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0063",
+  "source_event_ids": [
+   "E0063"
+  ],
+  "tick": 17,
+  "event_summary": "奥伦：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "owner",
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0063",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "soldier",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0063",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "ESCALATED_BY",
+    "target_ne_id": "NE-E0061",
+    "evidence_event_ids": [
+     "E0061",
+     "E0063"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0062",
+    "evidence_event_ids": [
+     "E0062",
+     "E0063"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0064",
+  "source_event_ids": [
+   "E0064"
+  ],
+  "tick": 18,
+  "event_summary": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "confront",
+  "dramatic_function": [
+   "confrontation",
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.8,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0064",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "owner",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0064",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0063",
+    "evidence_event_ids": [
+     "E0063",
+     "E0064"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   },
+   {
+    "relation": "ESCALATED_BY",
+    "target_ne_id": "NE-E0063",
+    "evidence_event_ids": [
+     "E0063",
+     "E0064"
+    ],
+    "confidence": 0.9,
+    "source": "v03",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0065",
+  "source_event_ids": [
+   "E0065"
+  ],
+  "tick": 18,
+  "event_summary": "米拉：我这小酒馆能有什么异常？各位喝酒就是了，别的不归我管。",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0048",
+    "evidence_event_ids": [
+     "E0048",
+     "E0065"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0066",
+  "source_event_ids": [
+   "E0066"
+  ],
+  "tick": 18,
+  "event_summary": "listen @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "owner"
+  ],
+  "location": "bar",
+  "event_type": "listen",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0067",
+  "source_event_ids": [
+   "E0067"
+  ],
+  "tick": 18,
+  "event_summary": "一只野猫碰倒了桌边的空杯子，碎在地上。",
+  "summary_source": "source_text",
+  "participants": [],
+  "location": "tables",
+  "event_type": "ambient",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0068",
+  "source_event_ids": [
+   "E0068"
+  ],
+  "tick": 19,
+  "event_summary": "凯尔：（压低声音）镇上那笔公共资金……数目好像对不上。",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [
+   "escalation"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [
+   {
+    "character": "merchant",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0068",
+    "evidence_level": "subjective"
+   },
+   {
+    "character": "owner",
+    "fact": "mayor_embezzled",
+    "change": "reinforced",
+    "via": "delivery",
+    "source_event_id": "E0068",
+    "evidence_level": "subjective"
+   }
+  ],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0069",
+  "source_event_ids": [
+   "E0069"
+  ],
+  "tick": 19,
+  "event_summary": "observe @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "observe",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0070",
+  "source_event_ids": [
+   "E0070"
+  ],
+  "tick": 19,
+  "event_summary": "奥伦：老板，你越是不说，我越得查清楚。",
+  "summary_source": "source_text",
+  "participants": [
+   "owner",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0068",
+    "evidence_event_ids": [
+     "E0068",
+     "E0070"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0071",
+  "source_event_ids": [
+   "E0071"
+  ],
+  "tick": 20,
+  "event_summary": "凯尔：再问一次，这几天后屋那边，有人动过什么吗？",
+  "summary_source": "source_text",
+  "participants": [
+   "soldier",
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "ask",
+  "dramatic_function": [
+   "setup"
+  ],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.55,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0070",
+    "evidence_event_ids": [
+     "E0070",
+     "E0071"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": 1.0
+ },
+ {
+  "narrative_event_id": "NE-E0072",
+  "source_event_ids": [
+   "E0072"
+  ],
+  "tick": 20,
+  "event_summary": "listen @ bar",
+  "summary_source": "source_text",
+  "participants": [
+   "merchant"
+  ],
+  "location": "bar",
+  "event_type": "listen",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.05,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ },
+ {
+  "narrative_event_id": "NE-E0073",
+  "source_event_ids": [
+   "E0073"
+  ],
+  "tick": 20,
+  "event_summary": "奥伦：问几遍都一样，我什么都不知道。",
+  "summary_source": "source_text",
+  "participants": [
+   "owner",
+   "soldier"
+  ],
+  "location": "bar",
+  "event_type": "speak",
+  "dramatic_function": [],
+  "dramatic_function_source": "rule",
+  "narrative_importance": 0.5,
+  "knowledge_changes": [],
+  "character_changes": [],
+  "relationship_changes": [],
+  "conflict_changes": [],
+  "causal_links": [
+   {
+    "relation": "CAUSED_BY",
+    "target_ne_id": "NE-E0065",
+    "evidence_event_ids": [
+     "E0065",
+     "E0073"
+    ],
+    "confidence": 0.9,
+    "source": "extractor",
+    "verification_status": "verified"
+   }
+  ],
+  "evidence_level": "objective",
+  "interpretation_confidence": null
+ }
+]

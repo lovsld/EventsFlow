@@ -1,0 +1,7 @@
+{
+ "F1_min": 0.3,
+ "F2_min": 0.4,
+ "F2_max": 0.55,
+ "F3_max": 0.2,
+ "note": "Phase 1 initial experiment values (task book 7.2); configurable, NOT a final literary standard. Over-budget triggers warnings and downgrade candidates only - never mechanical deletion."
+}

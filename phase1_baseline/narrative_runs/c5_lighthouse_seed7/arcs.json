@@ -1,0 +1,320 @@
+{
+ "a_gui": {
+  "fragments": [],
+  "frontier_by_tick": [
+   {
+    "cumulative_count": 3,
+    "tick": 1
+   },
+   {
+    "cumulative_count": 6,
+    "tick": 2
+   },
+   {
+    "cumulative_count": 8,
+    "tick": 3
+   },
+   {
+    "cumulative_count": 14,
+    "tick": 4
+   },
+   {
+    "cumulative_count": 18,
+    "tick": 5
+   },
+   {
+    "cumulative_count": 21,
+    "tick": 6
+   },
+   {
+    "cumulative_count": 24,
+    "tick": 7
+   },
+   {
+    "cumulative_count": 29,
+    "tick": 8
+   },
+   {
+    "cumulative_count": 31,
+    "tick": 9
+   },
+   {
+    "cumulative_count": 33,
+    "tick": 10
+   },
+   {
+    "cumulative_count": 35,
+    "tick": 11
+   },
+   {
+    "cumulative_count": 37,
+    "tick": 12
+   },
+   {
+    "cumulative_count": 40,
+    "tick": 13
+   },
+   {
+    "cumulative_count": 42,
+    "tick": 14
+   },
+   {
+    "cumulative_count": 44,
+    "tick": 15
+   },
+   {
+    "cumulative_count": 46,
+    "tick": 16
+   },
+   {
+    "cumulative_count": 49,
+    "tick": 17
+   },
+   {
+    "cumulative_count": 51,
+    "tick": 18
+   },
+   {
+    "cumulative_count": 54,
+    "tick": 19
+   },
+   {
+    "cumulative_count": 60,
+    "tick": 20
+   },
+   {
+    "cumulative_count": 62,
+    "tick": 21
+   },
+   {
+    "cumulative_count": 67,
+    "tick": 22
+   },
+   {
+    "cumulative_count": 70,
+    "tick": 23
+   },
+   {
+    "cumulative_count": 73,
+    "tick": 24
+   }
+  ],
+  "frontier_final_count": 73,
+  "lines": [
+   "L01",
+   "L02"
+  ]
+ },
+ "keeper_zhou": {
+  "fragments": [],
+  "frontier_by_tick": [
+   {
+    "cumulative_count": 1,
+    "tick": 1
+   },
+   {
+    "cumulative_count": 2,
+    "tick": 2
+   },
+   {
+    "cumulative_count": 3,
+    "tick": 3
+   },
+   {
+    "cumulative_count": 9,
+    "tick": 4
+   },
+   {
+    "cumulative_count": 13,
+    "tick": 5
+   },
+   {
+    "cumulative_count": 16,
+    "tick": 6
+   },
+   {
+    "cumulative_count": 19,
+    "tick": 7
+   },
+   {
+    "cumulative_count": 24,
+    "tick": 8
+   },
+   {
+    "cumulative_count": 26,
+    "tick": 9
+   },
+   {
+    "cumulative_count": 28,
+    "tick": 10
+   },
+   {
+    "cumulative_count": 30,
+    "tick": 11
+   },
+   {
+    "cumulative_count": 33,
+    "tick": 12
+   },
+   {
+    "cumulative_count": 36,
+    "tick": 13
+   },
+   {
+    "cumulative_count": 38,
+    "tick": 14
+   },
+   {
+    "cumulative_count": 40,
+    "tick": 15
+   },
+   {
+    "cumulative_count": 42,
+    "tick": 16
+   },
+   {
+    "cumulative_count": 45,
+    "tick": 17
+   },
+   {
+    "cumulative_count": 47,
+    "tick": 18
+   },
+   {
+    "cumulative_count": 51,
+    "tick": 19
+   },
+   {
+    "cumulative_count": 57,
+    "tick": 20
+   },
+   {
+    "cumulative_count": 61,
+    "tick": 21
+   },
+   {
+    "cumulative_count": 66,
+    "tick": 22
+   },
+   {
+    "cumulative_count": 69,
+    "tick": 23
+   },
+   {
+    "cumulative_count": 73,
+    "tick": 24
+   }
+  ],
+  "frontier_final_count": 73,
+  "lines": [
+   "L01",
+   "L02"
+  ]
+ },
+ "lin_tao": {
+  "fragments": [],
+  "frontier_by_tick": [
+   {
+    "cumulative_count": 3,
+    "tick": 1
+   },
+   {
+    "cumulative_count": 6,
+    "tick": 2
+   },
+   {
+    "cumulative_count": 8,
+    "tick": 3
+   },
+   {
+    "cumulative_count": 14,
+    "tick": 4
+   },
+   {
+    "cumulative_count": 18,
+    "tick": 5
+   },
+   {
+    "cumulative_count": 21,
+    "tick": 6
+   },
+   {
+    "cumulative_count": 24,
+    "tick": 7
+   },
+   {
+    "cumulative_count": 27,
+    "tick": 8
+   },
+   {
+    "cumulative_count": 28,
+    "tick": 9
+   },
+   {
+    "cumulative_count": 30,
+    "tick": 10
+   },
+   {
+    "cumulative_count": 31,
+    "tick": 11
+   },
+   {
+    "cumulative_count": 32,
+    "tick": 12
+   },
+   {
+    "cumulative_count": 33,
+    "tick": 13
+   },
+   {
+    "cumulative_count": 34,
+    "tick": 14
+   },
+   {
+    "cumulative_count": 36,
+    "tick": 15
+   },
+   {
+    "cumulative_count": 37,
+    "tick": 16
+   },
+   {
+    "cumulative_count": 38,
+    "tick": 17
+   },
+   {
+    "cumulative_count": 39,
+    "tick": 18
+   },
+   {
+    "cumulative_count": 43,
+    "tick": 19
+   },
+   {
+    "cumulative_count": 49,
+    "tick": 20
+   },
+   {
+    "cumulative_count": 53,
+    "tick": 21
+   },
+   {
+    "cumulative_count": 58,
+    "tick": 22
+   },
+   {
+    "cumulative_count": 61,
+    "tick": 23
+   },
+   {
+    "cumulative_count": 65,
+    "tick": 24
+   }
+  ],
+  "frontier_final_count": 65,
+  "lines": [
+   "L01",
+   "L02"
+  ]
+ }
+}

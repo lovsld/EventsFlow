@@ -1,0 +1,440 @@
+{
+ "emotions": [
+  {
+   "character_id": "doctor_shen",
+   "scene_id": "SC01",
+   "tick": 1,
+   "emotion": "surprise",
+   "intensity": 0.7,
+   "confidence": 0.6,
+   "evidence_event_ids": [
+    "E0002"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "scene_id": "SC02",
+   "tick": 9,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "scene_id": "SC02",
+   "tick": 9,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "scene_id": "SC03",
+   "tick": 10,
+   "emotion": "sadness",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0040"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "nurse_lin",
+   "scene_id": "SC03",
+   "tick": 10,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "scene_id": "SC03",
+   "tick": 11,
+   "emotion": "anticipation",
+   "intensity": 0.5,
+   "confidence": 0.35,
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "scene_id": "SC04",
+   "tick": 12,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "scene_id": "SC04",
+   "tick": 12,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "scene_id": "SC05",
+   "tick": 13,
+   "emotion": "sadness",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0054",
+    "E0059"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "scene_id": "SC05",
+   "tick": 13,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "scene_id": "SC06",
+   "tick": 16,
+   "emotion": "surprise",
+   "intensity": 0.7,
+   "confidence": 0.6,
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "scene_id": "SC06",
+   "tick": 17,
+   "emotion": "anticipation",
+   "intensity": 0.5,
+   "confidence": 0.35,
+   "evidence_event_ids": [
+    "E0075"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "scene_id": "SC07",
+   "tick": 21,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "nurse_lin",
+   "scene_id": "SC07",
+   "tick": 21,
+   "emotion": "anticipation",
+   "intensity": 0.5,
+   "confidence": 0.35,
+   "evidence_event_ids": [
+    "E0092",
+    "E0093"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "scene_id": "SC07",
+   "tick": 21,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "scene_id": "SC08",
+   "tick": 23,
+   "emotion": "anger",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0102"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "nurse_lin",
+   "scene_id": "SC08",
+   "tick": 23,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "scene_id": "SC08",
+   "tick": 24,
+   "emotion": "anger",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0105"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  }
+ ],
+ "motivated_by": [
+  {
+   "character_id": "porter_wu",
+   "action_event_id": "E0033",
+   "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "thread_id": "main_fever_patient",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "action_event_id": "E0035",
+   "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "thread_id": "medicine_supply",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "action_event_id": "E0038",
+   "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "thread_id": "main_fever_patient",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "action_event_id": "E0044",
+   "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "thread_id": "main_fever_patient",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "action_event_id": "E0046",
+   "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "thread_id": "main_fever_patient",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0002"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "action_event_id": "E0047",
+   "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "thread_id": "medicine_supply",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "action_event_id": "E0052",
+   "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "thread_id": "medicine_supply",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "action_event_id": "E0073",
+   "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "thread_id": "medicine_supply",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "action_event_id": "E0075",
+   "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "thread_id": "medicine_supply",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "action_event_id": "E0092",
+   "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "thread_id": "main_fever_patient",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "action_event_id": "E0093",
+   "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "thread_id": "medicine_supply",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "action_event_id": "E0097",
+   "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "thread_id": "main_fever_patient",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "doctor_shen",
+   "action_event_id": "E0099",
+   "motivation": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "thread_id": "medicine_supply",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "porter_wu",
+   "action_event_id": "E0100",
+   "motivation": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "thread_id": "main_fever_patient",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  }
+ ],
+ "diagnostics": {
+  "key_actions": 19,
+  "motivated_actions": 14,
+  "emotion_records": 18,
+  "unknown_emotions": 9
+ }
+}

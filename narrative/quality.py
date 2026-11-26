@@ -82,6 +82,24 @@ def deterministic_scores(run_dir: Path, narrative_dir: Path,
     scores["factual_consistency"] = max(
         0.0, 5.0 - 1.0 * violations)
 
+    # system log leakage (Phase 1 task 2): a quoted log string in
+    # ANY paragraph is a factual violation; F1 leaks were already
+    # counted above as non-verbatim quotes, so only non-F1 leaks
+    # add to the count here. All leaks are recorded as issues.
+    from narrative.material import detect_log_leakage
+    for leak in detect_log_leakage(paras, observations):
+        issues.append({"dimension": "system_log_leakage",
+                       "severity": "high",
+                       "detail": f"system log string quoted: "
+                                 f"{leak['span']}",
+                       "chapter_id": leak["chapter_id"],
+                       "event_ids": leak["event_ids"]})
+    non_f1 = [p for p in paras if p.get("level") != "F1"]
+    extra = len(detect_log_leakage(non_f1, observations))
+    if extra:
+        scores["factual_consistency"] = max(
+            0.0, scores["factual_consistency"] - 1.0 * extra)
+
     # repetition: duplicate sentence rate in the draft
     all_text = "\n".join(p.get("text", "") for p in paras)
     sents = _sentences(all_text)

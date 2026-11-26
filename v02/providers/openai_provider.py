@@ -65,7 +65,37 @@ import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 
-from ..protocol import AgentDecision, DecisionContext, ProviderResult
+from ..protocol import (ActionSpec, AgentDecision, DecisionContext,
+                        PlanStep, PlanUpdate, ProviderResult,
+                        RecoverySpec)
+
+
+def _strip_unknown(data: dict, model) -> dict:
+    """Drop keys the strict schema does not declare (Phase 1:
+    the dominant LLM parse-failure class was extra keys inside
+    plan_update — desc/step/actor — which the extra=forbid models
+    reject. Stripping is a surface coercion like the enum maps
+    below; validation afterwards stays strict.)"""
+    keep = set(model.model_fields)
+    return {k: v for k, v in data.items() if k in keep}
+
+
+def _strip_decision_extras(data: dict) -> dict:
+    data = _strip_unknown(data, AgentDecision)
+    if isinstance(data.get("action"), dict):
+        data["action"] = _strip_unknown(data["action"], ActionSpec)
+    pu = data.get("plan_update")
+    if isinstance(pu, dict):
+        pu = _strip_unknown(pu, PlanUpdate)
+        if isinstance(pu.get("recovery"), dict):
+            pu["recovery"] = _strip_unknown(pu["recovery"],
+                                            RecoverySpec)
+        if isinstance(pu.get("new_steps"), list):
+            pu["new_steps"] = [
+                _strip_unknown(s, PlanStep) if isinstance(s, dict)
+                else s for s in pu["new_steps"]]
+        data["plan_update"] = pu
+    return data
 from .base import LLMProvider, ProviderError, QuotaExhaustedError
 
 SYSTEM_TEMPLATE = """你是一个多智能体故事模拟中的独立角色。你只能依据给你的信息行动，
@@ -366,7 +396,7 @@ class OpenAICompatibleProvider(LLMProvider):
         conf = data.get("confidence")
         if isinstance(conf, (int, float)):
             data["confidence"] = min(1.0, max(0.0, float(conf)))
-        return data
+        return _strip_decision_extras(data)
 
     async def generate_decision(self, context: DecisionContext) -> ProviderResult:
         preset = self.PRESET

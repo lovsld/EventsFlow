@@ -1,0 +1,2300 @@
+[
+ {
+  "tick": 1,
+  "time": "21:05",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "lamp_room",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0001",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "from": "jetty",
+    "to": "boathouse"
+   },
+   {
+    "event_id": "E0002",
+    "tick": 1,
+    "type": "work",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "target": null,
+    "topic": "maintain_engine"
+   },
+   {
+    "event_id": "E0003",
+    "tick": 1,
+    "type": "move",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "lamp_room",
+    "from": "base",
+    "to": "lamp_room"
+   },
+   {
+    "type": "session_start",
+    "session": "S1",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "lin_tao"
+    ],
+    "event_id": "E0004",
+    "tick": 1
+   },
+   {
+    "event_id": "E0005",
+    "tick": 1,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "fog_thickens",
+    "text": "雾又浓了一层，栈桥那头的灯影只剩一个晕。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0001",
+     "E0002",
+     "E0004"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0003"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 1,
+    "delivered_event_ids": [
+     "E0001",
+     "E0002",
+     "E0004"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 2,
+  "time": "21:10",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "base",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0006",
+    "tick": 2,
+    "type": "ask",
+    "actors": [
+     "a_gui",
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "topic": "ship_inquire",
+    "claim": "ship_inquire",
+    "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0007",
+    "tick": 2,
+    "type": "observe",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0008",
+    "tick": 2,
+    "type": "move",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "base",
+    "from": "lamp_room",
+    "to": "base"
+   },
+   {
+    "event_id": "E0009",
+    "tick": 2,
+    "type": "ambient",
+    "actors": [],
+    "location": "boathouse",
+    "topic": "buoy_bell",
+    "text": "远处浮标的铃铛被浪推着，断断续续地响。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006",
+     "E0007",
+     "E0009"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0008"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 2,
+    "delivered_event_ids": [
+     "E0006",
+     "E0007",
+     "E0009"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 3,
+  "time": "21:15",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "jetty",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0010",
+    "tick": 3,
+    "type": "ask",
+    "actors": [
+     "a_gui",
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "topic": "ship_inquire",
+    "claim": "ship_inquire",
+    "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0011",
+    "tick": 3,
+    "type": "ask",
+    "actors": [
+     "lin_tao",
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "topic": "ship_inquire",
+    "claim": "ship_inquire",
+    "text": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0012",
+    "tick": 3,
+    "type": "move",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "jetty",
+    "from": "base",
+    "to": "jetty"
+   },
+   {
+    "event_id": "E0013",
+    "tick": 3,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "fog_thickens",
+    "text": "雾又浓了一层，栈桥那头的灯影只剩一个晕。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0010",
+     "E0011"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0012"
+    ],
+    "muffled_event_ids": [
+     "E0010",
+     "E0011"
+    ]
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 3,
+    "delivered_event_ids": [
+     "E0010",
+     "E0011"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 4,
+  "time": "21:20",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0014",
+    "tick": 4,
+    "type": "ask",
+    "actors": [
+     "a_gui",
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "topic": "ship_inquire",
+    "claim": "ship_inquire",
+    "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0015",
+    "tick": 4,
+    "type": "ask",
+    "actors": [
+     "lin_tao",
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "topic": "ship_inquire",
+    "claim": "ship_inquire",
+    "text": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0016",
+    "tick": 4,
+    "type": "move",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "from": "jetty",
+    "to": "boathouse"
+   },
+   {
+    "type": "session_start",
+    "session": "S2",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0017",
+    "tick": 4
+   },
+   {
+    "type": "session_end",
+    "session": "S1",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "lin_tao"
+    ],
+    "event_id": "E0018",
+    "tick": 4
+   },
+   {
+    "event_id": "E0019",
+    "tick": 4,
+    "type": "ambient",
+    "actors": [],
+    "location": "boathouse",
+    "topic": "buoy_bell",
+    "text": "远处浮标的铃铛被浪推着，断断续续地响。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0014",
+     "E0015",
+     "E0016",
+     "E0017",
+     "E0018",
+     "E0019"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0014",
+     "E0015",
+     "E0016",
+     "E0017",
+     "E0018",
+     "E0019"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 4,
+    "delivered_event_ids": [
+     "E0014",
+     "E0015",
+     "E0016",
+     "E0017",
+     "E0018",
+     "E0019"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 5,
+  "time": "21:25",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0020",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "ship_inquire",
+    "claim": "ship_inquire",
+    "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0021",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "lin_tao",
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "topic": "ship_inquire",
+    "claim": "ship_inquire",
+    "text": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0022",
+    "tick": 5,
+    "type": "ask",
+    "actors": [
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0023",
+    "tick": 5,
+    "type": "ambient",
+    "actors": [],
+    "location": "boathouse",
+    "topic": "buoy_bell",
+    "text": "远处浮标的铃铛被浪推着，断断续续地响。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0020",
+     "E0021",
+     "E0022",
+     "E0023"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0020",
+     "E0021",
+     "E0022",
+     "E0023"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 5,
+    "delivered_event_ids": [
+     "E0020",
+     "E0021",
+     "E0022",
+     "E0023"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 6,
+  "time": "21:30",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0024",
+    "tick": 6,
+    "type": "ask",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "ship_inquire",
+    "claim": "ship_inquire",
+    "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0025",
+    "tick": 6,
+    "type": "ask",
+    "actors": [
+     "lin_tao",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "林涛：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0026",
+    "tick": 6,
+    "type": "speak",
+    "actors": [
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "topic": "ship_notice",
+    "claim": "ship_notice",
+    "text": "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0024",
+     "E0025",
+     "E0026"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0024",
+     "E0025",
+     "E0026"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 6,
+    "delivered_event_ids": [
+     "E0024",
+     "E0025",
+     "E0026"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 7,
+  "time": "21:35",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0027",
+    "tick": 7,
+    "type": "search",
+    "actors": [
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "found": [
+     "signal_lantern"
+    ]
+   },
+   {
+    "event_id": "E0028",
+    "tick": 7,
+    "type": "search",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "found": []
+   },
+   {
+    "event_id": "E0029",
+    "tick": 7,
+    "type": "ask",
+    "actors": [
+     "keeper_zhou",
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0027",
+     "E0028",
+     "E0029"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0027",
+     "E0028",
+     "E0029"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 7,
+    "delivered_event_ids": [
+     "E0027",
+     "E0028",
+     "E0029"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 8,
+  "time": "21:40",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "jetty"
+  },
+  "events": [
+   {
+    "event_id": "E0030",
+    "tick": 8,
+    "type": "speak",
+    "actors": [
+     "a_gui",
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "topic": "ship_notice",
+    "claim": "ship_notice",
+    "text": "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0031",
+    "tick": 8,
+    "type": "move",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "jetty",
+    "from": "boathouse",
+    "to": "jetty"
+   },
+   {
+    "event_id": "E0032",
+    "tick": 8,
+    "type": "speak_failed",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "target": "lin_tao",
+    "topic": "horn_inquire",
+    "reason": "target_left"
+   },
+   {
+    "type": "session_start",
+    "session": "S3",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "event_id": "E0033",
+    "tick": 8
+   },
+   {
+    "type": "session_end",
+    "session": "S2",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0034",
+    "tick": 8
+   },
+   {
+    "event_id": "E0035",
+    "tick": 8,
+    "type": "ambient",
+    "actors": [],
+    "location": "boathouse",
+    "topic": "buoy_bell",
+    "text": "远处浮标的铃铛被浪推着，断断续续地响。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0030",
+     "E0032",
+     "E0033",
+     "E0034",
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0030",
+     "E0032",
+     "E0033",
+     "E0034",
+     "E0035"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 8,
+    "delivered_event_ids": [
+     "E0031"
+    ],
+    "muffled_event_ids": [
+     "E0030"
+    ]
+   }
+  ]
+ },
+ {
+  "tick": 9,
+  "time": "21:45",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "jetty"
+  },
+  "events": [
+   {
+    "event_id": "E0036",
+    "tick": 9,
+    "type": "ask",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0037",
+    "tick": 9,
+    "type": "search",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "jetty",
+    "found": []
+   },
+   {
+    "event_id": "E0038",
+    "tick": 9,
+    "type": "ask",
+    "actors": [
+     "keeper_zhou",
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0036",
+     "E0038"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0036",
+     "E0038"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 9,
+    "delivered_event_ids": [
+     "E0037"
+    ],
+    "muffled_event_ids": [
+     "E0036",
+     "E0038"
+    ]
+   }
+  ]
+ },
+ {
+  "tick": 10,
+  "time": "21:50",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "base"
+  },
+  "events": [
+   {
+    "event_id": "E0039",
+    "tick": 10,
+    "type": "ask",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0040",
+    "tick": 10,
+    "type": "move",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "base",
+    "from": "jetty",
+    "to": "base"
+   },
+   {
+    "event_id": "E0041",
+    "tick": 10,
+    "type": "ask",
+    "actors": [
+     "keeper_zhou",
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0042",
+    "tick": 10,
+    "type": "ambient",
+    "actors": [],
+    "location": "base",
+    "topic": "radio_static",
+    "text": "值班室的电台沙沙响了几下，没有呼叫。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0039",
+     "E0041"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0039",
+     "E0041"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 10,
+    "delivered_event_ids": [
+     "E0040",
+     "E0042"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 11,
+  "time": "21:55",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "base"
+  },
+  "events": [
+   {
+    "event_id": "E0043",
+    "tick": 11,
+    "type": "ask",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0044",
+    "tick": 11,
+    "type": "search",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "base",
+    "found": [
+     "spare_belt"
+    ]
+   },
+   {
+    "event_id": "E0045",
+    "tick": 11,
+    "type": "ask",
+    "actors": [
+     "keeper_zhou",
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0046",
+    "tick": 11,
+    "type": "ambient",
+    "actors": [],
+    "location": "bar",
+    "topic": "fog_thickens",
+    "text": "雾又浓了一层，栈桥那头的灯影只剩一个晕。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0043",
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0043",
+     "E0045"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 11,
+    "delivered_event_ids": [
+     "E0044"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 12,
+  "time": "22:00",
+  "positions": {
+   "a_gui": "jetty",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "lamp_room"
+  },
+  "events": [
+   {
+    "event_id": "E0047",
+    "tick": 12,
+    "type": "move",
+    "actors": [
+     "a_gui"
+    ],
+    "location": "jetty",
+    "from": "boathouse",
+    "to": "jetty"
+   },
+   {
+    "event_id": "E0048",
+    "tick": 12,
+    "type": "move",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "lamp_room",
+    "from": "base",
+    "to": "lamp_room"
+   },
+   {
+    "event_id": "E0049",
+    "tick": 12,
+    "type": "speak_failed",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "target": "a_gui",
+    "topic": "horn_inquire",
+    "reason": "target_left"
+   },
+   {
+    "type": "session_end",
+    "session": "S3",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "event_id": "E0050",
+    "tick": 12
+   },
+   {
+    "event_id": "E0051",
+    "tick": 12,
+    "type": "ambient",
+    "actors": [],
+    "location": "boathouse",
+    "topic": "buoy_bell",
+    "text": "远处浮标的铃铛被浪推着，断断续续地响。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0047"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0049",
+     "E0050",
+     "E0051"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 12,
+    "delivered_event_ids": [
+     "E0048"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 13,
+  "time": "22:05",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "base"
+  },
+  "events": [
+   {
+    "event_id": "E0052",
+    "tick": 13,
+    "type": "move",
+    "actors": [
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "from": "jetty",
+    "to": "boathouse"
+   },
+   {
+    "event_id": "E0053",
+    "tick": 13,
+    "type": "observe",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0054",
+    "tick": 13,
+    "type": "move",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "base",
+    "from": "lamp_room",
+    "to": "base"
+   },
+   {
+    "type": "session_start",
+    "session": "S4",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "event_id": "E0055",
+    "tick": 13
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0052",
+     "E0053",
+     "E0055"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0052",
+     "E0053",
+     "E0055"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 13,
+    "delivered_event_ids": [
+     "E0054"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 14,
+  "time": "22:10",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "lamp_room"
+  },
+  "events": [
+   {
+    "event_id": "E0056",
+    "tick": 14,
+    "type": "speak",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "denial",
+    "claim": "denial",
+    "text": "阿贵：这事我不清楚，别问我。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0057",
+    "tick": 14,
+    "type": "move",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "lamp_room",
+    "from": "base",
+    "to": "lamp_room"
+   },
+   {
+    "event_id": "E0058",
+    "tick": 14,
+    "type": "speak",
+    "actors": [
+     "keeper_zhou",
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "topic": "denial",
+    "claim": "denial",
+    "text": "周守义：这事我不清楚，别问我。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0056",
+     "E0058"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0056",
+     "E0058"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 14,
+    "delivered_event_ids": [
+     "E0057"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 15,
+  "time": "22:15",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "base"
+  },
+  "events": [
+   {
+    "event_id": "E0059",
+    "tick": 15,
+    "type": "speak",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "ship_notice",
+    "claim": "ship_notice",
+    "text": "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0060",
+    "tick": 15,
+    "type": "observe",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0061",
+    "tick": 15,
+    "type": "move",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "base",
+    "from": "lamp_room",
+    "to": "base"
+   },
+   {
+    "event_id": "E0062",
+    "tick": 15,
+    "type": "ambient",
+    "actors": [],
+    "location": "base",
+    "topic": "radio_static",
+    "text": "值班室的电台沙沙响了几下，没有呼叫。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0059",
+     "E0060"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0059",
+     "E0060"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 15,
+    "delivered_event_ids": [
+     "E0061",
+     "E0062"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 16,
+  "time": "22:20",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "jetty"
+  },
+  "events": [
+   {
+    "event_id": "E0063",
+    "tick": 16,
+    "type": "speak",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "ship_notice",
+    "claim": "ship_notice",
+    "text": "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0064",
+    "tick": 16,
+    "type": "ask",
+    "actors": [
+     "keeper_zhou",
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0065",
+    "tick": 16,
+    "type": "move",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "jetty",
+    "from": "base",
+    "to": "jetty"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0063",
+     "E0064"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0063",
+     "E0064"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 16,
+    "delivered_event_ids": [
+     "E0065"
+    ],
+    "muffled_event_ids": [
+     "E0063",
+     "E0064"
+    ]
+   }
+  ]
+ },
+ {
+  "tick": 17,
+  "time": "22:25",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "base"
+  },
+  "events": [
+   {
+    "event_id": "E0066",
+    "tick": 17,
+    "type": "ask",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "ship_inquire",
+    "claim": "ship_inquire",
+    "text": "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0067",
+    "tick": 17,
+    "type": "move",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "base",
+    "from": "jetty",
+    "to": "base"
+   },
+   {
+    "event_id": "E0068",
+    "tick": 17,
+    "type": "observe",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "target": null,
+    "topic": null
+   },
+   {
+    "event_id": "E0069",
+    "tick": 17,
+    "type": "ambient",
+    "actors": [],
+    "location": "boathouse",
+    "topic": "buoy_bell",
+    "text": "远处浮标的铃铛被浪推着，断断续续地响。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0066",
+     "E0068",
+     "E0069"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0066",
+     "E0068",
+     "E0069"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 17,
+    "delivered_event_ids": [
+     "E0067"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 18,
+  "time": "22:30",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "jetty"
+  },
+  "events": [
+   {
+    "event_id": "E0070",
+    "tick": 18,
+    "type": "speak",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "ship_notice",
+    "claim": "ship_notice",
+    "text": "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0071",
+    "tick": 18,
+    "type": "move",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "jetty",
+    "from": "base",
+    "to": "jetty"
+   },
+   {
+    "event_id": "E0072",
+    "tick": 18,
+    "type": "listen",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "target": null,
+    "topic": null
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0070",
+     "E0072"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0070",
+     "E0072"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 18,
+    "delivered_event_ids": [
+     "E0071"
+    ],
+    "muffled_event_ids": [
+     "E0070"
+    ]
+   }
+  ]
+ },
+ {
+  "tick": 19,
+  "time": "22:35",
+  "positions": {
+   "a_gui": "jetty",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0073",
+    "tick": 19,
+    "type": "move",
+    "actors": [
+     "a_gui"
+    ],
+    "location": "jetty",
+    "from": "boathouse",
+    "to": "jetty"
+   },
+   {
+    "event_id": "E0074",
+    "tick": 19,
+    "type": "move",
+    "actors": [
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "from": "jetty",
+    "to": "boathouse"
+   },
+   {
+    "event_id": "E0075",
+    "tick": 19,
+    "type": "observe",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_start",
+    "session": "S5",
+    "location": "boathouse",
+    "actors": [
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0076",
+    "tick": 19
+   },
+   {
+    "type": "session_end",
+    "session": "S4",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "event_id": "E0077",
+    "tick": 19
+   },
+   {
+    "event_id": "E0078",
+    "tick": 19,
+    "type": "ambient",
+    "actors": [],
+    "location": "jetty",
+    "topic": "gull_cries",
+    "text": "一只夜鹭在栈桥上叫了两声，又没了动静。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0073",
+     "E0078"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0074",
+     "E0075",
+     "E0076",
+     "E0077"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 19,
+    "delivered_event_ids": [
+     "E0074",
+     "E0075",
+     "E0076",
+     "E0077"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 20,
+  "time": "22:40",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0079",
+    "tick": 20,
+    "type": "move",
+    "actors": [
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "from": "jetty",
+    "to": "boathouse"
+   },
+   {
+    "event_id": "E0080",
+    "tick": 20,
+    "type": "speak",
+    "actors": [
+     "lin_tao",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "horn_report",
+    "claim": "horn_report",
+    "text": "林涛：雾笛能修好——备件皮带已经到手，我这就装回去。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0081",
+    "tick": 20,
+    "type": "ask",
+    "actors": [
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "topic": "horn_inquire",
+    "claim": "horn_inquire",
+    "text": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "type": "session_start",
+    "session": "S6",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0082",
+    "tick": 20
+   },
+   {
+    "type": "session_end",
+    "session": "S5",
+    "location": "boathouse",
+    "actors": [
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0083",
+    "tick": 20
+   },
+   {
+    "event_id": "E0084",
+    "tick": 20,
+    "type": "ambient",
+    "actors": [],
+    "location": "boathouse",
+    "topic": "buoy_bell",
+    "text": "远处浮标的铃铛被浪推着，断断续续地响。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0079",
+     "E0080",
+     "E0081",
+     "E0082",
+     "E0083",
+     "E0084"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0079",
+     "E0080",
+     "E0081",
+     "E0082",
+     "E0083",
+     "E0084"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 20,
+    "delivered_event_ids": [
+     "E0079",
+     "E0080",
+     "E0081",
+     "E0082",
+     "E0083",
+     "E0084"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 21,
+  "time": "22:45",
+  "positions": {
+   "a_gui": "jetty",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0085",
+    "tick": 21,
+    "type": "move",
+    "actors": [
+     "a_gui"
+    ],
+    "location": "jetty",
+    "from": "boathouse",
+    "to": "jetty"
+   },
+   {
+    "event_id": "E0086",
+    "tick": 21,
+    "type": "speak",
+    "actors": [
+     "lin_tao",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "horn_report",
+    "claim": "horn_report",
+    "text": "林涛：放心，雾笛误不了事，备件拿到了。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0087",
+    "tick": 21,
+    "type": "speak_failed",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "target": "a_gui",
+    "topic": "ship_notice",
+    "reason": "target_left"
+   },
+   {
+    "type": "session_start",
+    "session": "S7",
+    "location": "boathouse",
+    "actors": [
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0088",
+    "tick": 21
+   },
+   {
+    "type": "session_end",
+    "session": "S6",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0089",
+    "tick": 21
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 21,
+    "delivered_event_ids": [
+     "E0085"
+    ],
+    "muffled_event_ids": [
+     "E0086"
+    ]
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 21,
+    "delivered_event_ids": [
+     "E0086",
+     "E0087",
+     "E0088",
+     "E0089"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 21,
+    "delivered_event_ids": [
+     "E0086",
+     "E0087",
+     "E0088",
+     "E0089"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 22,
+  "time": "22:50",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0090",
+    "tick": 22,
+    "type": "move",
+    "actors": [
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "from": "jetty",
+    "to": "boathouse"
+   },
+   {
+    "event_id": "E0091",
+    "tick": 22,
+    "type": "speak",
+    "actors": [
+     "lin_tao",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "horn_report",
+    "claim": "horn_report",
+    "text": "林涛：雾笛能修好——备件皮带已经到手，我这就装回去。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0092",
+    "tick": 22,
+    "type": "observe",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "target": null,
+    "topic": null
+   },
+   {
+    "type": "session_start",
+    "session": "S8",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0093",
+    "tick": 22
+   },
+   {
+    "type": "session_end",
+    "session": "S7",
+    "location": "boathouse",
+    "actors": [
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0094",
+    "tick": 22
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 22,
+    "delivered_event_ids": [
+     "E0090",
+     "E0091",
+     "E0092",
+     "E0093",
+     "E0094"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 22,
+    "delivered_event_ids": [
+     "E0090",
+     "E0091",
+     "E0092",
+     "E0093",
+     "E0094"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 22,
+    "delivered_event_ids": [
+     "E0090",
+     "E0091",
+     "E0092",
+     "E0093",
+     "E0094"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 23,
+  "time": "22:55",
+  "positions": {
+   "a_gui": "boathouse",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0095",
+    "tick": 23,
+    "type": "speak",
+    "actors": [
+     "a_gui",
+     "lin_tao"
+    ],
+    "location": "boathouse",
+    "topic": "ship_notice",
+    "claim": "ship_notice",
+    "text": "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0096",
+    "tick": 23,
+    "type": "speak",
+    "actors": [
+     "lin_tao",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "horn_report",
+    "claim": "horn_report",
+    "text": "林涛：放心，雾笛误不了事，备件拿到了。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0097",
+    "tick": 23,
+    "type": "speak",
+    "actors": [
+     "keeper_zhou",
+     "a_gui"
+    ],
+    "location": "boathouse",
+    "topic": "ship_notice",
+    "claim": "ship_notice",
+    "text": "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "interrupted": true,
+    "session_location": "boathouse"
+   },
+   {
+    "event_id": "E0098",
+    "tick": 23,
+    "type": "ambient",
+    "actors": [],
+    "location": "jetty",
+    "topic": "gull_cries",
+    "text": "一只夜鹭在栈桥上叫了两声，又没了动静。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 23,
+    "delivered_event_ids": [
+     "E0095",
+     "E0096",
+     "E0097"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 23,
+    "delivered_event_ids": [
+     "E0095",
+     "E0096",
+     "E0097"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 23,
+    "delivered_event_ids": [
+     "E0095",
+     "E0096",
+     "E0097"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ },
+ {
+  "tick": 24,
+  "time": "23:00",
+  "positions": {
+   "a_gui": "jetty",
+   "keeper_zhou": "boathouse",
+   "lin_tao": "boathouse"
+  },
+  "events": [
+   {
+    "event_id": "E0099",
+    "tick": 24,
+    "type": "move",
+    "actors": [
+     "a_gui"
+    ],
+    "location": "jetty",
+    "from": "boathouse",
+    "to": "jetty"
+   },
+   {
+    "event_id": "E0100",
+    "tick": 24,
+    "type": "speak_failed",
+    "actors": [
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "target": "a_gui",
+    "topic": "ship_notice",
+    "reason": "target_left"
+   },
+   {
+    "event_id": "E0101",
+    "tick": 24,
+    "type": "speak",
+    "actors": [
+     "lin_tao",
+     "keeper_zhou"
+    ],
+    "location": "boathouse",
+    "topic": "denial",
+    "claim": "denial",
+    "text": "林涛：这事我不清楚，别问我。",
+    "interrupted": false,
+    "session_location": "boathouse"
+   },
+   {
+    "type": "session_start",
+    "session": "S9",
+    "location": "boathouse",
+    "actors": [
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0102",
+    "tick": 24
+   },
+   {
+    "type": "session_end",
+    "session": "S8",
+    "location": "boathouse",
+    "actors": [
+     "a_gui",
+     "keeper_zhou",
+     "lin_tao"
+    ],
+    "event_id": "E0103",
+    "tick": 24
+   },
+   {
+    "event_id": "E0104",
+    "tick": 24,
+    "type": "ambient",
+    "actors": [],
+    "location": "jetty",
+    "topic": "gull_cries",
+    "text": "一只夜鹭在栈桥上叫了两声，又没了动静。"
+   }
+  ],
+  "deliveries": [
+   {
+    "agent_id": "a_gui",
+    "tick": 24,
+    "delivered_event_ids": [
+     "E0099",
+     "E0104"
+    ],
+    "muffled_event_ids": [
+     "E0101"
+    ]
+   },
+   {
+    "agent_id": "keeper_zhou",
+    "tick": 24,
+    "delivered_event_ids": [
+     "E0100",
+     "E0101",
+     "E0102",
+     "E0103"
+    ],
+    "muffled_event_ids": []
+   },
+   {
+    "agent_id": "lin_tao",
+    "tick": 24,
+    "delivered_event_ids": [
+     "E0100",
+     "E0101",
+     "E0102",
+     "E0103"
+    ],
+    "muffled_event_ids": []
+   }
+  ]
+ }
+]

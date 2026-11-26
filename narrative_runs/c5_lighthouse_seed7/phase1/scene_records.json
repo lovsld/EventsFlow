@@ -1,0 +1,382 @@
+{
+ "scenes": [
+  {
+   "scene_id": "SC01",
+   "narrative_goal": "今晚的船能否安全通过？",
+   "used_event_ids": [
+    "E0006"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [],
+   "new_facts": [],
+   "key_dialogues": [
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "林涛：今晚真有船要贴着礁石回港？消息准吗？"
+   ],
+   "repeated_dialogues": [
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？"
+   ],
+   "character_state_changes": [],
+   "paragraphs": 3,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC02",
+   "narrative_goal": "今晚的船能否安全通过？",
+   "used_event_ids": [
+    "E0014",
+    "E0020",
+    "E0024",
+    "E0015",
+    "E0021",
+    "E0022",
+    "E0025"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [],
+   "new_facts": [],
+   "key_dialogues": [
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "林涛：雾笛那边，到底能不能响了？我这边等着确认。"
+   ],
+   "repeated_dialogues": [
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？"
+   ],
+   "character_state_changes": [],
+   "paragraphs": 9,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC03",
+   "narrative_goal": "今晚的船能否安全通过？",
+   "used_event_ids": [
+    "E0026",
+    "E0029"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "ship_passing_tonight"
+   ],
+   "new_facts": [
+    "ship_passing_tonight"
+   ],
+   "key_dialogues": [
+    "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。"
+   ],
+   "repeated_dialogues": [
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。"
+   ],
+   "character_state_changes": [
+    {
+     "character": "a_gui",
+     "fact": "ship_passing_tonight",
+     "change": "learned"
+    },
+    {
+     "character": "lin_tao",
+     "fact": "ship_passing_tonight",
+     "change": "learned"
+    }
+   ],
+   "paragraphs": 5,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC04",
+   "narrative_goal": "今晚的船能否安全通过？",
+   "used_event_ids": [
+    "E0030",
+    "E0032",
+    "E0036",
+    "E0037"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "ship_passing_tonight"
+   ],
+   "new_facts": [],
+   "key_dialogues": [
+    "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "阿贵：雾笛那边，到底能不能响了？我这边等着确认。"
+   ],
+   "repeated_dialogues": [],
+   "character_state_changes": [
+    {
+     "character": "keeper_zhou",
+     "fact": "ship_passing_tonight",
+     "change": "learned"
+    }
+   ],
+   "paragraphs": 11,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC05",
+   "narrative_goal": "今晚的船能否安全通过？",
+   "used_event_ids": [
+    "E0038",
+    "E0039",
+    "E0044",
+    "E0045",
+    "E0049"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "fog_horn_ready"
+   ],
+   "new_facts": [
+    "fog_horn_ready"
+   ],
+   "key_dialogues": [
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。"
+   ],
+   "repeated_dialogues": [
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "阿贵：雾笛那边，到底能不能响了？我这边等着确认。",
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。"
+   ],
+   "character_state_changes": [
+    {
+     "character": "lin_tao",
+     "fact": "fog_horn_ready",
+     "change": "learned"
+    }
+   ],
+   "paragraphs": 10,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC06",
+   "narrative_goal": "今晚的船能否安全通过？",
+   "used_event_ids": [
+    "E0063",
+    "E0064"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "ship_passing_tonight"
+   ],
+   "new_facts": [],
+   "key_dialogues": [
+    "阿贵：这事我不清楚，别问我。",
+    "周守义：这事我不清楚，别问我。",
+    "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。",
+    "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。"
+   ],
+   "repeated_dialogues": [
+    "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+    "阿贵：今晚真有船要贴着礁石回港？消息准吗？",
+    "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。"
+   ],
+   "character_state_changes": [
+    {
+     "character": "keeper_zhou",
+     "fact": "ship_passing_tonight",
+     "change": "reinforced"
+    },
+    {
+     "character": "keeper_zhou",
+     "fact": "ship_passing_tonight",
+     "change": "reinforced"
+    },
+    {
+     "character": "keeper_zhou",
+     "fact": "ship_passing_tonight",
+     "change": "reinforced"
+    }
+   ],
+   "paragraphs": 5,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC07",
+   "narrative_goal": "今晚的船能否安全通过？",
+   "used_event_ids": [
+    "E0080",
+    "E0081"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "fog_horn_ready"
+   ],
+   "new_facts": [],
+   "key_dialogues": [
+    "林涛：雾笛能修好——备件皮带已经到手，我这就装回去。",
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。"
+   ],
+   "repeated_dialogues": [
+    "周守义：雾笛那边，到底能不能响了？我这边等着确认。"
+   ],
+   "character_state_changes": [
+    {
+     "character": "a_gui",
+     "fact": "fog_horn_ready",
+     "change": "learned"
+    },
+    {
+     "character": "keeper_zhou",
+     "fact": "fog_horn_ready",
+     "change": "learned"
+    }
+   ],
+   "paragraphs": 6,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC08",
+   "narrative_goal": "今晚的船能否安全通过？",
+   "used_event_ids": [
+    "E0086",
+    "E0087"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "fog_horn_ready"
+   ],
+   "new_facts": [],
+   "key_dialogues": [
+    "林涛：放心，雾笛误不了事，备件拿到了。"
+   ],
+   "repeated_dialogues": [],
+   "character_state_changes": [
+    {
+     "character": "keeper_zhou",
+     "fact": "fog_horn_ready",
+     "change": "reinforced"
+    }
+   ],
+   "paragraphs": 5,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC09",
+   "narrative_goal": "今晚的船能否安全通过？",
+   "used_event_ids": [
+    "E0091",
+    "E0095",
+    "E0096",
+    "E0097"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [
+    "fog_horn_ready",
+    "ship_passing_tonight"
+   ],
+   "new_facts": [],
+   "key_dialogues": [
+    "林涛：雾笛能修好——备件皮带已经到手，我这就装回去。",
+    "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "林涛：放心，雾笛误不了事，备件拿到了。",
+    "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。"
+   ],
+   "repeated_dialogues": [
+    "林涛：雾笛能修好——备件皮带已经到手，我这就装回去。",
+    "阿贵：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+    "林涛：放心，雾笛误不了事，备件拿到了。",
+    "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。"
+   ],
+   "character_state_changes": [
+    {
+     "character": "a_gui",
+     "fact": "fog_horn_ready",
+     "change": "reinforced"
+    },
+    {
+     "character": "keeper_zhou",
+     "fact": "fog_horn_ready",
+     "change": "reinforced"
+    },
+    {
+     "character": "keeper_zhou",
+     "fact": "ship_passing_tonight",
+     "change": "reinforced"
+    },
+    {
+     "character": "lin_tao",
+     "fact": "ship_passing_tonight",
+     "change": "reinforced"
+    },
+    {
+     "character": "a_gui",
+     "fact": "fog_horn_ready",
+     "change": "reinforced"
+    },
+    {
+     "character": "keeper_zhou",
+     "fact": "fog_horn_ready",
+     "change": "reinforced"
+    },
+    {
+     "character": "a_gui",
+     "fact": "ship_passing_tonight",
+     "change": "reinforced"
+    },
+    {
+     "character": "lin_tao",
+     "fact": "ship_passing_tonight",
+     "change": "reinforced"
+    }
+   ],
+   "paragraphs": 9,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  },
+  {
+   "scene_id": "SC10",
+   "narrative_goal": "",
+   "used_event_ids": [
+    "E0100",
+    "E0101"
+   ],
+   "repeated_event_ids": [],
+   "revealed_facts": [],
+   "new_facts": [],
+   "key_dialogues": [
+    "林涛：这事我不清楚，别问我。"
+   ],
+   "repeated_dialogues": [],
+   "character_state_changes": [],
+   "paragraphs": 5,
+   "valueless_repeat_paragraphs": [],
+   "has_increment": true
+  }
+ ],
+ "summary": {
+  "scenes": 10,
+  "paragraphs": 68,
+  "valueless_repeat_paragraphs": 0,
+  "scene_repetition_rate": 0.0,
+  "repeated_event_ids": 0,
+  "repeated_dialogues": 21,
+  "scenes_without_increment": []
+ }
+}

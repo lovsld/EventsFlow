@@ -1,0 +1,170 @@
+{
+ "records": [
+  {
+   "setup_id": "SP-Q01",
+   "kind": "question",
+   "description": "匿名信是否真实存在？",
+   "setup_event_ids": [],
+   "related_thread_id": "main_embezzlement",
+   "expected_payoff": "问题被直接证据回答（anonymous_letter_exists）",
+   "actual_payoff_event_ids": [
+    "NE-E0008"
+   ],
+   "status": "payoff",
+   "evidence": [
+    "NE-E0008"
+   ]
+  },
+  {
+   "setup_id": "SP-Q02",
+   "kind": "question",
+   "description": "镇长是否侵吞了公共资金？",
+   "setup_event_ids": [
+    "NE-E0022"
+   ],
+   "related_thread_id": "main_embezzlement",
+   "expected_payoff": "问题被直接证据回答（mayor_embezzled）",
+   "actual_payoff_event_ids": [],
+   "status": "reinforcement",
+   "evidence": [
+    "NE-E0008",
+    "NE-E0022",
+    "NE-E0022"
+   ]
+  },
+  {
+   "setup_id": "SP-Q03",
+   "kind": "question",
+   "description": "写信人身份是否查明？",
+   "setup_event_ids": [],
+   "related_thread_id": "secret_letter_writer",
+   "expected_payoff": "问题被直接证据回答（letter_source_identified）",
+   "actual_payoff_event_ids": [],
+   "status": "unresolved",
+   "evidence": []
+  },
+  {
+   "setup_id": "SP-Q04",
+   "kind": "question",
+   "description": "商业交易是否达成？",
+   "setup_event_ids": [
+    "NE-E0014"
+   ],
+   "related_thread_id": "interest_merchant",
+   "expected_payoff": "问题被直接证据回答（business_opportunity）",
+   "actual_payoff_event_ids": [],
+   "status": "reinforcement",
+   "evidence": [
+    "NE-E0017"
+   ]
+  },
+  {
+   "setup_id": "SP-Q05",
+   "kind": "question",
+   "description": "镇长是否已得知调查？",
+   "setup_event_ids": [],
+   "related_thread_id": "crisis_leak",
+   "expected_payoff": "问题被直接证据回答（mayor_alerted）",
+   "actual_payoff_event_ids": [],
+   "status": "unresolved",
+   "evidence": []
+  },
+  {
+   "setup_id": "SP-O06",
+   "kind": "object",
+   "description": "物件 anonymous_letter 被发现",
+   "setup_event_ids": [
+    "NE-E0008"
+   ],
+   "related_thread_id": "secret_letter_writer",
+   "expected_payoff": "物件揭示的事实（anonymous_letter_exists）被证实并解决关联问题",
+   "actual_payoff_event_ids": [
+    "NE-E0008"
+   ],
+   "status": "payoff",
+   "evidence": [
+    "NE-E0008"
+   ]
+  },
+  {
+   "setup_id": "SP-B07",
+   "kind": "bluff",
+   "description": "虚张声势：speaker_knows_secret",
+   "setup_event_ids": [
+    "NE-E0034"
+   ],
+   "related_thread_id": "",
+   "expected_payoff": "听者识破或事实澄清",
+   "actual_payoff_event_ids": [],
+   "status": "misdirection",
+   "evidence": [
+    "NE-E0034"
+   ]
+  }
+ ],
+ "diagnostics": {
+  "SP-Q01": {
+   "discovery_events": [
+    "NE-E0008"
+   ],
+   "corroboration_events": [],
+   "resolution_events": [
+    "NE-E0008"
+   ],
+   "note": ""
+  },
+  "SP-Q02": {
+   "discovery_events": [
+    "NE-E0008"
+   ],
+   "corroboration_events": [
+    "NE-E0022",
+    "NE-E0022"
+   ],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-Q03": {
+   "discovery_events": [],
+   "corroboration_events": [],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-Q04": {
+   "discovery_events": [],
+   "corroboration_events": [
+    "NE-E0017"
+   ],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-Q05": {
+   "discovery_events": [],
+   "corroboration_events": [],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-O06": {
+   "discovery_events": [
+    "NE-E0008"
+   ],
+   "corroboration_events": [],
+   "resolution_events": [
+    "NE-E0008"
+   ],
+   "note": "setup and payoff coincide in one event; no foreshadow edge is emitted"
+  },
+  "SP-B07": {
+   "discovery_events": [],
+   "corroboration_events": [],
+   "resolution_events": [],
+   "note": "a bluff is a misdirection by construction; it is never 'paid off' by an object find"
+  }
+ },
+ "line_states": {
+  "L01": "closed",
+  "L02": "closed",
+  "L03": "closed",
+  "L04": "open"
+ }
+}

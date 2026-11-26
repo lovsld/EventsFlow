@@ -6,7 +6,7 @@
   ],
   "tick": 1,
   "event_summary": "move @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui"
   ],
@@ -30,7 +30,7 @@
   ],
   "tick": 1,
   "event_summary": "work @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -54,7 +54,7 @@
   ],
   "tick": 1,
   "event_summary": "move @ lamp_room",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -78,7 +78,7 @@
   ],
   "tick": 1,
   "event_summary": "session_start @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "lin_tao"
@@ -154,7 +154,7 @@
   ],
   "tick": 2,
   "event_summary": "observe @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -178,7 +178,7 @@
   ],
   "tick": 2,
   "event_summary": "move @ base",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -290,7 +290,7 @@
   ],
   "tick": 3,
   "event_summary": "move @ jetty",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -414,7 +414,7 @@
   ],
   "tick": 4,
   "event_summary": "move @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -438,7 +438,7 @@
   ],
   "tick": 4,
   "event_summary": "session_start @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "keeper_zhou",
@@ -466,7 +466,7 @@
   ],
   "tick": 4,
   "event_summary": "session_end @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "lin_tao"
@@ -840,7 +840,7 @@
   ],
   "tick": 7,
   "event_summary": "search @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui"
   ],
@@ -866,7 +866,7 @@
   ],
   "tick": 7,
   "event_summary": "search @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -987,7 +987,7 @@
   ],
   "tick": 8,
   "event_summary": "move @ jetty",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -1011,7 +1011,7 @@
   ],
   "tick": 8,
   "event_summary": "speak_failed @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -1035,7 +1035,7 @@
   ],
   "tick": 8,
   "event_summary": "session_start @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "keeper_zhou"
@@ -1062,7 +1062,7 @@
   ],
   "tick": 8,
   "event_summary": "session_end @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "keeper_zhou",
@@ -1149,7 +1149,7 @@
   ],
   "tick": 9,
   "event_summary": "search @ jetty",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -1251,7 +1251,7 @@
   ],
   "tick": 10,
   "event_summary": "move @ base",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -1375,7 +1375,7 @@
   ],
   "tick": 11,
   "event_summary": "search @ base",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -1482,7 +1482,7 @@
   ],
   "tick": 12,
   "event_summary": "move @ jetty",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui"
   ],
@@ -1506,7 +1506,7 @@
   ],
   "tick": 12,
   "event_summary": "move @ lamp_room",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -1530,7 +1530,7 @@
   ],
   "tick": 12,
   "event_summary": "speak_failed @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -1554,7 +1554,7 @@
   ],
   "tick": 12,
   "event_summary": "session_end @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "keeper_zhou"
@@ -1601,7 +1601,7 @@
   ],
   "tick": 13,
   "event_summary": "move @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui"
   ],
@@ -1625,7 +1625,7 @@
   ],
   "tick": 13,
   "event_summary": "observe @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -1649,7 +1649,7 @@
   ],
   "tick": 13,
   "event_summary": "move @ base",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -1673,7 +1673,7 @@
   ],
   "tick": 13,
   "event_summary": "session_start @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "keeper_zhou"
@@ -1725,7 +1725,7 @@
   ],
   "tick": 14,
   "event_summary": "move @ lamp_room",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -1820,7 +1820,7 @@
   ],
   "tick": 15,
   "event_summary": "observe @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -1844,7 +1844,7 @@
   ],
   "tick": 15,
   "event_summary": "move @ base",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -1951,7 +1951,7 @@
   ],
   "tick": 16,
   "event_summary": "move @ jetty",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -2002,7 +2002,7 @@
   ],
   "tick": 17,
   "event_summary": "move @ base",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -2026,7 +2026,7 @@
   ],
   "tick": 17,
   "event_summary": "observe @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -2106,7 +2106,7 @@
   ],
   "tick": 18,
   "event_summary": "move @ jetty",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -2130,7 +2130,7 @@
   ],
   "tick": 18,
   "event_summary": "listen @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -2154,7 +2154,7 @@
   ],
   "tick": 19,
   "event_summary": "move @ jetty",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui"
   ],
@@ -2178,7 +2178,7 @@
   ],
   "tick": 19,
   "event_summary": "move @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "lin_tao"
   ],
@@ -2202,7 +2202,7 @@
   ],
   "tick": 19,
   "event_summary": "observe @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -2226,7 +2226,7 @@
   ],
   "tick": 19,
   "event_summary": "session_start @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou",
    "lin_tao"
@@ -2253,7 +2253,7 @@
   ],
   "tick": 19,
   "event_summary": "session_end @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "keeper_zhou"
@@ -2300,7 +2300,7 @@
   ],
   "tick": 20,
   "event_summary": "move @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui"
   ],
@@ -2441,7 +2441,7 @@
   ],
   "tick": 20,
   "event_summary": "session_start @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "keeper_zhou",
@@ -2469,7 +2469,7 @@
   ],
   "tick": 20,
   "event_summary": "session_end @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou",
    "lin_tao"
@@ -2516,7 +2516,7 @@
   ],
   "tick": 21,
   "event_summary": "move @ jetty",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui"
   ],
@@ -2586,7 +2586,7 @@
   ],
   "tick": 21,
   "event_summary": "speak_failed @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -2610,7 +2610,7 @@
   ],
   "tick": 21,
   "event_summary": "session_start @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou",
    "lin_tao"
@@ -2637,7 +2637,7 @@
   ],
   "tick": 21,
   "event_summary": "session_end @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "keeper_zhou",
@@ -2663,7 +2663,7 @@
   ],
   "tick": 22,
   "event_summary": "move @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui"
   ],
@@ -2729,7 +2729,7 @@
   ],
   "tick": 22,
   "event_summary": "observe @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -2753,7 +2753,7 @@
   ],
   "tick": 22,
   "event_summary": "session_start @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "keeper_zhou",
@@ -2781,7 +2781,7 @@
   ],
   "tick": 22,
   "event_summary": "session_end @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou",
    "lin_tao"
@@ -2966,7 +2966,7 @@
   ],
   "tick": 24,
   "event_summary": "move @ jetty",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui"
   ],
@@ -2990,7 +2990,7 @@
   ],
   "tick": 24,
   "event_summary": "speak_failed @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou"
   ],
@@ -3039,7 +3039,7 @@
   ],
   "tick": 24,
   "event_summary": "session_start @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "keeper_zhou",
    "lin_tao"
@@ -3066,7 +3066,7 @@
   ],
   "tick": 24,
   "event_summary": "session_end @ boathouse",
-  "summary_source": "source_text",
+  "summary_source": "rule",
   "participants": [
    "a_gui",
    "keeper_zhou",

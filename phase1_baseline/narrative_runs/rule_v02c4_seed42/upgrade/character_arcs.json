@@ -1,0 +1,376 @@
+{
+ "arcs": [
+  {
+   "character_id": "owner",
+   "initial_state": {
+    "known_facts": [
+     "anonymous_letter_exists",
+     "mayor_embezzled"
+    ],
+    "action_distribution": {
+     "listen": 0.111,
+     "observe": 0.167,
+     "session_start": 0.056,
+     "speak": 0.389,
+     "session_end": 0.028,
+     "confront": 0.083,
+     "ask": 0.139,
+     "work": 0.028
+    }
+   },
+   "current_state": {
+    "known_facts": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "mayor_embezzled",
+     "speaker_knows_secret"
+    ],
+    "goals_aux": {
+     "avoid_politics": {
+      "status": "failed",
+      "progress": 0.0
+     }
+    }
+   },
+   "final_state": null,
+   "initial_beliefs": [
+    "anonymous_letter_exists",
+    "mayor_embezzled"
+   ],
+   "belief_changes": [
+    {
+     "fact": "business_opportunity",
+     "tick": 4,
+     "event_id": "NE-E0014",
+     "via": "delivery"
+    },
+    {
+     "fact": "mayor_embezzled",
+     "tick": 6,
+     "event_id": "NE-E0022",
+     "via": "delivery"
+    },
+    {
+     "fact": "speaker_knows_secret",
+     "tick": 9,
+     "event_id": "NE-E0034",
+     "via": "delivery"
+    }
+   ],
+   "value_changes": [],
+   "emotional_changes": [],
+   "relationship_changes": [],
+   "internal_conflict": "",
+   "turning_points": [
+    {
+     "fact": "business_opportunity",
+     "tick": 4,
+     "learned_at": "NE-E0014",
+     "downstream_uses": [
+      "NE-E0017"
+     ]
+    },
+    {
+     "fact": "mayor_embezzled",
+     "tick": 6,
+     "learned_at": "NE-E0022",
+     "downstream_uses": [
+      "NE-E0032",
+      "NE-E0038",
+      "NE-E0056",
+      "NE-E0063"
+     ]
+    }
+   ],
+   "character_arc_type": "unresolved_arc",
+   "arc_status": "open"
+  },
+  {
+   "character_id": "merchant",
+   "initial_state": {
+    "known_facts": [
+     "mayor_business_deal"
+    ],
+    "action_distribution": {
+     "move": 0.094,
+     "session_start": 0.062,
+     "speak": 0.5,
+     "session_end": 0.031,
+     "confront": 0.094,
+     "ask": 0.156,
+     "observe": 0.031,
+     "listen": 0.031
+    }
+   },
+   "current_state": {
+    "known_facts": [
+     "mayor_business_deal",
+     "mayor_embezzled"
+    ],
+    "goals_aux": {
+     "build_relationships": {
+      "status": "paused",
+      "progress": 0.6
+     },
+     "gain_business": {
+      "status": "active",
+      "progress": 0.0
+     }
+    }
+   },
+   "final_state": null,
+   "initial_beliefs": [
+    "mayor_business_deal"
+   ],
+   "belief_changes": [
+    {
+     "fact": "mayor_embezzled",
+     "tick": 6,
+     "event_id": "NE-E0022",
+     "via": "delivery"
+    }
+   ],
+   "value_changes": [],
+   "emotional_changes": [],
+   "relationship_changes": [],
+   "internal_conflict": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+   "turning_points": [],
+   "character_arc_type": "flat_arc",
+   "arc_status": "open"
+  },
+  {
+   "character_id": "soldier",
+   "initial_state": {
+    "known_facts": [
+     "investigation_order",
+     "mayor_suspicious"
+    ],
+    "action_distribution": {
+     "move": 0.105,
+     "search": 0.026,
+     "session_start": 0.026,
+     "confront": 0.158,
+     "speak": 0.421,
+     "ask": 0.263
+    }
+   },
+   "current_state": {
+    "known_facts": [
+     "anonymous_letter_exists",
+     "business_opportunity",
+     "investigation_order",
+     "mayor_embezzled",
+     "mayor_suspicious",
+     "speaker_knows_secret"
+    ],
+    "goals_aux": {
+     "complete_investigation": {
+      "status": "active",
+      "progress": 0.8911
+     },
+     "learn_mayor_truth": {
+      "status": "active",
+      "progress": 0.7822
+     }
+    }
+   },
+   "final_state": null,
+   "initial_beliefs": [
+    "investigation_order",
+    "mayor_suspicious"
+   ],
+   "belief_changes": [
+    {
+     "fact": "anonymous_letter_exists",
+     "tick": 3,
+     "event_id": "NE-E0008",
+     "via": "find"
+    },
+    {
+     "fact": "mayor_embezzled",
+     "tick": 3,
+     "event_id": "NE-E0008",
+     "via": "find"
+    },
+    {
+     "fact": "business_opportunity",
+     "tick": 5,
+     "event_id": "NE-E0017",
+     "via": "delivery"
+    },
+    {
+     "fact": "speaker_knows_secret",
+     "tick": 9,
+     "event_id": "NE-E0034",
+     "via": "delivery"
+    }
+   ],
+   "value_changes": [],
+   "emotional_changes": [],
+   "relationship_changes": [],
+   "internal_conflict": "declared: the investigation's secrecy has opposite value to the merchant (sellable) and the soldier (must stay hidden)",
+   "turning_points": [
+    {
+     "fact": "anonymous_letter_exists",
+     "tick": 3,
+     "learned_at": "NE-E0008",
+     "downstream_uses": [
+      "NE-E0022"
+     ]
+    },
+    {
+     "fact": "mayor_embezzled",
+     "tick": 3,
+     "learned_at": "NE-E0008",
+     "downstream_uses": [
+      "NE-E0022",
+      "NE-E0030",
+      "NE-E0036",
+      "NE-E0040",
+      "NE-E0043",
+      "NE-E0046",
+      "NE-E0058",
+      "NE-E0061",
+      "NE-E0064",
+      "NE-E0068"
+     ]
+    }
+   ],
+   "character_arc_type": "unresolved_arc",
+   "arc_status": "open"
+  }
+ ],
+ "diagnostics": {
+  "owner": {
+   "impact_without_followthrough": [
+    {
+     "fact": "speaker_knows_secret",
+     "tick": 9,
+     "learned_at": "NE-E0034",
+     "downstream_uses": []
+    }
+   ],
+   "aux_belief_changes": [
+    {
+     "tick": 4,
+     "fact": "business_opportunity",
+     "kind": "heard",
+     "before": null,
+     "after": 0.29
+    },
+    {
+     "tick": 6,
+     "fact": "mayor_embezzled",
+     "kind": "heard",
+     "before": 0.45,
+     "after": 0.594
+    },
+    {
+     "tick": 9,
+     "fact": "speaker_knows_secret",
+     "kind": "heard",
+     "before": null,
+     "after": 0.261
+    },
+    {
+     "tick": 18,
+     "fact": "conceals:merchant",
+     "kind": "inferred",
+     "before": null,
+     "after": 0.556
+    }
+   ]
+  },
+  "merchant": {
+   "impact_without_followthrough": [
+    {
+     "fact": "mayor_embezzled",
+     "tick": 6,
+     "learned_at": "NE-E0022",
+     "downstream_uses": []
+    }
+   ],
+   "aux_belief_changes": [
+    {
+     "tick": 6,
+     "fact": "mayor_embezzled",
+     "kind": "heard",
+     "before": null,
+     "after": 0.261
+    },
+    {
+     "tick": 8,
+     "fact": "mayor_embezzled",
+     "kind": "heard",
+     "before": 0.261,
+     "after": 0.454
+    }
+   ]
+  },
+  "soldier": {
+   "impact_without_followthrough": [
+    {
+     "fact": "business_opportunity",
+     "tick": 5,
+     "learned_at": "NE-E0017",
+     "downstream_uses": []
+    },
+    {
+     "fact": "speaker_knows_secret",
+     "tick": 9,
+     "learned_at": "NE-E0034",
+     "downstream_uses": []
+    }
+   ],
+   "aux_belief_changes": [
+    {
+     "tick": 3,
+     "fact": "anonymous_letter_exists",
+     "kind": "experienced",
+     "before": null,
+     "after": 1.0
+    },
+    {
+     "tick": 3,
+     "fact": "mayor_embezzled",
+     "kind": "heard",
+     "before": null,
+     "after": 0.6
+    },
+    {
+     "tick": 5,
+     "fact": "business_opportunity",
+     "kind": "heard",
+     "before": null,
+     "after": 0.29
+    },
+    {
+     "tick": 8,
+     "fact": "mayor_embezzled",
+     "kind": "heard",
+     "before": 0.6,
+     "after": 0.704
+    },
+    {
+     "tick": 9,
+     "fact": "speaker_knows_secret",
+     "kind": "heard",
+     "before": null,
+     "after": 0.261
+    },
+    {
+     "tick": 18,
+     "fact": "conceals:merchant",
+     "kind": "inferred",
+     "before": null,
+     "after": 0.622
+    }
+   ]
+  }
+ },
+ "notes": [
+  "emotional_changes and value_changes are left empty: no deterministic source exists in the narrative inputs (no emotion trace is recorded by the emergence layer).",
+  "aux traces come from acp.sqlite3 (L-AUX corroboration, not objective fact).",
+  "valence arc types are never auto-assigned by the rule layer."
+ ]
+}

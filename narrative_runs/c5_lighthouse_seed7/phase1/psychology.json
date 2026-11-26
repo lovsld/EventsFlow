@@ -1,0 +1,767 @@
+{
+ "emotions": [
+  {
+   "character_id": "a_gui",
+   "scene_id": "SC01",
+   "tick": 2,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "scene_id": "SC01",
+   "tick": 2,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "scene_id": "SC02",
+   "tick": 4,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "scene_id": "SC02",
+   "tick": 4,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "scene_id": "SC02",
+   "tick": 4,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "scene_id": "SC03",
+   "tick": 7,
+   "emotion": "surprise",
+   "intensity": 0.7,
+   "confidence": 0.6,
+   "evidence_event_ids": [
+    "E0026",
+    "E0027"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "scene_id": "SC03",
+   "tick": 6,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "scene_id": "SC03",
+   "tick": 6,
+   "emotion": "anticipation",
+   "intensity": 0.5,
+   "confidence": 0.35,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "scene_id": "SC04",
+   "tick": 8,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "scene_id": "SC04",
+   "tick": 8,
+   "emotion": "anticipation",
+   "intensity": 0.5,
+   "confidence": 0.35,
+   "evidence_event_ids": [
+    "E0030",
+    "E0032"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "scene_id": "SC04",
+   "tick": 8,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "scene_id": "SC05",
+   "tick": 9,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "scene_id": "SC05",
+   "tick": 12,
+   "emotion": "sadness",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0049"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "scene_id": "SC05",
+   "tick": 11,
+   "emotion": "surprise",
+   "intensity": 0.7,
+   "confidence": 0.6,
+   "evidence_event_ids": [
+    "E0044"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "scene_id": "SC06",
+   "tick": 14,
+   "emotion": "anger",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0056"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "scene_id": "SC06",
+   "tick": 14,
+   "emotion": "anger",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0058"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "scene_id": "SC07",
+   "tick": 20,
+   "emotion": "anticipation",
+   "intensity": 0.5,
+   "confidence": 0.35,
+   "evidence_event_ids": [
+    "E0080"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "scene_id": "SC07",
+   "tick": 20,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "scene_id": "SC08",
+   "tick": 21,
+   "emotion": "sadness",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0087"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "scene_id": "SC08",
+   "tick": 21,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "scene_id": "SC09",
+   "tick": 22,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "scene_id": "SC09",
+   "tick": 22,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "scene_id": "SC09",
+   "tick": 22,
+   "emotion": "unknown",
+   "intensity": 0.0,
+   "confidence": 0.0,
+   "evidence_event_ids": [],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "scene_id": "SC10",
+   "tick": 24,
+   "emotion": "sadness",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0100"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "scene_id": "SC10",
+   "tick": 24,
+   "emotion": "anger",
+   "intensity": 0.4,
+   "confidence": 0.3,
+   "evidence_event_ids": [
+    "E0101"
+   ],
+   "source_type": "rule_inference",
+   "evidence_level": "interpretation"
+  }
+ ],
+ "motivated_by": [
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0006",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0010",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "action_event_id": "E0011",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0014",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "action_event_id": "E0015",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0020",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "action_event_id": "E0021",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "action_event_id": "E0022",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0024",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "action_event_id": "E0025",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "action_event_id": "E0026",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "action_event_id": "E0029",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0030",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0036",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "action_event_id": "E0038",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0039",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "action_event_id": "E0041",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0043",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "action_event_id": "E0045",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0059",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0063",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "action_event_id": "E0064",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0066",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0070",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "action_event_id": "E0080",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0044"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "action_event_id": "E0081",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "action_event_id": "E0086",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0044"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "action_event_id": "E0091",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0044"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "a_gui",
+   "action_event_id": "E0095",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0026"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "lin_tao",
+   "action_event_id": "E0096",
+   "motivation": "推进线索「备用皮带与传动」：断裂的皮带是否被发现并处理？",
+   "thread_id": "belt_repair",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0044"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "character_id": "keeper_zhou",
+   "action_event_id": "E0097",
+   "motivation": "推进线索「今晚的船能否安全通过」：今晚的船能否安全通过？",
+   "thread_id": "main_ship_safety",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0030"
+   ],
+   "alternative_explanations": [
+    "日常行为，无故事动机（零假设）",
+    "执行他人指令或履行职责"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  }
+ ],
+ "diagnostics": {
+  "key_actions": 38,
+  "motivated_actions": 31,
+  "emotion_records": 25,
+  "unknown_emotions": 14
+ }
+}

@@ -52,7 +52,8 @@
    ],
    "emotional_curve": [
     0.4
-   ]
+   ],
+   "literary_title": "药柜空空，长夜将至"
   },
   {
    "chapter_id": "CH02",
@@ -91,7 +92,8 @@
     0.4,
     0.4,
     0.4
-   ]
+   ],
+   "literary_title": "急报！高烧入夜来袭"
   },
   {
    "chapter_id": "CH03",
@@ -120,7 +122,8 @@
    ],
    "emotional_curve": [
     0.4
-   ]
+   ],
+   "literary_title": "药房寻踪，一线生机"
   },
   {
    "chapter_id": "CH04",
@@ -155,7 +158,8 @@
    "emotional_curve": [
     0.4,
     0.4
-   ]
+   ],
+   "literary_title": "分诊台前，焦灼待命"
   }
  ],
  "scenes": [

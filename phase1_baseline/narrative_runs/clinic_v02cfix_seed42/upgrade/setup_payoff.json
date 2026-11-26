@@ -1,0 +1,152 @@
+{
+ "records": [
+  {
+   "setup_id": "SP-Q01",
+   "kind": "question",
+   "description": "发热病人是否要来？",
+   "setup_event_ids": [
+    "NE-E0033"
+   ],
+   "related_thread_id": "main_fever_patient",
+   "expected_payoff": "问题被直接证据回答（fever_patient_coming）",
+   "actual_payoff_event_ids": [],
+   "status": "reinforcement",
+   "evidence": [
+    "NE-E0002",
+    "NE-E0046",
+    "NE-E0092"
+   ]
+  },
+  {
+   "setup_id": "SP-Q02",
+   "kind": "question",
+   "description": "退烧药是否不足？",
+   "setup_event_ids": [],
+   "related_thread_id": "main_fever_patient",
+   "expected_payoff": "问题被直接证据回答（fever_med_low）",
+   "actual_payoff_event_ids": [],
+   "status": "unresolved",
+   "evidence": []
+  },
+  {
+   "setup_id": "SP-Q03",
+   "kind": "question",
+   "description": "退烧药是否已补齐？",
+   "setup_event_ids": [
+    "NE-E0035"
+   ],
+   "related_thread_id": "main_fever_patient",
+   "expected_payoff": "问题被直接证据回答（fever_medicine_restocked）",
+   "actual_payoff_event_ids": [],
+   "status": "reinforcement",
+   "evidence": [
+    "NE-E0070",
+    "NE-E0075",
+    "NE-E0093"
+   ]
+  },
+  {
+   "setup_id": "SP-Q04",
+   "kind": "question",
+   "description": "库存是否补齐？",
+   "setup_event_ids": [
+    "NE-E0035"
+   ],
+   "related_thread_id": "medicine_supply",
+   "expected_payoff": "问题被直接证据回答（fever_medicine_restocked）",
+   "actual_payoff_event_ids": [],
+   "status": "reinforcement",
+   "evidence": [
+    "NE-E0070",
+    "NE-E0075",
+    "NE-E0093"
+   ]
+  },
+  {
+   "setup_id": "SP-O05",
+   "kind": "object",
+   "description": "物件 admission_form 被发现",
+   "setup_event_ids": [
+    "NE-E0002"
+   ],
+   "related_thread_id": "main_fever_patient",
+   "expected_payoff": "物件揭示的事实（None）被证实并解决关联问题",
+   "actual_payoff_event_ids": [],
+   "status": "unresolved",
+   "evidence": [
+    "NE-E0002"
+   ]
+  },
+  {
+   "setup_id": "SP-O06",
+   "kind": "object",
+   "description": "物件 fever_medicine 被发现",
+   "setup_event_ids": [
+    "NE-E0070"
+   ],
+   "related_thread_id": "medicine_supply",
+   "expected_payoff": "物件揭示的事实（None）被证实并解决关联问题",
+   "actual_payoff_event_ids": [],
+   "status": "unresolved",
+   "evidence": [
+    "NE-E0070"
+   ]
+  }
+ ],
+ "diagnostics": {
+  "SP-Q01": {
+   "discovery_events": [
+    "NE-E0002"
+   ],
+   "corroboration_events": [
+    "NE-E0046",
+    "NE-E0092"
+   ],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-Q02": {
+   "discovery_events": [],
+   "corroboration_events": [],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-Q03": {
+   "discovery_events": [
+    "NE-E0070"
+   ],
+   "corroboration_events": [
+    "NE-E0075",
+    "NE-E0093"
+   ],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-Q04": {
+   "discovery_events": [
+    "NE-E0070"
+   ],
+   "corroboration_events": [
+    "NE-E0075",
+    "NE-E0093"
+   ],
+   "resolution_events": [],
+   "note": ""
+  },
+  "SP-O05": {
+   "discovery_events": [],
+   "corroboration_events": [],
+   "resolution_events": [],
+   "note": "discovery is level 1 evidence only; status payoff requires the linked question to be answered by direct evidence"
+  },
+  "SP-O06": {
+   "discovery_events": [],
+   "corroboration_events": [],
+   "resolution_events": [],
+   "note": "discovery is level 1 evidence only; status payoff requires the linked question to be answered by direct evidence"
+  }
+ },
+ "line_states": {
+  "L01": "broken"
+ }
+}

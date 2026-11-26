@@ -1,0 +1,894 @@
+[
+ {
+  "scene_id": "S01",
+  "location": "oncall",
+  "start_tick": 1,
+  "end_tick": 6,
+  "status": "closed",
+  "participants": [
+   "doctor_shen"
+  ],
+  "joined_at": {
+   "doctor_shen": 1
+  },
+  "left_at": {
+   "doctor_shen": 7
+  },
+  "events": [
+   "E0002",
+   "E0007",
+   "E0010",
+   "E0011",
+   "E0014",
+   "E0017",
+   "E0021"
+  ],
+  "knowledge": {
+   "doctor_shen": {
+    "at_start": [
+     "fever_patient_coming"
+    ],
+    "at_end": [
+     "fever_patient_coming"
+    ]
+   }
+  },
+  "related_threads": [
+   "main_fever_patient"
+  ],
+  "thread_status_at_end": {
+   "main_fever_patient": "active"
+  },
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [
+   "discovery"
+  ],
+  "outcome": {
+   "events": 7,
+   "participants": [
+    "doctor_shen"
+   ],
+   "threads": [
+    "main_fever_patient"
+   ]
+  }
+ },
+ {
+  "scene_id": "S02",
+  "location": "yard",
+  "start_tick": 1,
+  "end_tick": 4,
+  "status": "closed",
+  "participants": [
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "joined_at": {
+   "nurse_lin": 1,
+   "porter_wu": 2
+  },
+  "left_at": {
+   "nurse_lin": 4,
+   "porter_wu": 5
+  },
+  "events": [
+   "E0003",
+   "E0005",
+   "E0009",
+   "E0012"
+  ],
+  "knowledge": {
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low"
+    ],
+    "at_end": [
+     "fever_med_low"
+    ]
+   },
+   "porter_wu": {
+    "at_start": [
+     "pharmacy_latch_broken"
+    ],
+    "at_end": [
+     "pharmacy_latch_broken"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 4,
+   "participants": [
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S03",
+  "location": "ward",
+  "start_tick": 1,
+  "end_tick": 2,
+  "status": "closed",
+  "participants": [
+   "porter_wu",
+   "nurse_lin"
+  ],
+  "joined_at": {
+   "porter_wu": 1,
+   "nurse_lin": 2
+  },
+  "left_at": {
+   "porter_wu": 2,
+   "nurse_lin": 3
+  },
+  "events": [
+   "E0001",
+   "E0004",
+   "E0006"
+  ],
+  "knowledge": {
+   "porter_wu": {
+    "at_start": [
+     "pharmacy_latch_broken"
+    ],
+    "at_end": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low"
+    ],
+    "at_end": [
+     "fever_med_low"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 3,
+   "participants": [
+    "porter_wu",
+    "nurse_lin"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S04",
+  "location": "pharmacy",
+  "start_tick": 3,
+  "end_tick": 4,
+  "status": "closed",
+  "participants": [
+   "porter_wu",
+   "nurse_lin"
+  ],
+  "joined_at": {
+   "porter_wu": 3,
+   "nurse_lin": 4
+  },
+  "left_at": {
+   "porter_wu": 4,
+   "nurse_lin": 5
+  },
+  "events": [
+   "E0008",
+   "E0013"
+  ],
+  "knowledge": {
+   "porter_wu": {
+    "at_start": [
+     "pharmacy_latch_broken"
+    ],
+    "at_end": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low"
+    ],
+    "at_end": [
+     "fever_med_low"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 2,
+   "participants": [
+    "porter_wu",
+    "nurse_lin"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S05",
+  "location": "triage",
+  "start_tick": 5,
+  "end_tick": 24,
+  "status": "closed",
+  "participants": [
+   "nurse_lin",
+   "porter_wu",
+   "doctor_shen"
+  ],
+  "joined_at": {
+   "nurse_lin": 5,
+   "porter_wu": 6,
+   "doctor_shen": 7
+  },
+  "left_at": {
+   "nurse_lin": 23
+  },
+  "events": [
+   "E0016",
+   "E0019",
+   "E0024",
+   "E0025",
+   "E0026",
+   "E0028",
+   "E0030",
+   "E0031",
+   "E0032",
+   "E0033",
+   "E0034",
+   "E0035",
+   "E0036",
+   "E0037",
+   "E0038",
+   "E0040",
+   "E0041",
+   "E0042",
+   "E0044",
+   "E0046",
+   "E0047",
+   "E0048",
+   "E0049",
+   "E0050",
+   "E0051",
+   "E0052",
+   "E0054",
+   "E0055",
+   "E0056",
+   "E0059",
+   "E0062",
+   "E0064",
+   "E0071",
+   "E0074",
+   "E0076",
+   "E0078",
+   "E0079",
+   "E0083",
+   "E0084",
+   "E0085",
+   "E0086",
+   "E0087",
+   "E0088",
+   "E0090",
+   "E0091",
+   "E0092",
+   "E0093",
+   "E0094",
+   "E0095",
+   "E0096",
+   "E0097",
+   "E0098",
+   "E0099",
+   "E0100",
+   "E0102",
+   "E0103",
+   "E0104",
+   "E0105",
+   "E0107"
+  ],
+  "knowledge": {
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low"
+    ],
+    "at_end": [
+     "fever_med_low",
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ]
+   },
+   "porter_wu": {
+    "at_start": [
+     "pharmacy_latch_broken"
+    ],
+    "at_end": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   },
+   "doctor_shen": {
+    "at_start": [
+     "fever_patient_coming"
+    ],
+    "at_end": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ]
+   }
+  },
+  "related_threads": [
+   "main_fever_patient",
+   "medicine_supply"
+  ],
+  "thread_status_at_end": {
+   "main_fever_patient": "active",
+   "medicine_supply": "active"
+  },
+  "propagations_in": [
+   {
+    "fact": "fever_medicine_restocked",
+    "carrier": "doctor_shen",
+    "from_scene": "S11",
+    "to_scene": "S05",
+    "learned_at": 16,
+    "spoke_at": 21,
+    "travel_ticks": 5,
+    "via_event": "E0093"
+   },
+   {
+    "fact": "fever_medicine_restocked",
+    "carrier": "doctor_shen",
+    "from_scene": "S11",
+    "to_scene": "S05",
+    "learned_at": 16,
+    "spoke_at": 22,
+    "travel_ticks": 6,
+    "via_event": "E0099"
+   }
+  ],
+  "propagations_out": [],
+  "dramatic_functions": [
+   "causes",
+   "discovery",
+   "revelation"
+  ],
+  "outcome": {
+   "events": 59,
+   "participants": [
+    "nurse_lin",
+    "porter_wu",
+    "doctor_shen"
+   ],
+   "threads": [
+    "main_fever_patient",
+    "medicine_supply"
+   ]
+  }
+ },
+ {
+  "scene_id": "S06",
+  "location": "ward",
+  "start_tick": 5,
+  "end_tick": 6,
+  "status": "closed",
+  "participants": [
+   "porter_wu",
+   "nurse_lin"
+  ],
+  "joined_at": {
+   "porter_wu": 5,
+   "nurse_lin": 6
+  },
+  "left_at": {
+   "porter_wu": 6,
+   "nurse_lin": 7
+  },
+  "events": [
+   "E0015",
+   "E0020",
+   "E0022",
+   "E0027"
+  ],
+  "knowledge": {
+   "porter_wu": {
+    "at_start": [
+     "pharmacy_latch_broken"
+    ],
+    "at_end": [
+     "pharmacy_latch_broken"
+    ]
+   },
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low"
+    ],
+    "at_end": [
+     "fever_med_low"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 4,
+   "participants": [
+    "porter_wu",
+    "nurse_lin"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S07",
+  "location": "pharmacy",
+  "start_tick": 7,
+  "end_tick": 7,
+  "status": "closed",
+  "participants": [
+   "porter_wu"
+  ],
+  "joined_at": {
+   "porter_wu": 7
+  },
+  "left_at": {
+   "porter_wu": 8
+  },
+  "events": [
+   "E0023"
+  ],
+  "knowledge": {
+   "porter_wu": {
+    "at_start": [
+     "pharmacy_latch_broken"
+    ],
+    "at_end": [
+     "pharmacy_latch_broken"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "porter_wu"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S08",
+  "location": "oncall",
+  "start_tick": 8,
+  "end_tick": 8,
+  "status": "closed",
+  "participants": [
+   "nurse_lin"
+  ],
+  "joined_at": {
+   "nurse_lin": 8
+  },
+  "left_at": {
+   "nurse_lin": 9
+  },
+  "events": [
+   "E0029"
+  ],
+  "knowledge": {
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low"
+    ],
+    "at_end": [
+     "fever_med_low"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "nurse_lin"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S09",
+  "location": "oncall",
+  "start_tick": 10,
+  "end_tick": 11,
+  "status": "closed",
+  "participants": [
+   "nurse_lin"
+  ],
+  "joined_at": {
+   "nurse_lin": 10
+  },
+  "left_at": {
+   "nurse_lin": 12
+  },
+  "events": [
+   "E0039",
+   "E0045"
+  ],
+  "knowledge": {
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low"
+    ],
+    "at_end": [
+     "fever_med_low"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 2,
+   "participants": [
+    "nurse_lin"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S10",
+  "location": "oncall",
+  "start_tick": 13,
+  "end_tick": 15,
+  "status": "closed",
+  "participants": [
+   "nurse_lin",
+   "porter_wu"
+  ],
+  "joined_at": {
+   "nurse_lin": 13,
+   "porter_wu": 14
+  },
+  "left_at": {
+   "porter_wu": 15,
+   "nurse_lin": 16
+  },
+  "events": [
+   "E0053",
+   "E0057",
+   "E0058",
+   "E0060",
+   "E0061",
+   "E0063",
+   "E0065",
+   "E0067"
+  ],
+  "knowledge": {
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low"
+    ],
+    "at_end": [
+     "fever_med_low"
+    ]
+   },
+   "porter_wu": {
+    "at_start": [
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ],
+    "at_end": [
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 8,
+   "participants": [
+    "nurse_lin",
+    "porter_wu"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S11",
+  "location": "pharmacy",
+  "start_tick": 15,
+  "end_tick": 17,
+  "status": "closed",
+  "participants": [
+   "doctor_shen",
+   "porter_wu"
+  ],
+  "joined_at": {
+   "doctor_shen": 15,
+   "porter_wu": 16
+  },
+  "left_at": {
+   "doctor_shen": 18,
+   "porter_wu": 18
+  },
+  "events": [
+   "E0066",
+   "E0069",
+   "E0070",
+   "E0072",
+   "E0073",
+   "E0075",
+   "E0080"
+  ],
+  "knowledge": {
+   "doctor_shen": {
+    "at_start": [
+     "fever_patient_coming"
+    ],
+    "at_end": [
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ]
+   },
+   "porter_wu": {
+    "at_start": [
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ],
+    "at_end": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   }
+  },
+  "related_threads": [
+   "main_fever_patient",
+   "medicine_supply"
+  ],
+  "thread_status_at_end": {
+   "main_fever_patient": "active",
+   "medicine_supply": "active"
+  },
+  "propagations_in": [],
+  "propagations_out": [
+   {
+    "fact": "fever_medicine_restocked",
+    "carrier": "doctor_shen",
+    "from_scene": "S11",
+    "to_scene": "S05",
+    "learned_at": 16,
+    "spoke_at": 21,
+    "travel_ticks": 5,
+    "via_event": "E0093"
+   },
+   {
+    "fact": "fever_medicine_restocked",
+    "carrier": "doctor_shen",
+    "from_scene": "S11",
+    "to_scene": "S05",
+    "learned_at": 16,
+    "spoke_at": 22,
+    "travel_ticks": 6,
+    "via_event": "E0099"
+   }
+  ],
+  "dramatic_functions": [
+   "discovery",
+   "enables",
+   "revelation"
+  ],
+  "outcome": {
+   "events": 7,
+   "participants": [
+    "doctor_shen",
+    "porter_wu"
+   ],
+   "threads": [
+    "main_fever_patient",
+    "medicine_supply"
+   ]
+  }
+ },
+ {
+  "scene_id": "S12",
+  "location": "oncall",
+  "start_tick": 18,
+  "end_tick": 18,
+  "status": "closed",
+  "participants": [
+   "nurse_lin"
+  ],
+  "joined_at": {
+   "nurse_lin": 18
+  },
+  "left_at": {
+   "nurse_lin": 19
+  },
+  "events": [
+   "E0077"
+  ],
+  "knowledge": {
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low"
+    ],
+    "at_end": [
+     "fever_med_low"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "nurse_lin"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S13",
+  "location": "ward",
+  "start_tick": 19,
+  "end_tick": 19,
+  "status": "closed",
+  "participants": [
+   "porter_wu"
+  ],
+  "joined_at": {
+   "porter_wu": 19
+  },
+  "left_at": {
+   "porter_wu": 20
+  },
+  "events": [
+   "E0082"
+  ],
+  "knowledge": {
+   "porter_wu": {
+    "at_start": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ],
+    "at_end": [
+     "fever_medicine_restocked",
+     "fever_patient_coming",
+     "pharmacy_latch_broken"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "porter_wu"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S14",
+  "location": "oncall",
+  "start_tick": 20,
+  "end_tick": 20,
+  "status": "closed",
+  "participants": [
+   "nurse_lin"
+  ],
+  "joined_at": {
+   "nurse_lin": 20
+  },
+  "left_at": {
+   "nurse_lin": 21
+  },
+  "events": [
+   "E0089"
+  ],
+  "knowledge": {
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low"
+    ],
+    "at_end": [
+     "fever_med_low"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [],
+  "outcome": {
+   "events": 1,
+   "participants": [
+    "nurse_lin"
+   ],
+   "threads": []
+  }
+ },
+ {
+  "scene_id": "S15",
+  "location": "pharmacy",
+  "start_tick": 23,
+  "end_tick": 24,
+  "status": "closed",
+  "participants": [
+   "nurse_lin"
+  ],
+  "joined_at": {
+   "nurse_lin": 23
+  },
+  "left_at": {},
+  "events": [
+   "E0101",
+   "E0106"
+  ],
+  "knowledge": {
+   "nurse_lin": {
+    "at_start": [
+     "fever_med_low",
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ],
+    "at_end": [
+     "fever_med_low",
+     "fever_medicine_restocked",
+     "fever_patient_coming"
+    ]
+   }
+  },
+  "related_threads": [],
+  "thread_status_at_end": {},
+  "propagations_in": [],
+  "propagations_out": [],
+  "dramatic_functions": [
+   "discovery"
+  ],
+  "outcome": {
+   "events": 2,
+   "participants": [
+    "nurse_lin"
+   ],
+   "threads": []
+  }
+ }
+]

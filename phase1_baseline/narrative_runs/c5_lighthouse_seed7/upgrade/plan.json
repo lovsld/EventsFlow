@@ -1,0 +1,452 @@
+{
+ "story": {
+  "title": "灯塔守夜",
+  "theme": "责任与协作",
+  "central_question": "今晚的船能否安全通过？",
+  "main_thread": "main_ship_safety",
+  "sub_threads": [
+   "belt_repair",
+   "narrative-L02"
+  ],
+  "main_characters": [
+   "a_gui",
+   "keeper_zhou",
+   "lin_tao"
+  ],
+  "core_conflicts": [],
+  "key_turning_points": [
+   "NE-E0026",
+   "NE-E0030",
+   "NE-E0044",
+   "NE-E0080"
+  ],
+  "climax_candidates": [
+   "NE-E0044",
+   "NE-E0026",
+   "NE-E0080"
+  ],
+  "ending_state": "线索「今晚的船能否安全通过」状态 active，未答问题 3 个；线索「备用皮带与传动」状态 dormant，未答问题 1 个；线索「narrative-L02」状态 open，未答问题 0 个"
+ },
+ "chapters": [
+  {
+   "chapter_id": "CH01",
+   "chapter_title": "第1章",
+   "narrative_purpose": "今晚的船能否安全通过？",
+   "opening_state": {
+    "known_facts_total": 0
+   },
+   "ending_state": {
+    "known_facts_total": 1
+   },
+   "included_threads": [
+    "main_ship_safety"
+   ],
+   "included_events": [
+    "NE-E0006",
+    "NE-E0010",
+    "NE-E0011",
+    "NE-E0014",
+    "NE-E0015",
+    "NE-E0020",
+    "NE-E0021",
+    "NE-E0022",
+    "NE-E0024",
+    "NE-E0025",
+    "NE-E0026",
+    "NE-E0027",
+    "NE-E0028",
+    "NE-E0029",
+    "NE-E0030",
+    "NE-E0032",
+    "NE-E0036",
+    "NE-E0037"
+   ],
+   "turning_point": "NE-E0026",
+   "unresolved_questions": [
+    "今晚是否有船通过？",
+    "码头灯是否熄灭？",
+    "雾号是否就绪？"
+   ],
+   "emotional_curve": [
+    0.4,
+    0.4,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "chapter_id": "CH02",
+   "chapter_title": "第2章",
+   "narrative_purpose": "今晚的船能否安全通过？",
+   "opening_state": {
+    "known_facts_total": 1
+   },
+   "ending_state": {
+    "known_facts_total": 2
+   },
+   "included_threads": [
+    "main_ship_safety"
+   ],
+   "included_events": [
+    "NE-E0038",
+    "NE-E0039",
+    "NE-E0041",
+    "NE-E0043",
+    "NE-E0044",
+    "NE-E0045",
+    "NE-E0049"
+   ],
+   "turning_point": "NE-E0044",
+   "unresolved_questions": [
+    "今晚是否有船通过？",
+    "码头灯是否熄灭？",
+    "雾号是否就绪？"
+   ],
+   "emotional_curve": [
+    0.4
+   ]
+  },
+  {
+   "chapter_id": "CH03",
+   "chapter_title": "第3章",
+   "narrative_purpose": "今晚的船能否安全通过？",
+   "opening_state": {
+    "known_facts_total": 2
+   },
+   "ending_state": {
+    "known_facts_total": 2
+   },
+   "included_threads": [
+    "main_ship_safety"
+   ],
+   "included_events": [
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0059",
+    "NE-E0063",
+    "NE-E0064",
+    "NE-E0066",
+    "NE-E0070",
+    "NE-E0080",
+    "NE-E0081",
+    "NE-E0086",
+    "NE-E0087",
+    "NE-E0091",
+    "NE-E0095",
+    "NE-E0096",
+    "NE-E0097"
+   ],
+   "turning_point": "NE-E0080",
+   "unresolved_questions": [
+    "今晚是否有船通过？",
+    "码头灯是否熄灭？",
+    "雾号是否就绪？"
+   ],
+   "emotional_curve": [
+    0.4,
+    0.4,
+    0.4,
+    0.4
+   ]
+  },
+  {
+   "chapter_id": "CH04",
+   "chapter_title": "第4章",
+   "narrative_purpose": "",
+   "opening_state": {
+    "known_facts_total": 2
+   },
+   "ending_state": {
+    "known_facts_total": 2
+   },
+   "included_threads": [
+    "narrative-L02"
+   ],
+   "included_events": [
+    "NE-E0100",
+    "NE-E0101"
+   ],
+   "turning_point": "NE-E0101",
+   "unresolved_questions": [],
+   "emotional_curve": [
+    0.0
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "scene_id": "SC01",
+   "location": "boathouse",
+   "time_range": [
+    2,
+    3
+   ],
+   "participants": [
+    "a_gui",
+    "lin_tao"
+   ],
+   "viewpoint_character": "a_gui",
+   "scene_goal": "今晚的船能否安全通过？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_ship_safety",
+   "turning_point": "NE-E0006",
+   "outcome": "林涛：今晚真有船要贴着礁石回港？消息准吗？",
+   "next_scene_hook": "今晚的船能否安全通过？",
+   "event_ids": [
+    "NE-E0006",
+    "NE-E0010",
+    "NE-E0011"
+   ]
+  },
+  {
+   "scene_id": "SC02",
+   "location": "boathouse",
+   "time_range": [
+    4,
+    6
+   ],
+   "participants": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "viewpoint_character": "a_gui",
+   "scene_goal": "今晚的船能否安全通过？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_ship_safety",
+   "turning_point": "NE-E0014",
+   "outcome": "林涛：雾笛那边，到底能不能响了？我这边等着确认。",
+   "next_scene_hook": "今晚的船能否安全通过？",
+   "event_ids": [
+    "NE-E0014",
+    "NE-E0015",
+    "NE-E0020",
+    "NE-E0021",
+    "NE-E0022",
+    "NE-E0024",
+    "NE-E0025"
+   ]
+  },
+  {
+   "scene_id": "SC03",
+   "location": "boathouse",
+   "time_range": [
+    6,
+    7
+   ],
+   "participants": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "viewpoint_character": "a_gui",
+   "scene_goal": "今晚的船能否安全通过？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_ship_safety",
+   "turning_point": "NE-E0026",
+   "outcome": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+   "next_scene_hook": "今晚的船能否安全通过？",
+   "event_ids": [
+    "NE-E0026",
+    "NE-E0027",
+    "NE-E0028",
+    "NE-E0029"
+   ]
+  },
+  {
+   "scene_id": "SC04",
+   "location": "boathouse",
+   "time_range": [
+    8,
+    9
+   ],
+   "participants": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "viewpoint_character": "keeper_zhou",
+   "scene_goal": "今晚的船能否安全通过？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_ship_safety",
+   "turning_point": "NE-E0037",
+   "outcome": "search @ jetty",
+   "next_scene_hook": "今晚的船能否安全通过？",
+   "event_ids": [
+    "NE-E0030",
+    "NE-E0032",
+    "NE-E0036",
+    "NE-E0037"
+   ]
+  },
+  {
+   "scene_id": "SC05",
+   "location": "boathouse",
+   "time_range": [
+    9,
+    12
+   ],
+   "participants": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "viewpoint_character": "lin_tao",
+   "scene_goal": "今晚的船能否安全通过？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_ship_safety",
+   "turning_point": "NE-E0044",
+   "outcome": "speak_failed @ boathouse",
+   "next_scene_hook": "今晚的船能否安全通过？",
+   "event_ids": [
+    "NE-E0038",
+    "NE-E0039",
+    "NE-E0041",
+    "NE-E0043",
+    "NE-E0044",
+    "NE-E0045",
+    "NE-E0049"
+   ]
+  },
+  {
+   "scene_id": "SC06",
+   "location": "boathouse",
+   "time_range": [
+    14,
+    18
+   ],
+   "participants": [
+    "a_gui",
+    "keeper_zhou"
+   ],
+   "viewpoint_character": "keeper_zhou",
+   "scene_goal": "今晚的船能否安全通过？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_ship_safety",
+   "turning_point": "NE-E0064",
+   "outcome": "阿贵：跟你说一声，后半夜有船回来，雾又大，各处都得备好。",
+   "next_scene_hook": "今晚的船能否安全通过？",
+   "event_ids": [
+    "NE-E0056",
+    "NE-E0058",
+    "NE-E0059",
+    "NE-E0063",
+    "NE-E0064",
+    "NE-E0066",
+    "NE-E0070"
+   ]
+  },
+  {
+   "scene_id": "SC07",
+   "location": "boathouse",
+   "time_range": [
+    20,
+    20
+   ],
+   "participants": [
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "viewpoint_character": "a_gui",
+   "scene_goal": "今晚的船能否安全通过？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_ship_safety",
+   "turning_point": "NE-E0080",
+   "outcome": "周守义：雾笛那边，到底能不能响了？我这边等着确认。",
+   "next_scene_hook": "今晚的船能否安全通过？",
+   "event_ids": [
+    "NE-E0080",
+    "NE-E0081"
+   ]
+  },
+  {
+   "scene_id": "SC08",
+   "location": "boathouse",
+   "time_range": [
+    21,
+    21
+   ],
+   "participants": [
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "viewpoint_character": "keeper_zhou",
+   "scene_goal": "今晚的船能否安全通过？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_ship_safety",
+   "turning_point": "NE-E0086",
+   "outcome": "speak_failed @ boathouse",
+   "next_scene_hook": "今晚的船能否安全通过？",
+   "event_ids": [
+    "NE-E0086",
+    "NE-E0087"
+   ]
+  },
+  {
+   "scene_id": "SC09",
+   "location": "boathouse",
+   "time_range": [
+    22,
+    23
+   ],
+   "participants": [
+    "a_gui",
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "viewpoint_character": "a_gui",
+   "scene_goal": "今晚的船能否安全通过？",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "main_ship_safety",
+   "turning_point": "NE-E0091",
+   "outcome": "周守义：电台刚记下——今晚有渔船贴着暗礁回港，得靠咱的灯和雾笛。",
+   "next_scene_hook": "林涛：这事我不清楚，别问我。",
+   "event_ids": [
+    "NE-E0091",
+    "NE-E0095",
+    "NE-E0096",
+    "NE-E0097"
+   ]
+  },
+  {
+   "scene_id": "SC10",
+   "location": "boathouse",
+   "time_range": [
+    24,
+    24
+   ],
+   "participants": [
+    "keeper_zhou",
+    "lin_tao"
+   ],
+   "viewpoint_character": "keeper_zhou",
+   "scene_goal": "",
+   "opposition": "",
+   "stakes": "",
+   "conflict": "narrative-L02",
+   "turning_point": "NE-E0101",
+   "outcome": "林涛：这事我不清楚，别问我。",
+   "next_scene_hook": "",
+   "event_ids": [
+    "NE-E0100",
+    "NE-E0101"
+   ]
+  }
+ ],
+ "validation": {
+  "errors": [],
+  "warnings": [],
+  "checked_events": 104,
+  "scenes": 10,
+  "chapters": 4
+ }
+}

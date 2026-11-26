@@ -1,0 +1,159 @@
+{
+ "edges": [
+  {
+   "from": "E0033",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "character_id": "porter_wu",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0035",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "character_id": "doctor_shen",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0038",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "character_id": "porter_wu",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0044",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "character_id": "porter_wu",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0046",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "character_id": "doctor_shen",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0002"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0047",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "character_id": "porter_wu",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0052",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "character_id": "porter_wu",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0073",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "character_id": "porter_wu",
+   "confidence": 0.3,
+   "evidence_event_ids": [],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0075",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "character_id": "doctor_shen",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0092",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "character_id": "porter_wu",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0093",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "character_id": "doctor_shen",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0097",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "character_id": "porter_wu",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0099",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「药品供应」：退烧药库存不足的问题是否被解决？",
+   "character_id": "doctor_shen",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0070"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  },
+  {
+   "from": "E0100",
+   "relation": "MOTIVATED_BY",
+   "to": "推进线索「发热病人与退烧药」：发热病人到诊前，退烧药能否备齐？",
+   "character_id": "porter_wu",
+   "confidence": 0.4,
+   "evidence_event_ids": [
+    "E0046"
+   ],
+   "inference_status": "HYPOTHESIS",
+   "evidence_level": "interpretation"
+  }
+ ],
+ "note": "INFERENCE ONLY — physically separate from the verified causal graph"
+}

@@ -1,0 +1,658 @@
+{
+ "scenes": [
+  {
+   "scene_id": "S01",
+   "location_id": "boathouse",
+   "start_tick": 1,
+   "end_tick": 24,
+   "participants": [
+    "lin_tao",
+    "a_gui",
+    "keeper_zhou"
+   ],
+   "joined_at": {
+    "lin_tao": 1,
+    "a_gui": 1,
+    "keeper_zhou": 4
+   },
+   "left_at": {
+    "a_gui": 24
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [
+    "main_ship_safety"
+   ],
+   "event_queue": [
+    "E0001",
+    "E0002",
+    "E0004",
+    "E0006",
+    "E0007",
+    "E0009",
+    "E0010",
+    "E0011",
+    "E0014",
+    "E0015",
+    "E0016",
+    "E0017",
+    "E0018",
+    "E0019",
+    "E0020",
+    "E0021",
+    "E0022",
+    "E0023",
+    "E0024",
+    "E0025",
+    "E0026",
+    "E0027",
+    "E0028",
+    "E0029",
+    "E0030",
+    "E0032",
+    "E0033",
+    "E0034",
+    "E0035",
+    "E0036",
+    "E0038",
+    "E0039",
+    "E0041",
+    "E0043",
+    "E0045",
+    "E0049",
+    "E0050",
+    "E0051",
+    "E0052",
+    "E0053",
+    "E0055",
+    "E0056",
+    "E0058",
+    "E0059",
+    "E0060",
+    "E0063",
+    "E0064",
+    "E0066",
+    "E0068",
+    "E0069",
+    "E0070",
+    "E0072",
+    "E0074",
+    "E0075",
+    "E0076",
+    "E0077",
+    "E0079",
+    "E0080",
+    "E0081",
+    "E0082",
+    "E0083",
+    "E0084",
+    "E0086",
+    "E0087",
+    "E0088",
+    "E0089",
+    "E0090",
+    "E0091",
+    "E0092",
+    "E0093",
+    "E0094",
+    "E0095",
+    "E0096",
+    "E0097",
+    "E0100",
+    "E0101",
+    "E0102",
+    "E0103"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 78,
+    "participants": [
+     "lin_tao",
+     "a_gui",
+     "keeper_zhou"
+    ],
+    "threads": [
+     "main_ship_safety"
+    ]
+   }
+  },
+  {
+   "scene_id": "S02",
+   "location_id": "lamp_room",
+   "start_tick": 1,
+   "end_tick": 1,
+   "participants": [
+    "keeper_zhou"
+   ],
+   "joined_at": {
+    "keeper_zhou": 1
+   },
+   "left_at": {
+    "keeper_zhou": 2
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0003"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "keeper_zhou"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S03",
+   "location_id": "base",
+   "start_tick": 2,
+   "end_tick": 2,
+   "participants": [
+    "keeper_zhou"
+   ],
+   "joined_at": {
+    "keeper_zhou": 2
+   },
+   "left_at": {
+    "keeper_zhou": 3
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0008"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "keeper_zhou"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S04",
+   "location_id": "jetty",
+   "start_tick": 3,
+   "end_tick": 3,
+   "participants": [
+    "keeper_zhou"
+   ],
+   "joined_at": {
+    "keeper_zhou": 3
+   },
+   "left_at": {
+    "keeper_zhou": 4
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0012"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "keeper_zhou"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S05",
+   "location_id": "jetty",
+   "start_tick": 8,
+   "end_tick": 9,
+   "participants": [
+    "lin_tao"
+   ],
+   "joined_at": {
+    "lin_tao": 8
+   },
+   "left_at": {
+    "lin_tao": 10
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0031",
+    "E0037"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 2,
+    "participants": [
+     "lin_tao"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S06",
+   "location_id": "base",
+   "start_tick": 10,
+   "end_tick": 11,
+   "participants": [
+    "lin_tao"
+   ],
+   "joined_at": {
+    "lin_tao": 10
+   },
+   "left_at": {
+    "lin_tao": 12
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [
+    "belt_repair"
+   ],
+   "event_queue": [
+    "E0040",
+    "E0042",
+    "E0044"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 3,
+    "participants": [
+     "lin_tao"
+    ],
+    "threads": [
+     "belt_repair"
+    ]
+   }
+  },
+  {
+   "scene_id": "S07",
+   "location_id": "jetty",
+   "start_tick": 12,
+   "end_tick": 12,
+   "participants": [
+    "a_gui"
+   ],
+   "joined_at": {
+    "a_gui": 12
+   },
+   "left_at": {
+    "a_gui": 13
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0047"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "a_gui"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S08",
+   "location_id": "lamp_room",
+   "start_tick": 12,
+   "end_tick": 12,
+   "participants": [
+    "lin_tao"
+   ],
+   "joined_at": {
+    "lin_tao": 12
+   },
+   "left_at": {
+    "lin_tao": 13
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0048"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "lin_tao"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S09",
+   "location_id": "base",
+   "start_tick": 13,
+   "end_tick": 13,
+   "participants": [
+    "lin_tao"
+   ],
+   "joined_at": {
+    "lin_tao": 13
+   },
+   "left_at": {
+    "lin_tao": 14
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0054"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "lin_tao"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S10",
+   "location_id": "lamp_room",
+   "start_tick": 14,
+   "end_tick": 14,
+   "participants": [
+    "lin_tao"
+   ],
+   "joined_at": {
+    "lin_tao": 14
+   },
+   "left_at": {
+    "lin_tao": 15
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0057"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "lin_tao"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S11",
+   "location_id": "base",
+   "start_tick": 15,
+   "end_tick": 15,
+   "participants": [
+    "lin_tao"
+   ],
+   "joined_at": {
+    "lin_tao": 15
+   },
+   "left_at": {
+    "lin_tao": 16
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0061",
+    "E0062"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 2,
+    "participants": [
+     "lin_tao"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S12",
+   "location_id": "jetty",
+   "start_tick": 16,
+   "end_tick": 16,
+   "participants": [
+    "lin_tao"
+   ],
+   "joined_at": {
+    "lin_tao": 16
+   },
+   "left_at": {
+    "lin_tao": 17
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0065"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "lin_tao"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S13",
+   "location_id": "base",
+   "start_tick": 17,
+   "end_tick": 17,
+   "participants": [
+    "lin_tao"
+   ],
+   "joined_at": {
+    "lin_tao": 17
+   },
+   "left_at": {
+    "lin_tao": 18
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0067"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "lin_tao"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S14",
+   "location_id": "jetty",
+   "start_tick": 18,
+   "end_tick": 19,
+   "participants": [
+    "lin_tao",
+    "a_gui"
+   ],
+   "joined_at": {
+    "lin_tao": 18,
+    "a_gui": 19
+   },
+   "left_at": {
+    "lin_tao": 19,
+    "a_gui": 20
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0071",
+    "E0073",
+    "E0078"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 3,
+    "participants": [
+     "lin_tao",
+     "a_gui"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S15",
+   "location_id": "jetty",
+   "start_tick": 21,
+   "end_tick": 21,
+   "participants": [
+    "a_gui"
+   ],
+   "joined_at": {
+    "a_gui": 21
+   },
+   "left_at": {
+    "a_gui": 22
+   },
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0085"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 1,
+    "participants": [
+     "a_gui"
+    ],
+    "threads": []
+   }
+  },
+  {
+   "scene_id": "S16",
+   "location_id": "jetty",
+   "start_tick": 24,
+   "end_tick": 24,
+   "participants": [
+    "a_gui"
+   ],
+   "joined_at": {
+    "a_gui": 24
+   },
+   "left_at": {},
+   "scene_goal": "",
+   "active_conflicts": [],
+   "related_threads": [],
+   "event_queue": [
+    "E0099",
+    "E0104"
+   ],
+   "status": "closed",
+   "outcome": {
+    "events": 2,
+    "participants": [
+     "a_gui"
+    ],
+    "threads": []
+   }
+  }
+ ],
+ "propagations": [
+  {
+   "fact": "fog_horn_ready",
+   "carrier": "lin_tao",
+   "from_scene": "S06",
+   "to_scene": "S01",
+   "learned_at": 11,
+   "spoke_at": 20,
+   "travel_ticks": 9,
+   "via_event": "E0080"
+  },
+  {
+   "fact": "fog_horn_ready",
+   "carrier": "lin_tao",
+   "from_scene": "S06",
+   "to_scene": "S01",
+   "learned_at": 11,
+   "spoke_at": 21,
+   "travel_ticks": 10,
+   "via_event": "E0086"
+  },
+  {
+   "fact": "fog_horn_ready",
+   "carrier": "lin_tao",
+   "from_scene": "S06",
+   "to_scene": "S01",
+   "learned_at": 11,
+   "spoke_at": 22,
+   "travel_ticks": 11,
+   "via_event": "E0091"
+  },
+  {
+   "fact": "fog_horn_ready",
+   "carrier": "lin_tao",
+   "from_scene": "S06",
+   "to_scene": "S01",
+   "learned_at": 11,
+   "spoke_at": 23,
+   "travel_ticks": 12,
+   "via_event": "E0096"
+  }
+ ],
+ "propagation_issues": [],
+ "consistency_issues": [
+  {
+   "tick": 8,
+   "kind": "actor_location_mismatch",
+   "detail": "lin_tao acts at boathouse but world places them at jetty"
+  },
+  {
+   "tick": 8,
+   "kind": "actor_location_mismatch",
+   "detail": "lin_tao acts at boathouse but world places them at jetty"
+  },
+  {
+   "tick": 12,
+   "kind": "actor_location_mismatch",
+   "detail": "a_gui acts at boathouse but world places them at jetty"
+  },
+  {
+   "tick": 19,
+   "kind": "actor_location_mismatch",
+   "detail": "a_gui acts at boathouse but world places them at jetty"
+  },
+  {
+   "tick": 21,
+   "kind": "actor_location_mismatch",
+   "detail": "a_gui acts at boathouse but world places them at jetty"
+  },
+  {
+   "tick": 24,
+   "kind": "actor_location_mismatch",
+   "detail": "a_gui acts at boathouse but world places them at jetty"
+  }
+ ],
+ "pending_events": [
+  {
+   "event_id": "PENDING",
+   "type": "ambient",
+   "subtype": "trace_event",
+   "actors": [],
+   "location": "base",
+   "text": "此处留下了被人翻动过的痕迹。",
+   "source": "story_engine",
+   "candidate_id": "EC001",
+   "causal_basis": [
+    "E0044"
+   ]
+  }
+ ]
+}

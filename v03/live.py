@@ -33,7 +33,8 @@ from v03.story.models import StoryConfig
 async def run_live(run_dir: Path, story_config: StoryConfig,
                    ticks: int = 20, seed: int = 42,
                    characters_root=None, mode: str = "rule",
-                   provider: str | None = None) -> dict:
+                   provider: str | None = None,
+                   extra_hook=None) -> dict:
     run_dir = Path(run_dir)
     (run_dir / "characters").mkdir(parents=True, exist_ok=True)
     configs = load_all(characters_root)
@@ -127,6 +128,12 @@ async def run_live(run_dir: Path, story_config: StoryConfig,
         if tick_records:
             process_upto(tick_records, deliveries_by_tick,
                          tick_records[-1]["tick"] - 1)
+        if extra_hook is not None:
+            # Phase 1 live intervention (Progress Judge): observes
+            # only; may queue validated candidates through the
+            # World's external queue. Default None = Phase 3b
+            # behaviour unchanged.
+            extra_hook(tick_records, deliveries_by_tick, world)
 
     scheduler = Scheduler(world, broker, agents, store, ids,
                           on_tick_committed=hook)
@@ -145,8 +152,9 @@ async def run_live(run_dir: Path, story_config: StoryConfig,
 
 def run_live_sync(run_dir, story_config, ticks=20, seed=42,
                   characters_root=None, mode="rule",
-                  provider=None) -> dict:
+                  provider=None, extra_hook=None) -> dict:
     return asyncio.run(run_live(Path(run_dir), story_config,
                                 ticks=ticks, seed=seed,
                                 characters_root=characters_root,
-                                mode=mode, provider=provider))
+                                mode=mode, provider=provider,
+                                extra_hook=extra_hook))

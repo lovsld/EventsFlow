@@ -1,0 +1,606 @@
+{
+ "fragments": [],
+ "lines": [
+  {
+   "aux_notes": [],
+   "break_event": null,
+   "claims": [
+    "investigation_probe",
+    "mayor_hint"
+   ],
+   "edges": [
+    {
+     "basis": [
+      "found 'anonymous_letter'; finder later asserted its belief 'mayor_embezzled'"
+     ],
+     "from": "E0008",
+     "to": "E0022",
+     "types": [
+      "E4"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'"
+     ],
+     "from": "E0022",
+     "to": "E0026",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'"
+     ],
+     "from": "E0026",
+     "to": "E0030",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered in session"
+     ],
+     "from": "E0026",
+     "to": "E0032",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "owner received E0030 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0030",
+     "to": "E0032",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "soldier received E0032 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0032",
+     "to": "E0033",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "owner received E0033 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0033",
+     "to": "E0035",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered in session"
+     ],
+     "from": "E0033",
+     "to": "E0038",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "soldier received E0035 (delivered, nearest source) then spoke 'mayor_embezzled'",
+      "ask answered in session"
+     ],
+     "from": "E0035",
+     "to": "E0036",
+     "types": [
+      "E1",
+      "E2",
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "owner received E0036 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0036",
+     "to": "E0038",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "soldier received E0038 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0038",
+     "to": "E0040",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'"
+     ],
+     "from": "E0040",
+     "to": "E0043",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'"
+     ],
+     "from": "E0043",
+     "to": "E0046",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'"
+     ],
+     "from": "E0046",
+     "to": "E0050",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "owner received E0050 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0050",
+     "to": "E0052",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered in session"
+     ],
+     "from": "E0050",
+     "to": "E0056",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "soldier received E0052 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0052",
+     "to": "E0054",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "ask answered in session"
+     ],
+     "from": "E0052",
+     "to": "E0058",
+     "types": [
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "owner received E0054 (delivered, nearest source) then spoke 'mayor_embezzled'",
+      "ask answered in session"
+     ],
+     "from": "E0054",
+     "to": "E0056",
+     "types": [
+      "E1",
+      "E2",
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "soldier received E0056 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0056",
+     "to": "E0058",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "merchant received E0058 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0058",
+     "to": "E0059",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "soldier received E0059 (delivered, nearest source) then spoke 'mayor_embezzled'",
+      "ask answered in session"
+     ],
+     "from": "E0059",
+     "to": "E0061",
+     "types": [
+      "E1",
+      "E2",
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "merchant received E0061 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0061",
+     "to": "E0062",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "owner received E0062 (delivered, nearest source) then spoke 'mayor_embezzled'",
+      "ask answered in session"
+     ],
+     "from": "E0062",
+     "to": "E0063",
+     "types": [
+      "E1",
+      "E2",
+      "E3"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "soldier received E0063 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0063",
+     "to": "E0064",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'"
+     ],
+     "from": "E0064",
+     "to": "E0068",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "owner received E0068 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0068",
+     "to": "E0070",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'mayor_embezzled'",
+      "soldier received E0070 (delivered, nearest source) then spoke 'mayor_embezzled'"
+     ],
+     "from": "E0070",
+     "to": "E0071",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    }
+   ],
+   "end_tick": 20,
+   "event_ids": [
+    "E0008",
+    "E0022",
+    "E0026",
+    "E0030",
+    "E0032",
+    "E0033",
+    "E0035",
+    "E0036",
+    "E0038",
+    "E0040",
+    "E0043",
+    "E0046",
+    "E0050",
+    "E0052",
+    "E0054",
+    "E0056",
+    "E0058",
+    "E0059",
+    "E0061",
+    "E0062",
+    "E0063",
+    "E0064",
+    "E0068",
+    "E0070",
+    "E0071"
+   ],
+   "kind": "line",
+   "line_id": "L01",
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "propositions": [
+    "mayor_embezzled"
+   ],
+   "start_tick": 3,
+   "state": "closed",
+   "state_reasons": [
+    "closed: contains an answered ask (E3)"
+   ]
+  },
+  {
+   "aux_notes": [],
+   "break_event": null,
+   "claims": [
+    "business_proposal"
+   ],
+   "edges": [
+    {
+     "basis": [
+      "adjacent mentions of 'business_opportunity'"
+     ],
+     "from": "E0014",
+     "to": "E0017",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'business_opportunity'"
+     ],
+     "from": "E0017",
+     "to": "E0023",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'business_opportunity'"
+     ],
+     "from": "E0023",
+     "to": "E0027",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'business_opportunity'"
+     ],
+     "from": "E0027",
+     "to": "E0031",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'business_opportunity'"
+     ],
+     "from": "E0031",
+     "to": "E0047",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'business_opportunity'"
+     ],
+     "from": "E0047",
+     "to": "E0055",
+     "types": [
+      "E1"
+     ]
+    }
+   ],
+   "end_tick": 15,
+   "event_ids": [
+    "E0014",
+    "E0017",
+    "E0023",
+    "E0027",
+    "E0031",
+    "E0047",
+    "E0055"
+   ],
+   "kind": "line",
+   "line_id": "L02",
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "propositions": [
+    "business_opportunity"
+   ],
+   "start_tick": 4,
+   "state": "closed",
+   "state_reasons": [
+    "closed: last speech event is an assertion"
+   ]
+  },
+  {
+   "aux_notes": [],
+   "break_event": null,
+   "claims": [
+    "bluff_hint"
+   ],
+   "edges": [
+    {
+     "basis": [
+      "adjacent mentions of 'speaker_knows_secret'"
+     ],
+     "from": "E0034",
+     "to": "E0037",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'speaker_knows_secret'"
+     ],
+     "from": "E0037",
+     "to": "E0041",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'speaker_knows_secret'"
+     ],
+     "from": "E0041",
+     "to": "E0044",
+     "types": [
+      "E1"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'speaker_knows_secret'"
+     ],
+     "from": "E0044",
+     "to": "E0051",
+     "types": [
+      "E1"
+     ]
+    }
+   ],
+   "end_tick": 14,
+   "event_ids": [
+    "E0034",
+    "E0037",
+    "E0041",
+    "E0044",
+    "E0051"
+   ],
+   "kind": "line",
+   "line_id": "L03",
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "propositions": [
+    "speaker_knows_secret"
+   ],
+   "start_tick": 9,
+   "state": "closed",
+   "state_reasons": [
+    "closed: last speech event is an assertion"
+   ]
+  },
+  {
+   "aux_notes": [],
+   "break_event": null,
+   "claims": [
+    "denial"
+   ],
+   "edges": [
+    {
+     "basis": [
+      "adjacent mentions of 'denial'",
+      "merchant received E0048 (delivered, nearest source) then spoke 'denial'"
+     ],
+     "from": "E0048",
+     "to": "E0065",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    },
+    {
+     "basis": [
+      "adjacent mentions of 'denial'",
+      "owner received E0065 (delivered, nearest source) then spoke 'denial'"
+     ],
+     "from": "E0065",
+     "to": "E0073",
+     "types": [
+      "E1",
+      "E2"
+     ]
+    }
+   ],
+   "end_tick": 20,
+   "event_ids": [
+    "E0048",
+    "E0065",
+    "E0073"
+   ],
+   "kind": "line",
+   "line_id": "L04",
+   "participants": [
+    "merchant",
+    "owner",
+    "soldier"
+   ],
+   "propositions": [],
+   "start_tick": 13,
+   "state": "open",
+   "state_reasons": [
+    "open: no terminal element and no break evidence"
+   ]
+  }
+ ],
+ "meta": {
+  "extractor_version": "n2-extractor-1.0",
+  "input_hash_check_after": "pass",
+  "observer_version": "n1-observer-1.0",
+  "run_id": "rule_v02c4_seed42",
+  "strong_edges": 40,
+  "weak_edges": 3
+ }
+}

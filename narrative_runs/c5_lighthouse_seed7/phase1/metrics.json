@@ -1,0 +1,67 @@
+{
+ "story_progress_rate": {
+  "value": 0.9167,
+  "final_story_progress": 0.25,
+  "method": "ticks advancing >=1 of six dimensions / total ticks; final progress = mean over questions (answered 1 / addressed 0.5 / open 0)",
+  "source": "v03.decision_quality.judge_run"
+ },
+ "event_traceability": {
+  "value": 1.0,
+  "method": "F1 paragraphs whose event_ids all resolve to real events / all F1 paragraphs",
+  "source": "trace_v2 + narrative_events"
+ },
+ "system_log_leakage": {
+  "value": 0,
+  "rate": 0.0,
+  "method": "quoted spans equal to a template summary or matching the `word @ word` log pattern",
+  "source": "narrative.material.detect_log_leakage"
+ },
+ "scene_repetition_rate": {
+  "value": 0.0,
+  "method": "valueless-repeat paragraphs (similar wording, no new event, no new fact) / all paragraphs; layer-3 narrative-value judgement requires human sampling",
+  "human_sampling": null,
+  "source": "narrative.scene_records"
+ },
+ "emotional_coverage": {
+  "value": 0.44,
+  "method": "character x scene records with a non-unknown emotion / all records",
+  "source": "phase1/psychology.json (inference layer)"
+ },
+ "motivation_coverage": {
+  "value": 0.8158,
+  "method": "key actions (importance >= 0.5 speech/search/confront) carrying >=1 MOTIVATED_BY hypothesis / all key actions",
+  "source": "phase1/psychology.json (inference layer)"
+ },
+ "f3_ratio": {
+  "value": 0.3971,
+  "over_budget": true,
+  "issues": [
+   {
+    "kind": "F3_OVER_MAX",
+    "value": 0.3971,
+    "limit": 0.2
+   },
+   {
+    "kind": "F2_OUT_OF_RANGE",
+    "value": 0.1912,
+    "limit": [
+     0.4,
+     0.55
+    ]
+   }
+  ],
+  "method": "F3 paragraphs / all paragraphs",
+  "source": "narrative.fbudget"
+ },
+ "fact_consistency": {
+  "value": 4.0,
+  "method": "deterministic: 5 - violations (non-verbatim quotes, F1 without ids, log leakage)",
+  "source": "upgrade/narrative_quality_report.json"
+ },
+ "dialogue_naturalness": {
+  "value": 1.5,
+  "method": "LLM reviewer score (independent reviewer role) — judgement, NOT objective fact",
+  "evaluator": "gemini-2.5-flash (independent reviewer role) + deterministic checks",
+  "source": "upgrade/narrative_quality_report.json"
+ }
+}

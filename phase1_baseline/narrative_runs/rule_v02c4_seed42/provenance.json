@@ -1,0 +1,45 @@
+{
+ "characters": [
+  "owner",
+  "merchant",
+  "soldier"
+ ],
+ "engine_version": "v0.2-c",
+ "input_hash_check_after": "pass",
+ "input_hashes_sha256": {
+  "acp.sqlite3": "9b2216cc5992c95550d3c3a6ba284cb3b5ef002ce72097b5c58d478868b0bff2",
+  "narrative.md": "a5e0fec3bd1ad6318d402b66e3160b240594cfb9774636c6237545c1eb8200c6",
+  "run_meta.json": "0d1a71a518cd06777321dfd7d3417905cac205159dae834960a56114daba58b0",
+  "summary.json": "7a5f9899911689a7a43eddfcd97185eb5a89f4d3d8a01493ca90b8ac99411dd4",
+  "world_log.json": "56daf2c34facdacf29e303f4da1ee8d510bc5518fd00e3a4dcd6209c5f5f10dc"
+ },
+ "mode": "rule",
+ "names": {
+  "merchant": {
+   "name": "米拉",
+   "source": "characters_v02/merchant/profile.yaml"
+  },
+  "owner": {
+   "name": "奥伦",
+   "source": "characters_v02/owner/profile.yaml"
+  },
+  "soldier": {
+   "name": "凯尔",
+   "source": "characters_v02/soldier/profile.yaml"
+  }
+ },
+ "observer_version": "n1-observer-1.0",
+ "products": [
+  "observations.json",
+  "frontier.json",
+  "scenes.json",
+  "issues.json",
+  "provenance.json"
+ ],
+ "run_id": "rule_v02c4_seed42",
+ "scenario_id": "tavern_letter",
+ "scenario_source": "run_meta.json embedded snapshot",
+ "seed": 42,
+ "ticks": 20,
+ "total_events": 73
+}

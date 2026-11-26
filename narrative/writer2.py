@@ -29,7 +29,9 @@ SYSTEM = """你是一名严谨的小说作者，基于结构化大纲与事件�
 3. 标记为「复述」的事件不要重写：同一事实只叙述一次，最多用半句话带过其重复发生。
 4. 未解决的问题保持未解决：不得替人物查明真相、不得安排和解或结局。
 5. 人物语言要贴合各自的说话样本与身份，避免人人同腔。
-6. 只输出 JSON：{"paragraphs":[{"level":"F1|F2|F3","event_ids":["E0001"],"text":"..."}],"scene_end_state":"本场结束时局面一句话"}。F1 段必须给 event_ids；F2/F3 段 event_ids 可为空数组。"""
+6. 素材分级铁律：每条事件素材都标了 material_class 与 quotable。只有 quotable=true 的台词素材可以逐字引用；quotable=false 的动作/状态素材是叙述者描述，只能转述进叙事句，禁止给它加引号、禁止写成任何人物说过的话，禁止原样抄写其中的英文标识符串。
+7. 全书级别比例（软约束）：F1 不低于三成，F3 不超过两成，其余为 F2；不要为了凑比例硬造事实或硬删好的创作段，只在有选择时优先把可锚定事件的内容写成 F1/F2。
+7. 只输出 JSON：{"paragraphs":[{"level":"F1|F2|F3","event_ids":["E0001"],"text":"..."}],"scene_end_state":"本场结束时局面一句话"}。F1 段必须给 event_ids；F2/F3 段 event_ids 可为空数组。"""
 
 
 def _load(path: Path):
@@ -86,19 +88,39 @@ def assemble_context(run_dir: Path, narrative_dir: Path,
         for m in g["member_ne_ids"]:
             role[m] = "primary" if m == g["primary_ne_id"] \
                 else f"repeat of {g['primary_ne_id']}"
+    from narrative.material import adapt_event
+    from narrative.observer import resolve_names
+    all_actors = sorted({a for o in products["observations"]
+                         for a in (o.get("actors") or [])})
+    names = {cid: rec["name"] for cid, rec in
+             resolve_names(run_dir.parent.parent, all_actors,
+                           []).items()}
     scene_events = []
     for n in scene["event_ids"]:
         e = ne_by_id[n]
         obs = obs_by_id[e["source_event_ids"][0]]
-        scene_events.append({
-            "ne_id": n, "event_id": e["source_event_ids"][0],
-            "tick": e["tick"], "type": e["event_type"],
-            "text": obs.get("text") or e["event_summary"],
-            "importance": e["narrative_importance"],
-            "functions": e.get("dramatic_function", []),
-            "role": role.get(n, "primary")})
+        m = adapt_event(e, obs, names)
+        if m["provenance"] == "QUARANTINED":
+            continue  # system/debug material never reaches Writer
+        m["role"] = role.get(n, "primary")
+        scene_events.append(m)
     arcs = {a["character_id"]: a
             for a in products["arcs"].get("arcs", [])}
+    # information increment (Phase 1 task 3): facts revealed by
+    # earlier scenes must not be re-revealed as new information
+    scene_order = [s["scene_id"] for s in plan["scenes"]]
+    idx = scene_order.index(scene["scene_id"]) \
+        if scene["scene_id"] in scene_order else 0
+    already_revealed: set[str] = set()
+    for prev in plan["scenes"][:idx]:
+        for n in prev["event_ids"]:
+            e = ne_by_id[n]
+            for k in e.get("knowledge_changes", []):
+                if k.get("change") == "learned":
+                    already_revealed.add(k["fact"])
+            o = obs_by_id[e["source_event_ids"][0]]
+            if o.get("proposition") and o.get("stance") == "assert":
+                already_revealed.add(o["proposition"])
     ctx = {
         "story_outline": plan["story"],
         "chapter_outline": chapter,
@@ -119,6 +141,7 @@ def assemble_context(run_dir: Path, narrative_dir: Path,
         "setup_payoff_open": [r for r in
                               products["setup"].get("records", [])
                               if r["status"] != "payoff"],
+        "already_revealed": sorted(already_revealed),
         "scene_events": scene_events}
     manifest = {k: (v is not None and v != {} and v != [])
                 for k, v in ctx.items()}
@@ -165,10 +188,18 @@ def _prompt(ctx: dict) -> str:
                for r in c["setup_payoff_open"][:4]]
     if open_sp:
         lines.append(f"【未回收伏笔（保持开放）】{'；'.join(open_sp)}")
-    lines.append("【本场事件（按序；role=repeat 的不要重写）】")
+    if c.get("already_revealed"):
+        lines.append("【已揭示事实（前场已交代，本场不得再次当作"
+                     "新信息揭示，只能简短带过）】" +
+                     "；".join(c["already_revealed"]))
+    lines.append("【本场事件（按序；role=repeat 的不要重写；"
+                 "quotable=true 的台词才可逐字引用，"
+                 "quotable=false 的只能转述）】")
     for e in c["scene_events"]:
         lines.append(f"- {e['event_id']} t{e['tick']} "
-                     f"{e['type']} 重要性{e['importance']} "
+                     f"{e['material_class']} "
+                     f"quotable={e['quotable']} "
+                     f"重要性{e['importance']} "
                      f"功能{e['functions']} role={e['role']}："
                      f"{e['text']}")
     lines.append("请写这一场。篇幅与事件重要性成比例；重复台词"
@@ -244,7 +275,8 @@ def write_novel(run_dir: Path, narrative_dir: Path,
                 prior_outcomes.append(data["scene_end_state"])
             scene["_context_manifest"] = assembled["manifest"]
         chapters_out.append({"chapter_id": ch["chapter_id"],
-                             "title": ch.get("chapter_title", ""),
+                             "title": ch.get("literary_title")
+                             or ch.get("chapter_title", ""),
                              "paragraphs": paras})
         if stopped:
             break
