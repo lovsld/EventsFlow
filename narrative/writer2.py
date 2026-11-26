@@ -280,8 +280,22 @@ def _enforce_budget(novel: dict, gen, usage: dict,
     n_for_f3 = counts["F3"] - math.floor(b["F3_max"] * total)
     n_for_f2_floor = math.ceil(b["F2_min"] * total) - counts["F2"]
     n_for_f2_cap = math.floor(b["F2_max"] * total) - counts["F2"]
-    n_convert = max(0, min(max(n_for_f3, n_for_f2_floor),
+    # F3 soft target (external review, 2026-11-26): conversions
+    # for the F3 cap stop at the target floor; conversions for
+    # the F2 HARD floor may go below it, with the waiver and
+    # its reason recorded -- never silent, never filler.
+    target = b.get("F3_target_min")
+    n_above_target = counts["F3"] if target is None else max(
+        0, counts["F3"] - math.ceil(target * total))
+    n_convert = max(0, min(max(min(n_for_f3, n_above_target),
+                               n_for_f2_floor),
                            n_for_f2_cap, counts["F3"]))
+    if target is not None and n_convert > n_above_target:
+        record["f3_target_waived"] = {
+            "target_min": target,
+            "reason": "F2 hard floor takes precedence over the "
+                      "F3 soft target; the conversions F2 "
+                      "requires push F3 below target"}
     record["planned_conversions"] = n_convert
     by_id = {ch["chapter_id"]: ch for ch in novel["chapters"]}
     for ch_rep in before["chapters"]:

@@ -235,5 +235,17 @@
    "problem_tags": null,
    "note": null
   }
- ]
+ ],
+ "external_review": {
+  "reviewer": "external AI, commissioned by Hu (returned 2026-11-26)",
+  "provenance_note": "EXTERNAL AI REVIEW - not human sampling. The acceptance item must not be marked as human-sampling passed on this basis.",
+  "factual_consistency_mean": 3.8,
+  "findings": [
+   "心理/情绪复述：正文已呈现的情绪又被旁白重复说明（焦虑、沉重、担心责任），这类 F3 不一定违反事实，但降低自然度与推进效率",
+   "人物一致性尚可，但人物差异不够鲜明：不同人物常用相似的担忧句式、情绪总结、「再次询问」行为与心理旁白；一致性中等不等于人物塑造成熟，系统还需学习人物的表达习惯、应对策略与关系差异",
+   "事实一致性相对较好（均分 3.80），主线大多未被破坏；但 F3 中的气味、汗水、头痛、身体动作等感官细节并非事件流明确记录，在「F3 不得新增事实」的严格定义下，需明确哪些属允许的场景感官描写、哪些属未经证实的新增事实",
+   "建议：本评分记为「外部 AI 抽样评审」，作为第一阶段质量基线，并为第二阶段 Writer 提供问题清单"
+  ],
+  "detail_note": "Hu pasted the review's conclusions; the per-sample score table was not included in the paste, so per-sample scores fields stay empty rather than reconstructed."
+ }
 }

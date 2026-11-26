@@ -1,7 +1,6 @@
 {
- "F1_min": 0.3,
- "F2_min": 0.4,
- "F2_max": 0.55,
- "F3_max": 0.2,
- "note": "Phase 1 initial experiment values (task book 7.2); configurable, NOT a final literary standard. Over-budget triggers warnings and downgrade candidates only - never mechanical deletion."
+ "F1": {"min": 0.30},
+ "F2": {"min": 0.40, "max": 0.55},
+ "F3": {"target_min": 0.05, "max": 0.20, "min_mode": "soft"},
+ "note": "F3 target_min adopted 2026-11-26 from the external review (see docs/PHASE1_FINAL_ACCEPTANCE_REPORT.md addendum): a SOFT target counting only quality-passing F3 paragraphs. F3 must not add plot facts, character knowledge or event records, and must not merely repeat earlier events or emotions. Falling below the target is allowed when no qualified F3 exists, with the reason recorded - never generate filler to hit the target. F1/F2 bounds and the F3 max remain hard."
 }

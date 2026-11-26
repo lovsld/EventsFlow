@@ -79,3 +79,49 @@ def test_within_budget_novel_triggers_no_calls():
     rec = _enforce_budget(novel, counting_gen, _usage())
     assert rec["status"] == "within_budget"
     assert calls == []
+
+
+def _novel_from_counts(f1, f2, f3):
+    paras = ([{"level": "F1", "text": "事实。", "event_ids": ["E1"]}
+              ] * f1
+             + [{"level": "F2", "text": "呈现。", "event_ids": []}
+                ] * f2
+             + [{"level": "F3", "text": "补充。", "event_ids": []}
+                ] * f3)
+    return {"chapters": [{"chapter_id": "CH01",
+                          "paragraphs": paras}],
+            "usage": {"prompt_tokens": 0, "candidates_tokens": 0}}
+
+
+def test_f3_soft_target_is_not_over_budget():
+    from narrative.fbudget import analyze
+    rep = analyze(_novel_from_counts(10, 10, 0))   # F3 = 0.0
+    assert rep["over_budget"] is False
+    assert rep["soft_issues"] and \
+        rep["soft_issues"][0]["kind"] == "F3_BELOW_TARGET"
+
+
+def test_enforcement_records_waiver_when_f2_floor_wins():
+    # 20 paras: F2 needs 6 conversions, only 5 F3 sit above
+    # the 0.05 soft target -> convert 6, F3 lands at 0.0, and
+    # the waiver must be recorded with its reason.
+    novel = _novel_from_counts(12, 2, 6)
+    calls = []
+
+    def fake_gen(system, prompt, max_tokens=4096):
+        import json as _json
+        payload = _json.loads(prompt)
+        calls.append(len(payload["paragraphs"]))
+        out = {"paragraphs": [
+            {"n": p["n"], "level": "F2",
+             "text": "改写为呈现。", "event_ids": p["event_ids"]}
+            for p in payload["paragraphs"]]}
+        return _json.dumps(out, ensure_ascii=False), {
+            "prompt_tokens": 10, "candidates_tokens": 10}
+
+    rec = _enforce_budget(novel, fake_gen,
+                          {"prompt_tokens": 0,
+                           "candidates_tokens": 0, "calls": 0})
+    assert rec["f3_target_waived"]["target_min"] == 0.05
+    assert rec["after"]["F3"] == 0.0
+    assert rec["after"]["F2"] >= 0.40
