@@ -168,9 +168,36 @@ def build_scene_outlines(run_dir: Path, narrative_dir: Path,
 # ------------------------------------------------------------------
 
 def enrich_scenes_with_states(scenes: list[dict], states: dict,
-                              updates: list[dict]) -> list[dict]:
+                              updates: list[dict],
+                              narrative_dir=None) -> list[dict]:
     from narrative.character_state import knowledge_at
     chars = states.get("characters", {})
+    # Phase 3: repetition directives + information density.
+    # Directives come from semantic merge groups: the first
+    # occurrence of a repeated line/fact-relay is kept in full;
+    # later occurrences are compressed UNLESS they teach
+    # someone something, change stance, or are a confrontation
+    # (dramatic repetition is kept, mechanical repetition is
+    # not). Density grades a scene by knowledge changes,
+    # distinct propositions and confrontation events.
+    group_of: dict[str, dict] = {}
+    ne_by_id: dict[str, dict] = {}
+    if narrative_dir is not None:
+        import json as _json
+        from pathlib import Path as _P
+        nd = _P(narrative_dir)
+        sem = nd / "upgrade" / "semantic.json"
+        if sem.exists():
+            for g in _json.loads(sem.read_text(
+                    encoding="utf-8")).get("groups", []):
+                for m in g["member_ne_ids"]:
+                    group_of[m] = g
+        ev = nd / "upgrade" / "narrative_events.json"
+        if ev.exists():
+            ne_by_id = {e["narrative_event_id"]: e
+                        for e in _json.loads(ev.read_text(
+                            encoding="utf-8"))}
+    seen_groups: set[str] = set()
     for scene in scenes:
         start, end = (scene.get("time_range") or [0, 0])[:2]
         parts = {}
@@ -227,4 +254,63 @@ def enrich_scenes_with_states(scenes: list[dict], states: dict,
             "information_gaps": gaps,
             "expected_state_changes": expected,
             "no_expected_change": not expected}
+        # voice summary rides inside the participant block
+        for cid, p in parts.items():
+            view = chars.get(cid) or {}
+            p["voice"] = view.get("voice")
+        # repetition directives + density (Phase 3)
+        directives: dict[str, dict] = {}
+        learn_events = {e["event_id"] for e in expected
+                        if e["field"] == "knowledge"}
+        density_score = 2 * len(learn_events)
+        props: set[str] = set()
+        confronts = 0
+        for ne_id in scene.get("event_ids", []):
+            ne = ne_by_id.get(ne_id, {})
+            if ne.get("proposition"):
+                props.add(ne["proposition"])
+            if ne.get("event_type") == "confront" or \
+                    "confrontation" in (ne.get(
+                        "dramatic_function") or []):
+                confronts += 1
+            g = group_of.get(ne_id)
+            if g is None:
+                continue
+            # reader-level key: a fact relayed again with the
+            # same stance teaches a CHARACTER something new,
+            # but the READER already knows it -- full rendering
+            # is kept only for the first presentation and for
+            # confrontations; teaching repeats compress into a
+            # learning beat (the learning is shown, the line is
+            # not re-quoted).
+            key = (g.get("proposition") or g.get("text"),
+                   g.get("stance") or g.get("kind"))
+            if key not in seen_groups:
+                directives[ne_id] = {
+                    "action": "keep",
+                    "reason": "first presentation to the reader"}
+                seen_groups.add(key)
+            elif ne.get("event_type") == "confront":
+                directives[ne_id] = {
+                    "action": "keep",
+                    "reason": "confrontation (dramatic repeat)"}
+            else:
+                directives[ne_id] = {
+                    "action": "compress",
+                    "reason": "reader already knows this "
+                              "proposition/stance" +
+                              ("; render as a learning beat "
+                               "(a character learns it here)"
+                               if ne.get("knowledge_changes")
+                               else "; no new information")}
+        density_score += len(props) + 2 * confronts
+        scene["repetition_directives"] = directives
+        scene["density"] = {
+            "score": density_score,
+            "grade": "high" if density_score >= 5 else
+                     ("mid" if density_score >= 2 else "low"),
+            "components": {"knowledge_changes":
+                           len(learn_events),
+                           "propositions": len(props),
+                           "confrontations": confronts}}
     return scenes

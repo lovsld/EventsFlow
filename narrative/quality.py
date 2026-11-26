@@ -20,10 +20,11 @@ from narrative.models.story import QualityReport
 QUOTE_RE = re.compile(r"「([^」]{2,})」|“([^”]{2,})”|\"([^\"]{2,})\"")
 LLM_DIMS = ["causal_coherence", "character_consistency",
             "arc_plausibility", "emotional_variation",
-            "dialogue_naturalness", "readability"]
+            "dialogue_naturalness", "readability",
+            "voice_differentiation"]
 REVIEWER_SYSTEM = """你是一名独立的小说评审，与作者无关。按量表为每一章打分（1-5 整数）：
 1=明显不成立，3=基本成立但有可见问题，5=成立且出色。
-维度：causal_coherence 因果连贯（事件衔接有因果而非罗列）；character_consistency 人物一致（言行合其身份与已知信息）；arc_plausibility 人物弧线合理（变化有铺垫、不过度）；emotional_variation 情绪变化（有起伏而非平铺）；dialogue_naturalness 对话自然（人物语言有区分、不复读）；readability 文学可读性。
+维度：causal_coherence 因果连贯（事件衔接有因果而非罗列）；character_consistency 人物一致（言行合其身份与已知信息）；arc_plausibility 人物弧线合理（变化有铺垫、不过度）；emotional_variation 情绪变化（有起伏而非平铺）；dialogue_naturalness 对话自然（人物语言有区分、不复读）；readability 文学可读性；voice_differentiation 人物表达差异（遮住姓名后能否凭说话方式区分人物；方式合其身份、关系与当下状态）。
 扣分必须给出具体问题（引用原文片段并指出问题）。未解决的悬念保持未解决是正确处理，不得因此扣分。
 只输出 JSON：{"scores":{"causal_coherence":3,...},"issues":[{"dimension":"...","detail":"...","quote":"..."}]}"""
 
@@ -228,11 +229,18 @@ def evaluate(run_dir: Path, narrative_dir: Path, novel: dict,
     usage = {"prompt_tokens": 0, "candidates_tokens": 0,
              "calls": 0}
     scores = dict(det)
+    extra_metrics: dict = {}
     if with_review:
         llm_scores, llm_issues, usage = review_chapters(
             novel, generate_fn=generate_fn)
         scores.update(llm_scores)
         issues += llm_issues
+        # Phase 3: voice_differentiation is reported separately
+        # and deliberately kept OUT of the 13-dimension scores,
+        # so Phase 2 / Phase 3 means stay comparable.
+        if "voice_differentiation" in scores:
+            extra_metrics["voice_differentiation"] = scores.pop(
+                "voice_differentiation")
     report = QualityReport(
         run_id=run_dir.name, scores=scores, issues=issues,
         evaluator=f"{GEMINI_MODEL} (independent reviewer role) "
@@ -259,7 +267,8 @@ def evaluate(run_dir: Path, narrative_dir: Path, novel: dict,
             comparison["new_novel"]["f_levels"][lv] = \
                 comparison["new_novel"]["f_levels"].get(lv, 0) + 1
     return {"report": report.model_dump(mode="json"),
-            "comparison": comparison, "review_usage": usage}
+            "comparison": comparison, "review_usage": usage,
+            "extra_metrics": extra_metrics}
 
 
 def write_quality(run_dir: Path, narrative_dir: Path,
@@ -269,9 +278,11 @@ def write_quality(run_dir: Path, narrative_dir: Path,
     result = evaluate(run_dir, narrative_dir, novel,
                       generate_fn=generate_fn,
                       with_review=with_review)
+    payload = dict(result["report"])
+    payload["extra_metrics"] = result.get("extra_metrics", {})
     (out_dir / "narrative_quality_report.json").write_text(
-        json.dumps(result["report"], ensure_ascii=False,
-                   indent=1), encoding="utf-8")
+        json.dumps(payload, ensure_ascii=False, indent=1),
+        encoding="utf-8")
     (out_dir / "comparison.json").write_text(json.dumps(
         result["comparison"], ensure_ascii=False, indent=1),
         encoding="utf-8")

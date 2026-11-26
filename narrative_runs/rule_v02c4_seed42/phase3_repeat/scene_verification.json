@@ -1,0 +1,283 @@
+{
+ "scenes": [
+  {
+   "scene_id": "SC01",
+   "paragraphs": 6,
+   "expected_changes": 3,
+   "diffs": [],
+   "verdict": "ok"
+  },
+  {
+   "scene_id": "SC02",
+   "paragraphs": 18,
+   "expected_changes": 7,
+   "diffs": [
+    {
+     "kind": "expected_change_missing",
+     "character_id": "owner",
+     "event_id": "NE-E0034",
+     "severity": "medium"
+    },
+    {
+     "kind": "expected_change_missing",
+     "character_id": "soldier",
+     "event_id": "NE-E0034",
+     "severity": "medium"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 9,
+     "severity": "low",
+     "quote_prefix": "老板，我手里有批货，镇上要是有销路，咱们",
+     "first_seen": "SC01",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 11,
+     "severity": "low",
+     "quote_prefix": "镇上那笔公共资金……数目好像对不上。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 13,
+     "severity": "low",
+     "quote_prefix": "那批货的事，老板真不考虑？价格好商量。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 15,
+     "severity": "low",
+     "quote_prefix": "镇上那笔公共资金……数目好像对不上。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC03",
+   "paragraphs": 8,
+   "expected_changes": 2,
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 3,
+     "severity": "low",
+     "quote_prefix": "老板，我例行问一句——这几天酒馆有没有什",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 5,
+     "severity": "low",
+     "quote_prefix": "镇上那笔公共资金……数目好像对不上。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC04",
+   "paragraphs": 20,
+   "expected_changes": 1,
+   "diffs": [
+    {
+     "kind": "psychology_stated_not_shown",
+     "paragraph_index": 2,
+     "severity": "low",
+     "note": "heuristic match; human judgement decides"
+    },
+    {
+     "kind": "emotion_restatement",
+     "paragraph_index": 2,
+     "severity": "low",
+     "note": "narration restates an emotion in a scene that also carries dialogue (heuristic)"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 1,
+     "severity": "low",
+     "quote_prefix": "镇上那笔公共资金……数目好像对不上。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 3,
+     "severity": "low",
+     "quote_prefix": "这镇上的秘密啊，我知道的可能比你们想的多",
+     "first_seen": "SC03",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 5,
+     "severity": "low",
+     "quote_prefix": "镇上那笔公共资金……数目好像对不上。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 6,
+     "severity": "low",
+     "quote_prefix": "我也不绕了——货压在手里，镇上只有你这儿",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 10,
+     "severity": "low",
+     "quote_prefix": "这镇上的秘密啊，我知道的可能比你们想的多",
+     "first_seen": "SC03",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 11,
+     "severity": "low",
+     "quote_prefix": "再问一次，这几天后屋那边，有人动过什么吗",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 13,
+     "severity": "low",
+     "quote_prefix": "老板，我例行问一句——这几天酒馆有没有什",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 14,
+     "severity": "low",
+     "quote_prefix": "老板，我手里有批货，镇上要是有销路，咱们",
+     "first_seen": "SC01",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 16,
+     "severity": "low",
+     "quote_prefix": "镇上那笔公共资金……数目好像对不上。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 17,
+     "severity": "low",
+     "quote_prefix": "镇上那笔公共资金……数目好像对不上。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 18,
+     "severity": "low",
+     "quote_prefix": "老板，我例行问一句——这几天酒馆有没有什",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC05",
+   "paragraphs": 17,
+   "expected_changes": 1,
+   "diffs": [
+    {
+     "kind": "psychology_stated_not_shown",
+     "paragraph_index": 6,
+     "severity": "low",
+     "note": "heuristic match; human judgement decides"
+    },
+    {
+     "kind": "emotion_restatement",
+     "paragraph_index": 6,
+     "severity": "low",
+     "note": "narration restates an emotion in a scene that also carries dialogue (heuristic)"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 0,
+     "severity": "low",
+     "quote_prefix": "镇上那笔公共资金……数目好像对不上。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 2,
+     "severity": "low",
+     "quote_prefix": "再问一次，这几天后屋那边，有人动过什么吗",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 4,
+     "severity": "low",
+     "quote_prefix": "镇上那笔公共资金……数目好像对不上。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 5,
+     "severity": "low",
+     "quote_prefix": "镇上那笔公共资金……数目好像对不上。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 7,
+     "severity": "low",
+     "quote_prefix": "我这小酒馆能有什么异常？各位喝酒就是了，",
+     "first_seen": "SC04",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 11,
+     "severity": "low",
+     "quote_prefix": "老板，你越是不说，我越得查清楚。",
+     "first_seen": "SC04",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 13,
+     "severity": "low",
+     "quote_prefix": "再问一次，这几天后屋那边，有人动过什么吗",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  }
+ ],
+ "summary": {
+  "scenes": 5,
+  "total_diffs": 30,
+  "by_kind": {
+   "future_event_reference": 0,
+   "expected_change_missing": 2,
+   "psychology_stated_not_shown": 2,
+   "emotion_restatement": 2,
+   "verbatim_dialogue_repeat": 24
+  }
+ },
+ "note": "Deterministic plan-vs-text verification. Diffs are recorded, never auto-fixed; the text is the record, the plan the expectation."
+}

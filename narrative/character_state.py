@@ -33,6 +33,68 @@ def _names(run_dir: Path, character_ids: list[str]) -> dict:
             for cid, v in raw.items()}
 
 
+def _voice(state: dict, observations: list[dict],
+           cid: str) -> dict:
+    """Observable expression tendencies (Phase 3). Three
+    labelled sources, nothing invented: config personality /
+    principles (L-CTX), statistics over the character's own
+    committed utterances (only stated when >= 5 samples --
+    a single utterance never becomes a permanent trait),
+    and trust-based relationship expression hints."""
+    speech = [o for o in observations
+              if o.get("actors") and o["actors"][0] == cid
+              and o.get("text")
+              and o.get("type") in ("speak", "ask", "confront")]
+    texts = [o["text"].split("：", 1)[-1] for o in speech]
+    tendencies = []
+    if len(texts) >= 5:
+        mean_len = sum(len(t) for t in texts) / len(texts)
+        tendencies.append({
+            "trait": "短句为主" if mean_len < 25 else
+                     ("偏长句" if mean_len > 60 else "中等句长"),
+            "basis": f"mean utterance {mean_len:.0f} chars"})
+        q_ratio = sum(1 for t in texts
+                      if "？" in t or "?" in t) / len(texts)
+        if q_ratio >= 0.4:
+            tendencies.append({"trait": "多以发问推进对话",
+                               "basis": f"question ratio "
+                                        f"{q_ratio:.2f}"})
+        acts: dict[str, int] = {}
+        for o in speech:
+            acts[o["type"]] = acts.get(o["type"], 0) + 1
+        if acts.get("confront", 0) / len(texts) >= 0.25:
+            tendencies.append({"trait": "不回避正面交锋",
+                               "basis": f"confront share "
+                                        f"{acts['confront']}"
+                                        f"/{len(texts)}"})
+        if acts.get("ask", 0) / len(texts) >= 0.4:
+            tendencies.append({"trait": "以询问试探为主",
+                               "basis": f"ask share "
+                                        f"{acts['ask']}"
+                                        f"/{len(texts)}"})
+    rel_expr = []
+    for other, rel in (state.get("relationships") or {}).items():
+        trust = rel.get("trust") if isinstance(rel, dict) else None
+        if trust is None:
+            continue
+        rel_expr.append({
+            "with": other, "trust": trust,
+            "hint": "低信任：倾向试探与保留" if trust <= 0.35
+                    else ("高信任：表达直接" if trust >= 0.7
+                          else "中信任：就事论事")})
+    return {"config_traits": state.get("personality"),
+            "principles": state.get("principles"),
+            "observed_tendencies": tendencies,
+            "observed_samples": len(texts),
+            "relationship_expression": rel_expr,
+            "sources": {"config_traits": "character_config",
+                        "observed_tendencies": "observed_speech"
+                        if tendencies else
+                        "insufficient_samples",
+                        "relationship_expression":
+                            "character_config trust"}}
+
+
 def build_character_states(run_dir: Path,
                            narrative_dir: Path) -> dict:
     upgrade = narrative_dir / "upgrade"
@@ -149,7 +211,11 @@ def build_character_states(run_dir: Path,
                 "tier": "fact",
                 "arc_type": arc.get("character_arc_type"),
                 "arc_status": arc.get("arc_status"),
-                "turning_points": arc.get("turning_points", [])}}
+                "turning_points": arc.get("turning_points", [])},
+            "voice": _voice(state,
+                            _load(narrative_dir /
+                                  "observations.json", []),
+                            cid)}
     return {"run_id": run_dir.name,
             "tiers": {"fact": "recorded by the simulation or "
                               "derived from committed events",

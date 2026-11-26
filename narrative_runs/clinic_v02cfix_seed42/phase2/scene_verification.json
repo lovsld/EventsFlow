@@ -18,29 +18,65 @@
    "scene_id": "SC03",
    "paragraphs": 6,
    "expected_changes": 3,
-   "diffs": [],
-   "verdict": "ok"
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 1,
+     "severity": "low",
+     "quote_prefix": "听说今晚要来个高烧的病人？消息准吗？",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
   },
   {
    "scene_id": "SC04",
-   "paragraphs": 4,
+   "paragraphs": 6,
    "expected_changes": 2,
-   "diffs": [],
-   "verdict": "ok"
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 1,
+     "severity": "low",
+     "quote_prefix": "退烧药补上了没有？我这边等着确认。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
   },
   {
    "scene_id": "SC05",
-   "paragraphs": 6,
+   "paragraphs": 7,
    "expected_changes": 1,
-   "diffs": [],
-   "verdict": "ok"
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 0,
+     "severity": "low",
+     "quote_prefix": "退烧药补上了没有？我这边等着确认。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
   },
   {
    "scene_id": "SC06",
-   "paragraphs": 8,
+   "paragraphs": 9,
    "expected_changes": 4,
-   "diffs": [],
-   "verdict": "ok"
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 3,
+     "severity": "low",
+     "quote_prefix": "退烧药补上了没有？我这边等着确认。",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
   },
   {
    "scene_id": "SC07",
@@ -58,12 +94,6 @@
      "character_id": "nurse_lin",
      "event_id": "NE-E0093",
      "severity": "medium"
-    },
-    {
-     "kind": "psychology_stated_not_shown",
-     "paragraph_index": 0,
-     "severity": "low",
-     "note": "heuristic match; human judgement decides"
     }
    ],
    "verdict": "diffs_recorded"
@@ -72,17 +102,36 @@
    "scene_id": "SC08",
    "paragraphs": 9,
    "expected_changes": 3,
-   "diffs": [],
-   "verdict": "ok"
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 0,
+     "severity": "low",
+     "quote_prefix": "听说今晚要来个高烧的病人？消息准吗？",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 5,
+     "severity": "low",
+     "quote_prefix": "这事我不清楚，别问我。",
+     "first_seen": "SC08",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
   }
  ],
  "summary": {
   "scenes": 8,
-  "total_diffs": 3,
+  "total_diffs": 8,
   "by_kind": {
    "future_event_reference": 0,
    "expected_change_missing": 2,
-   "psychology_stated_not_shown": 1
+   "psychology_stated_not_shown": 0,
+   "emotion_restatement": 0,
+   "verbatim_dialogue_repeat": 6
   }
  },
  "note": "Deterministic plan-vs-text verification. Diffs are recorded, never auto-fixed; the text is the record, the plan the expectation."

@@ -1,0 +1,535 @@
+{
+ "chapters": [
+  {
+   "chapter_id": "CH01",
+   "title": "第1章",
+   "paragraphs": [
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "沈默医生坐在值班室里，桌上的台灯散发出昏黄的光，照亮了一小片区域。空气中弥漫着淡淡的消毒水味，混合着咖啡的苦涩，这是他再熟悉不过的气味。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0002"
+     ],
+     "text": "他伸手在凌乱的桌面和抽屉里翻找，希望找到一些有用的东西。最终，沈默在oncall搜寻，找到了admission_form。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "那张表单上的字迹有些模糊，但日期和病人信息却清晰可见，像是某种预示。他知道，今晚注定不会平静。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "他捏着那张表单，脑子里盘旋着即将到来的病人，以及随之而来的各种可能情况。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0030"
+     ],
+     "text": "沈默试图开口，想对林小满说话，却没能说出话，因为对方已经离开。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "话语堵在喉咙里，让他感到一丝无可奈何的挫败。值班室里只剩下他一个人，以及窗外无尽的夜色。",
+     "scene_id": "SC01",
+     "chapter_id": "CH01"
+    }
+   ]
+  },
+  {
+   "chapter_id": "CH02",
+   "title": "第2章",
+   "paragraphs": [
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "吴大勇推着担架车，正要从分诊台往外走，却被沈默医生叫住了。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0033"
+     ],
+     "text": "“吴大勇：听说今晚要来个高烧的病人？消息准吗？”吴大勇停下脚步，侧过身，脸上带着一丝探寻。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "他语气里的好奇心，似乎比对病人本身的关注要多一些。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0035"
+     ],
+     "text": "“沈默：退烧药补上了没有？我这边等着确认。”沈默医生没有直接回答吴大勇的问题，而是反问了一句，目光落在吴大勇身上，带着一丝急切。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "沈默的语气中透着一股不容置疑的执着，仿佛退烧药的去向，才是此刻最重要的事情。",
+     "scene_id": "SC02",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "分诊台的灯光有些刺眼，吴大勇推着担架走近，他的身影在走廊里拉出长长的影子。",
+     "scene_id": "SC03",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0038"
+     ],
+     "text": "吴大勇再次开口询问：“听说今晚要来个高烧的病人？消息准吗？”",
+     "scene_id": "SC03",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "他的声音里带着一丝探究，却又显得稀松平常，仿佛只是随口一问。",
+     "scene_id": "SC03",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F2",
+     "event_ids": [
+      "E0040"
+     ],
+     "text": "沈默医生张了张嘴，本想对林小满说些什么，但林小满的身影早已消失在走廊尽头，只留下空荡荡的分诊台和空气中若有似无的药水味。",
+     "scene_id": "SC03",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0044"
+     ],
+     "text": "吴大勇又问了一遍同样的问题：“听说今晚要来个高烧的病人？消息准吗？”",
+     "scene_id": "SC03",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "他似乎没有听到沈默医生之前那声未出口的叹息，只是固执地等待着一个确切的答案。",
+     "scene_id": "SC03",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0046"
+     ],
+     "text": "沈默医生看向吴大勇，沉声说：“跟你说一声，后半夜有个发高烧的要送来。”",
+     "scene_id": "SC03",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "他的语气平静，却带着不容置疑的肯定，给这夜色中的医院又添了一丝紧迫感。",
+     "scene_id": "SC03",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0047"
+     ],
+     "text": "吴大勇再次开口询问：「退烧药补上了没有？我这边等着确认。」",
+     "scene_id": "SC04",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "沈默没有直接回应，只是皱着眉，在分诊台附近四下搜寻。",
+     "scene_id": "SC04",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "他的目光从药柜扫到操作台，又落到那些堆叠的杂物上，仿佛希望能在某个不显眼的角落找到答案。",
+     "scene_id": "SC04",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0049"
+     ],
+     "text": "沈默在triage搜寻。",
+     "scene_id": "SC04",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "空气中弥漫着消毒水的味道，混合着一丝若有若无的焦躁，让等待显得格外漫长。",
+     "scene_id": "SC04",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0052"
+     ],
+     "text": "吴大勇再次开口，问沈默：“退烧药补上了没有？我这边等着确认。”",
+     "scene_id": "SC05",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F2",
+     "event_ids": [
+      "E0054"
+     ],
+     "text": "沈默医生试图回应，他想对林小满说些什么，但话到嘴边，却发现林小满早已不在分诊台旁。",
+     "scene_id": "SC05",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "一股无名火在他心头升腾，却又无处发泄，只能压抑下去。",
+     "scene_id": "SC05",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F2",
+     "event_ids": [
+      "E0059"
+     ],
+     "text": "他转而想对吴大勇解释，然而吴大勇也已转身离开，只留下空荡荡的走廊。",
+     "scene_id": "SC05",
+     "chapter_id": "CH02"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "沈默医生独自站在分诊台前，周围的喧嚣似乎瞬间远去，只剩下他一人面对着未知的困境。",
+     "scene_id": "SC05",
+     "chapter_id": "CH02"
+    }
+   ]
+  },
+  {
+   "chapter_id": "CH03",
+   "title": "第3章",
+   "paragraphs": [
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "分诊台旁药房的门虚掩着，沈默医生推门而入，药柜的清冷气息扑面而来，让他紧绷的神经稍稍松弛。他快步走到药柜前，目光在琳琅满目的药盒间穿梭，寻找着那至关重要的退烧药。",
+     "scene_id": "SC06",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0070"
+     ],
+     "text": "沈默在药房里搜寻，最终找到了退烧药。",
+     "scene_id": "SC06",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "他拿起药盒，确认了数量，心中悬着的一块石头终于落了地。就在这时，对讲机里传来吴大勇的声音，带着一丝焦急。",
+     "scene_id": "SC06",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0073"
+     ],
+     "text": "吴大勇在对讲机里问道：“退烧药补上了没有？我这边等着确认。”",
+     "scene_id": "SC06",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0075"
+     ],
+     "text": "沈默立刻拿起对讲机回应道：“退烧药已经补上了，放在我手边，随时能用。”",
+     "scene_id": "SC06",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "他想再补充几句，比如提醒吴大勇病人即将抵达，或者询问他是否需要帮助。",
+     "scene_id": "SC06",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0083"
+     ],
+     "text": "沈默试图开口，想对吴大勇说话，却没能说出话，因为对方已经离开了。",
+     "scene_id": "SC06",
+     "chapter_id": "CH03"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "对讲机里只剩下沙沙的电流声，他无奈地放下对讲机，心中泛起一丝莫名的失落。",
+     "scene_id": "SC06",
+     "chapter_id": "CH03"
+    }
+   ]
+  },
+  {
+   "chapter_id": "CH04",
+   "title": "第4章",
+   "paragraphs": [
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "分诊台的灯光有些刺眼，林小满刚从病房巡视回来，走廊里空荡荡的，只有消毒水的味道和她自己的脚步声。她走到分诊台，瞥了一眼药柜，眉头微不可察地皱了一下。",
+     "scene_id": "SC07",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0098"
+     ],
+     "text": "林小满开始在分诊台的药柜里搜寻着什么，她拉开抽屉，又关上，动作有些急促。",
+     "scene_id": "SC07",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "空气中弥漫着一股莫名的紧张感，仿佛有什么迫在眉睫的状况即将发生，而她正在与时间赛跑。",
+     "scene_id": "SC07",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0093",
+      "E0099"
+     ],
+     "text": "沈默的声音从听筒里传来，语气中带着一丝安抚：“退烧药已经补上了，放在我手边，随时能用。”他又补充道：“药补齐了，病人来了也不怕。”",
+     "scene_id": "SC07",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "林小满的搜寻动作停顿了一下，她侧耳倾听着，似乎在确认着什么。",
+     "scene_id": "SC07",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0092",
+      "E0097"
+     ],
+     "text": "几乎同时，吴大勇的声音也传了过来，他像是在和谁通话，又像是自言自语：“刚接的电话——今晚要收一个高烧病人，提前准备一下。”随后又重复了一遍：“跟你说一声，后半夜有个发高烧的要送来。”",
+     "scene_id": "SC07",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "分诊台周围的空气仿佛凝固了一瞬，林小满的手停在半空中，她的目光扫过空荡的药柜，又望向走廊尽头，似乎在权衡着这些零散的信息。",
+     "scene_id": "SC07",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0100"
+     ],
+     "text": "吴大勇向沈默医生问道：“听说今晚要来个高烧的病人？消息准吗？”",
+     "scene_id": "SC08",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0102"
+     ],
+     "text": "沈默回应说：“这事我不清楚，别问我。”",
+     "scene_id": "SC08",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "沈默医生的冷淡回应让吴大勇感到一阵不悦，他随即把同样的问题抛向了不远处的林小满，希望从她那里得到更确切的消息。",
+     "scene_id": "SC08",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0105"
+     ],
+     "text": "林小满也同样回绝道：“这事我不清楚，别问我。”",
+     "scene_id": "SC08",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F2",
+     "event_ids": [],
+     "text": "吴大勇感到有些沮丧，他原本以为能从同事口中探听到一些内部消息，结果却碰了壁。",
+     "scene_id": "SC08",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F1",
+     "event_ids": [
+      "E0106"
+     ],
+     "text": "而此时，林小满则转身走进了药房，开始在药柜间搜寻起来。",
+     "scene_id": "SC08",
+     "chapter_id": "CH04"
+    },
+    {
+     "level": "F3",
+     "event_ids": [],
+     "text": "药房里弥漫着一股淡淡的药味，混合着陈旧的纸张气息，在林小满的动作间，细微的灰尘颗粒在灯光下显得格外清晰。",
+     "scene_id": "SC08",
+     "chapter_id": "CH04"
+    }
+   ]
+  }
+ ],
+ "usage": {
+  "prompt_tokens": 15746,
+  "candidates_tokens": 3640,
+  "calls": 8
+ },
+ "creative_register": [
+  {
+   "chapter_id": "CH01",
+   "scene_id": "SC01",
+   "text": "那张表单上的字迹有些模糊，但日期和病人信息却清晰可见，像是某种预示。他知道，今晚注定不会平静。"
+  },
+  {
+   "chapter_id": "CH01",
+   "scene_id": "SC01",
+   "text": "话语堵在喉咙里，让他感到一丝无可奈何的挫败。值班室里只剩下他一个人，以及窗外无尽的夜色。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC02",
+   "text": "他语气里的好奇心，似乎比对病人本身的关注要多一些。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC02",
+   "text": "沈默的语气中透着一股不容置疑的执着，仿佛退烧药的去向，才是此刻最重要的事情。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC03",
+   "text": "他的声音里带着一丝探究，却又显得稀松平常，仿佛只是随口一问。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC03",
+   "text": "他似乎没有听到沈默医生之前那声未出口的叹息，只是固执地等待着一个确切的答案。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC03",
+   "text": "他的语气平静，却带着不容置疑的肯定，给这夜色中的医院又添了一丝紧迫感。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC04",
+   "text": "他的目光从药柜扫到操作台，又落到那些堆叠的杂物上，仿佛希望能在某个不显眼的角落找到答案。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC04",
+   "text": "空气中弥漫着消毒水的味道，混合着一丝若有若无的焦躁，让等待显得格外漫长。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC05",
+   "text": "一股无名火在他心头升腾，却又无处发泄，只能压抑下去。"
+  },
+  {
+   "chapter_id": "CH02",
+   "scene_id": "SC05",
+   "text": "沈默医生独自站在分诊台前，周围的喧嚣似乎瞬间远去，只剩下他一人面对着未知的困境。"
+  },
+  {
+   "chapter_id": "CH03",
+   "scene_id": "SC06",
+   "text": "他想再补充几句，比如提醒吴大勇病人即将抵达，或者询问他是否需要帮助。"
+  },
+  {
+   "chapter_id": "CH03",
+   "scene_id": "SC06",
+   "text": "对讲机里只剩下沙沙的电流声，他无奈地放下对讲机，心中泛起一丝莫名的失落。"
+  },
+  {
+   "chapter_id": "CH04",
+   "scene_id": "SC07",
+   "text": "空气中弥漫着一股莫名的紧张感，仿佛有什么迫在眉睫的状况即将发生，而她正在与时间赛跑。"
+  },
+  {
+   "chapter_id": "CH04",
+   "scene_id": "SC07",
+   "text": "林小满的搜寻动作停顿了一下，她侧耳倾听着，似乎在确认着什么。"
+  },
+  {
+   "chapter_id": "CH04",
+   "scene_id": "SC07",
+   "text": "分诊台周围的空气仿佛凝固了一瞬，林小满的手停在半空中，她的目光扫过空荡的药柜，又望向走廊尽头，似乎在权衡着这些零散的信息。"
+  },
+  {
+   "chapter_id": "CH04",
+   "scene_id": "SC08",
+   "text": "药房里弥漫着一股淡淡的药味，混合着陈旧的纸张气息，在林小满的动作间，细微的灰尘颗粒在灯光下显得格外清晰。"
+  }
+ ],
+ "stopped": null,
+ "plan_validation": {
+  "errors": [],
+  "warnings": [],
+  "checked_events": 107,
+  "scenes": 8,
+  "chapters": 4
+ }
+}

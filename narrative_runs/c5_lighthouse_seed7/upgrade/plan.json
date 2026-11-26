@@ -215,7 +215,53 @@
        "ship_passing_tonight"
       ],
       "emotion_entering": null,
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.8,
+        "honesty": 0.7,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "接船的事抢着干",
+        "听来的消息先核对再传",
+        "缆绳信号灯，天黑前必须有着落"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.60"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 9/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "lin_tao": {
       "goals_active": [],
@@ -227,7 +273,53 @@
        "ship_passing_tonight"
       ],
       "emotion_entering": null,
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.8,
+        "impulsiveness": 0.3,
+        "sociability": 0.4
+       },
+       "principles": [
+        "机器的事只认亲手摸到的",
+        "没把握的话不说满",
+        "别人的地盘不乱翻"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.44"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 4/9"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -246,6 +338,29 @@
     ],
     "expected_state_changes": [],
     "no_expected_change": true
+   },
+   "repetition_directives": {
+    "NE-E0006": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    },
+    "NE-E0010": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0011": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 0,
+    "grade": "low",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -304,7 +419,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.8,
+        "honesty": 0.7,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "接船的事抢着干",
+        "听来的消息先核对再传",
+        "缆绳信号灯，天黑前必须有着落"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.60"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 9/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "keeper_zhou": {
       "goals_active": [
@@ -316,7 +477,53 @@
        "ship_passing_tonight"
       ],
       "emotion_entering": null,
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.3,
+        "honesty": 0.8,
+        "impulsiveness": 0.2,
+        "sociability": 0.5
+       },
+       "principles": [
+        "船过礁石不能出一点差错",
+        "消息要亲口交代到人",
+        "没确认的事不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.15,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.25,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "lin_tao": {
       "goals_active": [],
@@ -338,7 +545,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.8,
+        "impulsiveness": 0.3,
+        "sociability": 0.4
+       },
+       "principles": [
+        "机器的事只认亲手摸到的",
+        "没把握的话不说满",
+        "别人的地盘不乱翻"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.44"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 4/9"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -408,6 +661,45 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0014": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0015": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0020": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0021": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0022": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    },
+    "NE-E0024": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0025": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 2,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 1,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -463,7 +755,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.8,
+        "honesty": 0.7,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "接船的事抢着干",
+        "听来的消息先核对再传",
+        "缆绳信号灯，天黑前必须有着落"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.60"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 9/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "keeper_zhou": {
       "goals_active": [
@@ -485,7 +823,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.3,
+        "honesty": 0.8,
+        "impulsiveness": 0.2,
+        "sociability": 0.5
+       },
+       "principles": [
+        "船过礁石不能出一点差错",
+        "消息要亲口交代到人",
+        "没确认的事不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.15,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.25,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "lin_tao": {
       "goals_active": [],
@@ -507,7 +891,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.8,
+        "impulsiveness": 0.3,
+        "sociability": 0.4
+       },
+       "principles": [
+        "机器的事只认亲手摸到的",
+        "没把握的话不说满",
+        "别人的地盘不乱翻"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.44"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 4/9"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -587,6 +1017,25 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0026": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    },
+    "NE-E0029": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 2,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 1,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -645,7 +1094,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.8,
+        "honesty": 0.7,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "接船的事抢着干",
+        "听来的消息先核对再传",
+        "缆绳信号灯，天黑前必须有着落"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.60"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 9/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "keeper_zhou": {
       "goals_active": [
@@ -667,7 +1162,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.3,
+        "honesty": 0.8,
+        "impulsiveness": 0.2,
+        "sociability": 0.5
+       },
+       "principles": [
+        "船过礁石不能出一点差错",
+        "消息要亲口交代到人",
+        "没确认的事不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.15,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.25,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "lin_tao": {
       "goals_active": [],
@@ -691,7 +1232,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.8,
+        "impulsiveness": 0.3,
+        "sociability": 0.4
+       },
+       "principles": [
+        "机器的事只认亲手摸到的",
+        "没把握的话不说满",
+        "别人的地盘不乱翻"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.44"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 4/9"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -732,16 +1319,6 @@
     ],
     "expected_state_changes": [
      {
-      "character_id": "a_gui",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
-     },
-     {
       "character_id": "keeper_zhou",
       "field": "emotion",
       "tier": "inference",
@@ -760,19 +1337,28 @@
        "fact": "ship_passing_tonight"
       },
       "event_id": "NE-E0030"
-     },
-     {
-      "character_id": "lin_tao",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0030": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0036": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 2,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 1,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -831,7 +1417,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.8,
+        "honesty": 0.7,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "接船的事抢着干",
+        "听来的消息先核对再传",
+        "缆绳信号灯，天黑前必须有着落"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.60"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 9/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "keeper_zhou": {
       "goals_active": [
@@ -857,7 +1489,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.3,
+        "honesty": 0.8,
+        "impulsiveness": 0.2,
+        "sociability": 0.5
+       },
+       "principles": [
+        "船过礁石不能出一点差错",
+        "消息要亲口交代到人",
+        "没确认的事不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.15,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.25,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "lin_tao": {
       "goals_active": [],
@@ -879,7 +1557,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.8,
+        "impulsiveness": 0.3,
+        "sociability": 0.4
+       },
+       "principles": [
+        "机器的事只认亲手摸到的",
+        "没把握的话不说满",
+        "别人的地盘不乱翻"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.44"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 4/9"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -949,6 +1673,37 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0038": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0039": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0041": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0043": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0045": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 2,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 1,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -1006,7 +1761,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.8,
+        "honesty": 0.7,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "接船的事抢着干",
+        "听来的消息先核对再传",
+        "缆绳信号灯，天黑前必须有着落"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.60"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 9/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "keeper_zhou": {
       "goals_active": [
@@ -1031,7 +1832,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.3,
+        "honesty": 0.8,
+        "impulsiveness": 0.2,
+        "sociability": 0.5
+       },
+       "principles": [
+        "船过礁石不能出一点差错",
+        "消息要亲口交代到人",
+        "没确认的事不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.15,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.25,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -1069,6 +1916,37 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0059": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0063": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0064": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0066": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0070": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    }
+   },
+   "density": {
+    "score": 0,
+    "grade": "low",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -1119,7 +1997,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.3,
+        "honesty": 0.8,
+        "impulsiveness": 0.2,
+        "sociability": 0.5
+       },
+       "principles": [
+        "船过礁石不能出一点差错",
+        "消息要亲口交代到人",
+        "没确认的事不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.15,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.25,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "lin_tao": {
       "goals_active": [],
@@ -1142,7 +2066,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.8,
+        "impulsiveness": 0.3,
+        "sociability": 0.4
+       },
+       "principles": [
+        "机器的事只认亲手摸到的",
+        "没把握的话不说满",
+        "别人的地盘不乱翻"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.44"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 4/9"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -1178,19 +2148,28 @@
        "fact": "fog_horn_ready"
       },
       "event_id": "NE-E0080"
-     },
-     {
-      "character_id": "lin_tao",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0080": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    },
+    "NE-E0081": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 2,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 1,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -1240,7 +2219,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.3,
+        "honesty": 0.8,
+        "impulsiveness": 0.2,
+        "sociability": 0.5
+       },
+       "principles": [
+        "船过礁石不能出一点差错",
+        "消息要亲口交代到人",
+        "没确认的事不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.15,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.25,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "lin_tao": {
       "goals_active": [],
@@ -1261,7 +2286,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.8,
+        "impulsiveness": 0.3,
+        "sociability": 0.4
+       },
+       "principles": [
+        "机器的事只认亲手摸到的",
+        "没把握的话不说满",
+        "别人的地盘不乱翻"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.44"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 4/9"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -1289,6 +2360,21 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0086": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    }
+   },
+   "density": {
+    "score": 0,
+    "grade": "low",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -1345,7 +2431,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.8,
+        "honesty": 0.7,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "接船的事抢着干",
+        "听来的消息先核对再传",
+        "缆绳信号灯，天黑前必须有着落"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.60"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 9/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "keeper_zhou": {
       "goals_active": [
@@ -1369,7 +2501,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.3,
+        "honesty": 0.8,
+        "impulsiveness": 0.2,
+        "sociability": 0.5
+       },
+       "principles": [
+        "船过礁石不能出一点差错",
+        "消息要亲口交代到人",
+        "没确认的事不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.15,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.25,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "lin_tao": {
       "goals_active": [],
@@ -1390,7 +2568,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.8,
+        "impulsiveness": 0.3,
+        "sociability": 0.4
+       },
+       "principles": [
+        "机器的事只认亲手摸到的",
+        "没把握的话不说满",
+        "别人的地盘不乱翻"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.44"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 4/9"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -1427,29 +2651,35 @@
       ]
      }
     ],
-    "expected_state_changes": [
-     {
-      "character_id": "a_gui",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
-     },
-     {
-      "character_id": "keeper_zhou",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
-     }
-    ],
-    "no_expected_change": false
+    "expected_state_changes": [],
+    "no_expected_change": true
+   },
+   "repetition_directives": {
+    "NE-E0091": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0095": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0096": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0097": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    }
+   },
+   "density": {
+    "score": 0,
+    "grade": "low",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -1497,7 +2727,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.3,
+        "honesty": 0.8,
+        "impulsiveness": 0.2,
+        "sociability": 0.5
+       },
+       "principles": [
+        "船过礁石不能出一点差错",
+        "消息要亲口交代到人",
+        "没确认的事不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 21 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.15,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "lin_tao",
+         "trust": 0.25,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "lin_tao": {
       "goals_active": [],
@@ -1518,7 +2794,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.8,
+        "impulsiveness": 0.3,
+        "sociability": 0.4
+       },
+       "principles": [
+        "机器的事只认亲手摸到的",
+        "没把握的话不说满",
+        "别人的地盘不乱翻"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.44"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 4/9"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "a_gui",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "keeper_zhou",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -1556,6 +2878,16 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {},
+   "density": {
+    "score": 0,
+    "grade": "low",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   }
  ],

@@ -193,7 +193,45 @@
        "fever_patient_coming"
       ],
       "emotion_entering": null,
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.6,
+        "honesty": 0.8,
+        "impulsiveness": 0.25,
+        "sociability": 0.5
+       },
+       "principles": [
+        "收治准备做在前面",
+        "用药剂量亲自核对",
+        "不确定的消息不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 17 chars"
+        }
+       ],
+       "observed_samples": 6,
+       "relationship_expression": [
+        {
+         "with": "nurse_lin",
+         "trust": 0.19,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.2,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [],
@@ -210,6 +248,16 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {},
+   "density": {
+    "score": 2,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 1,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -260,7 +308,45 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.6,
+        "honesty": 0.8,
+        "impulsiveness": 0.25,
+        "sociability": 0.5
+       },
+       "principles": [
+        "收治准备做在前面",
+        "用药剂量亲自核对",
+        "不确定的消息不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 17 chars"
+        }
+       ],
+       "observed_samples": 6,
+       "relationship_expression": [
+        {
+         "with": "nurse_lin",
+         "trust": 0.19,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.2,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "porter_wu": {
       "goals_active": [
@@ -277,7 +363,53 @@
        "fever_patient_coming"
       ],
       "emotion_entering": null,
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.7,
+        "honesty": 0.75,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "有活抢着干",
+        "听到的消息先核实再传",
+        "大门夜里不能离人太久"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "doctor_shen",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "nurse_lin",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -294,19 +426,27 @@
       ]
      }
     ],
-    "expected_state_changes": [
-     {
-      "character_id": "doctor_shen",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
-     }
-    ],
-    "no_expected_change": false
+    "expected_state_changes": [],
+    "no_expected_change": true
+   },
+   "repetition_directives": {
+    "NE-E0033": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    },
+    "NE-E0035": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    }
+   },
+   "density": {
+    "score": 0,
+    "grade": "low",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -358,7 +498,45 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.6,
+        "honesty": 0.8,
+        "impulsiveness": 0.25,
+        "sociability": 0.5
+       },
+       "principles": [
+        "收治准备做在前面",
+        "用药剂量亲自核对",
+        "不确定的消息不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 17 chars"
+        }
+       ],
+       "observed_samples": 6,
+       "relationship_expression": [
+        {
+         "with": "nurse_lin",
+         "trust": 0.19,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.2,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "nurse_lin": {
       "goals_active": [
@@ -374,7 +552,40 @@
        "fever_patient_coming"
       ],
       "emotion_entering": null,
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.85,
+        "impulsiveness": 0.3,
+        "sociability": 0.6
+       },
+       "principles": [
+        "病人用药不能断档",
+        "没核实的事不乱传",
+        "夜班记录当班做完"
+       ],
+       "observed_tendencies": [],
+       "observed_samples": 0,
+       "relationship_expression": [
+        {
+         "with": "doctor_shen",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "insufficient_samples",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "porter_wu": {
       "goals_active": [
@@ -401,7 +612,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.7,
+        "honesty": 0.75,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "有活抢着干",
+        "听到的消息先核实再传",
+        "大门夜里不能离人太久"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "doctor_shen",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "nurse_lin",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -475,6 +732,29 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0038": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0044": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0046": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    }
+   },
+   "density": {
+    "score": 2,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 1,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -525,7 +805,45 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.6,
+        "honesty": 0.8,
+        "impulsiveness": 0.25,
+        "sociability": 0.5
+       },
+       "principles": [
+        "收治准备做在前面",
+        "用药剂量亲自核对",
+        "不确定的消息不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 17 chars"
+        }
+       ],
+       "observed_samples": 6,
+       "relationship_expression": [
+        {
+         "with": "nurse_lin",
+         "trust": 0.19,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.2,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "porter_wu": {
       "goals_active": [
@@ -554,7 +872,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.7,
+        "honesty": 0.75,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "有活抢着干",
+        "听到的消息先核实再传",
+        "大门夜里不能离人太久"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "doctor_shen",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "nurse_lin",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -569,29 +933,23 @@
       ]
      }
     ],
-    "expected_state_changes": [
-     {
-      "character_id": "doctor_shen",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
-     },
-     {
-      "character_id": "porter_wu",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
-     }
-    ],
-    "no_expected_change": false
+    "expected_state_changes": [],
+    "no_expected_change": true
+   },
+   "repetition_directives": {
+    "NE-E0047": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 0,
+    "grade": "low",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -641,7 +999,45 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.6,
+        "honesty": 0.8,
+        "impulsiveness": 0.25,
+        "sociability": 0.5
+       },
+       "principles": [
+        "收治准备做在前面",
+        "用药剂量亲自核对",
+        "不确定的消息不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 17 chars"
+        }
+       ],
+       "observed_samples": 6,
+       "relationship_expression": [
+        {
+         "with": "nurse_lin",
+         "trust": 0.19,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.2,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "porter_wu": {
       "goals_active": [
@@ -668,7 +1064,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.7,
+        "honesty": 0.75,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "有活抢着干",
+        "听到的消息先核实再传",
+        "大门夜里不能离人太久"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "doctor_shen",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "nurse_lin",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -696,6 +1138,21 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0052": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 0,
+    "grade": "low",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -749,7 +1206,45 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.6,
+        "honesty": 0.8,
+        "impulsiveness": 0.25,
+        "sociability": 0.5
+       },
+       "principles": [
+        "收治准备做在前面",
+        "用药剂量亲自核对",
+        "不确定的消息不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 17 chars"
+        }
+       ],
+       "observed_samples": 6,
+       "relationship_expression": [
+        {
+         "with": "nurse_lin",
+         "trust": 0.19,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.2,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "porter_wu": {
       "goals_active": [
@@ -776,7 +1271,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.7,
+        "honesty": 0.75,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "有活抢着干",
+        "听到的消息先核实再传",
+        "大门夜里不能离人太久"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "doctor_shen",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "nurse_lin",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -834,6 +1375,25 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0073": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0075": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    }
+   },
+   "density": {
+    "score": 4,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 2,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -887,7 +1447,45 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.6,
+        "honesty": 0.8,
+        "impulsiveness": 0.25,
+        "sociability": 0.5
+       },
+       "principles": [
+        "收治准备做在前面",
+        "用药剂量亲自核对",
+        "不确定的消息不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 17 chars"
+        }
+       ],
+       "observed_samples": 6,
+       "relationship_expression": [
+        {
+         "with": "nurse_lin",
+         "trust": 0.19,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.2,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "nurse_lin": {
       "goals_active": [
@@ -913,7 +1511,40 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.85,
+        "impulsiveness": 0.3,
+        "sociability": 0.6
+       },
+       "principles": [
+        "病人用药不能断档",
+        "没核实的事不乱传",
+        "夜班记录当班做完"
+       ],
+       "observed_tendencies": [],
+       "observed_samples": 0,
+       "relationship_expression": [
+        {
+         "with": "doctor_shen",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "insufficient_samples",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "porter_wu": {
       "goals_active": [
@@ -941,7 +1572,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.7,
+        "honesty": 0.75,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "有活抢着干",
+        "听到的消息先核实再传",
+        "大门夜里不能离人太久"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "doctor_shen",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "nurse_lin",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -985,16 +1662,6 @@
     ],
     "expected_state_changes": [
      {
-      "character_id": "doctor_shen",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
-     },
-     {
       "character_id": "nurse_lin",
       "field": "emotion",
       "tier": "inference",
@@ -1023,19 +1690,36 @@
        "fact": "fever_medicine_restocked"
       },
       "event_id": "NE-E0093"
-     },
-     {
-      "character_id": "porter_wu",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0092": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0093": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0097": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0099": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    }
+   },
+   "density": {
+    "score": 4,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 2,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -1086,7 +1770,45 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.7,
+        "curiosity": 0.6,
+        "honesty": 0.8,
+        "impulsiveness": 0.25,
+        "sociability": 0.5
+       },
+       "principles": [
+        "收治准备做在前面",
+        "用药剂量亲自核对",
+        "不确定的消息不下结论"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 17 chars"
+        }
+       ],
+       "observed_samples": 6,
+       "relationship_expression": [
+        {
+         "with": "nurse_lin",
+         "trust": 0.19,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.2,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "nurse_lin": {
       "goals_active": [
@@ -1114,7 +1836,40 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.6,
+        "curiosity": 0.5,
+        "honesty": 0.85,
+        "impulsiveness": 0.3,
+        "sociability": 0.6
+       },
+       "principles": [
+        "病人用药不能断档",
+        "没核实的事不乱传",
+        "夜班记录当班做完"
+       ],
+       "observed_tendencies": [],
+       "observed_samples": 0,
+       "relationship_expression": [
+        {
+         "with": "doctor_shen",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "porter_wu",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "insufficient_samples",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "porter_wu": {
       "goals_active": [
@@ -1140,7 +1895,53 @@
        "source_type": "rule_inference",
        "evidence_level": "interpretation"
       },
-      "conflicts_with": []
+      "conflicts_with": [],
+      "voice": {
+       "config_traits": {
+        "caution": 0.4,
+        "curiosity": 0.7,
+        "honesty": 0.75,
+        "impulsiveness": 0.5,
+        "sociability": 0.8
+       },
+       "principles": [
+        "有活抢着干",
+        "听到的消息先核实再传",
+        "大门夜里不能离人太久"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 18 chars"
+        },
+        {
+         "trait": "多以发问推进对话",
+         "basis": "question ratio 0.70"
+        },
+        {
+         "trait": "以询问试探为主",
+         "basis": "ask share 7/10"
+        }
+       ],
+       "observed_samples": 10,
+       "relationship_expression": [
+        {
+         "with": "doctor_shen",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "nurse_lin",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -1189,16 +1990,6 @@
       "event_id": "E0102"
      },
      {
-      "character_id": "nurse_lin",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
-     },
-     {
       "character_id": "porter_wu",
       "field": "emotion",
       "tier": "inference",
@@ -1210,6 +2001,21 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0100": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 0,
+    "grade": "low",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   }
  ],

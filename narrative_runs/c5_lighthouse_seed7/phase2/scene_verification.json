@@ -1,0 +1,226 @@
+{
+ "scenes": [
+  {
+   "scene_id": "SC01",
+   "paragraphs": 4,
+   "expected_changes": 0,
+   "diffs": [],
+   "verdict": "ok"
+  },
+  {
+   "scene_id": "SC02",
+   "paragraphs": 7,
+   "expected_changes": 3,
+   "diffs": [
+    {
+     "kind": "expected_change_missing",
+     "character_id": "a_gui",
+     "event_id": "NE-E0026",
+     "severity": "medium"
+    },
+    {
+     "kind": "expected_change_missing",
+     "character_id": "lin_tao",
+     "event_id": "NE-E0026",
+     "severity": "medium"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 1,
+     "severity": "low",
+     "quote_prefix": "今晚真有船要贴着礁石回港？消息准吗？",
+     "first_seen": "SC01",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 5,
+     "severity": "low",
+     "quote_prefix": "雾笛那边，到底能不能响了？我这边等着确认",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC03",
+   "paragraphs": 10,
+   "expected_changes": 4,
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 8,
+     "severity": "low",
+     "quote_prefix": "雾笛那边，到底能不能响了？我这边等着确认",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC04",
+   "paragraphs": 7,
+   "expected_changes": 4,
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 0,
+     "severity": "low",
+     "quote_prefix": "电台刚记下——今晚有渔船贴着暗礁回港，得",
+     "first_seen": "SC03",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 3,
+     "severity": "low",
+     "quote_prefix": "雾笛那边，到底能不能响了？我这边等着确认",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC05",
+   "paragraphs": 7,
+   "expected_changes": 3,
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 1,
+     "severity": "low",
+     "quote_prefix": "雾笛那边，到底能不能响了？我这边等着确认",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 3,
+     "severity": "low",
+     "quote_prefix": "雾笛那边，到底能不能响了？我这边等着确认",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC06",
+   "paragraphs": 7,
+   "expected_changes": 2,
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 3,
+     "severity": "low",
+     "quote_prefix": "电台刚记下——今晚有渔船贴着暗礁回港，得",
+     "first_seen": "SC03",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 5,
+     "severity": "low",
+     "quote_prefix": "雾笛那边，到底能不能响了？我这边等着确认",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC07",
+   "paragraphs": 6,
+   "expected_changes": 3,
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 4,
+     "severity": "low",
+     "quote_prefix": "雾笛那边，到底能不能响了？我这边等着确认",
+     "first_seen": "SC02",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC08",
+   "paragraphs": 6,
+   "expected_changes": 1,
+   "diffs": [],
+   "verdict": "ok"
+  },
+  {
+   "scene_id": "SC09",
+   "paragraphs": 9,
+   "expected_changes": 2,
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 1,
+     "severity": "low",
+     "quote_prefix": "雾笛能修好——备件皮带已经到手，我这就装",
+     "first_seen": "SC07",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 3,
+     "severity": "low",
+     "quote_prefix": "电台刚记下——今晚有渔船贴着暗礁回港，得",
+     "first_seen": "SC03",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 5,
+     "severity": "low",
+     "quote_prefix": "放心，雾笛误不了事，备件拿到了。",
+     "first_seen": "SC08",
+     "note": "the same quoted line appears again verbatim"
+    },
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 7,
+     "severity": "low",
+     "quote_prefix": "电台刚记下——今晚有渔船贴着暗礁回港，得",
+     "first_seen": "SC03",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  },
+  {
+   "scene_id": "SC10",
+   "paragraphs": 6,
+   "expected_changes": 2,
+   "diffs": [
+    {
+     "kind": "verbatim_dialogue_repeat",
+     "paragraph_index": 4,
+     "severity": "low",
+     "quote_prefix": "这事我不清楚，别问我。",
+     "first_seen": "SC06",
+     "note": "the same quoted line appears again verbatim"
+    }
+   ],
+   "verdict": "diffs_recorded"
+  }
+ ],
+ "summary": {
+  "scenes": 10,
+  "total_diffs": 17,
+  "by_kind": {
+   "future_event_reference": 0,
+   "expected_change_missing": 2,
+   "psychology_stated_not_shown": 0,
+   "emotion_restatement": 0,
+   "verbatim_dialogue_repeat": 15
+  }
+ },
+ "note": "Deterministic plan-vs-text verification. Diffs are recorded, never auto-fixed; the text is the record, the plan the expectation."
+}

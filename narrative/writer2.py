@@ -103,6 +103,10 @@ def assemble_context(run_dir: Path, narrative_dir: Path,
         if m["provenance"] == "QUARANTINED":
             continue  # system/debug material never reaches Writer
         m["role"] = role.get(n, "primary")
+        # Phase 3: the planner's repetition directive for this
+        # event (keep in full / compress to a summary beat).
+        m["directive"] = (scene.get("repetition_directives")
+                          or {}).get(n)
         scene_events.append(m)
     arcs = {a["character_id"]: a
             for a in products["arcs"].get("arcs", [])}
@@ -146,6 +150,8 @@ def assemble_context(run_dir: Path, narrative_dir: Path,
         # planner's state enrichment (goals / entry knowledge /
         # must-not-use / entering emotion / expected changes).
         "character_state": scene.get("character_state"),
+        # Phase 3: information density of this scene.
+        "density": scene.get("density"),
         "scene_events": scene_events}
     manifest = {k: (v is not None and v != {} and v != [])
                 for k, v in ctx.items()}
@@ -207,6 +213,25 @@ def _prompt(ctx: dict) -> str:
                 f"（置信度 {emo.get('confidence', 0)}）；"
                 f"尚未掌握、不得当作已知使用的事实："
                 f"{p.get('must_not_use_at_entry', [])}")
+            voice = p.get("voice") or {}
+            traits = voice.get("config_traits") or {}
+            twords = [f"{k} {v}" for k, v in traits.items()
+                      if isinstance(v, (int, float))
+                      and (v >= 0.7 or v <= 0.35)]
+            obs_t = [t["trait"] for t in
+                     voice.get("observed_tendencies", [])]
+            rel_hints = [f"对{r['with']}：{r['hint']}"
+                         for r in voice.get(
+                             "relationship_expression", [])
+                         if r["with"] in cs.get("participants", {})]
+            if twords or obs_t or rel_hints:
+                lines.append(
+                    f"  {cid} 的表达倾向（设定"
+                    f"{'、'.join(twords)}；实际言语观察"
+                    f"{'、'.join(obs_t) or '样本不足，不下结论'}"
+                    f"；{'；'.join(rel_hints)}）——用这些倾向决定"
+                    f"他怎么说，而不是说什么：立场与事实以事件"
+                    f"为准，倾向不得改变立场。")
         gaps = cs.get("information_gaps", [])
         if gaps:
             lines.append("信息差：" + "；".join(
@@ -225,16 +250,39 @@ def _prompt(ctx: dict) -> str:
             "让读者自己看出。人物只能使用其入场已知与本场事件中"
             "学到的信息；对尚未掌握的事实，人物至多猜测，且文本"
             "必须表现为猜测（如「莫非……」），不得写成确定事实。")
+    den = c.get("density") or {}
+    if den:
+        guide = {"high": "信息密度高：关键往返可展开，篇幅可长",
+                 "mid": "信息密度中：篇幅适中，围绕变化写",
+                 "low": "信息密度低：简洁过渡，一笔带过，"
+                        "严禁用环境描写或心理描写填充"}[
+                            den.get("grade", "mid")]
+        lines.append(f"【节奏】本场{guide}。")
     lines.append("【本场事件（按序；role=repeat 的不要重写；"
                  "quotable=true 的台词才可逐字引用，"
                  "quotable=false 的只能转述）】")
     for e in c["scene_events"]:
+        dv = e.get("directive") or {}
+        dmark = (f" 处置={dv['action']}（{dv['reason']}）"
+                 if dv else "")
         lines.append(f"- {e['event_id']} t{e['tick']} "
                      f"{e['material_class']} "
                      f"quotable={e['quotable']} "
                      f"重要性{e['importance']} "
-                     f"功能{e['functions']} role={e['role']}："
-                     f"{e['text']}")
+                     f"功能{e['functions']} role={e['role']}"
+                     f"{dmark}：{e['text']}")
+    if den or any(e.get("directive") for e in c["scene_events"]):
+        lines.append(
+            "【对话与重复处置规则】台词写成自然对话，不要用"
+            "「人名：」的剧本格式（引用台词时去掉人名标签，标签"
+            "不是台词内容）；允许承接、回避、试探、打断等自然"
+            "回应方式，但不得改变 proposition、stance、送达关系"
+            "与事件顺序。标为处置=compress 的事件：用一句叙事"
+            "摘要带过（如「同样的话他又问了一遍」或写听者的"
+            "学习/反应），不得再写成完整往返对话，且必须把该"
+            "事件 id 记入所在段落的 event_ids 以保持追溯。"
+            "台词或动作已经表达出的情绪，旁白不得再用「他感到"
+            "……」「心中……」复述一遍。")
     lines.append("请写这一场。篇幅与事件重要性成比例；重复台词"
                  "只叙述一次。")
     return "\n".join(lines)
@@ -298,12 +346,33 @@ def _enforce_budget(novel: dict, gen, usage: dict,
                       "requires push F3 below target"}
     record["planned_conversions"] = n_convert
     by_id = {ch["chapter_id"]: ch for ch in novel["chapters"]}
+    # Phase 3 (5.5): conversion targets are ranked by
+    # redundancy -- an F3 paragraph that merely restates the
+    # chapter's F1 facts or re-narrates an emotion converts
+    # first; distinctive F3 is preserved as long as possible.
+    from narrative.scene_records import _jaccard
+    from narrative.scene_verification import _PSYCH_PATTERNS
+
+    def _redundancy(p: dict, f1_texts: list[str]) -> float:
+        text = p.get("text", "")
+        score = max((_jaccard(text, t) for t in f1_texts),
+                    default=0.0)
+        if any(rx.search(text) for rx in _PSYCH_PATTERNS):
+            score += 1.0
+        return score
+
     for ch_rep in before["chapters"]:
         if n_convert <= 0:
             break
         ch = by_id[ch_rep["chapter_id"]]
-        targets = [(i, p) for i, p in enumerate(ch["paragraphs"])
-                   if p.get("level") == "F3"][:n_convert]
+        f1_texts = [p.get("text", "") for p in ch["paragraphs"]
+                    if p.get("level") == "F1"]
+        candidates = [(i, p) for i, p in
+                      enumerate(ch["paragraphs"])
+                      if p.get("level") == "F3"]
+        candidates.sort(key=lambda ip: -_redundancy(ip[1],
+                                                    f1_texts))
+        targets = candidates[:n_convert]
         if not targets or usage["prompt_tokens"] >= cap_in:
             continue
         n_convert -= len(targets)

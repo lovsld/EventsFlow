@@ -28,6 +28,9 @@ _PSYCH_PATTERNS = [
     re.compile(r"(恐惧|愤怒|犹豫|不安).{0,6}(因此|于是).{0,8}决定"),
 ]
 
+_QUOTES = re.compile(r"「([^」]{2,})」|“([^”]{2,})”"
+                     r"|\"([^\"]{2,})\"")
+
 
 def verify_novel(narrative_dir: Path, novel: dict) -> dict:
     plan = json.loads((narrative_dir / "upgrade" / "plan.json")
@@ -45,6 +48,7 @@ def verify_novel(narrative_dir: Path, novel: dict) -> dict:
                                       []).append(p)
     records = []
     total_diffs = 0
+    quote_first_seen: dict[str, tuple] = {}
     for sid in order:
         scene = scenes[sid]
         paras = paras_by_scene.get(sid, [])
@@ -69,6 +73,9 @@ def verify_novel(narrative_dir: Path, novel: dict) -> dict:
                         "character_id": exp["character_id"],
                         "event_id": exp["event_id"],
                         "severity": "medium"})
+        scene_has_dialogue = any(
+            "「" in p.get("text", "") or "“" in p.get("text", "")
+            for p in paras)
         for i, p in enumerate(paras):
             text = p.get("text", "")
             if any(rx.search(text) for rx in _PSYCH_PATTERNS):
@@ -77,6 +84,30 @@ def verify_novel(narrative_dir: Path, novel: dict) -> dict:
                     "paragraph_index": i, "severity": "low",
                     "note": "heuristic match; human judgement "
                             "decides"})
+                if scene_has_dialogue and \
+                        p.get("level") in ("F2", "F3"):
+                    diffs.append({
+                        "kind": "emotion_restatement",
+                        "paragraph_index": i, "severity": "low",
+                        "note": "narration restates an emotion "
+                                "in a scene that also carries "
+                                "dialogue (heuristic)"})
+        for i, p in enumerate(paras):
+            for q in _QUOTES.findall(p.get("text", "")):
+                q = (q[0] or q[1] or q[2]).strip()
+                if len(q) < 6:
+                    continue
+                if q in quote_first_seen and \
+                        quote_first_seen[q] != (sid, i):
+                    diffs.append({
+                        "kind": "verbatim_dialogue_repeat",
+                        "paragraph_index": i, "severity": "low",
+                        "quote_prefix": q[:20],
+                        "first_seen": quote_first_seen[q][0],
+                        "note": "the same quoted line appears "
+                                "again verbatim"})
+                else:
+                    quote_first_seen.setdefault(q, (sid, i))
         total_diffs += len(diffs)
         records.append({
             "scene_id": sid, "paragraphs": len(paras),
@@ -93,7 +124,9 @@ def verify_novel(narrative_dir: Path, novel: dict) -> dict:
                                    if d["kind"] == k)
                             for k in ("future_event_reference",
                                       "expected_change_missing",
-                                      "psychology_stated_not_shown")}},
+                                      "psychology_stated_not_shown",
+                                      "emotion_restatement",
+                                      "verbatim_dialogue_repeat")}},
             "note": "Deterministic plan-vs-text verification. "
                     "Diffs are recorded, never auto-fixed; the "
                     "text is the record, the plan the expectation."}

@@ -276,7 +276,45 @@
          "owner"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.5,
+        "curiosity": 0.9,
+        "honesty": 0.45,
+        "impulsiveness": 0.4,
+        "sociability": 0.95
+       },
+       "principles": [
+        "合作必须有收益",
+        "不轻易透露自己的真实目的",
+        "尽量避免正面冲突"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 24 chars"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "owner",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "soldier",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "owner": {
       "goals_active": [
@@ -325,7 +363,45 @@
          "merchant"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.9,
+        "curiosity": 0.6,
+        "honesty": 0.6,
+        "impulsiveness": 0.2,
+        "sociability": 0.4
+       },
+       "principles": [
+        "不主动伤害无辜者",
+        "不轻易信任陌生人",
+        "保护自己的利益"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 23 chars"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "merchant",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "soldier",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "soldier": {
       "goals_active": [
@@ -380,7 +456,49 @@
          "owner"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.35,
+        "curiosity": 0.7,
+        "honesty": 0.9,
+        "impulsiveness": 0.85,
+        "sociability": 0.55
+       },
+       "principles": [
+        "不主动欺骗无辜者",
+        "不背叛自己的职责",
+        "不接受明显不公正的命令"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 24 chars"
+        },
+        {
+         "trait": "不回避正面交锋",
+         "basis": "confront share 6/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "merchant",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "owner",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -456,6 +574,21 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0014": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    }
+   },
+   "density": {
+    "score": 4,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 2,
+     "propositions": 0,
+     "confrontations": 0
+    }
    }
   },
   {
@@ -556,7 +689,45 @@
          "owner"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.5,
+        "curiosity": 0.9,
+        "honesty": 0.45,
+        "impulsiveness": 0.4,
+        "sociability": 0.95
+       },
+       "principles": [
+        "合作必须有收益",
+        "不轻易透露自己的真实目的",
+        "尽量避免正面冲突"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 24 chars"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "owner",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "soldier",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "owner": {
       "goals_active": [
@@ -617,7 +788,45 @@
          "merchant"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.9,
+        "curiosity": 0.6,
+        "honesty": 0.6,
+        "impulsiveness": 0.2,
+        "sociability": 0.4
+       },
+       "principles": [
+        "不主动伤害无辜者",
+        "不轻易信任陌生人",
+        "保护自己的利益"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 23 chars"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "merchant",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "soldier",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "soldier": {
       "goals_active": [
@@ -684,7 +893,49 @@
          "owner"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.35,
+        "curiosity": 0.7,
+        "honesty": 0.9,
+        "impulsiveness": 0.85,
+        "sociability": 0.55
+       },
+       "principles": [
+        "不主动欺骗无辜者",
+        "不背叛自己的职责",
+        "不接受明显不公正的命令"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 24 chars"
+        },
+        {
+         "trait": "不回避正面交锋",
+         "basis": "confront share 6/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "merchant",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "owner",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -783,16 +1034,6 @@
       "event_id": "E0017"
      },
      {
-      "character_id": "merchant",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
-     },
-     {
       "character_id": "owner",
       "field": "knowledge",
       "tier": "fact",
@@ -814,6 +1055,53 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0017": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0022": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    },
+    "NE-E0023": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0026": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    },
+    "NE-E0027": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0030": {
+     "action": "keep",
+     "reason": "confrontation (dramatic repeat)"
+    },
+    "NE-E0031": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0032": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0033": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 10,
+    "grade": "high",
+    "components": {
+     "knowledge_changes": 3,
+     "propositions": 0,
+     "confrontations": 2
+    }
    }
   },
   {
@@ -913,7 +1201,45 @@
          "owner"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.5,
+        "curiosity": 0.9,
+        "honesty": 0.45,
+        "impulsiveness": 0.4,
+        "sociability": 0.95
+       },
+       "principles": [
+        "合作必须有收益",
+        "不轻易透露自己的真实目的",
+        "尽量避免正面冲突"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 24 chars"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "owner",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "soldier",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "owner": {
       "goals_active": [
@@ -974,7 +1300,45 @@
          "merchant"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.9,
+        "curiosity": 0.6,
+        "honesty": 0.6,
+        "impulsiveness": 0.2,
+        "sociability": 0.4
+       },
+       "principles": [
+        "不主动伤害无辜者",
+        "不轻易信任陌生人",
+        "保护自己的利益"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 23 chars"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "merchant",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "soldier",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "soldier": {
       "goals_active": [
@@ -1043,7 +1407,49 @@
          "owner"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.35,
+        "curiosity": 0.7,
+        "honesty": 0.9,
+        "impulsiveness": 0.85,
+        "sociability": 0.55
+       },
+       "principles": [
+        "不主动欺骗无辜者",
+        "不背叛自己的职责",
+        "不接受明显不公正的命令"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 24 chars"
+        },
+        {
+         "trait": "不回避正面交锋",
+         "basis": "confront share 6/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "merchant",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "owner",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -1089,16 +1495,6 @@
     ],
     "expected_state_changes": [
      {
-      "character_id": "merchant",
-      "field": "emotion",
-      "tier": "inference",
-      "after": {
-       "emotion": "unknown",
-       "intensity": 0.0
-      },
-      "event_id": null
-     },
-     {
       "character_id": "owner",
       "field": "knowledge",
       "tier": "fact",
@@ -1120,6 +1516,45 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0034": {
+     "action": "keep",
+     "reason": "first presentation to the reader"
+    },
+    "NE-E0035": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0036": {
+     "action": "keep",
+     "reason": "confrontation (dramatic repeat)"
+    },
+    "NE-E0037": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0038": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0040": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0041": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    }
+   },
+   "density": {
+    "score": 4,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 1,
+     "propositions": 0,
+     "confrontations": 1
+    }
    }
   },
   {
@@ -1223,7 +1658,45 @@
          "owner"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.5,
+        "curiosity": 0.9,
+        "honesty": 0.45,
+        "impulsiveness": 0.4,
+        "sociability": 0.95
+       },
+       "principles": [
+        "合作必须有收益",
+        "不轻易透露自己的真实目的",
+        "尽量避免正面冲突"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 24 chars"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "owner",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "soldier",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "owner": {
       "goals_active": [
@@ -1283,7 +1756,45 @@
          "merchant"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.9,
+        "curiosity": 0.6,
+        "honesty": 0.6,
+        "impulsiveness": 0.2,
+        "sociability": 0.4
+       },
+       "principles": [
+        "不主动伤害无辜者",
+        "不轻易信任陌生人",
+        "保护自己的利益"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 23 chars"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "merchant",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "soldier",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "soldier": {
       "goals_active": [
@@ -1350,7 +1861,49 @@
          "owner"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.35,
+        "curiosity": 0.7,
+        "honesty": 0.9,
+        "impulsiveness": 0.85,
+        "sociability": 0.55
+       },
+       "principles": [
+        "不主动欺骗无辜者",
+        "不背叛自己的职责",
+        "不接受明显不公正的命令"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 24 chars"
+        },
+        {
+         "trait": "不回避正面交锋",
+         "basis": "confront share 6/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "merchant",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "owner",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -1409,6 +1962,65 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0043": {
+     "action": "keep",
+     "reason": "confrontation (dramatic repeat)"
+    },
+    "NE-E0044": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0046": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0047": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0050": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0051": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0052": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0054": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0055": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0056": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0058": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0059": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 2,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 1
+    }
    }
   },
   {
@@ -1508,7 +2120,45 @@
          "owner"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.5,
+        "curiosity": 0.9,
+        "honesty": 0.45,
+        "impulsiveness": 0.4,
+        "sociability": 0.95
+       },
+       "principles": [
+        "合作必须有收益",
+        "不轻易透露自己的真实目的",
+        "尽量避免正面冲突"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 24 chars"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "owner",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "soldier",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "owner": {
       "goals_active": [
@@ -1568,7 +2218,45 @@
          "merchant"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.9,
+        "curiosity": 0.6,
+        "honesty": 0.6,
+        "impulsiveness": 0.2,
+        "sociability": 0.4
+       },
+       "principles": [
+        "不主动伤害无辜者",
+        "不轻易信任陌生人",
+        "保护自己的利益"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 23 chars"
+        }
+       ],
+       "observed_samples": 9,
+       "relationship_expression": [
+        {
+         "with": "merchant",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "soldier",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      },
      "soldier": {
       "goals_active": [
@@ -1634,7 +2322,49 @@
          "owner"
         ]
        }
-      ]
+      ],
+      "voice": {
+       "config_traits": {
+        "caution": 0.35,
+        "curiosity": 0.7,
+        "honesty": 0.9,
+        "impulsiveness": 0.85,
+        "sociability": 0.55
+       },
+       "principles": [
+        "不主动欺骗无辜者",
+        "不背叛自己的职责",
+        "不接受明显不公正的命令"
+       ],
+       "observed_tendencies": [
+        {
+         "trait": "短句为主",
+         "basis": "mean utterance 24 chars"
+        },
+        {
+         "trait": "不回避正面交锋",
+         "basis": "confront share 6/15"
+        }
+       ],
+       "observed_samples": 15,
+       "relationship_expression": [
+        {
+         "with": "merchant",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        },
+        {
+         "with": "owner",
+         "trust": 0.3,
+         "hint": "低信任：倾向试探与保留"
+        }
+       ],
+       "sources": {
+        "config_traits": "character_config",
+        "observed_tendencies": "observed_speech",
+        "relationship_expression": "character_config trust"
+       }
+      }
      }
     },
     "information_gaps": [
@@ -1693,6 +2423,45 @@
      }
     ],
     "no_expected_change": false
+   },
+   "repetition_directives": {
+    "NE-E0061": {
+     "action": "keep",
+     "reason": "confrontation (dramatic repeat)"
+    },
+    "NE-E0062": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0063": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0064": {
+     "action": "keep",
+     "reason": "confrontation (dramatic repeat)"
+    },
+    "NE-E0068": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; render as a learning beat (a character learns it here)"
+    },
+    "NE-E0070": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    },
+    "NE-E0071": {
+     "action": "compress",
+     "reason": "reader already knows this proposition/stance; no new information"
+    }
+   },
+   "density": {
+    "score": 4,
+    "grade": "mid",
+    "components": {
+     "knowledge_changes": 0,
+     "propositions": 0,
+     "confrontations": 2
+    }
    }
   }
  ],

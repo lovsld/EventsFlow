@@ -31,7 +31,8 @@ def build_plan(run_dir: Path, narrative_dir: Path,
     from narrative.psychology import build_state_updates
     _states = build_character_states(run_dir, narrative_dir)
     _updates = build_state_updates(narrative_dir)["updates"]
-    scenes = enrich_scenes_with_states(scenes, _states, _updates)
+    scenes = enrich_scenes_with_states(scenes, _states, _updates,
+                                       narrative_dir)
     story = build_story_outline(run_dir, narrative_dir, views,
                                 arcs, config_path)
     chapters = build_chapters(narrative_dir, scenes, views, setup)
